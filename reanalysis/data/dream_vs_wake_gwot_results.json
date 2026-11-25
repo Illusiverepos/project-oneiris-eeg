@@ -1,0 +1,137 @@
+{
+  "dreamN": 20347,
+  "dreamMeanWords": 194.1,
+  "wakeN": 3292,
+  "wakeMeanWords": 225.5,
+  "densityComparison": [
+    {
+      "domain": "spatial",
+      "dreamPer100w": 1.401,
+      "wakePer100w": 0.392,
+      "ratioDreamToWake": 3.58,
+      "cohenD": 0.829
+    },
+    {
+      "domain": "social",
+      "dreamPer100w": 1.883,
+      "wakePer100w": 0.796,
+      "ratioDreamToWake": 2.36,
+      "cohenD": 0.752
+    },
+    {
+      "domain": "reading",
+      "dreamPer100w": 0.129,
+      "wakePer100w": 0.241,
+      "ratioDreamToWake": 0.54,
+      "cohenD": -0.196
+    },
+    {
+      "domain": "writing",
+      "dreamPer100w": 0.082,
+      "wakePer100w": 0.088,
+      "ratioDreamToWake": 0.93,
+      "cohenD": -0.017
+    },
+    {
+      "domain": "arithmetic",
+      "dreamPer100w": 0.016,
+      "wakePer100w": 0.016,
+      "ratioDreamToWake": 1.02,
+      "cohenD": 0.002
+    },
+    {
+      "domain": "symbolicTotal",
+      "dreamPer100w": 0.228,
+      "wakePer100w": 0.346,
+      "ratioDreamToWake": 0.66,
+      "cohenD": -0.163
+    }
+  ],
+  "dreamPrevalencePct": {
+    "sceneCuts": 11.56,
+    "distortion": 10.55
+  },
+  "wakePrevalencePct": {
+    "sceneCuts": 3.43,
+    "distortion": 10.33
+  },
+  "dreamCorrelations": {
+    "rSpatialSocial": -0.0304,
+    "rSpatialSymbolic": -0.0561,
+    "rSocialSymbolic": -0.0171
+  },
+  "wakeCorrelations": {
+    "rSpatialSocial": 0.0028,
+    "rSpatialSymbolic": -0.0306,
+    "rSocialSymbolic": -0.0323
+  },
+  "mantelGeometryCorrelationR": 0.8305,
+  "gwotWakeToDream": {
+    "gwDistance": 0.05759,
+    "hits": 3,
+    "total": 12,
+    "accuracyPct": 25,
+    "mapping": [
+      {
+        "wakeConcept": "home",
+        "alignedDreamConcept": "friends",
+        "match": false
+      },
+      {
+        "wakeConcept": "school",
+        "alignedDreamConcept": "fear",
+        "match": false
+      },
+      {
+        "wakeConcept": "street",
+        "alignedDreamConcept": "love",
+        "match": false
+      },
+      {
+        "wakeConcept": "nature",
+        "alignedDreamConcept": "nature",
+        "match": true
+      },
+      {
+        "wakeConcept": "water",
+        "alignedDreamConcept": "reading",
+        "match": false
+      },
+      {
+        "wakeConcept": "family",
+        "alignedDreamConcept": "family",
+        "match": true
+      },
+      {
+        "wakeConcept": "friends",
+        "alignedDreamConcept": "home",
+        "match": false
+      },
+      {
+        "wakeConcept": "stranger",
+        "alignedDreamConcept": "school",
+        "match": false
+      },
+      {
+        "wakeConcept": "fear",
+        "alignedDreamConcept": "water",
+        "match": false
+      },
+      {
+        "wakeConcept": "love",
+        "alignedDreamConcept": "stranger",
+        "match": false
+      },
+      {
+        "wakeConcept": "reading",
+        "alignedDreamConcept": "street",
+        "match": false
+      },
+      {
+        "wakeConcept": "math",
+        "alignedDreamConcept": "math",
+        "match": true
+      }
+    ]
+  }
+}

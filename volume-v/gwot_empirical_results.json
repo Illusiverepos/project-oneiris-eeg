@@ -1,0 +1,169 @@
+{
+  "method": "Unsupervised Entropic Gromov-Wasserstein Optimal Transport (GWOT)",
+  "corpus": "FULL DreamBank (22,415 real human dreams)",
+  "chanceTop1Pct": 8.33,
+  "splitHalfAlignment": {
+    "nA": 11208,
+    "nB": 11207,
+    "gwDistance": 0.03882,
+    "top1AccuracyPct": 41.7,
+    "correctCount": 5,
+    "totalConcepts": 12,
+    "mapping": [
+      {
+        "source": "home",
+        "alignedTo": "home",
+        "mass": 1,
+        "correct": true
+      },
+      {
+        "source": "school",
+        "alignedTo": "school",
+        "mass": 1,
+        "correct": true
+      },
+      {
+        "source": "street",
+        "alignedTo": "stranger",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "nature",
+        "alignedTo": "water",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "water",
+        "alignedTo": "nature",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "family",
+        "alignedTo": "family",
+        "mass": 1,
+        "correct": true
+      },
+      {
+        "source": "friends",
+        "alignedTo": "friends",
+        "mass": 1,
+        "correct": true
+      },
+      {
+        "source": "stranger",
+        "alignedTo": "street",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "fear",
+        "alignedTo": "love",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "love",
+        "alignedTo": "reading",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "reading",
+        "alignedTo": "fear",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "math",
+        "alignedTo": "math",
+        "mass": 1,
+        "correct": true
+      }
+    ]
+  },
+  "maleVsFemaleAlignment": {
+    "nMale": 7986,
+    "nFemale": 14429,
+    "gwDistance": 0.0401,
+    "top1AccuracyPct": 50,
+    "correctCount": 6,
+    "totalConcepts": 12,
+    "mapping": [
+      {
+        "source": "home",
+        "alignedTo": "friends",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "school",
+        "alignedTo": "school",
+        "mass": 1,
+        "correct": true
+      },
+      {
+        "source": "street",
+        "alignedTo": "street",
+        "mass": 1,
+        "correct": true
+      },
+      {
+        "source": "nature",
+        "alignedTo": "water",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "water",
+        "alignedTo": "fear",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "family",
+        "alignedTo": "family",
+        "mass": 1,
+        "correct": true
+      },
+      {
+        "source": "friends",
+        "alignedTo": "home",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "stranger",
+        "alignedTo": "stranger",
+        "mass": 1,
+        "correct": true
+      },
+      {
+        "source": "fear",
+        "alignedTo": "love",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "love",
+        "alignedTo": "nature",
+        "mass": 1,
+        "correct": false
+      },
+      {
+        "source": "reading",
+        "alignedTo": "reading",
+        "mass": 1,
+        "correct": true
+      },
+      {
+        "source": "math",
+        "alignedTo": "math",
+        "mass": 1,
+        "correct": true
+      }
+    ]
+  }
+}

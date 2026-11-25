@@ -1,0 +1,108 @@
+{
+  "project": "Project ONEIRIS — Phase IX Secondary Reanalysis Manifest",
+  "version": "0.6",
+  "datasets": [
+    {
+      "id": "DREAM_2025",
+      "name": "The DREAM (Dream EEG and Mentation) Database",
+      "doi": "10.1038/s41467-025-61945-1",
+      "pipeline": "Pipeline 2 (Multi-Lab Sleep Calibration)",
+      "modalities": ["EEG", "MEG", "Mentation Reports"],
+      "open_access": true
+    },
+    {
+      "id": "TWC_USA",
+      "name": "Two-Way Communication in Lucid REM (Konkoly et al. 2021)",
+      "doi": "10.6084/m9.figshare.22106123",
+      "pipeline": "Pipeline 4 (ECHO Working-Memory Bottlenecks)",
+      "modalities": ["EEG", "EOG", "EMG", "Dialogue Logs"],
+      "open_access": true
+    },
+    {
+      "id": "ds005620",
+      "name": "Propofol Repeated Awakening & Complexity Dataset",
+      "doi": "10.18112/openneuro.ds005620.v1.0.0",
+      "pipeline": "Pipeline 1 (Propofol Disconnected Consciousness)",
+      "modalities": ["HD-EEG", "TMS-EEG", "Awakening Reports"],
+      "open_access": true
+    },
+    {
+      "id": "ds003768",
+      "name": "Simultaneous EEG & fMRI During Human Sleep (Penn State)",
+      "repository": "OpenNeuro:ds003768",
+      "pipeline": "Pipeline 3 (Cross-State Manifold)",
+      "modalities": ["EEG", "fMRI"],
+      "open_access": true
+    },
+    {
+      "id": "DMT_Imaging",
+      "name": "Human Brain Effects of DMT (Timmermann et al. 2023)",
+      "repository": "github.com/timmer500/DMT_Imaging",
+      "pipeline": "Pipeline 3 (Cross-State Manifold)",
+      "modalities": ["EEG", "fMRI"],
+      "open_access": true
+    },
+    {
+      "id": "ds006644",
+      "name": "DMT-HAR-MED rsfMRI Cohort",
+      "repository": "OpenNeuro:ds006644",
+      "pipeline": "Pipeline 3 (Cross-State Manifold)",
+      "modalities": ["fMRI"],
+      "open_access": true
+    },
+    {
+      "id": "ds003059",
+      "name": "Carhart-Harris LSD Multimodal MRI",
+      "repository": "OpenNeuro:ds003059",
+      "pipeline": "Pipeline 3 (Cross-State Manifold)",
+      "modalities": ["fMRI", "MEG"],
+      "open_access": true
+    },
+    {
+      "id": "ds005917",
+      "name": "NIMH Ketamine Dataset",
+      "repository": "OpenNeuro:ds005917",
+      "pipeline": "Pipeline 3 (Cross-State Manifold)",
+      "modalities": ["fMRI"],
+      "open_access": true
+    },
+    {
+      "id": "DreamBank_Zenodo",
+      "name": "DreamBank Historical Dream Report Corpus",
+      "repository": "zenodo.org/record/14781401",
+      "pipeline": "Pipeline 4 (ATLAS Object & Spatial Priors)",
+      "modalities": ["Text Corpus"],
+      "open_access": true
+    },
+    {
+      "id": "NSRR_SHHS_MESA",
+      "name": "NSRR SHHS & MESA Sleep Polysomnography",
+      "repository": "sleepdata.org",
+      "pipeline": "Pipeline 2 (Normative EEG Calibration)",
+      "modalities": ["PSG", "EEG"],
+      "open_access": false
+    },
+    {
+      "id": "ds005555",
+      "name": "Bitbrain Open Access Sleep (BOAS)",
+      "repository": "OpenNeuro:ds005555",
+      "pipeline": "Pipeline 5 (Wearable Hypnagogic Benchmark)",
+      "modalities": ["Clinical PSG", "Wearable Forehead EEG"],
+      "open_access": true
+    },
+    {
+      "id": "HumanDreamDecoding",
+      "name": "Neural Decoding of Visual Imagery During Sleep (Horikawa 2013)",
+      "repository": "github.com/KamitaniLab/HumanDreamDecoding",
+      "pipeline": "Pipeline 4 (Endogenous N1 Decoding Ceiling)",
+      "modalities": ["fMRI", "N1 Reports"],
+      "open_access": true
+    }
+  ],
+  "atlas_candidate_objects_16": [
+    "sextant", "hourglass", "origami crane", "obsidian pyramid",
+    "tuning fork", "astrolabe", "abacus", "metronome",
+    "porcelain mask", "brass compass", "glass prism", "pocket watch",
+    "coral branch", "ivory chess knight", "copper lantern", "quartz geode"
+  ]
+}

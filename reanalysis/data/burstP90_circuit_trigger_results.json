@@ -1,0 +1,143 @@
+{
+  "h1Anatomy": [
+    {
+      "band": "delta",
+      "nSubj": 39,
+      "posRatio": "2/39",
+      "dz": -1.306,
+      "pPaired": 0.0001
+    },
+    {
+      "band": "theta",
+      "nSubj": 39,
+      "posRatio": "13/39",
+      "dz": -0.466,
+      "pPaired": 0.0043
+    },
+    {
+      "band": "alpha",
+      "nSubj": 39,
+      "posRatio": "14/39",
+      "dz": -0.314,
+      "pPaired": 0.05439
+    },
+    {
+      "band": "spindle",
+      "nSubj": 39,
+      "posRatio": "12/39",
+      "dz": -0.294,
+      "pPaired": 0.07979
+    },
+    {
+      "band": "beta",
+      "nSubj": 39,
+      "posRatio": "17/39",
+      "dz": -0.056,
+      "pPaired": 0.72923
+    },
+    {
+      "band": "gamma",
+      "nSubj": 39,
+      "posRatio": "22/39",
+      "dz": -0.037,
+      "pPaired": 0.82052
+    }
+  ],
+  "h2PeakDiff": [
+    {
+      "peakWindowMetric": "burstP90",
+      "nSubj": 39,
+      "posRatio": "28/39",
+      "dz": 0.612,
+      "pPaired": 0.0002
+    },
+    {
+      "peakWindowMetric": "delta",
+      "nSubj": 39,
+      "posRatio": "19/39",
+      "dz": 0.069,
+      "pPaired": 0.67813
+    },
+    {
+      "peakWindowMetric": "theta",
+      "nSubj": 39,
+      "posRatio": "19/39",
+      "dz": 0.228,
+      "pPaired": 0.16988
+    },
+    {
+      "peakWindowMetric": "alpha",
+      "nSubj": 39,
+      "posRatio": "19/39",
+      "dz": 0.097,
+      "pPaired": 0.55964
+    },
+    {
+      "peakWindowMetric": "spindle",
+      "nSubj": 39,
+      "posRatio": "22/39",
+      "dz": 0.129,
+      "pPaired": 0.42756
+    },
+    {
+      "peakWindowMetric": "beta",
+      "nSubj": 39,
+      "posRatio": "26/39",
+      "dz": 0.447,
+      "pPaired": 0.0059
+    },
+    {
+      "peakWindowMetric": "gamma",
+      "nSubj": 39,
+      "posRatio": "23/39",
+      "dz": 0.366,
+      "pPaired": 0.0227
+    }
+  ],
+  "ladder": [
+    {
+      "level": "NE (0)",
+      "n": 107,
+      "meanBurstP90": 0.7545,
+      "meanPeakDelta": -0.8056,
+      "meanPeakSpindle": -1.6412,
+      "meanPeakGamma": -2.304
+    },
+    {
+      "level": "CEWR (1)",
+      "n": 56,
+      "meanBurstP90": 0.7734,
+      "meanPeakDelta": -0.8831,
+      "meanPeakSpindle": -1.7008,
+      "meanPeakGamma": -2.3518
+    },
+    {
+      "level": "CE (2)",
+      "n": 124,
+      "meanBurstP90": 0.7797,
+      "meanPeakDelta": -0.8647,
+      "meanPeakSpindle": -1.6906,
+      "meanPeakGamma": -2.3352
+    }
+  ],
+  "graded": [
+    {
+      "rating": "perc",
+      "n": 124,
+      "rho": 0.041,
+      "pPerm": 0.64467
+    },
+    {
+      "rating": "thought",
+      "n": 124,
+      "rho": 0.119,
+      "pPerm": 0.18736
+    },
+    {
+      "rating": "dur",
+      "n": 124,
+      "rho": 0.102,
+      "pPerm": 0.26115
+    }
+  ]
+}

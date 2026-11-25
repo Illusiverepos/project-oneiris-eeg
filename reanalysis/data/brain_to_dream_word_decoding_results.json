@@ -1,0 +1,159 @@
+{
+  "nDreamReports": 154,
+  "results": [
+    {
+      "test": "Right TPJ 1/f -> Spatial/Visual words",
+      "n": 154,
+      "rawRho": 0.027,
+      "rawP": 0.73365,
+      "withinSubjRho": 0.045,
+      "withinSubjP": 0.57089
+    },
+    {
+      "test": "Right TPJ LZc -> Spatial/Visual words",
+      "n": 154,
+      "rawRho": 0.019,
+      "rawP": 0.82643,
+      "withinSubjRho": 0.058,
+      "withinSubjP": 0.47271
+    },
+    {
+      "test": "Occipital 1/f -> Spatial/Visual words",
+      "n": 154,
+      "rawRho": 0.076,
+      "rawP": 0.36313,
+      "withinSubjRho": 0.07,
+      "withinSubjP": 0.39512
+    },
+    {
+      "test": "Occipital LZc -> Spatial/Visual words",
+      "n": 154,
+      "rawRho": 0.008,
+      "rawP": 0.92262,
+      "withinSubjRho": -0.037,
+      "withinSubjP": 0.65147
+    },
+    {
+      "test": "Left TPJ 1/f -> Verbal/Thought words",
+      "n": 154,
+      "rawRho": -0.016,
+      "rawP": 0.85103,
+      "withinSubjRho": 0.002,
+      "withinSubjP": 0.9818
+    },
+    {
+      "test": "Left TPJ LZc -> Verbal/Thought words",
+      "n": 154,
+      "rawRho": 0.02,
+      "rawP": 0.80464,
+      "withinSubjRho": 0.084,
+      "withinSubjP": 0.30694
+    },
+    {
+      "test": "Left Frontal 1/f -> Verbal/Thought words",
+      "n": 154,
+      "rawRho": -0.047,
+      "rawP": 0.55129,
+      "withinSubjRho": 0.089,
+      "withinSubjP": 0.27614
+    },
+    {
+      "test": "Left Frontal LZc -> Verbal/Thought words",
+      "n": 154,
+      "rawRho": 0.028,
+      "rawP": 0.72905,
+      "withinSubjRho": 0.083,
+      "withinSubjP": 0.30414
+    },
+    {
+      "test": "Right-Left TPJ 1/f Lat -> Spatial-Verbal",
+      "n": 154,
+      "rawRho": -0.014,
+      "rawP": 0.86263,
+      "withinSubjRho": 0.029,
+      "withinSubjP": 0.72206
+    },
+    {
+      "test": "Right-Left TPJ LZc Lat -> Spatial-Verbal",
+      "n": 154,
+      "rawRho": -0.061,
+      "rawP": 0.46011,
+      "withinSubjRho": 0.025,
+      "withinSubjP": 0.75965
+    },
+    {
+      "test": "Right-Left Frontal 1/f Lat -> Spatial-Verbal",
+      "n": 154,
+      "rawRho": 0.141,
+      "rawP": 0.08078,
+      "withinSubjRho": 0.09,
+      "withinSubjP": 0.27455
+    },
+    {
+      "test": "Right TPJ 1/f -> Dream Length (log words)",
+      "n": 154,
+      "rawRho": -0.085,
+      "rawP": 0.29694,
+      "withinSubjRho": 0.359,
+      "withinSubjP": 0.0002
+    },
+    {
+      "test": "Right TPJ LZc -> Dream Length (log words)",
+      "n": 154,
+      "rawRho": -0.061,
+      "rawP": 0.43911,
+      "withinSubjRho": 0.27,
+      "withinSubjP": 0.0008
+    },
+    {
+      "test": "Occipital LZc -> Dream Length (log words)",
+      "n": 154,
+      "rawRho": -0.232,
+      "rawP": 0.0048,
+      "withinSubjRho": 0.132,
+      "withinSubjP": 0.10878
+    },
+    {
+      "test": "Left TPJ LZc -> Dream Length (log words)",
+      "n": 154,
+      "rawRho": -0.026,
+      "rawP": 0.74765,
+      "withinSubjRho": 0.018,
+      "withinSubjP": 0.82044
+    },
+    {
+      "test": "Right TPJ DFA -> Dream Length (log words)",
+      "n": 154,
+      "rawRho": 0.059,
+      "rawP": 0.45571,
+      "withinSubjRho": -0.07,
+      "withinSubjP": 0.37293
+    }
+  ],
+  "stageCheck": [
+    {
+      "stage": "AllSleep",
+      "n": 150,
+      "RightTPJ_slope": "0.36 (p=0.0002)",
+      "RightTPJ_LZc": "0.268 (p=0.0018)",
+      "LeftTPJ_slope": "0.096 (p=0.23715)",
+      "LeftTPJ_LZc": "0.015 (p=0.85963)"
+    },
+    {
+      "stage": "N1",
+      "n": 64,
+      "RightTPJ_slope": "0.311 (p=0.0122)",
+      "RightTPJ_LZc": "0.206 (p=0.10398)",
+      "LeftTPJ_slope": "-0.026 (p=0.84303)",
+      "LeftTPJ_LZc": "0.023 (p=0.85163)"
+    },
+    {
+      "stage": "N2/N3",
+      "n": 61,
+      "RightTPJ_slope": "0.387 (p=0.0018)",
+      "RightTPJ_LZc": "0.276 (p=0.03079)",
+      "LeftTPJ_slope": "0.082 (p=0.52709)",
+      "LeftTPJ_LZc": "0.005 (p=0.97221)"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "metric": "slopeBB",
+    "nPos": 107,
+    "nNeg": 116,
+    "cohenD": 0.396,
+    "rocAuc": 0.592,
+    "nSubj": 10,
+    "posRatio": "10/10",
+    "dz": 1.256,
+    "pPaired": 0.0018
+  },
+  {
+    "metric": "lzc",
+    "nPos": 107,
+    "nNeg": 116,
+    "cohenD": 0.652,
+    "rocAuc": 0.676,
+    "nSubj": 10,
+    "posRatio": "10/10",
+    "dz": 1.196,
+    "pPaired": 0.0015
+  },
+  {
+    "metric": "dfa",
+    "nPos": 107,
+    "nNeg": 116,
+    "cohenD": -0.683,
+    "rocAuc": 0.326,
+    "nSubj": 10,
+    "posRatio": "0/10",
+    "dz": -1.118,
+    "pPaired": 0.0022
+  },
+  {
+    "metric": "pacThetaGamma",
+    "nPos": 107,
+    "nNeg": 116,
+    "cohenD": -0.069,
+    "rocAuc": 0.463,
+    "nSubj": 10,
+    "posRatio": "4/10",
+    "dz": 0.043,
+    "pPaired": 0.88631
+  }
+]

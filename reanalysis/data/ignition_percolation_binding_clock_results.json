@@ -1,0 +1,94 @@
+{
+  "nTrials": 231,
+  "pairedTable": [
+    {
+      "metric": "burstP90_120s",
+      "nSubj": 39,
+      "posRatio": "27/39",
+      "dz": 0.437,
+      "pPaired": 0.0065
+    },
+    {
+      "metric": "maxCoIgnite",
+      "nSubj": 39,
+      "posRatio": "25/39",
+      "dz": 0.512,
+      "pPaired": 0.003
+    },
+    {
+      "metric": "meanCoIgnite",
+      "nSubj": 39,
+      "posRatio": "27/39",
+      "dz": 0.53,
+      "pPaired": 0.001
+    },
+    {
+      "metric": "burstCount120s",
+      "nSubj": 39,
+      "posRatio": "25/39",
+      "dz": 0.527,
+      "pPaired": 0.0008
+    },
+    {
+      "metric": "maxDwellSec",
+      "nSubj": 39,
+      "posRatio": "25/39",
+      "dz": 0.446,
+      "pPaired": 0.0047
+    },
+    {
+      "metric": "aecLocalPost",
+      "nSubj": 39,
+      "posRatio": "25/39",
+      "dz": 0.187,
+      "pPaired": 0.24688
+    },
+    {
+      "metric": "aecFrontoPost",
+      "nSubj": 39,
+      "posRatio": "19/39",
+      "dz": -0.243,
+      "pPaired": 0.14489
+    },
+    {
+      "metric": "aecLocalPostTheta",
+      "nSubj": 39,
+      "posRatio": "23/39",
+      "dz": 0.072,
+      "pPaired": 0.65413
+    },
+    {
+      "metric": "aecFrontoPostTheta",
+      "nSubj": 39,
+      "posRatio": "15/39",
+      "dz": -0.105,
+      "pPaired": 0.51175
+    }
+  ],
+  "durCorrs": [
+    {
+      "metric": "burstCount120s",
+      "n": 124,
+      "rho": 0.121,
+      "pPerm": 0.18036
+    },
+    {
+      "metric": "maxDwellSec",
+      "n": 124,
+      "rho": 0.106,
+      "pPerm": 0.24595
+    },
+    {
+      "metric": "meanCoIgnite",
+      "n": 124,
+      "rho": 0.086,
+      "pPerm": 0.34473
+    },
+    {
+      "metric": "burstP90_120s",
+      "n": 124,
+      "rho": 0.08,
+      "pPerm": 0.38312
+    }
+  ]
+}

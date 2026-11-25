@@ -1,0 +1,294 @@
+{
+  "generatedAt": "2026-11-25T01:31:38.735Z",
+  "bfdaGrid": [
+    {
+      "trueP": 0.25,
+      "trajectories": 1000,
+      "pStopH1": 0.004,
+      "pStopH0": 0.654,
+      "pInconclusive": 0.342,
+      "asn": 259.62
+    },
+    {
+      "trueP": 0.28,
+      "trajectories": 1000,
+      "pStopH1": 0.085,
+      "pStopH0": 0.202,
+      "pInconclusive": 0.713,
+      "asn": 344.81
+    },
+    {
+      "trueP": 0.3,
+      "trajectories": 1000,
+      "pStopH1": 0.288,
+      "pStopH0": 0.071,
+      "pInconclusive": 0.641,
+      "asn": 334.07
+    },
+    {
+      "trueP": 0.32,
+      "trajectories": 1000,
+      "pStopH1": 0.615,
+      "pStopH0": 0.018,
+      "pInconclusive": 0.367,
+      "asn": 280.21
+    },
+    {
+      "trueP": 0.35,
+      "trajectories": 1000,
+      "pStopH1": 0.942,
+      "pStopH0": 0.001,
+      "pInconclusive": 0.057,
+      "asn": 182.27
+    },
+    {
+      "trueP": 0.38,
+      "trajectories": 1000,
+      "pStopH1": 0.996,
+      "pStopH0": 0.001,
+      "pInconclusive": 0.003,
+      "asn": 119.85
+    },
+    {
+      "trueP": 0.4,
+      "trajectories": 1000,
+      "pStopH1": 0.999,
+      "pStopH0": 0,
+      "pInconclusive": 0.001,
+      "asn": 95.89
+    }
+  ],
+  "bf10At100": [
+    {
+      "k": 15,
+      "hitRate": 0.15,
+      "bf10": 0.0621
+    },
+    {
+      "k": 16,
+      "hitRate": 0.16,
+      "bf10": 0.0677
+    },
+    {
+      "k": 17,
+      "hitRate": 0.17,
+      "bf10": 0.0742
+    },
+    {
+      "k": 18,
+      "hitRate": 0.18,
+      "bf10": 0.0819
+    },
+    {
+      "k": 19,
+      "hitRate": 0.19,
+      "bf10": 0.0911
+    },
+    {
+      "k": 20,
+      "hitRate": 0.2,
+      "bf10": 0.1022
+    },
+    {
+      "k": 21,
+      "hitRate": 0.21,
+      "bf10": 0.1159
+    },
+    {
+      "k": 22,
+      "hitRate": 0.22,
+      "bf10": 0.1328
+    },
+    {
+      "k": 23,
+      "hitRate": 0.23,
+      "bf10": 0.1542
+    },
+    {
+      "k": 24,
+      "hitRate": 0.24,
+      "bf10": 0.1816
+    },
+    {
+      "k": 25,
+      "hitRate": 0.25,
+      "bf10": 0.2174
+    },
+    {
+      "k": 26,
+      "hitRate": 0.26,
+      "bf10": 0.2651
+    },
+    {
+      "k": 27,
+      "hitRate": 0.27,
+      "bf10": 0.3298
+    },
+    {
+      "k": 28,
+      "hitRate": 0.28,
+      "bf10": 0.4198
+    },
+    {
+      "k": 29,
+      "hitRate": 0.29,
+      "bf10": 0.5478
+    },
+    {
+      "k": 30,
+      "hitRate": 0.3,
+      "bf10": 0.7348
+    },
+    {
+      "k": 31,
+      "hitRate": 0.31,
+      "bf10": 1.0152
+    },
+    {
+      "k": 32,
+      "hitRate": 0.32,
+      "bf10": 1.4477
+    },
+    {
+      "k": 33,
+      "hitRate": 0.33,
+      "bf10": 2.1344
+    },
+    {
+      "k": 34,
+      "hitRate": 0.34,
+      "bf10": 3.2583
+    },
+    {
+      "k": 35,
+      "hitRate": 0.35,
+      "bf10": 5.1559
+    },
+    {
+      "k": 36,
+      "hitRate": 0.36,
+      "bf10": 8.4635
+    },
+    {
+      "k": 37,
+      "hitRate": 0.37,
+      "bf10": 14.4187
+    },
+    {
+      "k": 38,
+      "hitRate": 0.38,
+      "bf10": 25.5001
+    },
+    {
+      "k": 39,
+      "hitRate": 0.39,
+      "bf10": 46.8185
+    },
+    {
+      "k": 40,
+      "hitRate": 0.4,
+      "bf10": 89.2327
+    },
+    {
+      "k": 41,
+      "hitRate": 0.41,
+      "bf10": 176.5213
+    },
+    {
+      "k": 42,
+      "hitRate": 0.42,
+      "bf10": 362.3726
+    },
+    {
+      "k": 43,
+      "hitRate": 0.43,
+      "bf10": 771.8108
+    },
+    {
+      "k": 44,
+      "hitRate": 0.44,
+      "bf10": 1705.2041
+    },
+    {
+      "k": 45,
+      "hitRate": 0.45,
+      "bf10": 3907.2413
+    }
+  ],
+  "cmiBiasCurve": [
+    {
+      "N": 60,
+      "meanMleNull": 0.52194,
+      "meanMmNull": 0.37827,
+      "meanBayesNull": 0.16762
+    },
+    {
+      "N": 100,
+      "meanMleNull": 0.32628,
+      "meanMmNull": 0.16094,
+      "meanBayesNull": 0.14879
+    },
+    {
+      "N": 150,
+      "meanMleNull": 0.21314,
+      "meanMmNull": 0.0681,
+      "meanBayesNull": 0.12533
+    },
+    {
+      "N": 200,
+      "meanMleNull": 0.15066,
+      "meanMmNull": 0.0303,
+      "meanBayesNull": 0.10238
+    },
+    {
+      "N": 300,
+      "meanMleNull": 0.09343,
+      "meanMmNull": 0.00785,
+      "meanBayesNull": 0.07385
+    },
+    {
+      "N": 400,
+      "meanMleNull": 0.0701,
+      "meanMmNull": 0.00536,
+      "meanBayesNull": 0.05904
+    }
+  ],
+  "rencontres16": [
+    {
+      "k": 0,
+      "tailP": 1
+    },
+    {
+      "k": 1,
+      "tailP": 0.632121
+    },
+    {
+      "k": 2,
+      "tailP": 0.264241
+    },
+    {
+      "k": 3,
+      "tailP": 0.080301
+    },
+    {
+      "k": 4,
+      "tailP": 0.018988
+    },
+    {
+      "k": 5,
+      "tailP": 0.00366
+    },
+    {
+      "k": 6,
+      "tailP": 0.000594
+    },
+    {
+      "k": 7,
+      "tailP": 0.000083
+    },
+    {
+      "k": 8,
+      "tailP": 0.00001
+    }
+  ]
+}

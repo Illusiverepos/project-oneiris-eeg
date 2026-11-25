@@ -1,0 +1,62 @@
+{
+  "ceVsNe": [
+    {
+      "metric": "branchingRatio",
+      "meanCE": 1.1181,
+      "meanNE": 1.1082,
+      "nSubj": 39,
+      "posRatio": "17/39",
+      "meanDiff": 0.0099,
+      "dz": 0.076,
+      "pPaired": 0.64274
+    },
+    {
+      "metric": "ar1Slowing",
+      "meanCE": 0.1494,
+      "meanNE": 0.1184,
+      "nSubj": 39,
+      "posRatio": "21/39",
+      "meanDiff": 0.031,
+      "dz": 0.208,
+      "pPaired": 0.19998
+    },
+    {
+      "metric": "preRamp",
+      "meanCE": 0.0089,
+      "meanNE": 0.0127,
+      "nSubj": 39,
+      "posRatio": "19/39",
+      "meanDiff": -0.0037,
+      "dz": -0.116,
+      "pPaired": 0.46955
+    },
+    {
+      "metric": "postTail",
+      "meanCE": 0.0126,
+      "meanNE": 0.0037,
+      "nSubj": 39,
+      "posRatio": "22/39",
+      "meanDiff": 0.009,
+      "dz": 0.202,
+      "pPaired": 0.21648
+    }
+  ],
+  "precursorTest": [
+    {
+      "test": "CE Pre-Ignition Precursor (-2s vs trial mean)",
+      "nSubj": 39,
+      "posRatio": "26/39",
+      "meanDiff": 0.0089,
+      "dz": 0.427,
+      "pPaired": 0.0085
+    },
+    {
+      "test": "CE Post-Ignition Persistence (+2s vs trial mean)",
+      "nSubj": 39,
+      "posRatio": "26/39",
+      "meanDiff": 0.0126,
+      "dz": 0.445,
+      "pPaired": 0.0069
+    }
+  ]
+}

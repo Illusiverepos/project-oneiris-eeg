@@ -1,0 +1,44 @@
+{
+  "summary": [
+    {
+      "regime": "1_Connected_Wake",
+      "slopeBB": -0.3571,
+      "dfa": 0.2758,
+      "tonicP10": 0.5199,
+      "burstP90": 0.5588,
+      "meanCoIgnite": 0.0305,
+      "branchingRatio": 0.3925,
+      "crossIrrev": 0.6606
+    },
+    {
+      "regime": "2_NREM_Dreaming_CE",
+      "slopeBB": -1.3473,
+      "dfa": 0.8989,
+      "tonicP10": 0.5695,
+      "burstP90": 0.6829,
+      "meanCoIgnite": 0.5184,
+      "branchingRatio": 1.3152,
+      "crossIrrev": 0.0625
+    },
+    {
+      "regime": "3_NREM_Dreamless_NE",
+      "slopeBB": -0.9407,
+      "dfa": 0.9783,
+      "tonicP10": 0.4671,
+      "burstP90": 0.7109,
+      "meanCoIgnite": 0.3355,
+      "branchingRatio": 1.003,
+      "crossIrrev": 0.0212
+    },
+    {
+      "regime": "4_Propofol_Unconsc",
+      "slopeBB": -0.5811,
+      "dfa": 1.4513,
+      "tonicP10": 0.2293,
+      "burstP90": 0.2674,
+      "meanCoIgnite": 0,
+      "branchingRatio": 0,
+      "crossIrrev": 0.0029
+    }
+  ]
+}

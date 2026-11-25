@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Two-Stage Posterior Cortical Ignitions and a Shared Physical Axis of Human Consciousness</title>
+<style>
+  @page { size: letter; margin: 0.75in; }
+  body { font-family: Georgia, "Times New Roman", serif; color: #0f172a; line-height: 1.55; max-width: 860px; margin: 0 auto; padding: 32px 24px; background: #ffffff; font-size: 10.8pt; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 19pt; line-height: 1.25; color: #0f172a; margin-bottom: 10px; border-bottom: 2px solid #0f172a; padding-bottom: 10px; }
+  h2 { font-family: system-ui, -apple-system, sans-serif; font-size: 13.5pt; color: #1e293b; margin-top: 26px; margin-bottom: 8px; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; page-break-after: avoid; }
+  h3 { font-family: system-ui, -apple-system, sans-serif; font-size: 11.5pt; color: #334155; margin-top: 18px; margin-bottom: 6px; page-break-after: avoid; }
+  p { margin: 8px 0; text-align: justify; }
+  ul { margin: 8px 0 12px 20px; }
+  li { margin: 4px 0; }
+  code { font-family: ui-monospace, Consolas, monospace; font-size: 9.2pt; background: #f1f5f9; padding: 1px 4px; border-radius: 3px; color: #0f172a; }
+  .math { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  .eq { text-align: center; font-style: italic; margin: 12px 0; padding: 8px; background: #f8fafc; border-left: 3px solid #3b82f6; font-family: "Cambria Math", Georgia, serif; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 9.2pt; font-family: system-ui, -apple-system, sans-serif; page-break-inside: avoid; }
+  th { background: #1e293b; color: #f8fafc; padding: 6px 8px; text-align: left; font-weight: 600; }
+  td { border-bottom: 1px solid #e2e8f0; padding: 5px 8px; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  figure.fig { margin: 18px 0; page-break-inside: avoid; }
+  .svg-wrap svg { width: 100%; height: auto; border-radius: 6px; }
+  figcaption { font-family: system-ui, -apple-system, sans-serif; font-size: 9pt; color: #475569; margin-top: 6px; line-height: 1.4; }
+  hr { border: none; border-top: 1px solid #cbd5e1; margin: 18px 0; }
+  @media print { body { padding: 0; max-width: 100%; } }
+</style>
+</head>
+<body>
+<h1>Two-Stage Posterior Cortical Ignitions and a Shared Physical Axis of Human Consciousness Across Seven Independent Anesthesia and Sleep Labs</h1>
+<p><strong>Author:</strong> Austin Rutan</p>
+<p><strong>Affiliation:</strong> ¹Independent Researcher</p>
+<p><strong>Correspondence:</strong> rutanaus000@gmail.com</p>
+<p><strong>Date:</strong> November 24, 2026</p>
+<p><strong>Target Preprint / Journal:</strong> bioRxiv (Neuroscience) · <em>Neuroscience of Consciousness</em> / <em>Imaging Neuroscience</em></p>
+<p><strong>Code &amp; Reproducibility Archive:</strong> All zero-dependency analysis scripts, manifests, and summary JSON outputs are archived under <code>reanalysis/</code> and <code>preprint/</code> (raw human EEG datasets remain publicly hosted at OpenNeuro and the 2025 DREAM Database under their original institutional IRBs).</p>
+<hr/>
+<h2>Abstract</h2>
+<p>A central challenge in the neuroscience of consciousness is separating neural signatures of <strong>phenomenal experience itself</strong> from signatures of <strong>environmental connectedness</strong>, <strong>sleep stage</strong>, and <strong>methodological confounds</strong>. Here, we execute a unified, reference-free neurophysiological audit across <strong>1,291 real human brain recordings from seven independent laboratories and hospitals</strong> spanning propofol sedation (<code>ds005620</code>, <span class="math">n=20</span> paired humans), clinical operating-room surgical anesthesia (<code>ds004541</code>, <span class="math">n=7</span> paired patients), sleep-onset hypnagogia (<code>Oudiette_N1Data</code>, <span class="math">n=246</span>), and four overnight serial-awakening sleep cohorts (<code>LODE</code>, <span class="math">n=166</span>; <code>Zhang &amp; Wamsley 2019</code>, <span class="math">n=308</span>, 58-ch; <code>Noreika_DATA1</code>, <span class="math">n=223</span>; and <code>Siclari et al. 2017</code>, <span class="math">n=287</span> strictly NREM N2, 256-ch), complemented by <code>27,415</code> dream and waking narratives.</p>
+<p>We report five converging discoveries:</p>
+<ul>
+<li><strong>Zero-Shot Cross-Domain Transfer:</strong> A three-parameter neurophysics axis (<span class="math">S_{\text{phys}} = +0.515\,z(\text{slopeBB}_{2\text{--}45\text{ Hz}}) + 0.351\,z(\text{LZc}) - 0.782\,z(\text{DFA}\,\alpha)</span>) trained <em>exclusively</em> on 20 humans under propofol anesthesia (zero sleep data) decoded natural dreaming vs. dreamless sleep zero-shot across <strong>4 / 4 unseen sleep labs</strong> (<code>67 / 90</code> within-subject paired humans, <span class="math">74.4\%</span>, binomial <span class="math">z = 4.64</span>, <span class="math">p = 1.76 \times 10^{-6}</span>), including <strong><code>10 / 10</code></strong> in blind <code>Noreika_DATA1</code> (<span class="math">d_z = +1.313, p = 0.0009</span>) and <strong><code>28 / 39</code></strong> strictly within NREM N2 (<code>Siclari 2017</code> 256-ch CSD, <span class="math">p = 0.0222</span>), where it traced a strictly monotonic consciousness ladder (<code>NE −0.183 &lt; CEWR −0.010 &lt; CE +0.163</code>). Broadband <code>1/f</code> (<code>slopeBB</code>) and <code>−DFA</code> further replicated with <strong><code>7 / 7</code> (<code>100%</code>)</strong> accuracy in clinical operating-room surgical anesthesia (<code>ds004541</code>, exact <span class="math">p = 0.0156</span>), whereas median-binarized <code>LZc</code> inverted (<code>1/7</code>, <span class="math">p = 0.047</span>) under operating-room suppression noise.</li>
+<li><strong>Causal Montage Inversion &amp; Simpson's Paradox:</strong> A controlled 5-montage ablation on 308 identical HD-EEG awakenings proved that switching from online reference to linked-mastoid <code>(A1+A2)/2</code> obliterated a <code>p = 0.0004</code> (<code>AUC = 0.895</code>) REM Theta <code>|ImCoh|</code> effect to <code>AUC = 0.451</code> (<span class="math">p = 0.959</span>), demonstrating that zero-lag-immune connectivity metrics (<code>|ImCoh|</code>, <code>wPLI</code>) are not reference-invariant. Simultaneously, between-subject trait variance inverted pooled NREM N2/N3 CSD <code>slopeBB</code> (<span class="math">d = -0.382</span>) into a <strong>Simpson's Paradox</strong> that reversed strongly positive within-subject (<code>13/16</code>, <span class="math">d_z = +0.650, p = 0.0143</span>).</li>
+<li><strong>Anatomical Specificity (Right TPJ + Occipital) &amp; Dream Richness:</strong> Full 139-electrode 3D reference-free CSD scalp mapping on <code>Siclari 2017</code> pinpointed the NREM N2 consciousness hotspot to <strong>Right Temporo-Parietal Junction (<code>Right TPJ</code>)</strong> (<code>slopeBB</code> <span class="math">p = 0.0012</span>, <code>LZc</code> <span class="math">p = 0.0110</span>, <code>DFA</code> <span class="math">p = 0.0248</span>) and <strong>Occipital Cortex</strong> (<code>3/3</code> significant), whereas Right Prefrontal (<code>0/3</code>) and prefrontal spatio-temporal complexity (<code>front_multiLZc</code>, <span class="math">d_z = +0.007, p = 0.963</span>) remained offline. Independently, across <code>154</code> English dream transcripts in <code>Zhang &amp; Wamsley</code>, <strong>Right TPJ</strong> <code>1/f</code> flattening scaled within-subject with <strong>dream narrative richness (<code>logWordCount</code>)</strong> inside both N2/N3 (<span class="math">\rho = +0.387, p = 0.0018</span>) and N1 (<span class="math">\rho = +0.311, p = 0.0122</span>), while mirror-image <strong>Left TPJ</strong> was null (<span class="math">p = 0.85–0.97</span>).</li>
+<li><strong>Two-Layer Architecture &amp; Two-Stage 6-Second Ignition Waves:</strong> Connected waking (<code>ds005620</code>) is characterized by a <strong>continuous high-complexity tonic floor</strong> (<code>tonicP10</code>, <span class="math">d_z = +0.758, p = 0.0048</span>), <strong>macroscopic thermodynamic irreversibility</strong> (<code>crossIrrevPost</code>, <code>18/20</code>, <span class="math">p = 0.0015</span>), and <strong>bottom-up Posterior→Frontal Alpha flow</strong> (<code>psiAlpha</code>, <code>14/20</code>, <span class="math">p = 0.0034</span>). In contrast, disconnected NREM N2 dreaming lacks both macroscopic irreversibility (<span class="math">p = 0.524</span>) and directed fronto-posterior flow (<span class="math">p = 0.14–0.86</span>), operating instead via <strong>Two-Stage Gate-and-Ignition waves</strong>: periodic 2-second local Delta (<code>1–4 Hz</code>) clearings (<code>37/39</code>, <span class="math">d_z = -1.306, p = 0.0001</span>) followed by local <strong>Beta (<code>16–25 Hz</code>, <span class="math">p = 0.0059</span>) + Gamma (<code>25–45 Hz</code>, <span class="math">p = 0.0227</span>) + <code>burstP90</code> complexity ignitions</strong> (<code>56 / 72</code> paired humans across 3 posterior sleep labs, <span class="math">p = 1.2 \times 10^{-6}</span>; <code>Siclari</code> <span class="math">d_z = +0.612, p = 0.0001</span>; <code>Zhang &amp; Wamsley</code> N2/N3 <span class="math">d_z = +0.860, p = 0.0042</span>) that <strong>spatially percolate</strong> (<code>meanCoIgnite</code> <span class="math">p = 0.0010</span>, <code>burstCount120s</code> <span class="math">p = 0.0008</span>, <code>maxDwellSec</code> <span class="math">p = 0.0047</span>) as coherent ~6-second waves (<code>−2 s</code> precursor <span class="math">p = 0.0085</span>, <code>+2 s</code> reverberation <span class="math">p = 0.0069</span>) persisting <strong>2 full minutes before awakening</strong> (<code>−120..−100 s</code>, <span class="math">p = 0.0288</span>).</li>
+<li><strong>Systematic Elimination of 12 Competing Theories &amp; Biophysical Modeling:</strong> On the same 256-channel NREM N2 cohort, 12 rival candidates—including long-range Gamma <code>wPLI</code>, CSD Theta <code>wPLI</code>, Theta–Gamma PAC (<code>5/5</code> labs), Slow-Oscillation–Beta/Gamma PAC, directed <code>PSI</code>, burst-locked fronto-posterior Beta/Gamma envelope binding (<span class="math">d_z = -0.243</span>), linear effective dimensionality, 80-ms EEG microstate syntax, sleep spindles, and classic posterior Delta alone (<code>AUC = 0.500</code>)—were null or negative. A minimal 12-column Wilson–Cowan E/I cortical sheet model reproduces both the Layer-2 Arrow-of-Time dissociation (<code>10×</code>) and posterior spatial percolation from first principles.</li>
+</ul>
+<hr/>
+<h2>1. Introduction</h2>
+<p>Recent adversarial collaborations such as COGITATE (<em>Nature</em>, 2025) have sharpened the empirical debate between major theories of consciousness—chiefly Integrated Information Theory (IIT), Global Neuronal Workspace Theory (GNWT), and Recurrent Processing Theory (RPT)—by pitting posterior sensory-cortical accounts against prefrontal broadcast and long-range synchrony accounts. Yet waking visual perception tasks inherently confound <strong>phenomenal experience</strong> with <strong>external sensory drive, attention, motor report, and environmental connectedness</strong>.</p>
+<p>Natural dreaming during NREM sleep provides a uniquely decisive natural experiment: subjects are behaviorally unresponsive and sensorily disconnected, yet serial awakenings cleanly separate <strong>conscious experience (<code>CE</code> / <code>DE</code>)</strong>, <strong>conscious experience without content recall (<code>CEWR</code>)</strong>, and <strong>dreamless unconsciousness (<code>NE</code>)</strong> within the <em>exact same</em> sleep stage (NREM N2) and the <em>exact same</em> individual brain (Siclari et al., 2017; Zhang &amp; Wamsley, 2019). Pairing serial-awakening sleep EEG with pharmacological general anesthesia (<code>ds005620</code>, Bajwa et al., 2025; <code>ds004541</code>) allows a direct test of whether <strong>disconnected dreaming</strong> and <strong>connected waking</strong> share a common physical substrate—and which macroscopic signatures (such as long-range phase synchrony, cross-frequency coupling, or thermodynamic time-reversal asymmetry; Lynn et al., 2021; Deco et al., 2022) belong to <em>consciousness itself</em> versus <em>waking sensory connectedness</em>.</p>
+<p>Here, we resolve longstanding cross-lab contradictions in EEG consciousness research by combining (i) a <strong>7-lab, 1,291-recording</strong> standardized pipeline, (ii) a <strong>causal 5-montage ablation</strong> isolating spatial-reference artifacts, (iii) <strong>3D reference-free Hjorth Surface Laplacian (CSD)</strong> topography across 256-channel HD-EEG, (iv) <strong>strict within-subject paired permutation tests</strong> eliminating trait-level Simpson's Paradoxes, and (v) a <strong>minimal biophysical Wilson–Cowan E/I sheet model</strong>.</p>
+<hr/>
+<h2>2. Results</h2>
+<h3>2.1 Zero-Shot Transfer From Propofol General Anesthesia to Four Unseen Sleep Labs (<code>67 / 90</code> Paired Humans) and Lab #7 Surgical Anesthesia</h3>
+<p>We first evaluated an 8-metric neurophysics battery across Lab #1 (<code>ds005620</code> Propofol, <span class="math">n=20</span> paired humans) and identified three reference-robust posterior cortical markers separating Wake from Propofol Unconsciousness: flatter broadband <code>1/f</code> spectral slope (<code>slopeBB</code>, <code>2–45 Hz</code> excluding <code>7–14 Hz</code> alpha: <code>18/20</code>, <span class="math">d_z = +0.857, p = 0.0025</span>), elevated Lempel–Ziv complexity (<code>LZc</code>: <code>14/20</code>, <span class="math">d_z = +0.584, p = 0.0192</span>), and reduced Detrended Fluctuation Analysis autocorrelation (<code>DFA</code> <span class="math">\alpha</span>: <code>18/20</code> negative, <span class="math">d_z = -1.300, p = 0.0002</span>).</p>
+<p>Freezing the exact normalized within-subject discriminant vector trained <strong>exclusively on Propofol general anesthesia (zero sleep recordings, zero dream reports)</strong>:</p>
+<p><div class="eq">S_{\text{phys}} = +0.515\,z(\text{slopeBB}_{2\text{--}45\text{ Hz}}) + 0.351\,z(\text{LZc}) - 0.782\,z(\text{DFA}\,\alpha)</div></p>
+<p>we tested <span class="math">S_{\text{phys}}</span> blind and zero-shot across four completely independent unseen sleep labs (<code>888</code> awakenings, <code>90</code> paired humans):</p>
+<table><thead><tr><th>Unseen Target Lab</th><th>Montage &amp; Stage</th><th><code>DE / NE</code></th><th>Within-Subject Paired</th><th>Within-Subject <span class="math">d_z</span></th><th>Paired <span class="math">p</span></th></tr></thead><tbody><tr><td><strong>Lab #3: <code>LODE</code></strong> (Geneva/Lausanne)</td><td>7-ch bipolar, All Sleep</td><td><code>113 / 53</code></td><td><strong><code>13 / 18</code></strong></td><td><code>+0.526</code></td><td><strong><code>0.0206</code></strong> (1-sided)</td></tr><tr><td><strong>Lab #4: <code>Zhang &amp; Wamsley</code></strong> (Furman)</td><td>58-ch HD-EEG, All Sleep</td><td><code>156 / 56</code></td><td><strong><code>16 / 23</code></strong></td><td><code>+0.518</code></td><td><strong><code>0.0103</code></strong> (1-sided)</td></tr><tr><td><strong>Lab #5: <code>Noreika_DATA1</code></strong> (DREAM Set 16)</td><td>Multi-ch EEG, All Sleep</td><td><code>107 / 116</code></td><td><strong><code>10 / 10</code> (<code>100%</code>)</strong></td><td><strong><code>+1.313</code></strong></td><td><strong><code>0.0009</code></strong> (1-sided)</td></tr><tr><td><strong>Lab #6: <code>Siclari / Tononi 2017</code></strong> (Wisconsin)</td><td><strong>256-ch CSD, Strictly NREM N2</strong></td><td><strong><code>124 / 107</code></strong></td><td><strong><code>28 / 39</code> (<code>71.8%</code>)</strong></td><td><strong><code>+0.377</code></strong></td><td><strong><code>0.0222</code></strong> (2-sided)</td></tr><tr><td><strong>Aggregate (4 Unseen Sleep Labs)</strong></td><td><strong>Zero Sleep Training Data</strong></td><td><strong><code>500 / 332</code></strong></td><td><strong><code>67 / 90</code> (<code>74.4%</code>)</strong></td><td><code>+0.38</code> to <code>+1.31</code></td><td><strong><span class="math">z = 4.64,\; p = 1.76 \times 10^{-6}</span></strong></td></tr></tbody></table>
+<p>Across all 287 strictly NREM N2 awakenings in <code>Siclari 2017</code>, <span class="math">S_{\text{phys}}</span> traced a strictly monotonic <strong>3-level consciousness ladder</strong>: <code>NE (0)</code> (<span class="math">n=107</span>): <code>−0.1833</code> &lt; <code>CEWR (1)</code> (<span class="math">n=56</span>, experience without recall): <code>−0.0101</code> &lt; <code>CE (2)</code> (<span class="math">n=124</span>): <code>+0.1627</code>. Within <code>CE = 2</code> trials, <span class="math">S_{\text{phys}}</span> further correlated with graded <strong>Thought intensity (<code>0–5</code>)</strong> (<span class="math">\rho = +0.190, p = 0.0354</span>; <code>postDFA</code> <span class="math">\rho = -0.187, p = 0.0372</span>).</p>
+<p><strong>Upper Goldilocks Boundary (<code>Oudiette_N1Data</code>, Lab #2, <span class="math">n=246</span>):</strong> Conversely, descending from full eyes-closed wakefulness (<code>hyp = "no"</code>) into N1 sleep-onset hypnagogia (<code>hyp = "yes"</code>) showed the <strong>exact opposite sign</strong> (<code>slopeBB</code> steepened in <code>17/22</code> humans, <span class="math">d_z = -0.567, p = 0.0147</span>; <code>DFA</code> rose, <code>AUC = 0.672, p = 0.0012</code>), demonstrating that conscious dreaming occupies a <strong>bounded intermediate Goldilocks corridor</strong> between hyper-aroused wakefulness and deep slow-wave/anesthetic inhibition.</p>
+<p><strong>Clinical Operating-Room Validation (<code>ds004541</code>, Lab #7, <span class="math">n=7</span> surgical patients):</strong> In blind testing of <code>BASELINE</code> (awake) vs. <code>LOC</code> (surgical unconsciousness) under <code>1–35 Hz</code> clinical bandpass filtering, <strong><code>slopeBB</code> (<code>7/7</code>, <span class="math">d_z = +1.368</span>, exact <span class="math">p = 0.0156</span>)</strong> and <strong><code>DFA</code> (<code>0/7</code> pos / <code>7/7</code> negative, <span class="math">d_z = -1.210</span>, exact <span class="math">p = 0.0156</span>)</strong> achieved <strong><code>100%</code> accuracy</strong>—the only two biomarkers surviving all 7 labs without contradiction. By contrast, median-binarized <code>LZc</code> inverted (<code>1/7</code>, <span class="math">p = 0.0469</span>) due to low-amplitude electrical/OR noise inflating bit compressibility during burst suppression.</p>
+<hr/>
+<h3>2.2 Causal 5-Montage Ablation &amp; Reference-Free CSD Simpson's Paradox</h3>
+<p>Initial cross-lab comparisons revealed an apparent contradiction: fronto-posterior Theta <code>|ImCoh|</code> dropped in 7-ch bipolar <code>LODE</code> REM (<span class="math">p = 0.031</span>) yet surged in 58-ch referential <code>Zhang &amp; Wamsley</code> REM (<code>AUC = 0.895, d = +1.705, p = 0.0004</code>). To test causality, we held the 308 <code>Zhang &amp; Wamsley</code> EDFs, 20-second epochs, filtering, and Welch DSP 100% identical while varying <strong>only</strong> the spatial reference across five operators:</p>
+<table><thead><tr><th>Metric &amp; Stage (<code>Zhang &amp; Wamsley 58-ch</code>)</th><th><code>REF_ROI</code> (Orig)</th><th><code>MASTOID_ROI</code> <code>(A1+A2)/2</code></th><th><code>CAR_ROI</code> (58-ch)</th><th><code>REF_5CH_PAIRS</code></th><th><code>LODE_BIPOLAR</code> (7-ch Synth)</th></tr></thead><tbody><tr><td><strong>REM <code>imCohTheta</code></strong> (<code>DE=17, NE=9</code>)</td><td><strong><code>d=+1.705, AUC=0.895, p=0.0004</code></strong></td><td><strong><code>d=−0.022, AUC=0.451, p=0.959</code></strong></td><td><code>d=+0.664, p=0.119</code></td><td><strong><code>d=+1.129, p=0.0128</code></strong></td><td><code>d=+0.360, p=0.405</code></td></tr><tr><td><strong>REM <code>imCohAlpha</code></strong> (<code>DE=17, NE=9</code>)</td><td><code>d=+0.736, p=0.093</code></td><td><code>d=+0.017, p=0.972</code></td><td><code>d=−0.061, p=0.887</code></td><td><code>d=+0.180, p=0.674</code></td><td><strong><code>d=−0.359, p=0.388</code></strong> <em>(flipped)</em></td></tr><tr><td><strong>N2/N3 <code>wpliTheta</code></strong> (<code>DE=68, NE=37</code>)</td><td><strong><code>d=+0.509, p=0.0144</code></strong></td><td><strong><code>d=+0.074, AUC=0.501, p=0.710</code></strong></td><td><strong><code>d=+0.700, p=0.0008</code></strong></td><td><code>d=+0.391, p=0.053</code></td><td><code>d=+0.185, p=0.373</code></td></tr><tr><td><strong>All-Sleep <code>wpliGamma</code></strong> (<code>DE=156, NE=56</code>)</td><td><code>d=+0.111, p=0.487</code></td><td><code>d=+0.105, p=0.508</code></td><td><code>d=+0.001, p=0.992</code></td><td><code>d=+0.058, p=0.710</code></td><td><code>d=+0.059, p=0.721</code></td></tr><tr><td><strong>All-Sleep <code>LZc</code></strong> (<code>DE=156, NE=56</code>)</td><td><code>d=+0.208, p=0.190</code></td><td><strong><code>d=+0.401, p=0.0130</code></strong></td><td><strong><code>d=+0.338, p=0.0304</code></strong></td><td><strong><code>d=+0.573, p=0.0004</code></strong></td><td><strong><code>d=+0.576, p=0.0006</code></strong></td></tr></tbody></table>
+<p>Re-referencing alone obliterated a <code>p = 0.0004</code> (<code>AUC = 0.895</code>) REM Theta <code>|ImCoh|</code> effect to chance (<code>AUC = 0.451</code>) under linked mastoids <code>(A1+A2)/2</code>, and under mathematically reference-free <strong>Hjorth Surface Laplacian (CSD)</strong>, fronto-posterior Theta <code>|ImCoh|</code> / <code>wPLI</code> vanished completely in both <code>Zhang &amp; Wamsley</code> (<span class="math">p = 0.21–0.81</span>) and <code>Siclari 2017</code> (<span class="math">p = 0.511</span>).</p>
+<p>Crucially, computing reference-free CSD in strictly NREM N2/N3 (<code>Zhang &amp; Wamsley</code>, <span class="math">n=105</span>) exposed a <strong>Simpson's Paradox</strong>: pooled across subjects, <code>csdSlopeBB</code> (<span class="math">d = -0.382</span>) and <code>csdLZc</code> (<span class="math">d = -0.133</span>) appeared <em>negative</em>, yet pairing strictly within-subject flipped both strongly <strong>positive</strong> (<code>csdSlopeBB</code>: <code>13/16</code>, <span class="math">d_z = +0.650, p = 0.0143</span>; <code>csdLZc</code>: <code>12/16</code>, <span class="math">d_z = +0.673, p = 0.0150</span>). Combining both HD-EEG NREM CSD cohorts (<code>Zhang &amp; Wamsley</code> + <code>Siclari 2017</code>) yielded <strong><code>41 / 55</code> paired humans (<code>74.5%</code>, <span class="math">p = 0.00018</span>) on <code>slopeBB</code></strong> and <strong><code>38 / 55</code> (<code>69.1%</code>, <span class="math">p = 0.0032</span>) on <code>LZc</code></strong> strictly inside NREM sleep.</p>
+<hr/>
+<figure class="fig"><div class="svg-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 330" width="1040" height="330" style="background:#0f172a;font-family:system-ui,-apple-system,sans-serif">
+<text x="520" y="28" fill="#f8fafc" font-size="16" font-weight="700" text-anchor="middle">Siclari et al. 2017 (256-ch HD-EEG, Strictly NREM N2, n=39 Paired Humans) — Reference-Free 3D CSD Scalp Topography</text>
+<text x="520" y="47" fill="#94a3b8" font-size="11.5" text-anchor="middle">Red = Higher in NREM N2 Dreaming (CE &gt; NE) · Blue = Lower · White ring = p &lt; 0.05 (within-subject paired) · Nose at Top</text>
+<g transform="translate(135,185)">
+<polygon points="-12,-93 0,-109 12,-93" fill="none" stroke="#64748b" stroke-width="2"/>
+<ellipse cx="-100" cy="0" rx="5" ry="16" fill="none" stroke="#64748b" stroke-width="2"/>
+<ellipse cx="100" cy="0" rx="5" ry="16" fill="none" stroke="#64748b" stroke-width="2"/>
+<circle cx="0" cy="0" r="95" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+<line x1="-95" y1="0" x2="95" y2="0" stroke="#334155" stroke-dasharray="3,3"/>
+<line x1="0" y1="-95" x2="0" y2="95" stroke="#334155" stroke-dasharray="3,3"/>
+<circle cx="52.2" cy="-61.7" r="5.2" fill="rgb(228,98,98)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="38.3" cy="-58.2" r="4.2" fill="rgb(232,132,133)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="27.7" cy="-54.7" r="4.2" fill="rgb(238,172,173)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="18.9" cy="-46.7" r="5.2" fill="rgb(231,118,119)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="12.7" cy="-38.1" r="4.2" fill="rgb(239,185,187)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="6.1" cy="-29.8" r="4.2" fill="rgb(234,147,148)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="-20.2" r="4.2" fill="rgb(238,177,178)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-6.0" cy="-8.3" r="4.2" fill="rgb(225,232,248)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="35.8" cy="-69.3" r="4.2" fill="rgb(237,168,170)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="22.9" cy="-64.4" r="4.2" fill="rgb(247,240,241)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="13.7" cy="-57.2" r="4.2" fill="rgb(238,174,175)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="6.4" cy="-48.8" r="5.2" fill="rgb(229,107,108)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="0.0" cy="-39.4" r="5.2" fill="rgb(230,116,117)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-6.1" cy="-29.8" r="4.2" fill="rgb(235,154,156)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.1" cy="-17.0" r="4.2" fill="rgb(245,227,229)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="17.0" cy="-74.8" r="4.2" fill="rgb(232,128,129)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="7.6" cy="-67.4" r="5.2" fill="rgb(228,101,102)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="0.0" cy="-58.5" r="4.2" fill="rgb(234,146,147)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-6.4" cy="-48.8" r="5.2" fill="rgb(228,102,102)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-12.7" cy="-38.1" r="4.2" fill="rgb(247,244,246)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-18.6" cy="-26.4" r="4.2" fill="rgb(244,216,218)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="-78.2" r="4.2" fill="rgb(243,216,217)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-7.6" cy="-67.4" r="5.2" fill="rgb(228,98,98)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-13.7" cy="-57.2" r="4.2" fill="rgb(232,132,133)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-18.9" cy="-46.7" r="5.2" fill="rgb(226,83,83)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-25.4" cy="-34.9" r="4.2" fill="rgb(235,151,152)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-17.0" cy="-74.8" r="4.2" fill="rgb(243,213,215)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-22.9" cy="-64.4" r="4.2" fill="rgb(235,154,155)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-27.7" cy="-54.7" r="4.2" fill="rgb(233,134,134)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-30.1" cy="-44.2" r="5.2" fill="rgb(226,83,83)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-35.8" cy="-69.3" r="4.2" fill="rgb(238,176,177)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-38.3" cy="-58.2" r="5.2" fill="rgb(228,102,103)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-40.8" cy="-47.3" r="5.2" fill="rgb(223,60,61)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-38.3" cy="-34.6" r="5.2" fill="rgb(224,67,67)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-32.9" cy="-25.0" r="4.2" fill="rgb(240,189,191)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-26.9" cy="-15.6" r="5.2" fill="rgb(227,90,91)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-19.2" cy="-6.4" r="4.2" fill="rgb(234,146,147)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-9.6" cy="3.1" r="4.2" fill="rgb(247,245,247)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-52.2" cy="-61.7" r="4.2" fill="rgb(246,237,239)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-53.3" cy="-49.6" r="4.2" fill="rgb(246,233,235)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-51.3" cy="-35.0" r="4.2" fill="rgb(242,205,207)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-45.3" cy="-22.9" r="4.2" fill="rgb(236,156,157)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-38.6" cy="-12.9" r="4.2" fill="rgb(238,175,177)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-31.0" cy="-3.3" r="4.2" fill="rgb(235,149,150)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-19.6" cy="6.5" r="4.2" fill="rgb(243,212,213)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-65.1" cy="-34.9" r="4.2" fill="rgb(230,236,249)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-59.1" cy="-19.5" r="4.2" fill="rgb(238,172,173)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-50.1" cy="-9.2" r="4.2" fill="rgb(240,191,192)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-41.8" cy="0.7" r="4.2" fill="rgb(246,237,238)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-30.2" cy="10.2" r="4.2" fill="rgb(243,209,211)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-74.1" cy="-13.9" r="4.2" fill="rgb(240,189,190)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-63.5" cy="-2.3" r="4.2" fill="rgb(237,164,166)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-52.2" cy="4.5" r="4.2" fill="rgb(246,236,238)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-41.3" cy="14.1" r="4.2" fill="rgb(242,202,203)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-76.3" cy="6.3" r="4.2" fill="rgb(236,157,158)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-63.4" cy="12.9" r="4.2" fill="rgb(235,151,152)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-52.0" cy="17.8" r="4.2" fill="rgb(235,152,154)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-70.3" cy="26.7" r="4.2" fill="rgb(236,162,163)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-57.1" cy="29.5" r="4.2" fill="rgb(231,124,124)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-43.8" cy="28.6" r="4.2" fill="rgb(237,169,170)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-34.0" cy="23.2" r="4.2" fill="rgb(233,136,137)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-22.2" cy="20.6" r="4.2" fill="rgb(238,175,176)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-11.6" cy="16.3" r="4.2" fill="rgb(237,167,168)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="10.3" r="4.2" fill="rgb(241,198,199)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-59.5" cy="41.5" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-45.7" cy="41.1" r="4.2" fill="rgb(238,177,178)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-33.9" cy="37.2" r="4.2" fill="rgb(241,194,195)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-23.5" cy="31.7" r="4.2" fill="rgb(239,180,182)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.5" cy="27.8" r="4.2" fill="rgb(233,133,134)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="21.0" r="4.2" fill="rgb(238,174,175)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-61.7" cy="54.7" r="5.2" fill="rgb(226,80,81)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-46.4" cy="54.0" r="5.2" fill="rgb(223,62,62)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-34.1" cy="49.6" r="4.2" fill="rgb(239,186,187)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-23.3" cy="43.7" r="4.2" fill="rgb(243,213,214)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.0" cy="37.8" r="4.2" fill="rgb(238,174,175)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="41.9" r="4.2" fill="rgb(241,197,198)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-44.0" cy="67.7" r="5.2" fill="rgb(224,68,68)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-32.0" cy="62.0" r="5.2" fill="rgb(223,63,63)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-21.4" cy="55.2" r="5.2" fill="rgb(221,48,48)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-11.6" cy="48.8" r="4.2" fill="rgb(243,213,215)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-24.3" cy="76.7" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-14.0" cy="68.0" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-7.5" cy="59.9" r="4.2" fill="rgb(242,205,206)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="52.1" r="4.2" fill="rgb(246,231,233)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-7.3" cy="79.8" r="5.2" fill="rgb(230,115,115)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="0.0" cy="69.6" r="5.2" fill="rgb(226,81,82)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="7.5" cy="59.9" r="4.2" fill="rgb(243,209,211)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="11.6" cy="48.8" r="4.2" fill="rgb(234,143,144)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="12.0" cy="37.8" r="5.2" fill="rgb(226,87,87)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="12.5" cy="27.8" r="5.2" fill="rgb(225,79,79)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="11.6" cy="16.3" r="4.2" fill="rgb(234,147,148)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="9.6" cy="3.1" r="4.2" fill="rgb(236,163,164)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="7.3" cy="79.8" r="5.2" fill="rgb(229,105,105)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="14.0" cy="68.0" r="4.2" fill="rgb(231,125,126)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="21.4" cy="55.2" r="5.2" fill="rgb(221,45,45)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="23.3" cy="43.7" r="5.2" fill="rgb(223,58,58)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="23.5" cy="31.7" r="4.2" fill="rgb(232,131,132)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="22.2" cy="20.6" r="5.2" fill="rgb(225,73,73)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="19.6" cy="6.5" r="5.2" fill="rgb(226,82,82)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="24.3" cy="76.7" r="5.2" fill="rgb(222,50,50)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="32.0" cy="62.0" r="5.2" fill="rgb(222,50,50)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="34.1" cy="49.6" r="4.2" fill="rgb(234,147,148)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="33.9" cy="37.2" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="34.0" cy="23.2" r="5.2" fill="rgb(222,53,54)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="30.2" cy="10.2" r="4.2" fill="rgb(246,237,238)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="44.0" cy="67.7" r="5.2" fill="rgb(228,100,100)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="46.4" cy="54.0" r="5.2" fill="rgb(229,104,105)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="45.7" cy="41.1" r="5.2" fill="rgb(226,87,87)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="43.8" cy="28.6" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="41.3" cy="14.1" r="4.2" fill="rgb(245,227,229)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="61.7" cy="54.7" r="5.2" fill="rgb(221,45,45)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="59.5" cy="41.5" r="4.2" fill="rgb(234,146,147)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="57.1" cy="29.5" r="4.2" fill="rgb(237,168,169)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="52.0" cy="17.8" r="5.2" fill="rgb(230,117,118)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="70.3" cy="26.7" r="5.2" fill="rgb(231,120,121)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="63.4" cy="12.9" r="4.2" fill="rgb(240,192,194)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="52.2" cy="4.5" r="4.2" fill="rgb(235,153,154)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="41.8" cy="0.7" r="4.2" fill="rgb(225,232,248)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="31.0" cy="-3.3" r="4.2" fill="rgb(244,220,221)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="19.2" cy="-6.4" r="4.2" fill="rgb(239,181,182)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="6.0" cy="-8.3" r="4.2" fill="rgb(245,225,227)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="76.3" cy="6.3" r="4.2" fill="rgb(238,173,175)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="63.5" cy="-2.3" r="4.2" fill="rgb(231,125,126)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="50.1" cy="-9.2" r="5.2" fill="rgb(230,114,115)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="38.6" cy="-12.9" r="4.2" fill="rgb(247,240,241)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="26.9" cy="-15.6" r="4.2" fill="rgb(244,221,223)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="12.1" cy="-17.0" r="4.2" fill="rgb(246,238,240)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="74.1" cy="-13.9" r="4.2" fill="rgb(237,168,169)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="59.1" cy="-19.5" r="5.2" fill="rgb(221,48,49)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="45.3" cy="-22.9" r="5.2" fill="rgb(228,98,98)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="32.9" cy="-25.0" r="4.2" fill="rgb(238,173,174)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="18.6" cy="-26.4" r="4.2" fill="rgb(237,170,171)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="65.1" cy="-34.9" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="51.3" cy="-35.0" r="5.2" fill="rgb(228,100,100)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="38.3" cy="-34.6" r="4.2" fill="rgb(232,131,132)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="25.4" cy="-34.9" r="4.2" fill="rgb(225,232,248)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="53.3" cy="-49.6" r="4.2" fill="rgb(246,231,233)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="40.8" cy="-47.3" r="4.2" fill="rgb(233,135,136)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="30.1" cy="-44.2" r="5.2" fill="rgb(229,107,107)" stroke="#ffffff" stroke-width="1.5"/>
+<text x="0" y="123" fill="#e2e8f0" font-size="12.5" font-weight="600" text-anchor="middle">1/f E/I Slope (slopeBB dz)</text>
+</g>
+<g transform="translate(390,185)">
+<polygon points="-12,-93 0,-109 12,-93" fill="none" stroke="#64748b" stroke-width="2"/>
+<ellipse cx="-100" cy="0" rx="5" ry="16" fill="none" stroke="#64748b" stroke-width="2"/>
+<ellipse cx="100" cy="0" rx="5" ry="16" fill="none" stroke="#64748b" stroke-width="2"/>
+<circle cx="0" cy="0" r="95" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+<line x1="-95" y1="0" x2="95" y2="0" stroke="#334155" stroke-dasharray="3,3"/>
+<line x1="0" y1="-95" x2="0" y2="95" stroke="#334155" stroke-dasharray="3,3"/>
+<circle cx="52.2" cy="-61.7" r="4.2" fill="rgb(233,140,141)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="38.3" cy="-58.2" r="4.2" fill="rgb(236,161,162)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="27.7" cy="-54.7" r="4.2" fill="rgb(241,199,200)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="18.9" cy="-46.7" r="4.2" fill="rgb(238,174,175)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="12.7" cy="-38.1" r="4.2" fill="rgb(244,216,218)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="6.1" cy="-29.8" r="4.2" fill="rgb(236,158,159)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="-20.2" r="4.2" fill="rgb(232,132,133)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-6.0" cy="-8.3" r="4.2" fill="rgb(246,233,235)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="35.8" cy="-69.3" r="5.2" fill="rgb(229,107,108)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="22.9" cy="-64.4" r="4.2" fill="rgb(233,138,139)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="13.7" cy="-57.2" r="4.2" fill="rgb(234,144,145)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="6.4" cy="-48.8" r="4.2" fill="rgb(241,196,198)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="-39.4" r="4.2" fill="rgb(240,191,193)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-6.1" cy="-29.8" r="4.2" fill="rgb(237,170,171)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.1" cy="-17.0" r="4.2" fill="rgb(242,203,204)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="17.0" cy="-74.8" r="5.2" fill="rgb(228,97,98)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="7.6" cy="-67.4" r="4.2" fill="rgb(236,157,158)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="-58.5" r="4.2" fill="rgb(243,213,215)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-6.4" cy="-48.8" r="4.2" fill="rgb(234,146,147)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.7" cy="-38.1" r="4.2" fill="rgb(244,223,224)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-18.6" cy="-26.4" r="4.2" fill="rgb(240,188,189)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="-78.2" r="4.2" fill="rgb(233,138,139)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-7.6" cy="-67.4" r="4.2" fill="rgb(240,190,191)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-13.7" cy="-57.2" r="4.2" fill="rgb(244,221,222)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-18.9" cy="-46.7" r="4.2" fill="rgb(241,196,197)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-25.4" cy="-34.9" r="4.2" fill="rgb(245,226,228)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-17.0" cy="-74.8" r="4.2" fill="rgb(241,196,197)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-22.9" cy="-64.4" r="4.2" fill="rgb(242,202,203)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-27.7" cy="-54.7" r="4.2" fill="rgb(239,183,184)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-30.1" cy="-44.2" r="4.2" fill="rgb(238,173,174)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-35.8" cy="-69.3" r="4.2" fill="rgb(246,236,238)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-38.3" cy="-58.2" r="4.2" fill="rgb(238,172,173)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-40.8" cy="-47.3" r="4.2" fill="rgb(232,127,128)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-38.3" cy="-34.6" r="4.2" fill="rgb(237,164,166)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-32.9" cy="-25.0" r="4.2" fill="rgb(244,217,219)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-26.9" cy="-15.6" r="5.2" fill="rgb(229,107,108)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-19.2" cy="-6.4" r="4.2" fill="rgb(233,139,140)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-9.6" cy="3.1" r="4.2" fill="rgb(241,195,196)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-52.2" cy="-61.7" r="4.2" fill="rgb(246,235,237)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-53.3" cy="-49.6" r="4.2" fill="rgb(242,205,206)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-51.3" cy="-35.0" r="4.2" fill="rgb(239,181,182)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-45.3" cy="-22.9" r="4.2" fill="rgb(239,180,182)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-38.6" cy="-12.9" r="4.2" fill="rgb(236,163,164)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-31.0" cy="-3.3" r="4.2" fill="rgb(232,128,129)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-19.6" cy="6.5" r="5.2" fill="rgb(226,85,86)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-65.1" cy="-34.9" r="4.2" fill="rgb(241,201,202)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-59.1" cy="-19.5" r="4.2" fill="rgb(240,189,190)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-50.1" cy="-9.2" r="4.2" fill="rgb(242,204,206)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-41.8" cy="0.7" r="4.2" fill="rgb(233,136,137)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-30.2" cy="10.2" r="4.2" fill="rgb(244,223,224)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-74.1" cy="-13.9" r="4.2" fill="rgb(238,174,175)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-63.5" cy="-2.3" r="4.2" fill="rgb(238,176,178)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-52.2" cy="4.5" r="4.2" fill="rgb(237,165,166)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-41.3" cy="14.1" r="4.2" fill="rgb(241,200,201)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-76.3" cy="6.3" r="4.2" fill="rgb(237,168,169)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-63.4" cy="12.9" r="4.2" fill="rgb(241,194,196)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-52.0" cy="17.8" r="4.2" fill="rgb(236,156,157)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-70.3" cy="26.7" r="4.2" fill="rgb(232,127,128)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-57.1" cy="29.5" r="5.2" fill="rgb(222,53,54)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-43.8" cy="28.6" r="4.2" fill="rgb(241,196,198)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-34.0" cy="23.2" r="4.2" fill="rgb(233,134,135)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-22.2" cy="20.6" r="4.2" fill="rgb(239,185,186)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-11.6" cy="16.3" r="4.2" fill="rgb(233,136,137)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="10.3" r="4.2" fill="rgb(239,185,186)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-59.5" cy="41.5" r="4.2" fill="rgb(237,168,170)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-45.7" cy="41.1" r="4.2" fill="rgb(239,180,182)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-33.9" cy="37.2" r="4.2" fill="rgb(234,147,148)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-23.5" cy="31.7" r="4.2" fill="rgb(243,211,213)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.5" cy="27.8" r="4.2" fill="rgb(240,187,188)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="21.0" r="4.2" fill="rgb(239,180,182)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-61.7" cy="54.7" r="4.2" fill="rgb(233,139,140)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-46.4" cy="54.0" r="5.2" fill="rgb(225,77,78)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-34.1" cy="49.6" r="4.2" fill="rgb(238,176,178)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-23.3" cy="43.7" r="4.2" fill="rgb(239,181,183)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.0" cy="37.8" r="4.2" fill="rgb(240,192,194)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="41.9" r="4.2" fill="rgb(234,146,147)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-44.0" cy="67.7" r="5.2" fill="rgb(230,114,115)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-32.0" cy="62.0" r="5.2" fill="rgb(229,107,107)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-21.4" cy="55.2" r="5.2" fill="rgb(228,99,99)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-11.6" cy="48.8" r="4.2" fill="rgb(236,160,161)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-24.3" cy="76.7" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-14.0" cy="68.0" r="5.2" fill="rgb(228,97,97)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-7.5" cy="59.9" r="4.2" fill="rgb(235,152,153)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="52.1" r="4.2" fill="rgb(241,201,202)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-7.3" cy="79.8" r="5.2" fill="rgb(227,91,92)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="0.0" cy="69.6" r="4.2" fill="rgb(233,135,136)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="7.5" cy="59.9" r="4.2" fill="rgb(238,172,173)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="11.6" cy="48.8" r="5.2" fill="rgb(230,111,112)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="12.0" cy="37.8" r="4.2" fill="rgb(235,153,154)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="12.5" cy="27.8" r="5.2" fill="rgb(230,112,113)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="11.6" cy="16.3" r="4.2" fill="rgb(237,169,170)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="9.6" cy="3.1" r="4.2" fill="rgb(236,157,159)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="7.3" cy="79.8" r="4.2" fill="rgb(241,194,196)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="14.0" cy="68.0" r="4.2" fill="rgb(239,181,183)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="21.4" cy="55.2" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="23.3" cy="43.7" r="5.2" fill="rgb(232,128,129)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="23.5" cy="31.7" r="4.2" fill="rgb(231,124,125)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="22.2" cy="20.6" r="4.2" fill="rgb(238,174,175)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="19.6" cy="6.5" r="4.2" fill="rgb(237,166,167)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="24.3" cy="76.7" r="4.2" fill="rgb(233,134,135)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="32.0" cy="62.0" r="5.2" fill="rgb(230,113,114)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="34.1" cy="49.6" r="5.2" fill="rgb(232,126,127)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="33.9" cy="37.2" r="5.2" fill="rgb(225,78,78)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="34.0" cy="23.2" r="5.2" fill="rgb(224,67,67)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="30.2" cy="10.2" r="4.2" fill="rgb(241,199,200)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="44.0" cy="67.7" r="4.2" fill="rgb(242,204,205)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="46.4" cy="54.0" r="4.2" fill="rgb(233,134,135)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="45.7" cy="41.1" r="5.2" fill="rgb(228,96,96)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="43.8" cy="28.6" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="41.3" cy="14.1" r="4.2" fill="rgb(237,168,169)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="61.7" cy="54.7" r="4.2" fill="rgb(239,181,182)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="59.5" cy="41.5" r="4.2" fill="rgb(245,228,229)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="57.1" cy="29.5" r="4.2" fill="rgb(243,210,212)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="52.0" cy="17.8" r="5.2" fill="rgb(222,50,50)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="70.3" cy="26.7" r="4.2" fill="rgb(248,249,251)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="63.4" cy="12.9" r="4.2" fill="rgb(242,206,208)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="52.2" cy="4.5" r="4.2" fill="rgb(242,201,203)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="41.8" cy="0.7" r="4.2" fill="rgb(230,236,249)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="31.0" cy="-3.3" r="4.2" fill="rgb(235,150,151)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="19.2" cy="-6.4" r="4.2" fill="rgb(245,231,233)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="6.0" cy="-8.3" r="4.2" fill="rgb(245,228,229)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="76.3" cy="6.3" r="5.2" fill="rgb(230,111,112)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="63.5" cy="-2.3" r="4.2" fill="rgb(235,153,154)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="50.1" cy="-9.2" r="5.2" fill="rgb(227,89,89)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="38.6" cy="-12.9" r="4.2" fill="rgb(237,166,167)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="26.9" cy="-15.6" r="4.2" fill="rgb(244,222,224)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="12.1" cy="-17.0" r="4.2" fill="rgb(195,208,243)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="74.1" cy="-13.9" r="4.2" fill="rgb(238,172,173)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="59.1" cy="-19.5" r="5.2" fill="rgb(228,95,96)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="45.3" cy="-22.9" r="5.2" fill="rgb(226,81,82)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="32.9" cy="-25.0" r="4.2" fill="rgb(238,176,178)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="18.6" cy="-26.4" r="4.2" fill="rgb(242,203,204)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="65.1" cy="-34.9" r="5.2" fill="rgb(225,73,74)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="51.3" cy="-35.0" r="4.2" fill="rgb(238,175,176)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="38.3" cy="-34.6" r="4.2" fill="rgb(245,230,232)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="25.4" cy="-34.9" r="4.2" fill="rgb(223,231,248)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="53.3" cy="-49.6" r="4.2" fill="rgb(237,167,168)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="40.8" cy="-47.3" r="4.2" fill="rgb(236,161,162)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="30.1" cy="-44.2" r="4.2" fill="rgb(236,158,159)" stroke="#0f172a" stroke-width="0.6"/>
+<text x="0" y="123" fill="#e2e8f0" font-size="12.5" font-weight="600" text-anchor="middle">Signal Complexity (LZc dz)</text>
+</g>
+<g transform="translate(645,185)">
+<polygon points="-12,-93 0,-109 12,-93" fill="none" stroke="#64748b" stroke-width="2"/>
+<ellipse cx="-100" cy="0" rx="5" ry="16" fill="none" stroke="#64748b" stroke-width="2"/>
+<ellipse cx="100" cy="0" rx="5" ry="16" fill="none" stroke="#64748b" stroke-width="2"/>
+<circle cx="0" cy="0" r="95" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+<line x1="-95" y1="0" x2="95" y2="0" stroke="#334155" stroke-dasharray="3,3"/>
+<line x1="0" y1="-95" x2="0" y2="95" stroke="#334155" stroke-dasharray="3,3"/>
+<circle cx="52.2" cy="-61.7" r="5.2" fill="rgb(226,86,87)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="38.3" cy="-58.2" r="4.2" fill="rgb(234,142,143)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="27.7" cy="-54.7" r="4.2" fill="rgb(239,179,180)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="18.9" cy="-46.7" r="4.2" fill="rgb(237,167,168)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="12.7" cy="-38.1" r="4.2" fill="rgb(246,232,234)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="6.1" cy="-29.8" r="4.2" fill="rgb(232,129,130)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="-20.2" r="4.2" fill="rgb(238,171,173)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-6.0" cy="-8.3" r="4.2" fill="rgb(246,248,252)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="35.8" cy="-69.3" r="4.2" fill="rgb(242,207,209)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="22.9" cy="-64.4" r="4.2" fill="rgb(240,186,188)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="13.7" cy="-57.2" r="4.2" fill="rgb(243,210,211)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="6.4" cy="-48.8" r="4.2" fill="rgb(240,186,187)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="-39.4" r="4.2" fill="rgb(243,216,217)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-6.1" cy="-29.8" r="4.2" fill="rgb(240,189,191)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.1" cy="-17.0" r="4.2" fill="rgb(241,198,199)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="17.0" cy="-74.8" r="4.2" fill="rgb(245,229,231)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="7.6" cy="-67.4" r="4.2" fill="rgb(238,174,176)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="-58.5" r="4.2" fill="rgb(239,183,184)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-6.4" cy="-48.8" r="4.2" fill="rgb(242,207,208)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.7" cy="-38.1" r="4.2" fill="rgb(248,249,251)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-18.6" cy="-26.4" r="4.2" fill="rgb(242,206,207)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="-78.2" r="4.2" fill="rgb(237,169,171)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-7.6" cy="-67.4" r="4.2" fill="rgb(243,208,210)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-13.7" cy="-57.2" r="4.2" fill="rgb(238,171,172)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-18.9" cy="-46.7" r="4.2" fill="rgb(245,230,232)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-25.4" cy="-34.9" r="4.2" fill="rgb(245,231,233)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-17.0" cy="-74.8" r="4.2" fill="rgb(238,173,174)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-22.9" cy="-64.4" r="5.2" fill="rgb(232,129,129)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-27.7" cy="-54.7" r="4.2" fill="rgb(237,169,170)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-30.1" cy="-44.2" r="4.2" fill="rgb(235,151,152)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-35.8" cy="-69.3" r="4.2" fill="rgb(240,187,188)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-38.3" cy="-58.2" r="4.2" fill="rgb(236,159,161)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-40.8" cy="-47.3" r="4.2" fill="rgb(232,129,130)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-38.3" cy="-34.6" r="4.2" fill="rgb(241,194,195)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-32.9" cy="-25.0" r="4.2" fill="rgb(243,215,217)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-26.9" cy="-15.6" r="4.2" fill="rgb(236,159,160)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-19.2" cy="-6.4" r="4.2" fill="rgb(241,195,197)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-9.6" cy="3.1" r="4.2" fill="rgb(235,153,154)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-52.2" cy="-61.7" r="4.2" fill="rgb(248,248,250)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-53.3" cy="-49.6" r="4.2" fill="rgb(243,210,212)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-51.3" cy="-35.0" r="4.2" fill="rgb(241,200,201)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-45.3" cy="-22.9" r="4.2" fill="rgb(243,214,215)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-38.6" cy="-12.9" r="4.2" fill="rgb(243,214,215)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-31.0" cy="-3.3" r="4.2" fill="rgb(235,148,149)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-19.6" cy="6.5" r="4.2" fill="rgb(233,138,139)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-65.1" cy="-34.9" r="4.2" fill="rgb(239,243,250)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-59.1" cy="-19.5" r="4.2" fill="rgb(219,227,247)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-50.1" cy="-9.2" r="4.2" fill="rgb(234,239,250)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-41.8" cy="0.7" r="4.2" fill="rgb(239,243,250)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-30.2" cy="10.2" r="4.2" fill="rgb(242,207,209)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-74.1" cy="-13.9" r="4.2" fill="rgb(195,209,243)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-63.5" cy="-2.3" r="4.2" fill="rgb(241,194,196)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-52.2" cy="4.5" r="4.2" fill="rgb(247,240,241)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-41.3" cy="14.1" r="4.2" fill="rgb(244,220,222)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-76.3" cy="6.3" r="4.2" fill="rgb(245,226,228)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-63.4" cy="12.9" r="4.2" fill="rgb(244,222,224)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-52.0" cy="17.8" r="4.2" fill="rgb(246,232,234)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-70.3" cy="26.7" r="4.2" fill="rgb(241,196,198)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-57.1" cy="29.5" r="4.2" fill="rgb(242,203,205)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-43.8" cy="28.6" r="4.2" fill="rgb(241,198,199)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-34.0" cy="23.2" r="4.2" fill="rgb(238,171,173)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-22.2" cy="20.6" r="4.2" fill="rgb(241,196,197)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-11.6" cy="16.3" r="4.2" fill="rgb(235,153,154)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="10.3" r="4.2" fill="rgb(236,162,163)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-59.5" cy="41.5" r="4.2" fill="rgb(237,164,166)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-45.7" cy="41.1" r="4.2" fill="rgb(244,217,219)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-33.9" cy="37.2" r="4.2" fill="rgb(243,213,214)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-23.5" cy="31.7" r="4.2" fill="rgb(246,231,233)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.5" cy="27.8" r="4.2" fill="rgb(236,163,164)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="21.0" r="4.2" fill="rgb(236,157,158)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-61.7" cy="54.7" r="4.2" fill="rgb(244,222,224)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-46.4" cy="54.0" r="4.2" fill="rgb(244,216,218)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-34.1" cy="49.6" r="4.2" fill="rgb(219,227,247)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-23.3" cy="43.7" r="4.2" fill="rgb(246,231,233)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.0" cy="37.8" r="4.2" fill="rgb(243,213,215)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="41.9" r="4.2" fill="rgb(241,198,200)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-44.0" cy="67.7" r="4.2" fill="rgb(247,240,242)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-32.0" cy="62.0" r="4.2" fill="rgb(247,239,241)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-21.4" cy="55.2" r="4.2" fill="rgb(239,181,182)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-11.6" cy="48.8" r="4.2" fill="rgb(236,157,158)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-24.3" cy="76.7" r="4.2" fill="rgb(240,189,191)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-14.0" cy="68.0" r="5.2" fill="rgb(230,110,111)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-7.5" cy="59.9" r="5.2" fill="rgb(231,123,124)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="0.0" cy="52.1" r="4.2" fill="rgb(239,182,183)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-7.3" cy="79.8" r="4.2" fill="rgb(235,150,151)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="69.6" r="4.2" fill="rgb(242,201,203)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="7.5" cy="59.9" r="4.2" fill="rgb(236,159,160)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="11.6" cy="48.8" r="4.2" fill="rgb(233,138,139)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="12.0" cy="37.8" r="4.2" fill="rgb(236,157,158)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="12.5" cy="27.8" r="5.2" fill="rgb(228,96,96)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="11.6" cy="16.3" r="4.2" fill="rgb(233,133,134)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="9.6" cy="3.1" r="4.2" fill="rgb(240,190,192)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="7.3" cy="79.8" r="4.2" fill="rgb(234,145,146)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="14.0" cy="68.0" r="4.2" fill="rgb(238,173,175)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="21.4" cy="55.2" r="4.2" fill="rgb(232,129,130)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="23.3" cy="43.7" r="5.2" fill="rgb(231,121,122)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="23.5" cy="31.7" r="4.2" fill="rgb(235,152,153)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="22.2" cy="20.6" r="5.2" fill="rgb(230,113,114)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="19.6" cy="6.5" r="4.2" fill="rgb(235,151,152)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="24.3" cy="76.7" r="5.2" fill="rgb(232,126,127)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="32.0" cy="62.0" r="4.2" fill="rgb(233,137,138)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="34.1" cy="49.6" r="5.2" fill="rgb(229,103,103)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="33.9" cy="37.2" r="4.2" fill="rgb(239,178,180)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="34.0" cy="23.2" r="4.2" fill="rgb(236,161,162)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="30.2" cy="10.2" r="4.2" fill="rgb(237,166,167)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="44.0" cy="67.7" r="4.2" fill="rgb(232,131,131)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="46.4" cy="54.0" r="4.2" fill="rgb(237,169,171)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="45.7" cy="41.1" r="5.2" fill="rgb(227,92,92)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="43.8" cy="28.6" r="4.2" fill="rgb(232,126,127)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="41.3" cy="14.1" r="5.2" fill="rgb(232,128,129)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="61.7" cy="54.7" r="4.2" fill="rgb(235,151,152)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="59.5" cy="41.5" r="4.2" fill="rgb(237,165,166)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="57.1" cy="29.5" r="4.2" fill="rgb(236,159,160)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="52.0" cy="17.8" r="4.2" fill="rgb(232,130,131)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="70.3" cy="26.7" r="4.2" fill="rgb(243,215,217)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="63.4" cy="12.9" r="4.2" fill="rgb(236,162,163)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="52.2" cy="4.5" r="4.2" fill="rgb(245,229,231)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="41.8" cy="0.7" r="4.2" fill="rgb(247,241,243)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="31.0" cy="-3.3" r="4.2" fill="rgb(242,204,206)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="19.2" cy="-6.4" r="4.2" fill="rgb(238,175,176)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="6.0" cy="-8.3" r="4.2" fill="rgb(247,249,252)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="76.3" cy="6.3" r="4.2" fill="rgb(237,165,166)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="63.5" cy="-2.3" r="5.2" fill="rgb(227,87,88)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="50.1" cy="-9.2" r="4.2" fill="rgb(246,233,235)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="38.6" cy="-12.9" r="4.2" fill="rgb(245,229,231)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="26.9" cy="-15.6" r="4.2" fill="rgb(240,192,193)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="12.1" cy="-17.0" r="4.2" fill="rgb(234,239,250)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="74.1" cy="-13.9" r="4.2" fill="rgb(221,228,247)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="59.1" cy="-19.5" r="4.2" fill="rgb(238,173,174)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="45.3" cy="-22.9" r="4.2" fill="rgb(240,188,189)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="32.9" cy="-25.0" r="4.2" fill="rgb(236,241,250)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="18.6" cy="-26.4" r="4.2" fill="rgb(243,246,251)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="65.1" cy="-34.9" r="4.2" fill="rgb(238,173,174)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="51.3" cy="-35.0" r="4.2" fill="rgb(241,199,201)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="38.3" cy="-34.6" r="4.2" fill="rgb(237,170,171)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="25.4" cy="-34.9" r="4.2" fill="rgb(199,211,244)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="53.3" cy="-49.6" r="4.2" fill="rgb(237,167,168)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="40.8" cy="-47.3" r="4.2" fill="rgb(239,181,183)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="30.1" cy="-44.2" r="4.2" fill="rgb(242,201,203)" stroke="#0f172a" stroke-width="0.6"/>
+<text x="0" y="123" fill="#e2e8f0" font-size="12.5" font-weight="600" text-anchor="middle">Criticality (-DFA dz)</text>
+</g>
+<g transform="translate(900,185)">
+<polygon points="-12,-93 0,-109 12,-93" fill="none" stroke="#64748b" stroke-width="2"/>
+<ellipse cx="-100" cy="0" rx="5" ry="16" fill="none" stroke="#64748b" stroke-width="2"/>
+<ellipse cx="100" cy="0" rx="5" ry="16" fill="none" stroke="#64748b" stroke-width="2"/>
+<circle cx="0" cy="0" r="95" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+<line x1="-95" y1="0" x2="95" y2="0" stroke="#334155" stroke-dasharray="3,3"/>
+<line x1="0" y1="-95" x2="0" y2="95" stroke="#334155" stroke-dasharray="3,3"/>
+<circle cx="52.2" cy="-61.7" r="5.2" fill="rgb(221,43,43)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="38.3" cy="-58.2" r="5.2" fill="rgb(228,100,101)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="27.7" cy="-54.7" r="4.2" fill="rgb(235,154,155)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="18.9" cy="-46.7" r="5.2" fill="rgb(230,115,115)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="12.7" cy="-38.1" r="4.2" fill="rgb(241,200,202)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="6.1" cy="-29.8" r="5.2" fill="rgb(228,98,98)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="0.0" cy="-20.2" r="5.2" fill="rgb(232,131,132)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-6.0" cy="-8.3" r="4.2" fill="rgb(241,245,251)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="35.8" cy="-69.3" r="4.2" fill="rgb(234,144,145)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="22.9" cy="-64.4" r="4.2" fill="rgb(237,170,171)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="13.7" cy="-57.2" r="4.2" fill="rgb(236,158,159)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="6.4" cy="-48.8" r="5.2" fill="rgb(232,129,130)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="0.0" cy="-39.4" r="4.2" fill="rgb(235,152,153)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-6.1" cy="-29.8" r="4.2" fill="rgb(234,144,145)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.1" cy="-17.0" r="4.2" fill="rgb(240,192,193)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="17.0" cy="-74.8" r="4.2" fill="rgb(233,138,139)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="7.6" cy="-67.4" r="5.2" fill="rgb(229,107,108)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="0.0" cy="-58.5" r="4.2" fill="rgb(235,149,150)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-6.4" cy="-48.8" r="5.2" fill="rgb(232,126,127)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-12.7" cy="-38.1" r="4.2" fill="rgb(246,238,240)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-18.6" cy="-26.4" r="4.2" fill="rgb(240,187,189)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="-78.2" r="4.2" fill="rgb(235,149,150)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-7.6" cy="-67.4" r="4.2" fill="rgb(233,138,139)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-13.7" cy="-57.2" r="4.2" fill="rgb(233,138,139)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-18.9" cy="-46.7" r="4.2" fill="rgb(235,148,149)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-25.4" cy="-34.9" r="4.2" fill="rgb(240,187,188)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-17.0" cy="-74.8" r="4.2" fill="rgb(237,167,168)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-22.9" cy="-64.4" r="5.2" fill="rgb(230,113,114)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-27.7" cy="-54.7" r="5.2" fill="rgb(232,126,127)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-30.1" cy="-44.2" r="5.2" fill="rgb(227,89,89)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-35.8" cy="-69.3" r="4.2" fill="rgb(238,172,173)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-38.3" cy="-58.2" r="5.2" fill="rgb(229,103,103)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-40.8" cy="-47.3" r="5.2" fill="rgb(222,51,51)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-38.3" cy="-34.6" r="5.2" fill="rgb(229,107,108)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-32.9" cy="-25.0" r="4.2" fill="rgb(240,191,192)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-26.9" cy="-15.6" r="5.2" fill="rgb(225,78,78)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-19.2" cy="-6.4" r="4.2" fill="rgb(233,136,137)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-9.6" cy="3.1" r="4.2" fill="rgb(237,167,169)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-52.2" cy="-61.7" r="4.2" fill="rgb(246,238,240)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-53.3" cy="-49.6" r="4.2" fill="rgb(242,203,204)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-51.3" cy="-35.0" r="4.2" fill="rgb(238,177,178)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-45.3" cy="-22.9" r="4.2" fill="rgb(237,164,165)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-38.6" cy="-12.9" r="4.2" fill="rgb(237,167,169)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-31.0" cy="-3.3" r="5.2" fill="rgb(228,102,103)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-19.6" cy="6.5" r="5.2" fill="rgb(230,110,111)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-65.1" cy="-34.9" r="4.2" fill="rgb(248,249,251)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-59.1" cy="-19.5" r="4.2" fill="rgb(244,216,218)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-50.1" cy="-9.2" r="4.2" fill="rgb(244,220,222)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-41.8" cy="0.7" r="4.2" fill="rgb(244,216,218)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-30.2" cy="10.2" r="4.2" fill="rgb(241,196,197)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-74.1" cy="-13.9" r="4.2" fill="rgb(246,234,236)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-63.5" cy="-2.3" r="4.2" fill="rgb(235,154,155)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-52.2" cy="4.5" r="4.2" fill="rgb(243,212,213)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-41.3" cy="14.1" r="4.2" fill="rgb(241,194,196)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-76.3" cy="6.3" r="4.2" fill="rgb(237,169,171)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-63.4" cy="12.9" r="4.2" fill="rgb(238,172,173)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-52.0" cy="17.8" r="4.2" fill="rgb(237,168,169)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-70.3" cy="26.7" r="4.2" fill="rgb(233,140,141)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-57.1" cy="29.5" r="5.2" fill="rgb(229,106,106)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-43.8" cy="28.6" r="4.2" fill="rgb(237,164,165)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-34.0" cy="23.2" r="5.2" fill="rgb(230,114,115)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-22.2" cy="20.6" r="4.2" fill="rgb(236,162,163)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-11.6" cy="16.3" r="5.2" fill="rgb(230,116,117)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="0.0" cy="10.3" r="4.2" fill="rgb(235,150,151)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-59.5" cy="41.5" r="5.2" fill="rgb(224,71,71)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-45.7" cy="41.1" r="4.2" fill="rgb(238,176,177)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-33.9" cy="37.2" r="4.2" fill="rgb(237,170,171)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-23.5" cy="31.7" r="4.2" fill="rgb(241,196,197)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.5" cy="27.8" r="5.2" fill="rgb(231,122,123)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="0.0" cy="21.0" r="5.2" fill="rgb(233,135,135)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-61.7" cy="54.7" r="5.2" fill="rgb(231,125,126)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-46.4" cy="54.0" r="5.2" fill="rgb(227,94,95)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-34.1" cy="49.6" r="4.2" fill="rgb(244,218,220)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-23.3" cy="43.7" r="4.2" fill="rgb(241,201,202)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-12.0" cy="37.8" r="4.2" fill="rgb(238,175,177)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="0.0" cy="41.9" r="4.2" fill="rgb(236,162,163)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-44.0" cy="67.7" r="5.2" fill="rgb(231,124,125)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-32.0" cy="62.0" r="5.2" fill="rgb(231,119,119)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-21.4" cy="55.2" r="5.2" fill="rgb(224,71,72)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-11.6" cy="48.8" r="4.2" fill="rgb(234,146,147)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-24.3" cy="76.7" r="5.2" fill="rgb(220,39,39)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-14.0" cy="68.0" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="-7.5" cy="59.9" r="5.2" fill="rgb(230,117,118)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="0.0" cy="52.1" r="4.2" fill="rgb(239,182,183)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="-7.3" cy="79.8" r="5.2" fill="rgb(225,78,78)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="0.0" cy="69.6" r="5.2" fill="rgb(230,110,111)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="7.5" cy="59.9" r="4.2" fill="rgb(235,149,150)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="11.6" cy="48.8" r="5.2" fill="rgb(227,88,89)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="12.0" cy="37.8" r="5.2" fill="rgb(227,88,89)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="12.5" cy="27.8" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="11.6" cy="16.3" r="5.2" fill="rgb(229,104,104)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="9.6" cy="3.1" r="4.2" fill="rgb(234,145,146)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="7.3" cy="79.8" r="5.2" fill="rgb(228,101,102)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="14.0" cy="68.0" r="5.2" fill="rgb(231,124,125)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="21.4" cy="55.2" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="23.3" cy="43.7" r="5.2" fill="rgb(221,45,45)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="23.5" cy="31.7" r="5.2" fill="rgb(228,96,97)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="22.2" cy="20.6" r="5.2" fill="rgb(223,60,60)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="19.6" cy="6.5" r="5.2" fill="rgb(226,86,86)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="24.3" cy="76.7" r="5.2" fill="rgb(221,47,47)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="32.0" cy="62.0" r="5.2" fill="rgb(221,47,48)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="34.1" cy="49.6" r="5.2" fill="rgb(224,71,71)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="33.9" cy="37.2" r="5.2" fill="rgb(222,56,56)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="34.0" cy="23.2" r="5.2" fill="rgb(222,51,51)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="30.2" cy="10.2" r="4.2" fill="rgb(238,173,174)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="44.0" cy="67.7" r="5.2" fill="rgb(227,92,92)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="46.4" cy="54.0" r="5.2" fill="rgb(228,99,99)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="45.7" cy="41.1" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="43.8" cy="28.6" r="5.2" fill="rgb(220,38,38)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="41.3" cy="14.1" r="5.2" fill="rgb(233,135,135)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="61.7" cy="54.7" r="5.2" fill="rgb(225,75,75)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="59.5" cy="41.5" r="4.2" fill="rgb(234,142,143)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="57.1" cy="29.5" r="4.2" fill="rgb(234,142,143)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="52.0" cy="17.8" r="5.2" fill="rgb(222,53,53)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="70.3" cy="26.7" r="4.2" fill="rgb(237,170,171)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="63.4" cy="12.9" r="4.2" fill="rgb(235,154,155)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="52.2" cy="4.5" r="4.2" fill="rgb(239,179,181)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="41.8" cy="0.7" r="4.2" fill="rgb(239,243,250)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="31.0" cy="-3.3" r="4.2" fill="rgb(238,177,178)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="19.2" cy="-6.4" r="4.2" fill="rgb(237,165,166)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="6.0" cy="-8.3" r="4.2" fill="rgb(246,233,235)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="76.3" cy="6.3" r="5.2" fill="rgb(231,119,120)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="63.5" cy="-2.3" r="5.2" fill="rgb(223,59,59)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="50.1" cy="-9.2" r="5.2" fill="rgb(232,132,133)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="38.6" cy="-12.9" r="4.2" fill="rgb(242,207,208)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="26.9" cy="-15.6" r="4.2" fill="rgb(240,191,192)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="12.1" cy="-17.0" r="4.2" fill="rgb(228,235,249)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="74.1" cy="-13.9" r="4.2" fill="rgb(242,208,210)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="59.1" cy="-19.5" r="5.2" fill="rgb(224,65,66)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="45.3" cy="-22.9" r="5.2" fill="rgb(227,92,93)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="32.9" cy="-25.0" r="4.2" fill="rgb(242,202,204)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="18.6" cy="-26.4" r="4.2" fill="rgb(242,204,206)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="65.1" cy="-34.9" r="5.2" fill="rgb(220,42,42)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="51.3" cy="-35.0" r="5.2" fill="rgb(232,128,129)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="38.3" cy="-34.6" r="4.2" fill="rgb(233,139,140)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="25.4" cy="-34.9" r="4.2" fill="rgb(198,211,244)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="53.3" cy="-49.6" r="4.2" fill="rgb(236,162,163)" stroke="#0f172a" stroke-width="0.6"/>
+<circle cx="40.8" cy="-47.3" r="5.2" fill="rgb(232,128,129)" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="30.1" cy="-44.2" r="5.2" fill="rgb(232,128,129)" stroke="#ffffff" stroke-width="1.5"/>
+<text x="0" y="123" fill="#e2e8f0" font-size="12.5" font-weight="600" text-anchor="middle">Propofol Zero-Shot Axis (dz)</text>
+</g>
+<defs><linearGradient id="cb" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#1d4ed8"/><stop offset="50%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#dc2626"/></linearGradient></defs>
+<rect x="380" y="308" width="280" height="10" rx="4" fill="url(#cb)"/>
+<text x="370" y="317" fill="#94a3b8" font-size="10.5" text-anchor="end">−0.55 dz</text>
+<text x="670" y="317" fill="#94a3b8" font-size="10.5" text-anchor="start">+0.55 dz</text>
+</svg></div><figcaption><strong>Figure 1.</strong> Reference-free 3D Hjorth Surface Laplacian (CSD) scalp topography across 139 upper-scalp electrodes in <em>Siclari et al. (2017)</em> (256-ch HD-EEG, strictly NREM N2, <em>n</em> = 39 paired humans). White-ringed electrodes are individually significant (<em>p</em> &lt; 0.05, within-subject paired sign-flip test), pinpointing the NREM N2 dreaming hotspot to Right TPJ and Occipital cortex.</figcaption></figure>
+<h3>2.3 Full 139-Electrode 3D CSD Topography: Right-TPJ + Occipital Hotspot &amp; Hemispheric Dissociation for Dream Richness</h3>
+<p>Mapping all <code>139</code> upper-scalp electrodes (<code>z &gt; 0.5 cm</code>) in exact 3D Hjorth CSD across <code>Siclari 2017</code> (<code>n=39</code> paired humans, strictly NREM N2) revealed massive posterior clustering: <code>47 / 139</code> (<code>33.8%</code>, <strong>6.8× chance</strong>) were individually significant (<span class="math">p &lt; 0.05</span>) on <code>slopeBB</code>, and <strong>12 of the Top 15 electrodes</strong> sat directly over <strong>Occipital Cortex</strong> (<code>#1: Elec 117</code>, <span class="math">d_z = +0.651, p = 0.0010</span>) and <strong>Right Temporo-Parietal Junction</strong> (<code>#2: Elec 163</code>, <code>slopeBB</code> <span class="math">d_z = +0.570, p = 0.0005</span>; <code>LZc</code> <span class="math">d_z = +0.589, p = 0.0010</span>):</p>
+<table><thead><tr><th>3D CSD Cortical ROI (<code>Siclari 2017</code>, <code>n=39</code>)</th><th>Electrodes</th><th><code>slopeBB</code> (<span class="math">d_z,\; p</span>)</th><th><code>LZc</code> (<span class="math">d_z,\; p</span>)</th><th><code>DFA</code> (<span class="math">d_z,\; p</span>)</th><th>Triad</th></tr></thead><tbody><tr><td><strong><code>Right_TPJ</code> (#1 Hotspot)</strong></td><td><code>12</code></td><td><strong><code>+0.492 (p = 0.0012)</code></strong></td><td><strong><code>+0.430 (p = 0.0110)</code></strong></td><td><strong><code>−0.356 (p = 0.0248)</code></strong></td><td><strong>3 / 3</strong></td></tr><tr><td><strong><code>Occipital</code> (#2 Hotspot)</strong></td><td><code>19</code></td><td><strong><code>+0.428 (p = 0.0100)</code></strong></td><td><strong><code>+0.454 (p = 0.0056)</code></strong></td><td><strong><code>−0.342 (p = 0.0380)</code></strong></td><td><strong>3 / 3</strong></td></tr><tr><td><code>Left_TPJ</code></td><td><code>12</code></td><td><code>+0.325 (p = 0.0484)</code></td><td><code>+0.340 (p = 0.0428)</code></td><td><code>−0.158 (p = 0.345)</code></td><td>2 / 3</td></tr><tr><td><code>Parietal_Midline</code></td><td><code>7</code></td><td><code>+0.361 (p = 0.0292)</code></td><td><code>+0.324 (p = 0.0520)</code></td><td><code>−0.302 (p = 0.054)</code></td><td>1 / 3</td></tr><tr><td><code>Left_Frontal</code></td><td><code>12</code></td><td><code>+0.401 (p = 0.0168)</code></td><td><code>+0.206 (p = 0.203)</code></td><td><code>−0.211 (p = 0.201)</code></td><td>1 / 3</td></tr><tr><td><strong><code>Right_Frontal</code> (Control)</strong></td><td><code>12</code></td><td><code>+0.277 (p = 0.093)</code></td><td><code>+0.245 (p = 0.141)</code></td><td><code>−0.165 (p = 0.313)</code></td><td><strong>0 / 3</strong></td></tr></tbody></table>
+<p>Notably, prefrontal delta power (<code>frontLogDelta</code>) actually <strong>increased</strong> during NREM N2 dreaming (<code>26/39</code>, <span class="math">d_z = +0.386, p = 0.0096</span>), while prefrontal multivariate spatio-temporal complexity (<code>front_multiLZc</code>) was <strong>literal zero</strong> (<span class="math">d_z = +0.007, p = 0.963</span>).</p>
+<p><strong>Direct Brain-to-Dream-Report Decoding (<code>Zhang &amp; Wamsley</code> <code>Data/Reports.csv</code>, <code>N = 154</code> Sleep Dreams):</strong> While coarse bag-of-words <code>Spatial vs. Verbal</code> density did not decode (<span class="math">p = 0.27–0.98</span>), <strong>dream narrative richness (<code>log10(1 + wordCount)</code>)</strong> showed a striking <strong>hemispheric double dissociation</strong> on multi-dream subjects (masked by Simpson's Paradox in raw pooled data, <code>rawRho = −0.085</code>):</p>
+<ul>
+<li><strong>All Sleep (<code>n = 150</code>):</strong> <code>Right TPJ slopeBB</code> <strong><span class="math">\rho = +0.360, p = 0.0002</span></strong> (<code>LZc</code> <span class="math">\rho = +0.268, p = 0.0018</span>) vs. mirror <strong><code>Left TPJ</code></strong> (<code>slopeBB</code> <span class="math">p = 0.237</span>, <code>LZc</code> <span class="math">\rho = +0.015, p = 0.860</span> <strong>NULL</strong>).</li>
+<li><strong>Strictly N2/N3 (<code>n = 61</code>):</strong> <code>Right TPJ slopeBB</code> <strong><span class="math">\rho = +0.387, p = 0.0018</span></strong> (<code>LZc</code> <span class="math">\rho = +0.276, p = 0.0308</span>) vs. <strong><code>Left TPJ</code></strong> (<code>slopeBB</code> <span class="math">p = 0.527</span>, <code>LZc</code> <span class="math">\rho = +0.005, p = 0.972</span> <strong>NULL</strong>).</li>
+<li><strong>Strictly N1 (<code>n = 64</code>):</strong> <code>Right TPJ slopeBB</code> <strong><span class="math">\rho = +0.311, p = 0.0122</span></strong> vs. <strong><code>Left TPJ</code></strong> (<code>slopeBB</code> <span class="math">p = 0.843</span>, <code>LZc</code> <span class="math">p = 0.852</span> <strong>NULL</strong>).</li>
+<li><strong>Anatomical Specificity (<code>LODE</code>, <code>N = 104</code> transcripts, 7-ch bipolar <code>Fp1/F7/F8/O1/O2</code>, zero parietal/TPJ leads):</strong> Pure null (<span class="math">\rho = +0.027, p = 0.789</span>).</li>
+</ul>
+<p>This neuroanatomical locus directly converges with our independent phenomenological audit of <code>22,415</code> DreamBank reports vs. <code>3,292</code> waking diaries (<code>tasksource/blog_authorship_corpus</code>), where dreaming amplified spatial rendering by <strong><code>3.58×</code></strong> (<span class="math">d = +0.829</span>, even in congenitally blind dreamers at <code>61.15%</code>) while suppressing frontal symbolic reading (<code>0.54×</code>).</p>
+<hr/>
+<figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 270" width="100%" style="background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,-apple-system,sans-serif">
+  <text x="480" y="26" fill="#0f172a" font-size="14.5" font-weight="700" text-anchor="middle">Figure 2. Two-Layer Non-Equilibrium Architecture &amp; Two-Stage Posterior Gate-and-Ignition Model</text>
+  <!-- Left Box: Connected Waking -->
+  <rect x="24" y="46" width="435" height="202" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.6"/>
+  <text x="241" y="70" fill="#1e3a8a" font-size="13" font-weight="700" text-anchor="middle">CONNECTED WAKING (ds005620 &amp; ds004541)</text>
+  <rect x="42" y="84" width="399" height="66" rx="6" fill="#dbeafe" stroke="#60a5fa"/>
+  <text x="241" y="104" fill="#1e40af" font-size="11.5" font-weight="700" text-anchor="middle">LAYER 2 — Global Broadcast &amp; Environmental Connectedness</text>
+  <text x="241" y="122" fill="#1e3a8a" font-size="10.8" text-anchor="middle">• Macroscopic Arrow of Time (crossIrrev): 18/20, dz=+0.752, p=0.0015</text>
+  <text x="241" y="138" fill="#1e3a8a" font-size="10.8" text-anchor="middle">• Bottom-Up Alpha Flow (psiAlpha Post→Front): 14/20, dz=+0.764, p=0.0034</text>
+  <rect x="42" y="162" width="399" height="72" rx="6" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="241" y="182" fill="#0f172a" font-size="11.5" font-weight="700" text-anchor="middle">LAYER 1 — Continuous High-Complexity Tonic Plateau</text>
+  <text x="241" y="200" fill="#334155" font-size="10.8" text-anchor="middle">• High tonic floor (tonicP10 dz=+0.758, p=0.0048) &amp; low metastability (p=0.041)</text>
+  <text x="241" y="218" fill="#334155" font-size="10.8" text-anchor="middle">• Flat 1/f slopeBB (18/20 &amp; 7/7 OR) + low DFA (18/20 &amp; 7/7 OR)</text>
+
+  <!-- Right Box: Disconnected NREM Dreaming -->
+  <rect x="500" y="46" width="436" height="202" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.6"/>
+  <text x="718" y="70" fill="#7f1d1d" font-size="13" font-weight="700" text-anchor="middle">DISCONNECTED NREM DREAMING (Siclari 256ch &amp; ZW 58ch)</text>
+  <rect x="518" y="84" width="400" height="52" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="4,3"/>
+  <text x="718" y="104" fill="#475569" font-size="11.2" font-weight="700" text-anchor="middle">LAYER 2 OFFLINE — Prefrontal &amp; Global Broadcast Silent</text>
+  <text x="718" y="122" fill="#64748b" font-size="10.5" text-anchor="middle">crossIrrev p=0.52 · PSI p=0.14–0.86 · front_multiLZc dz=+0.007 · aecFrontoPost dz=−0.24</text>
+  <rect x="518" y="146" width="400" height="88" rx="6" fill="#fee2e2" stroke="#ef4444"/>
+  <text x="718" y="166" fill="#991b1b" font-size="11.5" font-weight="700" text-anchor="middle">LAYER 1 — Two-Stage 6-s Right-TPJ / Occipital Ignition Waves</text>
+  <text x="718" y="184" fill="#7f1d1d" font-size="10.6" text-anchor="middle">Stage 1 Gate: 2-s local Delta (1–4 Hz) clearing (37/39, dz=−1.306, p=0.0001)</text>
+  <text x="718" y="201" fill="#7f1d1d" font-size="10.6" text-anchor="middle">Stage 2 Ignition: Local Beta (p=0.0059) + Gamma (p=0.0227) + burstP90 (56/72, p=1.2e−6)</text>
+  <text x="718" y="218" fill="#7f1d1d" font-size="10.6" text-anchor="middle">Percolates across R-TPJ/Occ (p=0.0010) · −2s ramp (p=0.0085) · +2s tail (p=0.0069)</text>
+</svg><figcaption><strong>Figure 2.</strong> Two-Layer Non-Equilibrium Architecture &amp; Two-Stage Posterior Gate-and-Ignition Model dissociating Connected Waking from Disconnected NREM Dreaming across 7 independent labs (1,291 human brain recordings).</figcaption></figure>
+<h3>2.4 Two-Layer Non-Equilibrium Architecture &amp; Two-Stage 6-Second Posterior Ignition Waves</h3>
+<p>Comparing <strong>Connected Waking vs. Propofol (<code>ds005620</code>, <span class="math">n=20</span>)</strong> against <strong>Disconnected NREM N2 Dreaming (<code>Siclari 2017</code>, <span class="math">n=39</span>)</strong> revealed a sharp two-layer physical dissociation:</p>
+<ul>
+<li><strong>Layer 2 (Connected Waking Only — Absent in Disconnected Dreaming):</strong></li>
+<li><strong>Macroscopic Thermodynamic Arrow of Time (<code>crossIrrevPost</code>):</strong> Strong in Wake vs. Propofol (<strong><code>18/20</code>, <span class="math">d_z = +0.752, p = 0.0015</span></strong>; <code>crossIrrevGlobal</code> <code>14/20</code>, <span class="math">p = 0.0096</span>), yet <strong>completely null</strong> in NREM N2 dreaming (<code>21/39</code>, <span class="math">d_z = +0.113, p = 0.524</span>).</li>
+<li><strong>Directed Bottom-Up Alpha Flow (<code>psiAlpha</code>, Posterior → Frontal, Nolte 2008):</strong> Strong in Wake vs. Propofol (<strong><code>14/20</code>, <span class="math">d_z = +0.764, p = 0.0034</span></strong>), yet <strong>null</strong> in NREM N2 dreaming (<span class="math">p = 0.365</span>; all 4 bands <span class="math">p = 0.14–0.86</span>).</li>
+<li><strong>Temporal Regime Reversal (<code>tonicP10</code> Floor vs. <code>burstP90</code> 2-Second Ignition Bursts):</strong></li>
+<li><strong>Connected Waking (<code>ds005620</code>):</strong> Dominated by a <strong>continuous, low-variance high-complexity floor</strong> (<code>tonicP10</code>: <span class="math">d_z = +0.758, p = 0.0048</span> vs. <code>burstP90</code>: <span class="math">d_z = +0.482, p = 0.0474</span>; lower metastability <span class="math">d_z = -0.491, p = 0.0408</span>).</li>
+<li><strong>Disconnected NREM Dreaming:</strong> Dominated by <strong>transient 2-second posterior complexity ignition bursts (<code>burstP90</code>)</strong>, replicating across <strong>3 / 3 posterior-coverage sleep labs (<code>56 / 72</code> paired humans, <span class="math">p = 1.2 \times 10^{-6}</span>)</strong>: <code>Siclari 2017</code> N2 (<strong><code>28/39</code>, <span class="math">d_z = +0.612, p = 0.0001</span></strong> vs. <code>tonicP10</code> <span class="math">p = 0.056</span>), <code>Zhang &amp; Wamsley</code> N2/N3 (<strong><code>13/16</code>, <span class="math">d_z = +0.860, p = 0.0042</span></strong> vs. <code>tonicP10</code> <span class="math">p = 0.056</span>; All-Sleep <strong><code>19/23</code>, <span class="math">d_z = +0.811, p = 0.0009</span></strong>), and <code>Noreika_DATA1</code> (<strong><code>9/10</code>, <span class="math">d_z = +1.141, p = 0.0036</span></strong>).</li>
+<li><strong>Two-Stage Circuit Mechanism (<code>Siclari 2017</code>, <code>n=39</code> paired):</strong></li>
+<li><strong>Stage 1 (The Gate):</strong> Within every NREM N2 dream, the peak 2-second <code>burstP90</code> window vs. trough <code>tonicP10</code> window is opened by a massive <strong>local Delta (<code>1–4 Hz</code>) clearing</strong> (<code>37/39</code> drop, <span class="math">d_z = -1.306, p = 0.0001</span>), <em>not</em> sleep spindles (<span class="math">d_z = -0.294, p = 0.080</span>).</li>
+<li><strong>Stage 2 (The Ignition):</strong> Strictly inside that peak 2-second cleared window, <code>CE</code> and <code>NE</code> have <strong>identical Delta (<code>p = 0.678</code>) and identical Spindles (<code>p = 0.428</code>)</strong>—dreaming occurs specifically when <strong>local Beta (<code>16–25 Hz</code>, <code>26/39</code>, <span class="math">d_z = +0.447, p = 0.0059</span>) + Gamma (<code>25–45 Hz</code>, <code>23/39</code>, <span class="math">d_z = +0.366, p = 0.0227</span>) + <code>burstP90</code> (<span class="math">p = 0.0002</span>)</strong> ignite inside the cleared window.</li>
+<li><strong>Single-Trial Strictly-NREM N2 Decoding (<code>231</code> awakenings):</strong> A within-subject calibrated 20 s <code>P90</code> Gate+Ignition ratio (<code>log P_{16–45} − log P_{1–4}</code>) achieved <strong><code>AUC = 0.606</code></strong>, outperforming classic posterior Delta (<code>AUC = 0.500</code>) by <code>+10.6</code> AUC points.</li>
+</ul>
+<hr/>
+<h3>2.5 Spatial Percolation, 2-Minute Stability &amp; Systematic Elimination of 12 Competing Theories</h3>
+<p>Over the full <strong><code>120 s</code></strong> pre-awakening recordings in <code>Siclari 2017</code> (<code>n=39</code> paired humans):</p>
+<ul>
+<li><strong>2-Minute Steady-State Presence:</strong> Posterior <code>LZc</code> was significantly elevated in <strong>5 / 6 consecutive 20-second bins</strong> back to <strong>2 full minutes before awakening</strong> (<code>−120..−100 s</code>: <span class="math">d_z = +0.369, p = 0.0288</span>; <code>−40..−20 s</code>: <span class="math">d_z = +0.461, p = 0.0044</span>), decisively refuting post-hoc wake-up confabulation.</li>
+<li><strong>Spatial Percolation &amp; 6-Second Coherent Waves:</strong> <code>CE</code> exhibited higher <strong>2-minute ignition count</strong> (<code>burstCount120s</code>, <code>25/39</code>, <span class="math">d_z = +0.527, p = 0.0008</span>), wider <strong>simultaneous co-ignition across the 12 Right-TPJ/Occipital electrodes</strong> (<code>meanCoIgnite</code>, <code>27/39</code>, <span class="math">d_z = +0.530, p = 0.0010</span>; <code>maxCoIgnite</code>, <span class="math">d_z = +0.512, p = 0.0030</span>), and <strong>longer consecutive dwell time</strong> (<code>maxDwellSec</code>, <code>25/39</code>, <span class="math">d_z = +0.446, p = 0.0047</span>). Each ignition formed a coherent <strong>~6-second wave</strong> with a significant <strong><code>−2 s</code> precursor ramp</strong> (<code>26/39</code>, <span class="math">d_z = +0.427, p = 0.0085</span>) and <strong><code>+2 s</code> reverberatory persistence tail</strong> (<code>26/39</code>, <span class="math">d_z = +0.445, p = 0.0069</span>; <code>3.4×</code> larger in <code>CE</code> than <code>NE</code>).</li>
+<li><strong>Systematic Elimination of 12 Competing Mechanisms on the Exact Same 256-Ch Cohort:</strong> (1) Long-range Gamma <code>wPLI</code> (null/negative in <code>5/5</code> montages; REM CSD <span class="math">d = -0.993, p = 0.021</span>), (2) CSD Theta <code>wPLI</code> (<span class="math">p = 0.511</span>), (3) Theta–Gamma PAC (null/negative in <code>5/5</code> labs), (4) <code>0.5–2 Hz</code> Slow-Oscillation → Beta/Gamma PAC (<span class="math">p = 0.397</span>), (5) Directed <code>PSI</code> across all 4 bands (<span class="math">p = 0.14–0.86</span>), (6) Macroscopic <code>crossIrrev</code> (<span class="math">p = 0.524</span>), (7) Burst-locked Fronto-Posterior Beta/Gamma orthogonalized AEC (<span class="math">d_z = -0.243, p = 0.145</span>), (8) Linear spatial Participation Ratio <code>effDim</code> (<span class="math">p = 0.544</span>), (9) 80-ms EEG microstate dwell, transition rate, Markov syntax entropy, and 80-ms Markov Arrow of Time (<span class="math">p = 0.22–0.85</span>), (10) Sleep spindles (<code>11–16 Hz</code>, <span class="math">p = 0.428</span>), (11) Classic posterior Delta alone (<code>AUC = 0.500</code>), and (12) Prefrontal spatio-temporal <code>multiLZc</code> (<span class="math">d_z = +0.007, p = 0.963</span>).</li>
+</ul>
+<hr/>
+<h3>2.6 Minimal Biophysical Wilson–Cowan E/I Sheet Model</h3>
+<p>A 12-column coupled Wilson–Cowan E/I cortical sheet (<span class="math">\tau_E = 10\text{ ms}, \tau_I = 20\text{ ms}</span>) parameterized solely by slow-wave inhibition (<span class="math">I_{\text{SW}}</span>), local recurrent excitatory gain (<span class="math">g_{\text{EE}}</span>), and asymmetric sensory drive reproduced our empirical architecture from first principles: monotonic <code>DFA</code> (<code>Wake 0.276 &lt; NREM CE 0.899 &lt; NREM NE 0.978 &lt; Propofol 1.451</code>), <strong>10× Layer-2 Arrow-of-Time dissociation</strong> (<code>Wake crossIrrev 0.661</code> vs. <code>NREM CE 0.063</code> / <code>Propofol 0.003</code>), and elevated spatial percolation (<code>meanCoIgnite 0.518</code> vs. <code>0.336</code>). Blind empirical testing of its branching-ratio prediction showed both <code>CE</code> (<code>1.118</code>) and <code>NE</code> (<code>1.108</code>) hover near criticality (<span class="math">\sigma \approx 1.11, p = 0.643</span>), demonstrating that NREM dreaming is governed by the frequency, spatial extent, and reverberatory dwell of 6-second ignition waves rather than a shift in global branching exponent.</p>
+<hr/>
+<h2>3. Discussion</h2>
+<p>Our 7-lab investigation resolves three major debates in contemporary consciousness science:</p>
+<ul>
+<li><strong>Reconciling IIT, GNWT, and COGITATE (2025):</strong> Disconnected NREM dreaming strongly favors a <strong>posterior cortical account (Right TPJ + Occipital Hot Zone)</strong> over prefrontal global broadcast: even strictly inside peak 2-second ignition bursts, prefrontal spatio-temporal complexity (<code>p = 0.963</code>) and fronto-posterior Beta/Gamma envelope coupling (<code>dz = −0.243</code>) fail to engage, while prefrontal delta actually increases (<code>p = 0.0096</code>). Conversely, <strong>Layer 2</strong> mechanisms (macroscopic Arrow of Time and bottom-up Posterior→Frontal Alpha flow) are selectively engaged in <strong>connected waking</strong>, suggesting that GNWT-like global broadcast and non-equilibrium currents support <em>environmental connectedness and reportability</em> rather than minimal phenomenal experience.</li>
+<li><strong>Methodological Standards for Consciousness EEG:</strong> Future consciousness EEG studies must (i) avoid relying on referential or linked-mastoid <code>|ImCoh|</code>/<code>wPLI</code> without reference-free CSD controls, (ii) use within-subject paired designs to prevent trait-level Simpson's Paradoxes, and (iii) pair <code>slopeBB</code>/<code>DFA</code> (noise-immune in clinical operating rooms) with <code>burstP90</code> (sensitive to pulsed NREM ignitions).</li>
+<li><strong>Limitations:</strong> Scalp CSD has ~2–3 cm spatial resolution and cannot directly image deep thalamic or hippocampal nuclei; retrospective NREM duration ratings (<code>1–6</code>) were too coarse to resolve fine temporal integration (<code>p = 0.18</code>); and Ketamine/psychedelic HD-EEG cohorts (e.g., Zenodo <code>806176</code>) remain an ideal prospective test of our Layer-1-high / Layer-2-low prediction.</li>
+</ul>
+<hr/>
+<h2>4. Materials and Methods</h2>
+<h3>4.1 Datasets and Ethics Provenance</h3>
+<p>All analyses used publicly archived, de-identified human datasets collected under their original institutional ethics approvals: (1) OpenNeuro <code>ds005620</code> (Bajwa et al., 2025, <em>Sci. Rep.</em>, REK 2015/1520, <span class="math">n=20</span> paired); (2) DREAM Database <code>Oudiette_N1Data</code> (DOI <code>10.6084/m9.figshare.22210684</code>, <span class="math">n=246</span>); (3) DREAM <code>LODE</code> (<code>10.6084/m9.figshare.22147085</code>, <span class="math">n=166</span> clean); (4) DREAM <code>Zhang &amp; Wamsley 2019</code> (<code>10.6084/m9.figshare.22226692</code>, <span class="math">n=308</span>, 58-ch); (5) DREAM <code>Noreika_DATA1</code> (<code>10.6084/m9.figshare.24058740</code>, <span class="math">n=223</span>); (6) DREAM <code>Tononi Serial Awakenings</code> / Siclari et al. 2017 (<code>10.6084/m9.figshare.23306054</code>, <span class="math">n=287</span> strictly N2, 256-ch); (7) OpenNeuro <code>ds004541</code> (<span class="math">n=7</span> complete surgical <code>BASELINE→LOC→ROC</code>, 58-ch); plus <code>DReAMy-lib/DreamBank-dreams-en</code> (<span class="math">n=22,415</span>) and <code>tasksource/blog_authorship_corpus</code> (<span class="math">n=5,000</span>).</p>
+<h3>4.2 Signal Processing, Reference-Free 3D CSD &amp; Statistical Testing</h3>
+<p>All recordings were decimated to 200–250 Hz and high-pass filtered at 1.0 Hz (0.3 Hz for Slow-Oscillation PAC; 1–35 Hz bandpass for operating-room <code>ds004541</code>). On 58-ch and 256-ch HD-EEG, exact local <strong>Hjorth Surface Laplacian (CSD)</strong> was computed as <span class="math">V_i^{\text{CSD}}(t) = V_i(t) - \frac{1}{|N(i)|}\sum_{j \in N(i)} V_j(t)</span> using the 4 nearest 3D neighbors from <code>HydroCelGSN256v10.sfp</code> (or exact 10-10 neighbor rings in <code>Zhang &amp; Wamsley</code>). Broadband <code>1/f</code> (<code>slopeBB</code>) was estimated via OLS on <span class="math">\log_{10}(\text{PSD})</span> vs. <span class="math">\log_{10}(f)</span> across <code>[2–7 Hz] ∪ [14–45 Hz]</code> (512-pt Hann Welch FFT, 50% overlap). All primary inferences used <strong>non-parametric within-subject paired sign-flip permutation tests</strong> (10,000 permutations, or exact <span class="math">2^n</span> enumeration for <span class="math">n=7</span>) and 5,000-run pooled/Spearman permutation tests.</p>
+<hr/>
+<h2>5. References</h2>
+<ul>
+<li>Bajwa, I. J., Nilsen, A. S., Skukies, R., Aamodt, A., Ernst, G., Storm, J. F., &amp; Juel, B. E. (2025). A repeated awakening study exploring the capacity of complexity measures to capture dreaming during propofol sedation. <em>Scientific Reports</em>. OpenNeuro <code>ds005620</code>.</li>
+<li>Cogitate Consortium et al. (2025). Adversarial testing of global neuronal workspace and integrated information theories of consciousness. <em>Nature</em>.</li>
+<li>Colombo, M. A., et al. (2019). The spectral exponent of the resting EEG indexes the presence of consciousness during unresponsiveness induced by propofol, xenon, and ketamine. <em>NeuroImage</em>, 189, 631–644.</li>
+<li>Deco, G., et al. (2022). Inside the arrow of time: Non-equilibrium brain dynamics across states of consciousness. <em>Nature Communications</em>, 13, 3051.</li>
+<li>Hipp, J. F., Hawellek, D. J., Corbetta, M., Siegel, M., &amp; Engel, A. K. (2012). Large-scale cortical correlation structure of spontaneous oscillatory activity. <em>Nature Neuroscience</em>, 15(6), 884–890.</li>
+<li>Lendner, J. D., et al. (2020). An electrophysiological marker of arousal level in humans. <em>eLife</em>, 9, e55092.</li>
+<li>Lynn, C. W., Cornblath, E. J., Papadopoulos, L., Bertolero, M. A., &amp; Bassett, D. S. (2021). Broken detailed balance and entropy production in the human brain. <em>PNAS</em>, 118(47), e2109889118.</li>
+<li>Nolte, G., et al. (2008). Robustly estimating the flow direction of information in complex physical systems. <em>Physical Review Letters</em>, 100(23), 234101.</li>
+<li>Siclari, F., Baird, B., Perogamvros, L., Bernardi, G., LaRocque, J. J., Riedner, B., Boly, M., Postle, B. R., &amp; Tononi, G. (2017). The neural correlates of dreaming. <em>Nature Neuroscience</em>, 20(6), 872–878.</li>
+<li>Zhang, J., &amp; Wamsley, E. J. (2019). EEG predictors of dreaming outside of REM sleep. <em>Psychophysiology</em>, 56(7), e13368.</li>
+</ul>
+</body>
+</html>

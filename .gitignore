@@ -1,0 +1,18 @@
+# Exclude ALL third-party raw/downloaded datasets (re-downloadable via original OpenNeuro & Figshare DOIs)
+reanalysis/data/ds005620/
+reanalysis/data/ds004541/*.bin
+reanalysis/data/dream_db/
+reanalysis/data/dreambank_full.jsonl
+reanalysis/data/waking_control.jsonl
+reanalysis/data/dreambank_3k.jsonl
+reanalysis/data/twc_usa/
+*.edf
+*.eeg
+*.f32
+*.bin
+*.zip
+*.rar
+*.xlsx
+node_modules/
+.DS_Store
+Thumbs.db

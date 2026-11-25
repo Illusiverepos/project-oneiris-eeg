@@ -1,0 +1,104 @@
+{
+  "lab1_Propofol": [
+    {
+      "metric": "ordIrrevPost",
+      "nSubj": 20,
+      "posRatio": "13/20",
+      "dz": 0.379,
+      "pPaired": 0.10739
+    },
+    {
+      "metric": "crossIrrevPost",
+      "nSubj": 20,
+      "posRatio": "18/20",
+      "dz": 0.752,
+      "pPaired": 0.0015
+    },
+    {
+      "metric": "crossIrrevGlobal",
+      "nSubj": 20,
+      "posRatio": "14/20",
+      "dz": 0.572,
+      "pPaired": 0.0096
+    },
+    {
+      "metric": "psiTheta",
+      "nSubj": 20,
+      "posRatio": "10/20",
+      "dz": -0.164,
+      "pPaired": 0.46285
+    },
+    {
+      "metric": "psiAlpha",
+      "nSubj": 20,
+      "posRatio": "14/20",
+      "dz": 0.764,
+      "pPaired": 0.0034
+    },
+    {
+      "metric": "psiBeta",
+      "nSubj": 20,
+      "posRatio": "10/20",
+      "dz": -0.218,
+      "pPaired": 0.35596
+    },
+    {
+      "metric": "psiGamma",
+      "nSubj": 20,
+      "posRatio": "11/20",
+      "dz": -0.005,
+      "pPaired": 0.9801
+    }
+  ],
+  "lab6_Siclari_NREM2": [
+    {
+      "metric": "ordIrrevPost",
+      "nSubj": 39,
+      "posRatio": "24/39",
+      "dz": 0.216,
+      "pPaired": 0.16188
+    },
+    {
+      "metric": "crossIrrevPost",
+      "nSubj": 39,
+      "posRatio": "21/39",
+      "dz": 0.113,
+      "pPaired": 0.52445
+    },
+    {
+      "metric": "crossIrrevGlobal",
+      "nSubj": 39,
+      "posRatio": "15/39",
+      "dz": -0.171,
+      "pPaired": 0.30567
+    },
+    {
+      "metric": "psiTheta",
+      "nSubj": 39,
+      "posRatio": "13/39",
+      "dz": -0.241,
+      "pPaired": 0.14369
+    },
+    {
+      "metric": "psiAlpha",
+      "nSubj": 39,
+      "posRatio": "20/39",
+      "dz": 0.144,
+      "pPaired": 0.36466
+    },
+    {
+      "metric": "psiBeta",
+      "nSubj": 39,
+      "posRatio": "19/39",
+      "dz": -0.028,
+      "pPaired": 0.86301
+    },
+    {
+      "metric": "psiGamma",
+      "nSubj": 39,
+      "posRatio": "24/39",
+      "dz": 0.174,
+      "pPaired": 0.28417
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "propofolWeights": [
+    0.5152310476503014,
+    0.3511426928289795,
+    -0.7818156923533742
+  ],
+  "results": [
+    {
+      "target": "Lab 3: LODE — All Sleep (Zero-Shot)",
+      "nDE": 113,
+      "nNE": 53,
+      "aucZeroShot": 0.594,
+      "pPooled1Sided": 0.04299,
+      "nPairedSubj": 18,
+      "subjCorrect": "13/18",
+      "withinSubjDz": 0.526,
+      "pPaired1Sided": 0.0206
+    },
+    {
+      "target": "Lab 3: LODE — Strictly NREM N2/N3 (Zero-Shot)",
+      "nDE": 65,
+      "nNE": 39,
+      "aucZeroShot": 0.603,
+      "pPooled1Sided": 0.06099,
+      "nPairedSubj": 14,
+      "subjCorrect": "8/14",
+      "withinSubjDz": 0.276,
+      "pPaired1Sided": 0.15988
+    },
+    {
+      "target": "Lab 3: LODE — Strictly REM (Zero-Shot)",
+      "nDE": 43,
+      "nNE": 13,
+      "aucZeroShot": 0.508,
+      "pPooled1Sided": 0.4881,
+      "nPairedSubj": 5,
+      "subjCorrect": "3/5",
+      "withinSubjDz": 0.091,
+      "pPaired1Sided": 0.41456
+    },
+    {
+      "target": "Lab 4: Zhang & Wamsley — All Sleep (Zero-Shot)",
+      "nDE": 156,
+      "nNE": 56,
+      "aucZeroShot": 0.629,
+      "pPooled1Sided": 0.0054,
+      "nPairedSubj": 23,
+      "subjCorrect": "16/23",
+      "withinSubjDz": 0.518,
+      "pPaired1Sided": 0.0103
+    },
+    {
+      "target": "Lab 4: Zhang & Wamsley — Strictly NREM N2/N3 (Zero-Shot)",
+      "nDE": 68,
+      "nNE": 37,
+      "aucZeroShot": 0.509,
+      "pPooled1Sided": 0.57469,
+      "nPairedSubj": 16,
+      "subjCorrect": "11/16",
+      "withinSubjDz": 0.262,
+      "pPaired1Sided": 0.16018
+    },
+    {
+      "target": "Lab 4: Zhang & Wamsley — Strictly REM (Zero-Shot)",
+      "nDE": 17,
+      "nNE": 9,
+      "aucZeroShot": 0.542,
+      "pPooled1Sided": 0.44051,
+      "nPairedSubj": 3,
+      "subjCorrect": "1/3",
+      "withinSubjDz": -0.343,
+      "pPaired1Sided": 0.74763
+    },
+    {
+      "target": "Lab 5: Noreika_DATA1 — All Sleep (Zero-Shot)",
+      "nDE": 107,
+      "nNE": 116,
+      "aucZeroShot": 0.672,
+      "pPooled1Sided": 0.0002,
+      "nPairedSubj": 10,
+      "subjCorrect": "10/10",
+      "withinSubjDz": 1.313,
+      "pPaired1Sided": 0.0009
+    },
+    {
+      "target": "Lab 5: Noreika_DATA1 — Strictly NREM N2/N3 (Zero-Shot)",
+      "nDE": 24,
+      "nNE": 25,
+      "aucZeroShot": 0.552,
+      "pPooled1Sided": 0.14217,
+      "nPairedSubj": 5,
+      "subjCorrect": "2/5",
+      "withinSubjDz": -0.215,
+      "pPaired1Sided": 0.68913
+    },
+    {
+      "target": "Lab 5: Noreika_DATA1 — Strictly REM (Zero-Shot)",
+      "nDE": 37,
+      "nNE": 4,
+      "aucZeroShot": 0.662,
+      "pPooled1Sided": 0.15297,
+      "nPairedSubj": 3,
+      "subjCorrect": "2/3",
+      "withinSubjDz": 0.176,
+      "pPaired1Sided": 0.37296
+    }
+  ]
+}

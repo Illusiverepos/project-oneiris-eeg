@@ -1,0 +1,63 @@
+{
+  "totalReportsAnalyzed": 22315,
+  "individualLongitudinalSeriesCount": 24,
+  "individualLongitudinalSeriesNames": [
+    "jasmine3 (259)",
+    "kenneth (2021)",
+    "dorothea (891)",
+    "merri (315)",
+    "lawrence (206)",
+    "jasmine2 (269)",
+    "melora (211)",
+    "natural_scientist (234)",
+    "b2 (1131)",
+    "arlie (212)",
+    "pegasus (1087)",
+    "b-baseline (250)",
+    "madeline3-offcampus (345)",
+    "peru-f (381)",
+    "emma (1221)",
+    "phil2 (220)",
+    "bay_area_girls_456 (234)",
+    "bea1 (222)",
+    "peru-m (384)",
+    "alta (422)",
+    "madeline4-postgrad (292)",
+    "elizabeth (1677)",
+    "norman (1221)",
+    "b (3089)"
+  ],
+  "withinVsBetweenRareJaccard": {
+    "pairsSampledEach": 15000,
+    "meanWithinPersonJaccard": 0.017574,
+    "meanBetweenPersonJaccard": 0.005998,
+    "withinToBetweenRatio": 2.93,
+    "pctWithinPairsNonZeroOverlap": 51.46,
+    "pctBetweenPairsNonZeroOverlap": 33.27
+  },
+  "longitudinalDrift": [
+    {
+      "lag": "Near (Δ = 1–3 dreams)",
+      "pairs": 4800,
+      "meanRareJaccard": 0.01062
+    },
+    {
+      "lag": "Medium (Δ = 20–50 dreams)",
+      "pairs": 4800,
+      "meanRareJaccard": 0.009765
+    },
+    {
+      "lag": "Distant (Δ = 200–400 dreams)",
+      "pairs": 4800,
+      "meanRareJaccard": 0.008585
+    }
+  ],
+  "lucidAndFalseAwakeningAudit": {
+    "spontaneousLucidCount": 59,
+    "spontaneousLucidPct": 0.26,
+    "falseAwakeningCount": 5,
+    "falseAwakeningPct": 0.022,
+    "distortionRateInLucidPct": 6.78,
+    "distortionRateInNonLucidPct": 8.72
+  }
+}

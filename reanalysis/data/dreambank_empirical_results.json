@@ -1,0 +1,66 @@
+{
+  "source": "Hugging Face DReAMy-lib/DreamBank-dreams-en (real human dream reports)",
+  "totalReports": 3000,
+  "meanWordCount": 188.6,
+  "distinctSeriesCount": 8,
+  "atlas16ObjectPriors": {
+    "counts": {
+      "sextant": 0,
+      "hourglass": 0,
+      "origami crane": 0,
+      "obsidian pyramid": 0,
+      "tuning fork": 0,
+      "astrolabe": 0,
+      "abacus": 0,
+      "metronome": 0,
+      "porcelain mask": 0,
+      "brass compass": 0,
+      "glass prism": 0,
+      "pocket watch": 1,
+      "coral branch": 0,
+      "ivory chess knight": 0,
+      "copper lantern": 1,
+      "quartz geode": 0
+    },
+    "rates": {
+      "sextant": 0,
+      "hourglass": 0,
+      "origami crane": 0,
+      "obsidian pyramid": 0,
+      "tuning fork": 0,
+      "astrolabe": 0,
+      "abacus": 0,
+      "metronome": 0,
+      "porcelain mask": 0,
+      "brass compass": 0,
+      "glass prism": 0,
+      "pocket watch": 0.00033,
+      "coral branch": 0,
+      "ivory chess knight": 0,
+      "copper lantern": 0.00033,
+      "quartz geode": 0
+    },
+    "maxRate": 0.00033,
+    "passesOnePercentGate": true
+  },
+  "prevalencePct": {
+    "spatialEnvironment": 70.63,
+    "socialAgents": 80.37,
+    "reading": 12.3,
+    "writing": 7.9,
+    "arithmetic": 2.07,
+    "clockOrMirror": 4.8,
+    "sceneCutMarkers": 6.1,
+    "distortionMarkers": 7
+  },
+  "studyADensityTradeoff": {
+    "nReportsGe30Words": 2847,
+    "spatialVsSocialPearsonR": 0.0063,
+    "spatialVsSocialSpearmanRho": 0.0354,
+    "spatialVsSocialPPerm": 0.73963,
+    "spatialVsSymbolicPearsonR": -0.0614,
+    "spatialVsSymbolicPPerm": 0.003,
+    "socialVsSymbolicPearsonR": -0.0388,
+    "socialVsSymbolicPPerm": 0.04198
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "source": "FULL Hugging Face DReAMy-lib/DreamBank-dreams-en",
+  "totalReports": 22415,
+  "meanWordCount": 177.8,
+  "distinctSeriesCount": 69,
+  "atlas16ObjectPriors": {
+    "counts": {
+      "sextant": 0,
+      "hourglass": 1,
+      "origami crane": 0,
+      "obsidian pyramid": 0,
+      "tuning fork": 3,
+      "astrolabe": 0,
+      "abacus": 0,
+      "metronome": 1,
+      "porcelain mask": 0,
+      "brass compass": 0,
+      "glass prism": 0,
+      "pocket watch": 1,
+      "coral branch": 0,
+      "ivory chess knight": 0,
+      "copper lantern": 1,
+      "quartz geode": 0
+    },
+    "rates": {
+      "sextant": 0,
+      "hourglass": 0.00004,
+      "origami crane": 0,
+      "obsidian pyramid": 0,
+      "tuning fork": 0.00013,
+      "astrolabe": 0,
+      "abacus": 0,
+      "metronome": 0.00004,
+      "porcelain mask": 0,
+      "brass compass": 0,
+      "glass prism": 0,
+      "pocket watch": 0.00004,
+      "coral branch": 0,
+      "ivory chess knight": 0,
+      "copper lantern": 0.00004,
+      "quartz geode": 0
+    },
+    "maxRate": 0.00013,
+    "passesOnePercentGate": true
+  },
+  "prevalencePct": {
+    "spatialEnvironment": 65.35,
+    "socialAgents": 74.83,
+    "reading": 11.93,
+    "writing": 8.2,
+    "arithmetic": 1.94,
+    "clockOrMirror": 5.27,
+    "sceneCutMarkers": 10.55,
+    "distortionMarkers": 9.77
+  },
+  "genderSummary": {
+    "MALE": {
+      "n": 7986,
+      "spatialPct": 62.36,
+      "socialPct": 71.91,
+      "readingPct": 10.03,
+      "arithPct": 1.48
+    },
+    "FEMALE": {
+      "n": 14429,
+      "spatialPct": 67.01,
+      "socialPct": 76.44,
+      "readingPct": 12.98,
+      "arithPct": 2.19
+    }
+  },
+  "studyAFullCorpus": {
+    "nReportsGe30Words": 20347,
+    "spatialVsSocial": {
+      "r": -0.0304,
+      "pPerm": 0.001
+    },
+    "spatialVsSocialSpearman": -0.004,
+    "spatialVsSymbolic": {
+      "r": -0.0561,
+      "pPerm": 0.001
+    },
+    "socialVsSymbolic": {
+      "r": -0.0171,
+      "pPerm": 0.01998
+    }
+  },
+  "largeSeriesReplicationCount": 28,
+  "seriesWithNegSpatialSymbolic": 21,
+  "seriesWithNegSocialSymbolic": 17,
+  "largeSeriesSample": [
+    {
+      "series": "jasmine3",
+      "nGe30": 259,
+      "rSpatialSocial": -0.015,
+      "rSpatialSymbolic": -0.1001,
+      "rSocialSymbolic": -0.0174
+    },
+    {
+      "series": "kenneth",
+      "nGe30": 1942,
+      "rSpatialSocial": -0.0053,
+      "rSpatialSymbolic": -0.0451,
+      "rSocialSymbolic": -0.0189
+    },
+    {
+      "series": "dorothea",
+      "nGe30": 706,
+      "rSpatialSocial": -0.0768,
+      "rSpatialSymbolic": -0.1163,
+      "rSocialSymbolic": 0.0616
+    },
+    {
+      "series": "norms-m",
+      "nGe30": 491,
+      "rSpatialSocial": -0.0193,
+      "rSpatialSymbolic": -0.0659,
+      "rSocialSymbolic": 0.0118
+    },
+    {
+      "series": "merri",
+      "nGe30": 313,
+      "rSpatialSocial": 0.0618,
+      "rSpatialSymbolic": -0.0077,
+      "rSocialSymbolic": 0.064
+    },
+    {
+      "series": "lawrence",
+      "nGe30": 201,
+      "rSpatialSocial": 0.0367,
+      "rSpatialSymbolic": 0.0423,
+      "rSocialSymbolic": -0.074
+    },
+    {
+      "series": "jasmine2",
+      "nGe30": 269,
+      "rSpatialSocial": -0.002,
+      "rSpatialSymbolic": -0.0588,
+      "rSocialSymbolic": -0.0963
+    },
+    {
+      "series": "blind-f",
+      "nGe30": 231,
+      "rSpatialSocial": -0.0966,
+      "rSpatialSymbolic": 0,
+      "rSocialSymbolic": -0.084
+    },
+    {
+      "series": "miami-lab",
+      "nGe30": 273,
+      "rSpatialSocial": -0.0241,
+      "rSpatialSymbolic": -0.0731,
+      "rSocialSymbolic": -0.0763
+    },
+    {
+      "series": "melora",
+      "nGe30": 209,
+      "rSpatialSocial": 0.0043,
+      "rSpatialSymbolic": -0.1578,
+      "rSocialSymbolic": 0.0147
+    },
+    {
+      "series": "norms-f",
+      "nGe30": 490,
+      "rSpatialSocial": -0.0481,
+      "rSpatialSymbolic": -0.0699,
+      "rSocialSymbolic": -0.0597
+    },
+    {
+      "series": "natural_scientist",
+      "nGe30": 220,
+      "rSpatialSocial": 0.1277,
+      "rSpatialSymbolic": -0.1392,
+      "rSocialSymbolic": -0.1337
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "lab1_Propofol": [
+    {
+      "metric": "post_effDim",
+      "nSubj": 20,
+      "posRatio": "14/20",
+      "dz": 0.312,
+      "pPaired": 0.17648
+    },
+    {
+      "metric": "front_effDim",
+      "nSubj": 20,
+      "posRatio": "8/20",
+      "dz": -0.268,
+      "pPaired": 0.24628
+    },
+    {
+      "metric": "post_multiLZc",
+      "nSubj": 20,
+      "posRatio": "14/20",
+      "dz": 0.66,
+      "pPaired": 0.0097
+    },
+    {
+      "metric": "front_multiLZc",
+      "nSubj": 20,
+      "posRatio": "11/20",
+      "dz": 0.17,
+      "pPaired": 0.46085
+    },
+    {
+      "metric": "post_tonicP10",
+      "nSubj": 20,
+      "posRatio": "14/20",
+      "dz": 0.758,
+      "pPaired": 0.0048
+    },
+    {
+      "metric": "post_burstP90",
+      "nSubj": 20,
+      "posRatio": "14/20",
+      "dz": 0.482,
+      "pPaired": 0.0474
+    },
+    {
+      "metric": "post_metastab",
+      "nSubj": 20,
+      "posRatio": "8/20",
+      "dz": -0.491,
+      "pPaired": 0.0408
+    },
+    {
+      "metric": "post_kurtosis",
+      "nSubj": 20,
+      "posRatio": "9/20",
+      "dz": 0.197,
+      "pPaired": 0.42496
+    }
+  ],
+  "lab6_Siclari_NREM2": [
+    {
+      "metric": "post_effDim",
+      "nSubj": 39,
+      "posRatio": "20/39",
+      "dz": 0.098,
+      "pPaired": 0.54405
+    },
+    {
+      "metric": "front_effDim",
+      "nSubj": 39,
+      "posRatio": "21/39",
+      "dz": -0.061,
+      "pPaired": 0.70483
+    },
+    {
+      "metric": "post_multiLZc",
+      "nSubj": 39,
+      "posRatio": "21/39",
+      "dz": 0.314,
+      "pPaired": 0.05909
+    },
+    {
+      "metric": "front_multiLZc",
+      "nSubj": 39,
+      "posRatio": "21/39",
+      "dz": 0.007,
+      "pPaired": 0.9626
+    },
+    {
+      "metric": "post_tonicP10",
+      "nSubj": 39,
+      "posRatio": "25/39",
+      "dz": 0.316,
+      "pPaired": 0.05639
+    },
+    {
+      "metric": "post_burstP90",
+      "nSubj": 39,
+      "posRatio": "28/39",
+      "dz": 0.612,
+      "pPaired": 0.0001
+    },
+    {
+      "metric": "post_metastab",
+      "nSubj": 39,
+      "posRatio": "22/39",
+      "dz": 0.124,
+      "pPaired": 0.45335
+    },
+    {
+      "metric": "post_kurtosis",
+      "nSubj": 39,
+      "posRatio": "24/39",
+      "dz": 0.303,
+      "pPaired": 0.05819
+    }
+  ]
+}

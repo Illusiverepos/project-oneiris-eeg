@@ -1,0 +1,48 @@
+{
+  "allSleep": [
+    {
+      "metric": "tonicP10",
+      "nSubj": 23,
+      "posRatio": "16/23",
+      "dz": 0.52,
+      "pPaired": 0.0188
+    },
+    {
+      "metric": "medianP50",
+      "nSubj": 23,
+      "posRatio": "18/23",
+      "dz": 0.687,
+      "pPaired": 0.0039
+    },
+    {
+      "metric": "burstP90",
+      "nSubj": 23,
+      "posRatio": "19/23",
+      "dz": 0.811,
+      "pPaired": 0.0009
+    }
+  ],
+  "strictlyNREM23": [
+    {
+      "metric": "tonicP10",
+      "nSubj": 16,
+      "posRatio": "10/16",
+      "dz": 0.519,
+      "pPaired": 0.05609
+    },
+    {
+      "metric": "medianP50",
+      "nSubj": 16,
+      "posRatio": "13/16",
+      "dz": 0.712,
+      "pPaired": 0.0148
+    },
+    {
+      "metric": "burstP90",
+      "nSubj": 16,
+      "posRatio": "13/16",
+      "dz": 0.86,
+      "pPaired": 0.0042
+    }
+  ]
+}

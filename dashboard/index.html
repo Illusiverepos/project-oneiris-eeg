@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project ONEIRIS — Phase IX & v0.6 Interactive Research Dashboard</title>
+<style>
+  :root {
+    --bg: #0b1117; --card: #121b24; --border: #223242;
+    --text: #e6edf3; --muted: #8b9bb0; --accent: #2dd4bf;
+    --warn: #f59e0b; --danger: #f43f5e; --ok: #10b981;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.5;
+  }
+  header {
+    padding: 24px 32px; border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #101a24, #0b1117);
+  }
+  header h1 { margin: 0 0 6px; font-size: 1.5rem; letter-spacing: 0.03em; }
+  header p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600; margin-left: 8px;
+    background: rgba(45, 212, 191, 0.14); color: var(--accent); border: 1px solid rgba(45,212,191,0.3);
+  }
+  main {
+    max-width: 1240px; margin: 0 auto; padding: 24px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(540px, 1fr)); gap: 20px;
+  }
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .card h2 { margin: 0; font-size: 1.1rem; color: var(--accent); }
+  .desc { margin: 0; font-size: 0.85rem; color: var(--muted); }
+  .controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  label { display: flex; flex-direction: column; gap: 4px; font-size: 0.8rem; color: var(--muted); }
+  input[type="range"] { width: 100%; accent-color: var(--accent); }
+  .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .metric {
+    background: #0d151d; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px;
+  }
+  .metric .k { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .metric .v { font-size: 1.25rem; font-weight: 700; margin-top: 2px; }
+  .ok { color: var(--ok); } .warn { color: var(--warn); } .danger { color: var(--danger); }
+  svg { width: 100%; height: 220px; background: #0d151d; border: 1px solid var(--border); border-radius: 8px; }
+  .grid4 {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+  }
+  .cell {
+    background: #0d151d; border: 1px solid var(--border); border-radius: 6px;
+    padding: 8px 6px; text-align: center; cursor: pointer; font-size: 0.76rem; transition: 0.15s;
+  }
+  .cell:hover { border-color: var(--accent); }
+  .cell.hit { background: rgba(16, 185, 129, 0.18); border-color: var(--ok); color: #a7f3d0; }
+  .cell.miss { background: rgba(244, 63, 94, 0.12); border-color: var(--danger); color: #fecdd3; }
+  button {
+    background: var(--accent); color: #052e2b; border: none; border-radius: 6px;
+    padding: 8px 14px; font-weight: 600; cursor: pointer; font-size: 0.84rem;
+  }
+  button.secondary { background: #1e2d3d; color: var(--text); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  th, td { padding: 7px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+  th { color: var(--muted); font-weight: 600; }
+</style>
+</head>
+<body>
+<header>
+  <h1>PROJECT ONEIRIS — Phase IX &amp; v0.6 Research Dashboard <span class="badge">Hypothesis v0.6</span></h1>
+  <p>Interactive verification studio for THRESHOLD Sequential BFDA, CMI Finite-Sample Bias, ATLAS 16-Room Scoring, and LIMINAL Cross-State Manifolds.</p>
+</header>
+
+<main>
+  <!-- 1. BFDA & Exact Binomial Explorer -->
+  <section class="card">
+    <h2>1. THRESHOLD Sequential BFDA &amp; Exact Binomial Gate</h2>
+    <p class="desc">Compares H<sub>0</sub>: p = 0.25 vs. H<sub>1</sub>: Truncated-Beta(4.5, 8.5) on (0.25, 1]. Confirmatory boundaries: BF<sub>10</sub> &ge; 30 (Confirm) or BF<sub>10</sub> &le; 0.10 (Falsify).</p>
+    <div class="controls">
+      <label>Trials (N): <strong id="bfNVal">100</strong>
+        <input id="bfN" type="range" min="40" max="400" step="10" value="100">
+      </label>
+      <label>Observed Hits (k): <strong id="bfKVal">40</strong>
+        <input id="bfK" type="range" min="0" max="100" step="1" value="40">
+      </label>
+    </div>
+    <div class="metrics">
+      <div class="metric"><div class="k">Hit Rate</div><div class="v" id="bfRate">40.0%</div></div>
+      <div class="metric"><div class="k">Exact Binomial p</div><div class="v" id="bfP">0.0687%</div></div>
+      <div class="metric"><div class="k">Bayes Factor BF₁₀</div><div class="v" id="bfVal">89.2</div></div>
+    </div>
+    <div class="desc" id="bfVerdict"></div>
+    <svg id="bfSvg" viewBox="0 0 500 200"></svg>
+  </section>
+
+  <!-- 2. CMI Finite-Sample Bias Explorer -->
+  <section class="card">
+    <h2>2. Conditional Mutual Information I(T; R | S<sub>neuro</sub>) Bias Explorer</h2>
+    <p class="desc">Demonstrates why naive plug-in MLE produces large false-positive bits under H<sub>0</sub> (I = 0) and how Miller–Madow &amp; within-stratum permutation nulls neutralize bias.</p>
+    <div class="controls">
+      <label>Sample Size (N): <strong id="cmiNVal">100</strong>
+        <input id="cmiN" type="range" min="60" max="400" step="20" value="100">
+      </label>
+      <label>Neuro States |S|: <strong id="cmiSVal">4</strong>
+        <input id="cmiS" type="range" min="1" max="6" step="1" value="4">
+      </label>
+      <label>True Hit Rate p₁: <strong id="cmiPVal">0.40</strong>
+        <input id="cmiP" type="range" min="0.25" max="0.55" step="0.01" value="0.40">
+      </label>
+    </div>
+    <div class="metrics">
+      <div class="metric"><div class="k">True Channel MI</div><div class="v ok" id="cmiTrue">0.0781 bits</div></div>
+      <div class="metric"><div class="k">H₀ Plug-In Bias</div><div class="v danger" id="cmiBias">0.2597 bits</div></div>
+      <div class="metric"><div class="k">Signal / Bias Ratio</div><div class="v" id="cmiRatio">0.30×</div></div>
+    </div>
+    <svg id="cmiSvg" viewBox="0 0 500 200"></svg>
+  </section>
+
+  <!-- 3. ATLAS 16-Room Interactive Scorer -->
+  <section class="card">
+    <h2>3. ATLAS 16-Room Undiscovered Building Scorer</h2>
+    <p class="desc">Click rooms below to toggle exact object matches (K<sub>16</sub>) against a uniform 16! CSPRNG bijection. Computes exact Rencontres tail probability P(K<sub>16</sub> &ge; k | H<sub>0</sub>).</p>
+    <div class="grid4" id="atlasGrid"></div>
+    <div style="display:flex; gap:10px;">
+      <button id="atlasSimBtn">Simulate Null Night</button>
+      <button class="secondary" id="atlasResetBtn">Reset Grid</button>
+    </div>
+    <div class="metrics">
+      <div class="metric"><div class="k">Exact Hits (K₁₆)</div><div class="v" id="atlasHits">0 / 16</div></div>
+      <div class="metric"><div class="k">Rencontres p-value</div><div class="v" id="atlasP">1.00000</div></div>
+      <div class="metric"><div class="k">Threshold (p &lt; 0.01)</div><div class="v" id="atlasGate">Null</div></div>
+    </div>
+  </section>
+
+  <!-- 4. LIMINAL Cross-State Neurophysiological Manifold -->
+  <section class="card">
+    <h2>4. LIMINAL Cross-State Biomarker Reference Table</h2>
+    <p class="desc">Observable internal immersion manifold &Phi;<sub>immersion</sub> = (1 &minus; S<sub>sens</sub>)CV across 7 states (Model A predicts high &Phi;<sub>immersion</sub> with I(T; R | S<sub>neuro</sub>) = 0).</p>
+    <table>
+      <thead>
+        <tr><th>State (S<sub>neuro</sub>)</th><th>Evoked &alpha; (8–12 Hz)</th><th>PCI / PCI<sub>st</sub></th><th>LZc</th><th>Post. Hot Zone</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ordinary Waking</td><td>High (Baseline)</td><td>High (&gt;0.31)</td><td>Baseline</td><td>Task-driven</td></tr>
+        <tr><td>Hypnagogia (N1)</td><td>Reduced</td><td>Moderate–High</td><td>Moderate</td><td>Transient V1–HVC</td></tr>
+        <tr><td>REM (Non-Lucid / Lucid)</td><td>Strongly Reduced</td><td>High (&gt;0.31)</td><td>High</td><td>High &gamma;/&delta;</td></tr>
+        <tr><td>NREM N3 (No Dream)</td><td>Reduced</td><td>Low (&lt;0.31)</td><td>Low</td><td>Delta-dominant</td></tr>
+        <tr><td>Sleep Paralysis</td><td>Mixed / Intrusion</td><td>High</td><td>Moderate–High</td><td>REM &theta; + Atonia</td></tr>
+        <tr><td>Propofol / Ketamine</td><td>Reduced</td><td>Low (Prop) / High (Ket)</td><td>Low / High</td><td>Agent-specific</td></tr>
+        <tr><td>IV DMT (5-HT<sub>2A</sub>R)</td><td>Collapsed</td><td>High</td><td>Peak (&gt;Wake)</td><td>Hierarchy Flattened</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<script>
+// Exact math helpers matching toolkit/bfda_sequential.js & atlas_scorer.js
+function logGamma(z) {
+  const p = [0.99999999999980993, 676.5203681218851, -1259.1392167224028, 771.32342877765313,
+    -176.61502916214059, 12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];
+  if (z < 0.5) return Math.log(Math.PI / Math.sin(Math.PI * z)) - logGamma(1 - z);
+  z -= 1; let x = p[0];
+  for (let i = 1; i < p.length; i++) x += p[i] / (z + i);
+  const t = z + 7.5;
+  return 0.5 * Math.log(2 * Math.PI) + (z + 0.5) * Math.log(t) - t + Math.log(x);
+}
+function logFact(n) { return logGamma(n + 1); }
+function binomTail(n, kMin, p) {
+  let s = 0;
+  for (let k = kMin; k <= n; k++) {
+    s += Math.exp(logFact(n) - logFact(k) - logFact(n - k) + k * Math.log(p) + (n - k) * Math.log(1 - p));
+  }
+  return Math.min(1, s);
+}
+function simpson(fn, a, b, n = 200) {
+  const h = (b - a) / n; let s = fn(a) + fn(b);
+  for (let i = 1; i < n; i++) s += (i % 2 === 0 ? 2 : 4) * fn(a + i * h);
+  return (h / 3) * s;
+}
+function computeBF10(k, N, p0 = 0.25, a = 4.5, b = 8.5) {
+  const logB = logGamma(a) + logGamma(b) - logGamma(a + b);
+  const norm = simpson(p => Math.exp((a - 1) * Math.log(p) + (b - 1) * Math.log(1 - p) - logB), p0, 1 - 1e-9, 200);
+  const logL0 = k * Math.log(p0) + (N - k) * Math.log(1 - p0);
+  return simpson(p => {
+    const lp = (a - 1) * Math.log(p) + (b - 1) * Math.log(1 - p) - logB - Math.log(norm);
+    const ll = k * Math.log(p) + (N - k) * Math.log(1 - p) - logL0;
+    return Math.exp(lp + ll);
+  }, p0, 1 - 1e-9, 200);
+}
+function rencontresTail(n, kMin) {
+  let tail = 0;
+  for (let k = kMin; k <= n; k++) {
+    let d = 0;
+    for (let i = 0; i <= n - k; i++) d += (i % 2 === 0 ? 1 : -1) / Math.exp(logFact(i));
+    tail += d / Math.exp(logFact(k));
+  }
+  return Math.min(1, tail);
+}
+
+// 1. BFDA UI
+const bfN = document.getElementById('bfN'), bfK = document.getElementById('bfK');
+function updateBF() {
+  const N = Number(bfN.value);
+  bfK.max = N;
+  if (Number(bfK.value) > N) bfK.value = Math.round(N * 0.4);
+  const k = Number(bfK.value);
+  document.getElementById('bfNVal').textContent = N;
+  document.getElementById('bfKVal').textContent = k;
+  document.getElementById('bfRate').textContent = ((k / N) * 100).toFixed(1) + '%';
+  const p = binomTail(N, k, 0.25);
+  document.getElementById('bfP').textContent = (p * 100).toFixed(4) + '%';
+  const bf = computeBF10(k, N);
+  const bfEl = document.getElementById('bfVal');
+  bfEl.textContent = bf >= 1000 ? bf.toExponential(2) : bf.toFixed(2);
+  bfEl.className = 'v ' + (bf >= 30 ? 'ok' : bf <= 0.10 ? 'danger' : 'warn');
+  document.getElementById('bfVerdict').textContent =
+    bf >= 30 ? 'Gate: Crosses H₁ confirmatory boundary (BF₁₀ ≥ 30) — requires ≥2-lab replication.' :
+    bf <= 0.10 ? 'Gate: Crosses H₀ falsification boundary (BF₁₀ ≤ 0.10) — stops for null.' :
+    'Gate: Inconclusive zone (0.10 < BF₁₀ < 30) — continue sequential sampling.';
+
+  // Draw log10(BF10) curve across k around 0.15N .. 0.48N
+  const svg = document.getElementById('bfSvg');
+  const kLo = Math.max(0, Math.floor(N * 0.15)), kHi = Math.min(N, Math.ceil(N * 0.48));
+  const pts = [];
+  for (let ki = kLo; ki <= kHi; ki++) {
+    const val = Math.max(-2.5, Math.min(4.0, Math.log10(Math.max(1e-6, computeBF10(ki, N)))));
+    const x = 40 + ((ki - kLo) / (kHi - kLo)) * 440;
+    const y = 175 - ((val + 2.5) / 6.5) * 155;
+    pts.push(`${x.toFixed(1)},${y.toFixed(1)}`);
+  }
+  const yH1 = 175 - ((Math.log10(30) + 2.5) / 6.5) * 155;
+  const yH0 = 175 - ((Math.log10(0.1) + 2.5) / 6.5) * 155;
+  const curX = 40 + ((Math.min(kHi, Math.max(kLo, k)) - kLo) / (kHi - kLo)) * 440;
+  svg.innerHTML = `
+    <line x1="40" y1="${yH1}" x2="480" y2="${yH1}" stroke="#10b981" stroke-dasharray="4 4" stroke-width="1"/>
+    <text x="45" y="${yH1 - 4}" fill="#10b981" font-size="10">BF₁₀ = 30 (Confirm)</text>
+    <line x1="40" y1="${yH0}" x2="480" y2="${yH0}" stroke="#f43f5e" stroke-dasharray="4 4" stroke-width="1"/>
+    <text x="45" y="${yH0 + 12}" fill="#f43f5e" font-size="10">BF₁₀ = 0.10 (Falsify)</text>
+    <polyline fill="none" stroke="#2dd4bf" stroke-width="2.2" points="${pts.join(' ')}"/>
+    <line x1="${curX}" y1="15" x2="${curX}" y2="180" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="40" y="194" fill="#8b9bb0" font-size="10">k=${kLo}</text>
+    <text x="445" y="194" fill="#8b9bb0" font-size="10">k=${kHi}</text>
+  `;
+}
+bfN.oninput = updateBF; bfK.oninput = updateBF; updateBF();
+
+// 2. CMI Bias UI
+const cmiN = document.getElementById('cmiN'), cmiS = document.getElementById('cmiS'), cmiP = document.getElementById('cmiP');
+function updateCMI() {
+  const N = Number(cmiN.value), S = Number(cmiS.value), p1 = Number(cmiP.value);
+  document.getElementById('cmiNVal').textContent = N;
+  document.getElementById('cmiSVal').textContent = S;
+  document.getElementById('cmiPVal').textContent = p1.toFixed(2);
+  const off = (1 - p1) / 3;
+  const trueMI = 2 + p1 * Math.log2(p1) + 3 * off * Math.log2(off);
+  const mmBias = (S * 3 * 3) / (2 * N * Math.LN2);
+  document.getElementById('cmiTrue').textContent = trueMI.toFixed(4) + ' bits';
+  document.getElementById('cmiBias').textContent = mmBias.toFixed(4) + ' bits';
+  const ratio = trueMI / mmBias;
+  const rEl = document.getElementById('cmiRatio');
+  rEl.textContent = ratio.toFixed(2) + '×';
+  rEl.className = 'v ' + (ratio >= 1.5 ? 'ok' : ratio >= 0.8 ? 'warn' : 'danger');
+
+  const svg = document.getElementById('cmiSvg');
+  const maxB = Math.max(0.4, mmBias * 1.2, trueMI * 1.2);
+  const hTrue = (trueMI / maxB) * 140, hBias = (mmBias / maxB) * 140;
+  svg.innerHTML = `
+    <rect x="110" y="${170 - hTrue}" width="90" height="${hTrue}" fill="#10b981" rx="4"/>
+    <text x="115" y="${162 - hTrue}" fill="#e6edf3" font-size="11">${trueMI.toFixed(4)} b</text>
+    <text x="112" y="188" fill="#8b9bb0" font-size="11">True Signal MI</text>
+    <rect x="280" y="${170 - hBias}" width="90" height="${hBias}" fill="#f43f5e" rx="4"/>
+    <text x="285" y="${162 - hBias}" fill="#e6edf3" font-size="11">${mmBias.toFixed(4)} b</text>
+    <text x="278" y="188" fill="#8b9bb0" font-size="11">H₀ Plug-In Bias</text>
+  `;
+}
+cmiN.oninput = updateCMI; cmiS.oninput = updateCMI; cmiP.oninput = updateCMI; updateCMI();
+
+// 3. ATLAS 16-Room Grid
+const objects16 = [
+  'Sextant', 'Hourglass', 'Origami Crane', 'Obsidian Pyramid',
+  'Tuning Fork', 'Astrolabe', 'Abacus', 'Metronome',
+  'Porcelain Mask', 'Brass Compass', 'Glass Prism', 'Pocket Watch',
+  'Coral Branch', 'Chess Knight', 'Copper Lantern', 'Quartz Geode'
+];
+const hitsState = new Array(16).fill(false);
+const grid = document.getElementById('atlasGrid');
+function renderAtlas() {
+  grid.innerHTML = '';
+  hitsState.forEach((isHit, i) => {
+    const div = document.createElement('div');
+    div.className = 'cell ' + (isHit ? 'hit' : '');
+    div.innerHTML = `<strong>R${i + 1}</strong><br>${objects16[i]}`;
+    div.onclick = () => { hitsState[i] = !hitsState[i]; renderAtlas(); };
+    grid.appendChild(div);
+  });
+  const k = hitsState.filter(Boolean).length;
+  const p = rencontresTail(16, k);
+  document.getElementById('atlasHits').textContent = `${k} / 16`;
+  document.getElementById('atlasP').textContent = p.toFixed(5);
+  const g = document.getElementById('atlasGate');
+  g.textContent = p < 0.01 ? 'Significant (K ≥ 5)' : 'Consistent with H₀';
+  g.className = 'v ' + (p < 0.01 ? 'ok' : 'warn');
+}
+document.getElementById('atlasSimBtn').onclick = () => {
+  const perm = objects16.map((_, i) => i).sort(() => Math.random() - 0.5);
+  for (let i = 0; i < 16; i++) hitsState[i] = (perm[i] === i);
+  renderAtlas();
+};
+document.getElementById('atlasResetBtn').onclick = () => { hitsState.fill(false); renderAtlas(); };
+renderAtlas();
+</script>
+</body>
+</html>

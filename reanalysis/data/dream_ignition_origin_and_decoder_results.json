@@ -1,0 +1,144 @@
+{
+  "directionCE": [
+    {
+      "direction": "RTPJ -> Occ",
+      "nSubj": 39,
+      "posRatio": "16/39",
+      "mean": -0.0105,
+      "dz": -0.256,
+      "pPaired": 0.11219
+    },
+    {
+      "direction": "RTPJ -> LTPJ",
+      "nSubj": 39,
+      "posRatio": "21/39",
+      "mean": 0.0035,
+      "dz": 0.1,
+      "pPaired": 0.53035
+    },
+    {
+      "direction": "RTPJ -> Parietal",
+      "nSubj": 39,
+      "posRatio": "20/39",
+      "mean": 0.0007,
+      "dz": 0.026,
+      "pPaired": 0.87581
+    },
+    {
+      "direction": "RTPJ -> Front",
+      "nSubj": 39,
+      "posRatio": "26/39",
+      "mean": 0.0095,
+      "dz": 0.286,
+      "pPaired": 0.08639
+    },
+    {
+      "direction": "Occ -> Front",
+      "nSubj": 39,
+      "posRatio": "20/39",
+      "mean": 0.007,
+      "dz": 0.173,
+      "pPaired": 0.28767
+    },
+    {
+      "direction": "Parietal -> Occ",
+      "nSubj": 39,
+      "posRatio": "21/39",
+      "mean": 0.0017,
+      "dz": 0.042,
+      "pPaired": 0.79872
+    },
+    {
+      "direction": "Parietal -> Front",
+      "nSubj": 39,
+      "posRatio": "22/39",
+      "mean": 0.0104,
+      "dz": 0.281,
+      "pPaired": 0.08949
+    }
+  ],
+  "directionDiff": [
+    {
+      "directionChange_CE_minus_NE": "RTPJ -> Occ",
+      "nSubj": 39,
+      "posRatio": "16/39",
+      "mean": -0.0121,
+      "dz": -0.236,
+      "pPaired": 0.15178
+    },
+    {
+      "directionChange_CE_minus_NE": "RTPJ -> LTPJ",
+      "nSubj": 39,
+      "posRatio": "20/39",
+      "mean": 0.002,
+      "dz": 0.038,
+      "pPaired": 0.81862
+    },
+    {
+      "directionChange_CE_minus_NE": "RTPJ -> Parietal",
+      "nSubj": 39,
+      "posRatio": "18/39",
+      "mean": -0.0009,
+      "dz": -0.02,
+      "pPaired": 0.90131
+    },
+    {
+      "directionChange_CE_minus_NE": "RTPJ -> Front",
+      "nSubj": 39,
+      "posRatio": "22/39",
+      "mean": 0.0073,
+      "dz": 0.166,
+      "pPaired": 0.30577
+    },
+    {
+      "directionChange_CE_minus_NE": "Occ -> Front",
+      "nSubj": 39,
+      "posRatio": "18/39",
+      "mean": 0.0007,
+      "dz": 0.016,
+      "pPaired": 0.91871
+    },
+    {
+      "directionChange_CE_minus_NE": "Parietal -> Occ",
+      "nSubj": 39,
+      "posRatio": "17/39",
+      "mean": -0.0018,
+      "dz": -0.034,
+      "pPaired": 0.82972
+    },
+    {
+      "directionChange_CE_minus_NE": "Parietal -> Front",
+      "nSubj": 39,
+      "posRatio": "22/39",
+      "mean": 0.0077,
+      "dz": 0.166,
+      "pPaired": 0.30357
+    }
+  ],
+  "decoders": [
+    {
+      "decoder": "Classic Posterior Delta (-logDelta)",
+      "nCE": 124,
+      "nNE": 107,
+      "withinSubjROC_AUC": 0.5
+    },
+    {
+      "decoder": "Two-Stage Gate+Ignition (120s mean)",
+      "nCE": 124,
+      "nNE": 107,
+      "withinSubjROC_AUC": 0.581
+    },
+    {
+      "decoder": "Two-Stage Gate+Ignition (20s P90 burst)",
+      "nCE": 124,
+      "nNE": 107,
+      "withinSubjROC_AUC": 0.606
+    },
+    {
+      "decoder": "Two-Stage Gate+Ignition (120s P90 burst)",
+      "nCE": 124,
+      "nNE": 107,
+      "withinSubjROC_AUC": 0.601
+    }
+  ]
+}

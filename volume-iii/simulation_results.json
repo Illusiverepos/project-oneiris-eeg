@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-11-25T01:43:53.419Z",
+  "regimeResults": [
+    {
+      "regime": "Ordinary Waking",
+      "spatialCoherenceMTopo": 0.975,
+      "objectMutationRate": 0.213,
+      "sceneCutsPerEpisode": 0.13,
+      "epistemicRealityFeeling": 0.459,
+      "anomalyRecognitionRate": 0.575
+    },
+    {
+      "regime": "Non-Lucid REM",
+      "spatialCoherenceMTopo": 0.955,
+      "objectMutationRate": 0.919,
+      "sceneCutsPerEpisode": 0.87,
+      "epistemicRealityFeeling": 0.84,
+      "anomalyRecognitionRate": 0.139
+    },
+    {
+      "regime": "False Awakening",
+      "spatialCoherenceMTopo": 0.977,
+      "objectMutationRate": 0.846,
+      "sceneCutsPerEpisode": 0.26,
+      "epistemicRealityFeeling": 0.804,
+      "anomalyRecognitionRate": 0.266
+    },
+    {
+      "regime": "Lucid REM",
+      "spatialCoherenceMTopo": 0.942,
+      "objectMutationRate": 0.933,
+      "sceneCutsPerEpisode": 1.59,
+      "epistemicRealityFeeling": 0.371,
+      "anomalyRecognitionRate": 0.879
+    },
+    {
+      "regime": "DMT-Like Flattened",
+      "spatialCoherenceMTopo": 0.95,
+      "objectMutationRate": 0.972,
+      "sceneCutsPerEpisode": 2.43,
+      "epistemicRealityFeeling": 0.531,
+      "anomalyRecognitionRate": 0.439
+    }
+  ],
+  "tradeoffResults": [
+    {
+      "envLoad": 0.15,
+      "remainingBudget": 0.7,
+      "modelACharacterAccuracy": 0.953,
+      "modelBCCharacterAccuracy": 0.828
+    },
+    {
+      "envLoad": 0.3,
+      "remainingBudget": 0.55,
+      "modelACharacterAccuracy": 0.868,
+      "modelBCCharacterAccuracy": 0.845
+    },
+    {
+      "envLoad": 0.45,
+      "remainingBudget": 0.4,
+      "modelACharacterAccuracy": 0.623,
+      "modelBCCharacterAccuracy": 0.805
+    },
+    {
+      "envLoad": 0.6,
+      "remainingBudget": 0.25,
+      "modelACharacterAccuracy": 0.372,
+      "modelBCCharacterAccuracy": 0.833
+    },
+    {
+      "envLoad": 0.75,
+      "remainingBudget": 0.1,
+      "modelACharacterAccuracy": 0.128,
+      "modelBCCharacterAccuracy": 0.845
+    }
+  ]
+}

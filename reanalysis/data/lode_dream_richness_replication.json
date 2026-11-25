@@ -1,0 +1,37 @@
+{
+  "nMultiDream": 104,
+  "out": [
+    {
+      "metric": "slopeAll",
+      "n": 104,
+      "rawRho": 0.163,
+      "rawP": 0.10238,
+      "withinSubjRho": 0.027,
+      "withinSubjP": 0.78864
+    },
+    {
+      "metric": "lzcAll",
+      "n": 104,
+      "rawRho": 0.014,
+      "rawP": 0.88442,
+      "withinSubjRho": 0.006,
+      "withinSubjP": 0.95461
+    },
+    {
+      "metric": "slopeRight",
+      "n": 104,
+      "rawRho": 0.069,
+      "rawP": 0.4893,
+      "withinSubjRho": -0.021,
+      "withinSubjP": 0.83623
+    },
+    {
+      "metric": "slopeLeft",
+      "n": 104,
+      "rawRho": 0.131,
+      "rawP": 0.19056,
+      "withinSubjRho": -0.02,
+      "withinSubjP": 0.85063
+    }
+  ]
+}

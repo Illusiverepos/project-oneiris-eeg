@@ -1,0 +1,38 @@
+[
+  {
+    "lab": "Lab #3: LODE (7-ch bipolar)",
+    "nSubj": 18,
+    "burstP90_pos": "9/18",
+    "burstP90_dz": -0.003,
+    "burstP90_p": 0.9922,
+    "tonicP10_dz": 0.157,
+    "tonicP10_p": 0.53015
+  },
+  {
+    "lab": "Lab #4: Zhang & Wamsley (58-ch CSD)",
+    "nSubj": 23,
+    "burstP90_pos": "19/23",
+    "burstP90_dz": 0.811,
+    "burstP90_p": 0.0009,
+    "tonicP10_dz": 0.52,
+    "tonicP10_p": 0.0188
+  },
+  {
+    "lab": "Lab #5: Noreika_DATA1",
+    "nSubj": 10,
+    "burstP90_pos": "9/10",
+    "burstP90_dz": 1.141,
+    "burstP90_p": 0.0036,
+    "tonicP10_dz": 1.408,
+    "tonicP10_p": 0.0014
+  },
+  {
+    "lab": "Lab #6: Siclari 2017 (256-ch CSD, NREM N2)",
+    "nSubj": 39,
+    "burstP90_pos": "28/39",
+    "burstP90_dz": 0.612,
+    "burstP90_p": 0.0001,
+    "tonicP10_dz": 0.316,
+    "tonicP10_p": 0.05639
+  }
+]
