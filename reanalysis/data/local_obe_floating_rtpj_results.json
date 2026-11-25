@@ -1,0 +1,140 @@
+{
+  "nTotal": 154,
+  "nMultiSub": 150,
+  "results": [
+    {
+      "test": "OBE/Floating (log hits) vs Right_TPJ slopeBB",
+      "n": 150,
+      "rho": -0.046,
+      "pPerm": 0.58008
+    },
+    {
+      "test": "OBE/Floating (log hits) vs Right_TPJ LZc",
+      "n": 150,
+      "rho": -0.065,
+      "pPerm": 0.43711
+    },
+    {
+      "test": "OBE/Floating (log hits) vs Left_TPJ slopeBB (Control)",
+      "n": 150,
+      "rho": -0.002,
+      "pPerm": 0.9808
+    },
+    {
+      "test": "OBE/Floating (log hits) vs Right_TPJ<->Body Beta/Gamma |ImCoh|",
+      "n": 150,
+      "rho": 0.099,
+      "pPerm": 0.23315
+    },
+    {
+      "test": "OBE/Floating (rate/100w) vs Right_TPJ<->Body Beta/Gamma |ImCoh|",
+      "n": 150,
+      "rho": 0.084,
+      "pPerm": 0.30814
+    },
+    {
+      "test": "Lucid/Agency (log hits) vs Right_Frontal slopeBB",
+      "n": 150,
+      "rho": 0.033,
+      "pPerm": 0.68706
+    },
+    {
+      "test": "Lucid/Agency (log hits) vs Right_Frontal LZc",
+      "n": 150,
+      "rho": 0.02,
+      "pPerm": 0.81264
+    },
+    {
+      "test": "Lucid/Agency (log hits) vs Left_Frontal slopeBB",
+      "n": 150,
+      "rho": 0.149,
+      "pPerm": 0.07219
+    },
+    {
+      "test": "Lucid/Agency (log hits) vs PSI_Beta(TPJ->Front)",
+      "n": 150,
+      "rho": 0.08,
+      "pPerm": 0.33293
+    },
+    {
+      "test": "Lucid/Agency (rate/100w) vs PSI_Alpha(TPJ->Front)",
+      "n": 150,
+      "rho": 0.013,
+      "pPerm": 0.87682
+    }
+  ],
+  "topOBE": [
+    {
+      "fname": "subject347_SO3.edf",
+      "stage": "N2",
+      "obeHits": 3,
+      "rtpj_slope": -2.736,
+      "excerpt": "Umm it's kind of foggy, I was by myself, sitting on a bed, pretty similar to this one, umm I was reading a piece of paper I don't know what "
+    },
+    {
+      "fname": "subject422_SO3.edf",
+      "stage": "N1",
+      "obeHits": 3,
+      "rtpj_slope": -2.435,
+      "excerpt": "Umm so that movie thing, I was thinking about this part where this guy who was like singing about his death, and I was at that part, it was "
+    },
+    {
+      "fname": "subject042_Morning.edf",
+      "stage": "N2",
+      "obeHits": 2,
+      "rtpj_slope": -1.12,
+      "excerpt": "Umm...You know what? I wasn't really asleep recently, but before I woke up, I was dreaming about our national soccer team. Umm...It was a fu"
+    },
+    {
+      "fname": "subject245_SO2.edf",
+      "stage": "N1",
+      "obeHits": 2,
+      "rtpj_slope": -2.589,
+      "excerpt": "Um I had a dream I was flying, and I got tired of flying so I caught a ride on a a cloud and then I just started singing along the way. I do"
+    },
+    {
+      "fname": "subject249_SO3.edf",
+      "stage": "N2",
+      "obeHits": 2,
+      "rtpj_slope": -2.848,
+      "excerpt": "Wait a second let me think, ok, um, I saw a kite flying in the sky, I think it's like red, blue, and black, and after that, me and my family"
+    }
+  ],
+  "topLucid": [
+    {
+      "fname": "subject185_SO6.edf",
+      "stage": "N1",
+      "lucidHits": 18,
+      "rfront_slope": -3.002,
+      "excerpt": "Uh....Oh. I had a dream about a lot of things... it was kind of weird...in a short period of time... I thought about...I had a dream about C"
+    },
+    {
+      "fname": "subject026_Morning.edf",
+      "stage": "N2",
+      "lucidHits": 11,
+      "rfront_slope": -3.178,
+      "excerpt": "Umm...Um...I remember it was...this seemed like a longer night. It seemed kind of long but it was also relaxing. And what I remember was...I"
+    },
+    {
+      "fname": "subject042_Morning.edf",
+      "stage": "N2",
+      "lucidHits": 10,
+      "rfront_slope": -1.782,
+      "excerpt": "Umm...You know what? I wasn't really asleep recently, but before I woke up, I was dreaming about our national soccer team. Umm...It was a fu"
+    },
+    {
+      "fname": "subject185_NREM.edf",
+      "stage": "N2",
+      "lucidHits": 10,
+      "rfront_slope": -3.818,
+      "excerpt": "I had a lot of weird dreams. I dreamed I was a Powerpuff girl. It was kind of weird. Um…Oh I kind of woke up uh..kind of…like just startled"
+    },
+    {
+      "fname": "subject422_Morning.edf",
+      "stage": "N2",
+      "lucidHits": 10,
+      "rfront_slope": -2.622,
+      "excerpt": "Somebody, umm this girl had joined my research group, and I was showing her around, but like, the research was like in Italy or something. "
+    }
+  ]
+}

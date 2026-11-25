@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project ONEIRIS — Phase 2 (10-Lab Consciousness Atlas)</title>
+<style>
+  :root { --bg: #0b1020; --card: #131a2e; --border: #243052; --text: #e8eefc; --muted: #93a4cc; --cyan: #38bdf8; --amber: #fbbf24; --rose: #fb7185; --emerald: #34d399; --violet: #a78bfa; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 28px; line-height: 1.5; }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  h1 { font-size: 1.75rem; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0 0 24px; font-size: 0.95rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 18px; margin-bottom: 18px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+  .card h2 { font-size: 1.08rem; margin: 0 0 4px; color: #fff; }
+  .card .meta { font-size: 0.82rem; color: var(--muted); margin-bottom: 14px; }
+  svg { width: 100%; height: auto; display: block; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px; }
+  .kpi { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+  .kpi .val { font-size: 1.45rem; font-weight: 700; }
+  .kpi .lbl { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+  .on { background: rgba(52,211,153,0.18); color: var(--emerald); }
+  .hyper { background: rgba(167,139,250,0.22); color: var(--violet); }
+  .off { background: rgba(147,164,204,0.15); color: var(--muted); }
+  .legend { display: flex; gap: 16px; font-size: 0.8rem; color: var(--muted); margin-top: 8px; flex-wrap: wrap; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Project ONEIRIS — 10-Lab Consciousness, Lucid Control &amp; Inner Cinema Atlas</h1>
+  <p class="sub">Reference-Free Local Hjorth CSD across Anesthesia, NREM/REM Dreaming, Lucid Two-Way Communication (Labs #8–#9), and 19 mg Psilocybin vs. External Video (Lab #10, n = 56 paired humans)</p>
+
+  <div class="kpis">
+    <div class="kpi"><div class="val" style="color:var(--cyan)">10 Labs</div><div class="lbl">1,390+ human EEG recordings</div></div>
+    <div class="kpi"><div class="val" style="color:var(--amber)">d<sub>z</sub> = +1.17</div><div class="lbl">Right-Frontal Lucid Switch (p = 0.0029)</div></div>
+    <div class="kpi"><div class="val" style="color:var(--violet)">38 / 56</div><div class="lbl">Inner Cinema &gt; Video in Parietal (p = 0.0037)</div></div>
+    <div class="kpi"><div class="val" style="color:var(--emerald)">&rho; = +0.300</div><div class="lbl">Right TPJ #1 Dose-Response (p = 0.0222)</div></div>
+  </div>
+
+  <div class="grid">
+    <!-- Chart 1: TWC_USA Timecourse -->
+    <div class="card">
+      <h2>1. The 16-Second Right-Frontal Dream-Control Switch (Lab #8, TWC_USA)</h2>
+      <div class="meta">n = 12 unique humans (17 sessions), 21-ch CSD locked to t = 0 TWC math onset, exact 2<sup>12</sup> sign-flip</div>
+      <svg id="chart-twc" viewBox="0 0 500 240"></svg>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--amber)"></i>Right Frontal (F4/F8) — 7 consecutive bins p &lt; 0.032</span>
+        <span><i class="dot" style="background:var(--cyan)"></i>Posterior (Right TPJ + Occ)</span>
+        <span><i class="dot" style="background:var(--muted)"></i>Left Frontal (Mirror Control)</span>
+      </div>
+    </div>
+
+    <!-- Chart 2: Inner Cinema vs Outer Cinema -->
+    <div class="card">
+      <h2>2. Inner Cinema vs. Outer Cinema (Lab #10, n = 56 Paired Humans)</h2>
+      <div class="meta">64-ch 10–10 Hjorth CSD &Delta;1/f slopeBB vs. Sober Rest: Eyes-Closed 19 mg Psilocybin vs. Sober External Video</div>
+      <svg id="chart-cinema" viewBox="0 0 500 240"></svg>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--violet)"></i>Psilocybin Eyes-Closed (Zero Light)</span>
+        <span><i class="dot" style="background:var(--cyan)"></i>Sober External Video (Full Movie)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- Chart 3: Dose-Response -->
+    <div class="card">
+      <h2>3. Pharmacological Dose-Response Across 6 Cortical ROIs (n = 56)</h2>
+      <div class="meta">Spearman &rho; between exact body-weight dose (0.156–0.352 mg/kg) and &Delta;1/f slopeBB</div>
+      <svg id="chart-dose" viewBox="0 0 500 210"></svg>
+    </div>
+
+    <!-- Table 4: Unified 10-Lab Architecture -->
+    <div class="card">
+      <h2>4. Unified 10-Lab Consciousness Architecture</h2>
+      <div class="meta">How Layer 1, Executive Right-Frontal Control, and Idling Alpha Waves separate 5 human states</div>
+      <table>
+        <thead><tr><th>State (Labs)</th><th>Layer 1 (Right TPJ / Occ)</th><th>Right-Frontal 1/f</th><th>Idle Alpha (crossIrrev)</th></tr></thead>
+        <tbody>
+          <tr><td>Propofol / Dreamless (#1,6,7)</td><td><span class="pill off">Offline</span></td><td><span class="pill off">Offline</span></td><td><span class="pill off">Collapsed</span></td></tr>
+          <tr><td>Normal NREM Dreaming (#3–6)</td><td><span class="pill on">6-s Ignition Waves</span></td><td><span class="pill off">Offline (0/3)</span></td><td><span class="pill off">Absent</span></td></tr>
+          <tr><td>Lucid Dream Control (#8,9)</td><td><span class="pill on">Sustained (+0.66)</span></td><td><span class="pill hyper">16-s Switch (+1.17)</span></td><td><span class="pill off">Desynced ↓</span></td></tr>
+          <tr><td>Psilocybin Eyes-Closed (#10)</td><td><span class="pill hyper">Exceeds Video (+0.88)</span></td><td><span class="pill on">Elevated (+0.54)</span></td><td><span class="pill off">Desynced ↓</span></td></tr>
+          <tr><td>Sober Eyes-Closed Rest (#10)</td><td><span class="pill off">Baseline</span></td><td><span class="pill off">Baseline</span></td><td><span class="pill on">High (Idle Alpha)</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+// 1. TWC_USA Time-Resolved Curve
+const twc = [
+  {t:-8, rf:0.339, lf:0.37, p:0.798}, {t:-6, rf:0.283, lf:0.251, p:0.404}, {t:-4, rf:0.613, lf:0.497, p:0.413},
+  {t:-2, rf:0.615, lf:0.607, p:0.894}, {t:0, rf:0.094, lf:0.015, p:0.425}, {t:2, rf:0.086, lf:-0.045, p:0.453},
+  {t:4, rf:0.547, lf:0.153, p:0.654}, {t:6, rf:0.551, lf:0.132, p:0.569}, {t:8, rf:0.731, lf:0.327, p:0.595},
+  {t:10, rf:0.613, lf:0.664, p:0.767}, {t:12, rf:0.662, lf:0.65, p:0.742}, {t:14, rf:1.174, lf:0.644, p:1.069},
+  {t:16, rf:0.824, lf:0.221, p:1.1}, {t:18, rf:0.735, lf:0.246, p:0.803}, {t:20, rf:0.884, lf:0.627, p:0.742},
+  {t:22, rf:0.486, lf:0.312, p:0.494}, {t:24, rf:0.154, lf:0.483, p:0.227}, {t:26, rf:0.421, lf:0.383, p:0.146},
+  {t:28, rf:0.55, lf:0.465, p:0.272}
+];
+const svg1 = document.getElementById('chart-twc');
+const x1 = t => 42 + ((t + 8) / 36) * 440, y1 = v => 205 - ((v + 0.15) / 1.45) * 180;
+let h1 = `<rect x="${x1(6)}" y="18" width="${x1(22)-x1(6)}" height="187" fill="rgba(251,191,36,0.08)" rx="4"/>`;
+h1 += `<text x="${(x1(6)+x1(22))/2}" y="31" fill="#fbbf24" font-size="10" text-anchor="middle">16-s Significant Right-Frontal Plateau (p = 0.0029–0.032)</text>`;
+h1 += `<line x1="${x1(0)}" y1="18" x2="${x1(0)}" y2="205" stroke="#475569" stroke-dasharray="4 3"/>`;
+h1 += `<line x1="42" y1="${y1(0)}" x2="482" y2="${y1(0)}" stroke="#334155"/>`;
+const pathOf = (key, col, w) => `<path d="M ${twc.map(d=>`${x1(d.t).toFixed(1)},${y1(d[key]).toFixed(1)}`).join(' L ')}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linejoin="round"/>`;
+h1 += pathOf('lf', '#64748b', 1.6) + pathOf('p', '#38bdf8', 2.2) + pathOf('rf', '#fbbf24', 2.8);
+for (const t of [-8, 0, 8, 16, 24]) h1 += `<text x="${x1(t)}" y="222" fill="#93a4cc" font-size="10" text-anchor="middle">${t>=0?'+':''}${t}s</text>`;
+for (const v of [0, 0.5, 1.0]) h1 += `<text x="34" y="${y1(v)+3}" fill="#93a4cc" font-size="10" text-anchor="end">${v.toFixed(1)}</text>`;
+svg1.innerHTML = h1;
+
+// 2. Inner Cinema vs Outer Cinema Bar Chart
+const cinema = [
+  {name:'Parietal*', psi:0.2466, vid:0.1195, sig:'p=0.0037'},
+  {name:'Occipital*', psi:0.3226, vid:0.1790, sig:'p=0.038'},
+  {name:'Right TPJ', psi:0.3689, vid:0.3021, sig:''},
+  {name:'Left TPJ', psi:0.3577, vid:0.2633, sig:''},
+  {name:'Right Front', psi:0.2741, vid:0.3418, sig:''},
+  {name:'Left Front', psi:0.2463, vid:0.3039, sig:''},
+];
+const svg2 = document.getElementById('chart-cinema');
+const y2 = v => 195 - (v / 0.44) * 165;
+let h2 = `<line x1="42" y1="195" x2="488" y2="195" stroke="#334155"/>`;
+cinema.forEach((d, i) => {
+  const bx = 54 + i * 72;
+  h2 += `<rect x="${bx}" y="${y2(d.psi)}" width="22" height="${195-y2(d.psi)}" fill="#a78bfa" rx="3"/>`;
+  h2 += `<rect x="${bx+25}" y="${y2(d.vid)}" width="22" height="${195-y2(d.vid)}" fill="#38bdf8" rx="3"/>`;
+  h2 += `<text x="${bx+23}" y="212" fill="#cbd5e1" font-size="9.5" text-anchor="middle">${d.name}</text>`;
+  if (d.sig) h2 += `<text x="${bx+23}" y="${y2(d.psi)-6}" fill="#34d399" font-size="9" font-weight="700" text-anchor="middle">${d.sig}</text>`;
+});
+for (const v of [0, 0.2, 0.4]) h2 += `<text x="36" y="${y2(v)+3}" fill="#93a4cc" font-size="10" text-anchor="end">+${v.toFixed(1)}</text>`;
+svg2.innerHTML = h2;
+
+// 3. Dose-Response Horizontal Bars
+const dose = [
+  {name:'Right TPJ (#1)', rho:0.300, p:'p = 0.0222 *', col:'#34d399'},
+  {name:'Left TPJ (#2)',  rho:0.265, p:'p = 0.0462 *', col:'#38bdf8'},
+  {name:'Occipital',      rho:0.254, p:'p = 0.062',    col:'#a78bfa'},
+  {name:'Left Frontal',   rho:0.191, p:'p = 0.155',    col:'#64748b'},
+  {name:'Right Frontal',  rho:0.189, p:'p = 0.164',    col:'#64748b'},
+  {name:'Parietal Mid',   rho:0.108, p:'p = 0.419',    col:'#475569'},
+];
+const svg3 = document.getElementById('chart-dose');
+let h3 = '';
+dose.forEach((d, i) => {
+  const y = 18 + i * 31, w = (d.rho / 0.36) * 260;
+  h3 += `<text x="108" y="${y+15}" fill="#cbd5e1" font-size="11" text-anchor="end">${d.name}</text>`;
+  h3 += `<rect x="118" y="${y+2}" width="${w}" height="18" fill="${d.col}" rx="4"/>`;
+  h3 += `<text x="${126+w}" y="${y+15}" fill="${d.col}" font-size="10.5" font-weight="600">&rho; = +${d.rho.toFixed(3)} (${d.p})</text>`;
+});
+svg3.innerHTML = h3;
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{
+  "nRecordings": 5,
+  "rows": [
+    {
+      "file": "s_00/c_00",
+      "study": "Motor_LRLR",
+      "lrlrSecFromEnd": 315,
+      "dRF_slope": 1.6506,
+      "dLF_slope": 1.5644,
+      "dPost_slope": 1.1247,
+      "dCrossIrrev": -0.0189
+    },
+    {
+      "file": "s_01/c_01",
+      "study": "Motor_LRLR",
+      "lrlrSecFromEnd": 285,
+      "dRF_slope": -0.2497,
+      "dLF_slope": -0.1153,
+      "dPost_slope": 0.0511,
+      "dCrossIrrev": -0.0185
+    },
+    {
+      "file": "s_02/c_02",
+      "study": "Motor_LRLR",
+      "lrlrSecFromEnd": 239,
+      "dRF_slope": 0.0848,
+      "dLF_slope": 0.5208,
+      "dPost_slope": 1.3915,
+      "dCrossIrrev": 0.0742
+    },
+    {
+      "file": "s_04/c_04",
+      "study": "Lucid_Dialogue",
+      "lrlrSecFromEnd": 56,
+      "dRF_slope": -0.4958,
+      "dLF_slope": -0.2602,
+      "dPost_slope": -0.965,
+      "dCrossIrrev": -0.0123
+    },
+    {
+      "file": "s_04/c_05",
+      "study": "Lucid_Dialogue",
+      "lrlrSecFromEnd": 52,
+      "dRF_slope": 1.8412,
+      "dLF_slope": 1.7873,
+      "dPost_slope": 0.5871,
+      "dCrossIrrev": -0.0176
+    }
+  ]
+}

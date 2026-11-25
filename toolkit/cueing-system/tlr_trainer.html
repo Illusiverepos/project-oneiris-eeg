@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONEIRIS — TLR Dream-Control Cueing System</title>
+<style>
+  :root { --bg: #070b16; --card: #11182c; --border: #233054; --text: #e8eefc; --muted: #8fa1cb; --cyan: #38bdf8; --amber: #fbbf24; --emerald: #34d399; --rose: #fb7185; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 24px; }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  h1 { margin: 0 0 4px; font-size: 1.6rem; }
+  .sub { color: var(--muted); margin: 0 0 20px; font-size: 0.92rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; margin-bottom: 16px; }
+  h2 { margin: 0 0 10px; font-size: 1.05rem; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 10px 0; }
+  button { background: var(--cyan); color: #04101f; border: none; border-radius: 10px; padding: 11px 18px; font-weight: 700; cursor: pointer; font-size: 0.92rem; }
+  button.sec { background: #1d2947; color: var(--text); border: 1px solid var(--border); }
+  button.warn { background: var(--rose); color: #1f0409; }
+  button.ok { background: var(--emerald); color: #031f16; }
+  label { font-size: 0.85rem; color: var(--muted); display: flex; flex-direction: column; gap: 4px; }
+  input[type="range"] { width: 180px; accent-color: var(--cyan); }
+  input[type="number"] { background: #0a1020; color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 7px 10px; width: 88px; font-size: 0.95rem; }
+  .prompt-box { background: #0a1022; border: 1px solid #2b3c6b; border-radius: 12px; padding: 18px; font-size: 1.05rem; color: #dbeafe; min-height: 68px; display: flex; align-items: center; justify-content: center; text-align: center; margin-top: 12px; }
+  .status { font-family: ui-monospace, Consolas, monospace; font-size: 0.84rem; color: var(--emerald); margin-top: 10px; }
+  .corridor { height: 14px; background: linear-gradient(90deg, #1e293b 0%, #1e293b 35%, #34d399 45%, #fbbf24 72%, #fb7185 88%, #fb7185 100%); border-radius: 999px; position: relative; margin: 14px 0 6px; }
+  .needle { width: 4px; height: 22px; background: #fff; border-radius: 2px; position: absolute; top: -4px; left: 50%; transition: left 0.3s; }
+  .labels { display: flex; justify-content: space-between; font-size: 0.74rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ONEIRIS — TLR Dream-Control Cueing System</h1>
+  <p class="sub">Based on Konkoly et al. (2021) + Your 10-Lab Right-Frontal Goldilocks Switch (400 &rarr; 600 &rarr; 800 Hz soft Hann chime)</p>
+
+  <!-- Step 1: Calibrate Sub-Awakening Chime -->
+  <div class="card">
+    <h2>1. Calibrate Your Sub-Awakening Chime</h2>
+    <div class="row">
+      <label>Cue Volume (<span id="volLbl">18%</span>)
+        <input id="vol" type="range" min="2" max="60" value="18">
+      </label>
+      <button onclick="playTLRChime()">Test 3-Tone TLR Chime</button>
+    </div>
+    <p style="font-size:0.84rem;color:var(--muted);margin:6px 0 0;">
+      Set volume so you can <em>barely</em> hear the 3 rising tones in a quiet dark room. Too loud breaches the upper Goldilocks boundary and wakes you up.
+    </p>
+  </div>
+
+  <!-- Step 2: 15-Min Pre-Sleep TLR Conditioning -->
+  <div class="card">
+    <h2>2. Pre-Sleep TLR Conditioning (15 Minutes Before WBTB / Morning Nap)</h2>
+    <p style="font-size:0.86rem;color:var(--muted);margin:0 0 10px;">
+      Plays the soft rising chime every 60 seconds and trains your Right Prefrontal Cortex (F4/F8) to link the chime with calm executive awareness.
+    </p>
+    <div class="row">
+      <button class="ok" onclick="startConditioning()">Start 15-Min Conditioning</button>
+      <button class="sec" onclick="stopAll()">Stop</button>
+    </div>
+    <div id="prompt" class="prompt-box">Press "Start 15-Min Conditioning" to begin pairing the chime with your reality check.</div>
+    <div id="condStatus" class="status">Idle</div>
+  </div>
+
+  <!-- Step 3: Overnight / WBTB REM-Window Cueing -->
+  <div class="card">
+    <h2>3. Overnight / WBTB REM-Window Cueing</h2>
+    <div class="row">
+      <label>Delay Until REM (min)
+        <input id="delayMin" type="number" value="50" min="1" max="360">
+      </label>
+      <label>REM Window (min)
+        <input id="winMin" type="number" value="35" min="5" max="120">
+      </label>
+      <label>Cue Interval (sec)
+        <input id="intSec" type="number" value="50" min="15" max="180">
+      </label>
+    </div>
+    <div class="row">
+      <button onclick="startSleepCueing()">Arm REM Cueing</button>
+      <button class="warn" onclick="tooLoudBackoff()">I'm Awake / Too Loud (&minus;30% vol, pause 15m)</button>
+      <button class="sec" onclick="stopAll()">Disarm</button>
+    </div>
+    <div id="sleepStatus" class="status">Disarmed</div>
+  </div>
+
+  <!-- Step 4: Goldilocks Corridor Reference -->
+  <div class="card">
+    <h2>4. Right-Frontal Goldilocks Corridor (Closed-Loop Target)</h2>
+    <div class="corridor"><div id="needle" class="needle" style="left:28%"></div></div>
+    <div class="labels"><span>Non-Lucid Dream (RF Offline)</span><span style="color:var(--emerald)">Lucid Sweet Spot (F4/F8 ON)</span><span style="color:var(--rose)">Wake-Up Threshold</span></div>
+    <p style="font-size:0.83rem;color:var(--muted);margin:10px 0 0;">
+      <strong>World-Building Rule:</strong> When you hear the chime inside a dream, stay calm (do not force the scene). Turn around or open a door <em>expecting</em> your world to be behind it—letting Right TPJ render while Right Frontal stays in the green zone.
+    </p>
+  </div>
+
+  <!-- Step 5: 1-Click Morning Beta Report -->
+  <div class="card">
+    <h2>5. Morning Beta Log (1-Click Copy to Text Austin)</h2>
+    <div class="row">
+      <label>Heard chime in dream?
+        <select id="qHeard" style="background:#0a1020;color:var(--text);border:1px solid var(--border);border-radius:8px;padding:7px 10px;">
+          <option value="No">No</option><option value="Yes">Yes</option><option value="Unsure">Unsure</option>
+        </select>
+      </label>
+      <label>Did it wake you up?
+        <select id="qWoke" style="background:#0a1020;color:var(--text);border:1px solid var(--border);border-radius:8px;padding:7px 10px;">
+          <option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </label>
+      <label>Lucid / Dream Control?
+        <select id="qLucid" style="background:#0a1020;color:var(--text);border:1px solid var(--border);border-radius:8px;padding:7px 10px;">
+          <option value="No">No</option><option value="Realized dreaming">Realized dreaming</option><option value="Controlled / built scene">Controlled / built scene</option>
+        </select>
+      </label>
+    </div>
+    <textarea id="qNotes" rows="2" placeholder="Optional: what happened in the dream?" style="width:100%;background:#0a1020;color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px;margin:8px 0 10px;font-family:inherit;"></textarea>
+    <div class="row">
+      <button class="ok" onclick="copyMorningLog()">1-Click Copy Morning Report</button>
+      <span id="copyMsg" style="font-size:0.84rem;color:var(--emerald);"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+let ctx = null;
+let timers = [];
+let currentVol = 0.18;
+let totalCuesFired = 0;
+let totalBackoffs = 0;
+
+const PROMPTS = [
+  "As you hear the chime, become lucid. Notice where your mind just wandered.",
+  "Observe your body, your breathing, and the space around you. Could this be a dream?",
+  "Stay calm and critically aware. Do not force anything—just notice that you are aware.",
+  "Next time you hear these 3 rising tones, you will be dreaming—and you will know it.",
+  "Imagine walking through a door inside your dream, calmly expecting a new world behind it."
+];
+
+document.getElementById('vol').addEventListener('input', (e) => {
+  currentVol = Number(e.target.value) / 100;
+  document.getElementById('volLbl').textContent = e.target.value + '%';
+});
+
+function ensureAudio() {
+  if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+  if (ctx.state === 'suspended') ctx.resume();
+}
+
+// Exact Konkoly et al. (2021) TWC_USA 3-tone rising chime: 400 -> 600 -> 800 Hz, 650 ms total, soft Hann envelope
+function playTLRChime(gainOverride) {
+  ensureAudio();
+  const vol = gainOverride ?? currentVol;
+  const freqs = [400, 600, 800];
+  const toneDur = 0.19, gap = 0.04;
+  const now = ctx.currentTime + 0.02;
+  freqs.forEach((f, i) => {
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = f;
+    const t0 = now + i * (toneDur + gap);
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(Math.max(0.002, vol * 0.35), t0 + toneDur * 0.4);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + toneDur);
+    osc.connect(g); g.connect(ctx.destination);
+    osc.start(t0); osc.stop(t0 + toneDur + 0.02);
+  });
+}
+
+function stopAll() {
+  timers.forEach((id) => { clearTimeout(id); clearInterval(id); });
+  timers = [];
+  document.getElementById('condStatus').textContent = 'Stopped';
+  document.getElementById('sleepStatus').textContent = 'Disarmed';
+}
+
+function startConditioning() {
+  stopAll();
+  let step = 0;
+  const runStep = () => {
+    if (step >= 15) {
+      document.getElementById('condStatus').textContent = 'Conditioning complete (15/15). Now arm REM Cueing and go to sleep.';
+      return;
+    }
+    playTLRChime();
+    document.getElementById('prompt').textContent = PROMPTS[step % PROMPTS.length];
+    step++;
+    document.getElementById('condStatus').textContent = `Conditioning chime ${step}/15 delivered (next in 60 s)`;
+    document.getElementById('needle').style.left = (48 + (step % 3) * 6) + '%';
+  };
+  runStep();
+  timers.push(setInterval(runStep, 60000));
+}
+
+function startSleepCueing() {
+  stopAll();
+  ensureAudio();
+  const delayMs = Number(document.getElementById('delayMin').value) * 60000;
+  const winMs = Number(document.getElementById('winMin').value) * 60000;
+  const intMs = Number(document.getElementById('intSec').value) * 1000;
+  const startAt = Date.now() + delayMs;
+  const endAt = startAt + winMs;
+  let fired = 0;
+
+  document.getElementById('sleepStatus').textContent = `Armed! First soft REM chime at ${new Date(startAt).toLocaleTimeString()} (vol ${Math.round(currentVol * 100)}%)`;
+  timers.push(setTimeout(() => {
+    const fire = () => {
+      if (Date.now() > endAt) { stopAll(); document.getElementById('sleepStatus').textContent = `REM window finished (${fired} cues delivered).`; return; }
+      playTLRChime();
+      fired++;
+      totalCuesFired++;
+      document.getElementById('sleepStatus').textContent = `Active REM window — cue #${fired} delivered at ${new Date().toLocaleTimeString()} (vol ${Math.round(currentVol * 100)}%)`;
+    };
+    fire();
+    timers.push(setInterval(fire, intMs));
+  }, delayMs));
+}
+
+function tooLoudBackoff() {
+  stopAll();
+  totalBackoffs++;
+  currentVol = Math.max(0.03, currentVol * 0.7);
+  document.getElementById('vol').value = Math.round(currentVol * 100);
+  document.getElementById('volLbl').textContent = Math.round(currentVol * 100) + '%';
+  document.getElementById('delayMin').value = 15;
+  document.getElementById('sleepStatus').textContent = `Backed off! Volume reduced to ${Math.round(currentVol * 100)}% and paused 15 min.`;
+  document.getElementById('needle').style.left = '88%';
+  startSleepCueing();
+}
+
+function copyMorningLog() {
+  const report = [
+    `ONEIRIS TLR Beta Log (${new Date().toLocaleDateString()})`,
+    `- Heard chime in dream: ${document.getElementById('qHeard').value}`,
+    `- Woke up from chime: ${document.getElementById('qWoke').value}`,
+    `- Lucid / Control: ${document.getElementById('qLucid').value}`,
+    `- Settings: vol ${Math.round(currentVol * 100)}%, delay ${document.getElementById('delayMin').value}m, cues fired ${totalCuesFired}, backoffs ${totalBackoffs}`,
+    document.getElementById('qNotes').value.trim() ? `- Notes: ${document.getElementById('qNotes').value.trim()}` : null
+  ].filter(Boolean).join('\n');
+  navigator.clipboard.writeText(report).then(() => {
+    document.getElementById('copyMsg').textContent = 'Copied! Paste into a text to Austin.';
+  }).catch(() => {
+    prompt('Copy your morning report:', report);
+  });
+}
+</script>
+</body>
+</html>

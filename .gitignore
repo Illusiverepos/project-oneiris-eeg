@@ -6,6 +6,8 @@ reanalysis/data/dreambank_full.jsonl
 reanalysis/data/waking_control.jsonl
 reanalysis/data/dreambank_3k.jsonl
 reanalysis/data/twc_usa/
+reanalysis/data/donders_lucid/extracted/
+reanalysis/data/zenodo_806176/
 *.edf
 *.eeg
 *.f32

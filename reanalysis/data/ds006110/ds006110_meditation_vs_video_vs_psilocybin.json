@@ -1,0 +1,177 @@
+{
+  "nPaired": 18,
+  "medVsRest": {
+    "rtpj_slope": {
+      "n": 18,
+      "nPos": "12/18",
+      "meanDiff": 0.0378,
+      "dz": 0.155,
+      "p": 0.5315
+    },
+    "rtpj_lzc": {
+      "n": 18,
+      "nPos": "9/18",
+      "meanDiff": 0.0185,
+      "dz": 0.318,
+      "p": 0.2035
+    },
+    "occ_slope": {
+      "n": 18,
+      "nPos": "10/18",
+      "meanDiff": -0.0089,
+      "dz": -0.037,
+      "p": 0.8778
+    },
+    "rfront_slope": {
+      "n": 18,
+      "nPos": "11/18",
+      "meanDiff": 0.0097,
+      "dz": 0.038,
+      "p": 0.8709
+    },
+    "lfront_slope": {
+      "n": 18,
+      "nPos": "13/18",
+      "meanDiff": 0.0922,
+      "dz": 0.375,
+      "p": 0.1341
+    },
+    "crossIrrevPost": {
+      "n": 18,
+      "nPos": "7/18",
+      "meanDiff": -0.0156,
+      "dz": -0.558,
+      "p": 0.0281
+    },
+    "crossIrrevGlobal": {
+      "n": 18,
+      "nPos": "9/18",
+      "meanDiff": -0.005,
+      "dz": -0.41,
+      "p": 0.105
+    },
+    "psiAlpha": {
+      "n": 18,
+      "nPos": "10/18",
+      "meanDiff": -0.0584,
+      "dz": -0.325,
+      "p": 0.179
+    }
+  },
+  "vidVsRest": {
+    "rtpj_slope": {
+      "n": 18,
+      "nPos": "14/18",
+      "meanDiff": 0.2833,
+      "dz": 0.684,
+      "p": 0.0114
+    },
+    "rtpj_lzc": {
+      "n": 18,
+      "nPos": "15/18",
+      "meanDiff": 0.0846,
+      "dz": 0.929,
+      "p": 0.0004
+    },
+    "occ_slope": {
+      "n": 18,
+      "nPos": "13/18",
+      "meanDiff": 0.1682,
+      "dz": 0.644,
+      "p": 0.0133
+    },
+    "rfront_slope": {
+      "n": 18,
+      "nPos": "14/18",
+      "meanDiff": 0.1587,
+      "dz": 0.253,
+      "p": 0.2837
+    },
+    "lfront_slope": {
+      "n": 18,
+      "nPos": "12/18",
+      "meanDiff": 0.2659,
+      "dz": 0.601,
+      "p": 0.0199
+    },
+    "crossIrrevPost": {
+      "n": 18,
+      "nPos": "1/18",
+      "meanDiff": -0.0485,
+      "dz": -1.147,
+      "p": 0
+    },
+    "crossIrrevGlobal": {
+      "n": 18,
+      "nPos": "1/18",
+      "meanDiff": -0.0136,
+      "dz": -0.627,
+      "p": 0.015
+    },
+    "psiAlpha": {
+      "n": 18,
+      "nPos": "8/18",
+      "meanDiff": -0.0478,
+      "dz": -0.229,
+      "p": 0.349
+    }
+  },
+  "psiMedVsSoberMed": {
+    "rtpj_slope": {
+      "n": 18,
+      "nPos": "14/18",
+      "meanDiff": 0.398,
+      "dz": 0.725,
+      "p": 0.0052
+    },
+    "rtpj_lzc": {
+      "n": 18,
+      "nPos": "13/18",
+      "meanDiff": 0.0433,
+      "dz": 0.669,
+      "p": 0.0103
+    },
+    "occ_slope": {
+      "n": 18,
+      "nPos": "15/18",
+      "meanDiff": 0.3744,
+      "dz": 0.795,
+      "p": 0.0006
+    },
+    "rfront_slope": {
+      "n": 18,
+      "nPos": "9/18",
+      "meanDiff": 0.0858,
+      "dz": 0.164,
+      "p": 0.4982
+    },
+    "lfront_slope": {
+      "n": 18,
+      "nPos": "13/18",
+      "meanDiff": 0.1485,
+      "dz": 0.3,
+      "p": 0.2259
+    },
+    "crossIrrevPost": {
+      "n": 18,
+      "nPos": "5/18",
+      "meanDiff": -0.0175,
+      "dz": -0.457,
+      "p": 0.0667
+    },
+    "crossIrrevGlobal": {
+      "n": 18,
+      "nPos": "7/18",
+      "meanDiff": -0.0038,
+      "dz": -0.241,
+      "p": 0.3237
+    },
+    "psiAlpha": {
+      "n": 18,
+      "nPos": "7/18",
+      "meanDiff": -0.0191,
+      "dz": -0.097,
+      "p": 0.6777
+    }
+  }
+}

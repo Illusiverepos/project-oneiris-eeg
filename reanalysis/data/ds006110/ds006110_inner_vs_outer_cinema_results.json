@@ -1,0 +1,241 @@
+{
+  "nHumans": 56,
+  "psiVsRestSlope": {
+    "Occipital": {
+      "n": 56,
+      "nPos": "42/56",
+      "meanDiff": 0.3226,
+      "dz": 0.706,
+      "p": 0
+    },
+    "Right_TPJ": {
+      "n": 56,
+      "nPos": "44/56",
+      "meanDiff": 0.3689,
+      "dz": 0.794,
+      "p": 0
+    },
+    "Left_TPJ": {
+      "n": 56,
+      "nPos": "41/56",
+      "meanDiff": 0.3577,
+      "dz": 0.648,
+      "p": 0
+    },
+    "Parietal_Midline": {
+      "n": 56,
+      "nPos": "45/56",
+      "meanDiff": 0.2466,
+      "dz": 0.881,
+      "p": 0
+    },
+    "Right_Frontal": {
+      "n": 56,
+      "nPos": "40/56",
+      "meanDiff": 0.2741,
+      "dz": 0.543,
+      "p": 0.0002
+    },
+    "Left_Frontal": {
+      "n": 56,
+      "nPos": "38/56",
+      "meanDiff": 0.2463,
+      "dz": 0.498,
+      "p": 0.0004
+    }
+  },
+  "vidVsRestSlope": {
+    "Occipital": {
+      "n": 56,
+      "nPos": "41/56",
+      "meanDiff": 0.179,
+      "dz": 0.583,
+      "p": 0
+    },
+    "Right_TPJ": {
+      "n": 56,
+      "nPos": "47/56",
+      "meanDiff": 0.3021,
+      "dz": 0.826,
+      "p": 0
+    },
+    "Left_TPJ": {
+      "n": 56,
+      "nPos": "41/56",
+      "meanDiff": 0.2633,
+      "dz": 0.679,
+      "p": 0
+    },
+    "Parietal_Midline": {
+      "n": 56,
+      "nPos": "42/56",
+      "meanDiff": 0.1195,
+      "dz": 0.651,
+      "p": 0
+    },
+    "Right_Frontal": {
+      "n": 56,
+      "nPos": "44/56",
+      "meanDiff": 0.3418,
+      "dz": 0.662,
+      "p": 0
+    },
+    "Left_Frontal": {
+      "n": 56,
+      "nPos": "42/56",
+      "meanDiff": 0.3039,
+      "dz": 0.637,
+      "p": 0
+    }
+  },
+  "innerVsOuterSlope": {
+    "Occipital": {
+      "n": 56,
+      "nPos": "34/56",
+      "meanDiff": 0.1436,
+      "dz": 0.281,
+      "p": 0.0381
+    },
+    "Right_TPJ": {
+      "n": 56,
+      "nPos": "32/56",
+      "meanDiff": 0.0668,
+      "dz": 0.122,
+      "p": 0.3681
+    },
+    "Left_TPJ": {
+      "n": 56,
+      "nPos": "30/56",
+      "meanDiff": 0.0943,
+      "dz": 0.156,
+      "p": 0.2554
+    },
+    "Parietal_Midline": {
+      "n": 56,
+      "nPos": "38/56",
+      "meanDiff": 0.1271,
+      "dz": 0.42,
+      "p": 0.0037
+    },
+    "Right_Frontal": {
+      "n": 56,
+      "nPos": "22/56",
+      "meanDiff": -0.0677,
+      "dz": -0.117,
+      "p": 0.3937
+    },
+    "Left_Frontal": {
+      "n": 56,
+      "nPos": "22/56",
+      "meanDiff": -0.0575,
+      "dz": -0.101,
+      "p": 0.453
+    }
+  },
+  "innerVsOuterLZc": {
+    "Occipital": {
+      "n": 56,
+      "nPos": "17/56",
+      "meanDiff": -0.041,
+      "dz": -0.441,
+      "p": 0.0022
+    },
+    "Right_TPJ": {
+      "n": 56,
+      "nPos": "22/56",
+      "meanDiff": -0.0298,
+      "dz": -0.428,
+      "p": 0.0018
+    },
+    "Left_TPJ": {
+      "n": 56,
+      "nPos": "14/56",
+      "meanDiff": -0.0284,
+      "dz": -0.442,
+      "p": 0.0012
+    },
+    "Parietal_Midline": {
+      "n": 56,
+      "nPos": "15/56",
+      "meanDiff": -0.0526,
+      "dz": -0.397,
+      "p": 0.0035
+    },
+    "Right_Frontal": {
+      "n": 56,
+      "nPos": "19/56",
+      "meanDiff": -0.0164,
+      "dz": -0.264,
+      "p": 0.0552
+    },
+    "Left_Frontal": {
+      "n": 56,
+      "nPos": "18/56",
+      "meanDiff": -0.025,
+      "dz": -0.302,
+      "p": 0.0287
+    }
+  },
+  "doseResp": {
+    "Occipital_dSlope": {
+      "n": 56,
+      "rho": 0.254,
+      "p": 0.062
+    },
+    "Occipital_dLZc": {
+      "n": 56,
+      "rho": 0.142,
+      "p": 0.2997
+    },
+    "Right_TPJ_dSlope": {
+      "n": 56,
+      "rho": 0.3,
+      "p": 0.0222
+    },
+    "Right_TPJ_dLZc": {
+      "n": 56,
+      "rho": 0.147,
+      "p": 0.2675
+    },
+    "Left_TPJ_dSlope": {
+      "n": 56,
+      "rho": 0.265,
+      "p": 0.0462
+    },
+    "Left_TPJ_dLZc": {
+      "n": 56,
+      "rho": 0.252,
+      "p": 0.0606
+    },
+    "Parietal_Midline_dSlope": {
+      "n": 56,
+      "rho": 0.108,
+      "p": 0.4187
+    },
+    "Parietal_Midline_dLZc": {
+      "n": 56,
+      "rho": 0.019,
+      "p": 0.8892
+    },
+    "Right_Frontal_dSlope": {
+      "n": 56,
+      "rho": 0.189,
+      "p": 0.1636
+    },
+    "Right_Frontal_dLZc": {
+      "n": 56,
+      "rho": 0.195,
+      "p": 0.1486
+    },
+    "Left_Frontal_dSlope": {
+      "n": 56,
+      "rho": 0.191,
+      "p": 0.1552
+    },
+    "Left_Frontal_dLZc": {
+      "n": 56,
+      "rho": 0.206,
+      "p": 0.1264
+    }
+  }
+}
