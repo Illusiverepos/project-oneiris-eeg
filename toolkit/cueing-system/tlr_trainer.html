@@ -48,15 +48,23 @@
 
   <!-- Step 1: Calibrate Sub-Awakening Chime -->
   <div class="card">
-    <h2>1. Calibrate Your Sub-Awakening Chime</h2>
+    <h2>1. Calibrate Your Sub-Awakening Chime &amp; World-Seed Texture</h2>
     <div class="row">
       <label>Cue Volume (<span id="volLbl">18%</span>)
         <input id="vol" type="range" min="2" max="60" value="18">
       </label>
-      <button onclick="playTLRChime()">Test 3-Tone TLR Chime</button>
+      <label>World-Seed Texture (Sensory Incorporation)
+        <select id="worldSeed" style="background:#0a1020;color:var(--text);border:1px solid var(--border);border-radius:8px;padding:7px 10px;">
+          <option value="none">Chime Only (Classic TLR)</option>
+          <option value="ocean">Ocean Surf (Beach / Coast World)</option>
+          <option value="wind">High-Altitude Wind (Flying / Sky World)</option>
+          <option value="rain">Soft Rain (Cozy Cabin / Night City)</option>
+        </select>
+      </label>
+      <button onclick="playTLRChime()">Test Chime + World-Seed</button>
     </div>
     <p style="font-size:0.84rem;color:var(--muted);margin:6px 0 0;">
-      Set volume so you can <em>barely</em> hear the 3 rising tones in a quiet dark room. Too loud breaches the upper Goldilocks boundary and wakes you up.
+      Set volume so you can <em>barely</em> hear the 3 rising tones in a quiet dark room. Optional World-Seed adds a whisper-quiet 6-second ambient texture right after the chime for your Right TPJ to weave into the dream scene.
     </p>
   </div>
 
@@ -182,6 +190,42 @@ function playTLRChime(gainOverride) {
     osc.connect(g); g.connect(ctx.destination);
     osc.start(t0); osc.stop(t0 + toneDur + 0.02);
   });
+
+  // Optional 6-second whisper-quiet World-Seed ambient texture (synthesized filtered noise)
+  const seed = document.getElementById('worldSeed')?.value || 'none';
+  if (seed !== 'none') playWorldSeed(seed, vol, now + 0.72);
+}
+
+function playWorldSeed(seed, vol, startAt) {
+  const dur = 6.0;
+  const bufSize = Math.floor(ctx.sampleRate * dur);
+  const buffer = ctx.createBuffer(1, bufSize, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+  let last = 0;
+  for (let i = 0; i < bufSize; i++) {
+    const white = Math.random() * 2 - 1;
+    // Soft brown/pink noise base
+    last = (last + 0.04 * white) / 1.04;
+    const t = i / ctx.sampleRate;
+    const swell = seed === 'ocean' ? (0.45 + 0.55 * Math.sin((Math.PI * t) / 3.0) ** 2)
+                : seed === 'wind'  ? (0.55 + 0.45 * Math.sin(0.9 * t))
+                : 1.0;
+    data[i] = (seed === 'rain' ? white * 0.25 : last * 3.2) * swell;
+  }
+  const src = ctx.createBufferSource();
+  src.buffer = buffer;
+  const filter = ctx.createBiquadFilter();
+  filter.type = seed === 'wind' ? 'bandpass' : 'lowpass';
+  filter.frequency.value = seed === 'ocean' ? 420 : seed === 'wind' ? 680 : 1200;
+  if (seed === 'wind') filter.Q.value = 3.5;
+
+  const g = ctx.createGain();
+  g.gain.setValueAtTime(0.0001, startAt);
+  g.gain.linearRampToValueAtTime(Math.max(0.002, vol * 0.22), startAt + 1.5);
+  g.gain.linearRampToValueAtTime(0.0001, startAt + dur);
+
+  src.connect(filter); filter.connect(g); g.connect(ctx.destination);
+  src.start(startAt); src.stop(startAt + dur + 0.05);
 }
 
 function stopAll() {

@@ -1,0 +1,43 @@
+{
+  "totalDreams": 22315,
+  "totalLucid": 181,
+  "lucidBaseRatePct": 0.81,
+  "summary": {
+    "Pillow_Hands_REM_Atonia": {
+      "nFeature": 169,
+      "pctCorpus": 0.76,
+      "lucidWithPct": 5.33,
+      "lucidWithoutPct": 0.78,
+      "oddsRatio": 7.54,
+      "chi2": 43.1
+    },
+    "Flying_Floating_OBE": {
+      "nFeature": 158,
+      "pctCorpus": 0.71,
+      "lucidWithPct": 1.9,
+      "lucidWithoutPct": 0.8,
+      "oddsRatio": 2.77,
+      "chi2": 2.3
+    },
+    "Bodily_Sensory_Leakage": {
+      "nFeature": 112,
+      "pctCorpus": 0.5,
+      "lucidWithPct": 7.14,
+      "lucidWithoutPct": 0.78,
+      "oddsRatio": 10.33,
+      "chi2": 56.1
+    }
+  },
+  "examples": {
+    "pillowHands": [
+      "Last night I was dreaming that I was back in my home town again and that we were walking with Sandra. She had come to town. And apparently it was one of those t",
+      "Lucid Lamp on Fire I go to turn my lamp on. There is a bunch of stuff cluttered around it. I turn the knob, and the power strip that is on my desk crackles. I ",
+      "First Night Terror I feel pressure on my back as I lay in bed. I know a man is there. I can't move. He laughs a wild and stringy laugh. I know I'm dreaming, an"
+    ],
+    "flyingOBE": [
+      "The following dream occurred about two hours earlier, and I woke up afterwards and made a few quick notes before going back to sleep. In the dream I'm in one of",
+      "I'm in my front yard (something gives me the impression that I was flying or in the air, but I can't confirm it). Then, I realize I'm dreaming, and this is one ",
+      "(07/10/89)[I fell back to sleep early in morning.] I had three minutes to get to school and I was running up a graveled path and across a lawn and missed the sc"
+    ]
+  }
+}
