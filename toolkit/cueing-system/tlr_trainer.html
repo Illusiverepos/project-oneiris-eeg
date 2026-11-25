@@ -31,7 +31,20 @@
 <body>
 <div class="wrap">
   <h1>ONEIRIS — TLR Dream-Control Cueing System</h1>
-  <p class="sub">Based on Konkoly et al. (2021) + Your 10-Lab Right-Frontal Goldilocks Switch (400 &rarr; 600 &rarr; 800 Hz soft Hann chime)</p>
+  <p class="sub">Based on Konkoly et al. (2021) + 10-Lab Right-Frontal Goldilocks Switch (400 &rarr; 600 &rarr; 800 Hz soft chime)</p>
+
+  <!-- Quick-Start Instructions -->
+  <div class="card" style="border-color:#2b4578;background:#0d1630;">
+    <h2>Quick-Start Guide (15 Min Before Sleep)</h2>
+    <ol style="margin:6px 0 0;padding-left:20px;font-size:0.88rem;color:#cbd5e1;line-height:1.65;">
+      <li><strong>Plug your device in</strong> next to your bed (keep screen awake / Do Not Disturb on, volume <em>not</em> muted).</li>
+      <li><strong>Set volume (Step 1):</strong> Tap <em>Test 3-Tone TLR Chime</em> and slide it down until you can <em>barely</em> hear the 3 soft rising tones in your quiet room.</li>
+      <li><strong>Train for 15 min (Step 2):</strong> Tap <em>Start 15-Min Conditioning</em>. Every minute when the 3 tones play, read the prompt and calmly ask: <em>"Am I dreaming right now?"</em></li>
+      <li><strong>Arm for REM sleep (Step 3):</strong> Pick <em>Normal Bedtime (4.5h)</em> or <em>Morning Nap (50m — best odds!)</em>, then tap <em>Arm REM Cueing</em> and go to sleep.</li>
+      <li><strong>If it wakes you up:</strong> Tap the red <em>I'm Awake / Too Loud</em> button (drops volume 30% &amp; pauses 15 min).</li>
+      <li><strong>In the morning (Step 5):</strong> Pick your answers, hit <em>1-Click Copy Morning Report</em>, and text it back to Austin!</li>
+    </ol>
+  </div>
 
   <!-- Step 1: Calibrate Sub-Awakening Chime -->
   <div class="card">
@@ -64,6 +77,10 @@
   <!-- Step 3: Overnight / WBTB REM-Window Cueing -->
   <div class="card">
     <h2>3. Overnight / WBTB REM-Window Cueing</h2>
+    <div class="row" style="margin-bottom:12px;">
+      <button class="sec" onclick="setPreset(270,45,60)">Preset: Normal Bedtime (4.5h delay)</button>
+      <button class="sec" onclick="setPreset(50,35,50)">Preset: Morning Nap / WBTB (50m — best odds)</button>
+    </div>
     <div class="row">
       <label>Delay Until REM (min)
         <input id="delayMin" type="number" value="50" min="1" max="360">
@@ -226,6 +243,13 @@ function tooLoudBackoff() {
   document.getElementById('sleepStatus').textContent = `Backed off! Volume reduced to ${Math.round(currentVol * 100)}% and paused 15 min.`;
   document.getElementById('needle').style.left = '88%';
   startSleepCueing();
+}
+
+function setPreset(delay, win, interval) {
+  document.getElementById('delayMin').value = delay;
+  document.getElementById('winMin').value = win;
+  document.getElementById('intSec').value = interval;
+  document.getElementById('sleepStatus').textContent = `Preset loaded: ${delay}m delay, ${win}m REM window, every ${interval}s. Tap "Arm REM Cueing" when ready.`;
 }
 
 function copyMorningLog() {
