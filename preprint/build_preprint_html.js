@@ -45,13 +45,47 @@ function mdToHtml(md) {
   const out = [];
   let inList = false, inTable = false, tableRows = [];
 
+  const renderMath = (m) => {
+    let s = m;
+    // Unwrap \text{...} (handling nested braces one level)
+    for (let i = 0; i < 3; i++) s = s.replace(/\\text\{([^{}]*)\}/g, '<span style="font-style:normal">$1</span>');
+    s = s
+      .replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g, '($1/$2)')
+      .replace(/\\sum/g, '∑')
+      .replace(/\\in\b/g, '∈')
+      .replace(/\\log/g, '<span style="font-style:normal">log</span>')
+      .replace(/\\tau/g, 'τ')
+      .replace(/\\times/g, '×')
+      .replace(/\\rho/g, 'ρ')
+      .replace(/\\alpha/g, 'α')
+      .replace(/\\beta/g, 'β')
+      .replace(/\\gamma/g, 'γ')
+      .replace(/\\delta/g, 'δ')
+      .replace(/\\sigma/g, 'σ')
+      .replace(/\\mu/g, 'μ')
+      .replace(/\\le\b/g, '≤')
+      .replace(/\\ge\b/g, '≥')
+      .replace(/\\approx/g, '≈')
+      .replace(/\\to\b/g, '→')
+      .replace(/\\rightarrow/g, '→')
+      .replace(/\\pm/g, '±')
+      .replace(/\\%/g, '%')
+      .replace(/\\[,;:!]/g, ' ')
+      .replace(/--/g, '–')
+      .replace(/\^\{([^{}]+)\}/g, '<sup>$1</sup>')
+      .replace(/_\{([^{}]+)\}/g, '<sub>$1</sub>')
+      .replace(/\^([0-9a-zA-Z+-])/g, '<sup>$1</sup>')
+      .replace(/_([0-9a-zA-Z])/g, '<sub>$1</sub>');
+    return s;
+  };
+
   const fmt = (s) => s
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     .replace(/`([^`]+)`/g, '<code>$1</code>')
-    .replace(/\$\$(.+?)\$\$/g, '<div class="eq">$1</div>')
-    .replace(/\$([^$]+)\$/g, '<span class="math">$1</span>');
+    .replace(/\$\$(.+?)\$\$/g, (_, m) => `<div class="eq">${renderMath(m)}</div>`)
+    .replace(/\$([^$]+)\$/g, (_, m) => `<span class="math">${renderMath(m)}</span>`);
 
   const flushTable = () => {
     if (!tableRows.length) return;
