@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONEIRIS — Neurochemistry of Dreaming (Live Wilson–Cowan Lab)</title>
+<style>
+  :root { --bg: #070b16; --card: #11182c; --border: #233054; --text: #e8eefc; --muted: #8fa1cb; --cyan: #38bdf8; --amber: #fbbf24; --emerald: #34d399; --rose: #fb7185; --violet: #a78bfa; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 20px; }
+  .wrap { max-width: 1140px; margin: 0 auto; }
+  h1 { margin: 0 0 4px; font-size: 1.55rem; }
+  .sub { color: var(--muted); margin: 0 0 16px; font-size: 0.9rem; }
+  .presets { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  button { background: #1c2847; color: var(--text); border: 1px solid var(--border); border-radius: 9px; padding: 8px 13px; font-weight: 600; cursor: pointer; font-size: 0.84rem; }
+  button:hover { border-color: var(--cyan); }
+  button.primary { background: var(--cyan); color: #04101f; border-color: var(--cyan); }
+  button.pulse { background: var(--amber); color: #1c1002; border-color: var(--amber); }
+  .layout { display: grid; grid-template-columns: 340px 1fr; gap: 16px; }
+  @media (max-width: 860px) { .layout { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+  .card h2 { margin: 0 0 10px; font-size: 0.98rem; color: #fff; }
+  .slider-row { margin-bottom: 12px; }
+  .slider-head { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 3px; }
+  .slider-head span:last-child { font-family: ui-monospace, Consolas, monospace; color: var(--cyan); }
+  .hint { font-size: 0.74rem; color: var(--muted); margin-top: 2px; }
+  input[type="range"] { width: 100%; accent-color: var(--cyan); }
+  canvas { width: 100%; display: block; background: #090f1f; border-radius: 10px; border: 1px solid #1d2845; }
+  .badge { display: inline-block; padding: 5px 12px; border-radius: 999px; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.02em; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 14px; }
+  .kpi { background: #0a1022; border: 1px solid #1f2b4d; border-radius: 10px; padding: 10px; text-align: center; }
+  .kpi .v { font-family: ui-monospace, Consolas, monospace; font-size: 1.15rem; font-weight: 700; }
+  .kpi .l { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ONEIRIS — Neurochemistry of Dreaming (Live Two-Layer Wilson–Cowan Lab)</h1>
+  <p class="sub">Real-time 12-column Posterior (Right TPJ / Occipital) + 2-column Right-Frontal E/I cortical sheet (&tau;<sub>E</sub>=10 ms, &tau;<sub>I</sub>=20 ms) from your 10-Lab model</p>
+
+  <div class="presets">
+    <button onclick="applyPreset('propofol')">Propofol / Deep NREM</button>
+    <button onclick="applyPreset('nrem_dream')">Normal NREM Dream (6-s Waves)</button>
+    <button class="primary" onclick="applyPreset('lucid')">Lucid Dream Control (Right-Frontal ON)</button>
+    <button onclick="applyPreset('psilocybin')">19 mg Psilocybin (Inner Cinema)</button>
+    <button onclick="applyPreset('wake')">Sober Connected Waking</button>
+    <button class="pulse" onclick="injectTLRPulse()">Inject TLR Chime / Sensory Leak Pulse</button>
+  </div>
+
+  <div class="layout">
+    <!-- Controls -->
+    <div>
+      <div class="card">
+        <h2>Neuromodulation &amp; Control Dials</h2>
+        <div class="slider-row">
+          <div class="slider-head"><span>Acetylcholine (ACh &mdash; REM / Galantamine)</span><span id="v_ach">0.55</span></div>
+          <input id="s_ach" type="range" min="0" max="1" step="0.01" value="0.55">
+          <div class="hint">Clears slow-wave gate &amp; boosts posterior recurrent gain (g<sub>EE</sub>)</div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-head"><span>GABA / Slow-Wave (Propofol / THC / Deep Sleep)</span><span id="v_gaba">0.55</span></div>
+          <input id="s_gaba" type="range" min="0" max="1" step="0.01" value="0.55">
+          <div class="hint">Drives Stage 1 Delta inhibition (I<sub>SW</sub>); high values shut down dreams</div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-head"><span>5-HT2A Agonism (Psilocybin Inner Cinema)</span><span id="v_5ht">0.00</span></div>
+          <input id="s_5ht" type="range" min="0" max="1" step="0.01" value="0.00">
+          <div class="hint">Hyper-flattens Right TPJ / Occipital 1/f even with eyes closed</div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-head"><span>Right-Frontal Executive Gain (g<sub>FP</sub> &mdash; Lucidity)</span><span id="v_gfp">0.55</span></div>
+          <input id="s_gfp" type="range" min="0" max="1" step="0.01" value="0.55">
+          <div class="hint">Inverted-U sweet spot (~0.45–0.70): stabilizes dreams; too high wakes you up</div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-head"><span>Sensory Leakage (TLR Chime / "Pillow Hands")</span><span id="v_leak">0.15</span></div>
+          <input id="s_leak" type="range" min="0" max="1" step="0.01" value="0.15">
+          <div class="hint">Controlled body/audio prediction error nudging Right Frontal online</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Live Decoded Brain State</h2>
+        <div id="stateBadge" class="badge" style="background:rgba(52,211,153,0.18);color:var(--emerald);">LUCID CORRIDOR</div>
+        <p id="stateDesc" style="font-size:0.83rem;color:var(--muted);margin:10px 0 0;">
+          Posterior 12-column sheet is percolating while Right-Frontal executive gain holds inside the Goldilocks sweet spot.
+        </p>
+      </div>
+    </div>
+
+    <!-- Live Canvases -->
+    <div>
+      <div class="kpis">
+        <div class="kpi"><div class="v" id="k_pslp" style="color:var(--cyan)">-1.20</div><div class="l">Right-TPJ 1/f slopeBB</div></div>
+        <div class="kpi"><div class="v" id="k_fslp" style="color:var(--amber)">-1.15</div><div class="l">Right-Frontal slopeBB</div></div>
+        <div class="kpi"><div class="v" id="k_coig" style="color:var(--emerald)">68%</div><div class="l">Posterior Co-Ignition</div></div>
+        <div class="kpi"><div class="v" id="k_gate" style="color:var(--violet)">OPEN</div><div class="l">Stage 1 Delta Gate</div></div>
+      </div>
+
+      <div class="card">
+        <h2>12-Column Posterior Sheet (Right TPJ + Occipital) — Spatial Percolation Waves</h2>
+        <canvas id="c_heat" width="720" height="140"></canvas>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h2>Live LFP Waveforms (Cyan: Right TPJ &bull; Amber: Right Frontal)</h2>
+          <canvas id="c_eeg" width="360" height="170"></canvas>
+        </div>
+        <div class="card">
+          <h2>Live 1/f Power Spectrum (2–45 Hz OLS Fit)</h2>
+          <canvas id="c_psd" width="360" height="170"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ======================== LIVE TWO-LAYER WILSON-COWAN ENGINE ========================
+const M = 12, F = 2, SFREQ = 200, DT = 1 / SFREQ;
+const tauE = 0.010, tauI = 0.020, gEI = 12.0, gIE = 10.0, gII = 3.0, thetaE = 2.8, thetaI = 3.6, kCoupl = 1.6;
+
+const E = new Float64Array(M).fill(0.25), I = new Float64Array(M).fill(0.15);
+const FE = new Float64Array(F).fill(0.20), FI = new Float64Array(F).fill(0.15);
+
+const HIST = 256;
+const postBuf = new Float64Array(HIST), frontBuf = new Float64Array(HIST);
+const heatCols = Array.from({ length: 140 }, () => new Float64Array(M));
+let swPhase = 0, swGate = 1.0, clearTimer = 0, pulseTimer = 0;
+
+const params = { ach: 0.55, gaba: 0.55, ht5: 0.0, gfp: 0.55, leak: 0.15 };
+const bindSlider = (id, key, lbl) => {
+  const el = document.getElementById(id);
+  el.addEventListener('input', () => {
+    params[key] = parseFloat(el.value);
+    document.getElementById(lbl).textContent = params[key].toFixed(2);
+  });
+};
+bindSlider('s_ach', 'ach', 'v_ach');
+bindSlider('s_gaba', 'gaba', 'v_gaba');
+bindSlider('s_5ht', 'ht5', 'v_5ht');
+bindSlider('s_gfp', 'gfp', 'v_gfp');
+bindSlider('s_leak', 'leak', 'v_leak');
+
+function applyPreset(name) {
+  const map = {
+    propofol:   { ach: 0.05, gaba: 0.95, ht5: 0.00, gfp: 0.00, leak: 0.00 },
+    nrem_dream: { ach: 0.50, gaba: 0.62, ht5: 0.00, gfp: 0.05, leak: 0.08 },
+    lucid:      { ach: 0.65, gaba: 0.52, ht5: 0.05, gfp: 0.58, leak: 0.20 },
+    psilocybin: { ach: 0.75, gaba: 0.15, ht5: 0.90, gfp: 0.45, leak: 0.10 },
+    wake:       { ach: 0.85, gaba: 0.05, ht5: 0.00, gfp: 0.85, leak: 0.85 },
+  }[name];
+  Object.assign(params, map);
+  [['s_ach','ach','v_ach'],['s_gaba','gaba','v_gaba'],['s_5ht','ht5','v_5ht'],['s_gfp','gfp','v_gfp'],['s_leak','leak','v_leak']].forEach(([s,k,l]) => {
+    document.getElementById(s).value = params[k];
+    document.getElementById(l).textContent = params[k].toFixed(2);
+  });
+}
+
+let audioCtx = null;
+function injectTLRPulse() {
+  pulseTimer = 140; // ~700 ms neural pulse
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  const now = audioCtx.currentTime + 0.01;
+  [400, 600, 800].forEach((f, i) => {
+    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+    o.frequency.value = f; o.type = 'sine';
+    const t0 = now + i * 0.21;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(0.05, t0 + 0.07);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.18);
+    o.connect(g); g.connect(audioCtx.destination); o.start(t0); o.stop(t0 + 0.2);
+  });
+}
+
+const sigm = (x) => 1 / (1 + Math.exp(-x));
+const randn = () => Math.sqrt(-2 * Math.log(Math.max(1e-9, Math.random()))) * Math.cos(2 * Math.PI * Math.random());
+
+function stepModel() {
+  const swAmp = 2.6 * params.gaba * (1 - 0.55 * params.ach) * (1 - 0.5 * params.ht5);
+  const swClearProb = params.gaba > 0.3 && params.gaba < 0.88 ? 0.22 * (0.4 + params.ach) : 0;
+  const gEE = 9.8 + 4.4 * params.ach + 2.4 * params.ht5;
+  const gFP = 3.2 * params.gfp;
+  const pulse = pulseTimer > 0 ? (pulseTimer--, 0.85) : 0;
+
+  if (clearTimer > 0) { clearTimer--; swGate = 0.14; }
+  else if (swClearProb > 0 && Math.random() < swClearProb * DT) { clearTimer = Math.round(2.4 * SFREQ); swGate = 0.14; }
+  else swGate = 1.0;
+
+  swPhase += 2 * Math.PI * 1.25 * DT;
+  const swWave = swAmp * swGate * (0.65 + 0.35 * Math.sin(swPhase));
+  const frontMean = 0.5 * (FE[0] + FE[1]);
+
+  let postEAvg = 0, postLFPAvg = 0;
+  const nextE = new Float64Array(M), nextI = new Float64Array(M);
+  for (let i = 0; i < M; i++) {
+    const left = E[(i - 1 + M) % M], right = E[(i + 1) % M];
+    const asym = 0.55 * params.leak;
+    const spatial = kCoupl * (0.5 * (left + right) + asym * (left - right));
+    const pE = 1.25 - swWave + spatial + gFP * frontMean + 0.7 * params.ht5 + 0.6 * params.leak + pulse + 1.15 * randn();
+    const pI = 0.30 + 0.55 * swWave + 0.45 * randn();
+    nextE[i] = Math.max(0, Math.min(1, E[i] + DT * ((-E[i] + sigm(gEE * E[i] - gEI * I[i] - thetaE + pE)) / tauE)));
+    nextI[i] = Math.max(0, Math.min(1, I[i] + DT * ((-I[i] + sigm(gIE * E[i] - gII * I[i] - thetaI + pI)) / tauI)));
+    postEAvg += nextE[i];
+    postLFPAvg += (nextE[i] - 0.5 * nextI[i]) - 0.35 * swWave;
+  }
+  postEAvg /= M; postLFPAvg /= M;
+
+  let frontLFPAvg = 0;
+  for (let f = 0; f < F; f++) {
+    const pFE = 0.25 + 1.65 * params.gfp + 0.9 * params.leak + 1.2 * pulse - 0.85 * swWave + 0.8 * postEAvg + 1.05 * randn();
+    const pFI = 0.35 + 0.45 * swWave + 0.45 * randn();
+    const nFE = Math.max(0, Math.min(1, FE[f] + DT * ((-FE[f] + sigm(13.2 * FE[f] - gEI * FI[f] - thetaE + pFE)) / tauE)));
+    const nFI = Math.max(0, Math.min(1, FI[f] + DT * ((-FI[f] + sigm(gIE * FE[f] - gII * FI[f] - thetaI + pFI)) / tauI)));
+    FE[f] = nFE; FI[f] = nFI;
+    frontLFPAvg += (nFE - 0.5 * nFI) - 0.22 * swWave;
+  }
+  frontLFPAvg /= F;
+
+  for (let i = 0; i < M; i++) { E[i] = nextE[i]; I[i] = nextI[i]; }
+  postBuf.copyWithin(0, 1); postBuf[HIST - 1] = postLFPAvg;
+  frontBuf.copyWithin(0, 1); frontBuf[HIST - 1] = frontLFPAvg;
+}
+
+function fft(re, im) {
+  const n = re.length;
+  for (let i = 1, j = 0; i < n; i++) {
+    let bit = n >> 1; for (; j & bit; bit >>= 1) j ^= bit; j ^= bit;
+    if (i < j) { [re[i], re[j]] = [re[j], re[i]]; [im[i], im[j]] = [im[j], im[i]]; }
+  }
+  for (let len = 2; len <= n; len <<= 1) {
+    const ang = (-2 * Math.PI) / len, wr = Math.cos(ang), wi = Math.sin(ang);
+    for (let i = 0; i < n; i += len) {
+      let cr = 1, ci = 0;
+      for (let j = 0; j < len / 2; j++) {
+        const ur = re[i+j], ui = im[i+j];
+        const vr = re[i+j+len/2]*cr - im[i+j+len/2]*ci, vi = re[i+j+len/2]*ci + im[i+j+len/2]*cr;
+        re[i+j] = ur+vr; im[i+j] = ui+vi; re[i+j+len/2] = ur-vr; im[i+j+len/2] = ui-vi;
+        const nr = cr*wr - ci*wi; ci = cr*wi + ci*wr; cr = nr;
+      }
+    }
+  }
+}
+
+function computeSpectrum(buf) {
+  const n = buf.length, r = new Float64Array(n), im = new Float64Array(n);
+  let m = 0; for (let i = 0; i < n; i++) m += buf[i]; m /= n;
+  for (let i = 0; i < n; i++) r[i] = (buf[i] - m) * 0.5 * (1 - Math.cos((2 * Math.PI * i) / (n - 1)));
+  fft(r, im);
+  const df = SFREQ / n, xs = [], ys = [], pts = [];
+  for (let k = 1; k < n / 2; k++) {
+    const f = k * df; if (f > 50) break;
+    const lp = Math.log10((r[k]*r[k] + im[k]*im[k]) / n + 1e-12);
+    pts.push([Math.log10(f), lp]);
+    if ((f >= 2 && f <= 7) || (f >= 14 && f <= 45)) { xs.push(Math.log10(f)); ys.push(lp); }
+  }
+  let mx = 0, my = 0; for (let i = 0; i < xs.length; i++) { mx += xs[i]; my += ys[i]; } mx /= xs.length; my /= xs.length;
+  let num = 0, den = 0; for (let i = 0; i < xs.length; i++) { const dx = xs[i] - mx; num += dx * (ys[i] - my); den += dx * dx; }
+  const slp = den > 0 ? num / den : 0;
+  return { slp, ic: my - slp * mx, pts };
+}
+
+const cHeat = document.getElementById('c_heat').getContext('2d');
+const cEEG  = document.getElementById('c_eeg').getContext('2d');
+const cPSD  = document.getElementById('c_psd').getContext('2d');
+
+let frame = 0;
+function loop() {
+  for (let k = 0; k < 4; k++) stepModel();
+  heatCols.shift(); heatCols.push(Float64Array.from(E));
+
+  // 1. Draw 12-column spatial percolation heatmap
+  const cw = 720 / heatCols.length, ch = 140 / M;
+  for (let x = 0; x < heatCols.length; x++) {
+    for (let y = 0; y < M; y++) {
+      const v = heatCols[x][y];
+      const r = Math.min(255, Math.floor(v * 255 * 1.4));
+      const g = Math.min(255, Math.floor(Math.max(0, v - 0.15) * 240));
+      const b = Math.min(255, Math.floor(60 + (1 - v) * 90 + v * 140));
+      cHeat.fillStyle = `rgb(${r},${g},${b})`;
+      cHeat.fillRect(x * cw, y * ch, cw + 1, ch + 1);
+    }
+  }
+
+  // 2. Draw LFP waveforms
+  cEEG.clearRect(0, 0, 360, 170);
+  const drawWave = (buf, yMid, col) => {
+    cEEG.strokeStyle = col; cEEG.lineWidth = 1.6; cEEG.beginPath();
+    for (let i = 0; i < HIST; i++) {
+      const x = (i / (HIST - 1)) * 360, y = yMid - buf[i] * 48;
+      i === 0 ? cEEG.moveTo(x, y) : cEEG.lineTo(x, y);
+    }
+    cEEG.stroke();
+  };
+  drawWave(postBuf, 52, '#38bdf8');
+  drawWave(frontBuf, 122, '#fbbf24');
+
+  // 3. Spectrum & KPIs every 8 frames
+  if (frame++ % 8 === 0) {
+    const spP = computeSpectrum(postBuf), spF = computeSpectrum(frontBuf);
+    cPSD.clearRect(0, 0, 360, 170);
+    cPSD.strokeStyle = '#38bdf8'; cPSD.lineWidth = 1.5; cPSD.beginPath();
+    spP.pts.forEach(([lx, ly], i) => {
+      const x = 24 + ((lx - 0.1) / 1.65) * 320, y = 150 - ((ly + 5.5) / 5.5) * 130;
+      i === 0 ? cPSD.moveTo(x, y) : cPSD.lineTo(x, y);
+    });
+    cPSD.stroke();
+    // OLS 1/f slope line
+    cPSD.strokeStyle = '#fbbf24'; cPSD.setLineDash([4, 3]); cPSD.beginPath();
+    const xA = Math.log10(2), xB = Math.log10(45);
+    const sx = (lx) => 24 + ((lx - 0.1) / 1.65) * 320, sy = (ly) => 150 - ((ly + 5.5) / 5.5) * 130;
+    cPSD.moveTo(sx(xA), sy(spP.ic + spP.slp * xA)); cPSD.lineTo(sx(xB), sy(spP.ic + spP.slp * xB));
+    cPSD.stroke(); cPSD.setLineDash([]);
+
+    const active = E.filter((v) => v > 0.35).length;
+    document.getElementById('k_pslp').textContent = spP.slp.toFixed(2);
+    document.getElementById('k_fslp').textContent = spF.slp.toFixed(2);
+    document.getElementById('k_coig').textContent = Math.round((active / M) * 100) + '%';
+    const gateOpen = swGate < 0.5 || params.gaba < 0.25;
+    document.getElementById('k_gate').textContent = gateOpen ? 'OPEN' : 'GATED';
+
+    const badge = document.getElementById('stateBadge'), desc = document.getElementById('stateDesc');
+    if (params.gaba > 0.8 && params.ach < 0.25) {
+      badge.textContent = 'PROPOFOL / DREAMLESS NREM'; badge.style.background = 'rgba(147,164,204,0.18)'; badge.style.color = '#94a3b8';
+      desc.textContent = 'High GABAergic slow-wave pressure keeps the Stage 1 Delta Gate locked shut. Posterior sheet is subcritical.';
+    } else if (params.ht5 > 0.55) {
+      badge.textContent = 'PSILOCYBIN INNER CINEMA'; badge.style.background = 'rgba(167,139,250,0.22)'; badge.style.color = '#a78bfa';
+      desc.textContent = '5-HT2A hyper-flattens Right TPJ + Occipital 1/f beyond external video—vivid eyes-closed world rendering.';
+    } else if (params.gaba < 0.2 && params.leak > 0.6) {
+      badge.textContent = 'CONNECTED SOBER WAKING'; badge.style.background = 'rgba(56,189,248,0.2)'; badge.style.color = '#38bdf8';
+      desc.textContent = 'Continuous high-complexity tonic floor with external sensory drive anchoring Right TPJ to the physical room.';
+    } else if (params.gfp >= 0.42 && params.gfp <= 0.75) {
+      badge.textContent = 'LUCID DREAM CONTROL (SWEET SPOT)'; badge.style.background = 'rgba(52,211,153,0.2)'; badge.style.color = '#34d399';
+      desc.textContent = 'Right-Frontal executive gain sits inside the inverted-U Goldilocks corridor—stabilizing posterior world-building without waking you up!';
+    } else if (params.gfp > 0.75) {
+      badge.textContent = 'WAKE THRESHOLD BREACHED'; badge.style.background = 'rgba(251,113,133,0.22)'; badge.style.color = '#fb7185';
+      desc.textContent = 'Right-Frontal drive exceeded the upper Goldilocks boundary—dream collapses into waking.';
+    } else {
+      badge.textContent = 'NORMAL DREAMING (6-s IGNITION WAVES)'; badge.style.background = 'rgba(251,191,36,0.2)'; badge.style.color = '#fbbf24';
+      desc.textContent = 'Right Frontal is offline; posterior sheet ignites in periodic waves whenever the Stage 1 Delta Gate briefly clears.';
+    }
+  }
+  requestAnimationFrame(loop);
+}
+loop();
+</script>
+</body>
+</html>

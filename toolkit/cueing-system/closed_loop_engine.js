@@ -255,12 +255,18 @@ function replayEDF(edfPath) {
 function serve(port = 8787) {
   const ctrl = new GoldilocksCueController({ sfreq: 200 });
   const htmlPath = path.join(__dirname, 'tlr_trainer.html');
+  const labPath = path.join(__dirname, 'neurochemistry_dream_lab.html');
   let tickSec = 0;
 
   const server = http.createServer((req, res) => {
     if (req.method === 'GET' && (req.url === '/' || req.url === '/index.html')) {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end(fs.readFileSync(htmlPath));
+      return;
+    }
+    if (req.method === 'GET' && req.url === '/lab') {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(fs.readFileSync(labPath));
       return;
     }
     if (req.method === 'POST' && req.url === '/eeg-chunk') {
