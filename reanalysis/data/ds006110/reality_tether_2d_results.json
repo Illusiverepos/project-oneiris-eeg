@@ -1,0 +1,54 @@
+{
+  "nHumans": 56,
+  "coords2D": [
+    {
+      "state": "sRest",
+      "S_phys_Intensity": -0.226,
+      "R_tether_External": -1.163
+    },
+    {
+      "state": "sVid",
+      "S_phys_Intensity": -0.263,
+      "R_tether_External": 1.634
+    },
+    {
+      "state": "pRest",
+      "S_phys_Intensity": 0.292,
+      "R_tether_External": -0.259
+    },
+    {
+      "state": "pMed",
+      "S_phys_Intensity": 0.197,
+      "R_tether_External": -0.212
+    }
+  ],
+  "tetherTests": {
+    "External Video vs Psilocybin Rest (R_tether)": {
+      "n": 56,
+      "nPos": "45/56",
+      "accPct": 80.4,
+      "meanDiff": 1.8932,
+      "dz": 0.727,
+      "p": 0,
+      "pooledAUC": 0.7554
+    },
+    "External Video vs Psilocybin Med  (R_tether)": {
+      "n": 56,
+      "nPos": "45/56",
+      "accPct": 80.4,
+      "meanDiff": 1.8456,
+      "dz": 0.729,
+      "p": 0,
+      "pooledAUC": 0.7497
+    },
+    "External Video vs Sober Rest      (R_tether)": {
+      "n": 56,
+      "nPos": "51/56",
+      "accPct": 91.1,
+      "meanDiff": 2.7975,
+      "dz": 1.266,
+      "p": 0,
+      "pooledAUC": 0.8406
+    }
+  }
+}
