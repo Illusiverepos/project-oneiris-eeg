@@ -1,0 +1,1424 @@
+{
+  "generatedAt": "2026-11-26T03:59:46.086Z",
+  "dataset": "OpenNeuro ds007114 (SUBEMOcondEEG1 — Human Fear Conditioning & Extinction)",
+  "nSubjects": 28,
+  "condVsPre": {
+    "rfSlope": {
+      "n": 28,
+      "mean": 0.0593,
+      "dz": 0.176,
+      "pApprox": 0.3527,
+      "nPos": 16,
+      "nNeg": 12
+    },
+    "lfSlope": {
+      "n": 28,
+      "mean": 0.0944,
+      "dz": 0.267,
+      "pApprox": 0.1584,
+      "nPos": 16,
+      "nNeg": 12
+    },
+    "rfMinusLfSlope": {
+      "n": 28,
+      "mean": -0.0352,
+      "dz": -0.212,
+      "pApprox": 0.2613,
+      "nPos": 11,
+      "nNeg": 17
+    },
+    "rfBeta": {
+      "n": 28,
+      "mean": 0.0011,
+      "dz": 0.021,
+      "pApprox": 0.9123,
+      "nPos": 15,
+      "nNeg": 13
+    },
+    "postSlope": {
+      "n": 28,
+      "mean": 0.033,
+      "dz": 0.146,
+      "pApprox": 0.4394,
+      "nPos": 14,
+      "nNeg": 14
+    },
+    "postDFA": {
+      "n": 28,
+      "mean": 0.0392,
+      "dz": 0.246,
+      "pApprox": 0.1932,
+      "nPos": 17,
+      "nNeg": 11
+    },
+    "postAlpha": {
+      "n": 28,
+      "mean": 0.0053,
+      "dz": 0.057,
+      "pApprox": 0.7646,
+      "nPos": 15,
+      "nNeg": 13
+    },
+    "postEffDimNorm": {
+      "n": 28,
+      "mean": -0.002,
+      "dz": -0.152,
+      "pApprox": 0.4203,
+      "nPos": 14,
+      "nNeg": 14
+    },
+    "globalEffDimNorm": {
+      "n": 28,
+      "mean": 0.0011,
+      "dz": 0.059,
+      "pApprox": 0.7548,
+      "nPos": 15,
+      "nNeg": 13
+    }
+  },
+  "extVsCond": {
+    "rfSlope": {
+      "n": 28,
+      "mean": 0.1558,
+      "dz": 0.357,
+      "pApprox": 0.0587,
+      "nPos": 17,
+      "nNeg": 11
+    },
+    "lfSlope": {
+      "n": 28,
+      "mean": 0.1321,
+      "dz": 0.324,
+      "pApprox": 0.086,
+      "nPos": 18,
+      "nNeg": 10
+    },
+    "rfMinusLfSlope": {
+      "n": 28,
+      "mean": 0.0237,
+      "dz": 0.121,
+      "pApprox": 0.5208,
+      "nPos": 16,
+      "nNeg": 12
+    },
+    "rfBeta": {
+      "n": 28,
+      "mean": 0.0143,
+      "dz": 0.262,
+      "pApprox": 0.1662,
+      "nPos": 15,
+      "nNeg": 13
+    },
+    "postSlope": {
+      "n": 28,
+      "mean": 0.1375,
+      "dz": 0.515,
+      "pApprox": 0.0064,
+      "nPos": 18,
+      "nNeg": 10
+    },
+    "postDFA": {
+      "n": 28,
+      "mean": -0.0698,
+      "dz": -0.465,
+      "pApprox": 0.0138,
+      "nPos": 9,
+      "nNeg": 19
+    },
+    "postAlpha": {
+      "n": 28,
+      "mean": 0.0328,
+      "dz": 0.249,
+      "pApprox": 0.1873,
+      "nPos": 16,
+      "nNeg": 12
+    },
+    "postEffDimNorm": {
+      "n": 28,
+      "mean": 0.0037,
+      "dz": 0.262,
+      "pApprox": 0.1657,
+      "nPos": 18,
+      "nNeg": 10
+    },
+    "globalEffDimNorm": {
+      "n": 28,
+      "mean": 0.0066,
+      "dz": 0.318,
+      "pApprox": 0.0924,
+      "nPos": 17,
+      "nNeg": 11
+    }
+  },
+  "extVsPre": {
+    "rfSlope": {
+      "n": 28,
+      "mean": 0.2151,
+      "dz": 0.519,
+      "pApprox": 0.0061,
+      "nPos": 19,
+      "nNeg": 9
+    },
+    "lfSlope": {
+      "n": 28,
+      "mean": 0.2265,
+      "dz": 0.545,
+      "pApprox": 0.0039,
+      "nPos": 20,
+      "nNeg": 8
+    },
+    "rfMinusLfSlope": {
+      "n": 28,
+      "mean": -0.0114,
+      "dz": -0.053,
+      "pApprox": 0.7796,
+      "nPos": 12,
+      "nNeg": 16
+    },
+    "rfBeta": {
+      "n": 28,
+      "mean": 0.0155,
+      "dz": 0.239,
+      "pApprox": 0.2057,
+      "nPos": 16,
+      "nNeg": 12
+    },
+    "postSlope": {
+      "n": 28,
+      "mean": 0.1705,
+      "dz": 0.616,
+      "pApprox": 0.0011,
+      "nPos": 20,
+      "nNeg": 8
+    },
+    "postDFA": {
+      "n": 28,
+      "mean": -0.0306,
+      "dz": -0.275,
+      "pApprox": 0.1456,
+      "nPos": 9,
+      "nNeg": 19
+    },
+    "postAlpha": {
+      "n": 28,
+      "mean": 0.0381,
+      "dz": 0.328,
+      "pApprox": 0.0828,
+      "nPos": 17,
+      "nNeg": 11
+    },
+    "postEffDimNorm": {
+      "n": 28,
+      "mean": 0.0017,
+      "dz": 0.131,
+      "pApprox": 0.4889,
+      "nPos": 16,
+      "nNeg": 12
+    },
+    "globalEffDimNorm": {
+      "n": 28,
+      "mean": 0.0077,
+      "dz": 0.395,
+      "pApprox": 0.0368,
+      "nPos": 17,
+      "nNeg": 11
+    }
+  },
+  "traitCorrExt": {
+    "rfSlope": {
+      "n": 28,
+      "rho": -0.353,
+      "pApprox": 0.0546
+    },
+    "lfSlope": {
+      "n": 28,
+      "rho": -0.375,
+      "pApprox": 0.0391
+    },
+    "rfMinusLfSlope": {
+      "n": 28,
+      "rho": -0.134,
+      "pApprox": 0.4911
+    },
+    "rfBeta": {
+      "n": 28,
+      "rho": -0.118,
+      "pApprox": 0.543
+    },
+    "postSlope": {
+      "n": 28,
+      "rho": -0.277,
+      "pApprox": 0.1421
+    },
+    "postDFA": {
+      "n": 28,
+      "rho": 0.197,
+      "pApprox": 0.3052
+    },
+    "postAlpha": {
+      "n": 28,
+      "rho": -0.26,
+      "pApprox": 0.1694
+    },
+    "postEffDimNorm": {
+      "n": 28,
+      "rho": -0.186,
+      "pApprox": 0.3347
+    },
+    "globalEffDimNorm": {
+      "n": 28,
+      "rho": -0.346,
+      "pApprox": 0.0598
+    }
+  },
+  "subjects": [
+    {
+      "sub": "sub-01",
+      "stateAnx": 5,
+      "traitAnx": 10,
+      "tPre": 908,
+      "tCond": 3200,
+      "tExt": 4965,
+      "pre": {
+        "rfSlope": -1.9903,
+        "lfSlope": -2.0204,
+        "rfMinusLfSlope": 0.0301,
+        "rfBeta": 0.0322,
+        "postSlope": -1.7791,
+        "postDFA": 1.1163,
+        "postAlpha": 0.0683,
+        "postEffDimNorm": 0.1144,
+        "globalEffDimNorm": 0.062
+      },
+      "cond": {
+        "rfSlope": -1.8823,
+        "lfSlope": -1.9749,
+        "rfMinusLfSlope": 0.0926,
+        "rfBeta": 0.0472,
+        "postSlope": -1.8986,
+        "postDFA": 1.3617,
+        "postAlpha": 0.0563,
+        "postEffDimNorm": 0.1024,
+        "globalEffDimNorm": 0.0544
+      },
+      "ext": {
+        "rfSlope": -2.0419,
+        "lfSlope": -2.3497,
+        "rfMinusLfSlope": 0.3078,
+        "rfBeta": 0.0377,
+        "postSlope": -2.042,
+        "postDFA": 1.1927,
+        "postAlpha": 0.0846,
+        "postEffDimNorm": 0.1163,
+        "globalEffDimNorm": 0.0631
+      }
+    },
+    {
+      "sub": "sub-02",
+      "stateAnx": 20,
+      "traitAnx": 60,
+      "tPre": 893,
+      "tCond": 3181,
+      "tExt": 4954,
+      "pre": {
+        "rfSlope": -1.5261,
+        "lfSlope": -1.7694,
+        "rfMinusLfSlope": 0.2433,
+        "rfBeta": 0.0518,
+        "postSlope": -1.588,
+        "postDFA": 0.8987,
+        "postAlpha": 0.5096,
+        "postEffDimNorm": 0.1284,
+        "globalEffDimNorm": 0.0906
+      },
+      "cond": {
+        "rfSlope": -1.5081,
+        "lfSlope": -1.4434,
+        "rfMinusLfSlope": -0.0647,
+        "rfBeta": 0.073,
+        "postSlope": -1.4631,
+        "postDFA": 0.7236,
+        "postAlpha": 0.6623,
+        "postEffDimNorm": 0.1444,
+        "globalEffDimNorm": 0.1071
+      },
+      "ext": {
+        "rfSlope": -1.1437,
+        "lfSlope": -1.2507,
+        "rfMinusLfSlope": 0.107,
+        "rfBeta": 0.1173,
+        "postSlope": -1.3079,
+        "postDFA": 0.7383,
+        "postAlpha": 0.592,
+        "postEffDimNorm": 0.1345,
+        "globalEffDimNorm": 0.105
+      }
+    },
+    {
+      "sub": "sub-03",
+      "stateAnx": 25,
+      "traitAnx": 65,
+      "tPre": 899,
+      "tCond": 3258,
+      "tExt": 5108,
+      "pre": {
+        "rfSlope": -1.6103,
+        "lfSlope": -1.4547,
+        "rfMinusLfSlope": -0.1556,
+        "rfBeta": 0.0341,
+        "postSlope": -1.133,
+        "postDFA": 0.9946,
+        "postAlpha": 0.3415,
+        "postEffDimNorm": 0.1148,
+        "globalEffDimNorm": 0.0718
+      },
+      "cond": {
+        "rfSlope": -1.6227,
+        "lfSlope": -1.4875,
+        "rfMinusLfSlope": -0.1352,
+        "rfBeta": 0.0294,
+        "postSlope": -1.2826,
+        "postDFA": 1.0086,
+        "postAlpha": 0.3868,
+        "postEffDimNorm": 0.115,
+        "globalEffDimNorm": 0.0732
+      },
+      "ext": {
+        "rfSlope": -1.7649,
+        "lfSlope": -1.6144,
+        "rfMinusLfSlope": -0.1505,
+        "rfBeta": 0.0194,
+        "postSlope": -1.2712,
+        "postDFA": 0.9044,
+        "postAlpha": 0.3225,
+        "postEffDimNorm": 0.1182,
+        "globalEffDimNorm": 0.0702
+      }
+    },
+    {
+      "sub": "sub-04",
+      "stateAnx": 15,
+      "traitAnx": 85,
+      "tPre": 1013,
+      "tCond": 3323,
+      "tExt": 5126,
+      "pre": {
+        "rfSlope": -1.66,
+        "lfSlope": -1.8221,
+        "rfMinusLfSlope": 0.1621,
+        "rfBeta": 0.0366,
+        "postSlope": -1.3933,
+        "postDFA": 0.9764,
+        "postAlpha": 0.1242,
+        "postEffDimNorm": 0.1473,
+        "globalEffDimNorm": 0.0811
+      },
+      "cond": {
+        "rfSlope": -1.8887,
+        "lfSlope": -1.957,
+        "rfMinusLfSlope": 0.0683,
+        "rfBeta": 0.0236,
+        "postSlope": -1.5785,
+        "postDFA": 1.1243,
+        "postAlpha": 0.1117,
+        "postEffDimNorm": 0.1182,
+        "globalEffDimNorm": 0.0685
+      },
+      "ext": {
+        "rfSlope": -1.7052,
+        "lfSlope": -2.0994,
+        "rfMinusLfSlope": 0.3942,
+        "rfBeta": 0.0344,
+        "postSlope": -1.6656,
+        "postDFA": 1.0597,
+        "postAlpha": 0.1098,
+        "postEffDimNorm": 0.1264,
+        "globalEffDimNorm": 0.0698
+      }
+    },
+    {
+      "sub": "sub-05",
+      "stateAnx": 3,
+      "traitAnx": 13,
+      "tPre": 885,
+      "tCond": 3249,
+      "tExt": 5116,
+      "pre": {
+        "rfSlope": -2.2804,
+        "lfSlope": -2.5451,
+        "rfMinusLfSlope": 0.2647,
+        "rfBeta": 0.0325,
+        "postSlope": -1.7886,
+        "postDFA": 0.9422,
+        "postAlpha": 0.2832,
+        "postEffDimNorm": 0.1187,
+        "globalEffDimNorm": 0.0714
+      },
+      "cond": {
+        "rfSlope": -1.8564,
+        "lfSlope": -2.0497,
+        "rfMinusLfSlope": 0.1933,
+        "rfBeta": 0.0755,
+        "postSlope": -1.6368,
+        "postDFA": 0.8651,
+        "postAlpha": 0.4306,
+        "postEffDimNorm": 0.1174,
+        "globalEffDimNorm": 0.0751
+      },
+      "ext": {
+        "rfSlope": -1.6343,
+        "lfSlope": -1.7266,
+        "rfMinusLfSlope": 0.0923,
+        "rfBeta": 0.0423,
+        "postSlope": -1.3926,
+        "postDFA": 1.0228,
+        "postAlpha": 0.2432,
+        "postEffDimNorm": 0.1098,
+        "globalEffDimNorm": 0.0659
+      }
+    },
+    {
+      "sub": "sub-06",
+      "stateAnx": 1,
+      "traitAnx": 10,
+      "tPre": 894,
+      "tCond": 3327,
+      "tExt": 5263,
+      "pre": {
+        "rfSlope": -1.3827,
+        "lfSlope": -1.4866,
+        "rfMinusLfSlope": 0.1039,
+        "rfBeta": 0.0201,
+        "postSlope": -1.1429,
+        "postDFA": 0.8315,
+        "postAlpha": 0.0299,
+        "postEffDimNorm": 0.111,
+        "globalEffDimNorm": 0.0572
+      },
+      "cond": {
+        "rfSlope": -1.6882,
+        "lfSlope": -1.8828,
+        "rfMinusLfSlope": 0.1946,
+        "rfBeta": 0.031,
+        "postSlope": -1.4393,
+        "postDFA": 1.1482,
+        "postAlpha": 0.0485,
+        "postEffDimNorm": 0.1093,
+        "globalEffDimNorm": 0.0619
+      },
+      "ext": {
+        "rfSlope": -0.4143,
+        "lfSlope": -1.137,
+        "rfMinusLfSlope": 0.7227,
+        "rfBeta": 0.1709,
+        "postSlope": -0.8234,
+        "postDFA": 0.965,
+        "postAlpha": 0.095,
+        "postEffDimNorm": 0.118,
+        "globalEffDimNorm": 0.0784
+      }
+    },
+    {
+      "sub": "sub-07",
+      "stateAnx": 10,
+      "traitAnx": 50,
+      "tPre": 913,
+      "tCond": 3111,
+      "tExt": 4876,
+      "pre": {
+        "rfSlope": -0.263,
+        "lfSlope": -0.3208,
+        "rfMinusLfSlope": 0.0578,
+        "rfBeta": 0.1881,
+        "postSlope": -0.5342,
+        "postDFA": 0.648,
+        "postAlpha": 0.5836,
+        "postEffDimNorm": 0.1297,
+        "globalEffDimNorm": 0.0864
+      },
+      "cond": {
+        "rfSlope": -0.5904,
+        "lfSlope": -0.6405,
+        "rfMinusLfSlope": 0.0501,
+        "rfBeta": 0.1459,
+        "postSlope": -0.7446,
+        "postDFA": 0.7333,
+        "postAlpha": 0.4442,
+        "postEffDimNorm": 0.138,
+        "globalEffDimNorm": 0.0855
+      },
+      "ext": {
+        "rfSlope": -0.8548,
+        "lfSlope": -0.9331,
+        "rfMinusLfSlope": 0.0783,
+        "rfBeta": 0.0998,
+        "postSlope": -0.7467,
+        "postDFA": 0.7664,
+        "postAlpha": 0.4934,
+        "postEffDimNorm": 0.1367,
+        "globalEffDimNorm": 0.0899
+      }
+    },
+    {
+      "sub": "sub-09",
+      "stateAnx": 25,
+      "traitAnx": 25,
+      "tPre": 900,
+      "tCond": 3164,
+      "tExt": 4941,
+      "pre": {
+        "rfSlope": -1.3471,
+        "lfSlope": -1.6852,
+        "rfMinusLfSlope": 0.3381,
+        "rfBeta": 0.1429,
+        "postSlope": -1.4223,
+        "postDFA": 0.8408,
+        "postAlpha": 0.3029,
+        "postEffDimNorm": 0.1357,
+        "globalEffDimNorm": 0.0907
+      },
+      "cond": {
+        "rfSlope": -1.7791,
+        "lfSlope": -1.9333,
+        "rfMinusLfSlope": 0.1542,
+        "rfBeta": 0.0867,
+        "postSlope": -1.4737,
+        "postDFA": 0.8453,
+        "postAlpha": 0.3867,
+        "postEffDimNorm": 0.1399,
+        "globalEffDimNorm": 0.1028
+      },
+      "ext": {
+        "rfSlope": -1.7727,
+        "lfSlope": -1.985,
+        "rfMinusLfSlope": 0.2123,
+        "rfBeta": 0.0805,
+        "postSlope": -1.4476,
+        "postDFA": 0.7986,
+        "postAlpha": 0.4705,
+        "postEffDimNorm": 0.1504,
+        "globalEffDimNorm": 0.103
+      }
+    },
+    {
+      "sub": "sub-10",
+      "stateAnx": 35,
+      "traitAnx": 60,
+      "tPre": 950,
+      "tCond": 3229,
+      "tExt": 5030,
+      "pre": {
+        "rfSlope": -1.2404,
+        "lfSlope": -1.204,
+        "rfMinusLfSlope": -0.0364,
+        "rfBeta": 0.0253,
+        "postSlope": -1.0656,
+        "postDFA": 1.0999,
+        "postAlpha": 0.1012,
+        "postEffDimNorm": 0.1106,
+        "globalEffDimNorm": 0.0633
+      },
+      "cond": {
+        "rfSlope": -1.1837,
+        "lfSlope": -1.1852,
+        "rfMinusLfSlope": 0.0015,
+        "rfBeta": 0.0486,
+        "postSlope": -0.9418,
+        "postDFA": 1.1026,
+        "postAlpha": 0.057,
+        "postEffDimNorm": 0.1072,
+        "globalEffDimNorm": 0.0647
+      },
+      "ext": {
+        "rfSlope": -1.0002,
+        "lfSlope": -1.0077,
+        "rfMinusLfSlope": 0.0075,
+        "rfBeta": 0.0371,
+        "postSlope": -0.6703,
+        "postDFA": 1.0931,
+        "postAlpha": 0.0399,
+        "postEffDimNorm": 0.1054,
+        "globalEffDimNorm": 0.0595
+      }
+    },
+    {
+      "sub": "sub-11",
+      "stateAnx": 30,
+      "traitAnx": 1,
+      "tPre": 878,
+      "tCond": 3123,
+      "tExt": 4925,
+      "pre": {
+        "rfSlope": -1.1499,
+        "lfSlope": -1.0924,
+        "rfMinusLfSlope": -0.0575,
+        "rfBeta": 0.0971,
+        "postSlope": -1.195,
+        "postDFA": 0.7917,
+        "postAlpha": 0.5463,
+        "postEffDimNorm": 0.1316,
+        "globalEffDimNorm": 0.0991
+      },
+      "cond": {
+        "rfSlope": -1.2751,
+        "lfSlope": -1.4552,
+        "rfMinusLfSlope": 0.1801,
+        "rfBeta": 0.0428,
+        "postSlope": -1.4342,
+        "postDFA": 1.1637,
+        "postAlpha": 0.2415,
+        "postEffDimNorm": 0.1139,
+        "globalEffDimNorm": 0.0675
+      },
+      "ext": {
+        "rfSlope": -0.166,
+        "lfSlope": -0.4198,
+        "rfMinusLfSlope": 0.2538,
+        "rfBeta": 0.2193,
+        "postSlope": -0.9167,
+        "postDFA": 0.7712,
+        "postAlpha": 0.565,
+        "postEffDimNorm": 0.141,
+        "globalEffDimNorm": 0.1244
+      }
+    },
+    {
+      "sub": "sub-13",
+      "stateAnx": 1,
+      "traitAnx": 3,
+      "tPre": 873,
+      "tCond": 3164,
+      "tExt": 4934,
+      "pre": {
+        "rfSlope": -0.8478,
+        "lfSlope": -1.1949,
+        "rfMinusLfSlope": 0.3471,
+        "rfBeta": 0.0887,
+        "postSlope": -1.6889,
+        "postDFA": 1.2874,
+        "postAlpha": 0.0373,
+        "postEffDimNorm": 0.1066,
+        "globalEffDimNorm": 0.0621
+      },
+      "cond": {
+        "rfSlope": -0.1799,
+        "lfSlope": -0.5465,
+        "rfMinusLfSlope": 0.3666,
+        "rfBeta": 0.3147,
+        "postSlope": -1.126,
+        "postDFA": 0.9948,
+        "postAlpha": 0.1643,
+        "postEffDimNorm": 0.1282,
+        "globalEffDimNorm": 0.1237
+      },
+      "ext": {
+        "rfSlope": -0.3268,
+        "lfSlope": -0.2847,
+        "rfMinusLfSlope": -0.0421,
+        "rfBeta": 0.2486,
+        "postSlope": -1.1405,
+        "postDFA": 1.0166,
+        "postAlpha": 0.1496,
+        "postEffDimNorm": 0.1307,
+        "globalEffDimNorm": 0.1305
+      }
+    },
+    {
+      "sub": "sub-15",
+      "stateAnx": 25,
+      "traitAnx": 5,
+      "tPre": 907,
+      "tCond": 3254,
+      "tExt": 5064,
+      "pre": {
+        "rfSlope": -2.2484,
+        "lfSlope": -2.3141,
+        "rfMinusLfSlope": 0.0657,
+        "rfBeta": 0.0094,
+        "postSlope": -1.8888,
+        "postDFA": 1.1674,
+        "postAlpha": 0.0183,
+        "postEffDimNorm": 0.106,
+        "globalEffDimNorm": 0.056
+      },
+      "cond": {
+        "rfSlope": -1.8184,
+        "lfSlope": -1.8689,
+        "rfMinusLfSlope": 0.0505,
+        "rfBeta": 0.0242,
+        "postSlope": -1.7491,
+        "postDFA": 1.1406,
+        "postAlpha": 0.0407,
+        "postEffDimNorm": 0.1093,
+        "globalEffDimNorm": 0.0617
+      },
+      "ext": {
+        "rfSlope": -1.7078,
+        "lfSlope": -1.7288,
+        "rfMinusLfSlope": 0.021,
+        "rfBeta": 0.0205,
+        "postSlope": -1.397,
+        "postDFA": 1.0873,
+        "postAlpha": 0.0447,
+        "postEffDimNorm": 0.1097,
+        "globalEffDimNorm": 0.0609
+      }
+    },
+    {
+      "sub": "sub-16",
+      "stateAnx": 45,
+      "traitAnx": 20,
+      "tPre": 906,
+      "tCond": 3233,
+      "tExt": 5036,
+      "pre": {
+        "rfSlope": -0.9601,
+        "lfSlope": -1.0217,
+        "rfMinusLfSlope": 0.0616,
+        "rfBeta": 0.0711,
+        "postSlope": -0.9486,
+        "postDFA": 0.9134,
+        "postAlpha": 0.1787,
+        "postEffDimNorm": 0.1222,
+        "globalEffDimNorm": 0.0715
+      },
+      "cond": {
+        "rfSlope": -0.6975,
+        "lfSlope": -0.7187,
+        "rfMinusLfSlope": 0.0212,
+        "rfBeta": 0.0898,
+        "postSlope": -0.7103,
+        "postDFA": 0.9648,
+        "postAlpha": 0.2393,
+        "postEffDimNorm": 0.1286,
+        "globalEffDimNorm": 0.0794
+      },
+      "ext": {
+        "rfSlope": -0.316,
+        "lfSlope": -0.3112,
+        "rfMinusLfSlope": -0.0048,
+        "rfBeta": 0.1452,
+        "postSlope": -0.2786,
+        "postDFA": 0.7369,
+        "postAlpha": 0.2802,
+        "postEffDimNorm": 0.1294,
+        "globalEffDimNorm": 0.0807
+      }
+    },
+    {
+      "sub": "sub-17",
+      "stateAnx": 55,
+      "traitAnx": 25,
+      "tPre": 916,
+      "tCond": 3198,
+      "tExt": 4968,
+      "pre": {
+        "rfSlope": -0.8304,
+        "lfSlope": -1.2336,
+        "rfMinusLfSlope": 0.4032,
+        "rfBeta": 0.0733,
+        "postSlope": -0.9828,
+        "postDFA": 0.8848,
+        "postAlpha": 0.084,
+        "postEffDimNorm": 0.1231,
+        "globalEffDimNorm": 0.0794
+      },
+      "cond": {
+        "rfSlope": -0.7288,
+        "lfSlope": -0.9355,
+        "rfMinusLfSlope": 0.2067,
+        "rfBeta": 0.0644,
+        "postSlope": -0.6518,
+        "postDFA": 1.0296,
+        "postAlpha": 0.0634,
+        "postEffDimNorm": 0.1145,
+        "globalEffDimNorm": 0.0686
+      },
+      "ext": {
+        "rfSlope": -0.8819,
+        "lfSlope": -1.3284,
+        "rfMinusLfSlope": 0.4465,
+        "rfBeta": 0.0727,
+        "postSlope": -0.7573,
+        "postDFA": 1.038,
+        "postAlpha": 0.0911,
+        "postEffDimNorm": 0.1252,
+        "globalEffDimNorm": 0.0789
+      }
+    },
+    {
+      "sub": "sub-18",
+      "stateAnx": 20,
+      "traitAnx": 45,
+      "tPre": 905,
+      "tCond": 3180,
+      "tExt": 4992,
+      "pre": {
+        "rfSlope": -1.1455,
+        "lfSlope": -1.5995,
+        "rfMinusLfSlope": 0.454,
+        "rfBeta": 0.0911,
+        "postSlope": -1.4069,
+        "postDFA": 1.1303,
+        "postAlpha": 0.1181,
+        "postEffDimNorm": 0.1128,
+        "globalEffDimNorm": 0.0731
+      },
+      "cond": {
+        "rfSlope": -1.5872,
+        "lfSlope": -1.9257,
+        "rfMinusLfSlope": 0.3385,
+        "rfBeta": 0.0221,
+        "postSlope": -1.6437,
+        "postDFA": 1.1197,
+        "postAlpha": 0.0385,
+        "postEffDimNorm": 0.1041,
+        "globalEffDimNorm": 0.0554
+      },
+      "ext": {
+        "rfSlope": -0.8691,
+        "lfSlope": -1.1468,
+        "rfMinusLfSlope": 0.2777,
+        "rfBeta": 0.055,
+        "postSlope": -0.9047,
+        "postDFA": 1.0325,
+        "postAlpha": 0.0377,
+        "postEffDimNorm": 0.1071,
+        "globalEffDimNorm": 0.0606
+      }
+    },
+    {
+      "sub": "sub-20",
+      "stateAnx": 45,
+      "traitAnx": 90,
+      "tPre": 899,
+      "tCond": 3212,
+      "tExt": 4989,
+      "pre": {
+        "rfSlope": -1.5954,
+        "lfSlope": -1.8222,
+        "rfMinusLfSlope": 0.2268,
+        "rfBeta": 0.0229,
+        "postSlope": -1.7004,
+        "postDFA": 1.0211,
+        "postAlpha": 0.2774,
+        "postEffDimNorm": 0.1274,
+        "globalEffDimNorm": 0.0742
+      },
+      "cond": {
+        "rfSlope": -1.4406,
+        "lfSlope": -1.4783,
+        "rfMinusLfSlope": 0.0377,
+        "rfBeta": 0.0216,
+        "postSlope": -1.436,
+        "postDFA": 1.086,
+        "postAlpha": 0.2099,
+        "postEffDimNorm": 0.1177,
+        "globalEffDimNorm": 0.0657
+      },
+      "ext": {
+        "rfSlope": -1.571,
+        "lfSlope": -1.6315,
+        "rfMinusLfSlope": 0.0605,
+        "rfBeta": 0.0237,
+        "postSlope": -1.4833,
+        "postDFA": 1.0084,
+        "postAlpha": 0.2575,
+        "postEffDimNorm": 0.1222,
+        "globalEffDimNorm": 0.0713
+      }
+    },
+    {
+      "sub": "sub-21",
+      "stateAnx": 65,
+      "traitAnx": 95,
+      "tPre": 919,
+      "tCond": 3229,
+      "tExt": 5044,
+      "pre": {
+        "rfSlope": -0.6304,
+        "lfSlope": -0.7483,
+        "rfMinusLfSlope": 0.1179,
+        "rfBeta": 0.206,
+        "postSlope": -1.1817,
+        "postDFA": 0.8402,
+        "postAlpha": 0.4154,
+        "postEffDimNorm": 0.1403,
+        "globalEffDimNorm": 0.1309
+      },
+      "cond": {
+        "rfSlope": -0.686,
+        "lfSlope": -0.8529,
+        "rfMinusLfSlope": 0.1669,
+        "rfBeta": 0.1895,
+        "postSlope": -1.0477,
+        "postDFA": 0.8681,
+        "postAlpha": 0.4334,
+        "postEffDimNorm": 0.142,
+        "globalEffDimNorm": 0.1225
+      },
+      "ext": {
+        "rfSlope": -0.7062,
+        "lfSlope": -0.5455,
+        "rfMinusLfSlope": -0.1607,
+        "rfBeta": 0.1649,
+        "postSlope": -0.9946,
+        "postDFA": 0.8384,
+        "postAlpha": 0.2879,
+        "postEffDimNorm": 0.138,
+        "globalEffDimNorm": 0.1224
+      }
+    },
+    {
+      "sub": "sub-22",
+      "stateAnx": 70,
+      "traitAnx": 95,
+      "tPre": 907,
+      "tCond": 3202,
+      "tExt": 5018,
+      "pre": {
+        "rfSlope": -1.6023,
+        "lfSlope": -1.5548,
+        "rfMinusLfSlope": -0.0475,
+        "rfBeta": 0.0692,
+        "postSlope": -1.5975,
+        "postDFA": 0.8943,
+        "postAlpha": 0.5745,
+        "postEffDimNorm": 0.1346,
+        "globalEffDimNorm": 0.0876
+      },
+      "cond": {
+        "rfSlope": -1.7516,
+        "lfSlope": -2.0209,
+        "rfMinusLfSlope": 0.2693,
+        "rfBeta": 0.0345,
+        "postSlope": -1.7189,
+        "postDFA": 0.7732,
+        "postAlpha": 0.6681,
+        "postEffDimNorm": 0.1395,
+        "globalEffDimNorm": 0.0952
+      },
+      "ext": {
+        "rfSlope": -1.9343,
+        "lfSlope": -1.9314,
+        "rfMinusLfSlope": -0.0029,
+        "rfBeta": 0.0355,
+        "postSlope": -1.8633,
+        "postDFA": 0.7919,
+        "postAlpha": 0.6235,
+        "postEffDimNorm": 0.1421,
+        "globalEffDimNorm": 0.0987
+      }
+    },
+    {
+      "sub": "sub-23",
+      "stateAnx": 35,
+      "traitAnx": 5,
+      "tPre": 888,
+      "tCond": 3166,
+      "tExt": 4994,
+      "pre": {
+        "rfSlope": -1.7338,
+        "lfSlope": -1.688,
+        "rfMinusLfSlope": -0.0458,
+        "rfBeta": 0.0268,
+        "postSlope": -1.4888,
+        "postDFA": 1.1193,
+        "postAlpha": 0.0829,
+        "postEffDimNorm": 0.1094,
+        "globalEffDimNorm": 0.0643
+      },
+      "cond": {
+        "rfSlope": -1.6558,
+        "lfSlope": -1.7951,
+        "rfMinusLfSlope": 0.1393,
+        "rfBeta": 0.0281,
+        "postSlope": -1.6508,
+        "postDFA": 1.2436,
+        "postAlpha": 0.0959,
+        "postEffDimNorm": 0.1109,
+        "globalEffDimNorm": 0.0611
+      },
+      "ext": {
+        "rfSlope": -0.7789,
+        "lfSlope": -1.0169,
+        "rfMinusLfSlope": 0.238,
+        "rfBeta": 0.1019,
+        "postSlope": -1.073,
+        "postDFA": 0.9716,
+        "postAlpha": 0.2554,
+        "postEffDimNorm": 0.1186,
+        "globalEffDimNorm": 0.0754
+      }
+    },
+    {
+      "sub": "sub-24",
+      "stateAnx": 40,
+      "traitAnx": 65,
+      "tPre": 897,
+      "tCond": 3247,
+      "tExt": 5082,
+      "pre": {
+        "rfSlope": -1.5794,
+        "lfSlope": -1.6087,
+        "rfMinusLfSlope": 0.0293,
+        "rfBeta": 0.0463,
+        "postSlope": -1.3662,
+        "postDFA": 0.8157,
+        "postAlpha": 0.5196,
+        "postEffDimNorm": 0.1462,
+        "globalEffDimNorm": 0.1089
+      },
+      "cond": {
+        "rfSlope": -1.2952,
+        "lfSlope": -1.3339,
+        "rfMinusLfSlope": 0.0387,
+        "rfBeta": 0.0737,
+        "postSlope": -1.2687,
+        "postDFA": 0.7091,
+        "postAlpha": 0.4926,
+        "postEffDimNorm": 0.1508,
+        "globalEffDimNorm": 0.1279
+      },
+      "ext": {
+        "rfSlope": -1.2851,
+        "lfSlope": -1.2157,
+        "rfMinusLfSlope": -0.0694,
+        "rfBeta": 0.0584,
+        "postSlope": -1.1544,
+        "postDFA": 0.91,
+        "postAlpha": 0.4334,
+        "postEffDimNorm": 0.1315,
+        "globalEffDimNorm": 0.0958
+      }
+    },
+    {
+      "sub": "sub-25",
+      "stateAnx": 5,
+      "traitAnx": 1,
+      "tPre": 875,
+      "tCond": 3112,
+      "tExt": 4898,
+      "pre": {
+        "rfSlope": -0.1845,
+        "lfSlope": -0.2584,
+        "rfMinusLfSlope": 0.0739,
+        "rfBeta": 0.2367,
+        "postSlope": -0.7085,
+        "postDFA": 0.8791,
+        "postAlpha": 0.1791,
+        "postEffDimNorm": 0.1216,
+        "globalEffDimNorm": 0.092
+      },
+      "cond": {
+        "rfSlope": -0.7838,
+        "lfSlope": -0.6546,
+        "rfMinusLfSlope": -0.1292,
+        "rfBeta": 0.174,
+        "postSlope": -0.9266,
+        "postDFA": 0.8306,
+        "postAlpha": 0.2525,
+        "postEffDimNorm": 0.1488,
+        "globalEffDimNorm": 0.1005
+      },
+      "ext": {
+        "rfSlope": -0.4432,
+        "lfSlope": -0.3771,
+        "rfMinusLfSlope": -0.0661,
+        "rfBeta": 0.1278,
+        "postSlope": -0.9758,
+        "postDFA": 0.9832,
+        "postAlpha": 0.1334,
+        "postEffDimNorm": 0.1201,
+        "globalEffDimNorm": 0.1008
+      }
+    },
+    {
+      "sub": "sub-26",
+      "stateAnx": 5,
+      "traitAnx": 15,
+      "tPre": 961,
+      "tCond": 3290,
+      "tExt": 5047,
+      "pre": {
+        "rfSlope": -1.7605,
+        "lfSlope": -1.9267,
+        "rfMinusLfSlope": 0.1662,
+        "rfBeta": 0.0206,
+        "postSlope": -1.6316,
+        "postDFA": 0.8726,
+        "postAlpha": 0.1705,
+        "postEffDimNorm": 0.1149,
+        "globalEffDimNorm": 0.0658
+      },
+      "cond": {
+        "rfSlope": -1.6271,
+        "lfSlope": -1.6127,
+        "rfMinusLfSlope": -0.0144,
+        "rfBeta": 0.0207,
+        "postSlope": -1.3256,
+        "postDFA": 1.2884,
+        "postAlpha": 0.1294,
+        "postEffDimNorm": 0.1078,
+        "globalEffDimNorm": 0.055
+      },
+      "ext": {
+        "rfSlope": -1.0768,
+        "lfSlope": -0.9492,
+        "rfMinusLfSlope": -0.1276,
+        "rfBeta": 0.1151,
+        "postSlope": -1.1269,
+        "postDFA": 0.8005,
+        "postAlpha": 0.6135,
+        "postEffDimNorm": 0.1567,
+        "globalEffDimNorm": 0.1259
+      }
+    },
+    {
+      "sub": "sub-27",
+      "stateAnx": 23,
+      "traitAnx": 15,
+      "tPre": 907,
+      "tCond": 3251,
+      "tExt": 5075,
+      "pre": {
+        "rfSlope": -1.3828,
+        "lfSlope": -1.531,
+        "rfMinusLfSlope": 0.1482,
+        "rfBeta": 0.1383,
+        "postSlope": -1.403,
+        "postDFA": 0.8053,
+        "postAlpha": 0.4419,
+        "postEffDimNorm": 0.1637,
+        "globalEffDimNorm": 0.1303
+      },
+      "cond": {
+        "rfSlope": -0.9843,
+        "lfSlope": -0.9522,
+        "rfMinusLfSlope": -0.0321,
+        "rfBeta": 0.0841,
+        "postSlope": -0.9548,
+        "postDFA": 0.8147,
+        "postAlpha": 0.4558,
+        "postEffDimNorm": 0.1314,
+        "globalEffDimNorm": 0.0893
+      },
+      "ext": {
+        "rfSlope": -1.3263,
+        "lfSlope": -1.2708,
+        "rfMinusLfSlope": -0.0555,
+        "rfBeta": 0.1278,
+        "postSlope": -1.4286,
+        "postDFA": 0.7137,
+        "postAlpha": 0.5781,
+        "postEffDimNorm": 0.1554,
+        "globalEffDimNorm": 0.1382
+      }
+    },
+    {
+      "sub": "sub-28",
+      "stateAnx": 5,
+      "traitAnx": 23,
+      "tPre": 896,
+      "tCond": 3154,
+      "tExt": 4947,
+      "pre": {
+        "rfSlope": -1.3679,
+        "lfSlope": -1.4873,
+        "rfMinusLfSlope": 0.1194,
+        "rfBeta": 0.0835,
+        "postSlope": -1.6897,
+        "postDFA": 0.9526,
+        "postAlpha": 0.3351,
+        "postEffDimNorm": 0.1474,
+        "globalEffDimNorm": 0.1145
+      },
+      "cond": {
+        "rfSlope": -1.4207,
+        "lfSlope": -1.3381,
+        "rfMinusLfSlope": -0.0826,
+        "rfBeta": 0.1005,
+        "postSlope": -1.7449,
+        "postDFA": 0.9029,
+        "postAlpha": 0.2842,
+        "postEffDimNorm": 0.1244,
+        "globalEffDimNorm": 0.1083
+      },
+      "ext": {
+        "rfSlope": -1.2943,
+        "lfSlope": -1.333,
+        "rfMinusLfSlope": 0.0387,
+        "rfBeta": 0.0579,
+        "postSlope": -1.492,
+        "postDFA": 0.8833,
+        "postAlpha": 0.2685,
+        "postEffDimNorm": 0.1214,
+        "globalEffDimNorm": 0.0921
+      }
+    },
+    {
+      "sub": "sub-29",
+      "stateAnx": 13,
+      "traitAnx": 60,
+      "tPre": 932,
+      "tCond": 3258,
+      "tExt": 5071,
+      "pre": {
+        "rfSlope": -2.0835,
+        "lfSlope": -2.1211,
+        "rfMinusLfSlope": 0.0376,
+        "rfBeta": 0.0256,
+        "postSlope": -1.8997,
+        "postDFA": 0.9468,
+        "postAlpha": 0.3514,
+        "postEffDimNorm": 0.1238,
+        "globalEffDimNorm": 0.0787
+      },
+      "cond": {
+        "rfSlope": -1.4612,
+        "lfSlope": -1.2873,
+        "rfMinusLfSlope": -0.1739,
+        "rfBeta": 0.04,
+        "postSlope": -1.7381,
+        "postDFA": 1.01,
+        "postAlpha": 0.3113,
+        "postEffDimNorm": 0.122,
+        "globalEffDimNorm": 0.0946
+      },
+      "ext": {
+        "rfSlope": -1.8783,
+        "lfSlope": -1.915,
+        "rfMinusLfSlope": 0.0367,
+        "rfBeta": 0.0412,
+        "postSlope": -1.6546,
+        "postDFA": 0.8705,
+        "postAlpha": 0.3669,
+        "postEffDimNorm": 0.1283,
+        "globalEffDimNorm": 0.0905
+      }
+    },
+    {
+      "sub": "sub-30",
+      "stateAnx": 25,
+      "traitAnx": 30,
+      "tPre": 911,
+      "tCond": 3285,
+      "tExt": 5104,
+      "pre": {
+        "rfSlope": 0.1123,
+        "lfSlope": -0.858,
+        "rfMinusLfSlope": 0.9703,
+        "rfBeta": 0.1836,
+        "postSlope": -0.8424,
+        "postDFA": 1.0602,
+        "postAlpha": 0.0808,
+        "postEffDimNorm": 0.1216,
+        "globalEffDimNorm": 0.1033
+      },
+      "cond": {
+        "rfSlope": 0.8511,
+        "lfSlope": -0.4753,
+        "rfMinusLfSlope": 1.3264,
+        "rfBeta": 0.203,
+        "postSlope": -0.7593,
+        "postDFA": 0.9582,
+        "postAlpha": 0.1117,
+        "postEffDimNorm": 0.1258,
+        "globalEffDimNorm": 0.1192
+      },
+      "ext": {
+        "rfSlope": 0.3421,
+        "lfSlope": -0.7987,
+        "rfMinusLfSlope": 1.1408,
+        "rfBeta": 0.2333,
+        "postSlope": -0.7629,
+        "postDFA": 0.9304,
+        "postAlpha": 0.1983,
+        "postEffDimNorm": 0.1195,
+        "globalEffDimNorm": 0.1153
+      }
+    },
+    {
+      "sub": "sub-31",
+      "stateAnx": 45,
+      "traitAnx": 70,
+      "tPre": 910,
+      "tCond": 3224,
+      "tExt": 5059,
+      "pre": {
+        "rfSlope": -2.0325,
+        "lfSlope": -2.0455,
+        "rfMinusLfSlope": 0.013,
+        "rfBeta": 0.0208,
+        "postSlope": -1.7069,
+        "postDFA": 0.903,
+        "postAlpha": 0.4471,
+        "postEffDimNorm": 0.1407,
+        "globalEffDimNorm": 0.0944
+      },
+      "cond": {
+        "rfSlope": -2.0134,
+        "lfSlope": -1.9127,
+        "rfMinusLfSlope": -0.1007,
+        "rfBeta": 0.0288,
+        "postSlope": -1.8042,
+        "postDFA": 0.8281,
+        "postAlpha": 0.5642,
+        "postEffDimNorm": 0.1416,
+        "globalEffDimNorm": 0.1054
+      },
+      "ext": {
+        "rfSlope": -1.8856,
+        "lfSlope": -1.8087,
+        "rfMinusLfSlope": -0.0769,
+        "rfBeta": 0.0278,
+        "postSlope": -1.6818,
+        "postDFA": 0.7439,
+        "postAlpha": 0.6194,
+        "postEffDimNorm": 0.1484,
+        "globalEffDimNorm": 0.1129
+      }
+    },
+    {
+      "sub": "sub-32",
+      "stateAnx": 40,
+      "traitAnx": 25,
+      "tPre": 898,
+      "tCond": 3236,
+      "tExt": 5043,
+      "pre": {
+        "rfSlope": -2.0077,
+        "lfSlope": -2.0571,
+        "rfMinusLfSlope": 0.0494,
+        "rfBeta": 0.0267,
+        "postSlope": -1.5009,
+        "postDFA": 0.9146,
+        "postAlpha": 0.2987,
+        "postEffDimNorm": 0.1261,
+        "globalEffDimNorm": 0.0712
+      },
+      "cond": {
+        "rfSlope": -2.1156,
+        "lfSlope": -2.1083,
+        "rfMinusLfSlope": -0.0073,
+        "rfBeta": 0.0152,
+        "postSlope": -1.6002,
+        "postDFA": 1.0058,
+        "postAlpha": 0.2691,
+        "postEffDimNorm": 0.1208,
+        "globalEffDimNorm": 0.0679
+      },
+      "ext": {
+        "rfSlope": -1.8704,
+        "lfSlope": -2.0118,
+        "rfMinusLfSlope": 0.1414,
+        "rfBeta": 0.0184,
+        "postSlope": -1.4475,
+        "postDFA": 1.0214,
+        "postAlpha": 0.3133,
+        "postEffDimNorm": 0.1176,
+        "globalEffDimNorm": 0.0676
+      }
+    }
+  ]
+}
