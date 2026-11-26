@@ -1,0 +1,48 @@
+{
+  "nHumans": 56,
+  "contrast": "Psilocybin_Video (EYES OPEN) - Sober_Video (EYES OPEN)",
+  "stats": {
+    "R_tether": {
+      "n": 56,
+      "nPos": "24/56",
+      "meanDiff": -0.6508,
+      "dz": -0.265,
+      "p": 0.0514
+    },
+    "effDimPost": {
+      "n": 56,
+      "nPos": "26/56",
+      "meanDiff": -0.2062,
+      "dz": -0.278,
+      "p": 0.0422
+    },
+    "dfa": {
+      "n": 56,
+      "nPos": "27/56",
+      "meanDiff": -0.0106,
+      "dz": -0.1,
+      "p": 0.4601
+    },
+    "logBeta": {
+      "n": 56,
+      "nPos": "27/56",
+      "meanDiff": 0.0439,
+      "dz": 0.163,
+      "p": 0.2351
+    },
+    "slopeBB": {
+      "n": 56,
+      "nPos": "36/56",
+      "meanDiff": 0.167,
+      "dz": 0.575,
+      "p": 0.0001
+    },
+    "logAlpha": {
+      "n": 56,
+      "nPos": "33/56",
+      "meanDiff": 0.017,
+      "dz": 0.082,
+      "p": 0.5506
+    }
+  }
+}
