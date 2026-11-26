@@ -77,6 +77,8 @@
       <button class="violet" onclick="sendMotif('SHIFT_SCENE', 'Shift Scene (Soft Pentatonic)')">3. 2&times;LRLR &rarr; Shift Scene</button>
       <button onclick="sendMotif('ANCHOR_LAKE', 'World-Seed Anchor (Low Breeze)')">4. Hold &rarr; Lake Anchor</button>
       <button id="btnRelay" onclick="toggleLiveRelay()">Connect Live /bridge Relay</button>
+      <button style="border-color:var(--amber);color:#fde68a;" id="btnMuse" onclick="toggleMuseBLE()">Connect Muse S / 2 (Web Bluetooth)</button>
+      <button onclick="generateBlindPilot()">Generate 7-Night Blind Pilot Schedule</button>
     </div>
     <div id="relayLog" class="log">Bridge ready. Click any motif to preview &amp; queue across the 20-min Dream Baton relay, or test live coupling below.</div>
   </div>
@@ -127,7 +129,51 @@
   </div>
 </div>
 
+<script src="/muse_ble_adapter.js"></script>
 <script>
+// ======================== MUSE S/2 WEB BLUETOOTH + 7-NIGHT BLIND PILOT ========================
+let museAdapter = null;
+async function toggleMuseBLE() {
+  const btn = document.getElementById('btnMuse');
+  if (museAdapter) {
+    museAdapter.disconnect(); museAdapter = null;
+    btn.textContent = 'Connect Muse S / 2 (Web Bluetooth)';
+    return;
+  }
+  museAdapter = new window.OneirisMuseAdapter({
+    onStatus: (msg) => appendLog(`MUSE BLE: ${msg}`),
+    onDecision: (dec) => {
+      document.getElementById('myState').value = dec.state === 'REM_TARGET' ? 'REM_TARGET' : dec.state === 'WAKE_GUARD' ? 'WAKE_GUARD' : 'NREM_LOCKED';
+    },
+    onLRLR: () => {
+      appendLog('MUSE BLE DETECTED LRLR EYE-MOVEMENT -> Auto-firing Presence Baton!');
+      sendMotif('PRESENCE', 'Live LRLR Presence (Muse AF8-AF7)');
+    },
+  });
+  const ok = await museAdapter.connect();
+  if (ok) btn.textContent = 'Disconnect Muse Headband';
+  else museAdapter = null;
+}
+
+function generateBlindPilot() {
+  // Spatial World-Seeds prioritized per Report 49 (Spatial/Places = 13.55%, 6-12x higher cross-human convergence!)
+  const seeds = [
+    'Quiet Pine Cabin Porch Overlooking a Misty Lake',
+    'Stone Lighthouse Spiral Staircase Above Ocean Waves',
+    'Sunlit Greenhouse Filled with Hanging Glass Lanterns',
+    'Wooden Footbridge Crossing a Shallow Mountain Stream',
+    'Empty Library Atrium with Tall Arched Windows at Sunset',
+    'Rooftop Observatory Dome Under a Clear Starry Sky',
+    'Old Coastal Train Station Platform in Gentle Rain',
+  ];
+  const schedule = seeds.map((s, i) => {
+    const matched = i % 2 === 0; // 4 Matched + 3 Mismatched blind control nights (Report 48: 7 nights = 80% power at 3x lift)
+    const seedB = matched ? s : seeds[(i + 3) % seeds.length];
+    return `Night ${i + 1} [${matched ? 'MATCHED' : 'BLIND-CTRL'}] -> Dreamer A: "${s}" | Dreamer B: "${seedB}"`;
+  });
+  appendLog('=== 7-NIGHT BLIND PILOT SCHEDULE (4 Matched / 3 Control, Report 48-49) ===\n' + schedule.join('\n'));
+}
+
 // ======================== WEB AUDIO 4-SYMBOL MOTIF ENGINE ========================
 let audioCtx = null;
 function ensureAudio() {

@@ -304,6 +304,7 @@ function serve(port = 8787) {
   const labPath = path.join(__dirname, 'neurochemistry_dream_lab.html');
   const irtPath = path.join(__dirname, 'irt_tmr_prototype.html');
   const bridgePath = path.join(__dirname, 'dual_dream_bridge.html');
+  const musePath = path.join(__dirname, 'muse_ble_adapter.js');
   let tickSec = 0;
 
   // Dual-Dream Bridge 20-minute Store-and-Forward "Dream Baton" Queue (Report 48)
@@ -337,6 +338,11 @@ function serve(port = 8787) {
     if (req.method === 'GET' && urlObj.pathname === '/bridge') {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end(fs.readFileSync(bridgePath));
+      return;
+    }
+    if (req.method === 'GET' && urlObj.pathname === '/muse_ble_adapter.js') {
+      res.writeHead(200, { 'Content-Type': 'application/javascript; charset=utf-8' });
+      res.end(fs.readFileSync(musePath));
       return;
     }
     if (req.method === 'GET' && urlObj.pathname === '/bridge/poll') {
