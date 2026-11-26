@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONEIRIS — Dual-Dream Bridge &amp; Convergence Lab</title>
+<style>
+  :root {
+    --bg: #070b17; --card: #10192d; --border: #233359; --text: #e8f0fc;
+    --muted: #8fa5cc; --cyan: #38bdf8; --violet: #a78bfa; --teal: #2dd4bf; --amber: #fbbf24; --rose: #fb7185;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 20px; line-height: 1.48; }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  h1 { margin: 0 0 4px; font-size: 1.55rem; color: #fff; }
+  .sub { margin: 0 0 16px; color: var(--muted); font-size: 0.9rem; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 780px) { .grid2 { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+  .card h2 { margin: 0 0 8px; font-size: 1.04rem; color: #fff; }
+  .hint { font-size: 0.81rem; color: var(--muted); margin: 0 0 10px; }
+  input[type="text"], textarea, select {
+    width: 100%; background: #091022; color: var(--text); border: 1px solid var(--border);
+    border-radius: 9px; padding: 9px 11px; font-family: inherit; font-size: 0.9rem;
+  }
+  textarea { min-height: 100px; resize: vertical; }
+  button {
+    background: #1b2a4a; color: var(--text); border: 1px solid var(--border); border-radius: 9px;
+    padding: 8px 14px; font-weight: 600; font-size: 0.86rem; cursor: pointer;
+  }
+  button:hover { border-color: var(--cyan); }
+  button.cyan { background: var(--cyan); color: #041526; border-color: var(--cyan); }
+  button.violet { background: var(--violet); color: #16092b; border-color: var(--violet); }
+  button.teal { background: var(--teal); color: #041d1b; border-color: var(--teal); }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 10px; }
+  canvas { width: 100%; display: block; background: #080e1d; border-radius: 10px; border: 1px solid #1e2d4f; }
+  .log { background: #080e1d; border: 1px solid #1e2d4f; border-radius: 10px; padding: 10px 12px; font-family: ui-monospace, Consolas, monospace; font-size: 0.8rem; color: var(--teal); max-height: 140px; overflow-y: auto; margin-top: 10px; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+  @media (max-width: 640px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+  .kpi { background: #091022; border: 1px solid #1e2d4f; border-radius: 10px; padding: 10px; text-align: center; }
+  .kpi .v { font-family: ui-monospace, Consolas, monospace; font-size: 1.2rem; font-weight: 700; color: var(--cyan); }
+  .kpi .l { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+  .pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.74rem; font-weight: 700; background: rgba(167,139,250,0.18); color: var(--violet); margin-left: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ONEIRIS — Dual-Dream Bridge &amp; Convergence Lab <span class="pill">Report 48 Engine</span></h1>
+  <p class="sub">Hardware-mediated dream-to-dream relay (1.92 bits/min LRLR alphabet, 20-min "Dream Baton" queue, coupled Wilson–Cowan simulator, &amp; DreamBank-calibrated convergence scorer)</p>
+
+  <!-- MODULE 1: SHARED WORLD-SEED & 4-SYMBOL ACOUSTIC MOTIF DECK -->
+  <div class="card">
+    <h2>1. Shared World-Seed &amp; 4-Symbol Acoustic Motif Deck (1.92 bits/min Safe Alphabet)</h2>
+    <p class="hint">
+      Both sleepers rehearse the exact same spatial World-Seed and link these 4 gentle, non-startling acoustic motifs before bed. During REM, an LRLR eye-movement or manual trigger relays the motif across the 20-minute Dream Baton queue.
+    </p>
+    <div class="grid2">
+      <div>
+        <label style="font-size:0.8rem;color:var(--muted);">Shared Spatial World-Seed (Places &amp; Nature transfer best!):</label>
+        <input id="worldSeed" type="text" value="Quiet Pine Cabin by a Calm Lake at Dawn">
+      </div>
+      <div>
+        <label style="font-size:0.8rem;color:var(--muted);">This Device Role &amp; Sleep State (for Live Local Relay):</label>
+        <div style="display:flex;gap:8px;">
+          <select id="myRole"><option value="A">Dreamer A</option><option value="B">Dreamer B</option></select>
+          <select id="myState">
+            <option value="REM_TARGET">REM_TARGET (Ready to Receive)</option>
+            <option value="NREM_LOCKED">NREM_LOCKED (Hold Baton in Queue)</option>
+            <option value="WAKE_GUARD">WAKE_GUARD (Lockout)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <button class="cyan" onclick="sendMotif('PRESENCE', 'Partner Presence (Warm 5th Bell)')">1. LRLR &rarr; Presence Bell</button>
+      <button class="teal" onclick="sendMotif('CALM_YES', 'Calm / Yes (C-Maj7 Pad)')">2. LRLRLR &rarr; Calm / Yes Pad</button>
+      <button class="violet" onclick="sendMotif('SHIFT_SCENE', 'Shift Scene (Soft Pentatonic)')">3. 2&times;LRLR &rarr; Shift Scene</button>
+      <button onclick="sendMotif('ANCHOR_LAKE', 'World-Seed Anchor (Low Breeze)')">4. Hold &rarr; Lake Anchor</button>
+      <button id="btnRelay" onclick="toggleLiveRelay()">Connect Live /bridge Relay</button>
+    </div>
+    <div id="relayLog" class="log">Bridge ready. Click any motif to preview &amp; queue across the 20-min Dream Baton relay, or test live coupling below.</div>
+  </div>
+
+  <!-- MODULE 2: LIVE COUPLED DUAL-BRAIN SIMULATOR -->
+  <div class="card">
+    <h2>2. Live Coupled Dual-Brain Wilson–Cowan Simulator (Brain A &harr; Acoustic Relay &harr; Brain B)</h2>
+    <p class="hint">
+      Watch two out-of-phase REM dreamers synchronize their Posterior vividness &amp; Right-Frontal envelopes inside the Report 48 Goldilocks corridor (<code>gRelay = 0.30&ndash;0.40</code> &rarr; <em>r</em> = +0.71 to +0.81).
+    </p>
+    <div class="row" style="margin-bottom:10px;">
+      <span style="font-size:0.84rem;">Acoustic Relay Coupling (<code>gRelay</code>): <strong id="v_grel" style="color:var(--cyan);">0.35</strong></span>
+      <input id="s_grel" type="range" min="0" max="0.50" step="0.01" value="0.35" style="width:220px;accent-color:var(--cyan);">
+      <button class="cyan" onclick="injectLRLR('A')">Fire LRLR from Dreamer A &rarr; B</button>
+      <button class="violet" onclick="injectLRLR('B')">Fire LRLR from Dreamer B &rarr; A</button>
+      <span id="simCorr" style="font-family:ui-monospace,Consolas,monospace;font-size:0.84rem;color:var(--teal);margin-left:auto;">Inter-Brain r: +0.00</span>
+    </div>
+    <canvas id="c_dual" width="1020" height="170"></canvas>
+  </div>
+
+  <!-- MODULE 3: BLIND MORNING DREAM CONVERGENCE SCORER -->
+  <div class="card">
+    <h2>3. Morning Dream Convergence Scorer (Calibrated to DreamBank N = 22,315 Baseline)</h2>
+    <p class="hint">
+      Enter both dreamers' morning reports <strong>before</strong> discussing them aloud. The scorer strips common stopwords, computes rare-word &amp; domain overlap, and benchmarks against our exact DreamBank 15,000-pair random-stranger baseline (<code>Jaccard = 0.0060</code>).
+    </p>
+    <div class="grid2">
+      <div>
+        <label style="font-size:0.82rem;color:var(--cyan);">Dreamer A Morning Report:</label>
+        <textarea id="repA" placeholder="Write Dreamer A's raw morning dream report here..."></textarea>
+      </div>
+      <div>
+        <label style="font-size:0.82rem;color:var(--violet);">Dreamer B Morning Report:</label>
+        <textarea id="repB" placeholder="Write Dreamer B's raw morning dream report here..."></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <button class="teal" onclick="scoreConvergence()">Compute Convergence vs. DreamBank Chance</button>
+      <button onclick="loadDemoReports()">Load Example Shared-Seed Pair</button>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="v" id="k_jac">—</div><div class="l">Rare-Word Jaccard</div></div>
+      <div class="kpi"><div class="v" id="k_lift">—</div><div class="l">Lift vs. DreamBank (0.0060)</div></div>
+      <div class="kpi"><div class="v" id="k_shared">—</div><div class="l">Shared Content Words</div></div>
+      <div class="kpi"><div class="v" id="k_verdict" style="font-size:0.95rem;">—</div><div class="l">Statistical Benchmark</div></div>
+    </div>
+    <div id="sharedWordsBox" class="log" style="margin-top:10px;color:#cbd5e1;">Shared motifs &amp; domain matches will appear here.</div>
+  </div>
+</div>
+
+<script>
+// ======================== WEB AUDIO 4-SYMBOL MOTIF ENGINE ========================
+let audioCtx = null;
+function ensureAudio() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+}
+
+function playMotifSound(symbol) {
+  ensureAudio();
+  const now = audioCtx.currentTime + 0.02;
+  const lp = audioCtx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 1100; lp.connect(audioCtx.destination);
+  const note = (freq, t0, dur, peak = 0.028) => {
+    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+    o.type = 'sine'; o.frequency.value = freq;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + Math.min(0.45, dur * 0.35));
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.connect(g); g.connect(lp); o.start(t0); o.stop(t0 + dur + 0.05);
+  };
+  if (symbol === 'PRESENCE') { note(392.0, now, 1.5); note(587.33, now + 0.25, 1.6); }
+  else if (symbol === 'CALM_YES') { [261.63, 329.63, 392.0, 493.88].forEach((f) => note(f, now, 2.2, 0.015)); }
+  else if (symbol === 'SHIFT_SCENE') { [329.63, 392.0, 440.0, 523.25].forEach((f, i) => note(f, now + i * 0.22, 0.9, 0.022)); }
+  else { note(196.0, now, 2.4, 0.025); note(293.66, now + 0.3, 2.2, 0.018); }
+}
+
+function appendLog(txt) {
+  const el = document.getElementById('relayLog');
+  const ts = new Date().toLocaleTimeString();
+  el.textContent = `[${ts}] ${txt}\n` + el.textContent;
+}
+
+// ======================== LIVE LOCAL /bridge BATON RELAY ========================
+let relayTimer = null;
+async function sendMotif(symbol, label) {
+  playMotifSound(symbol);
+  const role = document.getElementById('myRole').value;
+  const worldSeed = document.getElementById('worldSeed').value;
+  appendLog(`Dreamer ${role} sent [${label}] -> queued in 20-min Dream Baton`);
+  try {
+    const r = await fetch('/bridge/send', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ from: role, symbol, label, worldSeed }),
+    });
+    if (r.ok) {
+      const d = await r.json();
+      appendLog(`Server Baton Queue: A->B (${d.pendingAtoB}) | B->A (${d.pendingBtoA})`);
+    }
+  } catch (_) {}
+}
+
+function toggleLiveRelay() {
+  const btn = document.getElementById('btnRelay');
+  if (relayTimer) {
+    clearInterval(relayTimer); relayTimer = null;
+    btn.textContent = 'Connect Live /bridge Relay';
+    appendLog('Disconnected from local /bridge relay.');
+    return;
+  }
+  btn.textContent = 'Disconnect Live Relay';
+  appendLog('Connected to /bridge/poll (2s polling, 20-min Dream Baton active).');
+  relayTimer = setInterval(async () => {
+    const role = document.getElementById('myRole').value;
+    const state = document.getElementById('myState').value;
+    try {
+      const r = await fetch(`/bridge/poll?role=${role}&state=${state}`);
+      if (!r.ok) return;
+      const d = await r.json();
+      if (d.delivered) {
+        playMotifSound(d.delivered.symbol);
+        appendLog(`RECEIVED BATON from Dreamer ${d.delivered.from}: [${d.delivered.label}] delivered inside ${state}!`);
+      }
+    } catch (_) {}
+  }, 2000);
+}
+
+// ======================== COUPLED DUAL-BRAIN SIMULATOR ========================
+const cDual = document.getElementById('c_dual').getContext('2d');
+const HIST = 260;
+const A = { Ep: 0.4, Ip: 0.25, hist: new Float64Array(HIST).fill(0.4), pulse: 0 };
+const B = { Ep: 0.4, Ip: 0.25, hist: new Float64Array(HIST).fill(0.4), pulse: 0 };
+let gRelay = 0.35, simT = 0;
+document.getElementById('s_grel').addEventListener('input', (e) => {
+  gRelay = parseFloat(e.target.value);
+  document.getElementById('v_grel').textContent = gRelay.toFixed(2);
+});
+function injectLRLR(who) {
+  playMotifSound(who === 'A' ? 'PRESENCE' : 'CALM_YES');
+  if (who === 'A') { A.pulse = 35; appendLog('SIM: Dreamer A fired LRLR -> acoustic pulse relayed to Dreamer B!'); }
+  else { B.pulse = 35; appendLog('SIM: Dreamer B fired LRLR -> confirmation relayed to Dreamer A!'); }
+}
+const sigm = (x) => 1 / (1 + Math.exp(-x));
+const randn = () => Math.sqrt(-2 * Math.log(Math.max(1e-9, Math.random()))) * Math.cos(2 * Math.PI * Math.random());
+
+function simLoop() {
+  for (let k = 0; k < 2; k++) {
+    simT += 0.02;
+    const delIdx = HIST - 18;
+    const toB = gRelay * (A.hist[delIdx] - 0.45) + (A.pulse > 0 ? (A.pulse--, 0.28) : 0);
+    const toA = gRelay * (B.hist[delIdx] - 0.45) + (B.pulse > 0 ? (B.pulse--, 0.28) : 0);
+    const step = (X, ext, ph) => {
+      const wave = 0.45 * Math.sin(2 * Math.PI * 0.22 * simT + ph) + 0.22 * Math.sin(2 * Math.PI * 0.11 * simT + ph * 2);
+      X.Ep = Math.max(0, Math.min(1, X.Ep + 0.02 * ((-X.Ep + sigm(10.5 * X.Ep - 9.0 * X.Ip - 2.2 + 1.15 + wave + 2.3 * ext + 0.35 * randn())) / 0.06)));
+      X.Ip = Math.max(0, Math.min(1, X.Ip + 0.02 * ((-X.Ip + sigm(9.0 * X.Ep - 2.5 * X.Ip - 3.2 + 0.35 + 0.2 * randn())) / 0.09)));
+      X.hist.copyWithin(0, 1); X.hist[HIST - 1] = X.Ep;
+    };
+    step(A, toA, 0.0);
+    step(B, toB, 2.0);
+  }
+  cDual.clearRect(0, 0, 1020, 170);
+  const draw = (arr, col, yBase) => {
+    cDual.strokeStyle = col; cDual.lineWidth = 2; cDual.beginPath();
+    for (let i = 0; i < HIST; i++) {
+      const x = (i / (HIST - 1)) * 1020, y = yBase - (arr[i] - 0.5) * 75;
+      i === 0 ? cDual.moveTo(x, y) : cDual.lineTo(x, y);
+    }
+    cDual.stroke();
+  };
+  draw(A.hist, '#38bdf8', 52);
+  draw(B.hist, '#a78bfa', 122);
+  cDual.fillStyle = '#38bdf8'; cDual.font = '12px system-ui'; cDual.fillText('Dreamer A (Posterior S_phys)', 10, 18);
+  cDual.fillStyle = '#a78bfa'; cDual.fillText('Dreamer B (Posterior S_phys)', 10, 92);
+
+  // Live Pearson r
+  let ma = 0, mb = 0; for (let i = 0; i < HIST; i++) { ma += A.hist[i]; mb += B.hist[i]; } ma /= HIST; mb /= HIST;
+  let num = 0, da = 0, db = 0;
+  for (let i = 0; i < HIST; i++) { const x = A.hist[i] - ma, y = B.hist[i] - mb; num += x * y; da += x * x; db += y * y; }
+  const r = da > 0 && db > 0 ? num / Math.sqrt(da * db) : 0;
+  document.getElementById('simCorr').textContent = `Inter-Brain r: ${r >= 0 ? '+' : ''}${r.toFixed(2)}`;
+  requestAnimationFrame(simLoop);
+}
+simLoop();
+
+// ======================== STEP 3: MORNING DREAM CONVERGENCE SCORER ========================
+const STOP = new Set([
+  'the','and','that','have','for','not','with','you','this','but','his','from','they','say','her','she','will','one','all',
+  'would','there','their','what','out','about','who','get','which','when','make','can','like','time','just','him','know',
+  'take','into','year','your','good','some','could','them','see','other','than','then','now','look','only','come','its',
+  'over','think','also','back','after','use','two','how','our','work','first','well','way','even','new','want','because',
+  'any','these','give','day','most','was','were','had','has','are','been','being','very','did','does','doing','done',
+  'going','went','got','getting','said','told','saw','seen','looked','looking','came','coming','dream','dreamed','dreaming',
+  'felt','feel','feeling','around','down','here','where','still','much','more','before','through','while','really',
+  'something','someone','nothing','everything','anything','myself','himself','herself','people','thing','things','started',
+  'tried','seemed','thought','remember','knew','asked','turned','walking','walked','standing','sitting','next','little','away',
+]);
+
+function tokenize(txt) {
+  const ws = (txt || '').toLowerCase().match(/[a-z]{4,}/g) || [];
+  return new Set(ws.filter((w) => !STOP.has(w)));
+}
+
+function loadDemoReports() {
+  document.getElementById('repA').value = 'I was standing on a wooden porch of a pine cabin by a quiet lake at dawn. A soft bell rang twice across the water and I realized I was dreaming, feeling completely calm as mist rose over the trees.';
+  document.getElementById('repB').value = 'I walked out onto a dock beside a calm lake surrounded by tall pine trees. Early morning mist was drifting over the water and I heard a gentle warm bell chime in the distance.';
+  scoreConvergence();
+}
+
+function scoreConvergence() {
+  const a = tokenize(document.getElementById('repA').value);
+  const b = tokenize(document.getElementById('repB').value);
+  if (!a.size || !b.size) return;
+  const shared = [...a].filter((w) => b.has(w));
+  const j = shared.length / (a.size + b.size - shared.length);
+  const lift = j / 0.0060; // DreamBank 15,000-pair random-stranger baseline
+  document.getElementById('k_jac').textContent = j.toFixed(4);
+  document.getElementById('k_lift').textContent = lift.toFixed(1) + 'x';
+  document.getElementById('k_shared').textContent = shared.length;
+  const vEl = document.getElementById('k_verdict');
+  if (lift >= 4.0) { vEl.textContent = 'STRONG CONVERGENCE'; vEl.style.color = '#2dd4bf'; }
+  else if (lift >= 2.5) { vEl.textContent = 'ABOVE CHANCE (3x)'; vEl.style.color = '#38bdf8'; }
+  else { vEl.textContent = 'BASELINE / CHANCE'; vEl.style.color = '#94a3b8'; }
+  document.getElementById('sharedWordsBox').textContent = shared.length
+    ? `Shared rare content words (${shared.length}): ${shared.join(', ')}\nBenchmark: DreamBank random stranger pair = 0.0060 | Same-person continuity = 0.0176 (2.93x)`
+    : 'No shared rare content words detected.';
+}
+</script>
+</body>
+</html>

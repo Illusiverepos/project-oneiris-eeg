@@ -303,22 +303,90 @@ function serve(port = 8787) {
   const htmlPath = path.join(__dirname, 'tlr_trainer.html');
   const labPath = path.join(__dirname, 'neurochemistry_dream_lab.html');
   const irtPath = path.join(__dirname, 'irt_tmr_prototype.html');
+  const bridgePath = path.join(__dirname, 'dual_dream_bridge.html');
   let tickSec = 0;
 
+  // Dual-Dream Bridge 20-minute Store-and-Forward "Dream Baton" Queue (Report 48)
+  const bridgeState = {
+    worldSeed: 'Quiet Pine Cabin by a Calm Lake',
+    queueAtoB: [], // messages from Dreamer A waiting for Dreamer B's REM
+    queueBtoA: [], // messages from Dreamer B waiting for Dreamer A's REM
+    history: [],
+    sleeperA: { state: 'IDLE', lastSeen: 0 },
+    sleeperB: { state: 'IDLE', lastSeen: 0 },
+  };
+  const BATON_TTL_MS = 20 * 60 * 1000;
+
   const server = http.createServer((req, res) => {
-    if (req.method === 'GET' && (req.url === '/' || req.url === '/index.html')) {
+    const urlObj = new URL(req.url, `http://127.0.0.1:${port}`);
+    if (req.method === 'GET' && (urlObj.pathname === '/' || urlObj.pathname === '/index.html')) {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end(fs.readFileSync(htmlPath));
       return;
     }
-    if (req.method === 'GET' && req.url === '/lab') {
+    if (req.method === 'GET' && urlObj.pathname === '/lab') {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end(fs.readFileSync(labPath));
       return;
     }
-    if (req.method === 'GET' && req.url === '/irt') {
+    if (req.method === 'GET' && urlObj.pathname === '/irt') {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end(fs.readFileSync(irtPath));
+      return;
+    }
+    if (req.method === 'GET' && urlObj.pathname === '/bridge') {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(fs.readFileSync(bridgePath));
+      return;
+    }
+    if (req.method === 'GET' && urlObj.pathname === '/bridge/poll') {
+      const role = urlObj.searchParams.get('role') || 'A';
+      const state = urlObj.searchParams.get('state') || 'REM_TARGET';
+      const now = Date.now();
+      if (role === 'A') bridgeState.sleeperA = { state, lastSeen: now };
+      else bridgeState.sleeperB = { state, lastSeen: now };
+      // Expire stale batons (>20 min)
+      bridgeState.queueAtoB = bridgeState.queueAtoB.filter((m) => now - m.ts <= BATON_TTL_MS);
+      bridgeState.queueBtoA = bridgeState.queueBtoA.filter((m) => now - m.ts <= BATON_TTL_MS);
+      // Deliver queued baton ONLY when recipient is in safe REM_TARGET
+      let delivered = null;
+      const q = role === 'B' ? bridgeState.queueAtoB : bridgeState.queueBtoA;
+      if (state === 'REM_TARGET' && q.length > 0) {
+        delivered = q.shift();
+        bridgeState.history.unshift({ ...delivered, deliveredAt: now, deliveredTo: role });
+        bridgeState.history = bridgeState.history.slice(0, 30);
+      }
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({
+        worldSeed: bridgeState.worldSeed,
+        delivered,
+        pendingAtoB: bridgeState.queueAtoB.length,
+        pendingBtoA: bridgeState.queueBtoA.length,
+        sleeperA: bridgeState.sleeperA,
+        sleeperB: bridgeState.sleeperB,
+        history: bridgeState.history.slice(0, 10),
+      }));
+      return;
+    }
+    if (req.method === 'POST' && urlObj.pathname === '/bridge/send') {
+      let body = '';
+      req.on('data', (c) => { body += c; });
+      req.on('end', () => {
+        try {
+          const msg = JSON.parse(body);
+          if (msg.worldSeed) bridgeState.worldSeed = String(msg.worldSeed).slice(0, 160);
+          if (msg.symbol) {
+            const item = { from: msg.from || 'A', symbol: msg.symbol, label: msg.label || msg.symbol, ts: Date.now() };
+            if (item.from === 'A') bridgeState.queueAtoB.push(item);
+            else bridgeState.queueBtoA.push(item);
+          }
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ ok: true, pendingAtoB: bridgeState.queueAtoB.length, pendingBtoA: bridgeState.queueBtoA.length }));
+        } catch (err) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: err.message }));
+        }
+      });
       return;
     }
     if (req.method === 'POST' && req.url === '/eeg-chunk') {

@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-11-26T04:32:05.255Z",
+  "totalDreamsUsed": 20897,
+  "summary": {
+    "strangers_baseline": {
+      "nPairs": 10000,
+      "meanJaccard": 0.01276,
+      "pctNonZeroOverlap": 58.21,
+      "domainOverlap": {
+        "spatial_places": {
+          "meanJ": 0.0439,
+          "pctHit": 13.55
+        },
+        "nature_elements": {
+          "meanJ": 0.0054,
+          "pctHit": 1.09
+        },
+        "social_kinship": {
+          "meanJ": 0.0255,
+          "pctHit": 6.18
+        },
+        "motion_travel": {
+          "meanJ": 0.0125,
+          "pctHit": 2.3
+        },
+        "emotion_tone": {
+          "meanJ": 0.0096,
+          "pctHit": 1.74
+        }
+      }
+    },
+    "real_married_couple_emma_husband": {
+      "nPairs": 10000,
+      "meanJaccard": 0.00986,
+      "pctNonZeroOverlap": 50.8,
+      "domainOverlap": {
+        "spatial_places": {
+          "meanJ": 0.0277,
+          "pctHit": 7.22
+        },
+        "nature_elements": {
+          "meanJ": 0.0072,
+          "pctHit": 1.7
+        },
+        "social_kinship": {
+          "meanJ": 0.025,
+          "pctHit": 5.22
+        },
+        "motion_travel": {
+          "meanJ": 0.0052,
+          "pctHit": 0.8
+        },
+        "emotion_tone": {
+          "meanJ": 0.0067,
+          "pctHit": 0.9
+        }
+      },
+      "liftVsStrangers": 0.77
+    },
+    "shared_culture_peru_m_f": {
+      "nPairs": 10000,
+      "meanJaccard": 0.01926,
+      "pctNonZeroOverlap": 61.66,
+      "domainOverlap": {
+        "spatial_places": {
+          "meanJ": 0.0442,
+          "pctHit": 10.69
+        },
+        "nature_elements": {
+          "meanJ": 0.005,
+          "pctHit": 0.98
+        },
+        "social_kinship": {
+          "meanJ": 0.0489,
+          "pctHit": 10.6
+        },
+        "motion_travel": {
+          "meanJ": 0.0155,
+          "pctHit": 2.34
+        },
+        "emotion_tone": {
+          "meanJ": 0.0142,
+          "pctHit": 2.35
+        }
+      },
+      "liftVsStrangers": 1.51
+    },
+    "shared_cohort_norms_m_f": {
+      "nPairs": 10000,
+      "meanJaccard": 0.01519,
+      "pctNonZeroOverlap": 60.52,
+      "domainOverlap": {
+        "spatial_places": {
+          "meanJ": 0.0441,
+          "pctHit": 11.46
+        },
+        "nature_elements": {
+          "meanJ": 0.0044,
+          "pctHit": 0.76
+        },
+        "social_kinship": {
+          "meanJ": 0.026,
+          "pctHit": 5.33
+        },
+        "motion_travel": {
+          "meanJ": 0.0156,
+          "pctHit": 2.57
+        },
+        "emotion_tone": {
+          "meanJ": 0.0076,
+          "pctHit": 1.02
+        }
+      },
+      "liftVsStrangers": 1.19
+    },
+    "within_person_emma": {
+      "nPairs": 5000,
+      "meanJaccard": 0.01682,
+      "pctNonZeroOverlap": 50.68,
+      "domainOverlap": {
+        "spatial_places": {
+          "meanJ": 0.036,
+          "pctHit": 7.4
+        },
+        "nature_elements": {
+          "meanJ": 0.0053,
+          "pctHit": 1.14
+        },
+        "social_kinship": {
+          "meanJ": 0.051,
+          "pctHit": 9.2
+        },
+        "motion_travel": {
+          "meanJ": 0.0092,
+          "pctHit": 1.46
+        },
+        "emotion_tone": {
+          "meanJ": 0.0111,
+          "pctHit": 1.48
+        }
+      },
+      "liftVsStrangers": 1.32
+    }
+  }
+}
