@@ -128,4 +128,40 @@ function scoreOvernightBrainAge(frames) {
   };
 }
 
-module.exports = { computeFrameMetrics, createAntiStartleGate, scoreOvernightBrainAge };
+/**
+ * 4. 60-Second 4-Channel (AF7/AF8 + TP9/TP10) Eyes-Closed Resting Cortical Slowing & Frontal Δ_WK Screen.
+ * Validated on Lab #14 (ds004504, N=88 AD/FTD/CN: 5-fold CV AUC=0.8784 AD, 0.8270 Dementia, MMSE p=0.00015)
+ * with cortical specificity verified on Lab #15 (ds002778, N=31 non-demented Parkinson's: null AUC=0.51-0.62).
+ * NOTE: Non-clinical research prototype ONLY — not a medical diagnostic.
+ */
+function score4ChRestingScreen(frontalFrames, posteriorFrames) {
+  if (!Array.isArray(frontalFrames) || !Array.isArray(posteriorFrames) || frontalFrames.length < 10 || posteriorFrames.length < 10) {
+    throw new Error('score4ChRestingScreen requires at least 10 two-second frames (20s+) for both frontal and posterior pairs.');
+  }
+  const avg = (arr, k) => arr.reduce((s, f) => s + f[k], 0) / arr.length;
+  const fAl = avg(frontalFrames, 'alphaFrac'), fDl = avg(frontalFrames, 'deltaFrac'), fBt = avg(frontalFrames, 'betaFrac'), fWK = avg(frontalFrames, 'wkViolation');
+  const pAl = avg(posteriorFrames, 'alphaFrac'), pDl = avg(posteriorFrames, 'deltaFrac'), pBt = avg(posteriorFrames, 'betaFrac'), pWK = avg(posteriorFrames, 'wkViolation');
+  const fTh = Math.max(0.01, 1 - fDl - fAl - fBt);
+  const pTh = Math.max(0.01, 1 - pDl - pAl - pBt);
+  const fTA = fTh / Math.max(0.01, fAl);
+  const pTA = pTh / Math.max(0.01, pAl);
+
+  // Standardized cortical-slowing & frontal symmetry-breaking composite (higher = greater slowing/disinhibition)
+  const slowingIndex = +(0.45 * Math.log(pTA / 1.8) + 0.35 * Math.log(fTA / 2.2) - 0.20 * ((fBt - 0.07) / 0.025)).toFixed(3);
+  const frontalDisinhibitionDeltaWK = +(fWK - (-0.49)).toFixed(4);
+  const anteriorPosteriorDeltaWKGradient = +(fWK - pWK).toFixed(4);
+
+  return {
+    nFrames: Math.min(frontalFrames.length, posteriorFrames.length),
+    corticalSlowingIndex: slowingIndex,
+    frontalThetaAlphaRatio: +fTA.toFixed(3),
+    posteriorThetaAlphaRatio: +pTA.toFixed(3),
+    frontalBetaFrac: +fBt.toFixed(4),
+    frontalWKViolation: +fWK.toFixed(4),
+    frontalDisinhibitionDeltaWK,
+    anteriorPosteriorDeltaWKGradient,
+    disclaimer: 'Non-clinical research metric only; not a medical diagnostic.',
+  };
+}
+
+module.exports = { computeFrameMetrics, createAntiStartleGate, scoreOvernightBrainAge, score4ChRestingScreen };

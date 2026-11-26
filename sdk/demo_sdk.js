@@ -59,4 +59,12 @@ console.log('  Deep-Sleep-Rich Profile ->', youngRes.estimatedBrainAgeYears, 'yr
 console.log('  Fragmented-Sleep Profile ->', olderRes.estimatedBrainAgeYears, 'yrs', olderRes.unsupervisedArchitecturePct);
 assert(olderRes.estimatedBrainAgeYears > youngRes.estimatedBrainAgeYears, 'Fragmented/shallow sleep profile must score older');
 
-console.log('\nALL SDK SELF-TESTS PASSED (3/3)!');
+// 4. 60-Second 4-Channel Resting Cortical Slowing & Frontal Δ_WK Screen test
+const restHealthy = sdk.score4ChRestingScreen(Array(15).fill(mWake), Array(15).fill(mWake));
+const restSlowed  = sdk.score4ChRestingScreen(Array(15).fill(mN3), Array(15).fill(mN3));
+console.log('\n4. 60-Second 4-Channel Resting Research Screen:');
+console.log('  Healthy Alpha-Rich Profile -> slowingIndex:', restHealthy.corticalSlowingIndex);
+console.log('  Slowed Delta/Theta Profile -> slowingIndex:', restSlowed.corticalSlowingIndex);
+assert(restSlowed.corticalSlowingIndex > restHealthy.corticalSlowingIndex, 'Slowed profile must score higher corticalSlowingIndex');
+
+console.log('\nALL SDK SELF-TESTS PASSED (4/4)!');
