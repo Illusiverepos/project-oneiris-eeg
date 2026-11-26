@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-11-26T05:01:24.718Z",
+  "universalConstant": {
+    "psilocybin_vs_video_dDFA": -0.0691,
+    "fearExtinction_vs_conditioning_dDFA": -0.0698,
+    "clinicalPTSD_remission_dDFA": -0.074,
+    "meanAcross3Domains": -0.071
+  },
+  "vectors": [
+    {
+      "transition": "Propofol LOC -> Wake (Consciousness Return)",
+      "lab": "Lab #1 (ds005620)",
+      "n": 20,
+      "dSlope": 0.2999,
+      "dDFA": -0.156,
+      "angleDeg": 47.3,
+      "mag": 1.77,
+      "targetQuadrant": "Q4 (Plastic Active)",
+      "note": "dz(slopeBB)=0.857, dz(DFA)=-1.3"
+    },
+    {
+      "transition": "Sober Rest -> External Video (Sensory Lock-In)",
+      "lab": "Lab #10 (ds006110)",
+      "n": 56,
+      "dSlope": 0.2398,
+      "dDFA": 0.0859,
+      "angleDeg": -36.7,
+      "mag": 1.2,
+      "targetQuadrant": "Q3 (Locked Active Reality)",
+      "note": "Eyes-open video flattens slopeBB (+0.240) AND locks DFA high (+0.086)!"
+    },
+    {
+      "transition": "External Video -> Psilocybin Inner Cinema",
+      "lab": "Lab #10 (ds006110)",
+      "n": 56,
+      "dSlope": 0.1022,
+      "dDFA": -0.0691,
+      "angleDeg": 54.6,
+      "mag": 0.71,
+      "targetQuadrant": "Q4 (Plastic Active Theater)",
+      "note": "Releases DFA by -0.0691 while keeping slopeBB hyper-flat (+0.102)!"
+    },
+    {
+      "transition": "REM Pre-Cue -> Lucid Control Plateau (+6..+22s)",
+      "lab": "Lab #8 (TWC_USA)",
+      "n": 17,
+      "dSlope": 0.1104,
+      "dDFA": 0.0281,
+      "angleDeg": -27.9,
+      "mag": 0.5,
+      "targetQuadrant": "Q4 (Executive Lucid Control)",
+      "note": "Flattens slopeBB (+0.110, p=0.016) with stable DFA (+0.028, n.s.)"
+    },
+    {
+      "transition": "Active PTSD -> Clinical PTSD Remission (NF Full)",
+      "lab": "Lab #11 (Mendeley)",
+      "n": 10,
+      "dSlope": 0.1111,
+      "dDFA": -0.074,
+      "angleDeg": 54.2,
+      "mag": 0.76,
+      "targetQuadrant": "Q4 (Plastic Remission)",
+      "note": "Posterior DFA drops -0.0740 (p=0.036); RF 1/f steepens -0.240 (p=0.016)"
+    },
+    {
+      "transition": "PTSD Stage 2 Consolidation (Mid -> Late NF)",
+      "lab": "Lab #11 (Mendeley)",
+      "n": 10,
+      "dSlope": 0,
+      "dDFA": -0.0853,
+      "angleDeg": 90,
+      "mag": 0.71,
+      "targetQuadrant": "Q2/Q4 (Memory-Loop Release)",
+      "note": "Pure horizontal DFA release -0.0853 (dz=-0.971, p=0.0021)!"
+    },
+    {
+      "transition": "Fear Conditioning -> Active Fear Extinction",
+      "lab": "Lab #12 (ds007114)",
+      "n": 28,
+      "dSlope": 0.1375,
+      "dDFA": -0.0698,
+      "angleDeg": 46.6,
+      "mag": 0.8,
+      "targetQuadrant": "Q4 (Plastic Safety Updating)",
+      "note": "Exact match: DFA -0.0698 (p=0.0138) + slopeBB +0.1375 (p=0.0064) -> E_extinct perm p=0.0032!"
+    },
+    {
+      "transition": "Safe Pre-Conditioning -> Fear Conditioning",
+      "lab": "Lab #12 (ds007114)",
+      "n": 28,
+      "dSlope": 0.033,
+      "dDFA": 0.0392,
+      "angleDeg": -68,
+      "mag": 0.35,
+      "targetQuadrant": "Q3 (Sticky Threat Lock-In)",
+      "note": "Drifts toward Q3 (slopeBB +0.033, DFA +0.039 — sticky threat inertia)"
+    }
+  ]
+}

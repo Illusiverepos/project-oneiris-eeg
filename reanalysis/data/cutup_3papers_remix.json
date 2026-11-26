@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-11-26T04:56:05.013Z",
+  "counts": {
+    "P1": 6,
+    "P2": 12,
+    "P3": 24,
+    "total": 42
+  },
+  "remixes": {
+    "RemixPaper_A": [
+      "P1-4: Biophysical 12-Column Posterior Wilson-Cowan E/I Sheet (tau_E=10ms, tau_I=20ms) reproduces 6-second periodic NREM dream ignition waves whenever slow-wave gates briefly clear.",
+      "P2-7: In `TWC_USA` ($n = 12$ unique humans, $17$ paired sessions, 21-ch Local Hjorth CSD with `R-HEOG` micro-saccade window rejection), active two-way dream communication (`Status` codes `1–20` vs. pre-cue baseline sleep) flip",
+      "P2-9: - **Super-Waking Frozen `S_phys`:** Paper 1's frozen propofol equation ordered all 5 states with **Psilocybin Rest (`+0.356`) > Psilocybin Med (`+0.197`) > External Video (`-0.109`) > Sober Rest (`-0.220`)**, beating liv",
+      "P3-5: 1. **The Rendering Engine (`S_phys`):** Posterior Hot Zone (`Right_TPJ` + `Occipital`) broadband $1/f$ flattening, Lempel–Ziv complexity, and `DFA α` release, gated by Stage 1 slow-wave clearance. 2. **The External Ancho",
+      "P3-15: 2. **Stage 2 (Mid → Late Sessions) — Posterior `DFA α` Release:** * Posterior `DFA α` showed zero change during Early → Mid (`+0.0113, p = 0.649`), then dropped sharply during Mid → Late (**`-0.0853`, $d_z = -0.971, p = ",
+      "P3-10: * **Active Threat / Nightmares:** `71.43%` (`70/98`) vs. `13.41%` all controls ($\\text{OR} = 15.97, \\chi^2 = 273.6, p = 1.86 \\times 10^{-61}$) and `19.76%` male norms ($\\text{OR} = 10.01, p = 1.32 \\times 10^{-24}$); comb",
+      "P1-2: Two-Stage Posterior Cortical Ignition: Stage 1 clears slow-wave Delta inhibition (I_SW), releasing DFA alpha before Stage 2 broadband 1/f flattening percolates across Right-TPJ & Occipital cortex.",
+      "P1-5: Right-Hemisphere Posterior Dominance (Right TPJ / P4 / P8 / Occipital) predicts dream narrative length and vividness (within-subject rho = +0.359, p = 0.0002) while Left-TPJ verbal regions remain null.",
+      "P3-12: In Mendeley `10.17632/gsxphk87mc`, NF patients dropped total PCL-5 from `38.9 → 11.0` (`-27.9` points; MI control `39.2 → 35.3`). Item-level DSM-5 sleep outcomes (`n = 29`) showed: * **Nightmares (PCL-5 Item 2, `0–4`):**",
+      "P2-10: - **5-for-5 Right-Hemisphere Invariant:** The Right Hemisphere dominated across all 5 cortical-topography labs—and in `Zhang & Wamsley` 58-ch CSD, **`Right_TPJ` remained the universal phenomenal stage even inside verbal-",
+      "P2-2: **Target Preprint:** PsyArXiv (OSF Preprints) **Companion To:** *Two-Stage Posterior Cortical Ignitions and a Shared Physical Axis of Human Consciousness Across Seven Independent Anesthesia and Sleep Labs* (Paper 1) **Re",
+      "P3-21: ## 4. Discussion, Clinical Scope & Limitations Across 12 independent labs, **five major clinical PTSD interventions** converge onto our 3-axis circuit: **1 Hz right DLPFC rTMS** and **wearable neurofeedback** steepen `Ri",
+      "P3-6: 3. **The Executive Steering Wheel (`Right_Frontal` `F4`/`F8`):** Offline during normal NREM dreaming (`0/3`), switching ON selectively during lucid REM dream control (`11/12`, $p = 0.0190$, 16-second plateau). Healthy RE",
+      "P1-6: Shared vs. Idiosyncratic Dream Space across 22,315 DreamBank reports: individual dream content is 2.93x more idiosyncratic within-person than between strangers, yet obeys the same universal posterior physical engine."
+    ],
+    "RemixPaper_B": [
+      "P2-1: # The Right-Prefrontal Dream-Control Switch, \"Inner Cinema\" Exceeding External Vision, and a Unified 10-Lab Physical Architecture of Human Consciousness **Author:** Austin Rutan (Independent Researcher) **Date:** Novembe",
+      "P1-1: Frozen Propofol Physical Axis S_phys = +0.515 z(slopeBB) + 0.351 z(LZc) - 0.782 z(DFA alpha) generalized zero-shot across 7 anesthesia & sleep labs (1,291 human recordings).",
+      "P3-3: **Preprint Series:** Project ONEIRIS — Paper 3 (Extending 10-Lab Consciousness & Sleep Physics to Labs #11–#12) Post-traumatic stress disorder (PTSD) traps military veterans and trauma survivors in decades-long cycles of",
+      "P3-1: # Two-Stage Cortical Recovery in Clinical PTSD, Independent Replication in Human Fear Extinction, and an Anti-Startle Architecture for Non-Waking Nightmare Therapy **Author:** Austin Rutan (Independent Researcher, Projec",
+      "P3-2: **Contact:** `rutanaus000@gmail.com` **Repository & Open-Source Code:** `https://github.com/Illusiverepos/project-oneiris-eeg`",
+      "P3-9: * **Biophysical Model & Anti-Startle Engine (`biophysical_ptsd_inverted_switch_model.js`, `closed_loop_engine.js`):** Extends the 12-column Posterior + 2-column Right-Frontal Wilson–Cowan sheet with `lcNE`, amygdala thre",
+      "P2-12: 2. **Embodied Multimodal TLR Cue:** Fires a whisper-quiet 3-tone rising chime (`400 → 600 → 800 Hz`) + optional World-Seed ambient texture + gentle haptic pulse (exploiting the $8.77\\times$ bodily shortcut). 3. **Goldilo",
+      "P3-20: * In PTSD REM (`meanThreat = 0.974`, `wakeSnapPct = 100%`, `extinctionIdx = 0.000`), gentle IRT+TMR (`tmrCueAmp = 0.25`) lowers threat (`0.635`) with **`0%` wake-snaps** and restores extinction (`0.232`), whereas loud cu",
+      "P3-24: 5. Schwartz, S., Clerget, A., & Perogamvros, L. (2022). Enhancing imagery rehearsal therapy for nightmares with targeted memory reactivation. *Current Biology*, 32(22), 4808–4816. 6. Kozel, F. A., Motes, M. A., Didehbani",
+      "P3-14: * `Right − Left Frontal` $1/f$ asymmetry accomplished **`84%`** of its total steepening (`-0.232` of `-0.278` total; full span **`9/10` remitted patients**, $d_z = -0.667, p = 0.0349$, exact binomial sign $p = 0.0215$; M",
+      "P3-8: * **Lab #11 Clinical PTSD Wearable EEG (`audit_lab11_mendeley_ptsd_eeg.js`, `audit_lab11_pcl5_nightmares_insomnia.js`, `audit_lab11_ptsd_deep_dynamics.js`):** Pure-Node MATLAB v5 parser reading `250 Hz` wearable EEG (`Fl",
+      "P3-22: 1. Rutan, A. (2026). *Two-Stage Posterior Cortical Ignitions and a Shared Physical Axis of Human Consciousness Across Seven Independent Anesthesia and Sleep Labs* (Project ONEIRIS Paper 1). PsyArXiv. 2. Rutan, A. (2026).",
+      "P3-17: During active **Fear Extinction minus Fear Conditioning** across all `28/28` humans: * **`Posterior DFA α` dropped `-0.0698`** ($d_z = -0.465, p = 0.0138$, **`19/28` humans**) — an **exact quantitative match** to Lab #11",
+      "P3-4: ## 1. Introduction: The Inverted-Switch Pathology of PTSD Sleep In Papers 1 and 2 (10 independent human labs, `1,400+` recordings), we established a minimal **3-Axis Physical Coordinate System** governing human conscious"
+    ],
+    "RemixPaper_C": [
+      "P3-7: All scripts are zero-dependency Node.js (`v26`) and publicly archived in `reanalysis/` and `toolkit/cueing-system/`: * **Combat Veteran Longitudinal Audit (`audit_ptsd_vietnam_vet_dreams.js`):** Compares the DreamBank `v",
+      "P2-4: 3. **The 2D Coordinate System of Human Reality (`S_phys` $\\times$ `R_tether`):** Applying Paper 1's frozen propofol equation zero-shot across `ds006110` ($n = 56$) places **19 mg Psilocybin eyes-closed rest ($+0.356$) si",
+      "P3-23: 3. de Boer, M., Nijdam, M. J., Jongedijk, R. A., Bangel, K. A., Olff, M., Hofman, W. F., & Talamini, L. M. (2020). The spectral fingerprint of sleep problems in post-traumatic stress disorder. *Sleep*, 43(4), zsz269. 4. ",
+      "P3-16: * **`9/10` (`90%`)** NF patients acutely steepened `Right_Frontal` $1/f$ (`-0.0821`, $d_z = -0.777, p = 0.0140$) after a single 30-minute session (MI control $p = 0.221$). ### 3.3 Lab #12 Independent Replication: Human F",
+      "P2-5: 6. **Empirical Philosophy of Dreaming & Closed-Loop Engineering:** Decomposing `Siclari 2017` NREM N2 ($n = 287$) reveals that contentless minimal awareness (`CEWR` / \"white dreams\") completes **81% of the `DFA α` drop**",
+      "P3-13: On 100% same-device resting EEG (`n = 20`, ~120 recordings), clinical remission unfolded in **two sequential stages**: 1. **Stage 1 (Early → Mid Sessions) — Right-Frontal Watchtower Power-Down & Cortical Re-Synchronizati",
+      "P3-19: In our calibrated Wilson–Cowan model (`N = 20`/regime): * Elevating `lcNE` in NREM reproduces de Boer et al. (2020): `Right_Frontal` $1/f$ flattens (`-1.503 → -0.854`), delta collapses (`0.515 → 0.111`), and right-fronta",
+      "P3-18: * **`Posterior 1/f slopeBB` flattened `+0.1375`** ($d_z = +0.515, p = 0.0064$, `18/28`), reflecting active safety re-encoding. * **Trait Anxiety Blunting:** Higher STAI Trait Anxiety correlated negatively with frontal ex",
+      "P2-11: ## 3. Translation: Closed-Loop Goldilocks Dream-Control Architecture All findings converge on a minimal **2-sensor Right-Hemisphere (`Right_TPJ` + `Right_Frontal`) closed-loop cueing architecture** implemented in `toolki",
+      "P1-3: CEWR (Conscious Experience Without Recall) in Siclari 2017 (n=287) completes 81% of DFA alpha drop with 0% of slopeBB flattening — proving temporal-persistence release precedes visual world rendering.",
+      "P2-3: In Paper 1 (7 labs, 1,291 human EEG recordings), we showed that natural NREM N2 dreaming is generated by two-stage 6-second posterior ignition waves localized to the **Right Temporo-Parietal Junction (`Right_TPJ`) and Oc",
+      "P3-11: * **Executive Blockade & 38-Year Non-Extinction:** Zero spontaneous lucidity (`0/98`, `0/70` threats), and no decline between the early half (`n = 49`) and late half (`n = 49`) of the 38-year journal (threat `75.5% → 67.",
+      "P2-8: - **Inner > Outer Cinema:** Eyes-closed 19 mg Psilocybin significantly exceeded live external Video in `Parietal_Midline` ($38/56, d_z = +0.420, p = 0.0037$) and `Occipital` ($34/56, d_z = +0.281, p = 0.0381$). - **#1 Do",
+      "P2-6: 2. **Psychedelic \"Inner Cinema\" vs. External Vision:** Does an eyes-closed psychedelic state run on the same Layer-1 posterior engine as dreaming and external vision—and where does it sit on Paper 1's frozen propofol con"
+    ]
+  }
+}
