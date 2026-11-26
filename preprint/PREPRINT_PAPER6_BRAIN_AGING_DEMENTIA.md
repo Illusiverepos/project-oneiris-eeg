@@ -56,7 +56,10 @@ Streaming `60` seconds of eyes-closed resting EEG from **only `Fp1/Fp2`** across
 | **Frontotemporal (`FTD`, `n = 23`) vs. Controls (`n = 29`)** | **`0.7916`** | **`78.3%`** | `69.0%` | **`0.0010`** |
 | *Differential `FTD` (`n = 23`) vs. `AD` (`n = 36`)* | *`0.5954` (Honest Null)* | *`43.5%`* | *`83.3%`* | *`0.1219`* |
 
-* **5-Fold Out-of-Sample `MMSE` Prediction (`N = 88`):** `r = 0.2860, p = 0.0056, MAE = 4.62` MMSE points.
+* **5-Fold Out-of-Sample `MMSE` Prediction (`N = 88`, 2-ch `Fp1/Fp2`):** `r = 0.2860, p = 0.0056, MAE = 4.62` MMSE points.
+
+### 2.3 Adding Behind-the-Ear Muse Electrodes (`4-Ch` Montage: `Fp1/Fp2 + T5/T6 = AF7/AF8 + TP9/TP10`)
+Adding the 2 behind-the-ear temporoparietal electrodes present on standard 4-channel consumer headbands (`audit_lab14_muse4ch_ftd_vs_ad.js`) confirmed the exact anatomical dissociation: **Alzheimer's (`AD`) vs. Controls jumped `+0.111` AUC to `0.8784` (`80.6%` sensitivity, `89.7%` specificity, permutation $p = 0.0005$)**, overall **Dementia vs. Controls rose to `AUC = 0.8270` (`86.2%` specificity, $p = 0.0005$)**, and out-of-sample **`MMSE` prediction surged to `r = 0.3778, p = 0.00015` (`MAE = 4.28` points)** — whereas **FTD vs. Controls** remained unchanged (`AUC = 0.7871`, already saturated on frontal electrodes) and 60-second `FTD vs. AD` subtype classification remained null (`AUC = 0.565, p = 0.211`).
 
 ---
 

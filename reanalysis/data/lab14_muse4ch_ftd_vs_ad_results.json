@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-11-26T18:34:17.494Z",
+  "montage": "4-Channel Muse S Equivalent (Fp1/Fp2 + T5/T6 = AF7/AF8 + TP9/TP10)",
+  "nHumans": 88,
+  "fiveFoldCV_Muse4ch": {
+    "Dementia_AD_plus_FTD_vs_Controls": {
+      "nPos": 59,
+      "nNeg": 29,
+      "outOfSampleAUC": 0.827,
+      "sensitivityPct": 71.2,
+      "specificityPct": 86.2,
+      "permP": 0.0005
+    },
+    "Alzheimers_AD_vs_Controls": {
+      "nPos": 36,
+      "nNeg": 29,
+      "outOfSampleAUC": 0.8784,
+      "sensitivityPct": 80.6,
+      "specificityPct": 89.7,
+      "permP": 0.0005
+    },
+    "Frontotemporal_FTD_vs_Controls": {
+      "nPos": 23,
+      "nNeg": 29,
+      "outOfSampleAUC": 0.7871,
+      "sensitivityPct": 73.9,
+      "specificityPct": 75.9,
+      "permP": 0.0005
+    },
+    "Differential_FTD_vs_AD": {
+      "nPos": 23,
+      "nNeg": 36,
+      "outOfSampleAUC": 0.5652,
+      "sensitivityPct": 47.8,
+      "specificityPct": 77.8,
+      "permP": 0.21089
+    }
+  },
+  "fiveFoldCV_MMSE_Muse4ch": {
+    "n": 88,
+    "outOfSampleR": 0.3778,
+    "outOfSampleP": 0.0001543,
+    "MAE_MMSE_points": 4.28
+  }
+}
