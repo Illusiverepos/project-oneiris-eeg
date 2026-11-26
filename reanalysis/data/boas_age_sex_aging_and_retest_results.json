@@ -1,0 +1,166 @@
+{
+  "generatedAt": "2026-11-26T07:34:36.021Z",
+  "nNightsStreamed": 42,
+  "ageRange": [
+    18,
+    82
+  ],
+  "stratifiedInvariance": {
+    "Younger_Under35": {
+      "nNights": 19,
+      "meanAge": 23.2,
+      "meanAngleN3REM": 41.88,
+      "meanFisherRaoEffPct": 80.91,
+      "v2WakeReductionPct": 96.88,
+      "v2RemPrecisionPct": 32.93
+    },
+    "Older_35Plus": {
+      "nNights": 23,
+      "meanAge": 67.9,
+      "meanAngleN3REM": 48.62,
+      "meanFisherRaoEffPct": 96.1,
+      "v2WakeReductionPct": 93.5,
+      "v2RemPrecisionPct": 23.64
+    },
+    "Female": {
+      "nNights": 22,
+      "meanAge": 51.2,
+      "meanAngleN3REM": 47.5,
+      "meanFisherRaoEffPct": 82.02,
+      "v2WakeReductionPct": 95.82,
+      "v2RemPrecisionPct": 27.33
+    },
+    "Male": {
+      "nNights": 20,
+      "meanAge": 43.8,
+      "meanAngleN3REM": 41.8,
+      "meanFisherRaoEffPct": 89.8,
+      "v2WakeReductionPct": 93.94,
+      "v2RemPrecisionPct": 25.34
+    }
+  },
+  "brainAgingCorrelations": {
+    "age_vs_REM_slopeBB": {
+      "n": 42,
+      "r": -0.2345,
+      "pApprox": 0.1272
+    },
+    "age_vs_REM_wkViolation": {
+      "n": 42,
+      "r": -0.346,
+      "pApprox": 0.0197
+    },
+    "age_vs_N3_slopeBB": {
+      "n": 25,
+      "r": -0.0955,
+      "pApprox": 0.6454
+    },
+    "age_vs_N3_DFA": {
+      "n": 25,
+      "r": -0.0616,
+      "pApprox": 0.7672
+    },
+    "age_vs_N3_REM_Angle": {
+      "n": 25,
+      "r": 0.304,
+      "pApprox": 0.1259
+    },
+    "age_vs_FisherRaoEff": {
+      "n": 25,
+      "r": 0.3499,
+      "pApprox": 0.0733
+    }
+  },
+  "sameHumanTestRetestPairs": [
+    {
+      "pid": "96",
+      "age": 70,
+      "sex": "M",
+      "night1_remSlope": -2.4764,
+      "night2_remSlope": -2.4157,
+      "night1_angle": 45.69,
+      "night2_angle": 46.79
+    },
+    {
+      "pid": "84",
+      "age": 69,
+      "sex": "M",
+      "night1_remSlope": -1.9564,
+      "night2_remSlope": -1.8938,
+      "night1_angle": null,
+      "night2_angle": null
+    },
+    {
+      "pid": "92",
+      "age": 71,
+      "sex": "M",
+      "night1_remSlope": -1.9211,
+      "night2_remSlope": -1.9254,
+      "night1_angle": 56.44,
+      "night2_angle": null
+    },
+    {
+      "pid": "97",
+      "age": 73,
+      "sex": "F",
+      "night1_remSlope": -1.5832,
+      "night2_remSlope": -1.7084,
+      "night1_angle": null,
+      "night2_angle": null
+    },
+    {
+      "pid": "89",
+      "age": 27,
+      "sex": "F",
+      "night1_remSlope": 0,
+      "night2_remSlope": -1.799,
+      "night1_angle": 24.25,
+      "night2_angle": 49.14
+    },
+    {
+      "pid": "91",
+      "age": 41,
+      "sex": "M",
+      "night1_remSlope": -1.9146,
+      "night2_remSlope": -0.843,
+      "night1_angle": 47.64,
+      "night2_angle": 28.84
+    },
+    {
+      "pid": "87",
+      "age": 82,
+      "sex": "F",
+      "night1_remSlope": -1.5043,
+      "night2_remSlope": -1.9219,
+      "night1_angle": null,
+      "night2_angle": null
+    },
+    {
+      "pid": "93",
+      "age": 67,
+      "sex": "F",
+      "night1_remSlope": -2.1886,
+      "night2_remSlope": -2.0451,
+      "night1_angle": 56.53,
+      "night2_angle": 50.92
+    },
+    {
+      "pid": "15",
+      "age": 35,
+      "sex": "M",
+      "night1_remSlope": -1.8833,
+      "night2_remSlope": -1.4033,
+      "night1_angle": null,
+      "night2_angle": 24.87
+    },
+    {
+      "pid": "83",
+      "age": 66,
+      "sex": "F",
+      "night1_remSlope": -1.7326,
+      "night2_remSlope": -1.6203,
+      "night1_angle": 52.1,
+      "night2_angle": null
+    }
+  ]
+}
