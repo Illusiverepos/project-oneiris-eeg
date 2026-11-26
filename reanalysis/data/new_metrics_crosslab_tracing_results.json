@@ -1,0 +1,304 @@
+{
+  "generatedAt": "2026-11-26T04:48:19.843Z",
+  "lab11_PTSD": {
+    "nNF": 10,
+    "nMI": 10,
+    "NF": {
+      "rfHFD": {
+        "n": 10,
+        "mean": -0.0163,
+        "dz": -0.133,
+        "pApprox": 0.6737,
+        "nPos": 3,
+        "nNeg": 7
+      },
+      "rfMinusLfHFD": {
+        "n": 10,
+        "mean": 0.0115,
+        "dz": 0.099,
+        "pApprox": 0.755,
+        "nPos": 4,
+        "nNeg": 6
+      },
+      "postHFD": {
+        "n": 10,
+        "mean": -0.0393,
+        "dz": -0.267,
+        "pApprox": 0.3979,
+        "nPos": 4,
+        "nNeg": 6
+      },
+      "rfCurvature": {
+        "n": 10,
+        "mean": -0.4081,
+        "dz": -0.535,
+        "pApprox": 0.0906,
+        "nPos": 4,
+        "nNeg": 6
+      },
+      "postCurvature": {
+        "n": 10,
+        "mean": -0.7561,
+        "dz": -0.699,
+        "pApprox": 0.027,
+        "nPos": 3,
+        "nNeg": 7
+      },
+      "rfLogTBR": {
+        "n": 10,
+        "mean": -0.0233,
+        "dz": -0.086,
+        "pApprox": 0.7851,
+        "nPos": 3,
+        "nNeg": 7
+      },
+      "rfMinusLfLogTBR": {
+        "n": 10,
+        "mean": -0.047,
+        "dz": -0.127,
+        "pApprox": 0.6887,
+        "nPos": 3,
+        "nNeg": 7
+      },
+      "wpliTheta_PostRF": {
+        "n": 10,
+        "mean": 0.121,
+        "dz": 0.712,
+        "pApprox": 0.0244,
+        "nPos": 8,
+        "nNeg": 2
+      },
+      "wpliAlpha_PostRF": {
+        "n": 10,
+        "mean": 0.0708,
+        "dz": 0.297,
+        "pApprox": 0.3477,
+        "nPos": 5,
+        "nNeg": 5
+      },
+      "wpliBeta_PostRF": {
+        "n": 10,
+        "mean": -0.0079,
+        "dz": -0.113,
+        "pApprox": 0.7218,
+        "nPos": 3,
+        "nNeg": 7
+      },
+      "psiAlpha_PostToRF": {
+        "n": 10,
+        "mean": 0.0266,
+        "dz": 0.314,
+        "pApprox": 0.321,
+        "nPos": 6,
+        "nNeg": 4
+      },
+      "psiBeta_PostToRF": {
+        "n": 10,
+        "mean": 0.0156,
+        "dz": 0.099,
+        "pApprox": 0.7553,
+        "nPos": 5,
+        "nNeg": 5
+      }
+    },
+    "MI": {
+      "rfHFD": {
+        "n": 10,
+        "mean": -0.0417,
+        "dz": -0.25,
+        "pApprox": 0.4299,
+        "nPos": 4,
+        "nNeg": 6
+      },
+      "rfMinusLfHFD": {
+        "n": 10,
+        "mean": 0.0873,
+        "dz": 0.613,
+        "pApprox": 0.0527,
+        "nPos": 8,
+        "nNeg": 2
+      },
+      "postHFD": {
+        "n": 10,
+        "mean": -0.0637,
+        "dz": -0.504,
+        "pApprox": 0.1111,
+        "nPos": 3,
+        "nNeg": 7
+      },
+      "rfCurvature": {
+        "n": 10,
+        "mean": -1.5865,
+        "dz": -0.647,
+        "pApprox": 0.0407,
+        "nPos": 1,
+        "nNeg": 9
+      },
+      "postCurvature": {
+        "n": 10,
+        "mean": -1.8844,
+        "dz": -1.803,
+        "pApprox": 0,
+        "nPos": 0,
+        "nNeg": 10
+      },
+      "rfLogTBR": {
+        "n": 10,
+        "mean": -0.1967,
+        "dz": -0.72,
+        "pApprox": 0.0228,
+        "nPos": 3,
+        "nNeg": 7
+      },
+      "rfMinusLfLogTBR": {
+        "n": 10,
+        "mean": -0.0878,
+        "dz": -0.286,
+        "pApprox": 0.3655,
+        "nPos": 4,
+        "nNeg": 6
+      },
+      "wpliTheta_PostRF": {
+        "n": 10,
+        "mean": -0.0271,
+        "dz": -0.1,
+        "pApprox": 0.7515,
+        "nPos": 6,
+        "nNeg": 4
+      },
+      "wpliAlpha_PostRF": {
+        "n": 10,
+        "mean": -0.0495,
+        "dz": -0.23,
+        "pApprox": 0.4666,
+        "nPos": 5,
+        "nNeg": 5
+      },
+      "wpliBeta_PostRF": {
+        "n": 10,
+        "mean": -0.0542,
+        "dz": -0.356,
+        "pApprox": 0.2609,
+        "nPos": 4,
+        "nNeg": 6
+      },
+      "psiAlpha_PostToRF": {
+        "n": 10,
+        "mean": 0.0801,
+        "dz": 0.848,
+        "pApprox": 0.0074,
+        "nPos": 8,
+        "nNeg": 2
+      },
+      "psiBeta_PostToRF": {
+        "n": 10,
+        "mean": 0.0519,
+        "dz": 0.33,
+        "pApprox": 0.2971,
+        "nPos": 7,
+        "nNeg": 3
+      }
+    }
+  },
+  "lab8_LucidREM": {
+    "nSubjects": 14,
+    "postMinusPrePlateau": {
+      "rfHFD": {
+        "n": 14,
+        "mean": 0.0568,
+        "dz": 0.378,
+        "pApprox": 0.1569,
+        "nPos": 7,
+        "nNeg": 7
+      },
+      "rfMinusLfHFD": {
+        "n": 14,
+        "mean": -0.0073,
+        "dz": -0.566,
+        "pApprox": 0.0342,
+        "nPos": 4,
+        "nNeg": 10
+      },
+      "postHFD": {
+        "n": 14,
+        "mean": 0.0524,
+        "dz": 0.423,
+        "pApprox": 0.1135,
+        "nPos": 12,
+        "nNeg": 2
+      },
+      "rfCurvature": {
+        "n": 14,
+        "mean": 0.284,
+        "dz": 0.306,
+        "pApprox": 0.2519,
+        "nPos": 8,
+        "nNeg": 6
+      },
+      "postCurvature": {
+        "n": 14,
+        "mean": 0.0936,
+        "dz": 0.094,
+        "pApprox": 0.7246,
+        "nPos": 6,
+        "nNeg": 8
+      },
+      "rfLogTBR": {
+        "n": 14,
+        "mean": -0.0509,
+        "dz": -0.28,
+        "pApprox": 0.2952,
+        "nPos": 5,
+        "nNeg": 9
+      },
+      "rfMinusLfLogTBR": {
+        "n": 14,
+        "mean": 0.0323,
+        "dz": 0.27,
+        "pApprox": 0.3116,
+        "nPos": 7,
+        "nNeg": 7
+      },
+      "wpliTheta_PostRF": {
+        "n": 14,
+        "mean": -0.0465,
+        "dz": -0.393,
+        "pApprox": 0.1415,
+        "nPos": 5,
+        "nNeg": 9
+      },
+      "wpliAlpha_PostRF": {
+        "n": 14,
+        "mean": -0.0225,
+        "dz": -0.182,
+        "pApprox": 0.4968,
+        "nPos": 5,
+        "nNeg": 9
+      },
+      "wpliBeta_PostRF": {
+        "n": 14,
+        "mean": 0.006,
+        "dz": 0.058,
+        "pApprox": 0.8295,
+        "nPos": 4,
+        "nNeg": 10
+      },
+      "psiAlpha_PostToRF": {
+        "n": 14,
+        "mean": 0.1076,
+        "dz": 0.499,
+        "pApprox": 0.0621,
+        "nPos": 11,
+        "nNeg": 3
+      },
+      "psiBeta_PostToRF": {
+        "n": 14,
+        "mean": 0.0717,
+        "dz": 0.146,
+        "pApprox": 0.5856,
+        "nPos": 8,
+        "nNeg": 6
+      }
+    }
+  }
+}
