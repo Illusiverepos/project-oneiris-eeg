@@ -1,0 +1,187 @@
+{
+  "generatedAt": "2026-11-26T07:15:42.236Z",
+  "prongA_retroactive_WK_Lab12_FearExtinction": {
+    "nSubjectsFound": 28,
+    "meanAbsWK_Pre_Cond_Ext": [
+      -0.485,
+      -0.3736,
+      -0.3757
+    ],
+    "conditioning_dWK": {
+      "n": 28,
+      "mean": 0.1114,
+      "sd": 0.3321,
+      "dz": 0.335,
+      "t": 1.774,
+      "pos": 15,
+      "neg": 13,
+      "signP_pos": 0.42528,
+      "signP_neg": 0.71421
+    },
+    "extinction_dWK": {
+      "n": 28,
+      "mean": -0.0021,
+      "sd": 0.3237,
+      "dz": -0.006,
+      "t": -0.034,
+      "pos": 13,
+      "neg": 15,
+      "signP_pos": 0.71421,
+      "signP_neg": 0.42528
+    },
+    "condMinusExt_dWK": {
+      "n": 28,
+      "mean": 0.1135,
+      "sd": 0.5938,
+      "dz": 0.191,
+      "t": 1.011,
+      "pos": 14,
+      "neg": 14,
+      "signP_pos": 0.57472,
+      "signP_neg": 0.57472
+    },
+    "corr_condDWK_vs_traitAnx": -0.276,
+    "corr_extDWK_vs_traitAnx": 0.0128
+  },
+  "prongA_retroactive_WK_Lab11_ClinicalPTSD": {
+    "NF_post_dWK": {
+      "n": 10,
+      "mean": null,
+      "sd": null,
+      "dz": null,
+      "t": null,
+      "pos": 0,
+      "neg": 0,
+      "signP_pos": 1,
+      "signP_neg": 1
+    },
+    "MI_post_dWK": {
+      "n": 10,
+      "mean": null,
+      "sd": null,
+      "dz": null,
+      "t": null,
+      "pos": 0,
+      "neg": 0,
+      "signP_pos": 1,
+      "signP_neg": 1
+    },
+    "NF_rf_dWK": {
+      "n": 10,
+      "mean": null,
+      "sd": null,
+      "dz": null,
+      "t": null,
+      "pos": 0,
+      "neg": 0,
+      "signP_pos": 1,
+      "signP_neg": 1
+    },
+    "MI_rf_dWK": {
+      "n": 10,
+      "mean": null,
+      "sd": null,
+      "dz": null,
+      "t": null,
+      "pos": 0,
+      "neg": 0,
+      "signP_pos": 1,
+      "signP_neg": 1
+    }
+  },
+  "prongA_Lab13_BOAS_985h_HiddenInvariants": [
+    {
+      "stage": "Wake",
+      "slopeBB": -1.1453,
+      "dfa": 1.0545,
+      "wkViolation": -0.0363,
+      "thetaFrac": 0.2415,
+      "thetaToDelta": 0.49,
+      "wkOverDelta": -0.074,
+      "remSignatureIndex": 0.0102,
+      "plasticityTorque": 0.4336
+    },
+    {
+      "stage": "N1",
+      "slopeBB": -1.4241,
+      "dfa": 1.0429,
+      "wkViolation": -0.3384,
+      "thetaFrac": 0.2397,
+      "thetaToDelta": 0.504,
+      "wkOverDelta": -0.712,
+      "remSignatureIndex": 0.0933,
+      "plasticityTorque": 0.3391
+    },
+    {
+      "stage": "N2",
+      "slopeBB": -1.9862,
+      "dfa": 1.2068,
+      "wkViolation": -0.5725,
+      "thetaFrac": 0.1875,
+      "thetaToDelta": 0.308,
+      "wkOverDelta": -0.941,
+      "remSignatureIndex": 0.1293,
+      "plasticityTorque": 0.07
+    },
+    {
+      "stage": "N3",
+      "slopeBB": -2.5889,
+      "dfa": 1.4971,
+      "wkViolation": -0.5947,
+      "thetaFrac": 0.0893,
+      "thetaToDelta": 0.106,
+      "wkOverDelta": -0.704,
+      "remSignatureIndex": 0.059,
+      "plasticityTorque": 0.0194
+    },
+    {
+      "stage": "REM",
+      "slopeBB": -1.76,
+      "dfa": 1.1041,
+      "wkViolation": -0.5517,
+      "thetaFrac": 0.2273,
+      "thetaToDelta": 0.438,
+      "wkOverDelta": -1.063,
+      "remSignatureIndex": 0.1468,
+      "plasticityTorque": 0.176
+    }
+  ],
+  "prongB_5Paper_CutUp_Collisions": [
+    {
+      "id": "C1_PTSD_GWOT_TimeMemory_Collapse_x_Stage2_Theta_wPLI",
+      "pair": [
+        "Clinical PTSD recovery is Two-Stage: Stage 1 Frontal 1/f asymmetry (84% by Mid) -> Stage 2 Posterior DFA release + Theta wPLI re-coupling (p=0.0244).",
+        "22,415-dream GWOT shows PTSD trauma collapses Time_Memory (-0.156) & Threat_Fear (-0.170) inward, while Lucid space re-integrates Symbolic_Txt (-0.311) and orthogonalizes against PTSD (r=-0.044)."
+      ],
+      "hiddenHypothesis": "PTSD Nightmare Geometry Collapse is the Phenomenal Dual of Lost Posterior-Frontal Theta wPLI: When Theta wPLI (Post <-> RF) drops in PTSD, Time_Memory & Threat_Fear collapse into a single Q3 attractor; restoring Stage 2 Theta wPLI re-expands temporal distance so traumatic memories feel \"in the past\" rather than \"happening now.\"",
+      "testablePrediction": "In longitudinal PTSD EEG + dream journals, rising Stage-2 Theta wPLI will selectively increase GWOT distance between Time_Memory and Threat_Fear before total nightmare frequency hits zero."
+    },
+    {
+      "id": "C2_SameDay_30min_RF_Biomarker_x_985h_AF7AF8_Isometry",
+      "pair": [
+        "Same-day 30-min Right_Frontal 1/f steepening occurred in 9/10 NF PTSD responders (p=0.014) before symptom remission.",
+        "2-ch dry forehead AF7/AF8 headband preserves r = 0.9811 (5/5) Gromov isometry with clinical EEG across 985.3 hours of human sleep."
+      ],
+      "hiddenHypothesis": "Zero-Wait Clinical Triage via 2-Channel Forehead Δ_WK: Because 2-ch AF7/AF8 preserves a 0.9811 Gromov isometry AND 9/10 clinical PTSD responders acutely steepen Right_Frontal 1/f within 30 minutes, a single 30-minute consumer headband session can predict which patients are responding to PTSD therapy on Day 1 instead of waiting 8 weeks.",
+      "testablePrediction": "Day-1 30-min AF8 ΔslopeBB < 0 and Δ_WK drop on a consumer headband predicts Week-8 PCL-5 Item-2 Nightmare remission with AUC >= 0.80."
+    },
+    {
+      "id": "C3_Lucid_SymbolicTxt_Pull_x_Spatial_Architecture_Transfer",
+      "pair": [
+        "Spatial architecture (13.55%) transfers 6x-12x more reliably across minds than nature or emotion; passive couple convergence is null (0.77x).",
+        "22,415-dream GWOT shows PTSD trauma collapses Time_Memory (-0.156) & Threat_Fear (-0.170) inward, while Lucid space re-integrates Symbolic_Txt (-0.311) and orthogonalizes against PTSD (r=-0.044)."
+      ],
+      "hiddenHypothesis": "Spatial-Symbolic Anchor Protocol for Nightmare Re-Scripting (IRT): Spatial architecture is the highest-bandwidth invariant across dreams (13.55%), while Lucid dreams uniquely pull Symbolic_Txt (-0.311) into the dream manifold — embedding a calm spatial landmark + single-word visual sign (e.g., an exit door labeled \"SAFE\") should trigger Q3 -> Q4 orthogonalization faster than emotional rehearsal alone.",
+      "testablePrediction": "Adding a concrete spatial-architectural + 1-word sign anchor to daytime IRT increases overnight Lucid/Q4 conversion and reduces GWOT Threat_Fear collapse."
+    },
+    {
+      "id": "C4_COGITATE_Perpendicular_Blindspot_x_REM_Geodesic_Testbed",
+      "pair": [
+        "Wiener-Khinchin critical geodesic slopeBB = -(2*DFA - 1) (+46.17°) governs waking from propofol, fear extinction, PTSD remission, & N3->REM.",
+        "External screen-flashing (COGITATE 2025) drives -90° perpendicular symmetry breaking (Δ_WK > 0), hiding the +46.17° intrinsic geodesic."
+      ],
+      "hiddenHypothesis": "A Zero-Stimulus Post-COGITATE Adversarial Experiment: Replace waking screen-flashing (which induces -90° Δ_WK > 0 lock-in) with natural N3 -> REM transitions on 2-ch/64-ch EEG; IIT predicts monotonic local synchrony (rising DFA α) during dream onset, while ONEIRIS Wiener-Khinchin predicts falling DFA α (-0.40) along +46.17° with rising Theta wPLI.",
+      "testablePrediction": "Already empirically falsifies static-synchrony IIT on 985.3 hours of human sleep (Lab #13: DFA α drops 1.43 -> 1.03 along +44.65°)."
+    }
+  ]
+}
