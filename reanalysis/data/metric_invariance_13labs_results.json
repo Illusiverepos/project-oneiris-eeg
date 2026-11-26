@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-11-26T07:09:50.175Z",
+  "nNightsWearable": 126,
+  "totalHoursWearable": 985.3,
+  "wearableCoords": [
+    {
+      "stage": "Wake",
+      "s": -1.1453,
+      "d": 1.0545,
+      "wk": -0.0363
+    },
+    {
+      "stage": "N1",
+      "s": -1.4241,
+      "d": 1.0429,
+      "wk": -0.3384
+    },
+    {
+      "stage": "N2",
+      "s": -1.9862,
+      "d": 1.2068,
+      "wk": -0.5725
+    },
+    {
+      "stage": "N3",
+      "s": -2.5889,
+      "d": 1.4971,
+      "wk": -0.5947
+    },
+    {
+      "stage": "REM",
+      "s": -1.76,
+      "d": 1.1041,
+      "wk": -0.5517
+    }
+  ],
+  "clinicalCoords": [
+    {
+      "stage": "Wake",
+      "s": -1.05,
+      "d": 0.98
+    },
+    {
+      "stage": "N1",
+      "s": -1.22,
+      "d": 0.96
+    },
+    {
+      "stage": "N2",
+      "s": -1.68,
+      "d": 1.15
+    },
+    {
+      "stage": "N3",
+      "s": -2.35,
+      "d": 1.44
+    },
+    {
+      "stage": "REM",
+      "s": -1.46,
+      "d": 1.01
+    }
+  ],
+  "mantelR": 0.9811,
+  "exactPermutationP_all120": 0.0083,
+  "optimalGromovIsometryRMS": 0.1351,
+  "unsupervisedIdentityRecovered5of5": true,
+  "bestPermRecovered": [
+    "Wake",
+    "N1",
+    "N2",
+    "N3",
+    "REM"
+  ]
+}

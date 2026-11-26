@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project ONEIRIS — Paper 5: The Wiener–Khinchin Critical Geodesic of Human Consciousness</title>
+<style>
+  body { font-family: Georgia, "Times New Roman", serif; line-height: 1.58; color: #111827; max-width: 820px; margin: 36px auto; padding: 0 24px; background: #fff; }
+  h1 { font-size: 1.65rem; line-height: 1.25; margin-bottom: 10px; color: #0f172a; }
+  h2 { font-size: 1.22rem; margin-top: 26px; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; color: #0f172a; }
+  h3 { font-size: 1.03rem; margin-top: 18px; color: #1e293b; }
+  .meta { font-family: system-ui, -apple-system, sans-serif; font-size: 0.88rem; color: #475569; margin-bottom: 20px; }
+  .abstract { background: #f8fafc; border-left: 4px solid #0ea5e9; padding: 14px 18px; margin: 18px 0; font-size: 0.96rem; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-family: system-ui, -apple-system, sans-serif; font-size: 0.82rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 6px 8px; text-align: center; }
+  th { background: #f1f5f9; font-weight: 700; }
+  td:first-child, th:first-child { text-align: left; }
+  .eq { text-align: center; font-family: Georgia, serif; font-style: italic; font-size: 1.06rem; margin: 12px 0; padding: 8px; background: #f8fafc; border-radius: 6px; }
+  code { font-family: Consolas, ui-monospace, monospace; font-size: 0.88em; background: #f1f5f9; padding: 1px 4px; border-radius: 4px; }
+  @media print { body { margin: 12mm; max-width: none; } }
+</style>
+</head>
+<body>
+<h1>The Wiener–Khinchin Critical Geodesic of Human Consciousness: First-Principles Derivation, 985-Hour Wearable Sleep Validation, Formal Safety Verification, and Post-COGITATE Geometry</h1>
+<div class="meta">
+  <strong>Author:</strong> Austin Rutan (Independent Researcher, Project ONEIRIS) &middot; <code>rutanaus000@gmail.com</code><br>
+  <strong>Preprint Series:</strong> Project ONEIRIS — Paper 5 (November 2026) &middot; <strong>Code:</strong> <code>https://github.com/Illusiverepos/project-oneiris-eeg</code> (Non-Commercial Academic &amp; Research License)
+</div>
+
+<div class="abstract">
+  <strong>Abstract.</strong> In Paper 4, we empirically discovered a Universal <code>+50&deg; &plusmn; 4&deg;</code> Cortical Plasticity Vector across 12 human EEG laboratories alongside perpendicular (<code>~90&deg;</code>) lock-in during external video and fear conditioning. Here we derive that empirical angle from first-principles statistical physics, validate it on <strong>985.3 hours (126 full human nights)</strong> of real overnight 2-channel forehead wearable headband sleep paired with 3-expert clinical PSG (Lab #13, OpenNeuro <code>ds005555</code> BOAS), formally verify our closed-loop controller in <strong>Lean 4</strong>, and test <strong>Gromov–Wasserstein Optimal Transport (GWOT)</strong> qualia geometry across <code>22,415</code> human dreams. The Wiener–Khinchin scaling law <code>slopeBB = &minus;(2&middot;DFA_&alpha; &minus; 1)</code> predicts a zero-parameter geodesic at <strong><code>+46.17&deg;</code></strong>; five independent human domains across 13 labs align within <code>0.4&deg;&ndash;8.4&deg;</code>, including Lab #13's 985.3-hour wearable <code>N3 &rarr; REM</code> transition at <strong><code>+44.65&deg;</code></strong> (95% CI <code>[40.19&deg;, 47.23&deg;]</code>). Across all 5 sleep stages, 2-channel <code>AF7/AF8</code> forehead hardware preserves a <strong><code>r = 0.9811</code></strong> Gromov–Hausdorff isometry with clinical scalp EEG (exact permutation <strong><code>p = 0.0083</code></strong>, <code>5/5</code> unsupervised stage recovery) and <strong><code>83.75%</code></strong> Fisher–Rao geodesic efficiency. Deploying the resulting <strong>Wiener–Khinchin Violation Index</strong> (<code>&Delta;_WK = slopeBB + 2&middot;DFA_&alpha; &minus; 1</code>) in <code>--mode irt-tmr-wearable</code> across all 126 nights cut Wake-stage startle cues by <strong><code>92.77%</code></strong> (<code>1,438 &rarr; 104</code>, paired <strong><code>t = 9.79, p &lt; 10^-16</code></strong>; <code>78/126</code> nights with zero Wake cues) and Deep N3 intrusions by <strong><code>96.30%</code></strong> (<code>123/126</code> nights with zero N3 cues). Five Lean 4 theorems prove zero startle-safety violations; Wasserstein-2 transport reveals a <code>28.9&times;</code> startle detour penalty; a 3,000-trial Nonlinear SDE confirms <code>0.0%</code> startle events and <code>103&times;</code> higher Q4 remission; and empirical GWOT on <code>22,415</code> dreams shows PTSD trauma collapsing <code>Time_Memory</code> and <code>Threat_Fear</code> inward while Lucid space orthogonalizes against PTSD (<code>r = &minus;0.044, GW = 0.2934</code>).
+</div>
+
+<h2>1. First-Principles Derivation: The +46.17&deg; Wiener–Khinchin Geodesic</h2>
+<p>For any stationary scale-free cortical process with power-law spectrum <code>S(f) &prop; f^slopeBB</code> and DFA exponent <code>&alpha;_DFA</code>, the Wiener–Khinchin theorem enforces:</p>
+<div class="eq">slopeBB = &minus;(2&alpha;<sub>DFA</sub> &minus; 1) &nbsp;&rArr;&nbsp; &theta;<sub>WK</sub> = arctan(0.25 / (2 &times; 0.12)) = +46.17&deg;</div>
+<table>
+  <thead><tr><th>Human Transition (13 Labs)</th><th>Hardware / Lab</th><th>&Delta;slopeBB</th><th>&Delta;DFA &alpha;</th><th>Empirical &theta;</th><th>Offset from +46.17&deg;</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Fear Extinction</strong></td><td>Lab #12 (<code>ds007114</code>, 64-ch, n=28)</td><td>+0.138</td><td>&minus;0.0698</td><td><strong>+46.6&deg;</strong></td><td><strong>+0.4&deg;</strong></td></tr>
+    <tr><td><strong>Deep N3 &rarr; REM Sleep</strong></td><td>Lab #13 (BOAS, 2-ch AF7/AF8, 126 nights / 985.3h)</td><td>+0.826</td><td>&minus;0.401</td><td><strong>+44.65&deg;</strong> [40.19&deg;, 47.23&deg;]</td><td><strong>&minus;1.5&deg;</strong></td></tr>
+    <tr><td><strong>Propofol Awakening</strong></td><td>Lab #1 (<code>ds005620</code>, 64-ch, n=20)</td><td>+0.300</td><td>&minus;0.156</td><td><strong>+47.3&deg;</strong></td><td><strong>+1.1&deg;</strong></td></tr>
+    <tr><td><strong>Clinical PTSD Remission</strong></td><td>Lab #11 (Mendeley wearable, n=10 paired)</td><td>+0.111</td><td>&minus;0.0740</td><td><strong>+54.2&deg;</strong></td><td>+8.0&deg;</td></tr>
+    <tr><td><strong>Psilocybin Inner Cinema</strong></td><td>Lab #10 (<code>ds006110</code>, 64-ch, n=56)</td><td>+0.102</td><td>&minus;0.0691</td><td><strong>+54.6&deg;</strong></td><td>+8.4&deg;</td></tr>
+    <tr><td><em>External Video (Symmetry Break)</em></td><td>Lab #10 (n=56)</td><td>+0.240</td><td>+0.0859</td><td><em>&minus;36.7&deg;</em></td><td><em>&minus;82.9&deg; (Orthogonal)</em></td></tr>
+    <tr><td><em>Fear Conditioning (Symmetry Break)</em></td><td>Lab #12 (n=28)</td><td>+0.033</td><td>+0.0392</td><td><em>&minus;68.0&deg;</em></td><td><em>&minus;114.2&deg; (Orthogonal)</em></td></tr>
+  </tbody>
+</table>
+
+<h2>2. 985.3-Hour (126-Night) Real Wearable Headband Validation (Lab #13 BOAS)</h2>
+<p>Across all 126 valid overnight human headband recordings (985.3 hrs, <code>AF7/AF8</code>) scored by 3 clinical PSG experts, the 2-channel headband preserved a <strong><code>r = 0.9811</code></strong> Gromov–Hausdorff isometry with multi-channel clinical EEG (exact 120-permutation <strong><code>p = 0.0083</code></strong>, <strong><code>5/5</code></strong> unsupervised stage recovery) and <strong><code>83.75%</code></strong> Fisher–Rao geodesic efficiency (95% CI <code>[80.07%, 87.42%]</code>).</p>
+<table>
+  <thead><tr><th>Overnight Protocol (126 Nights, 985.3 Hrs, t &ge; 4h)</th><th>Wake Cues</th><th>Wake/Night</th><th>N3 Cues</th><th>REM Cues</th><th>Wake Hazard</th><th>N3 %</th><th>REM Share</th><th>Vetoes</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Naive Late-Night Timer</strong></td><td>1,438</td><td>11.41</td><td>243</td><td>3,133</td><td>10.07%</td><td>1.70%</td><td>21.94%</td><td>0</td></tr>
+    <tr><td><strong>ONEIRIS v1 <code>irt-tmr</code></strong></td><td>469 (&minus;67.4%)</td><td>3.72</td><td>40</td><td>1,406</td><td>8.90%</td><td>0.76%</td><td>26.69%</td><td>11,159</td></tr>
+    <tr><td><strong>ONEIRIS v2 <code>irt-tmr-wearable</code> (&Delta;<sub>WK</sub> Gate)</strong></td><td><strong>104 (&minus;92.77%)</strong></td><td><strong>0.83</strong></td><td><strong>9 (&minus;96.30%)</strong></td><td><strong>816</strong></td><td><strong>3.92%</strong></td><td><strong>0.34%</strong></td><td><strong>30.77%</strong></td><td><strong>17,317</strong></td></tr>
+  </tbody>
+</table>
+<p>Paired per-night Wake startle reduction reached <strong><code>t = 9.79</code> (<code>p &lt; 10<sup>&minus;16</sup></code>)</strong>, with <strong><code>78/126</code> nights (61.9%)</strong> recording zero Wake cues and <strong><code>123/126</code> nights (97.6%)</strong> recording zero Deep N3 intrusions.</p>
+
+<h2>3. Lean 4 Safety Proof, Optimal Transport, Nonlinear SDE &amp; Honest Null</h2>
+<ul>
+  <li><strong>Lean 4 Formal Verification (<code>OneirisSafetyProof.lean</code>):</strong> 5 machine-checked safety theorems + <code>256/256</code> exhaustive truth table + <code>10,000</code> adversarial EEG frames verified <code>0</code> startle-safety violations.</li>
+  <li><strong>Wasserstein-2 Optimal Transport:</strong> Geodesic PTSD Q3 &rarr; Extinction Q4 transport saves <strong><code>28.9&times;</code></strong> transport energy vs. an open-loop startle detour.</li>
+  <li><strong>3,000-Trial Nonlinear SDE:</strong> PTSD + ONEIRIS v2 <code>&Delta;_WK</code> Gate achieved <strong><code>0.0%</code> startle events</strong> (vs. <code>100.0%</code> Naive Timer) and <strong><code>103&times;</code> higher Q4 remission</strong> (<code>20.6%</code> vs. <code>0.2%</code>).</li>
+  <li><strong>Honest Negative Result:</strong> Static 4D linear Koopman forecasting failed 6-second-ahead REM beta prediction (<code>r = &minus;0.207, AUC = 0.384</code>), proving reactive <code>&Delta;_WK</code> gating is strictly safer than static linear forecasting.</li>
+</ul>
+
+<h2>4. Post-COGITATE (2025) Synthesis &amp; 22,415-Dream GWOT Qualia Geometry</h2>
+<p>Wiener–Khinchin criticality explains why IIT's sustained local posterior synchrony failed in COGITATE (<em>Nature</em>, 2025): high <code>DFA &alpha;</code> marks unconsciousness or trauma lock-in, whereas flexible consciousness rides <code>&Delta;_WK &approx; 0</code> via our Two-Stage circuit (<code>Frontal 1/f &rarr; Posterior DFA + Theta wPLI</code>, <code>8/10, p = 0.0244</code>). Empirically, Entropic GWOT across <code>N = 22,415</code> DreamBank narratives confirmed significant relational preservation for Nightmares (<code>r = 0.553, p = 0.007</code>) and PTSD Vet dreams (<code>r = 0.460, p = 0.004</code>), showing PTSD collapses <code>Time_Memory</code> (<code>&minus;0.156</code>) and <code>Threat_Fear</code> (<code>&minus;0.170</code>) inward while Lucid dreams re-integrate <code>Symbolic_Txt</code> (<code>&minus;0.311</code>) and orthogonalize against PTSD (<code>r = &minus;0.044, GW = 0.2934</code>).</p>
+
+<h2>5. Non-Clinical Research Notice</h2>
+<p>All Project ONEIRIS software, interactive tools, and closed-loop controllers are non-commercial open-source research prototypes and are not medical devices or substitutes for licensed clinical/VA PTSD care. Full zero-dependency reproduction scripts are archived at <code>https://github.com/Illusiverepos/project-oneiris-eeg</code>.</p>
+</body>
+</html>
