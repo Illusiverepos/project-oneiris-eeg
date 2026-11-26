@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-11-26T04:43:58.665Z",
+  "tool1_TLR_LucidControl": {
+    "openLoop_NaiveTimer": {
+      "nSessions": 40,
+      "cuesPerSession": 19,
+      "safeREM_PrecisionPct": 40.3,
+      "hazardousCuesPerSession": 6.72,
+      "wakeStartlesPerSession": 3.8,
+      "antiStartleVetoesPerSession": 0,
+      "safeExtinctionScore": 6.12,
+      "lucidHoldTicksPerSession": 0
+    },
+    "oneiris_ClosedLoop_TLR": {
+      "nSessions": 40,
+      "cuesPerSession": 17.52,
+      "safeREM_PrecisionPct": 71.5,
+      "hazardousCuesPerSession": 5,
+      "wakeStartlesPerSession": 1.82,
+      "antiStartleVetoesPerSession": 4.47,
+      "safeExtinctionScore": 10.02,
+      "lucidHoldTicksPerSession": 53.9
+    }
+  },
+  "tool2_PTSD_VeteranIRT_TMR": {
+    "openLoop_NaiveTimer": {
+      "nSessions": 40,
+      "cuesPerSession": 19,
+      "safeREM_PrecisionPct": 33,
+      "hazardousCuesPerSession": 12.72,
+      "wakeStartlesPerSession": 6.92,
+      "antiStartleVetoesPerSession": 0,
+      "safeExtinctionScore": 6.28,
+      "lucidHoldTicksPerSession": 0
+    },
+    "oneiris_ClosedLoop_IRT_TMR": {
+      "nSessions": 40,
+      "cuesPerSession": 3.58,
+      "safeREM_PrecisionPct": 100,
+      "hazardousCuesPerSession": 0,
+      "wakeStartlesPerSession": 0,
+      "antiStartleVetoesPerSession": 9.22,
+      "safeExtinctionScore": 3.58,
+      "lucidHoldTicksPerSession": 0
+    }
+  },
+  "tool3_DualDreamBridge": {
+    "naiveImmediateRelay": {
+      "nNights": 80,
+      "batonsSentPerNight": 4,
+      "safeDeliveryPct": 40.9,
+      "hazardousDeliveryPct": 59.1,
+      "partnerWakeStartlesPerNight": 1.163,
+      "expiredPct": 0
+    },
+    "oneiris_Gated20MinBaton": {
+      "nNights": 80,
+      "batonsSentPerNight": 4,
+      "safeDeliveryPct": 84.4,
+      "hazardousDeliveryPct": 0,
+      "partnerWakeStartlesPerNight": 0,
+      "expiredPct": 15.6
+    }
+  }
+}
