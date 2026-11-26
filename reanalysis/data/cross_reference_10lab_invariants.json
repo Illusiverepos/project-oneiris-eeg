@@ -1,0 +1,82 @@
+{
+  "nHumans": 56,
+  "individualLaws": {
+    "1_SharedHardware_RightTPJ (dVideo vs dPsilocybin)": {
+      "n": 56,
+      "rho": 0.198,
+      "p": 0.137
+    },
+    "2_SharedHardware_Occipital (dVideo vs dPsilocybin)": {
+      "n": 56,
+      "rho": 0.221,
+      "p": 0.0986
+    },
+    "3_SharedHardware_RightFront (dVideo vs dPsilocybin)": {
+      "n": 56,
+      "rho": 0.255,
+      "p": 0.0582
+    },
+    "4_IndependentCheck (SoberVideo_TPJ vs Psilocybin_TPJ)": {
+      "n": 56,
+      "rho": 0.367,
+      "p": 0.0052
+    },
+    "5_Age_vs_SoberRest_RightTPJ": {
+      "n": 56,
+      "rho": 0.316,
+      "p": 0.0172
+    },
+    "6_Age_vs_DeltaPsilocybin_RightTPJ": {
+      "n": 56,
+      "rho": -0.143,
+      "p": 0.2935
+    },
+    "7_SoberBaseline_vs_DeltaPsilocybin_RightTPJ": {
+      "n": 56,
+      "rho": -0.403,
+      "p": 0.003
+    },
+    "8_RightTPJ_vs_RightFrontal_CoupledGain (Psilocybin)": {
+      "n": 56,
+      "rho": 0.363,
+      "p": 0.0046
+    }
+  },
+  "hemisphericMatrix": [
+    {
+      "lab": "Lab #6 Siclari 2017 (NREM N2 Dreaming, 256-ch)",
+      "region": "TPJ",
+      "right": "dz=+0.492 (p=0.0012)",
+      "left": "dz=+0.325 (p=0.0484)",
+      "winner": "RIGHT"
+    },
+    {
+      "lab": "Lab #4 Zhang & Wamsley (Dream Richness, 58-ch)",
+      "region": "TPJ",
+      "right": "rho=+0.387 (p=0.0018)",
+      "left": "rho=+0.005 (p=0.527 NULL)",
+      "winner": "RIGHT (exclusive)"
+    },
+    {
+      "lab": "Lab #8 TWC_USA (Lucid Dream Control, 21-ch)",
+      "region": "Frontal",
+      "right": "dz=+0.750 (p=0.0190)",
+      "left": "dz=+0.316 (p=0.294 NULL)",
+      "winner": "RIGHT (exclusive)"
+    },
+    {
+      "lab": "Lab #10 ds006110 (Psilocybin Dose-Response, n=56)",
+      "region": "TPJ",
+      "right": "rho=+0.300 (p=0.0222)",
+      "left": "rho=+0.265 (p=0.0462)",
+      "winner": "RIGHT (#1)"
+    },
+    {
+      "lab": "Lab #10 ds006110 (Sober Video vs Rest, n=56)",
+      "region": "TPJ",
+      "right": "47/56 dz=+0.826",
+      "left": "41/56 dz=+0.679",
+      "winner": "RIGHT"
+    }
+  ]
+}
