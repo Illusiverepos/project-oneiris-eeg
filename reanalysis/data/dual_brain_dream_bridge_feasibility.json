@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-11-26T04:16:21.443Z",
+  "remOverlap": {
+    "unsynced_30minJitter": {
+      "meanOverlapMin": 38.8,
+      "pctNights_5minSyncOverlap": 95.1,
+      "pctNights_15minSyncOverlap": 74.5,
+      "pctNights_LateREM_10minOverlap": 85.4,
+      "pctNights_20minAsyncBaton": 99.9
+    },
+    "syncedBedtime_5minJitter": {
+      "meanOverlapMin": 44.7,
+      "pctNights_5minSyncOverlap": 96.9,
+      "pctNights_15minSyncOverlap": 74.3,
+      "pctNights_LateREM_10minOverlap": 87.3,
+      "pctNights_20minAsyncBaton": 100
+    },
+    "lateNight_WBTB_Sync": {
+      "meanOverlapMin": 69.6,
+      "pctNights_5minSyncOverlap": 100,
+      "pctNights_15minSyncOverlap": 99.7,
+      "pctNights_LateREM_10minOverlap": 100,
+      "pctNights_20minAsyncBaton": 100
+    }
+  },
+  "channelCapacity": {
+    "alphabetSize": 4,
+    "assumedErrorRate": 0.12,
+    "secPerSymbol": 40,
+    "bitsPerSymbol": 1.28,
+    "bitsPerMin": 1.92,
+    "safeSymbolsPer10MinLucidREM": 15,
+    "effectiveBitsPer10MinLucidREM": 19.2
+  },
+  "dualBrainSweep": [
+    {
+      "gRelay": 0,
+      "interBrainPostCorr": -0.005,
+      "interBrainRFCorr": 0.001,
+      "dualWakeSnapPct": 0
+    },
+    {
+      "gRelay": 0.1,
+      "interBrainPostCorr": 0.341,
+      "interBrainRFCorr": 0.422,
+      "dualWakeSnapPct": 0
+    },
+    {
+      "gRelay": 0.2,
+      "interBrainPostCorr": 0.553,
+      "interBrainRFCorr": 0.652,
+      "dualWakeSnapPct": 0
+    },
+    {
+      "gRelay": 0.3,
+      "interBrainPostCorr": 0.712,
+      "interBrainRFCorr": 0.785,
+      "dualWakeSnapPct": 0
+    },
+    {
+      "gRelay": 0.4,
+      "interBrainPostCorr": 0.742,
+      "interBrainRFCorr": 0.809,
+      "dualWakeSnapPct": 0
+    },
+    {
+      "gRelay": 0.55,
+      "interBrainPostCorr": 0.72,
+      "interBrainRFCorr": 0.759,
+      "dualWakeSnapPct": 0
+    },
+    {
+      "gRelay": 0.7,
+      "interBrainPostCorr": 0.823,
+      "interBrainRFCorr": 0.855,
+      "dualWakeSnapPct": 0
+    },
+    {
+      "gRelay": 0.9,
+      "interBrainPostCorr": 0.824,
+      "interBrainRFCorr": 0.847,
+      "dualWakeSnapPct": 0
+    }
+  ],
+  "convergencePower": {
+    "dreambankBaselineJaccard": 0.006,
+    "dreambankWithinPersonJaccard": 0.0176,
+    "power_2xLift": {
+      "targetJaccard": 0.012,
+      "effectDz": 0.55,
+      "nightsFor80PctPower": 27
+    },
+    "power_3xLift_WithinPersonLevel": {
+      "targetJaccard": 0.018,
+      "effectDz": 1.09,
+      "nightsFor80PctPower": 7
+    },
+    "power_4xLift_SharedSeedTarget": {
+      "targetJaccard": 0.024,
+      "effectDz": 1.64,
+      "nightsFor80PctPower": 3
+    }
+  }
+}
