@@ -1,0 +1,712 @@
+{
+  "generatedAt": "2026-11-26T06:21:14.802Z",
+  "dataset": "OpenNeuro ds005555 (BOAS — Bitbrain Wearable AF7/AF8 Headband + 3-Expert Clinical PSG)",
+  "nNights": 10,
+  "totalHoursAnalyzed": 77.5,
+  "wearable2x2StageAtlas": {
+    "Wake": {
+      "nNights": 10,
+      "slopeBB": -1.0215,
+      "dfa": 1.0158,
+      "deltaFrac": 0.4276,
+      "alphaFrac": 0.136,
+      "betaFrac": 0.1415
+    },
+    "N1": {
+      "nNights": 10,
+      "slopeBB": -1.1639,
+      "dfa": 0.968,
+      "deltaFrac": 0.4252,
+      "alphaFrac": 0.1348,
+      "betaFrac": 0.156
+    },
+    "N2": {
+      "nNights": 10,
+      "slopeBB": -1.6316,
+      "dfa": 1.1194,
+      "deltaFrac": 0.534,
+      "alphaFrac": 0.1027,
+      "betaFrac": 0.0948
+    },
+    "N3": {
+      "nNights": 10,
+      "slopeBB": -2.3021,
+      "dfa": 1.4304,
+      "deltaFrac": 0.7923,
+      "alphaFrac": 0.0331,
+      "betaFrac": 0.0307
+    },
+    "REM": {
+      "nNights": 10,
+      "slopeBB": -1.4764,
+      "dfa": 1.0298,
+      "deltaFrac": 0.4627,
+      "alphaFrac": 0.1142,
+      "betaFrac": 0.1134
+    }
+  },
+  "n3ToRemWearableVector": {
+    "dSlope": 0.8257,
+    "dDFA": -0.4006,
+    "angleDeg": 45.3
+  },
+  "overnightAntiStartleBenchmark": {
+    "naiveLateNightTimer": {
+      "Wake": 94,
+      "N1": 52,
+      "N2": 714,
+      "N3": 65,
+      "REM": 211,
+      "total": 1136,
+      "vetoes": 0,
+      "wakeHazardPct": 8.3,
+      "n3DeepPct": 5.7,
+      "remPct": 18.6
+    },
+    "oneirisClosedLoop_IRT_TMR": {
+      "Wake": 54,
+      "N1": 21,
+      "N2": 266,
+      "N3": 19,
+      "REM": 107,
+      "total": 467,
+      "vetoes": 801,
+      "wakeHazardPct": 11.6,
+      "n3DeepPct": 4.1,
+      "remPct": 22.9
+    },
+    "totalWakeCueReductionPct": 42.6
+  },
+  "nights": [
+    {
+      "sub": "sub-1",
+      "durHours": 7.63,
+      "stageMeans": {
+        "Wake": {
+          "nEpochs": 200,
+          "slopeBB": -0.1371,
+          "dfa": 0.9226,
+          "deltaFrac": 0.0755,
+          "alphaFrac": 0.0612,
+          "betaFrac": 0.0704
+        },
+        "N1": {
+          "nEpochs": 57,
+          "slopeBB": -0.3747,
+          "dfa": 0.9078,
+          "deltaFrac": 0.1861,
+          "alphaFrac": 0.063,
+          "betaFrac": 0.1315
+        },
+        "N2": {
+          "nEpochs": 398,
+          "slopeBB": -0.2498,
+          "dfa": 1.0305,
+          "deltaFrac": 0.0992,
+          "alphaFrac": 0.0116,
+          "betaFrac": 0.0196
+        },
+        "N3": {
+          "nEpochs": 172,
+          "slopeBB": -1.393,
+          "dfa": 1.3012,
+          "deltaFrac": 0.4183,
+          "alphaFrac": 0.0092,
+          "betaFrac": 0.003
+        },
+        "REM": {
+          "nEpochs": 87,
+          "slopeBB": 0,
+          "dfa": 1,
+          "deltaFrac": 0,
+          "alphaFrac": 0,
+          "betaFrac": 0
+        }
+      },
+      "closedCues": {
+        "Wake": 33,
+        "N1": 6,
+        "N2": 43,
+        "N3": 16,
+        "REM": 10,
+        "total": 108,
+        "vetoes": 0
+      },
+      "naiveCues": {
+        "Wake": 33,
+        "N1": 6,
+        "N2": 43,
+        "N3": 16,
+        "REM": 10,
+        "total": 108
+      }
+    },
+    {
+      "sub": "sub-2",
+      "durHours": 7.61,
+      "stageMeans": {
+        "Wake": {
+          "nEpochs": 94,
+          "slopeBB": -1.267,
+          "dfa": 1.0312,
+          "deltaFrac": 0.4293,
+          "alphaFrac": 0.2142,
+          "betaFrac": 0.1235
+        },
+        "N1": {
+          "nEpochs": 51,
+          "slopeBB": -1.4418,
+          "dfa": 1.1305,
+          "deltaFrac": 0.566,
+          "alphaFrac": 0.1331,
+          "betaFrac": 0.1121
+        },
+        "N2": {
+          "nEpochs": 450,
+          "slopeBB": -2.0658,
+          "dfa": 1.3494,
+          "deltaFrac": 0.7324,
+          "alphaFrac": 0.0851,
+          "betaFrac": 0.056
+        },
+        "N3": {
+          "nEpochs": 206,
+          "slopeBB": -2.6124,
+          "dfa": 1.5992,
+          "deltaFrac": 0.8862,
+          "alphaFrac": 0.0235,
+          "betaFrac": 0.011
+        },
+        "REM": {
+          "nEpochs": 112,
+          "slopeBB": -1.799,
+          "dfa": 1.1478,
+          "deltaFrac": 0.5486,
+          "alphaFrac": 0.1693,
+          "betaFrac": 0.1122
+        }
+      },
+      "closedCues": {
+        "Wake": 2,
+        "N1": 2,
+        "N2": 21,
+        "N3": 0,
+        "REM": 5,
+        "total": 30,
+        "vetoes": 79
+      },
+      "naiveCues": {
+        "Wake": 14,
+        "N1": 12,
+        "N2": 62,
+        "N3": 11,
+        "REM": 9,
+        "total": 108
+      }
+    },
+    {
+      "sub": "sub-3",
+      "durHours": 8.31,
+      "stageMeans": {
+        "Wake": {
+          "nEpochs": 86,
+          "slopeBB": -1.2844,
+          "dfa": 1.1682,
+          "deltaFrac": 0.5471,
+          "alphaFrac": 0.1143,
+          "betaFrac": 0.0833
+        },
+        "N1": {
+          "nEpochs": 20,
+          "slopeBB": -1.6567,
+          "dfa": 1.1446,
+          "deltaFrac": 0.5597,
+          "alphaFrac": 0.1435,
+          "betaFrac": 0.1036
+        },
+        "N2": {
+          "nEpochs": 591,
+          "slopeBB": -2.1562,
+          "dfa": 1.293,
+          "deltaFrac": 0.6908,
+          "alphaFrac": 0.0931,
+          "betaFrac": 0.0583
+        },
+        "N3": {
+          "nEpochs": 81,
+          "slopeBB": -2.6235,
+          "dfa": 1.5755,
+          "deltaFrac": 0.9001,
+          "alphaFrac": 0.0225,
+          "betaFrac": 0.0127
+        },
+        "REM": {
+          "nEpochs": 219,
+          "slopeBB": -1.7945,
+          "dfa": 1.1617,
+          "deltaFrac": 0.5971,
+          "alphaFrac": 0.121,
+          "betaFrac": 0.092
+        }
+      },
+      "closedCues": {
+        "Wake": 3,
+        "N1": 0,
+        "N2": 22,
+        "N3": 0,
+        "REM": 14,
+        "total": 39,
+        "vetoes": 91
+      },
+      "naiveCues": {
+        "Wake": 7,
+        "N1": 5,
+        "N2": 89,
+        "N3": 0,
+        "REM": 28,
+        "total": 129
+      }
+    },
+    {
+      "sub": "sub-4",
+      "durHours": 8.92,
+      "stageMeans": {
+        "Wake": {
+          "nEpochs": 152,
+          "slopeBB": -1.4989,
+          "dfa": 1.1009,
+          "deltaFrac": 0.5232,
+          "alphaFrac": 0.1049,
+          "betaFrac": 0.1353
+        },
+        "N1": {
+          "nEpochs": 66,
+          "slopeBB": -1.4201,
+          "dfa": 1.0232,
+          "deltaFrac": 0.4633,
+          "alphaFrac": 0.1341,
+          "betaFrac": 0.1739
+        },
+        "N2": {
+          "nEpochs": 654,
+          "slopeBB": -1.712,
+          "dfa": 1.1104,
+          "deltaFrac": 0.4805,
+          "alphaFrac": 0.1145,
+          "betaFrac": 0.1185
+        },
+        "N3": {
+          "nEpochs": 131,
+          "slopeBB": -2.5196,
+          "dfa": 1.4815,
+          "deltaFrac": 0.8318,
+          "alphaFrac": 0.0309,
+          "betaFrac": 0.024
+        },
+        "REM": {
+          "nEpochs": 67,
+          "slopeBB": -1.9302,
+          "dfa": 1.1706,
+          "deltaFrac": 0.5794,
+          "alphaFrac": 0.0978,
+          "betaFrac": 0.1002
+        }
+      },
+      "closedCues": {
+        "Wake": 5,
+        "N1": 3,
+        "N2": 46,
+        "N3": 2,
+        "REM": 6,
+        "total": 62,
+        "vetoes": 99
+      },
+      "naiveCues": {
+        "Wake": 15,
+        "N1": 5,
+        "N2": 93,
+        "N3": 17,
+        "REM": 17,
+        "total": 147
+      }
+    },
+    {
+      "sub": "sub-5",
+      "durHours": 8.38,
+      "stageMeans": {
+        "Wake": {
+          "nEpochs": 59,
+          "slopeBB": -0.8705,
+          "dfa": 1.0495,
+          "deltaFrac": 0.5235,
+          "alphaFrac": 0.0683,
+          "betaFrac": 0.1498
+        },
+        "N1": {
+          "nEpochs": 14,
+          "slopeBB": -1.6545,
+          "dfa": 1.1532,
+          "deltaFrac": 0.5598,
+          "alphaFrac": 0.142,
+          "betaFrac": 0.1072
+        },
+        "N2": {
+          "nEpochs": 719,
+          "slopeBB": -2.0015,
+          "dfa": 1.2237,
+          "deltaFrac": 0.6119,
+          "alphaFrac": 0.1632,
+          "betaFrac": 0.0809
+        },
+        "N3": {
+          "nEpochs": 2,
+          "slopeBB": -2.3763,
+          "dfa": 1.4941,
+          "deltaFrac": 0.8393,
+          "alphaFrac": 0.0335,
+          "betaFrac": 0.0132
+        },
+        "REM": {
+          "nEpochs": 211,
+          "slopeBB": -1.6877,
+          "dfa": 1.1269,
+          "deltaFrac": 0.5245,
+          "alphaFrac": 0.16,
+          "betaFrac": 0.1179
+        }
+      },
+      "closedCues": {
+        "Wake": 0,
+        "N1": 1,
+        "N2": 24,
+        "N3": 0,
+        "REM": 31,
+        "total": 56,
+        "vetoes": 110
+      },
+      "naiveCues": {
+        "Wake": 3,
+        "N1": 2,
+        "N2": 80,
+        "N3": 0,
+        "REM": 46,
+        "total": 131
+      }
+    },
+    {
+      "sub": "sub-6",
+      "durHours": 8.32,
+      "stageMeans": {
+        "Wake": {
+          "nEpochs": 115,
+          "slopeBB": -0.7415,
+          "dfa": 0.941,
+          "deltaFrac": 0.4233,
+          "alphaFrac": 0.1147,
+          "betaFrac": 0.173
+        },
+        "N1": {
+          "nEpochs": 41,
+          "slopeBB": -0.9355,
+          "dfa": 0.9909,
+          "deltaFrac": 0.4904,
+          "alphaFrac": 0.0882,
+          "betaFrac": 0.1624
+        },
+        "N2": {
+          "nEpochs": 638,
+          "slopeBB": -1.5928,
+          "dfa": 1.2248,
+          "deltaFrac": 0.6684,
+          "alphaFrac": 0.0741,
+          "betaFrac": 0.0874
+        },
+        "N3": {
+          "nEpochs": 19,
+          "slopeBB": -2.2169,
+          "dfa": 1.5811,
+          "deltaFrac": 0.9259,
+          "alphaFrac": 0.0188,
+          "betaFrac": 0.0102
+        },
+        "REM": {
+          "nEpochs": 185,
+          "slopeBB": -1.6029,
+          "dfa": 1.1769,
+          "deltaFrac": 0.6064,
+          "alphaFrac": 0.1024,
+          "betaFrac": 0.0934
+        }
+      },
+      "closedCues": {
+        "Wake": 4,
+        "N1": 0,
+        "N2": 22,
+        "N3": 0,
+        "REM": 16,
+        "total": 42,
+        "vetoes": 102
+      },
+      "naiveCues": {
+        "Wake": 9,
+        "N1": 4,
+        "N2": 82,
+        "N3": 0,
+        "REM": 34,
+        "total": 129
+      }
+    },
+    {
+      "sub": "sub-7",
+      "durHours": 7.8,
+      "stageMeans": {
+        "Wake": {
+          "nEpochs": 179,
+          "slopeBB": -1.5345,
+          "dfa": 1.0637,
+          "deltaFrac": 0.5113,
+          "alphaFrac": 0.2259,
+          "betaFrac": 0.0954
+        },
+        "N1": {
+          "nEpochs": 53,
+          "slopeBB": -0.8595,
+          "dfa": 0.5425,
+          "deltaFrac": 0.356,
+          "alphaFrac": 0.1474,
+          "betaFrac": 0.1229
+        },
+        "N2": {
+          "nEpochs": 484,
+          "slopeBB": -0.8935,
+          "dfa": 0.4354,
+          "deltaFrac": 0.3407,
+          "alphaFrac": 0.0917,
+          "betaFrac": 0.1739
+        },
+        "N3": {
+          "nEpochs": 115,
+          "slopeBB": -1.9243,
+          "dfa": 0.8666,
+          "deltaFrac": 0.6025,
+          "alphaFrac": 0.0424,
+          "betaFrac": 0.1412
+        },
+        "REM": {
+          "nEpochs": 104,
+          "slopeBB": -0.643,
+          "dfa": 0.2674,
+          "deltaFrac": 0.3116,
+          "alphaFrac": 0.0907,
+          "betaFrac": 0.1479
+        }
+      },
+      "closedCues": {
+        "Wake": 4,
+        "N1": 2,
+        "N2": 13,
+        "N3": 0,
+        "REM": 11,
+        "total": 30,
+        "vetoes": 88
+      },
+      "naiveCues": {
+        "Wake": 5,
+        "N1": 7,
+        "N2": 77,
+        "N3": 0,
+        "REM": 24,
+        "total": 113
+      }
+    },
+    {
+      "sub": "sub-8",
+      "durHours": 3.41,
+      "stageMeans": {
+        "Wake": {
+          "nEpochs": 182,
+          "slopeBB": -0.7234,
+          "dfa": 0.9233,
+          "deltaFrac": 0.3818,
+          "alphaFrac": 0.168,
+          "betaFrac": 0.1728
+        },
+        "N1": {
+          "nEpochs": 11,
+          "slopeBB": -0.8648,
+          "dfa": 0.8783,
+          "deltaFrac": 0.3036,
+          "alphaFrac": 0.1834,
+          "betaFrac": 0.2016
+        },
+        "N2": {
+          "nEpochs": 105,
+          "slopeBB": -2.0035,
+          "dfa": 1.2922,
+          "deltaFrac": 0.6737,
+          "alphaFrac": 0.0963,
+          "betaFrac": 0.0617
+        },
+        "N3": {
+          "nEpochs": 91,
+          "slopeBB": -2.4919,
+          "dfa": 1.55,
+          "deltaFrac": 0.8791,
+          "alphaFrac": 0.0427,
+          "betaFrac": 0.0131
+        },
+        "REM": {
+          "nEpochs": 20,
+          "slopeBB": -1.8697,
+          "dfa": 1.1012,
+          "deltaFrac": 0.474,
+          "alphaFrac": 0.1398,
+          "betaFrac": 0.1325
+        }
+      },
+      "closedCues": {
+        "Wake": 0,
+        "N1": 0,
+        "N2": 0,
+        "N3": 0,
+        "REM": 0,
+        "total": 0,
+        "vetoes": 0
+      },
+      "naiveCues": {
+        "Wake": 0,
+        "N1": 0,
+        "N2": 0,
+        "N3": 0,
+        "REM": 0,
+        "total": 0
+      }
+    },
+    {
+      "sub": "sub-9",
+      "durHours": 8.8,
+      "stageMeans": {
+        "Wake": {
+          "nEpochs": 138,
+          "slopeBB": -1.0027,
+          "dfa": 0.9795,
+          "deltaFrac": 0.4748,
+          "alphaFrac": 0.1193,
+          "betaFrac": 0.2121
+        },
+        "N1": {
+          "nEpochs": 98,
+          "slopeBB": -1.1698,
+          "dfa": 0.9676,
+          "deltaFrac": 0.4329,
+          "alphaFrac": 0.1247,
+          "betaFrac": 0.2337
+        },
+        "N2": {
+          "nEpochs": 568,
+          "slopeBB": -1.8296,
+          "dfa": 1.1428,
+          "deltaFrac": 0.5671,
+          "alphaFrac": 0.1412,
+          "betaFrac": 0.1339
+        },
+        "N3": {
+          "nEpochs": 42,
+          "slopeBB": -2.41,
+          "dfa": 1.4773,
+          "deltaFrac": 0.8523,
+          "alphaFrac": 0.0474,
+          "betaFrac": 0.0316
+        },
+        "REM": {
+          "nEpochs": 209,
+          "slopeBB": -1.522,
+          "dfa": 1.0508,
+          "deltaFrac": 0.4991,
+          "alphaFrac": 0.0981,
+          "betaFrac": 0.1864
+        }
+      },
+      "closedCues": {
+        "Wake": 1,
+        "N1": 5,
+        "N2": 25,
+        "N3": 0,
+        "REM": 11,
+        "total": 42,
+        "vetoes": 124
+      },
+      "naiveCues": {
+        "Wake": 3,
+        "N1": 5,
+        "N2": 92,
+        "N3": 10,
+        "REM": 33,
+        "total": 143
+      }
+    },
+    {
+      "sub": "sub-10",
+      "durHours": 8.28,
+      "stageMeans": {
+        "Wake": {
+          "nEpochs": 50,
+          "slopeBB": -1.1547,
+          "dfa": 0.9779,
+          "deltaFrac": 0.3865,
+          "alphaFrac": 0.1689,
+          "betaFrac": 0.199
+        },
+        "N1": {
+          "nEpochs": 59,
+          "slopeBB": -1.2613,
+          "dfa": 0.9412,
+          "deltaFrac": 0.3341,
+          "alphaFrac": 0.1882,
+          "betaFrac": 0.2111
+        },
+        "N2": {
+          "nEpochs": 756,
+          "slopeBB": -1.8109,
+          "dfa": 1.0914,
+          "deltaFrac": 0.4756,
+          "alphaFrac": 0.1563,
+          "betaFrac": 0.1581
+        },
+        "N3": {
+          "nEpochs": 62,
+          "slopeBB": -2.4535,
+          "dfa": 1.3779,
+          "deltaFrac": 0.7872,
+          "alphaFrac": 0.0599,
+          "betaFrac": 0.0469
+        },
+        "REM": {
+          "nEpochs": 66,
+          "slopeBB": -1.9146,
+          "dfa": 1.0942,
+          "deltaFrac": 0.4864,
+          "alphaFrac": 0.1632,
+          "betaFrac": 0.1516
+        }
+      },
+      "closedCues": {
+        "Wake": 2,
+        "N1": 2,
+        "N2": 50,
+        "N3": 1,
+        "REM": 3,
+        "total": 58,
+        "vetoes": 108
+      },
+      "naiveCues": {
+        "Wake": 5,
+        "N1": 6,
+        "N2": 96,
+        "N3": 11,
+        "REM": 10,
+        "total": 128
+      }
+    }
+  ]
+}
