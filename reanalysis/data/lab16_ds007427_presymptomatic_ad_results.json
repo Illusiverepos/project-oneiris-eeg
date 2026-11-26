@@ -1,0 +1,120 @@
+{
+  "generatedAt": "2026-11-26T18:57:08.297Z",
+  "dataset": "OpenNeuro ds007427 (Lab #16 — Pre-Symptomatic PSEN1-E280A Alzheimer's Carriers vs Matched Controls, 4-ch Muse Montage)",
+  "counts": {
+    "preSymptomaticCarriers_G1": 27,
+    "matchedControls_G2": 16
+  },
+  "univariate_G1_vs_G2": {
+    "fSlope": {
+      "mean1": -1.2005,
+      "mean2": -1.5414,
+      "d": 0.934,
+      "auc": 0.741,
+      "dir": "higher_in_G1_Carrier",
+      "p": 0.00133
+    },
+    "fDFA": {
+      "mean1": 0.997,
+      "mean2": 1.004,
+      "d": -0.054,
+      "auc": 0.502,
+      "dir": "higher_in_G1_Carrier",
+      "p": 0.85412
+    },
+    "fWK": {
+      "mean1": -0.2064,
+      "mean2": -0.5334,
+      "d": 0.998,
+      "auc": 0.757,
+      "dir": "higher_in_G1_Carrier",
+      "p": 0.00268
+    },
+    "fAlpha": {
+      "mean1": 0.1864,
+      "mean2": 0.2314,
+      "d": -0.48,
+      "auc": 0.657,
+      "dir": "lower_in_G1_Carrier",
+      "p": 0.13664
+    },
+    "fBeta": {
+      "mean1": 0.1474,
+      "mean2": 0.1336,
+      "d": 0.291,
+      "auc": 0.558,
+      "dir": "higher_in_G1_Carrier",
+      "p": 0.33501
+    },
+    "pSlope": {
+      "mean1": -1.05,
+      "mean2": -1.2526,
+      "d": 0.508,
+      "auc": 0.623,
+      "dir": "higher_in_G1_Carrier",
+      "p": 0.0921
+    },
+    "pDFA": {
+      "mean1": 0.8245,
+      "mean2": 0.8531,
+      "d": -0.327,
+      "auc": 0.604,
+      "dir": "lower_in_G1_Carrier",
+      "p": 0.23943
+    },
+    "pWK": {
+      "mean1": -0.401,
+      "mean2": -0.5465,
+      "d": 0.487,
+      "auc": 0.602,
+      "dir": "higher_in_G1_Carrier",
+      "p": 0.13766
+    },
+    "pAlpha": {
+      "mean1": 0.2976,
+      "mean2": 0.2994,
+      "d": -0.015,
+      "auc": 0.502,
+      "dir": "higher_in_G1_Carrier",
+      "p": 0.96471
+    },
+    "pBeta": {
+      "mean1": 0.1849,
+      "mean2": 0.1635,
+      "d": 0.493,
+      "auc": 0.611,
+      "dir": "higher_in_G1_Carrier",
+      "p": 0.10181
+    },
+    "slowingIndex": {
+      "mean1": -0.8308,
+      "mean2": -0.7835,
+      "d": -0.081,
+      "auc": 0.523,
+      "dir": "lower_in_G1_Carrier",
+      "p": 0.79602
+    },
+    "fTA": {
+      "mean1": 2.3905,
+      "mean2": 1.8417,
+      "d": 0.436,
+      "auc": 0.625,
+      "dir": "higher_in_G1_Carrier",
+      "p": 0.13561
+    },
+    "pTA": {
+      "mean1": 1.4337,
+      "mean2": 1.5935,
+      "d": -0.147,
+      "auc": 0.528,
+      "dir": "lower_in_G1_Carrier",
+      "p": 0.6504
+    }
+  },
+  "fiveFoldCV_4chMuse": {
+    "nCarriers": 27,
+    "nControls": 16,
+    "outOfSampleAUC": 0.7639,
+    "permP": 0.002
+  }
+}
