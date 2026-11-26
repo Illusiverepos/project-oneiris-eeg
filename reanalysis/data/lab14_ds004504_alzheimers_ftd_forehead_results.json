@@ -1,0 +1,226 @@
+{
+  "generatedAt": "2026-11-26T18:19:02.925Z",
+  "dataset": "OpenNeuro ds004504 (Lab #14 — 88 Clinical Humans: AD, FTD, Healthy Controls; 2 Forehead Electrodes Fp1/Fp2 via ONEIRIS SDK)",
+  "counts": {
+    "AD": 36,
+    "FTD": 23,
+    "CN": 29,
+    "total": 88
+  },
+  "AD_vs_HealthyControls": {
+    "slopeBB": {
+      "mean1": -1.9333,
+      "mean2": -1.9081,
+      "cohensD": -0.101,
+      "auc": 0.55,
+      "dir": "lower_in_group1",
+      "pApprox": 0.673048
+    },
+    "dfa": {
+      "mean1": 1.2476,
+      "mean2": 1.2097,
+      "cohensD": 0.268,
+      "auc": 0.626,
+      "dir": "higher_in_group1",
+      "pApprox": 0.277828
+    },
+    "wkViolation": {
+      "mean1": -0.4381,
+      "mean2": -0.4888,
+      "cohensD": 0.154,
+      "auc": 0.553,
+      "dir": "higher_in_group1",
+      "pApprox": 0.52575
+    },
+    "deltaFrac": {
+      "mean1": 0.6389,
+      "mean2": 0.6059,
+      "cohensD": 0.48,
+      "auc": 0.623,
+      "dir": "higher_in_group1",
+      "pApprox": 0.059392
+    },
+    "thetaFrac": {
+      "mean1": 0.2308,
+      "mean2": 0.2099,
+      "cohensD": 0.554,
+      "auc": 0.661,
+      "dir": "higher_in_group1",
+      "pApprox": 0.022216
+    },
+    "alphaFrac": {
+      "mean1": 0.075,
+      "mean2": 0.113,
+      "cohensD": -0.76,
+      "auc": 0.768,
+      "dir": "lower_in_group1",
+      "pApprox": 0.002682
+    },
+    "betaFrac": {
+      "mean1": 0.0553,
+      "mean2": 0.0712,
+      "cohensD": -0.838,
+      "auc": 0.767,
+      "dir": "lower_in_group1",
+      "pApprox": 0.000929
+    },
+    "thetaAlphaRatio": {
+      "mean1": 3.8447,
+      "mean2": 2.2413,
+      "cohensD": 1.205,
+      "auc": 0.804,
+      "dir": "higher_in_group1",
+      "pApprox": 0
+    }
+  },
+  "FTD_vs_HealthyControls": {
+    "slopeBB": {
+      "mean1": -1.6638,
+      "mean2": -1.9081,
+      "cohensD": 0.635,
+      "auc": 0.642,
+      "dir": "higher_in_group1",
+      "pApprox": 0.037717
+    },
+    "dfa": {
+      "mean1": 1.2068,
+      "mean2": 1.2097,
+      "cohensD": -0.021,
+      "auc": 0.514,
+      "dir": "higher_in_group1",
+      "pApprox": 0.940858
+    },
+    "wkViolation": {
+      "mean1": -0.2503,
+      "mean2": -0.4888,
+      "cohensD": 0.753,
+      "auc": 0.709,
+      "dir": "higher_in_group1",
+      "pApprox": 0.00855
+    },
+    "deltaFrac": {
+      "mean1": 0.6118,
+      "mean2": 0.6059,
+      "cohensD": 0.063,
+      "auc": 0.576,
+      "dir": "higher_in_group1",
+      "pApprox": 0.829587
+    },
+    "thetaFrac": {
+      "mean1": 0.2401,
+      "mean2": 0.2099,
+      "cohensD": 0.686,
+      "auc": 0.67,
+      "dir": "higher_in_group1",
+      "pApprox": 0.020606
+    },
+    "alphaFrac": {
+      "mean1": 0.0676,
+      "mean2": 0.113,
+      "cohensD": -1.047,
+      "auc": 0.795,
+      "dir": "lower_in_group1",
+      "pApprox": 0.000053
+    },
+    "betaFrac": {
+      "mean1": 0.0805,
+      "mean2": 0.0712,
+      "cohensD": 0.221,
+      "auc": 0.573,
+      "dir": "lower_in_group1",
+      "pApprox": 0.470775
+    },
+    "thetaAlphaRatio": {
+      "mean1": 3.9937,
+      "mean2": 2.2413,
+      "cohensD": 1.298,
+      "auc": 0.826,
+      "dir": "higher_in_group1",
+      "pApprox": 0.000011
+    }
+  },
+  "MMSE_CognitiveSeverity_All88": {
+    "slopeBB": {
+      "n": 88,
+      "r": 0.0696,
+      "pApprox": 0.517671
+    },
+    "dfa": {
+      "n": 88,
+      "r": -0.1497,
+      "pApprox": 0.160163
+    },
+    "wkViolation": {
+      "n": 88,
+      "r": -0.0508,
+      "pApprox": 0.637028
+    },
+    "deltaFrac": {
+      "n": 88,
+      "r": -0.1735,
+      "pApprox": 0.102209
+    },
+    "thetaFrac": {
+      "n": 88,
+      "r": -0.1408,
+      "pApprox": 0.187285
+    },
+    "alphaFrac": {
+      "n": 88,
+      "r": 0.3016,
+      "pApprox": 0.003357
+    },
+    "betaFrac": {
+      "n": 88,
+      "r": 0.1701,
+      "pApprox": 0.109421
+    },
+    "thetaAlphaRatio": {
+      "n": 88,
+      "r": -0.3923,
+      "pApprox": 0.000076
+    }
+  },
+  "Age_HealthyControls": {
+    "slopeBB": {
+      "n": 29,
+      "r": 0.3104,
+      "pApprox": 0.08975
+    },
+    "dfa": {
+      "n": 29,
+      "r": 0.1612,
+      "pApprox": 0.396141
+    },
+    "wkViolation": {
+      "n": 29,
+      "r": 0.3699,
+      "pApprox": 0.038556
+    },
+    "deltaFrac": {
+      "n": 29,
+      "r": 0.019,
+      "pApprox": 0.921361
+    },
+    "thetaFrac": {
+      "n": 29,
+      "r": 0.0228,
+      "pApprox": 0.905824
+    },
+    "alphaFrac": {
+      "n": 29,
+      "r": -0.0576,
+      "pApprox": 0.764258
+    },
+    "betaFrac": {
+      "n": 29,
+      "r": 0.0453,
+      "pApprox": 0.8138
+    },
+    "thetaAlphaRatio": {
+      "n": 29,
+      "r": 0.217,
+      "pApprox": 0.248144
+    }
+  }
+}
