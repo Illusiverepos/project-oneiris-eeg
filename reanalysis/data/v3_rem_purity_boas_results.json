@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-11-26T07:25:42.676Z",
+  "nNights": 32,
+  "totalHours": 260.1,
+  "results": {
+    "Naive": {
+      "Wake": 416,
+      "N1": 148,
+      "N2": 2393,
+      "N3": 148,
+      "REM": 845,
+      "total": 3950,
+      "wakeCutVsNaivePct": 0,
+      "wakeHazardPct": 10.53,
+      "n3DeepPct": 3.75,
+      "remPrecisionPct": 21.39
+    },
+    "v2_WK": {
+      "Wake": 32,
+      "N1": 25,
+      "N2": 407,
+      "N3": 9,
+      "REM": 206,
+      "total": 679,
+      "wakeCutVsNaivePct": 92.31,
+      "wakeHazardPct": 4.71,
+      "n3DeepPct": 1.33,
+      "remPrecisionPct": 30.34
+    },
+    "v3A_wkOverDelta": {
+      "Wake": 220,
+      "N1": 114,
+      "N2": 1706,
+      "N3": 17,
+      "REM": 691,
+      "total": 2748,
+      "wakeCutVsNaivePct": 47.12,
+      "wakeHazardPct": 8.01,
+      "n3DeepPct": 0.62,
+      "remPrecisionPct": 25.15
+    },
+    "v3B_remSignatureIndex": {
+      "Wake": 209,
+      "N1": 122,
+      "N2": 1677,
+      "N3": 16,
+      "REM": 672,
+      "total": 2696,
+      "wakeCutVsNaivePct": 49.76,
+      "wakeHazardPct": 7.75,
+      "n3DeepPct": 0.59,
+      "remPrecisionPct": 24.93
+    }
+  }
+}
