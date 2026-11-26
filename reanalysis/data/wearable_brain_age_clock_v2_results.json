@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-11-26T07:58:07.738Z",
+  "nRawNights": 127,
+  "nUniqueHumans": 99,
+  "modelA_100pct_PSG_FREE_2Electrode_Clock": {
+    "nUniqueHumans": 99,
+    "outOfSampleR": 0.3467,
+    "outOfSampleR2": 0.1202,
+    "outOfSampleP": 0.000272,
+    "MAE_years": 12.7
+  },
+  "modelB_PSG_Hybrid_2Electrode_Clock": {
+    "nUniqueHumans": 99,
+    "outOfSampleR": 0.4211,
+    "outOfSampleR2": 0.1773,
+    "outOfSampleP": 0.0000048,
+    "MAE_years": 11.83
+  },
+  "sameHumanNightToNightRetest_PSG_FREE": {
+    "nPairs": 20,
+    "night1VsNight2_r": 0.2842,
+    "night1VsNight2_p": 0.2084713,
+    "meanAbsNightToNightDiffYears": 4.65
+  },
+  "topPsgFreeAgingFeatures": [
+    {
+      "feature": "alpha_p50",
+      "r": 0.3495,
+      "p": 0.0002392
+    },
+    {
+      "feature": "slopeBB_p10(N3proxy)",
+      "r": 0.2973,
+      "p": 0.0021661
+    },
+    {
+      "feature": "alpha_p90",
+      "r": 0.297,
+      "p": 0.0021865
+    },
+    {
+      "feature": "delta_p10",
+      "r": -0.2814,
+      "p": 0.0038789
+    },
+    {
+      "feature": "delta_p90",
+      "r": -0.276,
+      "p": 0.0046815
+    },
+    {
+      "feature": "delta_p50",
+      "r": -0.2586,
+      "p": 0.0083853
+    },
+    {
+      "feature": "DFA_p90(N3proxy)",
+      "r": -0.2567,
+      "p": 0.0088931
+    },
+    {
+      "feature": "DFA_p10(REM/WakeProxy)",
+      "r": -0.2104,
+      "p": 0.0340034
+    }
+  ]
+}
