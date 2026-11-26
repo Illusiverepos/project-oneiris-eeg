@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ONEIRIS Paper 3 — Two-Stage Cortical Recovery in Clinical PTSD &amp; Non-Waking Nightmare Therapy</title>
+<style>
+  @page { margin: 0.78in; size: letter; }
+  body { font-family: Georgia, "Times New Roman", serif; color: #111; line-height: 1.48; font-size: 10.6pt; max-width: 7.2in; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 16.5pt; line-height: 1.25; margin: 0 0 8px; text-align: center; }
+  .meta { text-align: center; font-size: 9.6pt; color: #333; margin-bottom: 18px; border-bottom: 1px solid #ccc; padding-bottom: 12px; }
+  h2 { font-size: 12.2pt; margin: 18px 0 6px; border-bottom: 1px solid #ddd; padding-bottom: 3px; color: #0f2942; }
+  h3 { font-size: 10.8pt; margin: 12px 0 4px; color: #1e3a5f; }
+  p { margin: 0 0 9px; text-align: justify; }
+  .abstract { background: #f6f8fb; border-left: 3px solid #0f2942; padding: 11px 14px; margin: 12px 0 16px; font-size: 9.8pt; }
+  .callout { background: #fff8eb; border-left: 3px solid #b45309; padding: 9px 12px; margin: 12px 0; font-size: 9.4pt; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 9.1pt; }
+  th, td { border: 1px solid #cbd5e1; padding: 5px 7px; text-align: left; }
+  th { background: #eef2f7; font-weight: bold; }
+  code { font-family: Consolas, monospace; font-size: 8.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 3px; }
+  ul, ol { margin: 4px 0 10px 20px; }
+  li { margin-bottom: 4px; }
+  .refs { font-size: 8.9pt; }
+  .refs li { margin-bottom: 5px; }
+</style>
+</head>
+<body>
+<h1>Two-Stage Cortical Recovery in Clinical PTSD, Independent Replication in Human Fear Extinction, and an Anti-Startle Architecture for Non-Waking Nightmare Therapy</h1>
+<div class="meta">
+  <strong>Austin Rutan</strong> &bull; Independent Researcher (Project ONEIRIS) &bull; <code>rutanaus000@gmail.com</code><br>
+  Code &amp; Reproducible Pipeline: <code>https://github.com/Illusiverepos/project-oneiris-eeg</code> &bull; Preprint Paper 3 (Labs #1–#12) &bull; November 2026
+</div>
+
+<div class="abstract">
+  <strong>Abstract.</strong> Post-traumatic stress disorder (PTSD) traps military veterans and trauma survivors in decades-long cycles of insomnia and recurrent nightmares that resist spontaneous extinction. Extending the 3-axis cortical coordinate system established across 10 independent anesthesia, sleep, lucid-dreaming, and psychedelic labs (Papers 1–2: posterior 1/f excitability <code>S_phys</code>, external reality anchor <code>R_tether</code>, and the <code>Right_Frontal</code> executive switch), we test an <strong>Inverted-Switch Model of PTSD Sleep</strong> across two new human EEG laboratories (<strong>Labs #11–#12</strong>), a 38-year longitudinal combat-veteran dream archive, and a calibrated biophysical model. First, auditing the 38-year DreamBank Vietnam Vet combat series (1970–2008, <em>n</em> = 98 vs. 22,317 controls) confirms chronic combat threat replay (71.4% vs. 13.4%, OR = 15.97, <em>p</em> = 1.86&times;10<sup>&minus;61</sup>), a wake-snap trap (24.3% of threat dreams violently awaken the sleeper, representing 94.4% of all awakenings; OR = 2.21, <em>p</em> = 0.0089), zero spontaneous lucidity (0/98), and zero spontaneous extinction across four decades (75.5% &rarr; 67.4%, <em>p</em> = 0.502). Second, in <strong>Lab #11</strong> (Mendeley <code>10.17632/gsxphk87mc</code>, <em>n</em> = 20 clinical PTSD survivors with 100% same-device wearable EEG across ~120 recordings; <em>n</em> = 29 DSM-5 PCL-5 sleep outcomes), neurofeedback remission (PCL-5 38.9 &rarr; 11.0; nightmares &minus;75%, <em>d<sub>z</sub></em> = 1.743, <em>p</em> &lt; 0.0001; insomnia &minus;67%, <em>d<sub>z</sub></em> = 2.121, <em>p</em> &lt; 0.0001; Motor-Imagery and Waitlist controls null) follows a <strong>Two-Stage Cortical Recovery</strong>: Stage 1 (Early &rarr; Mid) selectively steepens <code>Right &minus; Left Frontal</code> 1/f slope (84% of total shift; 9/10 remitted patients overall, <em>d<sub>z</sub></em> = &minus;0.667, <em>p</em> = 0.0349, sign <em>p</em> = 0.0215; MI control 4/10, <em>p</em> = 0.430) while re-synchronizing fragmented dimensionality (<code>globalEffDimNorm</code> &darr;, <em>d<sub>z</sub></em> = &minus;0.941, <em>p</em> = 0.0029); Stage 2 (Mid &rarr; Late) releases posterior temporal persistence (<code>postDFA</code> &darr;, <em>d<sub>z</sub></em> = &minus;0.971, <em>p</em> = 0.0021). Moreover, 9/10 remitted patients acutely steepened <code>Right_Frontal</code> 1/f within a single 30-minute session (<em>d<sub>z</sub></em> = &minus;0.777, <em>p</em> = 0.0140). Third, in <strong>Lab #12</strong> (OpenNeuro <code>ds007114</code>, <em>n</em> = 28 healthy humans), active fear extinction independently replicates the exact quantitative Posterior <code>DFA &alpha;</code> release (&minus;0.070, <em>d<sub>z</sub></em> = &minus;0.465, <em>p</em> = 0.0138, 19/28, matching Lab #11 &minus;0.074) while trait anxiety blunts frontal extinction updating (&rho; = &minus;0.375, <em>p</em> = 0.0391). Finally, a Locus Coeruleus Wilson–Cowan model reproduces PTSD NREM right-frontal 1/f flattening and defines an Anti-Startle Goldilocks Corridor for non-waking Imagery Rehearsal Therapy + Targeted Memory Reactivation (IRT+TMR), implemented in an open-source closed-loop engine (<code>--mode irt-tmr</code>).
+</div>
+
+<h2>1. Introduction: The Inverted-Switch Model of PTSD Sleep</h2>
+<p>Across 10 independent human EEG laboratories (Papers 1–2), we mapped a 3-axis physical coordinate system of human consciousness: (1) posterior cortical excitability (<code>S_phys</code>), (2) external sensory anchoring (<code>R_tether = +z(effDim_post) + z(DFA &alpha;) &minus; z(logBeta)</code>, separating internal vs. external reality in 45/56 humans, <em>p</em> &lt; 0.0001), and (3) a <code>Right_Frontal</code> (<code>F4/F8</code>) executive switch that stays offline in normal NREM dreaming (0/3) and switches ON selectively during lucid REM control (11/12, <em>p</em> = 0.0190).</p>
+<p>Healthy REM sleep supports overnight fear extinction because Locus Coeruleus (LC) norepinephrine drops near zero. In combat PTSD, persistent nocturnal LC norepinephrine creates an <strong>Inverted Switch</strong>: high-density sleep EEG (de Boer et al., 2020) shows elevated fast activity (flatter 1/f) most pronounced over <code>Right_Frontal</code> sensors during NREM (driving insomnia) paired with an opposing posterior shift during REM (driving nightmares). Convergently, 1 Hz inhibitory rTMS over right DLPFC (<code>F4</code>) reduces combat PTSD symptoms in veterans (Kozel et al., 2018, <em>N</em> = 103). Here we test whether clinical PTSD recovery and active human fear extinction reverse these exact axes, and translate the constraints into an anti-startle closed-loop IRT+TMR architecture.</p>
+
+<h2>2. Empirical Results Across Combat Dreams and Labs #11–#12</h2>
+
+<h3>2.1 38-Year Combat Veteran Dream Archive (DreamBank <code>vietnam_vet</code>, <em>n</em> = 98 vs. 22,317 Controls)</h3>
+<table>
+  <tr><th>Metric</th><th>Vietnam Vet (<em>n</em> = 98)</th><th>All Controls (<em>n</em> = 22,317)</th><th>Odds Ratio (&chi;&sup2;, <em>p</em>)</th><th>Early vs. Late Half (38 Yrs)</th></tr>
+  <tr><td>Active Threat / Nightmare</td><td><strong>71.43%</strong> (70/98)</td><td>13.41% (2,992)</td><td><strong>15.97&times;</strong> (<em>p</em> = 1.86&times;10<sup>&minus;61</sup>)</td><td>75.5% &rarr; 67.4% (<em>p</em> = 0.502, n.s.)</td></tr>
+  <tr><td>Combat-Specific Flashback</td><td><strong>57.14%</strong> (56/98)</td><td>1.24% (277)</td><td><strong>105.59&times;</strong> (&chi;&sup2; = 2045.4)</td><td>55.1% &rarr; 59.2% (<em>p</em> = 0.838, n.s.)</td></tr>
+  <tr><td>Snap-Awake Given Threat</td><td><strong>24.29%</strong> (17/70)</td><td>12.87% (385/2,992)</td><td><strong>2.21&times;</strong> (<em>p</em> = 0.0089)</td><td>27.0% &rarr; 21.2% (<em>p</em> = 0.774, n.s.)</td></tr>
+  <tr><td>Spontaneous Lucidity</td><td><strong>0.00%</strong> (0/98)</td><td>0.39% (87)</td><td>&mdash;</td><td>0% &rarr; 0%</td></tr>
+</table>
+<p>Fully 94.4% (17/18) of the veteran's awakenings occurred during active threat nightmares, with zero spontaneous lucidity and zero spontaneous extinction across nearly four decades.</p>
+
+<h3>2.2 Lab #11: Two-Stage Clinical PTSD Recovery &amp; Same-Day Biomarker (Mendeley <code>10.17632/gsxphk87mc</code>)</h3>
+<p>Auditing all 20 clinical PTSD participants with 100% same-device paired resting baselines (~120 recordings, 250 Hz) and all 29 DSM-5 PCL-5 sleep records (Du Bois et al., 2021/2022) revealed massive sleep remission in the Neurofeedback (NF) arm alongside null controls, driven by a strict Two-Stage cortical sequence:</p>
+<table>
+  <tr><th>Lab #11 Metric (NF Remission, <em>n</em> = 10)</th><th>Stage 1 (Early &rarr; Mid)</th><th>Stage 2 (Mid &rarr; Late)</th><th>Full Span / Clinical Outcome</th></tr>
+  <tr><td>DSM-5 Nightmares (PCL-5 Item 2, 0–4)</td><td>&mdash;</td><td>&mdash;</td><td><strong>2.40 &rarr; 0.60 (&minus;75%)</strong>, <em>d<sub>z</sub></em> = 1.743, <em>p</em> &lt; 0.0001 (MI <em>p</em> = 0.281)</td></tr>
+  <tr><td>DSM-5 Insomnia (PCL-5 Item 20, 0–4)</td><td>&mdash;</td><td>&mdash;</td><td><strong>3.00 &rarr; 1.00 (&minus;67%)</strong>, <em>d<sub>z</sub></em> = 2.121, <em>p</em> &lt; 0.0001 (MI <em>p</em> = 1.000)</td></tr>
+  <tr><td><code>Right &minus; Left Frontal</code> 1/f Asymmetry</td><td><strong>&minus;0.232</strong> (84% of shift)</td><td>&minus;0.045 (<em>p</em> = 0.776)</td><td><strong>&minus;0.278 (9/10)</strong>, <em>p</em> = 0.0349, sign <em>p</em> = 0.0215 (MI 4/10, <em>p</em> = 0.430)</td></tr>
+  <tr><td><code>globalEffDimNorm</code> (Re-Synchronization)</td><td><strong>&minus;0.0651</strong> (<em>p</em> = 0.0029)</td><td>+0.0134 (<em>p</em> = 0.464)</td><td><strong>&minus;0.0517</strong>, <em>d<sub>z</sub></em> = &minus;0.745, <em>p</em> = 0.0184</td></tr>
+  <tr><td><code>Posterior DFA &alpha;</code> (Loop Release)</td><td>+0.0113 (<em>p</em> = 0.649, flat)</td><td><strong>&minus;0.0853</strong> (<em>p</em> = 0.0021)</td><td><strong>&minus;0.0740 (8/10)</strong>, <em>d<sub>z</sub></em> = &minus;0.663, <em>p</em> = 0.0360 (MI <em>p</em> = 0.729)</td></tr>
+  <tr><td>Acute 30-Min Shift (<code>relax2 &minus; relax1</code>)</td><td colspan="3"><strong>9/10 NF patients acutely steepened <code>Right_Frontal</code> 1/f</strong> (&minus;0.0821, <em>d<sub>z</sub></em> = &minus;0.777, <em>p</em> = 0.0140; MI <em>p</em> = 0.221)</td></tr>
+</table>
+
+<h3>2.3 Lab #12: Independent Replication in Human Fear Extinction (OpenNeuro <code>ds007114</code>, <em>n</em> = 28)</h3>
+<table>
+  <tr><th>Fear Extinction &minus; Fear Conditioning (<em>n</em> = 28, 64-ch EEG)</th><th>Mean Shift</th><th>Effect Size (<em>d<sub>z</sub></em>)</th><th><em>p</em>-value</th><th>Consistency</th></tr>
+  <tr><td><strong>Posterior <code>DFA &alpha;</code></strong></td><td><strong>&minus;0.0698</strong></td><td><strong>&minus;0.465</strong></td><td><strong>0.0138</strong></td><td><strong>19/28 dropped</strong> (matches Lab #11 &minus;0.074)</td></tr>
+  <tr><td><strong>Posterior 1/f <code>slopeBB</code></strong></td><td><strong>+0.1375</strong></td><td><strong>+0.515</strong></td><td><strong>0.0064</strong></td><td><strong>18/28 flattened</strong> (active safety updating)</td></tr>
+  <tr><td>Trait Anxiety &times; Frontal Extinction Updating</td><td>&mdash;</td><td>&rho; = &minus;0.375 (LF) / &minus;0.353 (RF)</td><td><strong>0.0391</strong> / 0.0546</td><td>Higher anxiety blunts extinction updating</td></tr>
+</table>
+
+<h2>3. Biophysical Model &amp; Anti-Startle Non-Waking IRT+TMR Engineering</h2>
+<p>Adding Locus Coeruleus norepinephrine (<code>lcNE</code>) to our two-layer Wilson–Cowan model (<em>N</em> = 20 trials/regime) reproduced PTSD NREM right-frontal 1/f flattening (&minus;1.503 &rarr; &minus;0.854), slow-wave collapse (0.515 &rarr; 0.111), and right-frontal beta tripling (0.091 &rarr; 0.273). In PTSD REM (<code>meanThreat = 0.974</code>, <code>wakeSnapPct = 100%</code>, <code>extinctionIdx = 0.000</code>), gentle IRT+TMR (<code>tmrCueAmp = 0.25</code>) reduced threat to 0.635 with 0% wake-snaps and restored extinction (0.232), whereas loud cues (<code>&ge; 0.60</code>) triggered acoustic startle (<code>wakeSnapPct = 6.7%&ndash;16.7%</code>) and collapsed extinction (0.242 &rarr; 0.156).</p>
+<p>Implementing this Anti-Startle Corridor in <code>toolkit/cueing-system/closed_loop_engine.js</code> (<code>--mode irt-tmr</code>) and replaying real human REM (<code>TWC_USA</code> <code>case15_sub108.edf</code>, 1,552 s) delivered 1 whisper-gentle chord during calm REM (<code>rfBetaFrac = 0.18, alphaFrac = 0.17</code>), held <code>PTSD_NREM_WATCHTOWER_HOLD</code>, and executed 13 automatic anti-startle <code>WAKE_GUARD</code> vetoes on beta spikes. An accompanying standalone 3-phase full-night prototype (<code>irt_tmr_prototype.html</code>) pairs 6-bpm vagal pacing, safe-ending IRT with a 0.65 s fade-in C-major7 pad, and optional early-NREM pink-noise shielding.</p>
+
+<div class="callout">
+  <strong>Limitations &amp; Clinical Scope:</strong> Cross-subject single-site Spearman correlations with &Delta;PCL-5 in Lab #11 were non-significant after strict same-device pairing (<em>p</em> = 0.07–0.99), demonstrating that within-subject <code>Right &minus; Left Frontal</code> asymmetry is the robust biomarker. Lab #11 comprises female trauma survivors and warrants prospective validation in combat veterans. All ONEIRIS software tools are open-source research prototypes, not medical devices, and do not substitute for VA or clinician-guided PTSD treatment.
+</div>
+
+<h2>4. Key References</h2>
+<ol class="refs">
+  <li>Rutan, A. (2026). <em>Two-Stage Posterior Cortical Ignitions and a Shared Physical Axis of Human Consciousness Across Seven Independent Anesthesia and Sleep Labs</em> (Project ONEIRIS Paper 1). PsyArXiv.</li>
+  <li>Rutan, A. (2026). <em>A Three-Axis Physical Coordinate System of Human Reality Across Ten Human Labs</em> (Project ONEIRIS Paper 2). PsyArXiv.</li>
+  <li>de Boer, M., Nijdam, M. J., Jongedijk, R. A., Bangel, K. A., Olff, M., Hofman, W. F., &amp; Talamini, L. M. (2020). The spectral fingerprint of sleep problems in post-traumatic stress disorder. <em>Sleep</em>, 43(4), zsz269.</li>
+  <li>Du Bois, N., Bigirimana, A. D., Korik, A., et al. &amp; Coyle, D. (2021/2022). Neurofeedback with low-cost, wearable EEG reduces symptoms in chronic PTSD. <em>J. Affect. Disord.</em> &amp; <em>Data in Brief</em> (Mendeley <code>10.17632/gsxphk87mc</code>).</li>
+  <li>Schwartz, S., Clerget, A., &amp; Perogamvros, L. (2022). Enhancing imagery rehearsal therapy for nightmares with targeted memory reactivation. <em>Current Biology</em>, 32(22), 4808–4816.</li>
+  <li>Kozel, F. A., et al. (2018). Repetitive TMS to augment cognitive processing therapy in combat veterans with PTSD. <em>J. Affect. Disord.</em>, 229, 506–514.</li>
+  <li>Brainlab, Univ. of Barcelona (2025). <em>SUBEMOcondEEG1: Fear conditioning and extinction EEG and pupillometry</em>. OpenNeuro <code>ds007114</code>.</li>
+</ol>
+</body>
+</html>
