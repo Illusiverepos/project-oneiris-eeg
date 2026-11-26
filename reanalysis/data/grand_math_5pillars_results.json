@@ -1,0 +1,209 @@
+{
+  "generatedAt": "2026-11-26T06:25:22.989Z",
+  "pillar1_WienerKhinchin": {
+    "theoreticalWKAngleDeg": 46.17,
+    "boasWK": {
+      "Wake": {
+        "slopeBB": -1.0215,
+        "dfa": 1.0158,
+        "wkPredictedSlope": -1.0316,
+        "wkViolation": 0.0101
+      },
+      "N1": {
+        "slopeBB": -1.1639,
+        "dfa": 0.968,
+        "wkPredictedSlope": -0.936,
+        "wkViolation": -0.2279
+      },
+      "N2": {
+        "slopeBB": -1.6316,
+        "dfa": 1.1194,
+        "wkPredictedSlope": -1.2388,
+        "wkViolation": -0.3928
+      },
+      "N3": {
+        "slopeBB": -2.3021,
+        "dfa": 1.4304,
+        "wkPredictedSlope": -1.8608,
+        "wkViolation": -0.4413
+      },
+      "REM": {
+        "slopeBB": -1.4764,
+        "dfa": 1.0298,
+        "wkPredictedSlope": -1.0596,
+        "wkViolation": -0.4168
+      }
+    },
+    "ds6110WK": {
+      "sRest": {
+        "slopeBB": -0.6948,
+        "dfa": 0.6589,
+        "wkPredictedSlope": -0.3178,
+        "wkViolation": -0.377
+      },
+      "sMed": {
+        "slopeBB": -0.6803,
+        "dfa": 0.6659,
+        "wkPredictedSlope": -0.3318,
+        "wkViolation": -0.3485
+      },
+      "sVid": {
+        "slopeBB": -0.455,
+        "dfa": 0.7448,
+        "wkPredictedSlope": -0.4896,
+        "wkViolation": 0.0346
+      },
+      "pRest": {
+        "slopeBB": -0.3528,
+        "dfa": 0.6757,
+        "wkPredictedSlope": -0.3514,
+        "wkViolation": -0.0014
+      },
+      "pMed": {
+        "slopeBB": -0.4379,
+        "dfa": 0.6765,
+        "wkPredictedSlope": -0.353,
+        "wkViolation": -0.0849
+      }
+    },
+    "transitions": [
+      {
+        "transition": "Propofol LOC -> Wake (Consciousness Return)",
+        "lab": "Lab #1 (ds005620)",
+        "dSlope": 0.2999,
+        "dDFA": -0.156,
+        "empiricalAngleDeg": 47.3,
+        "angleFromWK_46deg": 1.1,
+        "wkObeyed": true
+      },
+      {
+        "transition": "Sober Rest -> External Video (Sensory Lock-In)",
+        "lab": "Lab #10 (ds006110)",
+        "dSlope": 0.2398,
+        "dDFA": 0.0859,
+        "empiricalAngleDeg": -36.7,
+        "angleFromWK_46deg": -82.9,
+        "wkObeyed": false
+      },
+      {
+        "transition": "External Video -> Psilocybin Inner Cinema",
+        "lab": "Lab #10 (ds006110)",
+        "dSlope": 0.1022,
+        "dDFA": -0.0691,
+        "empiricalAngleDeg": 54.6,
+        "angleFromWK_46deg": 8.4,
+        "wkObeyed": true
+      },
+      {
+        "transition": "REM Pre-Cue -> Lucid Control Plateau (+6..+22s)",
+        "lab": "Lab #8 (TWC_USA)",
+        "dSlope": 0.1104,
+        "dDFA": 0.0281,
+        "empiricalAngleDeg": -27.9,
+        "angleFromWK_46deg": -74.1,
+        "wkObeyed": false
+      },
+      {
+        "transition": "Active PTSD -> Clinical PTSD Remission (NF Full)",
+        "lab": "Lab #11 (Mendeley)",
+        "dSlope": 0.1111,
+        "dDFA": -0.074,
+        "empiricalAngleDeg": 54.2,
+        "angleFromWK_46deg": 8,
+        "wkObeyed": true
+      },
+      {
+        "transition": "PTSD Stage 2 Consolidation (Mid -> Late NF)",
+        "lab": "Lab #11 (Mendeley)",
+        "dSlope": 0,
+        "dDFA": -0.0853,
+        "empiricalAngleDeg": 90,
+        "angleFromWK_46deg": 43.8,
+        "wkObeyed": false
+      },
+      {
+        "transition": "Fear Conditioning -> Active Fear Extinction",
+        "lab": "Lab #12 (ds007114)",
+        "dSlope": 0.1375,
+        "dDFA": -0.0698,
+        "empiricalAngleDeg": 46.6,
+        "angleFromWK_46deg": 0.4,
+        "wkObeyed": true
+      },
+      {
+        "transition": "Safe Pre-Conditioning -> Fear Conditioning",
+        "lab": "Lab #12 (ds007114)",
+        "dSlope": 0.033,
+        "dDFA": 0.0392,
+        "empiricalAngleDeg": -68,
+        "angleFromWK_46deg": -114.2,
+        "wkObeyed": false
+      },
+      {
+        "transition": "Wearable AF7/AF8 N3 -> REM (77.5h)",
+        "lab": "Lab #13 (BOAS)",
+        "dSlope": 0.8257,
+        "dDFA": -0.4006,
+        "empiricalAngleDeg": 45.3,
+        "angleFromWK_46deg": -0.9,
+        "wkObeyed": true
+      }
+    ]
+  },
+  "pillar2_FisherRao": {
+    "distanceMatrix": {
+      "Wake": {
+        "Wake": 0,
+        "N1": 0.043,
+        "N2": 0.2327,
+        "N3": 0.8,
+        "REM": 0.1163
+      },
+      "N1": {
+        "Wake": 0.043,
+        "N1": 0,
+        "N2": 0.2545,
+        "N3": 0.8127,
+        "REM": 0.1496
+      },
+      "N2": {
+        "Wake": 0.2327,
+        "N1": 0.2545,
+        "N2": 0,
+        "N3": 0.5728,
+        "REM": 0.1437
+      },
+      "N3": {
+        "Wake": 0.8,
+        "N1": 0.8127,
+        "N2": 0.5728,
+        "N3": 0,
+        "REM": 0.7133
+      },
+      "REM": {
+        "Wake": 0.1163,
+        "N1": 0.1496,
+        "N2": 0.1437,
+        "N3": 0.7133,
+        "REM": 0
+      }
+    },
+    "geodesicCheck": {
+      "d_N3_to_Wake": 0.8,
+      "d_N3_to_REM_plus_REM_to_Wake": 0.8296,
+      "pathEfficiencyPct": 96.4
+    }
+  },
+  "pillar3_RMT_and_Takens": {
+    "nSessions": 9,
+    "benchmarks": {
+      "Poisson_Uncoupled": 0.3863,
+      "GOE_CoupledReal": 0.5307,
+      "GUE_RiemannZeros": 0.5996
+    },
+    "meanR_PreCueREM": 0.4511,
+    "meanR_LucidPlateauREM": 0.4101,
+    "takensLoopRatio_Pre": 0.094,
+    "takensLoopRatio_Lucid": 0.1336
+  }
+}
