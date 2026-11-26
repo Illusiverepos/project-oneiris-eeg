@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-11-26T05:51:00.381Z",
+  "optimalTransport_2x2": {
+    "nSubjects": 28,
+    "W2_Conditioning_to_Extinction": {
+      "w2Sq": 0.4474,
+      "w2": 0.6689,
+      "meanTerm": 0.3437,
+      "covTerm": 0.1037
+    },
+    "W2_Pre_to_Conditioning": {
+      "w2Sq": 0.1523,
+      "w2": 0.3902,
+      "meanTerm": 0.0751,
+      "covTerm": 0.0772
+    },
+    "W2_Pre_to_Extinction": {
+      "w2Sq": 0.2946,
+      "w2": 0.5427,
+      "meanTerm": 0.2396,
+      "covTerm": 0.0549
+    },
+    "energySavings_Geodesic_vs_StartleDetour_Ratio": 28.9
+  },
+  "koopmanPredictiveControl_RealREM": {
+    "recording": "case15_sub108.edf",
+    "trainWindows": 388,
+    "testWindows": 385,
+    "forecastHorizonSec": 6,
+    "outOfSample_rfBeta_6sAhead_r": -0.207,
+    "outOfSample_rfSlope_6sAhead_r": -0.114,
+    "outOfSample_WakeGuardSpike_6sAhead_AUC": 0.384,
+    "nSpikesInTestHalf": 349
+  }
+}
