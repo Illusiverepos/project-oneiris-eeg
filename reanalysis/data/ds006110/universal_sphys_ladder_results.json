@@ -1,0 +1,99 @@
+{
+  "nHumans": 56,
+  "frozenWeights": {
+    "W_SLOPE": 0.515,
+    "W_LZC": 0.351,
+    "W_DFA": -0.782
+  },
+  "ladder": [
+    {
+      "state": "sRest",
+      "mean_S_phys": -0.2197,
+      "mean_slopeBB": -0.6948,
+      "mean_LZc": 0.9222,
+      "mean_DFA": 0.6589
+    },
+    {
+      "state": "sMed",
+      "mean_S_phys": -0.2236,
+      "mean_slopeBB": -0.6803,
+      "mean_LZc": 0.9283,
+      "mean_DFA": 0.6659
+    },
+    {
+      "state": "sVid",
+      "mean_S_phys": -0.1092,
+      "mean_slopeBB": -0.455,
+      "mean_LZc": 1.0136,
+      "mean_DFA": 0.7448
+    },
+    {
+      "state": "pRest",
+      "mean_S_phys": 0.3555,
+      "mean_slopeBB": -0.3528,
+      "mean_LZc": 0.9782,
+      "mean_DFA": 0.6757
+    },
+    {
+      "state": "pMed",
+      "mean_S_phys": 0.1971,
+      "mean_slopeBB": -0.4379,
+      "mean_LZc": 0.9687,
+      "mean_DFA": 0.6765
+    }
+  ],
+  "contrasts": {
+    "Sober_Med vs Sober_Rest": {
+      "n": 56,
+      "nPos": "30/56",
+      "meanDiff": -0.0039,
+      "dz": -0.005,
+      "p": 0.9699
+    },
+    "Sober_Video vs Sober_Rest": {
+      "n": 56,
+      "nPos": "27/56",
+      "meanDiff": 0.1105,
+      "dz": 0.099,
+      "p": 0.4562
+    },
+    "Psilocybin_Rest vs Sober_Rest": {
+      "n": 56,
+      "nPos": "37/56",
+      "meanDiff": 0.5753,
+      "dz": 0.454,
+      "p": 0.0014
+    },
+    "Psilocybin_Med vs Sober_Med": {
+      "n": 56,
+      "nPos": "31/56",
+      "meanDiff": 0.4207,
+      "dz": 0.331,
+      "p": 0.0165
+    },
+    "Psilocybin_Rest vs Sober_Video": {
+      "n": 56,
+      "nPos": "37/56",
+      "meanDiff": 0.4647,
+      "dz": 0.303,
+      "p": 0.0293
+    },
+    "Psilocybin_Med vs Sober_Video": {
+      "n": 56,
+      "nPos": "30/56",
+      "meanDiff": 0.3063,
+      "dz": 0.205,
+      "p": 0.1363
+    }
+  },
+  "doseVsSPhysRest": {
+    "n": 56,
+    "rho": 0.211,
+    "p": 0.1148
+  },
+  "doseVsSPhysMed": {
+    "n": 56,
+    "rho": 0.128,
+    "p": 0.3409
+  }
+}

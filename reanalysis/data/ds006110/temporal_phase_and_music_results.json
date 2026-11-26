@@ -1,0 +1,223 @@
+{
+  "nHumans": 56,
+  "soberMusicVsRest": {
+    "rtpj_slope": {
+      "n": 56,
+      "nPos": "28/56",
+      "meanDiff": -0.035,
+      "dz": -0.112,
+      "p": 0.4062
+    },
+    "occ_slope": {
+      "n": 56,
+      "nPos": "31/56",
+      "meanDiff": 0.0051,
+      "dz": 0.027,
+      "p": 0.8414
+    },
+    "rfront_slope": {
+      "n": 56,
+      "nPos": "23/56",
+      "meanDiff": -0.0035,
+      "dz": -0.008,
+      "p": 0.9576
+    },
+    "tonicP10": {
+      "n": 56,
+      "nPos": "34/56",
+      "meanDiff": 0.0141,
+      "dz": 0.22,
+      "p": 0.1073
+    },
+    "burstP90": {
+      "n": 56,
+      "nPos": "36/56",
+      "meanDiff": 0.0231,
+      "dz": 0.387,
+      "p": 0.0063
+    },
+    "metastabilityGap": {
+      "n": 56,
+      "nPos": "34/56",
+      "meanDiff": 0.0089,
+      "dz": 0.225,
+      "p": 0.1016
+    }
+  },
+  "videoVsRest": {
+    "rtpj_slope": {
+      "n": 56,
+      "nPos": "46/56",
+      "meanDiff": 0.3059,
+      "dz": 0.808,
+      "p": 0
+    },
+    "occ_slope": {
+      "n": 56,
+      "nPos": "42/56",
+      "meanDiff": 0.1864,
+      "dz": 0.624,
+      "p": 0
+    },
+    "rfront_slope": {
+      "n": 56,
+      "nPos": "43/56",
+      "meanDiff": 0.3646,
+      "dz": 0.688,
+      "p": 0
+    },
+    "tonicP10": {
+      "n": 56,
+      "nPos": "52/56",
+      "meanDiff": 0.1046,
+      "dz": 1.346,
+      "p": 0
+    },
+    "burstP90": {
+      "n": 56,
+      "nPos": "51/56",
+      "meanDiff": 0.0826,
+      "dz": 1.224,
+      "p": 0
+    },
+    "metastabilityGap": {
+      "n": 56,
+      "nPos": "11/56",
+      "meanDiff": -0.022,
+      "dz": -0.633,
+      "p": 0
+    }
+  },
+  "psiRestVsRest": {
+    "rtpj_slope": {
+      "n": 56,
+      "nPos": "46/56",
+      "meanDiff": 0.3892,
+      "dz": 0.786,
+      "p": 0
+    },
+    "occ_slope": {
+      "n": 56,
+      "nPos": "39/56",
+      "meanDiff": 0.3374,
+      "dz": 0.721,
+      "p": 0
+    },
+    "rfront_slope": {
+      "n": 56,
+      "nPos": "42/56",
+      "meanDiff": 0.2992,
+      "dz": 0.602,
+      "p": 0
+    },
+    "tonicP10": {
+      "n": 56,
+      "nPos": "43/56",
+      "meanDiff": 0.0679,
+      "dz": 0.788,
+      "p": 0
+    },
+    "burstP90": {
+      "n": 56,
+      "nPos": "45/56",
+      "meanDiff": 0.058,
+      "dz": 0.808,
+      "p": 0
+    },
+    "metastabilityGap": {
+      "n": 56,
+      "nPos": "20/56",
+      "meanDiff": -0.0099,
+      "dz": -0.307,
+      "p": 0.0271
+    }
+  },
+  "psiMusicVsRest": {
+    "rtpj_slope": {
+      "n": 56,
+      "nPos": "48/56",
+      "meanDiff": 0.4269,
+      "dz": 0.873,
+      "p": 0
+    },
+    "occ_slope": {
+      "n": 56,
+      "nPos": "39/56",
+      "meanDiff": 0.2714,
+      "dz": 0.671,
+      "p": 0
+    },
+    "rfront_slope": {
+      "n": 56,
+      "nPos": "44/56",
+      "meanDiff": 0.3572,
+      "dz": 0.626,
+      "p": 0.0001
+    },
+    "tonicP10": {
+      "n": 56,
+      "nPos": "41/56",
+      "meanDiff": 0.0567,
+      "dz": 0.626,
+      "p": 0
+    },
+    "burstP90": {
+      "n": 56,
+      "nPos": "43/56",
+      "meanDiff": 0.0566,
+      "dz": 0.805,
+      "p": 0
+    },
+    "metastabilityGap": {
+      "n": 56,
+      "nPos": "24/56",
+      "meanDiff": -0.0001,
+      "dz": -0.003,
+      "p": 1
+    }
+  },
+  "psiMusicVsPsiRest": {
+    "rtpj_slope": {
+      "n": 56,
+      "nPos": "30/56",
+      "meanDiff": 0.0377,
+      "dz": 0.093,
+      "p": 0.4941
+    },
+    "occ_slope": {
+      "n": 56,
+      "nPos": "24/56",
+      "meanDiff": -0.066,
+      "dz": -0.243,
+      "p": 0.0764
+    },
+    "rfront_slope": {
+      "n": 56,
+      "nPos": "31/56",
+      "meanDiff": 0.0579,
+      "dz": 0.117,
+      "p": 0.3838
+    },
+    "tonicP10": {
+      "n": 56,
+      "nPos": "19/56",
+      "meanDiff": -0.0112,
+      "dz": -0.218,
+      "p": 0.1081
+    },
+    "burstP90": {
+      "n": 56,
+      "nPos": "23/56",
+      "meanDiff": -0.0014,
+      "dz": -0.032,
+      "p": 0.83
+    },
+    "metastabilityGap": {
+      "n": 56,
+      "nPos": "35/56",
+      "meanDiff": 0.0098,
+      "dz": 0.34,
+      "p": 0.0147
+    }
+  }
+}
