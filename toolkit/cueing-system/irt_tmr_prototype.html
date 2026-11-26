@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONEIRIS — Veteran-Safe IRT + Non-Waking TMR Prototype</title>
+<style>
+  :root {
+    --bg: #08101c; --card: #101b2e; --border: #213454; --text: #e8f0fc;
+    --muted: #93a8cb; --teal: #2dd4bf; --sky: #38bdf8; --amber: #fbbf24; --rose: #fb7185;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 20px; line-height: 1.5; }
+  .wrap { max-width: 820px; margin: 0 auto; }
+  h1 { margin: 0 0 6px; font-size: 1.55rem; color: #fff; }
+  .sub { margin: 0 0 16px; color: var(--muted); font-size: 0.92rem; }
+  .notice { background: rgba(45,212,191,0.08); border: 1px solid rgba(45,212,191,0.35); border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; font-size: 0.86rem; color: #d5f6f1; }
+  .notice strong { color: var(--teal); }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; margin-bottom: 16px; }
+  .card h2 { margin: 0 0 8px; font-size: 1.08rem; color: #fff; }
+  .hint { font-size: 0.82rem; color: var(--muted); margin: 0 0 12px; }
+  textarea, input[type="number"], select {
+    width: 100%; background: #0a1222; color: var(--text); border: 1px solid var(--border);
+    border-radius: 10px; padding: 10px 12px; font-family: inherit; font-size: 0.92rem;
+  }
+  textarea { min-height: 92px; resize: vertical; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 12px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
+  button {
+    background: #1b2b48; color: var(--text); border: 1px solid var(--border); border-radius: 10px;
+    padding: 10px 16px; font-weight: 600; font-size: 0.9rem; cursor: pointer;
+  }
+  button:hover { border-color: var(--teal); }
+  button.primary { background: var(--teal); color: #041d1b; border-color: var(--teal); }
+  button.sky { background: var(--sky); color: #051829; border-color: var(--sky); }
+  button.danger { background: rgba(251,113,133,0.16); color: #ffd1d9; border: 1px solid var(--rose); width: 100%; padding: 16px; font-size: 1.02rem; }
+  .slider-row { margin: 12px 0; }
+  .slider-head { display: flex; justify-content: space-between; font-size: 0.86rem; margin-bottom: 4px; }
+  .slider-head span:last-child { font-family: ui-monospace, Consolas, monospace; color: var(--teal); }
+  input[type="range"] { width: 100%; accent-color: var(--teal); }
+  .status-box { background: #0a1222; border: 1px solid #1e3152; border-radius: 10px; padding: 12px 14px; font-family: ui-monospace, Consolas, monospace; font-size: 0.86rem; color: var(--teal); margin-top: 12px; }
+  .pill { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; background: rgba(56,189,248,0.16); color: var(--sky); margin-left: 6px; }
+  label { display: block; font-size: 0.83rem; color: var(--muted); margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ONEIRIS — Safe-Script IRT + Non-Waking TMR Prototype <span class="pill">Anti-Startle Mode</span></h1>
+  <p class="sub">Modeled on Schwartz, Clerget &amp; Perogamvros (2022, <em>Current Biology</em>) + ONEIRIS Report 47 anti-startle REM gating</p>
+
+  <div class="notice">
+    <strong>Clinical Research Notice &amp; Privacy:</strong> This is an open-source research prototype, <strong>not a medical device</strong> and not a replacement for VA trauma care, Imagery Rehearsal Therapy with a clinician, or prescribed medication (e.g., Prazosin). Everything you type stays <strong>100% on your device</strong> (never uploaded). If you are in acute distress or crisis, call or text <strong>988 (Press 1 for Veterans Crisis Line)</strong>.
+  </div>
+
+  <!-- STEP 1: DAYTIME IRT -->
+  <div class="card">
+    <h2>Step 1 — Daytime Safe-Ending Rehearsal (5 Minutes, Awake)</h2>
+    <p class="hint">
+      In Imagery Rehearsal Therapy (IRT), you do <strong>not</strong> replay the trauma. Instead, you write a calm, safe, grounded ending — and mentally picture that safe ending while hearing a soft, warm piano chord so your brain links the chord to safety.
+    </p>
+    <label for="safeScript">Your Safe, Grounded Ending (stored locally only):</label>
+    <textarea id="safeScript" placeholder="Example: The scene shifts to a quiet morning by the water. I am safe, home, breathing slowly, and everything is calm."></textarea>
+
+    <div class="slider-row">
+      <div class="slider-head"><span>Warm C-Major7 Safety Chord Volume (Hard-Capped at 35%)</span><span id="v_vol">12%</span></div>
+      <input id="s_vol" type="range" min="3" max="35" step="1" value="12">
+    </div>
+
+    <div class="row">
+      <button onclick="playSafetyChord()">Preview Soft Safety Chord</button>
+      <button class="primary" id="btnIrt" onclick="toggleIRT()">Start 5-Min Daytime Rehearsal</button>
+    </div>
+    <div id="irtStatus" class="status-box">Daytime IRT ready. Rehearse your safe ending calmly while the soft chord plays every 15 seconds.</div>
+  </div>
+
+  <!-- STEP 2: OVERNIGHT ANTI-STARTLE TMR -->
+  <div class="card">
+    <h2>Step 2 — Ultra-Gentle Overnight Non-Waking TMR (Late-Night REM Window)</h2>
+    <p class="hint">
+      To avoid waking you during hyperaroused early-night NREM, cues wait until the late-night REM window (default 4.5 hours after sleep onset), play with a <strong>0.6-second whisper fade-in</strong> (zero sharp attack), and automatically lower volume if you tap the pause button.
+    </p>
+
+    <div class="grid2">
+      <div>
+        <label for="delayHrs">Wait Before First Cue (Hours — Skips Early NREM)</label>
+        <input id="delayHrs" type="number" min="0.05" max="7" step="0.25" value="4.5">
+      </div>
+      <div>
+        <label for="intervalSec">Spacing Between Gentle Chords (Seconds)</label>
+        <input id="intervalSec" type="number" min="30" max="600" step="15" value="120">
+      </div>
+    </div>
+
+    <div class="row">
+      <button class="sky" id="btnNight" onclick="toggleNight()">Start Overnight Anti-Startle TMR</button>
+      <button onclick="saveSettings()">Save Defaults</button>
+    </div>
+
+    <div class="row" style="margin-top:14px;">
+      <button class="danger" onclick="awakeBackoff()">I'm Awake / Too Noticeable — Pause 20 Min &amp; Lower Volume</button>
+    </div>
+
+    <div id="nightStatus" class="status-box">Overnight scheduler idle. Keep speaker at arm's length at whisper-quiet volume.</div>
+  </div>
+
+  <!-- STEP 3: MORNING LOG -->
+  <div class="card">
+    <h2>Step 3 — Morning Sleep &amp; Safety Log (1-Click Copy)</h2>
+    <div class="grid2">
+      <div>
+        <label for="m_distress">Nightmare Distress (0 = none, 10 = severe)</label>
+        <input id="m_distress" type="number" min="0" max="10" value="0">
+      </div>
+      <div>
+        <label for="m_wakes">Sudden Panic Awakenings (count)</label>
+        <input id="m_wakes" type="number" min="0" max="20" value="0">
+      </div>
+      <div>
+        <label for="m_startle">Did the chord startle or wake you?</label>
+        <select id="m_startle">
+          <option value="No — stayed asleep">No — stayed asleep</option>
+          <option value="Heard gently in dream / calm">Heard gently in dream / calm</option>
+          <option value="Yes — woke me up (lower volume next night)">Yes — woke me up (lower volume next night)</option>
+        </select>
+      </div>
+      <div>
+        <label for="m_shift">Did the dream feel calmer or shift toward safety?</label>
+        <select id="m_shift">
+          <option value="Yes — noticeably calmer">Yes — noticeably calmer</option>
+          <option value="No nightmares tonight">No nightmares tonight</option>
+          <option value="Same as usual">Same as usual</option>
+          <option value="Worse — pause and consult clinician">Worse — pause and consult clinician</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <button class="primary" onclick="copyReport()">Copy Morning Safety Log</button>
+      <span id="copyMsg" style="font-size:0.84rem;color:var(--teal);"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+let audioCtx = null;
+let irtTimer = null, irtSecLeft = 300;
+let nightTimer = null, nightRunning = false, nightStartMs = 0, nightPausedUntilMs = 0, nightChordsFired = 0, backoffCount = 0;
+
+const volSlider = document.getElementById('s_vol');
+const volLbl = document.getElementById('v_vol');
+volSlider.addEventListener('input', () => { volLbl.textContent = volSlider.value + '%'; });
+
+// Load local-only saved script & defaults
+try {
+  const saved = JSON.parse(localStorage.getItem('oneiris_irt_tmr_v1') || '{}');
+  if (saved.script) document.getElementById('safeScript').value = saved.script;
+  if (saved.vol) { volSlider.value = saved.vol; volLbl.textContent = saved.vol + '%'; }
+  if (saved.delayHrs) document.getElementById('delayHrs').value = saved.delayHrs;
+  if (saved.intervalSec) document.getElementById('intervalSec').value = saved.intervalSec;
+} catch (_) {}
+
+function saveSettings() {
+  localStorage.setItem('oneiris_irt_tmr_v1', JSON.stringify({
+    script: document.getElementById('safeScript').value,
+    vol: Number(volSlider.value),
+    delayHrs: Number(document.getElementById('delayHrs').value),
+    intervalSec: Number(document.getElementById('intervalSec').value),
+  }));
+  document.getElementById('nightStatus').textContent = 'Saved locally on this device.';
+}
+
+/**
+ * Warm, non-startling C-major7 pad (C4, E4, G4, B4) with 0.6s whisper fade-in
+ * and low-pass filtering (zero sharp transient -> minimizes acoustic startle).
+ */
+function playSafetyChord() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  const vol = Math.min(0.35, Number(volSlider.value) / 100) * 0.16; // whisper-scaled gain
+  const now = audioCtx.currentTime + 0.02;
+
+  const filter = audioCtx.createBiquadFilter();
+  filter.type = 'lowpass';
+  filter.frequency.value = 950; // warm, soft timbre
+  filter.connect(audioCtx.destination);
+
+  const freqs = [261.63, 329.63, 392.00, 493.88]; // C4-E4-G4-B4 warm major7
+  freqs.forEach((f) => {
+    const osc = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, now);
+    g.gain.exponentialRampToValueAtTime(vol / freqs.length, now + 0.65); // slow anti-startle fade-in
+    g.gain.exponentialRampToValueAtTime(0.0001, now + 2.40);             // gentle tail
+    osc.connect(g);
+    g.connect(filter);
+    osc.start(now);
+    osc.stop(now + 2.45);
+  });
+}
+
+function toggleIRT() {
+  const btn = document.getElementById('btnIrt');
+  const box = document.getElementById('irtStatus');
+  if (irtTimer) {
+    clearInterval(irtTimer); irtTimer = null;
+    btn.textContent = 'Start 5-Min Daytime Rehearsal';
+    box.textContent = 'Daytime rehearsal paused.';
+    return;
+  }
+  saveSettings();
+  irtSecLeft = 300;
+  btn.textContent = 'Stop Daytime Rehearsal';
+  playSafetyChord();
+  irtTimer = setInterval(() => {
+    irtSecLeft--;
+    const m = Math.floor(irtSecLeft / 60), s = String(irtSecLeft % 60).padStart(2, '0');
+    box.textContent = `Rehearsing safe ending... ${m}:${s} remaining (gentle chord every 15s)`;
+    if (irtSecLeft > 0 && irtSecLeft % 15 === 0) playSafetyChord();
+    if (irtSecLeft <= 0) {
+      clearInterval(irtTimer); irtTimer = null;
+      btn.textContent = 'Start 5-Min Daytime Rehearsal';
+      box.textContent = '5-minute daytime IRT pairing complete. Ready for tonight.';
+    }
+  }, 1000);
+}
+
+function toggleNight() {
+  const btn = document.getElementById('btnNight');
+  const box = document.getElementById('nightStatus');
+  if (nightRunning) {
+    clearInterval(nightTimer); nightTimer = null; nightRunning = false;
+    btn.textContent = 'Start Overnight Anti-Startle TMR';
+    box.textContent = `Overnight TMR stopped. Chords delivered: ${nightChordsFired} | Awake backoffs: ${backoffCount}`;
+    return;
+  }
+  saveSettings();
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+
+  nightRunning = true;
+  nightStartMs = Date.now();
+  nightPausedUntilMs = 0;
+  nightChordsFired = 0;
+  backoffCount = 0;
+  btn.textContent = 'Stop Overnight TMR';
+
+  const delayMs = Number(document.getElementById('delayHrs').value) * 3600 * 1000;
+  const intervalMs = Math.max(30, Number(document.getElementById('intervalSec').value)) * 1000;
+  let lastCueMs = 0;
+
+  nightTimer = setInterval(() => {
+    const now = Date.now();
+    const elapsed = now - nightStartMs;
+    if (now < nightPausedUntilMs) {
+      const rem = Math.ceil((nightPausedUntilMs - now) / 60000);
+      box.textContent = `ANTI-STARTLE PAUSE active (${rem} min left) | Volume: ${volSlider.value}%`;
+      return;
+    }
+    if (elapsed < delayMs) {
+      const remMin = Math.ceil((delayMs - elapsed) / 60000);
+      box.textContent = `Skipping early NREM — first gentle REM chord in ${remMin} min | Volume: ${volSlider.value}%`;
+      return;
+    }
+    if (now - lastCueMs >= intervalMs) {
+      playSafetyChord();
+      lastCueMs = now;
+      nightChordsFired++;
+    }
+    box.textContent = `REM Anti-Startle Window ACTIVE | Chords delivered: ${nightChordsFired} | Volume: ${volSlider.value}% | Backoffs: ${backoffCount}`;
+  }, 1000);
+}
+
+function awakeBackoff() {
+  backoffCount++;
+  const newVol = Math.max(3, Math.round(Number(volSlider.value) * 0.72));
+  volSlider.value = newVol;
+  volLbl.textContent = newVol + '%';
+  nightPausedUntilMs = Date.now() + 20 * 60 * 1000;
+  document.getElementById('nightStatus').textContent = `Anti-startle backoff triggered: paused 20 min, volume lowered to ${newVol}%.`;
+}
+
+function copyReport() {
+  const txt = [
+    `ONEIRIS Safe-Script IRT+TMR Morning Log (${new Date().toLocaleDateString()})`,
+    `- Volume: ${volSlider.value}% | Late-REM Delay: ${document.getElementById('delayHrs').value}h | Chords: ${nightChordsFired} | Backoffs: ${backoffCount}`,
+    `- Nightmare Distress (0-10): ${document.getElementById('m_distress').value}`,
+    `- Sudden Panic Awakenings: ${document.getElementById('m_wakes').value}`,
+    `- Chord Startle Check: ${document.getElementById('m_startle').value}`,
+    `- Dream Safety Shift: ${document.getElementById('m_shift').value}`,
+  ].join('\n');
+  navigator.clipboard.writeText(txt).then(() => {
+    document.getElementById('copyMsg').textContent = 'Copied to clipboard!';
+    setTimeout(() => { document.getElementById('copyMsg').textContent = ''; }, 2500);
+  });
+}
+</script>
+</body>
+</html>

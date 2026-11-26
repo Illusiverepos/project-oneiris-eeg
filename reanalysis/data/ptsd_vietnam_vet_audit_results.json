@@ -1,0 +1,446 @@
+{
+  "generatedAt": "2026-11-26T03:07:15.346Z",
+  "source": "DreamBank longitudinal series vietnam_vet (1970-2008) vs. non-combat controls",
+  "groups": {
+    "vietnam_vet": {
+      "n": 98,
+      "threat": {
+        "count": 70,
+        "pct": 71.43
+      },
+      "combatSpecific": {
+        "count": 56,
+        "pct": 57.14
+      },
+      "wakeSnap": {
+        "count": 18,
+        "pct": 18.37
+      },
+      "helpless": {
+        "count": 6,
+        "pct": 6.12
+      },
+      "lucid": {
+        "count": 0,
+        "pct": 0
+      },
+      "agencyShift": {
+        "count": 7,
+        "pct": 7.14
+      },
+      "bodyLeak": {
+        "count": 6,
+        "pct": 6.12
+      },
+      "conditional": {
+        "nThreat": 70,
+        "wakeSnapGivenThreat": {
+          "count": 17,
+          "pct": 24.29
+        },
+        "threatShareOfWakeSnaps": {
+          "count": 17,
+          "totalWake": 18,
+          "pct": 94.44
+        },
+        "lucidGivenThreat": {
+          "count": 0,
+          "pct": 0
+        },
+        "helplessGivenThreat": {
+          "count": 6,
+          "pct": 8.57
+        }
+      }
+    },
+    "all_controls": {
+      "n": 22317,
+      "threat": {
+        "count": 2992,
+        "pct": 13.41
+      },
+      "combatSpecific": {
+        "count": 277,
+        "pct": 1.24
+      },
+      "wakeSnap": {
+        "count": 1955,
+        "pct": 8.76
+      },
+      "helpless": {
+        "count": 791,
+        "pct": 3.54
+      },
+      "lucid": {
+        "count": 88,
+        "pct": 0.39
+      },
+      "agencyShift": {
+        "count": 1274,
+        "pct": 5.71
+      },
+      "bodyLeak": {
+        "count": 2579,
+        "pct": 11.56
+      },
+      "conditional": {
+        "nThreat": 2992,
+        "wakeSnapGivenThreat": {
+          "count": 385,
+          "pct": 12.87
+        },
+        "threatShareOfWakeSnaps": {
+          "count": 385,
+          "totalWake": 1955,
+          "pct": 19.69
+        },
+        "lucidGivenThreat": {
+          "count": 21,
+          "pct": 0.7
+        },
+        "helplessGivenThreat": {
+          "count": 199,
+          "pct": 6.65
+        }
+      }
+    },
+    "male_norms": {
+      "n": 491,
+      "threat": {
+        "count": 97,
+        "pct": 19.76
+      },
+      "combatSpecific": {
+        "count": 16,
+        "pct": 3.26
+      },
+      "wakeSnap": {
+        "count": 90,
+        "pct": 18.33
+      },
+      "helpless": {
+        "count": 22,
+        "pct": 4.48
+      },
+      "lucid": {
+        "count": 2,
+        "pct": 0.41
+      },
+      "agencyShift": {
+        "count": 22,
+        "pct": 4.48
+      },
+      "bodyLeak": {
+        "count": 37,
+        "pct": 7.54
+      },
+      "conditional": {
+        "nThreat": 97,
+        "wakeSnapGivenThreat": {
+          "count": 20,
+          "pct": 20.62
+        },
+        "threatShareOfWakeSnaps": {
+          "count": 20,
+          "totalWake": 90,
+          "pct": 22.22
+        },
+        "lucidGivenThreat": {
+          "count": 1,
+          "pct": 1.03
+        },
+        "helplessGivenThreat": {
+          "count": 3,
+          "pct": 3.09
+        }
+      }
+    },
+    "vietnam_vet_early_half": {
+      "n": 49,
+      "threat": {
+        "count": 37,
+        "pct": 75.51
+      },
+      "combatSpecific": {
+        "count": 27,
+        "pct": 55.1
+      },
+      "wakeSnap": {
+        "count": 10,
+        "pct": 20.41
+      },
+      "helpless": {
+        "count": 4,
+        "pct": 8.16
+      },
+      "lucid": {
+        "count": 0,
+        "pct": 0
+      },
+      "agencyShift": {
+        "count": 5,
+        "pct": 10.2
+      },
+      "bodyLeak": {
+        "count": 4,
+        "pct": 8.16
+      },
+      "conditional": {
+        "nThreat": 37,
+        "wakeSnapGivenThreat": {
+          "count": 10,
+          "pct": 27.03
+        },
+        "threatShareOfWakeSnaps": {
+          "count": 10,
+          "totalWake": 10,
+          "pct": 100
+        },
+        "lucidGivenThreat": {
+          "count": 0,
+          "pct": 0
+        },
+        "helplessGivenThreat": {
+          "count": 4,
+          "pct": 10.81
+        }
+      }
+    },
+    "vietnam_vet_late_half": {
+      "n": 49,
+      "threat": {
+        "count": 33,
+        "pct": 67.35
+      },
+      "combatSpecific": {
+        "count": 29,
+        "pct": 59.18
+      },
+      "wakeSnap": {
+        "count": 8,
+        "pct": 16.33
+      },
+      "helpless": {
+        "count": 2,
+        "pct": 4.08
+      },
+      "lucid": {
+        "count": 0,
+        "pct": 0
+      },
+      "agencyShift": {
+        "count": 2,
+        "pct": 4.08
+      },
+      "bodyLeak": {
+        "count": 2,
+        "pct": 4.08
+      },
+      "conditional": {
+        "nThreat": 33,
+        "wakeSnapGivenThreat": {
+          "count": 7,
+          "pct": 21.21
+        },
+        "threatShareOfWakeSnaps": {
+          "count": 7,
+          "totalWake": 8,
+          "pct": 87.5
+        },
+        "lucidGivenThreat": {
+          "count": 0,
+          "pct": 0
+        },
+        "helplessGivenThreat": {
+          "count": 2,
+          "pct": 6.06
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "vsAllControls": {
+      "comparison": "VietnamVet_vs_AllControls",
+      "metrics": {
+        "threat": {
+          "aPct": 71.43,
+          "bPct": 13.41,
+          "chi2": 273.605,
+          "p": 1.859e-61,
+          "oddsRatio": 15.97
+        },
+        "combatSpecific": {
+          "aPct": 57.14,
+          "bPct": 1.24,
+          "chi2": 2045.353,
+          "p": 0,
+          "oddsRatio": 105.59
+        },
+        "wakeSnap": {
+          "aPct": 18.37,
+          "bPct": 8.76,
+          "chi2": 10.054,
+          "p": 0.00152,
+          "oddsRatio": 2.39
+        },
+        "helpless": {
+          "aPct": 6.12,
+          "bPct": 3.54,
+          "chi2": 1.214,
+          "p": 0.2705,
+          "oddsRatio": 1.91
+        },
+        "lucid": {
+          "aPct": 0,
+          "bPct": 0.39,
+          "chi2": 0,
+          "p": 1,
+          "oddsRatio": 1.28
+        },
+        "agencyShift": {
+          "aPct": 7.14,
+          "bPct": 5.71,
+          "chi2": 0.154,
+          "p": 0.6949,
+          "oddsRatio": 1.35
+        },
+        "bodyLeak": {
+          "aPct": 6.12,
+          "bPct": 11.56,
+          "chi2": 2.316,
+          "p": 0.128,
+          "oddsRatio": 0.54
+        },
+        "wakeSnapGivenThreat": {
+          "aPct": 24.29,
+          "bPct": 12.87,
+          "chi2": 6.85,
+          "p": 0.008865,
+          "oddsRatio": 2.21
+        }
+      }
+    },
+    "vsMaleNorms": {
+      "comparison": "VietnamVet_vs_MaleNorms",
+      "metrics": {
+        "threat": {
+          "aPct": 71.43,
+          "bPct": 19.76,
+          "chi2": 104.851,
+          "p": 1.317e-24,
+          "oddsRatio": 10.01
+        },
+        "combatSpecific": {
+          "aPct": 57.14,
+          "bPct": 3.26,
+          "chi2": 216.073,
+          "p": 6.501e-49,
+          "oddsRatio": 38.31
+        },
+        "wakeSnap": {
+          "aPct": 18.37,
+          "bPct": 18.33,
+          "chi2": 0,
+          "p": 1,
+          "oddsRatio": 1.02
+        },
+        "helpless": {
+          "aPct": 6.12,
+          "bPct": 4.48,
+          "chi2": 0.191,
+          "p": 0.6618,
+          "oddsRatio": 1.47
+        },
+        "lucid": {
+          "aPct": 0,
+          "bPct": 0.41,
+          "chi2": 0,
+          "p": 1,
+          "oddsRatio": 0.99
+        },
+        "agencyShift": {
+          "aPct": 7.14,
+          "bPct": 4.48,
+          "chi2": 0.734,
+          "p": 0.3917,
+          "oddsRatio": 1.71
+        },
+        "bodyLeak": {
+          "aPct": 6.12,
+          "bPct": 7.54,
+          "chi2": 0.077,
+          "p": 0.7807,
+          "oddsRatio": 0.85
+        },
+        "wakeSnapGivenThreat": {
+          "aPct": 24.29,
+          "bPct": 20.62,
+          "chi2": 0.14,
+          "p": 0.7082,
+          "oddsRatio": 1.24
+        }
+      }
+    },
+    "longitudinalEarlyVsLate": {
+      "comparison": "VietnamVet_EarlyHalf_vs_LateHalf",
+      "metrics": {
+        "threat": {
+          "aPct": 75.51,
+          "bPct": 67.35,
+          "chi2": 0.45,
+          "p": 0.5023,
+          "oddsRatio": 1.48
+        },
+        "combatSpecific": {
+          "aPct": 55.1,
+          "bPct": 59.18,
+          "chi2": 0.042,
+          "p": 0.8383,
+          "oddsRatio": 0.85
+        },
+        "wakeSnap": {
+          "aPct": 20.41,
+          "bPct": 16.33,
+          "chi2": 0.068,
+          "p": 0.7942,
+          "oddsRatio": 1.3
+        },
+        "helpless": {
+          "aPct": 8.16,
+          "bPct": 4.08,
+          "chi2": 0.178,
+          "p": 0.6735,
+          "oddsRatio": 1.88
+        },
+        "lucid": {
+          "aPct": 0,
+          "bPct": 0,
+          "chi2": 0,
+          "p": 1,
+          "oddsRatio": 1
+        },
+        "agencyShift": {
+          "aPct": 10.2,
+          "bPct": 4.08,
+          "chi2": 0.615,
+          "p": 0.4328,
+          "oddsRatio": 2.35
+        },
+        "bodyLeak": {
+          "aPct": 8.16,
+          "bPct": 4.08,
+          "chi2": 0.178,
+          "p": 0.6735,
+          "oddsRatio": 1.88
+        },
+        "wakeSnapGivenThreat": {
+          "aPct": 27.03,
+          "bPct": 21.21,
+          "chi2": 0.082,
+          "p": 0.774,
+          "oddsRatio": 1.35
+        }
+      }
+    }
+  }
+}

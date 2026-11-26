@@ -46,7 +46,11 @@
     <button class="primary" onclick="applyPreset('lucid')">Lucid Dream Control (Right-Frontal ON)</button>
     <button onclick="applyPreset('psilocybin')">19 mg Psilocybin (Inner Cinema)</button>
     <button onclick="applyPreset('wake')">Sober Connected Waking</button>
-    <button class="pulse" onclick="injectTLRPulse()">Inject TLR Chime / Sensory Leak Pulse</button>
+    <button style="border-color:var(--rose);color:#fecdd3;" onclick="applyPreset('ptsd_nrem')">PTSD NREM (Inverted Watchtower)</button>
+    <button style="border-color:var(--rose);color:#fecdd3;" onclick="applyPreset('ptsd_rem')">PTSD REM Nightmare (High LC-NE)</button>
+    <button style="border-color:var(--emerald);color:#a7f3d0;" onclick="applyPreset('ptsd_tmr')">Safe IRT+TMR (Gentle Chord)</button>
+    <button class="pulse" onclick="injectTLRPulse()">Inject TLR Chime</button>
+    <button style="background:#2dd4bf;color:#041d1b;border-color:#2dd4bf;" onclick="injectIRTChord()">Inject Gentle IRT Chord</button>
   </div>
 
   <div class="layout">
@@ -78,6 +82,11 @@
           <div class="slider-head"><span>Sensory Leakage (TLR Chime / "Pillow Hands")</span><span id="v_leak">0.15</span></div>
           <input id="s_leak" type="range" min="0" max="1" step="0.01" value="0.15">
           <div class="hint">Controlled body/audio prediction error nudging Right Frontal online</div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-head"><span>Locus Coeruleus Norepinephrine (LC-NE &mdash; PTSD Hyperarousal)</span><span id="v_ne" style="color:var(--rose)">0.05</span></div>
+          <input id="s_ne" type="range" min="0" max="1" step="0.01" value="0.05" style="accent-color:var(--rose)">
+          <div class="hint">Fails to shut off in PTSD: traps Right-Frontal ON in NREM &amp; drives REM wake-snap nightmares</div>
         </div>
       </div>
 
@@ -131,7 +140,7 @@ const postBuf = new Float64Array(HIST), frontBuf = new Float64Array(HIST);
 const heatCols = Array.from({ length: 140 }, () => new Float64Array(M));
 let swPhase = 0, swGate = 1.0, clearTimer = 0, pulseTimer = 0;
 
-const params = { ach: 0.55, gaba: 0.55, ht5: 0.0, gfp: 0.55, leak: 0.15 };
+const params = { ach: 0.55, gaba: 0.55, ht5: 0.0, gfp: 0.55, leak: 0.15, ne: 0.05 };
 const bindSlider = (id, key, lbl) => {
   const el = document.getElementById(id);
   el.addEventListener('input', () => {
@@ -144,17 +153,21 @@ bindSlider('s_gaba', 'gaba', 'v_gaba');
 bindSlider('s_5ht', 'ht5', 'v_5ht');
 bindSlider('s_gfp', 'gfp', 'v_gfp');
 bindSlider('s_leak', 'leak', 'v_leak');
+bindSlider('s_ne', 'ne', 'v_ne');
 
 function applyPreset(name) {
   const map = {
-    propofol:   { ach: 0.05, gaba: 0.95, ht5: 0.00, gfp: 0.00, leak: 0.00 },
-    nrem_dream: { ach: 0.50, gaba: 0.62, ht5: 0.00, gfp: 0.05, leak: 0.08 },
-    lucid:      { ach: 0.65, gaba: 0.52, ht5: 0.05, gfp: 0.58, leak: 0.20 },
-    psilocybin: { ach: 0.75, gaba: 0.15, ht5: 0.90, gfp: 0.45, leak: 0.10 },
-    wake:       { ach: 0.85, gaba: 0.05, ht5: 0.00, gfp: 0.85, leak: 0.85 },
+    propofol:   { ach: 0.05, gaba: 0.95, ht5: 0.00, gfp: 0.00, leak: 0.00, ne: 0.00 },
+    nrem_dream: { ach: 0.50, gaba: 0.62, ht5: 0.00, gfp: 0.05, leak: 0.08, ne: 0.05 },
+    lucid:      { ach: 0.65, gaba: 0.52, ht5: 0.05, gfp: 0.58, leak: 0.20, ne: 0.08 },
+    psilocybin: { ach: 0.75, gaba: 0.15, ht5: 0.90, gfp: 0.45, leak: 0.10, ne: 0.15 },
+    wake:       { ach: 0.85, gaba: 0.05, ht5: 0.00, gfp: 0.85, leak: 0.85, ne: 0.35 },
+    ptsd_nrem:  { ach: 0.35, gaba: 0.72, ht5: 0.00, gfp: 0.10, leak: 0.05, ne: 0.88 },
+    ptsd_rem:   { ach: 0.75, gaba: 0.18, ht5: 0.05, gfp: 0.18, leak: 0.10, ne: 0.90 },
+    ptsd_tmr:   { ach: 0.70, gaba: 0.22, ht5: 0.00, gfp: 0.52, leak: 0.15, ne: 0.45 },
   }[name];
   Object.assign(params, map);
-  [['s_ach','ach','v_ach'],['s_gaba','gaba','v_gaba'],['s_5ht','ht5','v_5ht'],['s_gfp','gfp','v_gfp'],['s_leak','leak','v_leak']].forEach(([s,k,l]) => {
+  [['s_ach','ach','v_ach'],['s_gaba','gaba','v_gaba'],['s_5ht','ht5','v_5ht'],['s_gfp','gfp','v_gfp'],['s_leak','leak','v_leak'],['s_ne','ne','v_ne']].forEach(([s,k,l]) => {
     document.getElementById(s).value = params[k];
     document.getElementById(l).textContent = params[k].toFixed(2);
   });
@@ -177,11 +190,30 @@ function injectTLRPulse() {
   });
 }
 
+function injectIRTChord() {
+  // Gentle non-startling C-major7 pad that dampens LC-NE threat without waking
+  params.ne = Math.max(0.15, +(params.ne * 0.72).toFixed(2));
+  params.gfp = Math.min(0.62, Math.max(params.gfp, 0.48));
+  document.getElementById('s_ne').value = params.ne; document.getElementById('v_ne').textContent = params.ne.toFixed(2);
+  document.getElementById('s_gfp').value = params.gfp; document.getElementById('v_gfp').textContent = params.gfp.toFixed(2);
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  const now = audioCtx.currentTime + 0.02;
+  [261.63, 329.63, 392.00, 493.88].forEach((f) => {
+    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+    o.frequency.value = f; o.type = 'sine';
+    g.gain.setValueAtTime(0.0001, now);
+    g.gain.exponentialRampToValueAtTime(0.015, now + 0.55);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + 2.1);
+    o.connect(g); g.connect(audioCtx.destination); o.start(now); o.stop(now + 2.15);
+  });
+}
+
 const sigm = (x) => 1 / (1 + Math.exp(-x));
 const randn = () => Math.sqrt(-2 * Math.log(Math.max(1e-9, Math.random()))) * Math.cos(2 * Math.PI * Math.random());
 
 function stepModel() {
-  const swAmp = 2.6 * params.gaba * (1 - 0.55 * params.ach) * (1 - 0.5 * params.ht5);
+  const swAmp = 2.6 * params.gaba * (1 - 0.55 * params.ach) * (1 - 0.5 * params.ht5) * (1 - 0.52 * params.ne);
   const swClearProb = params.gaba > 0.3 && params.gaba < 0.88 ? 0.22 * (0.4 + params.ach) : 0;
   const gEE = 9.8 + 4.4 * params.ach + 2.4 * params.ht5;
   const gFP = 3.2 * params.gfp;
@@ -201,8 +233,8 @@ function stepModel() {
     const left = E[(i - 1 + M) % M], right = E[(i + 1) % M];
     const asym = 0.55 * params.leak;
     const spatial = kCoupl * (0.5 * (left + right) + asym * (left - right));
-    const pE = 1.25 - swWave + spatial + gFP * frontMean + 0.7 * params.ht5 + 0.6 * params.leak + pulse + 1.15 * randn();
-    const pI = 0.30 + 0.55 * swWave + 0.45 * randn();
+    const pE = 1.25 - swWave + spatial + gFP * frontMean + 0.7 * params.ht5 + 0.6 * params.leak + 0.65 * params.ne + pulse + (1.15 + 0.35 * params.ne) * randn();
+    const pI = 0.30 + 0.55 * swWave - 0.25 * params.ne + 0.45 * randn();
     nextE[i] = Math.max(0, Math.min(1, E[i] + DT * ((-E[i] + sigm(gEE * E[i] - gEI * I[i] - thetaE + pE)) / tauE)));
     nextI[i] = Math.max(0, Math.min(1, I[i] + DT * ((-I[i] + sigm(gIE * E[i] - gII * I[i] - thetaI + pI)) / tauI)));
     postEAvg += nextE[i];
@@ -210,10 +242,12 @@ function stepModel() {
   }
   postEAvg /= M; postLFPAvg /= M;
 
+  // PTSD Inverted-Switch: high LC-NE keeps Right-Frontal watchtower stuck ON during NREM
+  const nremWatchBoost = params.gaba > 0.5 ? 1.55 * params.ne : 0;
   let frontLFPAvg = 0;
   for (let f = 0; f < F; f++) {
-    const pFE = 0.25 + 1.65 * params.gfp + 0.9 * params.leak + 1.2 * pulse - 0.85 * swWave + 0.8 * postEAvg + 1.05 * randn();
-    const pFI = 0.35 + 0.45 * swWave + 0.45 * randn();
+    const pFE = 0.25 + 1.65 * params.gfp + nremWatchBoost + 0.9 * params.leak + 1.2 * pulse - 0.85 * swWave + 0.8 * postEAvg + (1.05 + 0.3 * params.ne) * randn();
+    const pFI = 0.35 + 0.45 * swWave - 0.2 * nremWatchBoost + 0.45 * randn();
     const nFE = Math.max(0, Math.min(1, FE[f] + DT * ((-FE[f] + sigm(13.2 * FE[f] - gEI * FI[f] - thetaE + pFE)) / tauE)));
     const nFI = Math.max(0, Math.min(1, FI[f] + DT * ((-FI[f] + sigm(gIE * FE[f] - gII * FI[f] - thetaI + pFI)) / tauI)));
     FE[f] = nFE; FI[f] = nFI;
@@ -324,7 +358,13 @@ function loop() {
     document.getElementById('k_gate').textContent = gateOpen ? 'OPEN' : 'GATED';
 
     const badge = document.getElementById('stateBadge'), desc = document.getElementById('stateDesc');
-    if (params.gaba > 0.8 && params.ach < 0.25) {
+    if (params.ne > 0.65 && params.gaba > 0.5) {
+      badge.textContent = 'PTSD NREM — INVERTED WATCHTOWER'; badge.style.background = 'rgba(251,113,133,0.22)'; badge.style.color = '#fb7185';
+      desc.textContent = 'Persistent LC norepinephrine suppresses slow waves and traps Right-Frontal hyperexcitable during NREM (de Boer et al., 2020 insomnia signature).';
+    } else if (params.ne > 0.65 && params.gaba <= 0.5) {
+      badge.textContent = 'PTSD REM — NIGHTMARE WAKE-SNAP TRAP'; badge.style.background = 'rgba(251,113,133,0.22)'; badge.style.color = '#fb7185';
+      desc.textContent = 'High LC-NE inside REM blocks fear extinction and pushes R_tether toward a violent panic awakening. Try "Inject Gentle IRT Chord" to dampen threat.';
+    } else if (params.gaba > 0.8 && params.ach < 0.25) {
       badge.textContent = 'PROPOFOL / DREAMLESS NREM'; badge.style.background = 'rgba(147,164,204,0.18)'; badge.style.color = '#94a3b8';
       desc.textContent = 'High GABAergic slow-wave pressure keeps the Stage 1 Delta Gate locked shut. Posterior sheet is subcritical.';
     } else if (params.ht5 > 0.55) {

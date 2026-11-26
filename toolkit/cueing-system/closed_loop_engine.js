@@ -60,12 +60,13 @@ function windowMetrics(sig, sfreq = 200, nfft = 256) {
     segs++;
   }
   const df = sfreq / nfft, xs = [], ys = [];
-  let deltaP = 0, alphaP = 0, totalP = 0;
+  let deltaP = 0, alphaP = 0, betaP = 0, totalP = 0;
   for (let k = 1; k < half; k++) {
     const f = k * df, p = psd[k] / Math.max(1, segs);
     if (f >= 1 && f <= 45) totalP += p * df;
     if (f >= 1 && f <= 4) deltaP += p * df;
     if (f >= 8 && f <= 12) alphaP += p * df;
+    if (f >= 13 && f <= 25) betaP += p * df;
     if ((f >= 2 && f <= 7) || (f >= 14 && f <= 45)) { xs.push(Math.log10(f)); ys.push(Math.log10(p + 1e-24)); }
   }
   let mx = 0, my = 0; for (let i = 0; i < xs.length; i++) { mx += xs[i]; my += ys[i]; } mx /= xs.length; my /= xs.length;
@@ -74,6 +75,7 @@ function windowMetrics(sig, sfreq = 200, nfft = 256) {
     slopeBB: den > 0 ? num / den : 0,
     deltaFrac: deltaP / Math.max(1e-24, totalP),
     alphaFrac: alphaP / Math.max(1e-24, totalP),
+    betaFrac: betaP / Math.max(1e-24, totalP),
     dfa: fastDFA(sig),
   };
 }
@@ -107,9 +109,10 @@ function fastDFA(sig) {
 
 class GoldilocksCueController {
   constructor(opts = {}) {
+    this.mode = opts.mode || 'tlr'; // 'tlr' (lucid dreaming) | 'irt-tmr' (Veteran-safe anti-startle IRT+TMR)
     this.sfreq = opts.sfreq || 200;
-    this.minCueIntervalSec = opts.minCueIntervalSec || 35;
-    this.wakeLockoutSec = opts.wakeLockoutSec || 90;
+    this.minCueIntervalSec = opts.minCueIntervalSec || (this.mode === 'irt-tmr' ? 60 : 35);
+    this.wakeLockoutSec = opts.wakeLockoutSec || (this.mode === 'irt-tmr' ? 120 : 90);
     this.warmupSec = opts.warmupSec || 60;
 
     // Rolling baseline stats (Welford-like sliding buffer of last 120 windows = 60 s)
@@ -121,9 +124,10 @@ class GoldilocksCueController {
 
     this.lastCueSec = -999;
     this.lockoutUntilSec = 0;
-    this.cueGain = 0.25; // starts gentle (0.0 .. 1.0)
+    this.cueGain = this.mode === 'irt-tmr' ? 0.15 : 0.25; // extra-gentle start for IRT+TMR
     this.cueCount = 0;
     this.lucidHoldSec = 0;
+    this.antiStartleVetoes = 0;
   }
 
   _stats(arr) {
@@ -164,14 +168,22 @@ class GoldilocksCueController {
       state = 'WARMUP';
     } else if (tSec < this.lockoutUntilSec) {
       state = 'WAKE_LOCKOUT';
-    } else if (pM.alphaFrac > 0.42 && zRF > 1.8) {
-      // Upper Goldilocks boundary breached (waking alpha + sharp frontal surge) -> back off & lower volume!
+    } else if (
+      this.mode === 'irt-tmr'
+        ? (pM.alphaFrac > 0.36 || rfM.betaFrac > 0.28 || zRF > 1.4)
+        : (pM.alphaFrac > 0.42 && zRF > 1.8)
+    ) {
+      // Upper Goldilocks / R_tether anti-startle boundary breached -> back off & lower volume!
       state = 'WAKE_GUARD';
       action = 'ABORT_AND_LOCKOUT';
       this.lockoutUntilSec = tSec + this.wakeLockoutSec;
-      this.cueGain = Math.max(0.10, this.cueGain * 0.75);
+      this.cueGain = Math.max(0.08, this.cueGain * (this.mode === 'irt-tmr' ? 0.65 : 0.75));
+      this.antiStartleVetoes++;
     } else if (eogArtifact) {
       state = 'EOG_SACCADE_SKIP';
+    } else if (this.mode === 'irt-tmr' && (pM.deltaFrac > 0.45 || (pM.deltaFrac > 0.30 && zRF > 0.5))) {
+      // PTSD Inverted-Switch NREM Guard: never cue during hyperaroused NREM right-frontal watchtower
+      state = 'PTSD_NREM_WATCHTOWER_HOLD';
     } else if (pM.deltaFrac > 0.55) {
       // Stage 1 Gate closed (deep NREM slow-wave inhibition)
       state = 'NREM_GATE_CLOSED';
@@ -184,7 +196,7 @@ class GoldilocksCueController {
       // Prime REM / open-gate target OR CEWR DFA-alpha early-warning release (Report 45)
       state = zPost >= -0.25 ? 'REM_TARGET' : 'CEWR_DFA_EARLY_GATE';
       if (tSec - this.lastCueSec >= this.minCueIntervalSec) {
-        action = 'FIRE_TLR_CHIME';
+        action = this.mode === 'irt-tmr' ? 'FIRE_GENTLE_IRT_CHORD' : 'FIRE_TLR_CHIME';
         this.lastCueSec = tSec;
         this.cueCount++;
       }
@@ -194,6 +206,7 @@ class GoldilocksCueController {
 
     return {
       tSec: Number(tSec.toFixed(1)),
+      mode: this.mode,
       state, action,
       postSlope: Number(pM.slopeBB.toFixed(3)),
       rfSlope: Number(rfM.slopeBB.toFixed(3)),
@@ -203,6 +216,7 @@ class GoldilocksCueController {
       zDFA: Number(zDFA.toFixed(2)),
       deltaFrac: Number(pM.deltaFrac.toFixed(2)),
       alphaFrac: Number(pM.alphaFrac.toFixed(2)),
+      rfBetaFrac: Number(rfM.betaFrac.toFixed(2)),
       cueGain: Number(this.cueGain.toFixed(2)),
     };
   }
@@ -210,7 +224,7 @@ class GoldilocksCueController {
 
 // ======================== REAL TWC_USA EDF REPLAY VERIFIER ========================
 
-function replayEDF(edfPath) {
+function replayEDF(edfPath, mode = 'tlr') {
   const buf = fs.readFileSync(edfPath);
   const numRecords = parseInt(buf.toString('ascii', 236, 244).trim(), 10);
   const recordDurSec = parseFloat(buf.toString('ascii', 244, 252).trim());
@@ -261,7 +275,7 @@ function replayEDF(edfPath) {
     rfCSD[t]   = F4[t] - 0.25 * (FP2[t] + FZ[t] + C4[t] + F8[t]);
   }
 
-  const ctrl = new GoldilocksCueController({ sfreq, minCueIntervalSec: 40 });
+  const ctrl = new GoldilocksCueController({ sfreq, mode, minCueIntervalSec: mode === 'irt-tmr' ? 60 : 40 });
   const winN = 2 * sfreq, stepN = Math.floor(0.5 * sfreq);
   const stateCounts = {}, cueEvents = [];
 
@@ -273,12 +287,12 @@ function replayEDF(edfPath) {
     }
     const res = ctrl.step(tSec, postCSD.subarray(st, st + winN), rfCSD.subarray(st, st + winN), eogJump > 25);
     stateCounts[res.state] = (stateCounts[res.state] || 0) + 1;
-    if (res.action === 'FIRE_TLR_CHIME' || res.action === 'ABORT_AND_LOCKOUT') cueEvents.push(res);
+    if (res.action === 'FIRE_TLR_CHIME' || res.action === 'FIRE_GENTLE_IRT_CHORD' || res.action === 'ABORT_AND_LOCKOUT') cueEvents.push(res);
   }
 
-  console.log(`\n=== CLOSED-LOOP ENGINE REPLAY: ${path.basename(edfPath)} (${Math.round(N / sfreq)}s real human REM) ===`);
+  console.log(`\n=== CLOSED-LOOP ENGINE REPLAY [${mode.toUpperCase()}]: ${path.basename(edfPath)} (${Math.round(N / sfreq)}s real human REM) ===`);
   console.log('State distribution (0.5s ticks):', stateCounts);
-  console.log(`Total TLR cues fired: ${ctrl.cueCount} | Time held silent inside LUCID_CORRIDOR: ${ctrl.lucidHoldSec.toFixed(1)}s`);
+  console.log(`Total cues fired: ${ctrl.cueCount} | Anti-startle vetoes: ${ctrl.antiStartleVetoes} | Time held silent in LUCID_CORRIDOR: ${ctrl.lucidHoldSec.toFixed(1)}s`);
   console.table(cueEvents.slice(0, 12));
 }
 
@@ -288,6 +302,7 @@ function serve(port = 8787) {
   const ctrl = new GoldilocksCueController({ sfreq: 200 });
   const htmlPath = path.join(__dirname, 'tlr_trainer.html');
   const labPath = path.join(__dirname, 'neurochemistry_dream_lab.html');
+  const irtPath = path.join(__dirname, 'irt_tmr_prototype.html');
   let tickSec = 0;
 
   const server = http.createServer((req, res) => {
@@ -299,6 +314,11 @@ function serve(port = 8787) {
     if (req.method === 'GET' && req.url === '/lab') {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end(fs.readFileSync(labPath));
+      return;
+    }
+    if (req.method === 'GET' && req.url === '/irt') {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(fs.readFileSync(irtPath));
       return;
     }
     if (req.method === 'POST' && req.url === '/eeg-chunk') {
@@ -329,11 +349,13 @@ function serve(port = 8787) {
 
 if (require.main === module) {
   const args = process.argv.slice(2);
-  if (args[0] === '--replay' && args[1]) replayEDF(args[1]);
+  const modeIdx = args.indexOf('--mode');
+  const mode = modeIdx >= 0 && args[modeIdx + 1] ? args[modeIdx + 1] : 'tlr';
+  if (args[0] === '--replay' && args[1]) replayEDF(args[1], mode);
   else if (args[0] === '--serve') serve(parseInt(args[1] || '8787', 10));
   else {
     console.log('Usage:');
-    console.log('  node closed_loop_engine.js --replay <path-to-edf>');
+    console.log('  node closed_loop_engine.js --replay <path-to-edf> [--mode tlr|irt-tmr]');
     console.log('  node closed_loop_engine.js --serve [port]');
   }
 }

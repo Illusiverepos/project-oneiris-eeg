@@ -1,0 +1,171 @@
+{
+  "regimeSummary": [
+    {
+      "regime": "1_Healthy_NREM",
+      "postSlope": -1.2419,
+      "rfSlope": -1.5034,
+      "postDelta": 0.5148,
+      "rfBeta": 0.0909,
+      "postDFA": 1.0166,
+      "meanThreat": 0.1985,
+      "wakeSnapPct": 0,
+      "extinctionIdx": 0.392
+    },
+    {
+      "regime": "2_PTSD_NREM_InvertedWatch",
+      "postSlope": -0.8247,
+      "rfSlope": -0.8536,
+      "postDelta": 0.1109,
+      "rfBeta": 0.2726,
+      "postDFA": 0.6412,
+      "meanThreat": 0.9126,
+      "wakeSnapPct": 100,
+      "extinctionIdx": 0
+    },
+    {
+      "regime": "3_Healthy_REM_Extinction",
+      "postSlope": -0.872,
+      "rfSlope": -1.3818,
+      "postDelta": 0.0221,
+      "rfBeta": 0.2369,
+      "postDFA": 0.4299,
+      "meanThreat": 0.5403,
+      "wakeSnapPct": 0,
+      "extinctionIdx": 0.4194
+    },
+    {
+      "regime": "4_PTSD_REM_NightmareTrap",
+      "postSlope": -1.263,
+      "rfSlope": -1.3852,
+      "postDelta": 0.0219,
+      "rfBeta": 0.2785,
+      "postDFA": 0.3997,
+      "meanThreat": 0.9742,
+      "wakeSnapPct": 100,
+      "extinctionIdx": 0
+    },
+    {
+      "regime": "5_PTSD_REM_Prazosin_NEdrop",
+      "postSlope": -1.008,
+      "rfSlope": -1.498,
+      "postDelta": 0.0211,
+      "rfBeta": 0.2696,
+      "postDFA": 0.4169,
+      "meanThreat": 0.8756,
+      "wakeSnapPct": 0,
+      "extinctionIdx": 0.1049
+    },
+    {
+      "regime": "6_PTSD_REM_Gentle_IRT_TMR",
+      "postSlope": -1.2157,
+      "rfSlope": -1.0149,
+      "postDelta": 0.024,
+      "rfBeta": 0.1773,
+      "postDFA": 0.4156,
+      "meanThreat": 0.635,
+      "wakeSnapPct": 0,
+      "extinctionIdx": 0.2315
+    },
+    {
+      "regime": "7_PTSD_REM_Loud_StartleCue",
+      "postSlope": -1.1288,
+      "rfSlope": -0.9863,
+      "postDelta": 0.0201,
+      "rfBeta": 0.1686,
+      "postDFA": 0.4036,
+      "meanThreat": 0.6153,
+      "wakeSnapPct": 15.91,
+      "extinctionIdx": 0.1618
+    }
+  ],
+  "cueSweep": [
+    {
+      "tmrCueAmp": 0,
+      "postSlope": -1.2201,
+      "rfSlope": -1.0596,
+      "postDelta": 0.0234,
+      "rfBeta": 0.1867,
+      "postDFA": 0.4135,
+      "meanThreat": 0.7277,
+      "wakeSnapPct": 0,
+      "extinctionIdx": 0.1732
+    },
+    {
+      "tmrCueAmp": 0.1,
+      "postSlope": -1.1981,
+      "rfSlope": -1.0174,
+      "postDelta": 0.0229,
+      "rfBeta": 0.1819,
+      "postDFA": 0.4137,
+      "meanThreat": 0.6849,
+      "wakeSnapPct": 0,
+      "extinctionIdx": 0.2002
+    },
+    {
+      "tmrCueAmp": 0.2,
+      "postSlope": -1.203,
+      "rfSlope": -1.0249,
+      "postDelta": 0.0233,
+      "rfBeta": 0.178,
+      "postDFA": 0.4156,
+      "meanThreat": 0.647,
+      "wakeSnapPct": 0,
+      "extinctionIdx": 0.2245
+    },
+    {
+      "tmrCueAmp": 0.3,
+      "postSlope": -1.2056,
+      "rfSlope": -1.0056,
+      "postDelta": 0.0231,
+      "rfBeta": 0.1758,
+      "postDFA": 0.4133,
+      "meanThreat": 0.6271,
+      "wakeSnapPct": 0,
+      "extinctionIdx": 0.2374
+    },
+    {
+      "tmrCueAmp": 0.45,
+      "postSlope": -1.2023,
+      "rfSlope": -1.0037,
+      "postDelta": 0.0232,
+      "rfBeta": 0.1708,
+      "postDFA": 0.4144,
+      "meanThreat": 0.6175,
+      "wakeSnapPct": 0,
+      "extinctionIdx": 0.2423
+    },
+    {
+      "tmrCueAmp": 0.6,
+      "postSlope": -1.2191,
+      "rfSlope": -1.0173,
+      "postDelta": 0.024,
+      "rfBeta": 0.1706,
+      "postDFA": 0.4177,
+      "meanThreat": 0.6193,
+      "wakeSnapPct": 6.7229,
+      "extinctionIdx": 0.2101
+    },
+    {
+      "tmrCueAmp": 0.8,
+      "postSlope": -1.2258,
+      "rfSlope": -0.977,
+      "postDelta": 0.0241,
+      "rfBeta": 0.1669,
+      "postDFA": 0.4193,
+      "meanThreat": 0.618,
+      "wakeSnapPct": 15.5375,
+      "extinctionIdx": 0.1613
+    },
+    {
+      "tmrCueAmp": 1,
+      "postSlope": -1.2514,
+      "rfSlope": -0.9781,
+      "postDelta": 0.0253,
+      "rfBeta": 0.167,
+      "postDFA": 0.4211,
+      "meanThreat": 0.619,
+      "wakeSnapPct": 16.7208,
+      "extinctionIdx": 0.156
+    }
+  ]
+}
