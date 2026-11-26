@@ -1,0 +1,175 @@
+{
+  "nHumans": 56,
+  "bandInnerVsOuter": {
+    "logDelta": {
+      "n": 56,
+      "nPos": "22/56",
+      "meanDiff": -0.0539,
+      "dz": -0.19,
+      "p": 0.1672
+    },
+    "logTheta": {
+      "n": 56,
+      "nPos": "29/56",
+      "meanDiff": 0.0406,
+      "dz": 0.138,
+      "p": 0.3041
+    },
+    "logAlpha": {
+      "n": 56,
+      "nPos": "51/56",
+      "meanDiff": 0.5286,
+      "dz": 1.405,
+      "p": 0
+    },
+    "logBeta": {
+      "n": 56,
+      "nPos": "39/56",
+      "meanDiff": 0.101,
+      "dz": 0.352,
+      "p": 0.0124
+    },
+    "logGamma": {
+      "n": 56,
+      "nPos": "32/56",
+      "meanDiff": 0.0563,
+      "dz": 0.172,
+      "p": 0.2063
+    }
+  },
+  "bandPsiVsRest": {
+    "logDelta": {
+      "n": 56,
+      "nPos": "21/56",
+      "meanDiff": -0.0661,
+      "dz": -0.28,
+      "p": 0.0429
+    },
+    "logTheta": {
+      "n": 56,
+      "nPos": "7/56",
+      "meanDiff": -0.2333,
+      "dz": -0.917,
+      "p": 0
+    },
+    "logAlpha": {
+      "n": 56,
+      "nPos": "12/56",
+      "meanDiff": -0.262,
+      "dz": -0.664,
+      "p": 0
+    },
+    "logBeta": {
+      "n": 56,
+      "nPos": "23/56",
+      "meanDiff": -0.0596,
+      "dz": -0.244,
+      "p": 0.0698
+    },
+    "logGamma": {
+      "n": 56,
+      "nPos": "35/56",
+      "meanDiff": 0.1072,
+      "dz": 0.411,
+      "p": 0.0044
+    }
+  },
+  "bandVidVsRest": {
+    "logDelta": {
+      "n": 56,
+      "nPos": "27/56",
+      "meanDiff": -0.0122,
+      "dz": -0.061,
+      "p": 0.6643
+    },
+    "logTheta": {
+      "n": 56,
+      "nPos": "9/56",
+      "meanDiff": -0.2739,
+      "dz": -1.103,
+      "p": 0
+    },
+    "logAlpha": {
+      "n": 56,
+      "nPos": "0/56",
+      "meanDiff": -0.7906,
+      "dz": -2.632,
+      "p": 0
+    },
+    "logBeta": {
+      "n": 56,
+      "nPos": "7/56",
+      "meanDiff": -0.1606,
+      "dz": -0.75,
+      "p": 0
+    },
+    "logGamma": {
+      "n": 56,
+      "nPos": "27/56",
+      "meanDiff": 0.0509,
+      "dz": 0.256,
+      "p": 0.058
+    }
+  },
+  "effDimStats": {
+    "effDimGlobal: Video vs Rest": {
+      "n": 56,
+      "nPos": "50/56",
+      "meanDiff": 1.5871,
+      "dz": 1.251,
+      "p": 0
+    },
+    "effDimGlobal: Psilocybin vs Rest": {
+      "n": 56,
+      "nPos": "36/56",
+      "meanDiff": 0.6253,
+      "dz": 0.389,
+      "p": 0.0051
+    },
+    "effDimGlobal: Psilocybin vs Video": {
+      "n": 56,
+      "nPos": "17/56",
+      "meanDiff": -0.9618,
+      "dz": -0.566,
+      "p": 0
+    },
+    "effDimPost:   Video vs Rest": {
+      "n": 56,
+      "nPos": "47/56",
+      "meanDiff": 0.9794,
+      "dz": 1.134,
+      "p": 0
+    },
+    "effDimPost:   Psilocybin vs Rest": {
+      "n": 56,
+      "nPos": "35/56",
+      "meanDiff": 0.3532,
+      "dz": 0.409,
+      "p": 0.0041
+    },
+    "effDimPost:   Psilocybin vs Video": {
+      "n": 56,
+      "nPos": "16/56",
+      "meanDiff": -0.6262,
+      "dz": -0.668,
+      "p": 0
+    }
+  },
+  "zeroShot": {
+    "cosineSim": 0.9604,
+    "vidToPsi": {
+      "n": 56,
+      "nPos": "45/56",
+      "meanDiff": 0.462,
+      "dz": 0.927,
+      "p": 0
+    },
+    "psiToVid": {
+      "n": 56,
+      "nPos": "46/56",
+      "meanDiff": 0.462,
+      "dz": 0.978,
+      "p": 0
+    }
+  }
+}
