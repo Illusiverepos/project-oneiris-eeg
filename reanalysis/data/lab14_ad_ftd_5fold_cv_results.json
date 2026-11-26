@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-11-26T18:26:02.231Z",
+  "nHumans": 88,
+  "fiveFoldCV_BinaryClassification": {
+    "Dementia_AD_plus_FTD_vs_Controls": {
+      "nPos": 59,
+      "nNeg": 29,
+      "outOfSampleAUC": 0.7849,
+      "sensitivityPct": 76.3,
+      "specificityPct": 79.3,
+      "permP": 0.0005
+    },
+    "Alzheimers_AD_vs_Controls": {
+      "nPos": 36,
+      "nNeg": 29,
+      "outOfSampleAUC": 0.7672,
+      "sensitivityPct": 72.2,
+      "specificityPct": 82.8,
+      "permP": 0.0005
+    },
+    "Frontotemporal_FTD_vs_Controls": {
+      "nPos": 23,
+      "nNeg": 29,
+      "outOfSampleAUC": 0.7916,
+      "sensitivityPct": 78.3,
+      "specificityPct": 69,
+      "permP": 0.001
+    },
+    "Differential_FTD_vs_AD": {
+      "nPos": 23,
+      "nNeg": 36,
+      "outOfSampleAUC": 0.5954,
+      "sensitivityPct": 43.5,
+      "specificityPct": 83.3,
+      "permP": 0.12194
+    }
+  },
+  "fiveFoldCV_MMSE_Prediction": {
+    "n": 88,
+    "outOfSampleR": 0.286,
+    "outOfSampleP": 0.005642,
+    "MAE_MMSE_points": 4.62
+  }
+}

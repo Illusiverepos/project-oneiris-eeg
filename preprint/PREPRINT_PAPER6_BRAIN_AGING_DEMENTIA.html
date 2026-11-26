@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two-Electrode Forehead EEG Screening of Biological Brain Aging, Alzheimer's Disease, and Frontotemporal Dementia via Wiener–Khinchin Invariants</title>
+<style>
+  body { font-family: Georgia, "Times New Roman", serif; line-height: 1.56; color: #111827; max-width: 820px; margin: 36px auto; padding: 0 24px; background: #fff; }
+  h1 { font-size: 1.62rem; line-height: 1.25; margin-bottom: 10px; color: #0f172a; }
+  h2 { font-size: 1.2rem; margin-top: 24px; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; color: #0f172a; }
+  .meta { font-family: system-ui, -apple-system, sans-serif; font-size: 0.88rem; color: #475569; margin-bottom: 18px; }
+  .abstract { background: #f8fafc; border-left: 4px solid #0ea5e9; padding: 14px 18px; margin: 16px 0; font-size: 0.95rem; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-family: system-ui, -apple-system, sans-serif; font-size: 0.82rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 6px 8px; text-align: center; }
+  th { background: #f1f5f9; font-weight: 700; }
+  td:first-child, th:first-child { text-align: left; }
+  code { font-family: Consolas, ui-monospace, monospace; font-size: 0.88em; background: #f1f5f9; padding: 1px 4px; border-radius: 4px; }
+  @media print { body { margin: 12mm; max-width: none; } }
+</style>
+</head>
+<body>
+<h1>Two-Electrode Forehead EEG Screening of Biological Brain Aging, Alzheimer's Disease, and Frontotemporal Dementia via Wiener–Khinchin Invariants</h1>
+<div class="meta">
+  <strong>Author:</strong> Austin Rutan (Independent Researcher, Project ONEIRIS) &middot; <code>rutanaus000@gmail.com</code><br>
+  <strong>Preprint Series:</strong> Project ONEIRIS — Paper 6 (November 2026) &middot; <strong>Code:</strong> <code>https://github.com/Illusiverepos/project-oneiris-eeg</code> (Non-Commercial Academic &amp; Research License)
+</div>
+
+<div class="abstract">
+  <strong>Abstract.</strong> Longitudinal monitoring of biological brain aging and early neurodegenerative slowing remains bottlenecked by expensive neuroimaging and 64-channel clinical EEG rigs because single dry forehead electrodes suffer from skull and impedance noise. Here we validate a zero-dependency <strong>two-electrode forehead EEG biomarker suite</strong> (<code>oneiris_wearable_sdk.js</code>) anchored on the <strong>Wiener–Khinchin Violation Index</strong> (<code>&Delta;_WK = slopeBB + 2&middot;DFA_&alpha; &minus; 1</code>) across <strong>two independent international cohorts (<code>N = 187</code> unique adults, Labs #13–#14)</strong>. In <strong>Cohort 1</strong> (OpenNeuro <code>ds005555</code> BOAS, 127 overnight dry-forehead <code>AF7/AF8</code> nights deduplicated to <code>N = 99</code> unique adults, ages 18–82), raw <code>REM slopeBB</code> carried zero aging signal (<code>p = 0.966</code>), whereas <strong><code>REM &Delta;_WK</code></strong> tracked chronological age controlling for Sex and BMI at <strong><code>r_partial = &minus;0.2969, p = 0.0022</code></strong> (<code>Wake DFA &alpha; p = 0.00024</code>; <code>N3 slopeBB &rho; = +0.395, p = 0.00036</code>), and a <strong>100% PSG-free dual-channel Brain-Age Clock</strong> achieved strictly out-of-sample 5-fold Ridge CV <strong><code>r = 0.4032, p = 1.4 &times; 10<sup>&minus;5</sup></code></strong> (<code>MAE = 12.21</code> yrs). In <strong>Cohort 2</strong> (OpenNeuro <code>ds004504</code>, <code>N = 88</code> clinical humans: 36 AD, 23 FTD, 29 Controls), just <strong>60 seconds of eyes-closed <code>Fp1/Fp2</code> forehead EEG</strong> separated AD (<code>AUC = 0.804, d = 1.205, p &lt; 10<sup>&minus;6</sup></code>) and FTD (<code>AUC = 0.826, d = 1.298, p = 1.1 &times; 10<sup>&minus;5</sup></code>) via <code>Theta/Alpha Ratio</code>, tracked clinical <code>MMSE</code> (<code>r = &minus;0.392, p = 7.6 &times; 10<sup>&minus;5</sup></code>), and revealed a <strong>clinical double dissociation</strong>: FTD selectively broke frontal <code>&Delta;_WK</code> (<code>d = +0.753, p = 0.0086</code>) while sparing <code>betaFrac</code> (<code>p = 0.471</code>), whereas AD selectively lost <code>betaFrac</code> (<code>d = &minus;0.838, p = 0.00093</code>) while sparing <code>&Delta;_WK</code> (<code>p = 0.526</code>). Strictly out-of-sample 5-fold CV achieved <strong><code>AUC = 0.7849</code> (76.3% sensitivity, 79.3% specificity, permutation <code>p = 0.0005</code>)</strong> for Dementia vs. Controls and out-of-sample <code>MMSE</code> prediction (<code>p = 0.0056</code>), while honestly showing 60-second 2-electrode <code>FTD vs. AD</code> subtype classification (<code>AUC = 0.595, p = 0.122</code>) is not yet sufficient for clinical differential diagnosis alone.
+</div>
+
+<h2>1. Cohort 1: 100% PSG-Free Forehead Brain-Age Clock (N = 99 Unique Adults, Ages 18–82)</h2>
+<table>
+  <thead><tr><th>2-Electrode Forehead Metric (AF7/AF8, BOAS)</th><th>Test Type</th><th>r / &rho;</th><th>Exact p-value</th><th>Key Finding</th></tr></thead>
+  <tbody>
+    <tr><td>REM <code>slopeBB</code> (Raw)</td><td>Partial r (Sex/BMI)</td><td>+0.008</td><td>0.937</td><td>Buried in electrode variance</td></tr>
+    <tr><td><strong>REM <code>&Delta;_WK</code> (<code>slopeBB + 2&middot;DFA &minus; 1</code>)</strong></td><td>Partial r (Sex/BMI)</td><td><strong>&minus;0.2969</strong></td><td><strong>0.0022</strong></td><td>Cancels noise, reveals aging</td></tr>
+    <tr><td><strong>Wake <code>DFA &alpha;</code></strong></td><td>Partial r (Sex/BMI)</td><td><strong>&minus;0.3493</strong></td><td><strong>0.00024</strong></td><td>Strongest waking invariant</td></tr>
+    <tr><td><strong>Deep N3 <code>slopeBB</code> (N = 71)</strong></td><td>Spearman &rho;</td><td><strong>+0.3947</strong></td><td><strong>0.00036</strong></td><td>Slow-wave 1/f flattening</td></tr>
+    <tr><td><strong>100% PSG-Free Dual-Ch Clock</strong></td><td>5-Fold Ridge CV</td><td><strong>+0.4032 (R&sup2;=16.3%)</strong></td><td><strong>1.4 &times; 10<sup>&minus;5</sup></strong></td><td>Zero PSG labels (MAE 12.21 yrs)</td></tr>
+    <tr><td>2-Electrode + PSG Stage Proportions</td><td>5-Fold Ridge CV</td><td>+0.4211 (R&sup2;=17.7%)</td><td>4.8 &times; 10<sup>&minus;6</sup></td><td>MAE 11.83 yrs</td></tr>
+  </tbody>
+</table>
+
+<h2>2. Cohort 2: 60-Second 2-Electrode Clinical Dementia Audit (N = 88, ds004504)</h2>
+<table>
+  <thead><tr><th>Forehead Metric (Fp1/Fp2, 60 s)</th><th>AD (n=36) vs. CN (n=29)</th><th>FTD (n=23) vs. CN (n=29)</th><th>MMSE (All 88)</th></tr></thead>
+  <tbody>
+    <tr><td><strong><code>Theta / Alpha Ratio</code></strong></td><td><strong>d=+1.205, AUC=0.804, p&lt;10<sup>&minus;6</sup></strong></td><td><strong>d=+1.298, AUC=0.826, p=1.1&times;10<sup>&minus;5</sup></strong></td><td><strong>r=&minus;0.392, p=7.6&times;10<sup>&minus;5</sup></strong></td></tr>
+    <tr><td><code>Alpha Fraction</code></td><td>d=&minus;0.760, AUC=0.768, p=0.0027</td><td><strong>d=&minus;1.047, AUC=0.795, p=5.3&times;10<sup>&minus;5</sup></strong></td><td>r=+0.302, p=0.0034</td></tr>
+    <tr><td><strong><code>Wiener–Khinchin &Delta;_WK</code></strong></td><td>p=0.526 <em>(Spared)</em></td><td><strong>d=+0.753, AUC=0.709, p=0.0086</strong> <em>(Broken)</em></td><td>p=0.637</td></tr>
+    <tr><td><strong><code>Beta Fraction</code></strong></td><td><strong>d=&minus;0.838, AUC=0.767, p=0.00093</strong> <em>(Lost)</em></td><td>p=0.471 <em>(Spared)</em></td><td>p=0.109</td></tr>
+  </tbody>
+</table>
+
+<table>
+  <thead><tr><th>Strictly Out-of-Sample 5-Fold CV Task (60 s, Fp1/Fp2)</th><th>Out-of-Sample AUC</th><th>Sensitivity</th><th>Specificity</th><th>Perm p (2,000)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Dementia (AD+FTD, n=59) vs. Controls (n=29)</strong></td><td><strong>0.7849</strong></td><td>76.3%</td><td><strong>79.3%</strong></td><td><strong>0.0005</strong></td></tr>
+    <tr><td><strong>Alzheimer's (AD, n=36) vs. Controls (n=29)</strong></td><td><strong>0.7672</strong></td><td>72.2%</td><td><strong>82.8%</strong></td><td><strong>0.0005</strong></td></tr>
+    <tr><td><strong>Frontotemporal (FTD, n=23) vs. Controls (n=29)</strong></td><td><strong>0.7916</strong></td><td><strong>78.3%</strong></td><td>69.0%</td><td><strong>0.0010</strong></td></tr>
+    <tr><td><em>Differential FTD (n=23) vs. AD (n=36)</em></td><td><em>0.5954 (Honest Null)</em></td><td><em>43.5%</em></td><td><em>83.3%</em></td><td><em>0.1219</em></td></tr>
+  </tbody>
+</table>
+<p>5-fold out-of-sample <code>MMSE</code> cognitive score prediction across all 88 humans reached <strong><code>r = 0.2860, p = 0.0056</code></strong> (<code>MAE = 4.62</code> MMSE points).</p>
+
+<h2>3. Non-Clinical Research Notice &amp; Public Data</h2>
+<p>All Project ONEIRIS software and SDK modules (<code>sdk/oneiris_wearable_sdk.js</code>) are non-commercial open-source research prototypes and are not medical devices or substitutes for clinical neurology or neuroimaging. Code &amp; derived results: <code>https://github.com/Illusiverepos/project-oneiris-eeg</code>. Raw datasets: OpenNeuro <code>ds005555</code> (BOAS) and <code>ds004504</code> (Aristotle Univ. of Thessaloniki).</p>
+</body>
+</html>

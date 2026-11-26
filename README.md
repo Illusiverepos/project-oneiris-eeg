@@ -3,11 +3,11 @@
 **Author:** Austin Rutan (`rutanaus000@gmail.com`)  
 **License:** Free for Academic, University, VA & Non-Commercial Research ([LICENSE](LICENSE)) · **Enterprise / Hardware SDK Licensing:** [COMMERCIAL_LICENSING.md](COMMERCIAL_LICENSING.md)
 
-Project ONEIRIS is a zero-dependency, 100% reproducible neuroscience and signal-physics suite spanning **13 independent human EEG laboratories**, **985.3 hours (126 full nights)** of real overnight 2-channel forehead wearable sleep paired with 3-expert clinical PSG, **22,415 DreamBank narratives**, **5 machine-checked Lean 4 safety proofs**, and a live browser-based **Muse S / Muse 2 Web Bluetooth** closed-loop workbench.
+Project ONEIRIS is a zero-dependency, 100% reproducible neuroscience and signal-physics suite spanning **14 independent human EEG laboratories**, **985.3 hours (126 full nights)** of real overnight 2-channel forehead wearable sleep paired with 3-expert clinical PSG, **88 clinical Alzheimer's / FTD / Control patients (`ds004504`)**, **22,415 DreamBank narratives**, **5 machine-checked Lean 4 safety proofs**, a **1-file evaluation SDK (`sdk/oneiris_wearable_sdk.js`)**, and a live browser-based **Muse S / Muse 2 Web Bluetooth** closed-loop workbench.
 
 ---
 
-## Headline Empirical Results (13 Human Labs & 985.3 Hours of Wearable Sleep)
+## Headline Empirical Results (14 Human Labs, 985.3h Wearable Sleep & 88 Clinical Dementia Patients)
 
 | Breakthrough | Empirical Proof | Reproducible Script |
 | :--- | :--- | :--- |
@@ -16,6 +16,7 @@ Project ONEIRIS is a zero-dependency, 100% reproducible neuroscience and signal-
 | **2-Ch Forehead-to-Clinical Gromov Isometry** | Dry `AF7/AF8` forehead headband (`126` nights, `985.3` hrs, OpenNeuro `ds005555` BOAS) preserves **`r = 0.9811`** (`p = 0.0083`, **`5/5` unsupervised stage recovery**) vs. multi-channel clinical EEG & **`83.75%`** Fisher–Rao geodesic efficiency. | `reanalysis/audit_metric_invariance_13labs.js` |
 | **Overnight Anti-Startle Wearable Gate (`v2 Δ_WK`)** | Across **126 real human nights (`985.3` hrs, ages `18–82`)**, cuts Wake-stage startle cues by **`92.77%`** (**`t = 9.79, p < 10⁻¹⁶`**, `78/126` nights zero Wake cues) and Deep N3 intrusions by **`96.30%`** (`123/126` nights zero N3 cues), with zero age/sex bias (`93.5%–96.9%` across all groups). | `reanalysis/audit_lab13_boas_128nights_stress_test.js` |
 | **100% PSG-Free Forehead Brain-Age Clock** | Across **`99` unique humans (`18–82` yrs)** with **zero clinical PSG labels**, dual-channel `AF7+AF8` overnight quantiles predict age strictly out-of-sample at **`r = 0.4032, p = 1.4 × 10⁻⁵`** (`MAE = 12.21` yrs; `REM Δ_WK` Sex/BMI-controlled **`p = 0.0022`** vs. raw `REM slopeBB p = 0.966`). | `reanalysis/audit_wearable_brain_age_clock_v3_dual_ch.js` |
+| **Lab #14 Clinical AD / FTD Forehead Screening (`N = 88`)** | From **60 s of eyes-closed 2-electrode forehead EEG (`Fp1/Fp2`)**, 5-fold CV separates Dementia vs. Controls at **`AUC = 0.7849` (`p = 0.0005`, `76.3%` sens / `79.3%` spec)**, tracks clinical `MMSE` (`r = -0.392, p = 7.6 × 10⁻⁵`), and reveals an **`FTD Δ_WK` (`p = 0.0086`) vs. `AD Beta` (`p = 0.00093`)** double dissociation. | `reanalysis/audit_lab14_ad_ftd_5fold_cv.js` |
 | **Clinical PTSD Two-Stage Recovery (`n = 20` Paired)** | DSM-5 Nightmares **`-75%`** & Insomnia **`-67%`** ($p < 0.0001$); Day-1 30-min `Right_Frontal` 1/f steepening in **`9/10`** responders ($p = 0.014$); Stage-2 `Theta wPLI` re-coupling (**`8/10, p = 0.0244`** vs. MI control $p = 0.752$). | `reanalysis/audit_lab11_ptsd_deep_dynamics.js` |
 | **Formal Safety Proofs (Lean 4) & Optimal Transport** | **5 Lean 4 theorems** (`256/256` truth table + `10,000` adversarial EEG frames, **`0` violations**); **`28.9×`** Wasserstein-2 startle detour penalty; **`3,000`-trial Nonlinear SDE** (`0.0%` startles, `103×` Q4 remission). | `verification/OneirisSafetyProof.lean` |
 | **Post-COGITATE (2025) & `22,415`-Dream GWOT** | Resolves IIT vs. GNWT via Wiener–Khinchin criticality + 3-band binding hierarchy (`Alpha wPLI` `20/28, p = 0.029` acute extinction; `Theta wPLI` `p = 0.0244` chronic PTSD; `postHFD` `12/14, p = 0.0129` Lucid REM); GWOT shows PTSD collapses `Time_Memory` & `Threat_Fear` inward while Lucid space orthogonalizes (`r = -0.044`). | `reanalysis/audit_gwot_qualia_geometry_dreambank.js` |
@@ -29,6 +30,7 @@ Project ONEIRIS is a zero-dependency, 100% reproducible neuroscience and signal-
 3. **Paper 3:** [PREPRINT_PAPER3_PTSD.md](preprint/PREPRINT_PAPER3_PTSD.md) / [PREPRINT_PAPER3_PTSD.html](preprint/PREPRINT_PAPER3_PTSD.html) — Clinical PTSD Two-Stage Cortical Recovery, Human Fear Extinction (`ds007114`), and Anti-Startle `irt-tmr` Architecture.
 4. **Paper 4:** [PREPRINT_PAPER4.md](preprint/PREPRINT_PAPER4.md) / [PREPRINT_PAPER4.html](preprint/PREPRINT_PAPER4.html) — Universal `+50°` Plasticity Vector Across 12 Labs, `Theta wPLI`, Dual-Dream Bridge & 160-Session Closed-Loop Benchmark.
 5. **Paper 5:** [PREPRINT_PAPER5_WIENER_KHINCHIN_WEARABLE.md](preprint/PREPRINT_PAPER5_WIENER_KHINCHIN_WEARABLE.md) / [PDF](preprint/PREPRINT_PAPER5_WIENER_KHINCHIN_WEARABLE.pdf) — *The Wiener–Khinchin Geodesic of Human Sleep and Consciousness: 985-Hour Wearable Validation, PSG-Free Brain-Age Tracking, and Formal Safety Verification*.
+6. **Paper 6:** [PREPRINT_PAPER6_BRAIN_AGING_DEMENTIA.md](preprint/PREPRINT_PAPER6_BRAIN_AGING_DEMENTIA.md) / [PDF](preprint/PREPRINT_PAPER6_BRAIN_AGING_DEMENTIA.pdf) — *Two-Electrode Forehead EEG Screening of Biological Brain Aging, Alzheimer's Disease, and Frontotemporal Dementia via Wiener–Khinchin Invariants* (`N = 187` unique humans across Labs #13 & #14).
 
 ---
 
