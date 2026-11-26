@@ -61,6 +61,10 @@
           <option value="rain">Soft Rain (Cozy Cabin / Night City)</option>
         </select>
       </label>
+      <label style="flex-direction:row;align-items:center;gap:6px;margin-top:16px;cursor:pointer;">
+        <input id="hapticOn" type="checkbox" checked style="accent-color:var(--emerald);width:16px;height:16px;">
+        <span>Haptic Pulse (Android 8.77&times; bodily cue)</span>
+      </label>
       <button onclick="playTLRChime()">Test Chime + World-Seed</button>
     </div>
     <p style="font-size:0.84rem;color:var(--muted);margin:6px 0 0;">
@@ -190,6 +194,11 @@ function playTLRChime(gainOverride) {
     osc.connect(g); g.connect(ctx.destination);
     osc.start(t0); osc.stop(t0 + toneDur + 0.02);
   });
+
+  // Optional gentle 3-tap bodily haptic pulse (Android Chrome; exploits 8.77x embodied lucidity shortcut)
+  if (document.getElementById('hapticOn')?.checked && navigator.vibrate) {
+    navigator.vibrate([70, 140, 70, 140, 90]);
+  }
 
   // Optional 6-second whisper-quiet World-Seed ambient texture (synthesized filtered noise)
   const seed = document.getElementById('worldSeed')?.value || 'none';

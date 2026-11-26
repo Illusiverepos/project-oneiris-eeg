@@ -74,7 +74,33 @@ function windowMetrics(sig, sfreq = 200, nfft = 256) {
     slopeBB: den > 0 ? num / den : 0,
     deltaFrac: deltaP / Math.max(1e-24, totalP),
     alphaFrac: alphaP / Math.max(1e-24, totalP),
+    dfa: fastDFA(sig),
   };
+}
+
+/** Fast 2-second DFA alpha for real-time CEWR early-warning detection (Report 45) */
+function fastDFA(sig) {
+  const n = sig.length;
+  let mean = 0; for (let i = 0; i < n; i++) mean += sig[i]; mean /= n;
+  const y = new Float64Array(n); let cum = 0;
+  for (let i = 0; i < n; i++) { cum += sig[i] - mean; y[i] = cum; }
+  const scales = [10, 16, 25, 40, 64, 100].filter((s) => s * 4 <= n);
+  const lx = [], ly = [];
+  for (const s of scales) {
+    const nWin = Math.floor(n / s); let f2 = 0; const mx = (s - 1) / 2;
+    let varX = 0; for (let k = 0; k < s; k++) varX += (k - mx) ** 2;
+    for (let w = 0; w < nWin; w++) {
+      const off = w * s; let my = 0; for (let k = 0; k < s; k++) my += y[off + k]; my /= s;
+      let cov = 0; for (let k = 0; k < s; k++) cov += (k - mx) * (y[off + k] - my);
+      const sl = cov / varX, ic = my - sl * mx;
+      for (let k = 0; k < s; k++) { const r = y[off + k] - (ic + sl * k); f2 += r * r; }
+    }
+    const rms = Math.sqrt(f2 / (nWin * s));
+    if (rms > 0) { lx.push(Math.log10(s)); ly.push(Math.log10(rms)); }
+  }
+  let mx = 0, my = 0; for (let i = 0; i < lx.length; i++) { mx += lx[i]; my += ly[i]; } mx /= lx.length; my /= lx.length;
+  let num = 0, den = 0; for (let i = 0; i < lx.length; i++) { const dx = lx[i] - mx; num += dx * (ly[i] - my); den += dx * dx; }
+  return den > 0 ? num / den : 1.0;
 }
 
 // ======================== GOLDILOCKS CLOSED-LOOP CONTROLLER ========================
@@ -90,6 +116,7 @@ class GoldilocksCueController {
     this.histPostSlp = [];
     this.histRFSlp = [];
     this.histDelta = [];
+    this.histDFA = [];
     this.maxHist = 120;
 
     this.lastCueSec = -999;
@@ -117,14 +144,17 @@ class GoldilocksCueController {
 
     const pSt = this._stats(this.histPostSlp);
     const rfSt = this._stats(this.histRFSlp);
+    const dfaSt = this._stats(this.histDFA);
     const zPost = (pM.slopeBB - pSt.mean) / pSt.sd;
     const zRF = (rfM.slopeBB - rfSt.mean) / rfSt.sd;
+    const zDFA = (pM.dfa - dfaSt.mean) / dfaSt.sd;
 
     // Update rolling baseline only when not contaminated by EOG artifact
     if (!eogArtifact) {
       this.histPostSlp.push(pM.slopeBB); if (this.histPostSlp.length > this.maxHist) this.histPostSlp.shift();
       this.histRFSlp.push(rfM.slopeBB);  if (this.histRFSlp.length > this.maxHist) this.histRFSlp.shift();
       this.histDelta.push(pM.deltaFrac); if (this.histDelta.length > this.maxHist) this.histDelta.shift();
+      this.histDFA.push(pM.dfa);         if (this.histDFA.length > this.maxHist) this.histDFA.shift();
     }
 
     let state = 'WARMUP';
@@ -150,9 +180,9 @@ class GoldilocksCueController {
       state = 'LUCID_CORRIDOR';
       action = 'HOLD_SILENT';
       this.lucidHoldSec += 0.5;
-    } else if (pM.deltaFrac <= 0.45 && zPost >= -0.25 && zRF < 0.65) {
-      // Prime REM / open-gate target: posterior rendering active, Right_Frontal still offline
-      state = 'REM_TARGET';
+    } else if (pM.deltaFrac <= 0.45 && (zPost >= -0.25 || zDFA <= -0.65) && zRF < 0.65) {
+      // Prime REM / open-gate target OR CEWR DFA-alpha early-warning release (Report 45)
+      state = zPost >= -0.25 ? 'REM_TARGET' : 'CEWR_DFA_EARLY_GATE';
       if (tSec - this.lastCueSec >= this.minCueIntervalSec) {
         action = 'FIRE_TLR_CHIME';
         this.lastCueSec = tSec;
@@ -167,8 +197,10 @@ class GoldilocksCueController {
       state, action,
       postSlope: Number(pM.slopeBB.toFixed(3)),
       rfSlope: Number(rfM.slopeBB.toFixed(3)),
+      postDFA: Number(pM.dfa.toFixed(3)),
       zPost: Number(zPost.toFixed(2)),
       zRF: Number(zRF.toFixed(2)),
+      zDFA: Number(zDFA.toFixed(2)),
       deltaFrac: Number(pM.deltaFrac.toFixed(2)),
       alphaFrac: Number(pM.alphaFrac.toFixed(2)),
       cueGain: Number(this.cueGain.toFixed(2)),
