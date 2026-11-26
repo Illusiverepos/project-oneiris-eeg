@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-11-26T07:05:40.164Z",
+  "dataset": "DreamBank Full Corpus (N = 22,415 human dreams, 12x12 Yoneda-Lemma PPMI Relational Dissimilarity)",
+  "regimeCounts": {
+    "nonLucid": 22036,
+    "lucid": 69,
+    "ptsdVet": 98,
+    "nightmare": 372
+  },
+  "gwotComparisons": {
+    "NonLucid_vs_Lucid": {
+      "gwDist": 0.2674,
+      "unsupervisedTop1": "1/12",
+      "unsupervisedTop2": "2/12",
+      "mantelR": 0.2498,
+      "permP": 0.0779
+    },
+    "NonLucid_vs_Nightmare": {
+      "gwDist": 0.2233,
+      "unsupervisedTop1": "2/12",
+      "unsupervisedTop2": "4/12",
+      "mantelR": 0.553,
+      "permP": 0.007
+    },
+    "NonLucid_vs_PTSD_Vet": {
+      "gwDist": 0.2207,
+      "unsupervisedTop1": "2/12",
+      "unsupervisedTop2": "3/12",
+      "mantelR": 0.4602,
+      "permP": 0.004
+    },
+    "Lucid_vs_PTSD_Vet": {
+      "gwDist": 0.2934,
+      "unsupervisedTop1": "1/12",
+      "unsupervisedTop2": "2/12",
+      "mantelR": -0.044,
+      "permP": 0.6344
+    }
+  },
+  "topWarpedDomains_Lucid_vs_NonLucid": [
+    {
+      "domain": "Time_Memory",
+      "rmsWarp": 0.4837,
+      "meanShift": 0.0949
+    },
+    {
+      "domain": "Math_Numbers",
+      "rmsWarp": 0.4758,
+      "meanShift": 0.1836
+    },
+    {
+      "domain": "Symbolic_Txt",
+      "rmsWarp": 0.4549,
+      "meanShift": -0.311
+    },
+    {
+      "domain": "Light_Color",
+      "rmsWarp": 0.4438,
+      "meanShift": 0.2691
+    },
+    {
+      "domain": "Space_Arch",
+      "rmsWarp": 0.4067,
+      "meanShift": 0.1978
+    },
+    {
+      "domain": "Threat_Fear",
+      "rmsWarp": 0.4057,
+      "meanShift": -0.296
+    }
+  ],
+  "topWarpedDomains_PTSD_vs_NonLucid": [
+    {
+      "domain": "Time_Memory",
+      "rmsWarp": 0.3576,
+      "meanShift": -0.1562
+    },
+    {
+      "domain": "Water_Nature",
+      "rmsWarp": 0.307,
+      "meanShift": -0.1871
+    },
+    {
+      "domain": "Threat_Fear",
+      "rmsWarp": 0.2966,
+      "meanShift": -0.1696
+    },
+    {
+      "domain": "Space_Arch",
+      "rmsWarp": 0.2917,
+      "meanShift": 0.1047
+    },
+    {
+      "domain": "Symbolic_Txt",
+      "rmsWarp": 0.2854,
+      "meanShift": -0.0688
+    },
+    {
+      "domain": "Meta_Lucid",
+      "rmsWarp": 0.2832,
+      "meanShift": 0.1231
+    }
+  ]
+}
