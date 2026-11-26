@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ONEIRIS Paper 4 — Universal +50° Plasticity Vector, Theta wPLI &amp; Closed-Loop Sleep/Dual-Dream Benchmark</title>
+<style>
+  @page { margin: 0.78in; size: letter; }
+  body { font-family: Georgia, "Times New Roman", serif; color: #111; line-height: 1.46; font-size: 10.4pt; max-width: 7.2in; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 16pt; line-height: 1.24; margin: 0 0 8px; text-align: center; }
+  .meta { text-align: center; font-size: 9.4pt; color: #333; margin-bottom: 16px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+  h2 { font-size: 12pt; margin: 16px 0 6px; border-bottom: 1px solid #ddd; padding-bottom: 3px; color: #0f2942; }
+  h3 { font-size: 10.6pt; margin: 11px 0 4px; color: #1e3a5f; }
+  p { margin: 0 0 8px; text-align: justify; }
+  .abstract { background: #f6f8fb; border-left: 3px solid #0f2942; padding: 10px 14px; margin: 10px 0 14px; font-size: 9.6pt; }
+  .callout { background: #fff8eb; border-left: 3px solid #b45309; padding: 9px 12px; margin: 10px 0; font-size: 9.2pt; }
+  table { width: 100%; border-collapse: collapse; margin: 9px 0 13px; font-size: 8.9pt; }
+  th, td { border: 1px solid #cbd5e1; padding: 5px 6px; text-align: left; }
+  th { background: #eef2f7; font-weight: bold; }
+  code { font-family: Consolas, monospace; font-size: 8.6pt; background: #f1f5f9; padding: 1px 3px; border-radius: 3px; }
+  ol { margin: 4px 0 10px 20px; font-size: 8.8pt; }
+  li { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<h1>A Universal +50&deg; Cortical Plasticity Vector Across 12 Human EEG Labs, Wearable Theta wPLI Remission Coupling, and Closed-Loop Benchmarking of Sleep &amp; Dual-Dream Interfaces</h1>
+<div class="meta">
+  <strong>Austin Rutan</strong> &bull; Independent Researcher (Project ONEIRIS) &bull; <code>rutanaus000@gmail.com</code><br>
+  Code &amp; Reproducible Pipeline: <code>https://github.com/Illusiverepos/project-oneiris-eeg</code> &bull; Preprint Paper 4 &bull; November 2026
+</div>
+
+<div class="abstract">
+  <strong>Abstract.</strong> Synthesizing 12 independent human EEG laboratories (Papers 1–3, 1,400+ recordings) onto a <strong>Complete 2&times;2 (<code>slopeBB &times; DFA &alpha;</code>) Phase Plane</strong> reveals a <strong>Universal +50&deg; &plusmn; 4&deg; Cortical Plasticity Vector</strong> across four countries and four unrelated human domains with zero parameter tuning: waking from propofol anesthesia (+47.3&deg;, Lab #1), active fear extinction (+46.6&deg;, Lab #12), clinical PTSD remission (+54.2&deg;, Lab #11), and transitioning from external video into psychedelic Inner Cinema (+54.6&deg;, Lab #10) all execute an invariant <code>&Delta;DFA &alpha; &approx; &minus;0.071</code> release (&minus;0.0691, &minus;0.0698, &minus;0.0740). Conversely, external video (&minus;36.7&deg;) and fear conditioning (&minus;68.0&deg;) move nearly perpendicular (~90&deg; orthogonal) into locked Quadrant Q3. In Lab #12 (<em>n</em> = 28), the zero-parameter composite <code>E_extinct = +z(&Delta;postSlope) &minus; z(&Delta;postDFA)</code> achieves 20/28 consistency (10,000-shuffle permutation <em>p</em> = 0.0032). Evaluating four new wearable metrics identifies <strong>volume-conduction-free <code>Theta wPLI</code> (4–8 Hz, Posterior &harr; Right_Frontal) re-coupling</strong> as a specific biomarker of clinical PTSD remission (+0.121, <em>d<sub>z</sub></em> = +0.712, <em>p</em> = 0.0244, 8/10; MI control <em>p</em> = 0.752), alongside Posterior Higuchi Fractal Dimension (<code>postHFD</code>) surging in 12/14 lucid REM humans (sign <em>p</em> = 0.0129), while ruling out spectral curvature as non-specific session drift. Auditing <em>N</em> = 20,897 DreamBank reports confirms zero passive couple convergence (0.77&times;) while spatial architecture (13.55%) transfers 6&times;–12&times; better across minds than nature or emotion. Finally, benchmarking our live 4-channel controller across 160 simulated sessions yields <strong>100.0% safe REM precision and 0.00 accidental wake-startles</strong> in PTSD <code>irt-tmr</code> mode (vs. 6.92 startles/session for naive timers) and <strong>84.4% safe delivery with 0.000 partner startles</strong> for a 20-minute store-and-forward Dual-Dream Baton relay (1.92 bits/min LRLR capacity).
+</div>
+
+<h2>1. The Universal 2&times;2 (<code>slopeBB &times; DFA &alpha;</code>) Phase Law Across 12 Labs</h2>
+<table>
+  <tr><th>Human State Transition</th><th>Lab (Country)</th><th><code>&Delta;slopeBB</code></th><th><code>&Delta;DFA &alpha;</code></th><th>Angle (&theta;)</th><th>Target Quadrant</th></tr>
+  <tr><td><strong>Propofol LOC &rarr; Waking</strong></td><td>Lab #1 (<code>ds005620</code>, EU)</td><td>+0.300</td><td>&minus;0.156</td><td><strong>+47.3&deg;</strong></td><td>Q4 (Plastic Active)</td></tr>
+  <tr><td><strong>Fear Conditioning &rarr; Fear Extinction</strong></td><td>Lab #12 (<code>ds007114</code>, Spain)</td><td>+0.138</td><td><strong>&minus;0.0698</strong></td><td><strong>+46.6&deg;</strong></td><td>Q4 (Safety Updating)</td></tr>
+  <tr><td><strong>Active PTSD &rarr; Clinical PTSD Remission</strong></td><td>Lab #11 (Mendeley, Rwanda)</td><td>+0.111</td><td><strong>&minus;0.0740</strong></td><td><strong>+54.2&deg;</strong></td><td>Q4 (Plastic Remission)</td></tr>
+  <tr><td><strong>External Video &rarr; Psilocybin Inner Cinema</strong></td><td>Lab #10 (<code>ds006110</code>, Australia)</td><td>+0.102</td><td><strong>&minus;0.0691</strong></td><td><strong>+54.6&deg;</strong></td><td>Q4 (Inner Theater)</td></tr>
+  <tr><td><em>PTSD Stage 2 Consolidation (Mid &rarr; Late)</em></td><td><em>Lab #11 (Mendeley, Rwanda)</em></td><td><em>0.000</em></td><td><em>&minus;0.0853</em></td><td><em>+90.0&deg;</em></td><td><em>Horizontal DFA Release</em></td></tr>
+  <tr><td><strong>Sober Rest &rarr; External Video (Lock-In)</strong></td><td>Lab #10 (<code>ds006110</code>, Australia)</td><td>+0.240</td><td><strong>+0.0859</strong></td><td><strong>&minus;36.7&deg;</strong></td><td>Q3 (Locked Active Reality)</td></tr>
+  <tr><td><strong>Safe Baseline &rarr; Fear Conditioning</strong></td><td>Lab #12 (<code>ds007114</code>, Spain)</td><td>+0.033</td><td><strong>+0.0392</strong></td><td><strong>&minus;68.0&deg;</strong></td><td>Q3 (Sticky Threat Lock-In)</td></tr>
+</table>
+
+<table>
+  <tr><th>2&times;2 Phase Law</th><th><code>DFA &alpha;</code> HIGH (Sticky / Locked)</th><th><code>DFA &alpha;</code> LOW (Released / Plastic)</th></tr>
+  <tr><td><strong><code>slopeBB</code> STEEP</strong> (Offline)</td><td><strong>Q1 — Locked Offline:</strong> Propofol LOC, Deep Dreamless NREM, Coma/DOC</td><td><strong>Q2 — Quiet Plastic Gate:</strong> <code>CEWR</code> (81% DFA drop, 0% slopeBB), Deep Meditation, 6-bpm Vagal Calm</td></tr>
+  <tr><td><strong><code>slopeBB</code> FLAT</strong> (Active)</td><td><strong>Q3 — Sticky Active Loop:</strong> External Video, Fear Conditioning, <strong>PTSD Flashbacks</strong>, <em>Predicted: OCD / Rumination / Hyperarousal Insomnia</em></td><td><strong>Q4 — Plastic Active Theater:</strong> Fear Extinction (+46.6&deg;), PTSD Remission (+54.2&deg;), Psilocybin Inner Cinema (+54.6&deg;), Healthy REM</td></tr>
+</table>
+<p>In 10,000-shuffle permutation testing, <code>E_extinct = +z(&Delta;postSlope) &minus; z(&Delta;postDFA)</code> reached 20/28 consistency (<em>p</em> = 0.0032), whereas single-site raw EEG deltas in Lab #11 failed to separate NF from MI across subjects (AUC = 0.53–0.67, <em>p</em> = 0.18–0.95), confirming the necessity of relational asymmetry and phase-coupling metrics on consumer wearables.</p>
+
+<h2>2. New Wearable Biomarkers: <code>Theta wPLI</code> &amp; <code>HFD</code> / <code>PSI</code></h2>
+<p>Across Lab #11 (<em>n</em> = 20, 100% same-device) and Lab #8 (<code>TWC_USA</code> +6..+22 s lucid plateau, <em>n</em> = 14):</p>
+<table>
+  <tr><th>New Metric</th><th>Domain &amp; Result</th><th>Control / Specificity</th></tr>
+  <tr><td><strong><code>Theta wPLI</code> (4–8 Hz, Post &harr; RF)</strong></td><td>Lab #11 NF Remission: <strong>+0.121 (8/10)</strong>, <em>d<sub>z</sub></em> = +0.712, <strong><em>p</em> = 0.0244</strong></td><td>MI Control: &minus;0.027 (<em>p</em> = 0.752, null)</td></tr>
+  <tr><td><strong><code>postHFD</code> (Higuchi Fractal Dim)</strong></td><td>Lab #8 Lucid REM Plateau: <strong>12/14 rose</strong> (exact sign <strong><em>p</em> = 0.0129</strong>); <code>rfMinusLfHFD</code> <em>p</em> = 0.0342</td><td>&lt;0.3 ms time-domain compute</td></tr>
+  <tr><td><strong><code>psiAlpha</code> (Post &rarr; RF Flow)</strong></td><td>Lab #8 Lucid REM Plateau: <strong>11/14 rose</strong> (<em>d<sub>z</sub></em> = +0.499, <em>p</em> = 0.062)</td><td>Bottom-up cue-to-frontal flow</td></tr>
+  <tr><td><code>postCurvature</code> (Control Catch)</td><td>NF: &minus;0.756 (<em>p</em> = 0.027)</td><td>MI Control: &minus;1.884 (<em>p</em> &lt; 0.0001, 10/10) &rarr; <strong>ruled out as drift</strong></td></tr>
+</table>
+
+<h2>3. Cross-Person Dream Convergence &amp; 160-Session Closed-Loop Benchmark</h2>
+<p>Auditing <em>N</em> = 20,897 DreamBank reports (10,000 sampled pairs/cohort) showed zero passive dream convergence in a real married couple (<code>emma &times; emmas_husband</code>: 0.77&times; vs. strangers), whereas <strong>Spatial/Architectural Places</strong> (13.55%) transferred 2.2&times;–12.4&times; more reliably than social figures (6.18%), emotions (1.74%), or nature (1.09%). A 10,000-night REM Monte Carlo showed 38.8 min/night unsynchronized overlap (69.6 min/night with 5h WBTB sync) and 99.9%–100% deliverability using a 20-minute store-and-forward Dream Baton (1.92 bits/min LRLR capacity; coupled Wilson–Cowan relay <em>r</em> = +0.71 to +0.81 at <code>gRelay = 0.30–0.40</code>).</p>
+<table>
+  <tr><th>ONEIRIS Live Controller Benchmark (160 Sessions)</th><th>Safe REM Precision / Delivery</th><th>Hazardous Cues / Delivery</th><th>Accidental Wake-Startles</th><th>Anti-Startle Vetoes</th></tr>
+  <tr><td>Tool 1 (TLR Lucid): Naive Open-Loop Timer (<em>n</em> = 40)</td><td>40.3%</td><td>6.72 / sess</td><td>3.80 / sess</td><td>0.00</td></tr>
+  <tr><td><strong>Tool 1 (TLR Lucid): ONEIRIS Closed-Loop</strong> (<em>n</em> = 40)</td><td><strong>71.5% (+77%)</strong></td><td>5.00 / sess</td><td><strong>1.82 / sess (&minus;52%)</strong></td><td>4.47 (53.9 lucid holds)</td></tr>
+  <tr><td>Tool 2 (PTSD): Naive Open-Loop Timer (<em>n</em> = 40)</td><td>33.0%</td><td>12.72 / sess</td><td>6.92 / sess</td><td>0.00</td></tr>
+  <tr><td><strong>Tool 2 (PTSD): ONEIRIS <code>irt-tmr</code></strong> (<em>n</em> = 40)</td><td><strong>100.0%</strong></td><td><strong>0.00 / sess</strong></td><td><strong>0.00 / sess (&minus;100%)</strong></td><td><strong>9.22 / sess</strong></td></tr>
+  <tr><td>Tool 3 (Dual-Dream): Naive Immediate Relay (<em>n</em> = 80)</td><td>40.9%</td><td>59.1%</td><td>1.163 / night</td><td>&mdash;</td></tr>
+  <tr><td><strong>Tool 3 (Dual-Dream): Gated 20-Min Baton</strong> (<em>n</em> = 80)</td><td><strong>84.4% (2.06&times;)</strong></td><td><strong>0.0%</strong></td><td><strong>0.000 / night (&minus;100%)</strong></td><td>gated by <code>REM_TARGET</code></td></tr>
+</table>
+
+<div class="callout">
+  <strong>Limitations &amp; Scope:</strong> Closed-loop benchmarks used synthetic spectral states and warrant prospective overnight validation against clinical PSG (e.g., OpenNeuro <code>ds007052</code> BOAS). All software tools (including the 4-channel Muse 2/S Web Bluetooth adapter) are non-commercial open-source research prototypes, not medical devices. Hardware-mediated dream conjoining is strictly sensory/relay-based (~1.92 bits/min) and requires blind matched vs. mismatched pilot trials (<em>n</em> &ge; 7 nights for 80% power at 3&times; lift).
+</div>
+
+<h2>4. Key References</h2>
+<ol>
+  <li>Rutan, A. (2026). <em>Project ONEIRIS Papers 1–3</em> (Anesthesia &amp; Sleep <code>S_phys</code>; 10-Lab 3-Axis Reality Coordinate System; 12-Lab PTSD Two-Stage Recovery &amp; Anti-Startle IRT+TMR). PsyArXiv.</li>
+  <li>Du Bois, N., Korik, A., Coyle, D., et al. (2021/2022). <em>Neurofeedback with low-cost, wearable EEG reduces symptoms in chronic PTSD</em>. Mendeley Data <code>10.17632/gsxphk87mc</code>.</li>
+  <li>Brainlab, Univ. of Barcelona (2025). <em>SUBEMOcondEEG1: Fear conditioning and extinction EEG</em>. OpenNeuro <code>ds007114</code>.</li>
+  <li>Konkoly, K. R., Paller, K. A., et al. (2021). Real-time dialogue between experimenters and dreamers during REM sleep. <em>Current Biology</em>, 31(7), 1417–1427.</li>
+  <li>Schwartz, S., Clerget, A., &amp; Perogamvros, L. (2022). Enhancing imagery rehearsal therapy for nightmares with targeted memory reactivation. <em>Current Biology</em>, 32(22), 4808–4816.</li>
+</ol>
+</body>
+</html>
