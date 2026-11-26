@@ -1,4 +1,4 @@
-# The Wiener–Khinchin Critical Geodesic of Human Consciousness: First-Principles Derivation, 985-Hour Wearable Sleep Validation, Formal Safety Verification, and Post-COGITATE Geometry
+# The Wiener–Khinchin Geodesic of Human Sleep and Consciousness: 985-Hour Wearable Validation, PSG-Free Brain-Age Tracking, and Formal Safety Verification
 
 **Author:** Austin Rutan (Independent Researcher, Project ONEIRIS)
 **Contact:** `rutanaus000@gmail.com`
