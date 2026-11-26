@@ -1,0 +1,867 @@
+{
+  "generatedAt": "2026-11-26T03:31:14.927Z",
+  "dataset": "Mendeley Data 10.17632/gsxphk87mc (Du Bois et al., 2021/2022)",
+  "nSubjects": 20,
+  "nNF": 10,
+  "nMI": 10,
+  "pclSummary": {
+    "NF_meanPre": 38.9,
+    "NF_meanPost": 11,
+    "NF_meanDrop": 27.9,
+    "MI_meanPre": 39.2,
+    "MI_meanPost": 35.3,
+    "MI_meanDrop": 3.9
+  },
+  "longitudinal": {
+    "NF": {
+      "global": {
+        "slopeBB": {
+          "n": 10,
+          "mean": 0.0139,
+          "dz": 0.042,
+          "t": 0.132,
+          "pApprox": 0.8952,
+          "nPos": 5,
+          "nNeg": 5
+        },
+        "alphaFrac": {
+          "n": 10,
+          "mean": 0.0384,
+          "dz": 0.388,
+          "t": 1.226,
+          "pApprox": 0.2201,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "betaFrac": {
+          "n": 10,
+          "mean": 0.0022,
+          "dz": 0.058,
+          "t": 0.183,
+          "pApprox": 0.8547,
+          "nPos": 5,
+          "nNeg": 5
+        },
+        "deltaFrac": {
+          "n": 10,
+          "mean": -0.0244,
+          "dz": -0.421,
+          "t": -1.331,
+          "pApprox": 0.1833,
+          "nPos": 4,
+          "nNeg": 6
+        },
+        "dfa": {
+          "n": 10,
+          "mean": -0.0428,
+          "dz": -0.419,
+          "t": -1.325,
+          "pApprox": 0.185,
+          "nPos": 3,
+          "nNeg": 7
+        }
+      },
+      "posterior": {
+        "slopeBB": {
+          "n": 10,
+          "mean": 0.1111,
+          "dz": 0.239,
+          "t": 0.755,
+          "pApprox": 0.4501,
+          "nPos": 5,
+          "nNeg": 5
+        },
+        "alphaFrac": {
+          "n": 10,
+          "mean": 0.0475,
+          "dz": 0.344,
+          "t": 1.088,
+          "pApprox": 0.2767,
+          "nPos": 5,
+          "nNeg": 5
+        },
+        "betaFrac": {
+          "n": 10,
+          "mean": 0.0047,
+          "dz": 0.093,
+          "t": 0.293,
+          "pApprox": 0.7694,
+          "nPos": 5,
+          "nNeg": 5
+        },
+        "deltaFrac": {
+          "n": 10,
+          "mean": -0.0378,
+          "dz": -0.519,
+          "t": -1.64,
+          "pApprox": 0.101,
+          "nPos": 3,
+          "nNeg": 7
+        },
+        "dfa": {
+          "n": 10,
+          "mean": -0.074,
+          "dz": -0.663,
+          "t": -2.097,
+          "pApprox": 0.036,
+          "nPos": 2,
+          "nNeg": 8
+        }
+      },
+      "rightFrontal": {
+        "slopeBB": {
+          "n": 10,
+          "mean": -0.24,
+          "dz": -0.765,
+          "t": -2.419,
+          "pApprox": 0.0156,
+          "nPos": 2,
+          "nNeg": 8
+        },
+        "alphaFrac": {
+          "n": 10,
+          "mean": 0.0034,
+          "dz": 0.026,
+          "t": 0.084,
+          "pApprox": 0.9334,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "betaFrac": {
+          "n": 10,
+          "mean": 0.0063,
+          "dz": 0.109,
+          "t": 0.343,
+          "pApprox": 0.7314,
+          "nPos": 5,
+          "nNeg": 5
+        },
+        "deltaFrac": {
+          "n": 10,
+          "mean": 0.0071,
+          "dz": 0.068,
+          "t": 0.214,
+          "pApprox": 0.8308,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "dfa": {
+          "n": 10,
+          "mean": -0.0347,
+          "dz": -0.356,
+          "t": -1.124,
+          "pApprox": 0.2608,
+          "nPos": 4,
+          "nNeg": 6
+        }
+      },
+      "leftFrontal": {
+        "slopeBB": {
+          "n": 10,
+          "mean": 0.0376,
+          "dz": 0.13,
+          "t": 0.41,
+          "pApprox": 0.682,
+          "nPos": 5,
+          "nNeg": 5
+        },
+        "alphaFrac": {
+          "n": 10,
+          "mean": 0.0257,
+          "dz": 0.253,
+          "t": 0.8,
+          "pApprox": 0.4237,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "betaFrac": {
+          "n": 10,
+          "mean": -0.0193,
+          "dz": -0.317,
+          "t": -1.004,
+          "pApprox": 0.3156,
+          "nPos": 2,
+          "nNeg": 8
+        },
+        "deltaFrac": {
+          "n": 10,
+          "mean": -0.0135,
+          "dz": -0.183,
+          "t": -0.577,
+          "pApprox": 0.5638,
+          "nPos": 4,
+          "nNeg": 6
+        },
+        "dfa": {
+          "n": 10,
+          "mean": 0.0576,
+          "dz": 0.143,
+          "t": 0.453,
+          "pApprox": 0.6506,
+          "nPos": 4,
+          "nNeg": 6
+        }
+      }
+    },
+    "MI": {
+      "global": {
+        "slopeBB": {
+          "n": 10,
+          "mean": -0.1634,
+          "dz": -0.347,
+          "t": -1.098,
+          "pApprox": 0.2724,
+          "nPos": 5,
+          "nNeg": 5
+        },
+        "alphaFrac": {
+          "n": 10,
+          "mean": 0.0248,
+          "dz": 0.316,
+          "t": 0.998,
+          "pApprox": 0.3183,
+          "nPos": 5,
+          "nNeg": 5
+        },
+        "betaFrac": {
+          "n": 10,
+          "mean": 0.0584,
+          "dz": 0.616,
+          "t": 1.947,
+          "pApprox": 0.0515,
+          "nPos": 7,
+          "nNeg": 3
+        },
+        "deltaFrac": {
+          "n": 10,
+          "mean": -0.0201,
+          "dz": -0.288,
+          "t": -0.91,
+          "pApprox": 0.3627,
+          "nPos": 3,
+          "nNeg": 7
+        },
+        "dfa": {
+          "n": 10,
+          "mean": -0.017,
+          "dz": -0.166,
+          "t": -0.525,
+          "pApprox": 0.5999,
+          "nPos": 3,
+          "nNeg": 7
+        }
+      },
+      "posterior": {
+        "slopeBB": {
+          "n": 10,
+          "mean": -0.075,
+          "dz": -0.113,
+          "t": -0.359,
+          "pApprox": 0.7197,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "alphaFrac": {
+          "n": 10,
+          "mean": 0.009,
+          "dz": 0.124,
+          "t": 0.392,
+          "pApprox": 0.6948,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "betaFrac": {
+          "n": 10,
+          "mean": 0.0593,
+          "dz": 0.565,
+          "t": 1.786,
+          "pApprox": 0.0741,
+          "nPos": 8,
+          "nNeg": 2
+        },
+        "deltaFrac": {
+          "n": 10,
+          "mean": -0.0325,
+          "dz": -0.353,
+          "t": -1.115,
+          "pApprox": 0.2647,
+          "nPos": 4,
+          "nNeg": 6
+        },
+        "dfa": {
+          "n": 10,
+          "mean": -0.0164,
+          "dz": -0.109,
+          "t": -0.346,
+          "pApprox": 0.7292,
+          "nPos": 4,
+          "nNeg": 6
+        }
+      },
+      "rightFrontal": {
+        "slopeBB": {
+          "n": 10,
+          "mean": -0.2255,
+          "dz": -0.391,
+          "t": -1.238,
+          "pApprox": 0.2158,
+          "nPos": 3,
+          "nNeg": 7
+        },
+        "alphaFrac": {
+          "n": 10,
+          "mean": 0.0033,
+          "dz": 0.019,
+          "t": 0.059,
+          "pApprox": 0.9529,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "betaFrac": {
+          "n": 10,
+          "mean": 0.0625,
+          "dz": 0.462,
+          "t": 1.46,
+          "pApprox": 0.1443,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "deltaFrac": {
+          "n": 10,
+          "mean": 0.0243,
+          "dz": 0.171,
+          "t": 0.542,
+          "pApprox": 0.5878,
+          "nPos": 5,
+          "nNeg": 5
+        },
+        "dfa": {
+          "n": 10,
+          "mean": -0.01,
+          "dz": -0.059,
+          "t": -0.187,
+          "pApprox": 0.8516,
+          "nPos": 5,
+          "nNeg": 5
+        }
+      },
+      "leftFrontal": {
+        "slopeBB": {
+          "n": 10,
+          "mean": -0.3225,
+          "dz": -0.533,
+          "t": -1.686,
+          "pApprox": 0.0918,
+          "nPos": 5,
+          "nNeg": 5
+        },
+        "alphaFrac": {
+          "n": 10,
+          "mean": 0.0795,
+          "dz": 0.614,
+          "t": 1.943,
+          "pApprox": 0.052,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "betaFrac": {
+          "n": 10,
+          "mean": 0.0663,
+          "dz": 0.592,
+          "t": 1.872,
+          "pApprox": 0.0612,
+          "nPos": 7,
+          "nNeg": 3
+        },
+        "deltaFrac": {
+          "n": 10,
+          "mean": -0.0192,
+          "dz": -0.609,
+          "t": -1.924,
+          "pApprox": 0.0543,
+          "nPos": 3,
+          "nNeg": 7
+        },
+        "dfa": {
+          "n": 10,
+          "mean": -0.0189,
+          "dz": -0.177,
+          "t": -0.56,
+          "pApprox": 0.5753,
+          "nPos": 4,
+          "nNeg": 6
+        }
+      }
+    }
+  },
+  "rightMinusLeftFrontalAsymmetry": {
+    "slopeBB_NF": {
+      "n": 10,
+      "mean": -0.2776,
+      "dz": -0.667,
+      "t": -2.11,
+      "pApprox": 0.0349,
+      "nPos": 1,
+      "nNeg": 9
+    },
+    "slopeBB_MI": {
+      "n": 10,
+      "mean": 0.097,
+      "dz": 0.25,
+      "t": 0.789,
+      "pApprox": 0.4298,
+      "nPos": 6,
+      "nNeg": 4
+    },
+    "betaFrac_NF": {
+      "n": 10,
+      "mean": 0.0257,
+      "dz": 0.347,
+      "t": 1.096,
+      "pApprox": 0.273,
+      "nPos": 6,
+      "nNeg": 4
+    },
+    "betaFrac_MI": {
+      "n": 10,
+      "mean": -0.0038,
+      "dz": -0.049,
+      "t": -0.154,
+      "pApprox": 0.8779,
+      "nPos": 3,
+      "nNeg": 7
+    }
+  },
+  "correlationsWithPCL5Drop": {
+    "global": {
+      "slopeBB": {
+        "n": 20,
+        "rho": 0.307,
+        "pApprox": 0.1715
+      },
+      "alphaFrac": {
+        "n": 20,
+        "rho": 0.144,
+        "pApprox": 0.5359
+      },
+      "betaFrac": {
+        "n": 20,
+        "rho": -0.198,
+        "pApprox": 0.3902
+      },
+      "deltaFrac": {
+        "n": 20,
+        "rho": -0.068,
+        "pApprox": 0.7735
+      },
+      "dfa": {
+        "n": 20,
+        "rho": -0.224,
+        "pApprox": 0.3294
+      }
+    },
+    "posterior": {
+      "slopeBB": {
+        "n": 20,
+        "rho": 0.227,
+        "pApprox": 0.3226
+      },
+      "alphaFrac": {
+        "n": 20,
+        "rho": 0.23,
+        "pApprox": 0.3158
+      },
+      "betaFrac": {
+        "n": 20,
+        "rho": -0.176,
+        "pApprox": 0.4483
+      },
+      "deltaFrac": {
+        "n": 20,
+        "rho": -0.18,
+        "pApprox": 0.4364
+      },
+      "dfa": {
+        "n": 20,
+        "rho": -0.29,
+        "pApprox": 0.1982
+      }
+    },
+    "rightFrontal": {
+      "slopeBB": {
+        "n": 20,
+        "rho": 0.003,
+        "pApprox": 0.9898
+      },
+      "alphaFrac": {
+        "n": 20,
+        "rho": 0.131,
+        "pApprox": 0.5756
+      },
+      "betaFrac": {
+        "n": 20,
+        "rho": -0.177,
+        "pApprox": 0.4443
+      },
+      "deltaFrac": {
+        "n": 20,
+        "rho": -0.041,
+        "pApprox": 0.8631
+      },
+      "dfa": {
+        "n": 20,
+        "rho": -0.155,
+        "pApprox": 0.5059
+      }
+    },
+    "leftFrontal": {
+      "slopeBB": {
+        "n": 20,
+        "rho": 0.391,
+        "pApprox": 0.0715
+      },
+      "alphaFrac": {
+        "n": 20,
+        "rho": -0.293,
+        "pApprox": 0.1932
+      },
+      "betaFrac": {
+        "n": 20,
+        "rho": -0.337,
+        "pApprox": 0.1291
+      },
+      "deltaFrac": {
+        "n": 20,
+        "rho": -0.021,
+        "pApprox": 0.9288
+      },
+      "dfa": {
+        "n": 20,
+        "rho": -0.113,
+        "pApprox": 0.6301
+      }
+    }
+  },
+  "subjects": [
+    {
+      "key": "MI_10",
+      "pid": "P10",
+      "group": "MI",
+      "pclPre": 39,
+      "pclPost": 40,
+      "pclDrop": -1,
+      "firstSession": "session 1",
+      "lastSession": "session 6",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": -1.228,
+      "dRFSlope": -0.001,
+      "dRFBeta": -0.01,
+      "dPostAlpha": -0.096
+    },
+    {
+      "key": "MI_11",
+      "pid": "P11",
+      "group": "MI",
+      "pclPre": 25,
+      "pclPost": 23,
+      "pclDrop": 2,
+      "firstSession": "session 1",
+      "lastSession": "session 5",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": 0.045,
+      "dRFSlope": -1.207,
+      "dRFBeta": 0.085,
+      "dPostAlpha": 0.015
+    },
+    {
+      "key": "MI_12",
+      "pid": "P12",
+      "group": "MI",
+      "pclPre": 40,
+      "pclPost": 54,
+      "pclDrop": -14,
+      "firstSession": "session 1",
+      "lastSession": "session 5",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": 0.014,
+      "dRFSlope": 0.134,
+      "dRFBeta": 0.051,
+      "dPostAlpha": -0.049
+    },
+    {
+      "key": "MI_13",
+      "pid": "P13",
+      "group": "MI",
+      "pclPre": 43,
+      "pclPost": 39,
+      "pclDrop": 4,
+      "firstSession": "session 1",
+      "lastSession": "session 6",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": -0.635,
+      "dRFSlope": -0.763,
+      "dRFBeta": 0.369,
+      "dPostAlpha": 0.033
+    },
+    {
+      "key": "MI_14",
+      "pid": "P14",
+      "group": "MI",
+      "pclPre": 55,
+      "pclPost": 52,
+      "pclDrop": 3,
+      "firstSession": "session 1",
+      "lastSession": "session 6",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": -0.741,
+      "dRFSlope": -0.276,
+      "dRFBeta": -0.053,
+      "dPostAlpha": 0.058
+    },
+    {
+      "key": "MI_15",
+      "pid": "P15",
+      "group": "MI",
+      "pclPre": 55,
+      "pclPost": 48,
+      "pclDrop": 7,
+      "firstSession": "session 1",
+      "lastSession": "session 6",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": 0.531,
+      "dRFSlope": 0.743,
+      "dRFBeta": -0.071,
+      "dPostAlpha": -0.022
+    },
+    {
+      "key": "MI_26",
+      "pid": "P26",
+      "group": "MI",
+      "pclPre": 36,
+      "pclPost": 27,
+      "pclDrop": 9,
+      "firstSession": "session 1",
+      "lastSession": "session 5",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": 0.296,
+      "dRFSlope": -0.278,
+      "dRFBeta": 0.101,
+      "dPostAlpha": 0.019
+    },
+    {
+      "key": "MI_28",
+      "pid": "P28",
+      "group": "MI",
+      "pclPre": 17,
+      "pclPost": 7,
+      "pclDrop": 10,
+      "firstSession": "session 1",
+      "lastSession": "session 6",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": 0.003,
+      "dRFSlope": -0.089,
+      "dRFBeta": -0.094,
+      "dPostAlpha": 0.148
+    },
+    {
+      "key": "MI_8",
+      "pid": "P08",
+      "group": "MI",
+      "pclPre": 43,
+      "pclPost": 33,
+      "pclDrop": 10,
+      "firstSession": "session 2",
+      "lastSession": "session 6",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": -0.105,
+      "dRFSlope": 0.285,
+      "dRFBeta": 0.112,
+      "dPostAlpha": 0.059
+    },
+    {
+      "key": "MI_9",
+      "pid": "P09",
+      "group": "MI",
+      "pclPre": 39,
+      "pclPost": 30,
+      "pclDrop": 9,
+      "firstSession": "session 1",
+      "lastSession": "session 5",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": 1.07,
+      "dRFSlope": -0.803,
+      "dRFBeta": 0.135,
+      "dPostAlpha": -0.075
+    },
+    {
+      "key": "NF_16",
+      "pid": "P16",
+      "group": "NF",
+      "pclPre": 61,
+      "pclPost": 6,
+      "pclDrop": 55,
+      "firstSession": "session 2",
+      "lastSession": "session 5",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": -0.464,
+      "dRFSlope": -0.238,
+      "dRFBeta": -0.001,
+      "dPostAlpha": -0.023
+    },
+    {
+      "key": "NF_17",
+      "pid": "P17",
+      "group": "NF",
+      "pclPre": 29,
+      "pclPost": 9,
+      "pclDrop": 20,
+      "firstSession": "session 1",
+      "lastSession": "session 7",
+      "deviceFirst": "GTech32",
+      "deviceLast": "GTech32",
+      "dPostSlope": -0.516,
+      "dRFSlope": -0.285,
+      "dRFBeta": 0.015,
+      "dPostAlpha": 0.38
+    },
+    {
+      "key": "NF_18",
+      "pid": "P18",
+      "group": "NF",
+      "pclPre": 61,
+      "pclPost": 22,
+      "pclDrop": 39,
+      "firstSession": "session 2",
+      "lastSession": "session 7",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": 0.766,
+      "dRFSlope": 0.251,
+      "dRFBeta": 0.088,
+      "dPostAlpha": 0.061
+    },
+    {
+      "key": "NF_19",
+      "pid": "P19",
+      "group": "NF",
+      "pclPre": 9,
+      "pclPost": 4,
+      "pclDrop": 5,
+      "firstSession": "session 2",
+      "lastSession": "session 6",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": 0.459,
+      "dRFSlope": -0.244,
+      "dRFBeta": 0.061,
+      "dPostAlpha": -0.058
+    },
+    {
+      "key": "NF_20",
+      "pid": "P20",
+      "group": "NF",
+      "pclPre": 51,
+      "pclPost": 17,
+      "pclDrop": 34,
+      "firstSession": "session 2",
+      "lastSession": "session 6",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": 0.298,
+      "dRFSlope": -0.912,
+      "dRFBeta": -0.121,
+      "dPostAlpha": 0.012
+    },
+    {
+      "key": "NF_22",
+      "pid": "P22",
+      "group": "NF",
+      "pclPre": 41,
+      "pclPost": 12,
+      "pclDrop": 29,
+      "firstSession": "session 2",
+      "lastSession": "session 7",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": 0.421,
+      "dRFSlope": 0.139,
+      "dRFBeta": 0.058,
+      "dPostAlpha": -0.084
+    },
+    {
+      "key": "NF_23",
+      "pid": "P23",
+      "group": "NF",
+      "pclPre": 28,
+      "pclPost": 9,
+      "pclDrop": 19,
+      "firstSession": "session 2",
+      "lastSession": "session 7",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": -0.092,
+      "dRFSlope": -0.332,
+      "dRFBeta": 0.015,
+      "dPostAlpha": 0.182
+    },
+    {
+      "key": "NF_24",
+      "pid": "P24",
+      "group": "NF",
+      "pclPre": 46,
+      "pclPost": 15,
+      "pclDrop": 31,
+      "firstSession": "session 2",
+      "lastSession": "session 7",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": -0.323,
+      "dRFSlope": -0.209,
+      "dRFBeta": -0.004,
+      "dPostAlpha": 0.036
+    },
+    {
+      "key": "NF_25",
+      "pid": "P25",
+      "group": "NF",
+      "pclPre": 39,
+      "pclPost": 8,
+      "pclDrop": 31,
+      "firstSession": "session 2",
+      "lastSession": "session 7",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": 0.639,
+      "dRFSlope": -0.415,
+      "dRFBeta": -0.016,
+      "dPostAlpha": -0.024
+    },
+    {
+      "key": "NF_27",
+      "pid": "P27",
+      "group": "NF",
+      "pclPre": 24,
+      "pclPost": 8,
+      "pclDrop": 16,
+      "firstSession": "session 2",
+      "lastSession": "session 5",
+      "deviceFirst": "Flex8",
+      "deviceLast": "Flex8",
+      "dPostSlope": -0.078,
+      "dRFSlope": -0.156,
+      "dRFBeta": -0.031,
+      "dPostAlpha": -0.007
+    }
+  ]
+}

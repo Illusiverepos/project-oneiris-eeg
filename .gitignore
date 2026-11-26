@@ -8,10 +8,12 @@ reanalysis/data/dreambank_3k.jsonl
 reanalysis/data/twc_usa/
 reanalysis/data/donders_lucid/extracted/
 reanalysis/data/zenodo_806176/
+reanalysis/data/mendeley_ptsd/
 *.edf
 *.eeg
 *.f32
 *.bin
+*.mat
 *.zip
 *.rar
 *.xlsx
