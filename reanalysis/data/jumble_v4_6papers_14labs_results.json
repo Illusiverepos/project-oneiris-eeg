@@ -1,0 +1,69 @@
+{
+  "generatedAt": "2026-11-26T18:32:28.057Z",
+  "scope": "All 6 Papers x All 14 Human Labs (N > 1,700 recordings, 985.3h BOAS + 88 AD/FTD/CN + 22,415 dreams)",
+  "rule1_quantitativeOppositeSignLaw": {
+    "breakthrough": {
+      "name": "THE OPPOSITE-SIGN AGING vs. DEMENTIA VECTOR (Why Healthy Aging Is NOT Mild Dementia!)",
+      "discovery": "Colliding Lab #13 (N=99 healthy adults 18..82) with Lab #14 (N=88 clinical AD/FTD/CN) reveals a DOUBLE OPPOSITE-SIGN INVERSION on just 2 forehead electrodes: (1) Healthy Aging drives Δ_WK DOWN (r=-0.297 REM, r=-0.284 Wake) and median overnight Alpha UP (r=+0.371), whereas (2) Pathological Frontotemporal Dementia drives Δ_WK sharply UP (d=+0.753, p=0.0086) and Alpha sharply DOWN (d=-1.047, p=5.3e-5)! That proves pathological frontal neurodegeneration moves ANTI-PARALLEL (opposite direction!) to normal healthy brain aging."
+    },
+    "signMatrix": [
+      {
+        "condition": "Healthy Lifespan Aging (18->82 yrs, Lab #13 REM, N=99)",
+        "dWK_direction": "NEGATIVE (decreases with age)",
+        "dWK_stat": "r_partial = -0.2969, p = 0.0022",
+        "alpha_or_beta": "Wake DFA r = -0.3493 (p=0.00024)"
+      },
+      {
+        "condition": "Healthy Lifespan Aging (18->82 yrs, Lab #13 Wake, N=99)",
+        "dWK_direction": "NEGATIVE (decreases with age)",
+        "dWK_stat": "r_partial = -0.2835, p = 0.0036",
+        "alpha_or_beta": "Median overnight alpha RISES with age (r=+0.371, p=8.2e-5)"
+      },
+      {
+        "condition": "Frontotemporal Dementia (FTD vs CN, Lab #14, n=52)",
+        "dWK_direction": "POSITIVE (OPPOSITE OF HEALTHY AGING!)",
+        "dWK_stat": "d = +0.753, AUC = 0.709, p = 0.00855",
+        "alpha_or_beta": "Alpha DROPS sharply (d=-1.047, p=5.3e-5); Beta spared (p=0.471)"
+      },
+      {
+        "condition": "Alzheimer's Disease (AD vs CN, Lab #14, n=65)",
+        "dWK_direction": "NEUTRAL / SPARED",
+        "dWK_stat": "d = +0.154, p = 0.52575",
+        "alpha_or_beta": "Beta DROPS sharply (d=-0.838, p=0.00093); Alpha drops (p=0.0027)"
+      },
+      {
+        "condition": "Acute Threat / External Lock-In (Labs #10 & #12)",
+        "dWK_direction": "POSITIVE (100% Symmetry Breaking)",
+        "dWK_stat": "Noether conservation = 0% vs Q4 Plasticity 93.1% (p=0.01786)",
+        "alpha_or_beta": "Perpendicular -36.7° to -68.0° vector into Q3"
+      }
+    ]
+  },
+  "rule2_6PaperCutUpCollisions": [
+    {
+      "id": "C1_P6_FTD_dWK_Spike_x_P3_PTSD_Frontal_Disinhibition",
+      "papers": "Paper 6 (FTD) × Paper 3 (PTSD)",
+      "hypothesis": "Shared Frontal E/I Disinhibition Signature Across FTD and PTSD: Both Frontotemporal Dementia (d=+0.753, p=0.0086) and PTSD/Threat Lock-In (+0.111 to +0.412) break frontal Δ_WK in the exact same POSITIVE direction, suggesting FTD behavioral disinhibition and PTSD hypervigilance share a common frontal 1/f-vs-DFA uncoupling axis — testable with a single 60-second forehead scan."
+    },
+    {
+      "id": "C2_P6_HealthyAging_Alpha_Up_x_P6_Dementia_Alpha_Down",
+      "papers": "Paper 6 Cohort 1 (BOAS Aging) × Paper 6 Cohort 2 (AD/FTD)",
+      "hypothesis": "Orthogonal \"Healthy Aging\" vs. \"Neurodegenerative Drift\" 2D Screening Plane: Plotting (Δ_WK × AlphaFrac) separates Healthy Older Brains (Low Δ_WK, Preserved Alpha) from Early AD/FTD (High Δ_WK or Low Beta, Collapsed Alpha), solving the classic clinical confound where older healthy adults get false-positived as cognitively impaired."
+    },
+    {
+      "id": "C3_P5_985h_Sleep_x_P6_AD_Beta_Loss",
+      "papers": "Paper 5 (985h BOAS Sleep) × Paper 6 (Alzheimer's Beta Loss)",
+      "hypothesis": "Overnight Sleep + 60s Eyes-Closed Rest Dual-Mode Headband Protocol: Because 60s eyes-closed Fp1/Fp2 alone gave AUC=0.595 for FTD vs. AD, adding a single overnight sleep recording (capturing N3 slow-wave slopeBB + REM Δ_WK) to the 60s resting scan should unlock high-accuracy FTD vs. AD subtype separation without adding a single extra electrode!"
+    },
+    {
+      "id": "C4_P1_RightTPJ_HotZone_x_P6_AD_vs_FTD_Topography",
+      "papers": "Paper 1 (Posterior Hot Zone) × Paper 6 (AD vs. FTD)",
+      "hypothesis": "Adding 2 Ear/Posterior Electrodes (Muse S TP9/TP10) Solves FTD vs. AD Differential Screening: Alzheimer's attacks posterior/temporoparietal cortex (TP9/TP10) first while FTD attacks frontal cortex (AF7/AF8) first! Comparing Frontal (AF7/AF8) Δ_WK vs. Posterior (TP9/TP10) Beta/Alpha on a 4-channel Muse S headband (using Lab #14's full 19-ch dataset!) should push FTD vs. AD AUC from 0.595 past 0.75+!"
+    }
+  ],
+  "rule3_failureInversionAndNextMissingEdge": {
+    "newFailureAdded": "Lab #14 60s Forehead-Only FTD vs. AD Differential Classification (AUC = 0.5954, p = 0.12194)",
+    "whyItFailedUnderRelationalPrinciple": "Consistent with Jumble v3's Relational-Instantaneous Principle, 2 frontal electrodes alone cannot measure the ANTERIOR-POSTERIOR GRADIENT that physically distinguishes Frontotemporal (frontal) from Alzheimer's (temporoparietal) degeneration!",
+    "immediateTestableMissingEdge": "Test a 4-Channel Muse-Equivalent Montage (Fp1/Fp2 + T5/T6 or P3/P4) on Lab #14 (ds004504, N=88) RIGHT NOW — measuring the Frontal-minus-Posterior (Δ_WK & Beta/Alpha) gradient to see if 4 consumer Muse electrodes crack FTD vs. AD differential screening!"
+  }
+}
