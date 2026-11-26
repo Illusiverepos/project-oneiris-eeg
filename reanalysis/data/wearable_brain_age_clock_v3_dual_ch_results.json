@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-11-26T17:37:26.705Z",
+  "nRawNights": 127,
+  "v3_100pct_PSG_FREE_DualChannel": {
+    "nUniqueHumans": 99,
+    "outOfSampleR": 0.4032,
+    "outOfSampleR2": 0.1626,
+    "outOfSampleP": 0.00001427,
+    "MAE_years": 12.21
+  },
+  "retest": {
+    "nPairs": 20,
+    "meanAbsNightDiffYears": 7.78,
+    "night1VsNight2_r": 0.0741
+  },
+  "top10Features": [
+    {
+      "feature": "slopeBB_p10",
+      "n": 99,
+      "r": 0.3853,
+      "p": 0.00003927
+    },
+    {
+      "feature": "alpha_p50",
+      "n": 99,
+      "r": 0.3714,
+      "p": 0.00008164
+    },
+    {
+      "feature": "delta_p90",
+      "n": 99,
+      "r": -0.3487,
+      "p": 0.00024819
+    },
+    {
+      "feature": "DFA_p90",
+      "n": 99,
+      "r": -0.3444,
+      "p": 0.00030316
+    },
+    {
+      "feature": "alpha_p10",
+      "n": 99,
+      "r": 0.342,
+      "p": 0.00033811
+    },
+    {
+      "feature": "delta_p50",
+      "n": 99,
+      "r": -0.2997,
+      "p": 0.00197237
+    },
+    {
+      "feature": "delta_p10",
+      "n": 99,
+      "r": -0.2957,
+      "p": 0.0022945
+    },
+    {
+      "feature": "DFA_p50",
+      "n": 99,
+      "r": -0.2746,
+      "p": 0.0049198
+    },
+    {
+      "feature": "beta_p50",
+      "n": 99,
+      "r": 0.2666,
+      "p": 0.00643641
+    },
+    {
+      "feature": "alpha_p90",
+      "n": 99,
+      "r": 0.266,
+      "p": 0.00657197
+    }
+  ]
+}
