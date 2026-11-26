@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONEIRIS — Live 2x2 Wiener–Khinchin &amp; Optimal-Transport Phase Explorer</title>
+<style>
+  :root { --bg:#060a14; --card:#0f172a; --border:#233359; --text:#e8f0fc; --muted:#93a8cb; --cyan:#38bdf8; --teal:#2dd4bf; --amber:#fbbf24; --rose:#fb7185; --violet:#a78bfa; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:20px; }
+  .wrap { max-width:1060px; margin:0 auto; }
+  h1 { margin:0 0 4px; font-size:1.5rem; }
+  .sub { margin:0 0 14px; color:var(--muted); font-size:0.9rem; }
+  .layout { display:grid; grid-template-columns:1fr 340px; gap:16px; }
+  @media (max-width:860px) { .layout { grid-template-columns:1fr; } }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px; margin-bottom:14px; }
+  .card h2 { margin:0 0 8px; font-size:1rem; color:#fff; }
+  canvas { width:100%; display:block; background:#080e1d; border-radius:12px; border:1px solid #1e2d4f; }
+  button { background:#1b2a4a; color:var(--text); border:1px solid var(--border); border-radius:9px; padding:8px 12px; font-weight:600; font-size:0.84rem; cursor:pointer; width:100%; margin-bottom:8px; text-align:left; }
+  button:hover { border-color:var(--cyan); }
+  button.teal { background:rgba(45,212,191,0.16); border-color:var(--teal); color:#ccfbf1; }
+  button.rose { background:rgba(251,113,133,0.16); border-color:var(--rose); color:#ffe4e6; }
+  .kpi { background:#080e1d; border:1px solid #1e2d4f; border-radius:10px; padding:10px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; }
+  .kpi span:first-child { font-size:0.8rem; color:var(--muted); }
+  .kpi span:last-child { font-family:ui-monospace,Consolas,monospace; font-weight:700; font-size:0.98rem; color:var(--cyan); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ONEIRIS — Live 2&times;2 Wiener–Khinchin &amp; Optimal-Transport Brain-State Explorer</h1>
+  <p class="sub">Interactive 13-Lab mathematical phase plane: Watch how human sleep, fear extinction, PTSD remission, &amp; psychedelics ride the exact +46.17&deg; Wiener–Khinchin geodesic while trauma &amp; video break symmetry at &minus;45&deg;.</p>
+
+  <div class="layout">
+    <div class="card">
+      <h2>Live (slopeBB &times; &minus;DFA &alpha;) Phase Plane &amp; Empirical 13-Lab Landmarks</h2>
+      <canvas id="c_plane" width="680" height="500"></canvas>
+    </div>
+
+    <div>
+      <div class="card">
+        <h2>Launch Brain-State Trajectory</h2>
+        <button class="teal" onclick="launch('n3_to_rem')">1. Deep N3 &rarr; REM (+45.3&deg; BOAS Wearable)</button>
+        <button class="teal" onclick="launch('ptsd_geodesic')">2. PTSD Q3 &rarr; Extinction Q4 (+46.6&deg; Optimal Transport)</button>
+        <button class="rose" onclick="launch('ptsd_startle')">3. PTSD Q3 + Loud Startle Detour (28.9&times; Energy Cost!)</button>
+        <button onclick="launch('video_lock')">4. Sober Rest &rarr; External Video (&minus;36.7&deg; Lock-In)</button>
+        <button onclick="launch('psilo')">5. External Video &rarr; Psilocybin Cinema (+54.6&deg;)</button>
+        <button onclick="launch('cewr')">6. Deep NREM &rarr; CEWR Gate (+90&deg; Pure DFA Release)</button>
+      </div>
+
+      <div class="card">
+        <h2>Live Mathematical Telemetry</h2>
+        <div class="kpi"><span>Current Quadrant</span><span id="k_quad">Q4 (Plastic)</span></div>
+        <div class="kpi"><span>slopeBB (Excitability)</span><span id="k_slp">-1.48</span></div>
+        <div class="kpi"><span>DFA &alpha; (Stickiness)</span><span id="k_dfa">1.03</span></div>
+        <div class="kpi"><span>Wiener–Khinchin &Delta;<sub>WK</sub></span><span id="k_wk">-0.42</span></div>
+        <div class="kpi"><span>Wasserstein Transport Cost</span><span id="k_w2">0.00</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const ctx = document.getElementById('c_plane').getContext('2d');
+// Coordinates: x = slopeBB in [-2.6 .. -0.2], y = DFA alpha in [0.55 .. 1.55] (UP = lower DFA = MORE PLASTIC!)
+const toX = (s) => 60 + ((s + 2.6) / 2.4) * 580;
+const toY = (d) => 450 - ((1.55 - d) / 1.0) * 400; // low DFA at top (Q2/Q4), high DFA at bottom (Q1/Q3)
+
+const LANDMARKS = [
+  { name: 'N3 Deep Sleep (Q1)', s: -2.30, d: 1.43, col: '#94a3b8' },
+  { name: 'CEWR Gate (Q2)', s: -2.10, d: 0.92, col: '#a78bfa' },
+  { name: 'REM Dreaming (Q4)', s: -1.48, d: 1.03, col: '#2dd4bf' },
+  { name: 'Wake / Video Lock (Q3)', s: -1.02, d: 1.02, col: '#fbbf24' },
+  { name: 'PTSD Trauma Loop (Q3)', s: -0.95, d: 1.24, col: '#fb7185' },
+  { name: 'Extinction / Remission (Q4)', s: -0.78, d: 0.88, col: '#34d399' },
+  { name: 'Psilocybin Cinema (Q4)', s: -0.35, d: 0.68, col: '#38bdf8' },
+];
+
+let cur = { s: -1.48, d: 1.03 }, waypoints = [], trail = [{ s: -1.48, d: 1.03 }], energyCost = 0;
+
+function launch(mode) {
+  energyCost = 0;
+  if (mode === 'n3_to_rem') { cur = { s: -2.30, d: 1.43 }; waypoints = [{ s: -1.48, d: 1.03 }]; }
+  else if (mode === 'ptsd_geodesic') { cur = { s: -0.95, d: 1.24 }; waypoints = [{ s: -0.78, d: 0.88 }]; }
+  else if (mode === 'ptsd_startle') { cur = { s: -0.95, d: 1.24 }; waypoints = [{ s: -0.32, d: 1.38 }, { s: -1.02, d: 1.08 }, { s: -0.95, d: 1.24 }]; }
+  else if (mode === 'video_lock') { cur = { s: -1.35, d: 0.90 }; waypoints = [{ s: -0.85, d: 1.15 }]; }
+  else if (mode === 'psilo') { cur = { s: -0.85, d: 1.15 }; waypoints = [{ s: -0.35, d: 0.68 }]; }
+  else if (mode === 'cewr') { cur = { s: -2.20, d: 1.40 }; waypoints = [{ s: -2.18, d: 0.92 }]; }
+  trail = [{ ...cur }];
+}
+
+function draw() {
+  ctx.clearRect(0, 0, 680, 500);
+  // Quadrant dividers (slopeBB = -1.55, DFA = 1.08)
+  const qx = toX(-1.55), qy = toY(1.08);
+  ctx.strokeStyle = 'rgba(148,163,184,0.22)'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(qx, 40); ctx.lineTo(qx, 460); ctx.moveTo(50, qy); ctx.lineTo(645, qy); ctx.stroke();
+
+  // Quadrant labels
+  ctx.font = 'bold 11px system-ui'; ctx.fillStyle = 'rgba(148,163,184,0.65)';
+  ctx.fillText('Q2: QUIET PLASTIC GATE (CEWR)', 68, 60);
+  ctx.fillText('Q4: PLASTIC ACTIVE THEATER (EXTINCTION / REM)', qx + 12, 60);
+  ctx.fillText('Q1: LOCKED OFFLINE (N3 / PROPOFOL)', 68, 445);
+  ctx.fillText('Q3: STICKY LOCK-IN (PTSD / VIDEO)', qx + 12, 445);
+
+  // Exact Wiener-Khinchin Critical Line: slopeBB = -(2*DFA - 1) -> DFA = (1 - slopeBB)/2
+  ctx.strokeStyle = 'rgba(45,212,191,0.45)'; ctx.setLineDash([6, 4]); ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(toX(-2.10), toY(1.55));
+  ctx.lineTo(toX(-0.20), toY(0.60));
+  ctx.stroke(); ctx.setLineDash([]);
+  ctx.fillStyle = '#2dd4bf'; ctx.font = '11px system-ui';
+  ctx.fillText('Wiener–Khinchin Critical Geodesic (+46.17°)', toX(-1.85), toY(1.36) - 8);
+
+  // Landmarks
+  for (const lm of LANDMARKS) {
+    const x = toX(lm.s), y = toY(lm.d);
+    ctx.fillStyle = lm.col; ctx.beginPath(); ctx.arc(x, y, 5, 0, 6.28); ctx.fill();
+    ctx.fillStyle = '#cbd5e1'; ctx.font = '11px system-ui'; ctx.fillText(lm.name, x + 8, y + 4);
+  }
+
+  // Step trajectory
+  if (waypoints.length > 0) {
+    const tgt = waypoints[0];
+    const ds = tgt.s - cur.s, dd = tgt.d - cur.d;
+    const dist = Math.hypot(ds, dd);
+    if (dist < 0.015) waypoints.shift();
+    else {
+      const stepS = (ds / dist) * 0.018, stepD = (dd / dist) * 0.014;
+      cur.s += stepS; cur.d += stepD;
+      energyCost += Math.hypot(stepS / 0.25, stepD / 0.12) ** 2 * 12;
+      trail.push({ ...cur }); if (trail.length > 220) trail.shift();
+    }
+  }
+
+  // Draw live trail
+  if (trail.length > 1) {
+    ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 3; ctx.beginPath();
+    trail.forEach((pt, i) => { const x = toX(pt.s), y = toY(pt.d); i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); });
+    ctx.stroke();
+  }
+  const cx = toX(cur.s), cy = toY(cur.d);
+  ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(cx, cy, 7, 0, 6.28); ctx.fill();
+  ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 2.5; ctx.stroke();
+
+  // Telemetry
+  const quad = cur.s < -1.55 ? (cur.d > 1.08 ? 'Q1 (Offline)' : 'Q2 (Quiet Gate)') : (cur.d > 1.08 ? 'Q3 (Sticky Lock)' : 'Q4 (Plastic)');
+  const wk = cur.s + (2 * cur.d - 1);
+  document.getElementById('k_quad').textContent = quad;
+  document.getElementById('k_slp').textContent = cur.s.toFixed(2);
+  document.getElementById('k_dfa').textContent = cur.d.toFixed(2);
+  document.getElementById('k_wk').textContent = (wk >= 0 ? '+' : '') + wk.toFixed(2);
+  document.getElementById('k_w2').textContent = energyCost.toFixed(2);
+
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>

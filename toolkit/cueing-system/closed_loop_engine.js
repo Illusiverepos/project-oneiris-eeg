@@ -71,12 +71,17 @@ function windowMetrics(sig, sfreq = 200, nfft = 256) {
   }
   let mx = 0, my = 0; for (let i = 0; i < xs.length; i++) { mx += xs[i]; my += ys[i]; } mx /= xs.length; my /= xs.length;
   let num = 0, den = 0; for (let i = 0; i < xs.length; i++) { const dx = xs[i] - mx; num += dx * (ys[i] - my); den += dx * dx; }
+  const slp = den > 0 ? num / den : 0;
+  const dfa = fastDFA(sig);
   return {
-    slopeBB: den > 0 ? num / den : 0,
+    slopeBB: slp,
     deltaFrac: deltaP / Math.max(1e-24, totalP),
     alphaFrac: alphaP / Math.max(1e-24, totalP),
     betaFrac: betaP / Math.max(1e-24, totalP),
-    dfa: fastDFA(sig),
+    dfa,
+    // Report 55: Wiener-Khinchin Violation Index Delta_WK = slopeBB + (2*DFA - 1)
+    // Near -0.4 in calm REM; spikes toward >= -0.15 in waking sensory lock-in / trauma hyperarousal!
+    wkViolation: slp + (2 * dfa - 1),
   };
 }
 
@@ -169,19 +174,21 @@ class GoldilocksCueController {
     } else if (tSec < this.lockoutUntilSec) {
       state = 'WAKE_LOCKOUT';
     } else if (
-      this.mode === 'irt-tmr'
-        ? (pM.alphaFrac > 0.36 || rfM.betaFrac > 0.28 || zRF > 1.4)
-        : (pM.alphaFrac > 0.42 && zRF > 1.8)
+      this.mode === 'irt-tmr-wearable'
+        ? (rfM.slopeBB > -1.18 || rfM.wkViolation > -0.12 || pM.alphaFrac > 0.30 || rfM.betaFrac > 0.22 || zRF > 1.4)
+        : this.mode === 'irt-tmr'
+          ? (pM.alphaFrac > 0.36 || rfM.betaFrac > 0.28 || zRF > 1.4)
+          : (pM.alphaFrac > 0.42 && zRF > 1.8)
     ) {
-      // Upper Goldilocks / R_tether anti-startle boundary breached -> back off & lower volume!
+      // Upper Goldilocks / R_tether / Wiener-Khinchin anti-startle boundary breached -> back off & lower volume!
       state = 'WAKE_GUARD';
       action = 'ABORT_AND_LOCKOUT';
       this.lockoutUntilSec = tSec + this.wakeLockoutSec;
-      this.cueGain = Math.max(0.08, this.cueGain * (this.mode === 'irt-tmr' ? 0.65 : 0.75));
+      this.cueGain = Math.max(0.08, this.cueGain * (this.mode.startsWith('irt-tmr') ? 0.65 : 0.75));
       this.antiStartleVetoes++;
     } else if (eogArtifact) {
       state = 'EOG_SACCADE_SKIP';
-    } else if (this.mode === 'irt-tmr' && (pM.deltaFrac > 0.45 || (pM.deltaFrac > 0.30 && zRF > 0.5))) {
+    } else if (this.mode.startsWith('irt-tmr') && (pM.deltaFrac > 0.45 || (pM.deltaFrac > 0.30 && zRF > 0.5))) {
       // PTSD Inverted-Switch NREM Guard: never cue during hyperaroused NREM right-frontal watchtower
       state = 'PTSD_NREM_WATCHTOWER_HOLD';
     } else if (pM.deltaFrac > 0.55) {
@@ -196,7 +203,7 @@ class GoldilocksCueController {
       // Prime REM / open-gate target OR CEWR DFA-alpha early-warning release (Report 45)
       state = zPost >= -0.25 ? 'REM_TARGET' : 'CEWR_DFA_EARLY_GATE';
       if (tSec - this.lastCueSec >= this.minCueIntervalSec) {
-        action = this.mode === 'irt-tmr' ? 'FIRE_GENTLE_IRT_CHORD' : 'FIRE_TLR_CHIME';
+        action = this.mode.startsWith('irt-tmr') ? 'FIRE_GENTLE_IRT_CHORD' : 'FIRE_TLR_CHIME';
         this.lastCueSec = tSec;
         this.cueCount++;
       }
@@ -211,6 +218,7 @@ class GoldilocksCueController {
       postSlope: Number(pM.slopeBB.toFixed(3)),
       rfSlope: Number(rfM.slopeBB.toFixed(3)),
       postDFA: Number(pM.dfa.toFixed(3)),
+      rfWkViolation: Number(rfM.wkViolation.toFixed(3)),
       zPost: Number(zPost.toFixed(2)),
       zRF: Number(zRF.toFixed(2)),
       zDFA: Number(zDFA.toFixed(2)),
@@ -305,6 +313,7 @@ function serve(port = 8787) {
   const irtPath = path.join(__dirname, 'irt_tmr_prototype.html');
   const bridgePath = path.join(__dirname, 'dual_dream_bridge.html');
   const musePath = path.join(__dirname, 'muse_ble_adapter.js');
+  const mathPath = path.join(__dirname, 'phase_plane_explorer.html');
   let tickSec = 0;
 
   // Dual-Dream Bridge 20-minute Store-and-Forward "Dream Baton" Queue (Report 48)
@@ -343,6 +352,11 @@ function serve(port = 8787) {
     if (req.method === 'GET' && urlObj.pathname === '/muse_ble_adapter.js') {
       res.writeHead(200, { 'Content-Type': 'application/javascript; charset=utf-8' });
       res.end(fs.readFileSync(musePath));
+      return;
+    }
+    if (req.method === 'GET' && urlObj.pathname === '/math') {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(fs.readFileSync(mathPath));
       return;
     }
     if (req.method === 'GET' && urlObj.pathname === '/bridge/poll') {

@@ -122,7 +122,9 @@ async function processNight(sub) {
   };
 
   const ctrl = new GoldilocksCueController({ sfreq, mode: 'irt-tmr', warmupSec: 120, minCueIntervalSec: 120 });
+  const ctrlV2 = new GoldilocksCueController({ sfreq, mode: 'irt-tmr-wearable', warmupSec: 120, minCueIntervalSec: 120 });
   const closedCues = { Wake: 0, N1: 0, N2: 0, N3: 0, REM: 0, total: 0, vetoes: 0 };
+  const v2Cues     = { Wake: 0, N1: 0, N2: 0, N3: 0, REM: 0, total: 0, vetoes: 0 };
   const naiveCues  = { Wake: 0, N1: 0, N2: 0, N3: 0, REM: 0, total: 0 };
 
   const startSec = 14400; // 4.0 hours into the night
@@ -132,16 +134,18 @@ async function processNight(sub) {
     if (st < 0 || st > 4) continue;
     const sName = STAGE_NAMES[st];
     const samp = Math.floor(sec * sfreq);
-    // Use HB_2 (AF8) as rightFrontal and HB_1-HB_2 diff / HB_1 as second channel
     const rfSeg = ch2.subarray(samp, samp + winN);
     const pSeg = ch1.subarray(samp, samp + winN);
     const dec = ctrl.step(sec - startSec, pSeg, rfSeg, false);
     if (dec.action === 'ABORT_AND_LOCKOUT') closedCues.vetoes++;
     if (dec.action === 'FIRE_GENTLE_IRT_CHORD') { closedCues[sName]++; closedCues.total++; }
+    const dec2 = ctrlV2.step(sec - startSec, pSeg, rfSeg, false);
+    if (dec2.action === 'ABORT_AND_LOCKOUT') v2Cues.vetoes++;
+    if (dec2.action === 'FIRE_GENTLE_IRT_CHORD') { v2Cues[sName]++; v2Cues.total++; }
     if ((sec - startSec) >= 120 && (sec - startSec) % 120 === 0) { naiveCues[sName]++; naiveCues.total++; }
   }
 
-  return { sub, durHours: +(N / sfreq / 3600).toFixed(2), stageMeans, closedCues, naiveCues };
+  return { sub, durHours: +(N / sfreq / 3600).toFixed(2), stageMeans, closedCues, v2Cues, naiveCues };
 }
 
 async function main() {
@@ -182,8 +186,10 @@ async function main() {
   };
 
   const closedSummary = sumObj('closedCues');
+  const v2Summary = sumObj('v2Cues');
   const naiveSummary = sumObj('naiveCues');
   const wakeReductionPct = +(100 * (1 - closedSummary.Wake / Math.max(1, naiveSummary.Wake))).toFixed(1);
+  const v2WakeReductionPct = +(100 * (1 - v2Summary.Wake / Math.max(1, naiveSummary.Wake))).toFixed(1);
 
   const report = {
     generatedAt: new Date().toISOString(),
@@ -192,7 +198,13 @@ async function main() {
     totalHoursAnalyzed: +(nights.reduce((a, n) => a + n.durHours, 0)).toFixed(1),
     wearable2x2StageAtlas: atlas,
     n3ToRemWearableVector: { dSlope: dSlopeN3REM, dDFA: dDFAN3REM, angleDeg: angleN3REM },
-    overnightAntiStartleBenchmark: { naiveLateNightTimer: naiveSummary, oneirisClosedLoop_IRT_TMR: closedSummary, totalWakeCueReductionPct: wakeReductionPct },
+    overnightAntiStartleBenchmark: {
+      naiveLateNightTimer: naiveSummary,
+      oneiris_v1_IRT_TMR: closedSummary,
+      oneiris_v2_WK_Wearable: v2Summary,
+      v1_WakeCueReductionPct: wakeReductionPct,
+      v2_WK_WakeCueReductionPct: v2WakeReductionPct,
+    },
     nights,
   };
 
@@ -202,8 +214,8 @@ async function main() {
   console.table(atlas);
   console.log('N3 -> REM Vector on 2-ch Wearable Headband:', report.n3ToRemWearableVector);
   console.log('\n=== REAL OVERNIGHT ANTI-STARTLE BENCHMARK (LATE NIGHT >= 4h vs. 3-EXPERT CLINICAL PSG) ===');
-  console.table({ Naive_LateNight_Timer: naiveSummary, ONEIRIS_ClosedLoop_IRT_TMR: closedSummary });
-  console.log(`Total Wake-Stage Startle Cues Cut By: ${wakeReductionPct}%!`);
+  console.table({ Naive_LateNight_Timer: naiveSummary, ONEIRIS_v1_IRT_TMR: closedSummary, ONEIRIS_v2_WK_Wearable: v2Summary });
+  console.log(`Wake-Stage Startle Cues Cut By: v1 = ${wakeReductionPct}% | v2 (Wiener-Khinchin Δ_WK Gate) = ${v2WakeReductionPct}%!`);
   console.log(`\nSaved -> ${OUT_PATH}`);
 }
 
