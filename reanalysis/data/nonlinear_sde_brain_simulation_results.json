@@ -1,0 +1,73 @@
+{
+  "generatedAt": "2026-11-26T06:43:33.335Z",
+  "model": "2D Nonlinear Wilson-Cowan + Fisher-Rao Langevin SDE with Wiener-Khinchin Restoring Force",
+  "totalTrajectories": 3000,
+  "results": {
+    "1_Healthy_N3_to_REM_Geodesic": {
+      "nTrials": 500,
+      "endSlopeBB": -0.679,
+      "endDFA": 0.768,
+      "endWKViolation": -0.143,
+      "q4PlasticRemissionPct": 100,
+      "startleEventPct": 0,
+      "meanCuesPerSession": 0,
+      "meanVetoesPerSession": 0,
+      "meanWassersteinEnergy": 14.59
+    },
+    "2_Unmedicated_PTSD_Q3_Trap": {
+      "nTrials": 500,
+      "endSlopeBB": -0.853,
+      "endDFA": 1.344,
+      "endWKViolation": 0.834,
+      "q4PlasticRemissionPct": 0,
+      "startleEventPct": 0,
+      "meanCuesPerSession": 0,
+      "meanVetoesPerSession": 0,
+      "meanWassersteinEnergy": 17.35
+    },
+    "3_PTSD_Naive_OpenLoop_Timer": {
+      "nTrials": 500,
+      "endSlopeBB": -0.817,
+      "endDFA": 1.238,
+      "endWKViolation": 0.659,
+      "q4PlasticRemissionPct": 0.2,
+      "startleEventPct": 100,
+      "meanCuesPerSession": 12,
+      "meanVetoesPerSession": 0,
+      "meanWassersteinEnergy": 20.34
+    },
+    "4_PTSD_ONEIRIS_v2_WK_Gate": {
+      "nTrials": 500,
+      "endSlopeBB": -0.942,
+      "endDFA": 1.094,
+      "endWKViolation": 0.245,
+      "q4PlasticRemissionPct": 20.6,
+      "startleEventPct": 0,
+      "meanCuesPerSession": 0.6,
+      "meanVetoesPerSession": 349.3,
+      "meanWassersteinEnergy": 15.42
+    },
+    "5_Propofol_GABA_Offline_Q1": {
+      "nTrials": 500,
+      "endSlopeBB": -2.594,
+      "endDFA": 1.548,
+      "endWKViolation": -0.497,
+      "q4PlasticRemissionPct": 0,
+      "startleEventPct": 0,
+      "meanCuesPerSession": 0,
+      "meanVetoesPerSession": 0,
+      "meanWassersteinEnergy": 12.43
+    },
+    "6_Psilocybin_Inner_Cinema_Q4": {
+      "nTrials": 500,
+      "endSlopeBB": -0.223,
+      "endDFA": 0.572,
+      "endWKViolation": -0.08,
+      "q4PlasticRemissionPct": 100,
+      "startleEventPct": 0,
+      "meanCuesPerSession": 0,
+      "meanVetoesPerSession": 0,
+      "meanWassersteinEnergy": 31.91
+    }
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "generatedAt": "2026-11-26T06:46:48.194Z",
+  "dataset": "OpenNeuro ds005555 (BOAS — Full 128-Night Wearable AF7/AF8 Headband + 3-Expert Clinical PSG)",
+  "nNights": 126,
+  "totalHoursAnalyzed": 985.3,
+  "wearable2x2StageAtlas": {
+    "Wake": {
+      "nNights": 126,
+      "slopeBB": {
+        "n": 126,
+        "mean": -1.1453,
+        "sd": 0.3247,
+        "ci95Low": -1.202,
+        "ci95High": -1.0886
+      },
+      "dfa": {
+        "n": 126,
+        "mean": 1.0545,
+        "sd": 0.1334,
+        "ci95Low": 1.0312,
+        "ci95High": 1.0778
+      },
+      "wkViolation": {
+        "n": 126,
+        "mean": -0.0363,
+        "sd": 0.2186,
+        "ci95Low": -0.0745,
+        "ci95High": 0.0019
+      },
+      "deltaFrac": 0.4928,
+      "alphaFrac": 0.124,
+      "betaFrac": 0.1417
+    },
+    "N1": {
+      "nNights": 126,
+      "slopeBB": {
+        "n": 126,
+        "mean": -1.4241,
+        "sd": 0.3529,
+        "ci95Low": -1.4858,
+        "ci95High": -1.3625
+      },
+      "dfa": {
+        "n": 126,
+        "mean": 1.0429,
+        "sd": 0.1575,
+        "ci95Low": 1.0154,
+        "ci95High": 1.0704
+      },
+      "wkViolation": {
+        "n": 126,
+        "mean": -0.3384,
+        "sd": 0.2698,
+        "ci95Low": -0.3855,
+        "ci95High": -0.2913
+      },
+      "deltaFrac": 0.4755,
+      "alphaFrac": 0.1338,
+      "betaFrac": 0.151
+    },
+    "N2": {
+      "nNights": 126,
+      "slopeBB": {
+        "n": 126,
+        "mean": -1.9862,
+        "sd": 0.3815,
+        "ci95Low": -2.0528,
+        "ci95High": -1.9196
+      },
+      "dfa": {
+        "n": 126,
+        "mean": 1.2068,
+        "sd": 0.1693,
+        "ci95Low": 1.1773,
+        "ci95High": 1.2364
+      },
+      "wkViolation": {
+        "n": 126,
+        "mean": -0.5725,
+        "sd": 0.2552,
+        "ci95Low": -0.6171,
+        "ci95High": -0.5279
+      },
+      "deltaFrac": 0.6085,
+      "alphaFrac": 0.115,
+      "betaFrac": 0.089
+    },
+    "N3": {
+      "nNights": 89,
+      "slopeBB": {
+        "n": 89,
+        "mean": -2.5889,
+        "sd": 0.3547,
+        "ci95Low": -2.6626,
+        "ci95High": -2.5152
+      },
+      "dfa": {
+        "n": 89,
+        "mean": 1.4971,
+        "sd": 0.1618,
+        "ci95Low": 1.4635,
+        "ci95High": 1.5307
+      },
+      "wkViolation": {
+        "n": 89,
+        "mean": -0.5947,
+        "sd": 0.3157,
+        "ci95Low": -0.6603,
+        "ci95High": -0.5291
+      },
+      "deltaFrac": 0.8446,
+      "alphaFrac": 0.0453,
+      "betaFrac": 0.0208
+    },
+    "REM": {
+      "nNights": 126,
+      "slopeBB": {
+        "n": 126,
+        "mean": -1.76,
+        "sd": 0.3603,
+        "ci95Low": -1.8229,
+        "ci95High": -1.6971
+      },
+      "dfa": {
+        "n": 126,
+        "mean": 1.1041,
+        "sd": 0.1818,
+        "ci95Low": 1.0724,
+        "ci95High": 1.1359
+      },
+      "wkViolation": {
+        "n": 126,
+        "mean": -0.5517,
+        "sd": 0.291,
+        "ci95Low": -0.6025,
+        "ci95High": -0.5009
+      },
+      "deltaFrac": 0.519,
+      "alphaFrac": 0.1229,
+      "betaFrac": 0.1308
+    }
+  },
+  "n3ToRemGrandAngleDeg": 44.65,
+  "n3ToRemPerNightAngleCI": {
+    "n": 89,
+    "mean": 43.7096,
+    "sd": 16.9339,
+    "ci95Low": 40.1914,
+    "ci95High": 47.2278
+  },
+  "fisherRaoRemGeodesicEfficiencyPctCI": {
+    "n": 89,
+    "mean": 83.7458,
+    "sd": 17.6694,
+    "ci95Low": 80.0748,
+    "ci95High": 87.4168
+  },
+  "overnightAntiStartleBenchmark": {
+    "naiveLateNightTimer": {
+      "Wake": 1438,
+      "N1": 502,
+      "N2": 8963,
+      "N3": 243,
+      "REM": 3133,
+      "total": 14279,
+      "vetoes": 0,
+      "wakePerNight": 11.41,
+      "wakeHazardPct": 10.07,
+      "n3DeepPct": 1.7,
+      "remPct": 21.94
+    },
+    "oneiris_v1_IRT_TMR": {
+      "Wake": 469,
+      "N1": 182,
+      "N2": 3170,
+      "N3": 40,
+      "REM": 1406,
+      "total": 5267,
+      "vetoes": 11159,
+      "wakePerNight": 3.72,
+      "wakeHazardPct": 8.9,
+      "n3DeepPct": 0.76,
+      "remPct": 26.69
+    },
+    "oneiris_v2_WK_Wearable": {
+      "Wake": 104,
+      "N1": 90,
+      "N2": 1633,
+      "N3": 9,
+      "REM": 816,
+      "total": 2652,
+      "vetoes": 17317,
+      "wakePerNight": 0.83,
+      "wakeHazardPct": 3.92,
+      "n3DeepPct": 0.34,
+      "remPct": 30.77
+    },
+    "v1_WakeCueReductionPct": 67.39,
+    "v2_WK_WakeCueReductionPct": 92.77,
+    "v2_WK_N3CueReductionPct": 96.3,
+    "pairedWakeReductionPerNight": {
+      "n": 126,
+      "mean": 10.5873,
+      "sd": 12.1381,
+      "ci95Low": 8.4679,
+      "ci95High": 12.7067,
+      "tStat": 9.79,
+      "nightsImproved": 119,
+      "nightsZeroWakeV2": 78,
+      "nightsZeroN3V2": 123
+    }
+  }
+}

@@ -3,79 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ONEIRIS — Live 2x2 Wiener–Khinchin &amp; Optimal-Transport Phase Explorer</title>
+<title>ONEIRIS — Live 2x2 Wiener–Khinchin, Nonlinear SDE &amp; Muse BLE Lab</title>
 <style>
-  :root { --bg:#060a14; --card:#0f172a; --border:#233359; --text:#e8f0fc; --muted:#93a8cb; --cyan:#38bdf8; --teal:#2dd4bf; --amber:#fbbf24; --rose:#fb7185; --violet:#a78bfa; }
+  :root { --bg:#060a14; --card:#0f172a; --border:#233359; --text:#e8f0fc; --muted:#93a8cb; --cyan:#38bdf8; --teal:#2dd4bf; --amber:#fbbf24; --rose:#fb7185; --violet:#a78bfa; --emerald:#34d399; }
   * { box-sizing:border-box; }
-  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:20px; }
-  .wrap { max-width:1060px; margin:0 auto; }
-  h1 { margin:0 0 4px; font-size:1.5rem; }
-  .sub { margin:0 0 14px; color:var(--muted); font-size:0.9rem; }
-  .layout { display:grid; grid-template-columns:1fr 340px; gap:16px; }
-  @media (max-width:860px) { .layout { grid-template-columns:1fr; } }
-  .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px; margin-bottom:14px; }
-  .card h2 { margin:0 0 8px; font-size:1rem; color:#fff; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:18px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { margin:0 0 4px; font-size:1.45rem; }
+  .sub { margin:0 0 14px; color:var(--muted); font-size:0.88rem; }
+  .tabs { display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap; }
+  .tab { background:#13203b; color:var(--muted); border:1px solid var(--border); border-radius:9px; padding:8px 14px; font-weight:700; font-size:0.84rem; cursor:pointer; }
+  .tab.active { background:rgba(56,189,248,0.18); border-color:var(--cyan); color:#fff; }
+  .layout { display:grid; grid-template-columns:1fr 370px; gap:16px; }
+  @media (max-width:920px) { .layout { grid-template-columns:1fr; } }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:15px; margin-bottom:14px; }
+  .card h2 { margin:0 0 8px; font-size:0.98rem; color:#fff; }
   canvas { width:100%; display:block; background:#080e1d; border-radius:12px; border:1px solid #1e2d4f; }
-  button { background:#1b2a4a; color:var(--text); border:1px solid var(--border); border-radius:9px; padding:8px 12px; font-weight:600; font-size:0.84rem; cursor:pointer; width:100%; margin-bottom:8px; text-align:left; }
-  button:hover { border-color:var(--cyan); }
+  button.act { background:#1b2a4a; color:var(--text); border:1px solid var(--border); border-radius:9px; padding:8px 11px; font-weight:600; font-size:0.82rem; cursor:pointer; width:100%; margin-bottom:7px; text-align:left; }
+  button.act:hover { border-color:var(--cyan); }
   button.teal { background:rgba(45,212,191,0.16); border-color:var(--teal); color:#ccfbf1; }
   button.rose { background:rgba(251,113,133,0.16); border-color:var(--rose); color:#ffe4e6; }
-  .kpi { background:#080e1d; border:1px solid #1e2d4f; border-radius:10px; padding:10px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; }
-  .kpi span:first-child { font-size:0.8rem; color:var(--muted); }
-  .kpi span:last-child { font-family:ui-monospace,Consolas,monospace; font-weight:700; font-size:0.98rem; color:var(--cyan); }
+  button.violet { background:rgba(167,139,250,0.16); border-color:var(--violet); color:#ede9fe; }
+  .kpi { background:#080e1d; border:1px solid #1e2d4f; border-radius:9px; padding:8px 10px; margin-bottom:7px; display:flex; justify-content:space-between; align-items:center; }
+  .kpi span:first-child { font-size:0.78rem; color:var(--muted); }
+  .kpi span:last-child { font-family:ui-monospace,Consolas,monospace; font-weight:700; font-size:0.94rem; color:var(--cyan); }
+  .slider-row { margin-bottom:9px; }
+  .slider-row label { display:flex; justify-content:space-between; font-size:0.8rem; color:var(--muted); margin-bottom:3px; }
+  .slider-row input[type=range] { width:100%; accent-color:var(--cyan); }
+  .badge { display:inline-block; padding:3px 9px; border-radius:999px; font-size:0.75rem; font-weight:700; font-family:ui-monospace,Consolas,monospace; }
+  .b-safe { background:rgba(52,211,153,0.2); color:#6ee7b7; border:1px solid var(--emerald); }
+  .b-veto { background:rgba(251,113,133,0.2); color:#fda4af; border:1px solid var(--rose); }
+  .b-wait { background:rgba(148,163,184,0.15); color:#cbd5e1; border:1px solid #475569; }
+  .panel { display:none; }
+  .panel.active { display:block; }
+  .row2 { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>ONEIRIS — Live 2&times;2 Wiener–Khinchin &amp; Optimal-Transport Brain-State Explorer</h1>
-  <p class="sub">Interactive 13-Lab mathematical phase plane: Watch how human sleep, fear extinction, PTSD remission, &amp; psychedelics ride the exact +46.17&deg; Wiener–Khinchin geodesic while trauma &amp; video break symmetry at &minus;45&deg;.</p>
+  <h1>ONEIRIS — Live 2&times;2 Wiener–Khinchin, Nonlinear SDE &amp; Muse BLE Lab</h1>
+  <p class="sub">13-Lab Physics Engine: Explore the +46.17&deg; Wiener–Khinchin Geodesic, dial live Nonlinear SDE phase transitions, or stream synthetic / Muse S BLE EEG through the v2 &Delta;<sub>WK</sub> Anti-Startle Gate with soft Web-Audio IRT+TMR chords.</p>
+
+  <div class="tabs">
+    <div class="tab active" id="tab_emp" onclick="setMode('emp')">1. Empirical 13-Lab Trajectories</div>
+    <div class="tab" id="tab_sde" onclick="setMode('sde')">2. Live Nonlinear SDE Brain Simulator</div>
+    <div class="tab" id="tab_eeg" onclick="setMode('eeg')">3. Live Web-Audio + Muse BLE / Synthetic EEG</div>
+  </div>
 
   <div class="layout">
     <div class="card">
-      <h2>Live (slopeBB &times; &minus;DFA &alpha;) Phase Plane &amp; Empirical 13-Lab Landmarks</h2>
-      <canvas id="c_plane" width="680" height="500"></canvas>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <h2 style="margin:0;">Live (slopeBB &times; &minus;DFA &alpha;) Phase Plane &amp; v2 &Delta;<sub>WK</sub> Safe Corridor</h2>
+        <span id="gate_badge" class="badge b-wait">GATE: STANDBY</span>
+      </div>
+      <canvas id="c_plane" width="740" height="520"></canvas>
+      <div style="margin-top:8px;display:flex;gap:14px;font-size:0.78rem;color:var(--muted);flex-wrap:wrap;">
+        <span><strong style="color:#2dd4bf;">---</strong> Wiener–Khinchin +46.17&deg; Geodesic</span>
+        <span><strong style="color:#34d399;">&#9632;</strong> v2 &Delta;<sub>WK</sub> Safe Q4 REM Corridor (slopeBB &le; &minus;1.18, &Delta;<sub>WK</sub> &le; &minus;0.12)</span>
+        <span><strong style="color:#fb7185;">&#9632;</strong> Startle / Wake Lockout Zone</span>
+      </div>
     </div>
 
     <div>
-      <div class="card">
-        <h2>Launch Brain-State Trajectory</h2>
-        <button class="teal" onclick="launch('n3_to_rem')">1. Deep N3 &rarr; REM (+45.3&deg; BOAS Wearable)</button>
-        <button class="teal" onclick="launch('ptsd_geodesic')">2. PTSD Q3 &rarr; Extinction Q4 (+46.6&deg; Optimal Transport)</button>
-        <button class="rose" onclick="launch('ptsd_startle')">3. PTSD Q3 + Loud Startle Detour (28.9&times; Energy Cost!)</button>
-        <button onclick="launch('video_lock')">4. Sober Rest &rarr; External Video (&minus;36.7&deg; Lock-In)</button>
-        <button onclick="launch('psilo')">5. External Video &rarr; Psilocybin Cinema (+54.6&deg;)</button>
-        <button onclick="launch('cewr')">6. Deep NREM &rarr; CEWR Gate (+90&deg; Pure DFA Release)</button>
+      <!-- MODE 1: EMPIRICAL TRAJECTORIES -->
+      <div class="card panel active" id="panel_emp">
+        <h2>Launch 13-Lab Empirical Trajectory</h2>
+        <button class="act teal" onclick="launch('n3_to_rem')">1. Deep N3 &rarr; REM (+45.3&deg; BOAS Wearable)</button>
+        <button class="act teal" onclick="launch('ptsd_geodesic')">2. PTSD Q3 &rarr; Extinction Q4 (+46.6&deg; Optimal Transport)</button>
+        <button class="act rose" onclick="launch('ptsd_startle')">3. PTSD Q3 + Loud Startle Detour (28.9&times; Energy!)</button>
+        <button class="act" onclick="launch('video_lock')">4. Sober Rest &rarr; External Video (&minus;36.7&deg; Lock-In)</button>
+        <button class="act" onclick="launch('psilo')">5. External Video &rarr; Psilocybin Cinema (+54.6&deg;)</button>
+        <button class="act violet" onclick="launch('cewr')">6. Deep NREM &rarr; CEWR Gate (+90&deg; Pure DFA Release)</button>
+      </div>
+
+      <!-- MODE 2: NONLINEAR SDE BRAIN SIMULATOR -->
+      <div class="card panel" id="panel_sde">
+        <h2>Nonlinear Wilson–Cowan + Fisher–Rao SDE</h2>
+        <div class="slider-row">
+          <label><span>PTSD Hyperarousal (g_threat)</span><span id="v_threat">0.20</span></label>
+          <input type="range" id="s_threat" min="0" max="1" step="0.05" value="0.20" oninput="updSDE()">
+        </div>
+        <div class="slider-row">
+          <label><span>Anesthesia / GABA (g_GABA)</span><span id="v_gaba">0.00</span></label>
+          <input type="range" id="s_gaba" min="0" max="1" step="0.05" value="0.00" oninput="updSDE()">
+        </div>
+        <div class="slider-row">
+          <label><span>REM Cholinergic Drive (A_REM)</span><span id="v_rem">0.35</span></label>
+          <input type="range" id="s_rem" min="0" max="1" step="0.05" value="0.35" oninput="updSDE()">
+        </div>
+        <div class="slider-row">
+          <label><span>Stochastic Noise (&sigma;)</span><span id="v_sig">0.16</span></label>
+          <input type="range" id="s_sig" min="0.02" max="0.45" step="0.02" value="0.16" oninput="updSDE()">
+        </div>
+        <div class="row2">
+          <button class="act teal" onclick="sdePreset('ptsd_v2')">PTSD + v2 Gate</button>
+          <button class="act rose" onclick="sdePreset('ptsd_trap')">PTSD Q3 Trap</button>
+          <button class="act" onclick="sdePreset('propofol')">Propofol Q1</button>
+          <button class="act violet" onclick="sdePreset('psilo')">Psilocybin Q4</button>
+        </div>
+        <button class="act teal" id="btn_sde_cue" onclick="toggleSDECue()">Closed-Loop v2 &Delta;<sub>WK</sub> Cueing: ON</button>
+      </div>
+
+      <!-- MODE 3: LIVE WEB-AUDIO + MUSE BLE / SYNTHETIC EEG -->
+      <div class="card panel" id="panel_eeg">
+        <h2>Live EEG Stream &amp; Web-Audio IRT+TMR</h2>
+        <button class="act teal" id="btn_audio" onclick="toggleAudio()">Enable Soft Web-Audio IRT+TMR Synth (OFF)</button>
+        <button class="act violet" id="btn_synth" onclick="toggleSynthEEG()">Start Synthetic 2-ch AF7/AF8 Night Cycle</button>
+        <button class="act" id="btn_ble" onclick="connectMuseBLE()">Connect Real Muse S / Muse 2 (Web Bluetooth)</button>
+        <p style="font-size:0.76rem;color:var(--muted);margin:6px 0 0;">
+          Plays a soft, non-startling warm major-9th pad chord ONLY when live EEG enters the green Q4 REM corridor (<code>slopeBB &le; &minus;1.18</code> &amp; <code>&Delta;<sub>WK</sub> &le; &minus;0.12</code>). Any waking/arousal spike triggers an instant red <strong>VETO</strong>.
+        </p>
       </div>
 
       <div class="card">
-        <h2>Live Mathematical Telemetry</h2>
+        <h2>Live Mathematical &amp; Safety Telemetry</h2>
         <div class="kpi"><span>Current Quadrant</span><span id="k_quad">Q4 (Plastic)</span></div>
         <div class="kpi"><span>slopeBB (Excitability)</span><span id="k_slp">-1.48</span></div>
         <div class="kpi"><span>DFA &alpha; (Stickiness)</span><span id="k_dfa">1.03</span></div>
         <div class="kpi"><span>Wiener–Khinchin &Delta;<sub>WK</sub></span><span id="k_wk">-0.42</span></div>
+        <div class="kpi"><span>v2 Cues Fired / Vetoes</span><span id="k_cv">0 / 0</span></div>
         <div class="kpi"><span>Wasserstein Transport Cost</span><span id="k_w2">0.00</span></div>
       </div>
     </div>
   </div>
 </div>
 
+<script src="/muse_ble_adapter.js"></script>
 <script>
 const ctx = document.getElementById('c_plane').getContext('2d');
-// Coordinates: x = slopeBB in [-2.6 .. -0.2], y = DFA alpha in [0.55 .. 1.55] (UP = lower DFA = MORE PLASTIC!)
-const toX = (s) => 60 + ((s + 2.6) / 2.4) * 580;
-const toY = (d) => 450 - ((1.55 - d) / 1.0) * 400; // low DFA at top (Q2/Q4), high DFA at bottom (Q1/Q3)
+const toX = (s) => 60 + ((s + 2.6) / 2.4) * 630;
+const toY = (d) => 470 - ((1.55 - d) / 1.0) * 420;
 
 const LANDMARKS = [
-  { name: 'N3 Deep Sleep (Q1)', s: -2.30, d: 1.43, col: '#94a3b8' },
+  { name: 'N3 Deep (Q1)', s: -2.30, d: 1.43, col: '#94a3b8' },
   { name: 'CEWR Gate (Q2)', s: -2.10, d: 0.92, col: '#a78bfa' },
   { name: 'REM Dreaming (Q4)', s: -1.48, d: 1.03, col: '#2dd4bf' },
-  { name: 'Wake / Video Lock (Q3)', s: -1.02, d: 1.02, col: '#fbbf24' },
-  { name: 'PTSD Trauma Loop (Q3)', s: -0.95, d: 1.24, col: '#fb7185' },
-  { name: 'Extinction / Remission (Q4)', s: -0.78, d: 0.88, col: '#34d399' },
-  { name: 'Psilocybin Cinema (Q4)', s: -0.35, d: 0.68, col: '#38bdf8' },
+  { name: 'Wake / Video (Q3)', s: -1.02, d: 1.02, col: '#fbbf24' },
+  { name: 'PTSD Loop (Q3)', s: -0.95, d: 1.24, col: '#fb7185' },
+  { name: 'Extinction (Q4)', s: -0.78, d: 0.88, col: '#34d399' },
+  { name: 'Psilocybin (Q4)', s: -0.35, d: 0.68, col: '#38bdf8' },
 ];
 
+let appMode = 'emp';
 let cur = { s: -1.48, d: 1.03 }, waypoints = [], trail = [{ s: -1.48, d: 1.03 }], energyCost = 0;
+let cuesFired = 0, vetoes = 0, lastCueMs = 0, flashColor = null, flashAlpha = 0;
+
+// SDE params
+let sde = { threat: 0.20, gaba: 0.00, rem: 0.35, sigma: 0.16, cueOn: true };
+// Web-Audio & Synthetic/BLE EEG state
+let audioCtx = null, audioOn = false, synthOn = false, synthPhase = 0, bleAdapter = null;
+
+function setMode(m) {
+  appMode = m;
+  ['emp', 'sde', 'eeg'].forEach((k) => {
+    document.getElementById('tab_' + k).classList.toggle('active', k === m);
+    document.getElementById('panel_' + k).classList.toggle('active', k === m);
+  });
+  trail = [{ ...cur }]; energyCost = 0;
+}
+
+function updSDE() {
+  sde.threat = parseFloat(document.getElementById('s_threat').value);
+  sde.gaba   = parseFloat(document.getElementById('s_gaba').value);
+  sde.rem    = parseFloat(document.getElementById('s_rem').value);
+  sde.sigma  = parseFloat(document.getElementById('s_sig').value);
+  document.getElementById('v_threat').textContent = sde.threat.toFixed(2);
+  document.getElementById('v_gaba').textContent = sde.gaba.toFixed(2);
+  document.getElementById('v_rem').textContent = sde.rem.toFixed(2);
+  document.getElementById('v_sig').textContent = sde.sigma.toFixed(2);
+}
+
+function sdePreset(p) {
+  if (p === 'ptsd_v2')  { cur = { s: -1.35, d: 1.15 }; sde = { threat: 0.25, gaba: 0.00, rem: 0.35, sigma: 0.16, cueOn: true }; }
+  if (p === 'ptsd_trap'){ cur = { s: -0.95, d: 1.24 }; sde = { threat: 0.65, gaba: 0.00, rem: 0.05, sigma: 0.16, cueOn: false }; }
+  if (p === 'propofol') { cur = { s: -1.10, d: 0.98 }; sde = { threat: 0.00, gaba: 0.80, rem: 0.00, sigma: 0.10, cueOn: false }; }
+  if (p === 'psilo')    { cur = { s: -0.85, d: 1.15 }; sde = { threat: 0.00, gaba: 0.00, rem: 0.85, sigma: 0.20, cueOn: false }; }
+  document.getElementById('s_threat').value = sde.threat;
+  document.getElementById('s_gaba').value = sde.gaba;
+  document.getElementById('s_rem').value = sde.rem;
+  document.getElementById('s_sig').value = sde.sigma;
+  document.getElementById('btn_sde_cue').textContent = 'Closed-Loop v2 Δ_WK Cueing: ' + (sde.cueOn ? 'ON' : 'OFF');
+  updSDE(); trail = [{ ...cur }]; energyCost = 0;
+}
+
+function toggleSDECue() {
+  sde.cueOn = !sde.cueOn;
+  document.getElementById('btn_sde_cue').textContent = 'Closed-Loop v2 Δ_WK Cueing: ' + (sde.cueOn ? 'ON' : 'OFF');
+}
+
+function toggleAudio() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  audioOn = !audioOn;
+  document.getElementById('btn_audio').textContent = 'Soft Web-Audio IRT+TMR Synth (' + (audioOn ? 'ON — READY' : 'OFF') + ')';
+}
+
+function playGentleIRTChord() {
+  if (!audioOn || !audioCtx) return;
+  const now = audioCtx.currentTime;
+  // Soft warm Fmaj9 pad (zero sharp transient -> anti-startle!)
+  [216, 270, 324, 405].forEach((freq) => {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, now);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.025, now + 0.6);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.0);
+    osc.connect(gain); gain.connect(audioCtx.destination);
+    osc.start(now); osc.stop(now + 2.1);
+  });
+}
+
+function toggleSynthEEG() {
+  synthOn = !synthOn;
+  document.getElementById('btn_synth').textContent = synthOn ? 'Stop Synthetic AF7/AF8 Night Cycle' : 'Start Synthetic 2-ch AF7/AF8 Night Cycle';
+}
+
+async function connectMuseBLE() {
+  if (typeof MuseBLEAdapter === 'undefined') { alert('Muse BLE adapter not loaded.'); return; }
+  try {
+    bleAdapter = new MuseBLEAdapter({
+      endpoint: '/eeg-chunk',
+      onDecision: (dec) => {
+        if (dec.metrics && dec.metrics.rf) {
+          cur.s = Math.max(-2.6, Math.min(-0.2, dec.metrics.rf.slopeBB));
+          cur.d = Math.max(0.55, Math.min(1.55, dec.metrics.rf.dfa));
+          trail.push({ ...cur }); if (trail.length > 260) trail.shift();
+          evaluateV2Gate(cur.s, cur.d, true);
+        }
+      },
+    });
+    await bleAdapter.connect();
+    document.getElementById('btn_ble').textContent = 'Muse S BLE Connected (Live Stream)';
+  } catch (e) {
+    alert('Muse BLE connection cancelled or unavailable: ' + e.message);
+  }
+}
 
 function launch(mode) {
   energyCost = 0;
@@ -88,28 +252,67 @@ function launch(mode) {
   trail = [{ ...cur }];
 }
 
+function evaluateV2Gate(s, d, allowFire) {
+  const wk = s + (2 * d - 1);
+  const badge = document.getElementById('gate_badge');
+  const now = performance.now();
+  if (s > -1.18 || wk > -0.12) {
+    badge.className = 'badge b-veto';
+    badge.textContent = 'v2 Δ_WK GATE: ANTI-STARTLE VETO';
+    if (allowFire && now - lastCueMs > 900) { vetoes++; lastCueMs = now; flashColor = '#fb7185'; flashAlpha = 0.35; }
+    return 'VETO';
+  }
+  if (s > -1.80 && d < 1.15) {
+    badge.className = 'badge b-safe';
+    badge.textContent = 'v2 Δ_WK GATE: SAFE Q4 REM CORRIDOR';
+    if (allowFire && now - lastCueMs > 2400) {
+      cuesFired++; lastCueMs = now; flashColor = '#34d399'; flashAlpha = 0.45;
+      playGentleIRTChord();
+      return 'FIRE';
+    }
+    return 'SAFE';
+  }
+  badge.className = 'badge b-wait';
+  badge.textContent = 'v2 Δ_WK GATE: DEEP NREM WAIT';
+  return 'WAIT';
+}
+
+function randn() { return Math.sqrt(-2 * Math.log(Math.max(1e-9, Math.random()))) * Math.cos(6.28318 * Math.random()); }
+
 function draw() {
-  ctx.clearRect(0, 0, 680, 500);
-  // Quadrant dividers (slopeBB = -1.55, DFA = 1.08)
+  ctx.clearRect(0, 0, 740, 520);
+
+  // Shaded v2 Δ_WK Safe Corridor (slopeBB in [-1.80, -1.18], DFA <= min(1.15, (1 - 0.12 - slopeBB)/2))
+  ctx.fillStyle = 'rgba(52,211,153,0.10)';
+  ctx.beginPath();
+  ctx.moveTo(toX(-1.80), toY(0.55));
+  ctx.lineTo(toX(-1.18), toY(0.55));
+  ctx.lineTo(toX(-1.18), toY((0.88 - (-1.18)) / 2));
+  ctx.lineTo(toX(-1.42), toY(1.15));
+  ctx.lineTo(toX(-1.80), toY(1.15));
+  ctx.closePath(); ctx.fill();
+
+  // Shaded Wake / Startle Lockout Zone (slopeBB > -1.18)
+  ctx.fillStyle = 'rgba(251,113,133,0.07)';
+  ctx.fillRect(toX(-1.18), 40, toX(-0.2) - toX(-1.18), 430);
+
+  // Quadrant dividers
   const qx = toX(-1.55), qy = toY(1.08);
   ctx.strokeStyle = 'rgba(148,163,184,0.22)'; ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.moveTo(qx, 40); ctx.lineTo(qx, 460); ctx.moveTo(50, qy); ctx.lineTo(645, qy); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(qx, 40); ctx.lineTo(qx, 475); ctx.moveTo(50, qy); ctx.lineTo(700, qy); ctx.stroke();
 
-  // Quadrant labels
   ctx.font = 'bold 11px system-ui'; ctx.fillStyle = 'rgba(148,163,184,0.65)';
-  ctx.fillText('Q2: QUIET PLASTIC GATE (CEWR)', 68, 60);
-  ctx.fillText('Q4: PLASTIC ACTIVE THEATER (EXTINCTION / REM)', qx + 12, 60);
-  ctx.fillText('Q1: LOCKED OFFLINE (N3 / PROPOFOL)', 68, 445);
-  ctx.fillText('Q3: STICKY LOCK-IN (PTSD / VIDEO)', qx + 12, 445);
+  ctx.fillText('Q2: QUIET PLASTIC GATE (CEWR)', 68, 58);
+  ctx.fillText('Q4: PLASTIC ACTIVE THEATER (REM / EXTINCTION)', qx + 10, 58);
+  ctx.fillText('Q1: LOCKED OFFLINE (N3 / PROPOFOL)', 68, 462);
+  ctx.fillText('Q3: STICKY LOCK-IN (PTSD / VIDEO)', qx + 10, 462);
 
-  // Exact Wiener-Khinchin Critical Line: slopeBB = -(2*DFA - 1) -> DFA = (1 - slopeBB)/2
-  ctx.strokeStyle = 'rgba(45,212,191,0.45)'; ctx.setLineDash([6, 4]); ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.moveTo(toX(-2.10), toY(1.55));
-  ctx.lineTo(toX(-0.20), toY(0.60));
-  ctx.stroke(); ctx.setLineDash([]);
+  // Exact Wiener-Khinchin Critical Line: slopeBB = -(2*DFA - 1)
+  ctx.strokeStyle = 'rgba(45,212,191,0.5)'; ctx.setLineDash([6, 4]); ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(toX(-2.10), toY(1.55)); ctx.lineTo(toX(-0.20), toY(0.60)); ctx.stroke();
+  ctx.setLineDash([]);
   ctx.fillStyle = '#2dd4bf'; ctx.font = '11px system-ui';
-  ctx.fillText('Wiener–Khinchin Critical Geodesic (+46.17°)', toX(-1.85), toY(1.36) - 8);
+  ctx.fillText('Wiener–Khinchin Critical Geodesic (+46.17°)', toX(-1.90), toY(1.38) - 8);
 
   // Landmarks
   for (const lm of LANDMARKS) {
@@ -118,27 +321,60 @@ function draw() {
     ctx.fillStyle = '#cbd5e1'; ctx.font = '11px system-ui'; ctx.fillText(lm.name, x + 8, y + 4);
   }
 
-  // Step trajectory
-  if (waypoints.length > 0) {
-    const tgt = waypoints[0];
-    const ds = tgt.s - cur.s, dd = tgt.d - cur.d;
-    const dist = Math.hypot(ds, dd);
-    if (dist < 0.015) waypoints.shift();
-    else {
-      const stepS = (ds / dist) * 0.018, stepD = (dd / dist) * 0.014;
-      cur.s += stepS; cur.d += stepD;
-      energyCost += Math.hypot(stepS / 0.25, stepD / 0.12) ** 2 * 12;
-      trail.push({ ...cur }); if (trail.length > 220) trail.shift();
+  // Step physics according to active mode
+  if (appMode === 'emp') {
+    if (waypoints.length > 0) {
+      const tgt = waypoints[0], ds = tgt.s - cur.s, dd = tgt.d - cur.d, dist = Math.hypot(ds, dd);
+      if (dist < 0.015) waypoints.shift();
+      else {
+        const stepS = (ds / dist) * 0.018, stepD = (dd / dist) * 0.014;
+        cur.s += stepS; cur.d += stepD;
+        energyCost += Math.hypot(stepS / 0.25, stepD / 0.12) ** 2 * 12;
+        trail.push({ ...cur }); if (trail.length > 220) trail.shift();
+      }
     }
+    evaluateV2Gate(cur.s, cur.d, false);
+  } else if (appMode === 'sde') {
+    const dt = 0.03, wk = cur.s + (2 * cur.d - 1);
+    const gate = evaluateV2Gate(cur.s, cur.d, sde.cueOn);
+    const cueS = (sde.cueOn && gate === 'FIRE') ? 0.12 : 0;
+    const cueD = (sde.cueOn && gate === 'FIRE') ? -0.18 : 0;
+    const ds = (-0.35 * (cur.s + 1.35) - 0.18 * wk + 0.55 * sde.rem - 0.85 * sde.gaba + 0.45 * sde.threat + cueS) * dt + sde.sigma * Math.sqrt(dt) * randn();
+    const dd = (-0.45 * (cur.d - 1.05) - 0.10 * wk - 0.45 * sde.rem + 0.45 * sde.gaba + 0.45 * sde.threat + cueD) * dt + 0.5 * sde.sigma * Math.sqrt(dt) * randn();
+    cur.s = Math.max(-2.55, Math.min(-0.25, cur.s + ds));
+    cur.d = Math.max(0.58, Math.min(1.52, cur.d + dd));
+    energyCost += Math.hypot(ds / 0.25, dd / 0.12) ** 2 * 8;
+    trail.push({ ...cur }); if (trail.length > 260) trail.shift();
+  } else if (appMode === 'eeg' && synthOn) {
+    synthPhase += 0.012;
+    // Realistic overnight sleep cycle: N3 -> REM -> brief micro-arousal spike -> REM -> N2
+    const cyc = synthPhase % 6.283;
+    let tgtS = -1.48, tgtD = 1.00;
+    if (cyc < 1.6) { tgtS = -2.25; tgtD = 1.40; }         // Deep N3
+    else if (cyc < 3.8) { tgtS = -1.46; tgtD = 0.96; }    // REM Q4 Safe Corridor
+    else if (cyc < 4.5) { tgtS = -0.96; tgtD = 1.10; }    // Wake Micro-Arousal (triggers VETO!)
+    else { tgtS = -1.52; tgtD = 1.02; }                   // Return to REM
+    cur.s += (tgtS - cur.s) * 0.04 + 0.015 * randn();
+    cur.d += (tgtD - cur.d) * 0.04 + 0.008 * randn();
+    trail.push({ ...cur }); if (trail.length > 260) trail.shift();
+    evaluateV2Gate(cur.s, cur.d, true);
   }
 
-  // Draw live trail
+  // Draw trail
   if (trail.length > 1) {
-    ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 3; ctx.beginPath();
+    ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 2.8; ctx.beginPath();
     trail.forEach((pt, i) => { const x = toX(pt.s), y = toY(pt.d); i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); });
     ctx.stroke();
   }
+
+  // Pulse halo on FIRE or VETO
   const cx = toX(cur.s), cy = toY(cur.d);
+  if (flashAlpha > 0.01) {
+    ctx.fillStyle = flashColor; ctx.globalAlpha = flashAlpha;
+    ctx.beginPath(); ctx.arc(cx, cy, 26 * (1.2 - flashAlpha), 0, 6.28); ctx.fill();
+    ctx.globalAlpha = 1; flashAlpha *= 0.92;
+  }
+
   ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(cx, cy, 7, 0, 6.28); ctx.fill();
   ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 2.5; ctx.stroke();
 
@@ -149,6 +385,7 @@ function draw() {
   document.getElementById('k_slp').textContent = cur.s.toFixed(2);
   document.getElementById('k_dfa').textContent = cur.d.toFixed(2);
   document.getElementById('k_wk').textContent = (wk >= 0 ? '+' : '') + wk.toFixed(2);
+  document.getElementById('k_cv').textContent = `${cuesFired} / ${vetoes}`;
   document.getElementById('k_w2').textContent = energyCost.toFixed(2);
 
   requestAnimationFrame(draw);
