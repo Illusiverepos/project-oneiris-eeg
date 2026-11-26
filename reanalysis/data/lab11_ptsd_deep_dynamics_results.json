@@ -1,0 +1,424 @@
+{
+  "generatedAt": "2026-11-26T03:47:45.047Z",
+  "nSubjects": 20,
+  "trajectory": {
+    "NF": {
+      "rfSlope": {
+        "earlyToMid": {
+          "n": 10,
+          "mean": -0.1727,
+          "dz": -0.371,
+          "pApprox": 0.2401,
+          "nPos": 3,
+          "nNeg": 7
+        },
+        "midToLate": {
+          "n": 10,
+          "mean": -0.0673,
+          "dz": -0.119,
+          "pApprox": 0.7079,
+          "nPos": 4,
+          "nNeg": 6
+        },
+        "earlyToLate": {
+          "n": 10,
+          "mean": -0.24,
+          "dz": -0.765,
+          "pApprox": 0.0156,
+          "nPos": 2,
+          "nNeg": 8
+        }
+      },
+      "rfMinusLfSlope": {
+        "earlyToMid": {
+          "n": 10,
+          "mean": -0.2322,
+          "dz": -0.567,
+          "pApprox": 0.0728,
+          "nPos": 3,
+          "nNeg": 7
+        },
+        "midToLate": {
+          "n": 10,
+          "mean": -0.0454,
+          "dz": -0.09,
+          "pApprox": 0.776,
+          "nPos": 3,
+          "nNeg": 7
+        },
+        "earlyToLate": {
+          "n": 10,
+          "mean": -0.2776,
+          "dz": -0.667,
+          "pApprox": 0.0349,
+          "nPos": 1,
+          "nNeg": 9
+        }
+      },
+      "postDFA": {
+        "earlyToMid": {
+          "n": 10,
+          "mean": 0.0113,
+          "dz": 0.144,
+          "pApprox": 0.6492,
+          "nPos": 7,
+          "nNeg": 3
+        },
+        "midToLate": {
+          "n": 10,
+          "mean": -0.0853,
+          "dz": -0.971,
+          "pApprox": 0.0021,
+          "nPos": 1,
+          "nNeg": 9
+        },
+        "earlyToLate": {
+          "n": 10,
+          "mean": -0.074,
+          "dz": -0.663,
+          "pApprox": 0.036,
+          "nPos": 2,
+          "nNeg": 8
+        }
+      },
+      "postEffDimNorm": {
+        "earlyToMid": {
+          "n": 10,
+          "mean": -0.0506,
+          "dz": -0.734,
+          "pApprox": 0.0202,
+          "nPos": 3,
+          "nNeg": 7
+        },
+        "midToLate": {
+          "n": 10,
+          "mean": 0.0122,
+          "dz": 0.199,
+          "pApprox": 0.5284,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "earlyToLate": {
+          "n": 10,
+          "mean": -0.0384,
+          "dz": -0.51,
+          "pApprox": 0.1065,
+          "nPos": 4,
+          "nNeg": 6
+        }
+      },
+      "globalEffDimNorm": {
+        "earlyToMid": {
+          "n": 10,
+          "mean": -0.0651,
+          "dz": -0.941,
+          "pApprox": 0.0029,
+          "nPos": 2,
+          "nNeg": 8
+        },
+        "midToLate": {
+          "n": 10,
+          "mean": 0.0134,
+          "dz": 0.231,
+          "pApprox": 0.4644,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "earlyToLate": {
+          "n": 10,
+          "mean": -0.0517,
+          "dz": -0.745,
+          "pApprox": 0.0184,
+          "nPos": 3,
+          "nNeg": 7
+        }
+      },
+      "postAlpha": {
+        "earlyToMid": {
+          "n": 10,
+          "mean": -0.0126,
+          "dz": -0.175,
+          "pApprox": 0.5804,
+          "nPos": 4,
+          "nNeg": 6
+        },
+        "midToLate": {
+          "n": 10,
+          "mean": 0.0602,
+          "dz": 0.45,
+          "pApprox": 0.1551,
+          "nPos": 7,
+          "nNeg": 3
+        },
+        "earlyToLate": {
+          "n": 10,
+          "mean": 0.0475,
+          "dz": 0.344,
+          "pApprox": 0.2767,
+          "nPos": 5,
+          "nNeg": 5
+        }
+      }
+    },
+    "MI": {
+      "rfSlope": {
+        "earlyToMid": {
+          "n": 10,
+          "mean": 0.0043,
+          "dz": 0.005,
+          "pApprox": 0.9872,
+          "nPos": 5,
+          "nNeg": 5
+        },
+        "midToLate": {
+          "n": 10,
+          "mean": -0.2298,
+          "dz": -0.259,
+          "pApprox": 0.4129,
+          "nPos": 4,
+          "nNeg": 6
+        },
+        "earlyToLate": {
+          "n": 10,
+          "mean": -0.2255,
+          "dz": -0.391,
+          "pApprox": 0.2158,
+          "nPos": 3,
+          "nNeg": 7
+        }
+      },
+      "rfMinusLfSlope": {
+        "earlyToMid": {
+          "n": 10,
+          "mean": 0.143,
+          "dz": 0.205,
+          "pApprox": 0.5175,
+          "nPos": 7,
+          "nNeg": 3
+        },
+        "midToLate": {
+          "n": 10,
+          "mean": -0.046,
+          "dz": -0.08,
+          "pApprox": 0.8007,
+          "nPos": 7,
+          "nNeg": 3
+        },
+        "earlyToLate": {
+          "n": 10,
+          "mean": 0.097,
+          "dz": 0.25,
+          "pApprox": 0.4298,
+          "nPos": 6,
+          "nNeg": 4
+        }
+      },
+      "postDFA": {
+        "earlyToMid": {
+          "n": 10,
+          "mean": 0.0194,
+          "dz": 0.22,
+          "pApprox": 0.4861,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "midToLate": {
+          "n": 10,
+          "mean": -0.0358,
+          "dz": -0.192,
+          "pApprox": 0.5447,
+          "nPos": 4,
+          "nNeg": 6
+        },
+        "earlyToLate": {
+          "n": 10,
+          "mean": -0.0164,
+          "dz": -0.109,
+          "pApprox": 0.7292,
+          "nPos": 4,
+          "nNeg": 6
+        }
+      },
+      "postEffDimNorm": {
+        "earlyToMid": {
+          "n": 10,
+          "mean": -0.0381,
+          "dz": -0.297,
+          "pApprox": 0.3474,
+          "nPos": 3,
+          "nNeg": 7
+        },
+        "midToLate": {
+          "n": 10,
+          "mean": -0.0751,
+          "dz": -0.533,
+          "pApprox": 0.0918,
+          "nPos": 3,
+          "nNeg": 7
+        },
+        "earlyToLate": {
+          "n": 10,
+          "mean": -0.1132,
+          "dz": -1.042,
+          "pApprox": 0.001,
+          "nPos": 1,
+          "nNeg": 9
+        }
+      },
+      "globalEffDimNorm": {
+        "earlyToMid": {
+          "n": 10,
+          "mean": -0.0114,
+          "dz": -0.082,
+          "pApprox": 0.7951,
+          "nPos": 4,
+          "nNeg": 6
+        },
+        "midToLate": {
+          "n": 10,
+          "mean": -0.0758,
+          "dz": -0.439,
+          "pApprox": 0.1649,
+          "nPos": 4,
+          "nNeg": 6
+        },
+        "earlyToLate": {
+          "n": 10,
+          "mean": -0.0872,
+          "dz": -0.836,
+          "pApprox": 0.0082,
+          "nPos": 1,
+          "nNeg": 9
+        }
+      },
+      "postAlpha": {
+        "earlyToMid": {
+          "n": 10,
+          "mean": 0.0361,
+          "dz": 0.289,
+          "pApprox": 0.3607,
+          "nPos": 7,
+          "nNeg": 3
+        },
+        "midToLate": {
+          "n": 10,
+          "mean": -0.0271,
+          "dz": -0.279,
+          "pApprox": 0.3774,
+          "nPos": 6,
+          "nNeg": 4
+        },
+        "earlyToLate": {
+          "n": 10,
+          "mean": 0.009,
+          "dz": 0.124,
+          "pApprox": 0.6948,
+          "nPos": 6,
+          "nNeg": 4
+        }
+      }
+    }
+  },
+  "acuteWithinSession": {
+    "NF": {
+      "rfSlope": {
+        "n": 10,
+        "mean": -0.0821,
+        "dz": -0.777,
+        "pApprox": 0.014,
+        "nPos": 1,
+        "nNeg": 9
+      },
+      "rfMinusLfSlope": {
+        "n": 10,
+        "mean": -0.0215,
+        "dz": -0.101,
+        "pApprox": 0.7487,
+        "nPos": 5,
+        "nNeg": 5
+      },
+      "postDFA": {
+        "n": 10,
+        "mean": 0.0105,
+        "dz": 0.158,
+        "pApprox": 0.6181,
+        "nPos": 4,
+        "nNeg": 6
+      },
+      "postEffDimNorm": {
+        "n": 10,
+        "mean": 0.0141,
+        "dz": 0.33,
+        "pApprox": 0.2964,
+        "nPos": 5,
+        "nNeg": 5
+      },
+      "globalEffDimNorm": {
+        "n": 10,
+        "mean": 0.0014,
+        "dz": 0.065,
+        "pApprox": 0.838,
+        "nPos": 4,
+        "nNeg": 6
+      },
+      "postAlpha": {
+        "n": 10,
+        "mean": 0.0147,
+        "dz": 0.321,
+        "pApprox": 0.3105,
+        "nPos": 4,
+        "nNeg": 6
+      }
+    },
+    "MI": {
+      "rfSlope": {
+        "n": 10,
+        "mean": -0.0806,
+        "dz": -0.387,
+        "pApprox": 0.2209,
+        "nPos": 3,
+        "nNeg": 7
+      },
+      "rfMinusLfSlope": {
+        "n": 10,
+        "mean": -0.0654,
+        "dz": -0.461,
+        "pApprox": 0.1453,
+        "nPos": 3,
+        "nNeg": 7
+      },
+      "postDFA": {
+        "n": 10,
+        "mean": 0.0036,
+        "dz": 0.065,
+        "pApprox": 0.8359,
+        "nPos": 7,
+        "nNeg": 3
+      },
+      "postEffDimNorm": {
+        "n": 10,
+        "mean": -0.0194,
+        "dz": -1.009,
+        "pApprox": 0.0014,
+        "nPos": 1,
+        "nNeg": 9
+      },
+      "globalEffDimNorm": {
+        "n": 10,
+        "mean": -0.0111,
+        "dz": -0.469,
+        "pApprox": 0.1383,
+        "nPos": 3,
+        "nNeg": 7
+      },
+      "postAlpha": {
+        "n": 10,
+        "mean": -0.0083,
+        "dz": -0.192,
+        "pApprox": 0.5435,
+        "nPos": 6,
+        "nNeg": 4
+      }
+    }
+  }
+}

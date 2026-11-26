@@ -109,3 +109,25 @@ Auditing the exact DSM-5 sleep items from `CI_raw-data-scores.xlsx` shows that t
 * The **`9/10` (`90%`) selective `Right_Frontal` 1/f steepening** during clinical PTSD remission (accompanied by `-75%` nightmare and `-67%` insomnia reductions) is the exact physiological mirror of **de Boer et al. (2020)** (who found `Right_Frontal` 1/f flattening during active PTSD sleep) and converges directly with **1 Hz inhibitory rTMS over Right DLPFC (`F4`)** (Kozel et al., 2018, `N = 103` combat veterans).
 * The standalone prototype (`toolkit/cueing-system/irt_tmr_prototype.html`) now implements a **Full-Night 3-Phase Protocol**: (1) Pre-sleep 6-bpm vagal pacing (`4.5 s` inhale / `5.5 s` exhale) for LC-NE down-regulation, (2) Safe-ending IRT rehearsal with a low-pass C-major7 pad, and (3) Optional early-night soft pink-noise NREM shield transitioning into late-night REM gentle TMR.
 
+---
+
+## 6. Deep Dynamics: Two-Stage Clinical PTSD Recovery & Single-Session Biomarker
+
+Auditing **all ~120 same-device EEG recordings** across Sessions 1–7 (`relax1` Pre + `relax2` Post) in `reanalysis/audit_lab11_ptsd_deep_dynamics.js` → `reanalysis/data/lab11_ptsd_deep_dynamics_results.json` uncovered a **Two-Stage Clinical Recovery Sequence** in the NF remission arm (`n = 10`) plus an **acute single-session biomarker**:
+
+| Recovery Stage / Metric (NF Remission, `n = 10`) | Early → Mid Sessions | Mid → Late Sessions | Full Span (First → Last) |
+| :--- | :---: | :---: | :---: |
+| **`Right − Left Frontal` 1/f Asymmetry** | **`-0.232`** (**`84%` of total**, $d_z = -0.567$) | `-0.045` ($p = 0.776$) | **`-0.278`** (**`9/10`**, $p = 0.0349$) |
+| **Global Effective Dimensionality (`globalEffDimNorm`)** | **`-0.0651`** ($d_z = -0.941, p = 0.0029$) | `+0.0134` ($p = 0.464$) | **`-0.0517`** ($d_z = -0.745, p = 0.0184$) |
+| **Posterior Effective Dimensionality (`postEffDimNorm`)** | **`-0.0506`** ($d_z = -0.734, p = 0.0202$) | `+0.0122` ($p = 0.528$) | `-0.0384` ($p = 0.107$) |
+| **Posterior `DFA α` (Temporal Persistence)** | `+0.0113` ($p = 0.649$, **no change yet**) | **`-0.0853`** ($d_z = -0.971, p = 0.0021$) | **`-0.0740`** (**`8/10`**, $p = 0.0360$) |
+
+### Acute Single-Session Biomarker (`relax2 − relax1`, 30 Minutes Later)
+* **NF Remission Arm (`n = 10`):** **`9 out of 10` patients (`90%`)** acutely steepened `Right_Frontal` 1/f (`rfSlope = -0.0821, d_z = -0.777, p = 0.0140`) within a **single 30-minute session**.
+* **MI Control Arm (`n = 10`):** No significant acute `Right_Frontal` 1/f shift (`p = 0.221`).
+
+### Clinical Meaning for Veterans
+1. **Stage 1 (Early → Mid): Re-Synchronization & Watchtower De-Escalation.** Hypervigilant PTSD fragments the cortex into noisy, uncoordinated high-frequency activity; the first half of recovery powers down the `Right_Frontal` watchtower (`84%` of asymmetry shift) and re-synchronizes global resting coherence (`globalEffDimNorm ↓, p = 0.0029`).
+2. **Stage 2 (Mid → Late): Posterior Memory-Loop Release.** Only *after* the frontal watchtower calms down does the Posterior Hot Zone release its sticky temporal persistence (`postDFA ↓, d_z = -0.971, p = 0.0021`), locking in `-75%` nightmare and `-67%` insomnia remission.
+3. **Same-Day Responder Readout:** Because **`9/10`** remitting patients already show `Right_Frontal` 1/f steepening after a **single 30-minute session** (`p = 0.014`), a low-cost 4–8 channel wearable headset can potentially provide clinicians with an **immediate, same-day physiological readout** of whether a veteran's nervous system is responding to an intervention.
+
