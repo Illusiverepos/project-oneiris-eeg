@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-11-26T07:30:10.916Z",
+  "nSubjects": 28,
+  "condVsPre": {
+    "wpliTheta": {
+      "n": 28,
+      "mean": 0.0225,
+      "dz": 0.155,
+      "t": 0.822,
+      "pApprox": 0.4112,
+      "nPos": 18,
+      "nNeg": 10
+    },
+    "wpliAlpha": {
+      "n": 28,
+      "mean": 0.0352,
+      "dz": 0.186,
+      "t": 0.983,
+      "pApprox": 0.3258,
+      "nPos": 17,
+      "nNeg": 11
+    },
+    "postHFD": {
+      "n": 28,
+      "mean": -0.0221,
+      "dz": -0.36,
+      "t": -1.904,
+      "pApprox": 0.057,
+      "nPos": 8,
+      "nNeg": 20
+    },
+    "rfHFD": {
+      "n": 28,
+      "mean": -0.0458,
+      "dz": -0.323,
+      "t": -1.707,
+      "pApprox": 0.0878,
+      "nPos": 10,
+      "nNeg": 18
+    }
+  },
+  "extVsCond": {
+    "wpliTheta": {
+      "n": 28,
+      "mean": -0.0092,
+      "dz": -0.051,
+      "t": -0.271,
+      "pApprox": 0.7861,
+      "nPos": 16,
+      "nNeg": 12
+    },
+    "wpliAlpha": {
+      "n": 28,
+      "mean": 0.0316,
+      "dz": 0.154,
+      "t": 0.816,
+      "pApprox": 0.4145,
+      "nPos": 15,
+      "nNeg": 13
+    },
+    "postHFD": {
+      "n": 28,
+      "mean": 0.0058,
+      "dz": 0.09,
+      "t": 0.477,
+      "pApprox": 0.6331,
+      "nPos": 16,
+      "nNeg": 12
+    },
+    "rfHFD": {
+      "n": 28,
+      "mean": 0.0205,
+      "dz": 0.373,
+      "t": 1.974,
+      "pApprox": 0.0484,
+      "nPos": 15,
+      "nNeg": 13
+    }
+  },
+  "extVsPre": {
+    "wpliTheta": {
+      "n": 28,
+      "mean": 0.0133,
+      "dz": 0.07,
+      "t": 0.369,
+      "pApprox": 0.712,
+      "nPos": 17,
+      "nNeg": 11
+    },
+    "wpliAlpha": {
+      "n": 28,
+      "mean": 0.0669,
+      "dz": 0.413,
+      "t": 2.183,
+      "pApprox": 0.029,
+      "nPos": 20,
+      "nNeg": 8
+    },
+    "postHFD": {
+      "n": 28,
+      "mean": -0.0163,
+      "dz": -0.217,
+      "t": -1.15,
+      "pApprox": 0.2503,
+      "nPos": 10,
+      "nNeg": 18
+    },
+    "rfHFD": {
+      "n": 28,
+      "mean": -0.0253,
+      "dz": -0.19,
+      "t": -1.005,
+      "pApprox": 0.3147,
+      "nPos": 14,
+      "nNeg": 14
+    }
+  }
+}
