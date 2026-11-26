@@ -110,7 +110,8 @@
         <button class="act teal" id="btn_audio" onclick="toggleAudio()">Enable Soft Web-Audio IRT+TMR Synth (OFF)</button>
         <button class="act violet" id="btn_synth" onclick="toggleSynthEEG()">Start Synthetic 2-ch AF7/AF8 Night Cycle</button>
         <button class="act" id="btn_ble" onclick="connectMuseBLE()">Connect Real Muse S / Muse 2 (Web Bluetooth)</button>
-        <p style="font-size:0.76rem;color:var(--muted);margin:6px 0 0;">
+        <div id="ble_status" style="font-size:0.78rem;color:var(--cyan);margin:6px 0 4px;font-family:ui-monospace,Consolas,monospace;">BLE Status: Ready (Use Chrome or Edge on localhost)</div>
+        <p style="font-size:0.76rem;color:var(--muted);margin:4px 0 0;">
           Plays a soft, non-startling warm major-9th pad chord ONLY when live EEG enters the green Q4 REM corridor (<code>slopeBB &le; &minus;1.18</code> &amp; <code>&Delta;<sub>WK</sub> &le; &minus;0.12</code>). Any waking/arousal spike triggers an instant red <strong>VETO</strong>.
         </p>
       </div>
@@ -221,24 +222,28 @@ function toggleSynthEEG() {
 }
 
 async function connectMuseBLE() {
-  if (typeof MuseBLEAdapter === 'undefined') { alert('Muse BLE adapter not loaded.'); return; }
-  try {
-    bleAdapter = new MuseBLEAdapter({
-      endpoint: '/eeg-chunk',
-      onDecision: (dec) => {
-        if (dec.metrics && dec.metrics.rf) {
-          cur.s = Math.max(-2.6, Math.min(-0.2, dec.metrics.rf.slopeBB));
-          cur.d = Math.max(0.55, Math.min(1.55, dec.metrics.rf.dfa));
-          trail.push({ ...cur }); if (trail.length > 260) trail.shift();
-          evaluateV2Gate(cur.s, cur.d, true);
-        }
-      },
-    });
-    await bleAdapter.connect();
-    document.getElementById('btn_ble').textContent = 'Muse S BLE Connected (Live Stream)';
-  } catch (e) {
-    alert('Muse BLE connection cancelled or unavailable: ' + e.message);
+  const stEl = document.getElementById('ble_status');
+  if (typeof OneirisMuseAdapter === 'undefined') { stEl.textContent = 'BLE Error: /muse_ble_adapter.js failed to load.'; return; }
+  if (bleAdapter && bleAdapter.device && bleAdapter.device.gatt.connected) {
+    bleAdapter.disconnect();
+    document.getElementById('btn_ble').textContent = 'Connect Real Muse S / Muse 2 (Web Bluetooth)';
+    return;
   }
+  bleAdapter = new OneirisMuseAdapter({
+    onStatus: (msg) => { stEl.textContent = 'BLE: ' + msg; },
+    onLRLR: () => { stEl.textContent = 'BLE: LRLR EYE-MOVEMENT DETECTED!'; flashColor = '#38bdf8'; flashAlpha = 0.6; },
+    onDecision: (dec) => {
+      if (typeof dec.rfSlope === 'number' && typeof dec.postDFA === 'number') {
+        synthOn = false;
+        cur.s = Math.max(-2.6, Math.min(-0.2, dec.rfSlope));
+        cur.d = Math.max(0.55, Math.min(1.55, dec.postDFA));
+        trail.push({ ...cur }); if (trail.length > 260) trail.shift();
+        evaluateV2Gate(cur.s, cur.d, true);
+      }
+    },
+  });
+  const ok = await bleAdapter.connect();
+  if (ok) document.getElementById('btn_ble').textContent = 'Disconnect Muse Headband (Streaming Live)';
 }
 
 function launch(mode) {
