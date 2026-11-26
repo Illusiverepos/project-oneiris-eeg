@@ -1,21 +1,34 @@
-MIT License
+Project ONEIRIS — Non-Commercial Academic & Research License
+Copyright (c) 2026 Austin Rutan (rutanaus000@gmail.com)
+All Rights Reserved.
 
-Copyright (c) 2026 Project ONEIRIS Contributors
+1. PERMITTED NON-COMMERCIAL & ACADEMIC USE
+Permission is hereby granted, free of charge, to any individual, academic
+institution, non-profit research organization, or public clinical/veteran
+health institution (such as the U.S. Department of Veterans Affairs) to view,
+copy, run, and modify the software, scripts, models, and documentation in this
+repository ("the Work") strictly for:
+  (a) scientific verification, replication, and peer review;
+  (b) non-commercial academic, educational, or IRB-approved clinical research;
+  (c) personal, non-commercial experimentation;
+provided that the copyright notice above and clear attribution to Austin Rutan
+(Project ONEIRIS, https://github.com/Illusiverepos/project-oneiris-eeg) are
+retained in all copies or substantial portions of the Work.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+2. COMMERCIAL RIGHTS RESERVED
+No right or license is granted to use, copy, modify, embed, distribute, or
+deploy the Work (in whole or in part) in any commercial product, paid service,
+proprietary hardware/firmware, subscription app, or for-profit venture without
+prior written commercial licensing agreement from the copyright holder
+(Austin Rutan, rutanaus000@gmail.com).
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+3. THIRD-PARTY DATASETS
+All third-party public datasets referenced or analyzed by scripts in this
+repository (including OpenNeuro, Figshare, Mendeley Data, and DreamBank
+archives) remain the property of their respective authors and are governed by
+their original licenses.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+4. NO MEDICAL ADVICE / NO WARRANTY
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+THE SOFTWARE AND PROTOTYPES IN THIS REPOSITORY ARE RESEARCH TOOLS ONLY, ARE NOT
+MEDICAL DEVICES, AND DO NOT CONSTITUTE MEDICAL OR CLINICAL TREATMENT.
