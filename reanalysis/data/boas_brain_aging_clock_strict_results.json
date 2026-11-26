@@ -1,0 +1,252 @@
+{
+  "generatedAt": "2026-11-26T07:42:05.575Z",
+  "nRawNights": 127,
+  "nUniqueHumans": 99,
+  "ageRange": [
+    18,
+    82
+  ],
+  "stageAgeCorrelations_UniqueHumans": {
+    "Wake": {
+      "slopeBB": {
+        "nUniqueHumans": 99,
+        "pearsonR": 0.0946,
+        "pearsonP": 0.34911,
+        "spearmanRho": 0.1224,
+        "spearmanP": 0.22436,
+        "partialR_SexBMI": 0.1136,
+        "partialP_SexBMI": 0.2601
+      },
+      "dfa": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.3352,
+        "pearsonP": 0.00046,
+        "spearmanRho": -0.2647,
+        "spearmanP": 0.00687,
+        "partialR_SexBMI": -0.3493,
+        "partialP_SexBMI": 0.00024
+      },
+      "wk": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.2924,
+        "pearsonP": 0.0026,
+        "spearmanRho": -0.2639,
+        "spearmanP": 0.00704,
+        "partialR_SexBMI": -0.2835,
+        "partialP_SexBMI": 0.0036
+      },
+      "deltaFrac": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.3053,
+        "pearsonP": 0.00159,
+        "spearmanRho": -0.3037,
+        "spearmanP": 0.00169,
+        "partialR_SexBMI": -0.3315,
+        "partialP_SexBMI": 0.00054
+      },
+      "wkOverDelta": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.246,
+        "pearsonP": 0.01242,
+        "spearmanRho": -0.2833,
+        "spearmanP": 0.00363,
+        "partialR_SexBMI": -0.2281,
+        "partialP_SexBMI": 0.02102
+      }
+    },
+    "N1": {
+      "slopeBB": {
+        "nUniqueHumans": 99,
+        "pearsonR": 0.0721,
+        "pearsonP": 0.47644,
+        "spearmanRho": 0.088,
+        "spearmanP": 0.38441,
+        "partialR_SexBMI": 0.0578,
+        "partialP_SexBMI": 0.56842
+      },
+      "dfa": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.2166,
+        "pearsonP": 0.0289,
+        "spearmanRho": -0.2264,
+        "spearmanP": 0.02207,
+        "partialR_SexBMI": -0.229,
+        "partialP_SexBMI": 0.02051
+      },
+      "wk": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.1894,
+        "pearsonP": 0.0575,
+        "spearmanRho": -0.109,
+        "spearmanP": 0.28012,
+        "partialR_SexBMI": -0.2353,
+        "partialP_SexBMI": 0.01713
+      },
+      "deltaFrac": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.2634,
+        "pearsonP": 0.00715,
+        "spearmanRho": -0.2764,
+        "spearmanP": 0.00461,
+        "partialR_SexBMI": -0.2923,
+        "partialP_SexBMI": 0.00261
+      },
+      "wkOverDelta": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.2105,
+        "pearsonP": 0.03395,
+        "spearmanRho": -0.141,
+        "spearmanP": 0.16067,
+        "partialR_SexBMI": -0.2356,
+        "partialP_SexBMI": 0.01698
+      }
+    },
+    "N2": {
+      "slopeBB": {
+        "nUniqueHumans": 99,
+        "pearsonR": 0.0728,
+        "pearsonP": 0.47205,
+        "spearmanRho": 0.1089,
+        "spearmanP": 0.28039,
+        "partialR_SexBMI": 0.0392,
+        "partialP_SexBMI": 0.69911
+      },
+      "dfa": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.1135,
+        "pearsonP": 0.26034,
+        "spearmanRho": -0.1265,
+        "spearmanP": 0.20911,
+        "partialR_SexBMI": -0.1072,
+        "partialP_SexBMI": 0.28823
+      },
+      "wk": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.0644,
+        "pearsonP": 0.52495,
+        "spearmanRho": -0.0297,
+        "spearmanP": 0.77,
+        "partialR_SexBMI": -0.1115,
+        "partialP_SexBMI": 0.26896
+      },
+      "deltaFrac": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.1326,
+        "pearsonP": 0.18764,
+        "spearmanRho": -0.1705,
+        "spearmanP": 0.08831,
+        "partialR_SexBMI": -0.1125,
+        "partialP_SexBMI": 0.26468
+      },
+      "wkOverDelta": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.1258,
+        "pearsonP": 0.2118,
+        "spearmanRho": -0.0587,
+        "spearmanP": 0.56249,
+        "partialR_SexBMI": -0.1375,
+        "partialP_SexBMI": 0.17164
+      }
+    },
+    "N3": {
+      "slopeBB": {
+        "nUniqueHumans": 71,
+        "pearsonR": 0.2418,
+        "pearsonP": 0.03843,
+        "spearmanRho": 0.3947,
+        "spearmanP": 0.00036,
+        "partialR_SexBMI": 0.2082,
+        "partialP_SexBMI": 0.077
+      },
+      "dfa": {
+        "nUniqueHumans": 71,
+        "pearsonR": -0.1502,
+        "pearsonP": 0.2069,
+        "spearmanRho": -0.2795,
+        "spearmanP": 0.01561,
+        "partialR_SexBMI": -0.1441,
+        "partialP_SexBMI": 0.22646
+      },
+      "wk": {
+        "nUniqueHumans": 71,
+        "pearsonR": 0.0944,
+        "pearsonP": 0.43106,
+        "spearmanRho": 0.1148,
+        "spearmanP": 0.33727,
+        "partialR_SexBMI": 0.0616,
+        "partialP_SexBMI": 0.60801
+      },
+      "deltaFrac": {
+        "nUniqueHumans": 71,
+        "pearsonR": -0.0901,
+        "pearsonP": 0.45214,
+        "spearmanRho": -0.2471,
+        "spearmanP": 0.03414,
+        "partialR_SexBMI": -0.0871,
+        "partialP_SexBMI": 0.46765
+      },
+      "wkOverDelta": {
+        "nUniqueHumans": 71,
+        "pearsonR": 0.0546,
+        "pearsonP": 0.64981,
+        "spearmanRho": 0.0816,
+        "spearmanP": 0.49657,
+        "partialR_SexBMI": 0.0285,
+        "partialP_SexBMI": 0.81289
+      }
+    },
+    "REM": {
+      "slopeBB": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.0043,
+        "pearsonP": 0.96614,
+        "spearmanRho": 0.0017,
+        "spearmanP": 0.98648,
+        "partialR_SexBMI": 0.0081,
+        "partialP_SexBMI": 0.9365
+      },
+      "dfa": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.1635,
+        "pearsonP": 0.10272,
+        "spearmanRho": -0.1643,
+        "spearmanP": 0.10087,
+        "partialR_SexBMI": -0.199,
+        "partialP_SexBMI": 0.04552
+      },
+      "wk": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.2493,
+        "pearsonP": 0.01123,
+        "spearmanRho": -0.2137,
+        "spearmanP": 0.03116,
+        "partialR_SexBMI": -0.2969,
+        "partialP_SexBMI": 0.0022
+      },
+      "deltaFrac": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.2536,
+        "pearsonP": 0.00981,
+        "spearmanRho": -0.2615,
+        "spearmanP": 0.00761,
+        "partialR_SexBMI": -0.2933,
+        "partialP_SexBMI": 0.00252
+      },
+      "wkOverDelta": {
+        "nUniqueHumans": 99,
+        "pearsonR": -0.227,
+        "pearsonP": 0.02171,
+        "spearmanRho": -0.253,
+        "spearmanP": 0.01002,
+        "partialR_SexBMI": -0.2455,
+        "partialP_SexBMI": 0.01263
+      }
+    }
+  },
+  "fiveFoldCV_WearableBrainAge": {
+    "nUniqueHumans": 99,
+    "outOfSampleR": 0.2569,
+    "outOfSampleP": 0.00884,
+    "MAE_years": 13.27
+  }
+}
