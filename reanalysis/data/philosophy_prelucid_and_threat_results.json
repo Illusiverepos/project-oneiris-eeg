@@ -1,0 +1,40 @@
+{
+  "nDreams": 22315,
+  "results": {
+    "1_PreLucidDoubt -> FullLucidity": {
+      "nWith": 206,
+      "rateWithPct": 2.43,
+      "rateWithoutPct": 0.8,
+      "oddsRatio": 3.39,
+      "chi2": 6.7
+    },
+    "2_BodyError -> PreLucidDoubt": {
+      "nWith": 196,
+      "rateWithPct": 1.02,
+      "rateWithoutPct": 0.92,
+      "oddsRatio": 1.38,
+      "chi2": 0
+    },
+    "3_BodyError -> FullLucidity": {
+      "nWith": 196,
+      "rateWithPct": 6.12,
+      "rateWithoutPct": 0.76,
+      "oddsRatio": 8.77,
+      "chi2": 69.3
+    },
+    "4_Threat(Nightmare) -> PreDoubt": {
+      "nWith": 4019,
+      "rateWithPct": 1.17,
+      "rateWithoutPct": 0.87,
+      "oddsRatio": 1.36,
+      "chi2": 3.3
+    },
+    "5_Threat(Nightmare) -> Lucidity": {
+      "nWith": 4019,
+      "rateWithPct": 1.39,
+      "rateWithoutPct": 0.68,
+      "oddsRatio": 2.06,
+      "chi2": 20.7
+    }
+  }
+}

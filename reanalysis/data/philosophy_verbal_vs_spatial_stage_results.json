@@ -1,0 +1,27 @@
+{
+  "Verbal-Dominant Dreams -> Right_TPJ": {
+    "n": 85,
+    "rho": 0.307,
+    "p": 0.005
+  },
+  "Verbal-Dominant Dreams -> Left_TPJ": {
+    "n": 85,
+    "rho": 0.006,
+    "p": 0.9548
+  },
+  "Verbal-Dominant Dreams -> Left_Frontal": {
+    "n": 85,
+    "rho": 0.167,
+    "p": 0.136
+  },
+  "Spatial-Dominant Dreams -> Right_TPJ": {
+    "n": 60,
+    "rho": 0.555,
+    "p": 0.0002
+  },
+  "Spatial-Dominant Dreams -> Left_TPJ": {
+    "n": 60,
+    "rho": 0.24,
+    "p": 0.0632
+  }
+}
