@@ -1,0 +1,59 @@
+{
+  "lab": "Lab #34 — Young (18-26) vs Older (55-82) Healthy REM Dreaming Surrogates (BOAS ds005555)",
+  "counts": {
+    "young": 22,
+    "older": 22,
+    "total": 44
+  },
+  "olderVsYoung": {
+    "realWK": {
+      "nOlder": 22,
+      "nYoung": 22,
+      "meanOlder": -0.6705,
+      "meanYoung": -0.6426,
+      "d": -0.095,
+      "auc": 0.579,
+      "p": 0.75062
+    },
+    "surrWK": {
+      "nOlder": 22,
+      "nYoung": 22,
+      "meanOlder": -0.5071,
+      "meanYoung": -0.533,
+      "d": 0.066,
+      "auc": 0.531,
+      "p": 0.82632
+    },
+    "brainNonlin": {
+      "nOlder": 22,
+      "nYoung": 22,
+      "meanOlder": -0.1634,
+      "meanYoung": -0.1097,
+      "d": -0.274,
+      "auc": 0.537,
+      "p": 0.36576
+    },
+    "slopeBB": {
+      "nOlder": 22,
+      "nYoung": 22,
+      "meanOlder": -1.7234,
+      "meanYoung": -1.766,
+      "d": 0.098,
+      "auc": 0.558,
+      "p": 0.74293
+    },
+    "dfa": {
+      "nOlder": 22,
+      "nYoung": 22,
+      "meanOlder": 1.0265,
+      "meanYoung": 1.0617,
+      "d": -0.145,
+      "auc": 0.638,
+      "p": 0.64564
+    }
+  },
+  "continuousAgeCorrelations": {
+    "rAgeBrainNonlin": -0.1084,
+    "rAgeRealWK": -0.0327
+  }
+}
