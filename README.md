@@ -29,7 +29,7 @@ Project ONEIRIS is a zero-dependency, 100% reproducible neuroscience and signal-
 ## Preprint Series (`preprint/`)
 
 1. **Paper 1:** [PREPRINT_MANUSCRIPT.md](preprint/PREPRINT_MANUSCRIPT.md) / [PREPRINT.html](preprint/PREPRINT.html) — 7-Lab Zero-Shot Anesthesia-to-Dreaming Decoding, 256-ch CSD Right-TPJ Topography & Two-Stage Gate-and-Ignition Circuit.
-2. **Paper 2:** [PREPRINT_PAPER2_LUCID_PSYCHEDELICS.md](preprint/PREPRINT_PAPER2_LUCID_PSYCHEDELICS.md) — 10-Lab 3-Axis Cortical Coordinate System (Lucid REM, Psilocybin Inner Cinema & Closed-Loop Architecture).
+2. **Paper 2:** [PREPRINT_PAPER2.md](preprint/PREPRINT_PAPER2.md) / [PREPRINT_PAPER2.html](preprint/PREPRINT_PAPER2.html) — 10-Lab 3-Axis Cortical Coordinate System (Lucid REM, Psilocybin Inner Cinema & Closed-Loop Architecture).
 3. **Paper 3:** [PREPRINT_PAPER3_PTSD.md](preprint/PREPRINT_PAPER3_PTSD.md) / [PREPRINT_PAPER3_PTSD.html](preprint/PREPRINT_PAPER3_PTSD.html) — Clinical PTSD Two-Stage Cortical Recovery, Human Fear Extinction (`ds007114`), and Anti-Startle `irt-tmr` Architecture.
 4. **Paper 4:** [PREPRINT_PAPER4.md](preprint/PREPRINT_PAPER4.md) / [PREPRINT_PAPER4.html](preprint/PREPRINT_PAPER4.html) — Universal `+50°` Plasticity Vector Across 12 Labs, `Theta wPLI`, Dual-Dream Bridge & 160-Session Closed-Loop Benchmark.
 5. **Paper 5 ([DOI: `10.5281/zenodo.24599665`](https://doi.org/10.5281/zenodo.24599665)):** [PREPRINT_PAPER5_WIENER_KHINCHIN_WEARABLE.md](preprint/PREPRINT_PAPER5_WIENER_KHINCHIN_WEARABLE.md) / [PDF](preprint/PREPRINT_PAPER5_WIENER_KHINCHIN_WEARABLE.pdf) — *The Wiener–Khinchin Geodesic of Human Sleep and Consciousness: 985-Hour Wearable Validation, PSG-Free Brain-Age Tracking, and Formal Safety Verification*.
@@ -59,7 +59,8 @@ node reanalysis/simulate_nonlinear_sde_brain.js
 ---
 
 ## Repository Map
-* **`preprint/`** — Papers 1–5 (`.md`, `.html`, `.pdf`) + academic & industry outreach packets.
+* **`preprint/`** — Papers 1–6 (`.md`, `.html`, `.pdf`).
+* **`sdk/`** — Zero-dependency 1-file evaluation SDK (`oneiris_wearable_sdk.js`) & automated self-test (`demo_sdk.js`).
 * **`toolkit/cueing-system/`** — Production `GoldilocksCueController` (`--mode tlr`, `irt-tmr`, `irt-tmr-wearable`), `muse_ble_adapter.js` (Web Bluetooth Muse 2 / Muse S), and `phase_plane_explorer.html` (`/math`).
 * **`verification/`** — Formal Lean 4 safety proofs (`OneirisSafetyProof.lean`) and exhaustive adversarial verifier.
 * **`reanalysis/`** — All 13-lab streaming EEG reanalysis scripts, 985.3-hour BOAS benchmarks, PSG-free Brain-Age clocks, GWOT Qualia-Geometry audits, and derived JSON outputs (`reanalysis/data/`).
