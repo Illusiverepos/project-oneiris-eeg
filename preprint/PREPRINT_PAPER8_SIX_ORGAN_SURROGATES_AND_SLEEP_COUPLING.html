@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Six-Organ Wiener–Khinchin Scaling, Nonlinear Surrogate Proofs in Pre-Symptomatic Alzheimer's, and Synchronized Brain–Heart–Vascular Sleep Dynamics</title>
+<style>
+  body { font-family: Georgia, "Times New Roman", serif; line-height: 1.50; color: #111827; max-width: 830px; margin: 28px auto; padding: 0 22px; background: #fff; }
+  h1 { font-size: 1.46rem; line-height: 1.24; margin-bottom: 8px; color: #0f172a; }
+  h2 { font-size: 1.13rem; margin-top: 19px; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; color: #0f172a; }
+  .meta { font-family: system-ui, -apple-system, sans-serif; font-size: 0.83rem; color: #475569; margin-bottom: 13px; }
+  .abstract { background: #f8fafc; border-left: 4px solid #6366f1; padding: 12px 16px; margin: 12px 0; font-size: 0.89rem; }
+  .fig { border: 1px solid #e2e8f0; border-radius: 8px; padding: 11px; margin: 12px 0; background: #fff; }
+  .figcap { font-family: system-ui, -apple-system, sans-serif; font-size: 0.77rem; color: #475569; margin-top: 5px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-family: system-ui, -apple-system, sans-serif; font-size: 0.77rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 5px 7px; text-align: center; }
+  th { background: #f1f5f9; font-weight: 700; }
+  td:first-child, th:first-child { text-align: left; }
+  code { font-family: Consolas, ui-monospace, monospace; font-size: 0.85em; background: #f1f5f9; padding: 1px 4px; border-radius: 4px; }
+  .note { font-size: 0.81rem; color: #475569; font-style: italic; }
+  @media print { body { margin: 10mm; max-width: none; } .fig, table { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<h1>Six-Organ Wiener–Khinchin Scaling, Nonlinear Surrogate Proofs in Pre-Symptomatic Alzheimer's, and Synchronized Brain–Heart–Vascular Sleep Dynamics</h1>
+<div class="meta">
+  <strong>Author:</strong> Austin Rutan (Independent Researcher, Project ONEIRIS) &middot; <code>rutanaus000@gmail.com</code><br>
+  <strong>Preprint Series:</strong> Project ONEIRIS — Paper 8 (November 2026) &middot; <strong>Prior DOIs:</strong> <code>10.5281/zenodo.24599665</code> (P5), <code>24599906</code> (P6), <code>24604316</code> (P7)
+</div>
+
+<div class="abstract">
+  <strong>Abstract.</strong> Extending our five-organ Wiener–Khinchin framework (Paper 7, <code>10.5281/zenodo.24604316</code>) across <strong>Project ONEIRIS Labs #25–#29</strong>, we verify the universal law <code>slope = &minus;(2&middot;DFA_&alpha; &minus; 1)</code> in a <strong>sixth human organ system — Skeletal Muscle (<code>EMG</code>)</strong> — and test four mechanistic predictions: (1) <strong>Skeletal Muscle (<code>emgdb</code>, 4000 Hz, 153 windows)</strong> obeyed the Wiener–Khinchin law at <strong><code>r = +0.9482 (R&sup2; = 89.9%, p &lt; 10<sup>&minus;4</sup>)</code></strong> with a monotonic collapse from Healthy (<code>&Delta;_WK = &minus;0.122</code>) &rarr; Myopathy (<code>&minus;0.090</code>) &rarr; Neuropathy (<code>+0.010</code>); (2) <strong>Fourier phase-randomized surrogates in pre-symptomatic <code>PSEN1-E280A</code> Alzheimer's (<code>ds007427, N = 43</code>)</strong> confirmed a real-vs-surrogate cortical phase offset (<code>t = &minus;2.004, p = 0.0451</code>) and proved that early amyloid pathology drives <strong>77% spectral-crossover flattening toward 0.00</strong> (<code>&minus;0.530 &rarr; &minus;0.210</code>, matching supine heart aging <code>&minus;0.435 &rarr; &minus;0.017</code>) + <strong>23% nonlinear phase boost</strong> (real <code>d = +0.931, p = 0.0065</code> vs. surrogate <code>d = +0.718, p = 0.0410</code>); (3) <strong>Simultaneous 4-organ overnight sleep (<code>slpdb, N = 18</code>)</strong> replicated within-human <strong>Heart–Arterial BP <code>&Delta;_WK</code> coupling</strong>, nearly doubling in sleep (<strong><code>r = +0.6120, R&sup2; = 37.5%, p = 0.00570</code></strong>) with a positive Brain–Heart trend (<code>r = +0.434, p = 0.072</code>); (4) across clinical sleep stages (<code>slpdb .st</code>), <strong>cardiac <code>&Delta;_WK_HRV</code> shifted significantly from Deep NREM (<code>&minus;0.710</code>) to REM (<code>&minus;0.234, dz = &minus;1.196, p = 0.0486</code>, 6/7 humans)</strong> in lockstep with Brain <code>&Delta;_WK</code> (<code>p = 0.033</code>), where <code>Heart DFA</code> (<code>p = 0.139</code>) and <code>Heart Slope</code> (<code>p = 0.362</code>) failed; and (5) in <strong>CHB-MIT Epilepsy (<code>N = 24</code>)</strong>, 2-channel forehead inter-hemispheric 1/f slope asymmetry <code>|slope_L &minus; slope_R|</code> spiked during active seizures in <strong><code>17/24</code> patients (<code>dz = +0.471, t = +2.309, p = 0.02095</code>)</strong> while pre-ictal asymmetry remained honestly null (<code>p = 0.25–0.99</code>).
+</div>
+
+<div class="fig">
+  <svg viewBox="0 0 760 250" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="font-family:system-ui,-apple-system,sans-serif;">
+    <text x="380" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Figure 1. Universal Wiener–Khinchin Law Across ALL 6 Human Organ Systems (Labs #13–#29)</text>
+    <line x1="175" y1="32" x2="175" y2="225" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="175" y1="225" x2="725" y2="225" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="285" y1="32" x2="285" y2="225" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+    <line x1="395" y1="32" x2="395" y2="225" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+    <line x1="505" y1="32" x2="505" y2="225" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+    <line x1="615" y1="32" x2="615" y2="225" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+    <line x1="725" y1="32" x2="725" y2="225" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+    <!-- 1. Skeletal Muscle EMG r=0.9482 -->
+    <text x="168" y="52" text-anchor="end" font-size="11" font-weight="700" fill="#0f172a">6. Skeletal Muscle EMG</text>
+    <rect x="175" y="38" width="521.5" height="20" rx="4" fill="#6366f1"/>
+    <text x="702" y="52" font-size="10.5" font-weight="700" fill="#4338ca">r = 0.948 (90%)</text>
+    <!-- 2. Brain Noether 93.1% -->
+    <text x="168" y="82" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">1. Brain EEG (985.3h)</text>
+    <rect x="175" y="68" width="512.0" height="20" rx="4" fill="#8b5cf6"/>
+    <text x="692" y="82" font-size="10.5" font-weight="700" fill="#6d28d9">93.1% (+44.7&deg;)</text>
+    <!-- 3. Locomotion r=0.8444 -->
+    <text x="168" y="112" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">4. Locomotion Gait (N=62)</text>
+    <rect x="175" y="98" width="464.4" height="20" rx="4" fill="#0ea5e9"/>
+    <text x="645" y="112" font-size="10.5" font-weight="700" fill="#0369a1">r = 0.844 (71%)</text>
+    <!-- 4. Lungs r=0.7762 -->
+    <text x="168" y="142" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">3. Lungs RESP (N=40)</text>
+    <rect x="175" y="128" width="426.9" height="20" rx="4" fill="#10b981"/>
+    <text x="608" y="142" font-size="10.5" font-weight="700" fill="#047857">r = 0.776 (60%)</text>
+    <!-- 5. Heart r=0.7438 -->
+    <text x="168" y="172" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">2. Heart ECG (N=261, 4 labs)</text>
+    <rect x="175" y="158" width="409.1" height="20" rx="4" fill="#f43f5e"/>
+    <text x="590" y="172" font-size="10.5" font-weight="700" fill="#be123c">r = 0.744 (55%)</text>
+    <!-- 6. Arterial BP r=0.5054 -->
+    <text x="168" y="202" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">5. Vascular Art. BP (N=133)</text>
+    <rect x="175" y="188" width="278.0" height="20" rx="4" fill="#f59e0b"/>
+    <text x="459" y="202" font-size="10.5" font-weight="700" fill="#b45309">r = 0.505 (26%)</text>
+    <text x="175" y="240" text-anchor="middle" font-size="10" fill="#64748b">0.0</text>
+    <text x="285" y="240" text-anchor="middle" font-size="10" fill="#64748b">0.2</text>
+    <text x="395" y="240" text-anchor="middle" font-size="10" fill="#64748b">0.4</text>
+    <text x="505" y="240" text-anchor="middle" font-size="10" fill="#64748b">0.6</text>
+    <text x="615" y="240" text-anchor="middle" font-size="10" fill="#64748b">0.8</text>
+    <text x="725" y="240" text-anchor="middle" font-size="10" fill="#64748b">1.0</text>
+  </svg>
+  <div class="figcap"><strong>Figure 1.</strong> Empirical fit to <code>slope = &minus;(2&middot;DFA_&alpha; &minus; 1)</code> across all six human organ systems (Skeletal Muscle <code>EMG</code>, Brain <code>EEG</code>, Locomotion <code>Gait</code>, Lungs <code>RESP</code>, Heart <code>ECG</code>, and Vascular <code>Arterial BP</code>). All <em>p</em> &lt; 10<sup>&minus;4</sup>.</div>
+</div>
+
+<h2>1. The Universal Flattening-Toward-Zero Law Across Organs (Labs #24, #25, #29)</h2>
+<table>
+  <thead><tr><th>Organ &amp; Contrast</th><th>Healthy Baseline &Delta;<sub>WK</sub></th><th>Pathological / Aged &Delta;<sub>WK</sub></th><th>Effect / p-value</th><th>Physical Mechanism</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Brain: Pre-Symptomatic <code>PSEN1-E280A</code> AD (Lab #25)</strong></td><td>&minus;0.530</td><td><strong>&minus;0.210</strong></td><td><strong>d = +0.931, p = 0.0065</strong></td><td>77% spectral flattening + 23% nonlinear phase (<code>p = 0.0451</code>)</td></tr>
+    <tr><td><strong>Heart: Supine Aging &lt;35 vs. &gt;65 yrs (Lab #24)</strong></td><td>&minus;0.435</td><td><strong>&minus;0.017</strong></td><td><strong>r = +0.313, p = 0.0008</strong></td><td>100% vagal spectral-crossover curvature (<code>p = 0.761</code>)</td></tr>
+    <tr><td><strong>Muscle: Healthy vs. Neuropathy EMG (Lab #29)</strong></td><td>&minus;0.122</td><td><strong>+0.010</strong></td><td><code>r = 0.948, R&sup2; = 89.9%</code></td><td>Motor-unit synergy collapse &rarr; white-noise floor (<code>DFA 0.99 &rarr; 0.56</code>)</td></tr>
+  </tbody>
+</table>
+
+<h2>2. Simultaneous 4-Organ Overnight Sleep &amp; Forehead Epilepsy Asymmetry (Labs #26–#28)</h2>
+<table>
+  <thead><tr><th>New Discovery (Labs #26–#28)</th><th>Dataset &amp; N</th><th>Primary Result</th><th>Exact / Perm p</th><th>Honest Control / Boundary</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Overnight Sleep Heart–BP <code>&Delta;_WK</code> Coupling</strong></td><td><code>slpdb</code> (N=18)</td><td><strong>r = +0.6120 (R&sup2; = 37.5%)</strong></td><td><strong>0.00570</strong></td><td>Nearly doubles awake rest (<code>r = +0.319</code>, Lab #24)</td></tr>
+    <tr><td><strong>Deep NREM &rarr; REM Cardiac <code>&Delta;_WK_HRV</code> Shift</strong></td><td><code>slpdb</code> (n=7 paired)</td><td><strong>&minus;0.710 &rarr; &minus;0.234 (dz=&minus;1.196, 6/7)</strong></td><td><strong>0.0486</strong></td><td>Beats <code>Heart DFA</code> (<code>p=0.139</code>) &amp; <code>Slope</code> (<code>p=0.362</code>); Wake vs Sleep null</td></tr>
+    <tr><td><strong>Deep NREM &rarr; REM Brain Co-Modulation</strong></td><td><code>slpdb</code> (n=7 paired)</td><td><strong>Slope dz=&minus;5.161; &Delta;_WK dz=&minus;1.271</strong></td><td><strong>0.017 / 0.033</strong></td><td>Brain &amp; Heart shift in identical direction into REM</td></tr>
+    <tr><td><strong>2-Ch Forehead Ictal Slope Asymmetry</strong></td><td><code>CHB-MIT</code> (N=24)</td><td><strong><code>|slope_L &minus; slope_R|</code> 17/24, dz=+0.471</strong></td><td><strong>0.02095</strong></td><td>Pre-ictal (<code>-120..-10s</code>) asymmetry honestly null (<code>p=0.25–0.99</code>)</td></tr>
+  </tbody>
+</table>
+
+<p class="note"><strong>Reproducibility &amp; Non-Clinical Notice:</strong> Zero-dependency scripts (<code>audit_lab25</code>–<code>audit_lab29</code>) archived at <code>github.com/Illusiverepos/project-oneiris-eeg</code> (Archive DOI <code>10.5281/zenodo.24523273</code>). Research and general-wellness prototypes only; not FDA-cleared medical devices.</p>
+</body>
+</html>

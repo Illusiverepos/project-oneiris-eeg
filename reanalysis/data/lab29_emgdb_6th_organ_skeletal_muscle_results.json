@@ -1,0 +1,29 @@
+{
+  "lab": "Lab #29 — 6th Human Organ System: Skeletal Muscle EMG (PhysioNet emgdb)",
+  "nWindowsTotal": 153,
+  "wienerKhinchinLaw": {
+    "r": 0.9482,
+    "r2": 0.8992,
+    "permP": 0.00009999000099990002
+  },
+  "byCondition": {
+    "emg_healthy": {
+      "nWindows": 25,
+      "meanDFA": 0.9873,
+      "meanSlope": -1.0968,
+      "meanDeltaWK": -0.1221
+    },
+    "emg_myopathy": {
+      "nWindows": 55,
+      "meanDFA": 0.8306,
+      "meanSlope": -0.7514,
+      "meanDeltaWK": -0.0901
+    },
+    "emg_neuropathy": {
+      "nWindows": 73,
+      "meanDFA": 0.5627,
+      "meanSlope": -0.1155,
+      "meanDeltaWK": 0.0098
+    }
+  }
+}
