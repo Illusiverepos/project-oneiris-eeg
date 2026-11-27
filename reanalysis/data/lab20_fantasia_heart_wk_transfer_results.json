@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-11-27T18:55:23.225Z",
+  "dataset": "PhysioNet Fantasia Database (Lab #20 — 40 Humans: 20 Young 21–34 vs 20 Older 68–85, 15-min RR Intervals)",
+  "counts": {
+    "older": 20,
+    "young": 20,
+    "total": 40
+  },
+  "wienerKhinchinLawOnHumanHeart": {
+    "r_slopeVsPredicted": 0.7166,
+    "p": 0,
+    "meanAbsWKViolation": 0.2973
+  },
+  "Older_vs_Young_HRV": {
+    "slopeRR": {
+      "meanOld": -0.7063,
+      "meanYoung": -0.5243,
+      "d": -0.326,
+      "auc": 0.56,
+      "p": 0.30266
+    },
+    "dfaRR": {
+      "meanOld": 0.8175,
+      "meanYoung": 0.8393,
+      "d": -0.138,
+      "auc": 0.563,
+      "p": 0.663229
+    },
+    "wkHRV": {
+      "meanOld": -0.0712,
+      "meanYoung": 0.1544,
+      "d": -0.582,
+      "auc": 0.662,
+      "p": 0.065718
+    },
+    "sdnnMs": {
+      "meanOld": 119.55,
+      "meanYoung": 115.505,
+      "d": 0.064,
+      "auc": 0.505,
+      "p": 0.838846
+    },
+    "rmssdMs": {
+      "meanOld": 113.165,
+      "meanYoung": 104.11,
+      "d": 0.151,
+      "auc": 0.55,
+      "p": 0.634004
+    }
+  }
+}

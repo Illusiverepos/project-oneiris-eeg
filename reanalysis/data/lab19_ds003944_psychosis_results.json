@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-11-27T18:56:01.313Z",
+  "dataset": "OpenNeuro ds003944 (Lab #19 — First-Episode Psychosis vs Controls, 4-ch Frontal+Posterior)",
+  "counts": {
+    "psychosis": 50,
+    "controls": 31,
+    "total": 81
+  },
+  "Psychosis_vs_Controls": {
+    "fSlope": {
+      "meanFEP": -1.574,
+      "meanCTL": -1.4911,
+      "d": -0.179,
+      "auc": 0.502,
+      "p": 0.46909
+    },
+    "fDFA": {
+      "meanFEP": 1.1327,
+      "meanCTL": 1.1062,
+      "d": 0.149,
+      "auc": 0.528,
+      "p": 0.51196
+    },
+    "fWK": {
+      "meanFEP": -0.3087,
+      "meanCTL": -0.2787,
+      "d": -0.089,
+      "auc": 0.505,
+      "p": 0.70595
+    },
+    "fAlpha": {
+      "meanFEP": 0.1399,
+      "meanCTL": 0.1604,
+      "d": -0.27,
+      "auc": 0.564,
+      "p": 0.25712
+    },
+    "fBeta": {
+      "meanFEP": 0.1295,
+      "meanCTL": 0.1327,
+      "d": -0.055,
+      "auc": 0.525,
+      "p": 0.79824
+    },
+    "fDelta": {
+      "meanFEP": 0.418,
+      "meanCTL": 0.386,
+      "d": 0.235,
+      "auc": 0.555,
+      "p": 0.30501
+    },
+    "pSlope": {
+      "meanFEP": -1.4618,
+      "meanCTL": -1.6036,
+      "d": 0.351,
+      "auc": 0.608,
+      "p": 0.12175
+    },
+    "pDFA": {
+      "meanFEP": 0.925,
+      "meanCTL": 0.9419,
+      "d": -0.172,
+      "auc": 0.526,
+      "p": 0.45255
+    },
+    "pWK": {
+      "meanFEP": -0.6118,
+      "meanCTL": -0.7197,
+      "d": 0.318,
+      "auc": 0.569,
+      "p": 0.17239
+    },
+    "pAlpha": {
+      "meanFEP": 0.2554,
+      "meanCTL": 0.307,
+      "d": -0.446,
+      "auc": 0.618,
+      "p": 0.05529
+    },
+    "pBeta": {
+      "meanFEP": 0.1641,
+      "meanCTL": 0.1348,
+      "d": 0.509,
+      "auc": 0.649,
+      "p": 0.01605
+    },
+    "pDelta": {
+      "meanFEP": 0.2624,
+      "meanCTL": 0.2523,
+      "d": 0.123,
+      "auc": 0.574,
+      "p": 0.60927
+    }
+  }
+}
