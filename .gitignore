@@ -20,3 +20,6 @@ reanalysis/data/mendeley_ptsd/
 node_modules/
 .DS_Store
 Thumbs.db
+
+# Private outreach emails and grant drafts (local only)
+private_outreach/
