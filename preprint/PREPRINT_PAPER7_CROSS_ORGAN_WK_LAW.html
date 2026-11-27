@@ -3,58 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Universal Cross-Organ Wiener–Khinchin Scaling Law Across Human Brain, Heart, Respiration, and Locomotion</title>
+<title>A Universal Five-Organ Wiener–Khinchin Scaling Law Across Human Brain, Heart, Lungs, Locomotion, and Arterial Blood Pressure</title>
 <style>
-  body { font-family: Georgia, "Times New Roman", serif; line-height: 1.54; color: #111827; max-width: 820px; margin: 34px auto; padding: 0 24px; background: #fff; }
-  h1 { font-size: 1.56rem; line-height: 1.24; margin-bottom: 10px; color: #0f172a; }
-  h2 { font-size: 1.18rem; margin-top: 22px; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; color: #0f172a; }
-  .meta { font-family: system-ui, -apple-system, sans-serif; font-size: 0.86rem; color: #475569; margin-bottom: 16px; }
-  .abstract { background: #f8fafc; border-left: 4px solid #0ea5e9; padding: 13px 17px; margin: 14px 0; font-size: 0.93rem; }
-  .eq { text-align: center; font-family: Georgia, serif; font-style: italic; font-size: 1.04rem; margin: 10px 0; padding: 8px; background: #f8fafc; border-radius: 6px; }
-  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-family: system-ui, -apple-system, sans-serif; font-size: 0.80rem; }
-  th, td { border: 1px solid #cbd5e1; padding: 6px 7px; text-align: center; }
+  body { font-family: Georgia, "Times New Roman", serif; line-height: 1.50; color: #111827; max-width: 830px; margin: 30px auto; padding: 0 22px; background: #fff; }
+  h1 { font-size: 1.48rem; line-height: 1.24; margin-bottom: 8px; color: #0f172a; }
+  h2 { font-size: 1.14rem; margin-top: 20px; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; color: #0f172a; }
+  h3 { font-size: 0.98rem; margin-top: 14px; color: #1e293b; }
+  .meta { font-family: system-ui, -apple-system, sans-serif; font-size: 0.84rem; color: #475569; margin-bottom: 14px; }
+  .abstract { background: #f8fafc; border-left: 4px solid #0ea5e9; padding: 12px 16px; margin: 12px 0; font-size: 0.90rem; }
+  .eq { text-align: center; font-family: Georgia, serif; font-style: italic; font-size: 1.02rem; margin: 10px 0; padding: 7px; background: #f8fafc; border-radius: 6px; }
+  .fig { border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin: 14px 0; background: #fff; }
+  .figcap { font-family: system-ui, -apple-system, sans-serif; font-size: 0.78rem; color: #475569; margin-top: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-family: system-ui, -apple-system, sans-serif; font-size: 0.77rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 5px 7px; text-align: center; }
   th { background: #f1f5f9; font-weight: 700; }
   td:first-child, th:first-child { text-align: left; }
-  code { font-family: Consolas, ui-monospace, monospace; font-size: 0.86em; background: #f1f5f9; padding: 1px 4px; border-radius: 4px; }
-  .note { font-size: 0.84rem; color: #475569; font-style: italic; }
-  @media print { body { margin: 11mm; max-width: none; } }
+  code { font-family: Consolas, ui-monospace, monospace; font-size: 0.85em; background: #f1f5f9; padding: 1px 4px; border-radius: 4px; }
+  .note { font-size: 0.82rem; color: #475569; font-style: italic; }
+  ol.refs { font-size: 0.80rem; color: #334155; padding-left: 18px; }
+  @media print { body { margin: 10mm; max-width: none; } .fig { break-inside: avoid; } table { break-inside: avoid; } }
 </style>
 </head>
 <body>
-<h1>A Universal Cross-Organ Wiener–Khinchin Scaling Law Across Human Brain, Heart, Respiration, and Locomotion: 5-Minute Smartwatch Heart-Age Clock and Multi-System Validation</h1>
+<h1>A Universal Five-Organ Wiener–Khinchin Scaling Law Across Human Brain, Heart, Lungs, Locomotion, and Arterial Blood Pressure: Multi-Lab Heart-Age Validation, Cross-Organ Coupling, and Surrogate Physics Proofs</h1>
 <div class="meta">
   <strong>Author:</strong> Austin Rutan (Independent Researcher, Project ONEIRIS) &middot; <code>rutanaus000@gmail.com</code><br>
-  <strong>Preprint Series:</strong> Project ONEIRIS — Paper 7 (November 2026) &middot; <strong>Archive DOI:</strong> <code>10.5281/zenodo.24523273</code> &middot; <strong>Code:</strong> <code>github.com/Illusiverepos/project-oneiris-eeg</code>
+  <strong>Preprint Series:</strong> Project ONEIRIS — Paper 7 (Expanded Edition, November 2026) &middot; <strong>Archive DOI:</strong> <code>10.5281/zenodo.24523273</code> &middot; <strong>Code:</strong> <code>github.com/Illusiverepos/project-oneiris-eeg</code>
 </div>
 
 <div class="abstract">
-  <strong>Abstract.</strong> Biological time series across different organ systems are typically analyzed with organ-specific, heuristic metrics (<code>SDNN</code>/<code>RMSSD</code> for heart rate, band ratios for EEG, stride CV for gait) that are confounded by amplitude and sensor impedance. Here we test whether a single first-principles identity derived from the <strong>Wiener–Khinchin theorem</strong> — <code>slope = &minus;(2&middot;DFA_&alpha; &minus; 1)</code>, defining the <strong>Wiener–Khinchin Violation Index</strong> <code>&Delta;_WK = slope + (2&middot;DFA_&alpha; &minus; 1)</code> — governs human physiology across <strong>four distinct organ systems</strong> (<strong>Brain</strong>, <strong>Heart</strong>, <strong>Lungs/Respiration</strong>, and <strong>Locomotion/Gait</strong>; Labs #13–#23, <code>N = 324+</code> humans). Every organ obeyed the law: <strong>Brain</strong> (<code>+44.65&deg;</code> vs. <code>+46.17&deg;</code> theory across <code>985.3h</code>), <strong>Heart</strong> (<code>r = +0.7166, p &lt; 10<sup>&minus;7</sup></code> Fantasia; <code>r = +0.657</code> <code>nsr2db</code>/<code>chf2db</code>), <strong>Lungs</strong> (<code>r = +0.7762, R&sup2; = 60.3%, p &lt; 10<sup>&minus;8</sup></code>), and <strong>Locomotion</strong> (<code>r = +0.8444, R&sup2; = 71.3%, p &lt; 10<sup>&minus;4</sup></code>). Crucially, <code>&Delta;_WK</code> tracked biological aging with the <strong>same negative sign</strong> in both <strong>Brain</strong> (<code>REM &Delta;_WK r_partial = &minus;0.2969, p = 0.0022</code> vs. raw <code>slope p = 0.966</code>) and <strong>Heart</strong> (<code>nsr2db, N = 54</code>: <code>r = &minus;0.6099, R&sup2; = 37.2%, p = 1.0 &times; 10<sup>&minus;6</sup></code> vs. null <code>SDNN p = 0.233</code> and <code>RMSSD p = 0.314</code>). From just <strong>5 minutes (<code>360</code> heartbeats)</strong>, a 1-feature smartwatch clock (<code>scoreHeartWK</code>) achieved strictly out-of-sample 5-fold CV <strong><code>r = 0.5975, R&sup2; = 35.7%, p = 8.0 &times; 10<sup>&minus;8</sup>, MAE = 7.06</code> years</strong> with 12-hour same-human retest stability (<code>r = +0.3671, p = 0.0044</code>). Respiration aging was null (<code>p = 0.306</code>), and locomotion showed a double dissociation: Huntington's Disease slid along the geodesic (<code>DFA d = &minus;1.524, p = 0.0002, AUC = 0.826</code>; <code>&Delta;_WK p = 0.375</code>), whereas ALS selectively broke <code>&Delta;_WK_Gait</code> (<code>d = &minus;0.930, AUC = 0.734, p = 0.0199</code>) while sparing <code>DFA</code> and <code>Slope</code> alone.
+  <strong>Abstract.</strong> Biological time series across organ systems are typically analyzed with organ-specific heuristic indices (<code>SDNN</code>/<code>RMSSD</code>, EEG band ratios, stride CV) that are confounded by amplitude variance and sensor impedance. Here we test whether a single first-principles identity from the <strong>Wiener–Khinchin theorem</strong> — <code>slope = &minus;(2&middot;DFA_&alpha; &minus; 1)</code>, defining the <strong>Wiener–Khinchin Violation Index</strong> <code>&Delta;_WK = slope + (2&middot;DFA_&alpha; &minus; 1)</code> — governs human physiology across <strong>five distinct organ systems</strong> spanning <strong>six independent international databases (<code>N = 444+</code> humans, Labs #13–#24)</strong>: <strong>Brain</strong> (<code>N = 99</code> BOAS <code>985.3h</code> + <code>N = 43</code> <code>PSEN1-E280A</code>), <strong>Heart</strong> (3 labs, <code>N = 243</code>: <code>Fantasia</code>, <code>nsr2db</code>/<code>chf2db</code>, Germany <code>autonomic-aging</code> <code>N = 120</code>), <strong>Lungs</strong> (<code>Fantasia RESP</code>, <code>N = 40</code>), <strong>Locomotion</strong> (<code>gaitndd</code>, <code>N = 62</code>), and <strong>Vascular / Continuous Arterial Blood Pressure</strong> (<code>NIBP</code>, <code>N = 115</code>). Every organ obeyed the law (<code>r = 0.505–0.844</code>, all <code>p &lt; 10<sup>&minus;4</sup></code>; Brain <code>+44.65&deg;</code> vs. <code>+46.17&deg;</code> theory). In ambulatory Holter ECG (<code>nsr2db, N = 54</code>), 5-minute <code>&Delta;_WK_HRV</code> predicted age out-of-sample at <strong><code>r = 0.5975, R&sup2; = 35.7%, p = 8.0 &times; 10<sup>&minus;8</sup>, MAE = 7.06</code> yrs</strong> (12-hr retest <code>p = 0.0044</code>; <code>SDNN</code>/<code>RMSSD</code> null). In an independent German supine-rest cohort (<code>N = 120</code>, ages <code>18.5–88.5</code>), 5-minute <code>&Delta;_WK_HRV</code> replicated age tracking controlling for <strong>Sex and BMI</strong> (<strong><code>r = +0.3126, p = 0.0008</code>; <code>r_partial = +0.2726, p = 0.0030</code></strong>), outperforming <code>DFA</code> (<code>r = 0.052</code>), <code>slope</code> (<code>0.200</code>), <code>SDNN</code> (<code>&minus;0.264</code>), and <code>RMSSD</code> (<code>p = 0.410</code>), while revealing a <strong>posture-dependent sign inversion</strong> (supine young vagal curvature <code>&Delta;_WK = &minus;0.435</code> collapsing to <code>&minus;0.017</code> in older adults). Inside the exact same <code>115</code> humans, <strong>Heart <code>&Delta;_WK_HRV</code> and Arterial BP <code>&Delta;_WK_BP</code> co-varied directly (<code>r = +0.3185, p = 0.0008</code>)</strong>. Fourier phase-randomized surrogates proved that cardiac <code>&Delta;_WK_HRV</code> is a <strong>multi-scale spectral-crossover invariant</strong> (<code>r_surr = +0.3230</code>), whereas arterial BP <code>|&Delta;_WK_BP|</code> reflects <strong>genuine nonlinear phase structure</strong> (<code>t = +2.03, p = 0.0432</code>). Finally, human locomotion revealed a double dissociation: Huntington's slid along the geodesic (<code>DFA AUC = 0.826</code>; <code>&Delta;_WK p = 0.375</code>), whereas ALS selectively broke <code>&Delta;_WK_Gait</code> (<code>d = &minus;0.930, AUC = 0.734, p = 0.0199</code>).
 </div>
 
 <div class="eq">slope = &minus;(2&middot;&alpha;<sub>DFA</sub> &minus; 1) &nbsp;&nbsp;&rArr;&nbsp;&nbsp; &Delta;<sub>WK</sub> &equiv; slope + (2&middot;&alpha;<sub>DFA</sub> &minus; 1)</div>
 
-<h2>1. Universal 4-Organ Wiener–Khinchin Verification (Labs #13–#23)</h2>
+<div class="fig">
+  <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="font-family:system-ui,-apple-system,sans-serif;">
+    <text x="380" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Figure 1. Universal Wiener–Khinchin Law Fit Across 5 Human Organ Systems (slope vs. &minus;(2&middot;DFA &minus; 1))</text>
+    <line x1="165" y1="34" x2="165" y2="195" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="165" y1="195" x2="720" y2="195" stroke="#94a3b8" stroke-width="1"/>
+    <!-- Grid -->
+    <line x1="276" y1="34" x2="276" y2="195" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+    <line x1="387" y1="34" x2="387" y2="195" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+    <line x1="498" y1="34" x2="498" y2="195" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+    <line x1="609" y1="34" x2="609" y2="195" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+    <line x1="720" y1="34" x2="720" y2="195" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+    <!-- Bars (max width 555 = r=1.0) -->
+    <!-- 1. Locomotion r=0.8444 -->
+    <text x="158" y="54" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">Locomotion / Gait (N=62)</text>
+    <rect x="165" y="40" width="468.6" height="20" rx="4" fill="#0ea5e9"/>
+    <text x="640" y="54" font-size="10.5" font-weight="700" fill="#0369a1">r = 0.844 (R&sup2;=71%)</text>
+    <!-- 2. Lungs r=0.7762 -->
+    <text x="158" y="84" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">Lungs / RESP (N=40)</text>
+    <rect x="165" y="70" width="430.8" height="20" rx="4" fill="#10b981"/>
+    <text x="602" y="84" font-size="10.5" font-weight="700" fill="#047857">r = 0.776 (R&sup2;=60%)</text>
+    <!-- 3. Heart (Germany) r=0.7438 -->
+    <text x="158" y="114" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">Heart / ECG (N=243, 3 labs)</text>
+    <rect x="165" y="100" width="412.8" height="20" rx="4" fill="#f43f5e"/>
+    <text x="584" y="114" font-size="10.5" font-weight="700" fill="#be123c">r = 0.744 (R&sup2;=55%)</text>
+    <!-- 4. Brain (Noether 93.1%, +44.65 vs +46.17) -->
+    <text x="158" y="144" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">Brain / EEG (985.3h BOAS)</text>
+    <rect x="165" y="130" width="516.7" height="20" rx="4" fill="#8b5cf6"/>
+    <text x="687" y="144" font-size="10.5" font-weight="700" fill="#6d28d9">93.1% (+44.7&deg;)</text>
+    <!-- 5. Vascular BP r=0.5054 -->
+    <text x="158" y="174" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">Vascular / Art. BP (N=115)</text>
+    <rect x="165" y="160" width="280.5" height="20" rx="4" fill="#f59e0b"/>
+    <text x="452" y="174" font-size="10.5" font-weight="700" fill="#b45309">r = 0.505 (R&sup2;=26%)</text>
+    <!-- X axis labels -->
+    <text x="165" y="210" text-anchor="middle" font-size="10" fill="#64748b">0.0</text>
+    <text x="276" y="210" text-anchor="middle" font-size="10" fill="#64748b">0.2</text>
+    <text x="387" y="210" text-anchor="middle" font-size="10" fill="#64748b">0.4</text>
+    <text x="498" y="210" text-anchor="middle" font-size="10" fill="#64748b">0.6</text>
+    <text x="609" y="210" text-anchor="middle" font-size="10" fill="#64748b">0.8</text>
+    <text x="720" y="210" text-anchor="middle" font-size="10" fill="#64748b">1.0</text>
+  </svg>
+  <div class="figcap"><strong>Figure 1.</strong> Cross-subject Pearson correlation <em>r</em> between empirical PSD slope and Wiener–Khinchin theoretical prediction <code>&minus;(2&middot;DFA_&alpha; &minus; 1)</code> across Locomotion (<code>gaitndd</code>), Lungs (<code>Fantasia</code>), Heart (<code>autonomic-aging</code> Germany, replicating <code>Fantasia r=0.717</code> and <code>nsr2db r=0.657</code>), and Vascular Arterial BP (<code>NIBP</code>), alongside Brain <code>N3&rarr;REM</code> geodesic alignment (<code>+44.65&deg;</code> vs. <code>+46.17&deg;</code> theory, <code>93.1%</code> Noether conservation). All <em>p</em> &lt; 10<sup>&minus;4</sup>.</div>
+</div>
+
+<h2>1. Universal 5-Organ Summary Table (Labs #13–#24, N = 444+ Humans)</h2>
 <table>
-  <thead><tr><th>Organ System</th><th>Public Cohort &amp; Lab</th><th>N</th><th>Wiener–Khinchin Law Fit</th><th>Key Aging / Clinical &Delta;<sub>WK</sub> Result</th></tr></thead>
+  <thead><tr><th>Organ System</th><th>Public Cohort &amp; Lab</th><th>N</th><th>Wiener–Khinchin Law Fit</th><th>Key Aging / Clinical / Surrogate Result</th></tr></thead>
   <tbody>
     <tr><td><strong>1. Brain (EEG)</strong></td><td>OpenNeuro <code>ds005555</code> (Lab #13) &amp; <code>ds007427</code> (Lab #16)</td><td>99 + 43</td><td><strong>+44.65&deg; vs. +46.17&deg;</strong> (93.1% Noether)</td><td>Aging: <code>REM &Delta;_WK r=&minus;0.297, p=0.0022</code>; Pre-Symptomatic AD: <strong><code>d=+0.998, p=0.00268</code></strong></td></tr>
-    <tr><td><strong>2. Heart (ECG/RR)</strong></td><td>PhysioNet <code>Fantasia</code>, <code>nsr2db</code>, <code>chf2db</code> (Labs #20–#22)</td><td>123</td><td><strong>r = +0.7166</strong> / <strong>+0.657</strong> (p&lt;10<sup>&minus;7</sup>)</td><td><strong>5-min Smartwatch CV: r=0.5975, R&sup2;=35.7%, p=8.0&times;10<sup>&minus;8</sup>, MAE=7.06 yrs</strong></td></tr>
+    <tr><td><strong>2. Heart (ECG)</strong></td><td><code>Fantasia</code> (40), <code>nsr2db</code>/<code>chf2db</code> (83), <strong>Germany (120)</strong></td><td>243</td><td><strong>r = +0.717 / +0.657 / +0.744</strong> (p&lt;10<sup>&minus;4</sup>)</td><td>USA 5-min CV <strong><code>r=0.598, MAE=7.06 yrs</code></strong>; Germany 5-min <strong><code>r=+0.313, p=0.0008</code></strong> (Sex/BMI <code>p=0.0030</code>)</td></tr>
     <tr><td><strong>3. Lungs (RESP)</strong></td><td>PhysioNet <code>Fantasia RESP</code> (Lab #22)</td><td>40</td><td><strong>r = +0.7762</strong> (R&sup2;=60.3%, p&lt;10<sup>&minus;8</sup>)</td><td>Negative control: Breathing aging null (<code>p=0.306</code>)</td></tr>
-    <tr><td><strong>4. Locomotion (Gait)</strong></td><td>PhysioNet <code>gaitndd</code> (Lab #23)</td><td>62</td><td><strong>r = +0.8444</strong> (R&sup2;=71.3%, p&lt;10<sup>&minus;4</sup>)</td><td>HD along geodesic (<code>DFA AUC=0.826</code>); <strong>ALS breaks <code>&Delta;_WK</code> (<code>d=&minus;0.930, p=0.0199</code>)</strong></td></tr>
+    <tr><td><strong>4. Locomotion</strong></td><td>PhysioNet <code>gaitndd</code> (Lab #23)</td><td>62</td><td><strong>r = +0.8444</strong> (R&sup2;=71.3%, p&lt;10<sup>&minus;4</sup>)</td><td>HD along geodesic (<code>DFA AUC=0.826</code>); <strong>ALS breaks <code>&Delta;_WK</code> (<code>d=&minus;0.930, p=0.0199</code>)</strong></td></tr>
+    <tr><td><strong>5. Vascular (BP)</strong></td><td>Germany <code>autonomic-aging NIBP</code> (Lab #24)</td><td>115</td><td><strong>r = +0.5054</strong> (R&sup2;=25.5%, p&lt;10<sup>&minus;4</sup>)</td><td><strong>Within-Human Heart–BP <code>r=+0.3185, p=0.0008</code></strong>; Nonlinear surrogate <strong><code>t=+2.03, p=0.0432</code></strong></td></tr>
   </tbody>
 </table>
 
-<h2>2. 5-Minute Smartwatch Heart-Age Clock &amp; 12-Hour Reliability (PhysioNet nsr2db, N = 54)</h2>
+<h2>2. Two-Lab 5-Minute Heart-Age Validation &amp; Fourier Surrogate Physics Proof</h2>
 <table>
-  <thead><tr><th>Validation Test (Single Zero-Parameter Feature: <code>&Delta;_WK_HRV</code>)</th><th>Performance</th><th>Exact / Perm p</th><th>Clinical / Wearable Takeaway</th></tr></thead>
+  <thead><tr><th>5-Minute Metric (<code>300 s</code>)</th><th>Lab #22: Ambulatory Holter (<code>nsr2db</code>, USA, N=54)</th><th>Lab #24: Supine Rest (<code>autonomic-aging</code>, Germany, N=120)</th></tr></thead>
   <tbody>
-    <tr><td>Full-Cohort Aging Correlation (<code>N = 54</code>)</td><td><strong>r = &minus;0.6099 (R&sup2; = 37.2%)</strong></td><td><strong>1.0 &times; 10<sup>&minus;6</sup></strong></td><td>Same negative sign as Brain REM <code>&Delta;_WK</code></td></tr>
-    <tr><td>Standard Apple Watch / Oura Baselines (<code>SDNN</code> / <code>RMSSD</code>)</td><td>r = &minus;0.165 / &minus;0.140</td><td>0.233 / 0.314</td><td>Conventional HRV amplitude fails on same cohort</td></tr>
-    <tr><td><strong>5-Minute Smartwatch Clock (<code>360</code> beats, 5-Fold CV)</strong></td><td><strong>r = 0.5975, R&sup2; = 35.7%, MAE = 7.06 yrs</strong></td><td><strong>8.0 &times; 10<sup>&minus;8</sup></strong></td><td>Beats 15-min (7.60 yrs) &amp; 30-min (7.64 yrs)</td></tr>
-    <tr><td><strong>12-Hour Same-Human Retest (Hour 4 vs. Hour 16)</strong></td><td><strong>r = +0.3671</strong></td><td><strong>0.0044</strong></td><td>Stable across circadian day/night shifts</td></tr>
-    <tr><td>Congestive Heart Failure Control (<code>chf2db, n = 29</code>)</td><td><code>SDNN d = &minus;0.689</code></td><td>0.0027</td><td><code>&Delta;_WK_HRV</code> isolates aging unconfounded by CHF amplitude</td></tr>
+    <tr><td><strong><code>&Delta;_WK_HRV</code> vs. Age</strong></td><td><strong>r = &minus;0.6099 (R&sup2; = 37.2%, p = 1.0 &times; 10<sup>&minus;6</sup>)</strong></td><td><strong>r = +0.3126 (p = 0.0008)</strong> &middot; Partial(Sex,BMI) <strong>r = +0.2726 (p = 0.0030)</strong></td></tr>
+    <tr><td><strong>5-Fold Out-of-Sample CV</strong></td><td><strong>r = 0.5975, MAE = 7.06 yrs (p = 8.0 &times; 10<sup>&minus;8</sup>)</strong></td><td><strong>r = 0.2793, MAE = 17.35 yrs (p = 0.0023)</strong></td></tr>
+    <tr><td>Individual <code>DFA &alpha;</code> / <code>Slope</code> vs. Age</td><td>Weaker than <code>&Delta;_WK_HRV</code></td><td><code>DFA r = +0.052</code> (<em>null</em>) / <code>Slope r = +0.200</code></td></tr>
+    <tr><td>Conventional <code>SDNN</code> / <code>RMSSD</code></td><td><code>SDNN p = 0.233</code> (null) / <code>RMSSD p = 0.314</code> (null)</td><td><code>SDNN r = &minus;0.264 (p=0.0044)</code> / <code>RMSSD p = 0.410</code> (null)</td></tr>
+    <tr><td><strong>Surrogate Null (Phase-Randomized)</strong></td><td>12-hr Retest: <strong>r = +0.3671 (p = 0.0044)</strong></td><td>Heart <code>r_surr = +0.3230</code> (<em>spectral curvature</em>); <strong>BP <code>|&Delta;_WK|</code> &gt; Surr <code>t=+2.03, p=0.0432</code></strong></td></tr>
   </tbody>
 </table>
+<p><strong>Posture &amp; Surrogate Mechanism:</strong> In supine laboratory rest (<code>N = 120</code>), young adults (<code>&lt;35</code> yrs) show strong negative vagal curvature (<code>&Delta;_WK = &minus;0.435</code>) that collapses directly onto the featureless <code>1/f</code> geodesic (<code>&minus;0.017</code>) after age <code>65</code>. Because cardiac <code>&Delta;_WK_HRV</code> survives Fourier phase randomization (<code>t = &minus;0.31, p = 0.761</code>), it operates as a <em>multi-scale spectral-crossover invariant</em> whose sign depends on autonomic posture (supine vagal rest vs. ambulatory sympathetic Holter) — whereas arterial blood pressure <code>|&Delta;_WK_BP|</code> drops significantly under phase randomization (<code>p = 0.0432</code>), proving true nonlinear phase coupling in vascular dynamics.</p>
 
 <h2>3. 4th Organ System: Human Locomotion Double Dissociation (PhysioNet gaitndd, N = 62)</h2>
 <table>
@@ -67,8 +116,15 @@
   </tbody>
 </table>
 
-<h2>4. Zero-Dependency SDK Implementation &amp; Research Notice</h2>
-<p>The 5-minute Heart-Age Clock is shipped as <code>scoreHeartWK(rrIntervalsSec)</code> inside <code>sdk/oneiris_wearable_sdk.js</code> (zero external dependencies; 5/5 automated self-tests passing in <code>sdk/demo_sdk.js</code>). Reproducible scripts: <code>audit_lab20_fantasia_heart_wk_transfer.js</code>, <code>audit_lab21_physionet_chf_vs_nsr_heart_wk.js</code>, <code>audit_lab22_cross_organ_smartwatch_and_respiration.js</code>, and <code>audit_lab23_gaitndd_locomotion_wk.js</code>.</p>
-<p class="note"><strong>Non-Clinical Research Notice:</strong> Project ONEIRIS software and SDK modules are open-source non-commercial research and general-wellness prototypes, not FDA-cleared medical devices or clinical diagnostic substitutes. Prospective optical PPG smartwatch validation and larger longitudinal ALS cohorts are required prior to clinical deployment.</p>
+<h2>4. Reproducibility, SDK &amp; References</h2>
+<p>Zero-dependency Node.js scripts (<code>audit_lab20</code>–<code>audit_lab24</code>) and the evaluation SDK (<code>sdk/oneiris_wearable_sdk.js</code> &rarr; <code>scoreHeartWK</code>, 5/5 self-tests passing) are open-source for academic and non-commercial research. <span class="note"><strong>Non-Clinical Notice:</strong> Research and general-wellness prototypes only; not FDA-cleared medical devices. Wearable cardiac clocks require fixed-posture (e.g., sleep-onset) optical PPG calibration prior to deployment.</span></p>
+<ol class="refs">
+  <li>Rutan, A. (2026). <em>Project ONEIRIS Master Codebase Archive</em>. Zenodo. <code>https://doi.org/10.5281/zenodo.24523273</code>.</li>
+  <li>Rutan, A. (2026). <em>Paper 5</em> (<code>10.5281/zenodo.24599665</code>) &amp; <em>Paper 6</em> (<code>10.5281/zenodo.24599906</code>). Zenodo.</li>
+  <li>Schumann, A., &amp; B&auml;r, K.-J. (2022). <em>Autonomic aging — A dataset to quantify changes of cardiovascular autonomic function during healthy aging</em>. Scientific Data, 9, 95.</li>
+  <li>Goldberger, A. L. et al. (2000). <em>PhysioBank, PhysioToolkit, and PhysioNet</em>. Circulation, 101(23), e215–e220.</li>
+  <li>Hausdorff, J. M. et al. (2000). <em>Dynamic markers of altered gait rhythm in ALS</em>. J. Appl. Physiol., 88(6), 2045–2053.</li>
+  <li>Theiler, J. et al. (1992). <em>Testing for nonlinearity in time series: the method of surrogate data</em>. Physica D, 58, 77–94.</li>
+</ol>
 </body>
 </html>
