@@ -1,0 +1,40 @@
+{
+  "lab": "Lab #25 — Fourier Phase-Randomized Surrogate Proof on Pre-Symptomatic PSEN1-E280A AD (ds007427)",
+  "nCarriers": 27,
+  "nControls": 16,
+  "realWK_G1_vs_G2": {
+    "mean1": -0.2104,
+    "mean2": -0.5295,
+    "d": 0.931,
+    "auc": 0.731,
+    "p": 0.0065
+  },
+  "surrogateWK_G1_vs_G2": {
+    "mean1": -0.1548,
+    "mean2": -0.4537,
+    "d": 0.718,
+    "auc": 0.674,
+    "p": 0.04095
+  },
+  "nonlinearResidualWK_G1_vs_G2": {
+    "mean1": -0.0557,
+    "mean2": -0.0758,
+    "d": 0.096,
+    "auc": 0.567,
+    "p": 0.78388
+  },
+  "pairedRealVsSurr_Signed": {
+    "meanA": -0.3291,
+    "meanB": -0.266,
+    "meanDiff": -0.0632,
+    "t": -2.004,
+    "p": 0.0451
+  },
+  "pairedRealVsSurr_Abs": {
+    "meanA": 0.4011,
+    "meanB": 0.4078,
+    "meanDiff": -0.0067,
+    "t": -0.218,
+    "p": 0.82753
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "lab": "Lab #26 — CHB-MIT Forehead Inter-Hemispheric Asymmetry (Jumble Inversion #3)",
+  "nPatients": 24,
+  "preVsBase": {
+    "absAsymWK": {
+      "n": 24,
+      "meanDiff": -0.0177,
+      "dz": -0.235,
+      "t": -1.154,
+      "p": 0.24863,
+      "nPos": 7,
+      "nNeg": 17
+    },
+    "absAsymSlope": {
+      "n": 24,
+      "meanDiff": 0,
+      "dz": 0,
+      "t": -0.002,
+      "p": 0.99872,
+      "nPos": 11,
+      "nNeg": 13
+    },
+    "absAsymDFA": {
+      "n": 24,
+      "meanDiff": -0.0007,
+      "dz": -0.019,
+      "t": -0.095,
+      "p": 0.92464,
+      "nPos": 10,
+      "nNeg": 14
+    },
+    "absAsymBeta": {
+      "n": 24,
+      "meanDiff": -0.0052,
+      "dz": -0.17,
+      "t": -0.833,
+      "p": 0.40503,
+      "nPos": 11,
+      "nNeg": 13
+    },
+    "absAsymDelta": {
+      "n": 24,
+      "meanDiff": 0.0028,
+      "dz": 0.093,
+      "t": 0.455,
+      "p": 0.64915,
+      "nPos": 16,
+      "nNeg": 8
+    }
+  },
+  "ictalVsBase": {
+    "absAsymWK": {
+      "n": 24,
+      "meanDiff": 0.0368,
+      "dz": 0.282,
+      "t": 1.382,
+      "p": 0.16697,
+      "nPos": 12,
+      "nNeg": 12
+    },
+    "absAsymSlope": {
+      "n": 24,
+      "meanDiff": 0.0928,
+      "dz": 0.471,
+      "t": 2.309,
+      "p": 0.02095,
+      "nPos": 17,
+      "nNeg": 7
+    },
+    "absAsymDFA": {
+      "n": 24,
+      "meanDiff": 0.0185,
+      "dz": 0.242,
+      "t": 1.184,
+      "p": 0.23629,
+      "nPos": 11,
+      "nNeg": 13
+    },
+    "absAsymBeta": {
+      "n": 24,
+      "meanDiff": -0.0048,
+      "dz": -0.12,
+      "t": -0.589,
+      "p": 0.55586,
+      "nPos": 11,
+      "nNeg": 13
+    },
+    "absAsymDelta": {
+      "n": 24,
+      "meanDiff": 0.0238,
+      "dz": 0.308,
+      "t": 1.509,
+      "p": 0.13141,
+      "nPos": 15,
+      "nNeg": 9
+    }
+  }
+}
