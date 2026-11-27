@@ -1,0 +1,21 @@
+{
+  "lab": "Lab #38 — Natural Deep N3 vs Propofol Anesthesia 2D (Slope x brainNonlin) Separator",
+  "Frontal_brainNonlin": {
+    "nPropofol": 7,
+    "nDeepN3": 19,
+    "meanPropofol": -0.1278,
+    "meanDeepN3": -0.0052,
+    "d": -1.067,
+    "auc": 0.714,
+    "p": 0.0208
+  },
+  "Frontal_1f_Slope": {
+    "nPropofol": 7,
+    "nDeepN3": 19,
+    "meanPropofol": -2.6455,
+    "meanDeepN3": -2.4361,
+    "d": -0.258,
+    "auc": 0.504,
+    "p": 0.67133
+  }
+}

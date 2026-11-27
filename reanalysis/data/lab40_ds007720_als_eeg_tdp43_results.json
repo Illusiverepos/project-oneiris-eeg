@@ -1,0 +1,59 @@
+{
+  "lab": "Lab #40 — TDP-43 Cross-Organ Test: Human ALS Brain EEG Nonlinear Phase (OpenNeuro ds007720)",
+  "nPatients": 5,
+  "nRuns": 15,
+  "meanALS_brainNonlin": 0.0636,
+  "meanALS_realWK": -0.089,
+  "referenceBenchmarks": {
+    "Healthy_CN_ds004504": -0.1169,
+    "FTD_ds004504": -0.0226,
+    "RBD_REM_capslpdb": -0.4123
+  },
+  "perPatient": [
+    {
+      "sub": "sub-P1",
+      "nRuns": 3,
+      "ch": "CZ/PZ",
+      "realWK": -0.4523,
+      "surrogateWK": -0.4952,
+      "brainNonlin": 0.0428,
+      "meanSlopeBB": -0.7545
+    },
+    {
+      "sub": "sub-P2",
+      "nRuns": 3,
+      "ch": "CZ/PZ",
+      "realWK": 0.0892,
+      "surrogateWK": 0.0709,
+      "brainNonlin": 0.0183,
+      "meanSlopeBB": -1.2148
+    },
+    {
+      "sub": "sub-P3",
+      "nRuns": 3,
+      "ch": "FP1/FP2",
+      "realWK": 0.0142,
+      "surrogateWK": -0.0672,
+      "brainNonlin": 0.0814,
+      "meanSlopeBB": -1.7338
+    },
+    {
+      "sub": "sub-P4",
+      "nRuns": 3,
+      "ch": "FP1/FP2",
+      "realWK": -0.2165,
+      "surrogateWK": -0.2657,
+      "brainNonlin": 0.0493,
+      "meanSlopeBB": -0.6435
+    },
+    {
+      "sub": "sub-P5",
+      "nRuns": 3,
+      "ch": "FP1/FP2",
+      "realWK": 0.1205,
+      "surrogateWK": -0.0058,
+      "brainNonlin": 0.1263,
+      "meanSlopeBB": -1.0002
+    }
+  ]
+}

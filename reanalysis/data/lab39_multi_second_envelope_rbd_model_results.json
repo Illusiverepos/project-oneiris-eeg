@@ -1,0 +1,35 @@
+{
+  "lab": "Lab #39 — Multi-Second (4-8 s) Phasic-Tonic REM State-Switching Forward Model of RBD",
+  "curve": [
+    {
+      "phasicSwitchDepth": 0,
+      "realWK": -0.1664,
+      "surrWK": -0.1599,
+      "brainNonlin": -0.0065
+    },
+    {
+      "phasicSwitchDepth": 0.35,
+      "realWK": -0.1136,
+      "surrWK": -0.0118,
+      "brainNonlin": -0.1019
+    },
+    {
+      "phasicSwitchDepth": 0.65,
+      "realWK": -0.1304,
+      "surrWK": -0.0382,
+      "brainNonlin": -0.0922
+    },
+    {
+      "phasicSwitchDepth": 0.85,
+      "realWK": -0.1469,
+      "surrWK": -0.0401,
+      "brainNonlin": -0.1067
+    },
+    {
+      "phasicSwitchDepth": 0.96,
+      "realWK": -0.1331,
+      "surrWK": -0.0466,
+      "brainNonlin": -0.0866
+    }
+  ]
+}
