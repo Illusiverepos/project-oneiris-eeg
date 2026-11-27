@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-11-27T19:33:46.323Z",
+  "dataset": "PhysioNet nsr2db (54 Healthy Hearts) + chf2db (29 Congestive Heart Failure Patients)",
+  "counts": {
+    "CHF": 29,
+    "Healthy": 54,
+    "total": 83
+  },
+  "wienerKhinchinLawAll83Hearts": {
+    "n": 83,
+    "r": 0.657,
+    "p": 0
+  },
+  "CHF_vs_Healthy": {
+    "slopeRR": {
+      "meanCHF": -1.4442,
+      "meanHealthy": -1.5629,
+      "d": 0.204,
+      "auc": 0.547,
+      "p": 0.40841
+    },
+    "dfaRR": {
+      "meanCHF": 1.0192,
+      "meanHealthy": 1.0766,
+      "d": -0.363,
+      "auc": 0.566,
+      "p": 0.1823112
+    },
+    "wkHRV": {
+      "meanCHF": -0.4058,
+      "meanHealthy": -0.4097,
+      "d": 0.009,
+      "auc": 0.504,
+      "p": 0.9698214
+    },
+    "sdnnMs": {
+      "meanCHF": 44.1552,
+      "meanHealthy": 68.037,
+      "d": -0.689,
+      "auc": 0.747,
+      "p": 0.002749
+    },
+    "rmssdMs": {
+      "meanCHF": 25.2621,
+      "meanHealthy": 32.0352,
+      "d": -0.355,
+      "auc": 0.649,
+      "p": 0.1046343
+    }
+  },
+  "HealthyHeartAging_nsr2db": {
+    "slopeRR": {
+      "n": 54,
+      "r": -0.4518,
+      "p": 0.00026
+    },
+    "dfaRR": {
+      "n": 54,
+      "r": -0.1515,
+      "p": 0.268932
+    },
+    "wkHRV": {
+      "n": 54,
+      "r": -0.6099,
+      "p": 0
+    },
+    "sdnnMs": {
+      "n": 54,
+      "r": -0.1632,
+      "p": 0.232944
+    },
+    "rmssdMs": {
+      "n": 54,
+      "r": 0.1383,
+      "p": 0.314001
+    }
+  }
+}
