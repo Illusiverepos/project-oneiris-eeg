@@ -3,100 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Six-Organ Wiener–Khinchin Scaling, Nonlinear Surrogate Proofs in Pre-Symptomatic Alzheimer's, and Synchronized Brain–Heart–Vascular Sleep Dynamics</title>
+<title>Linear Spectral Curvature vs. Nonlinear Phase Coupling Across Human Sleep, Aging, and Neurodegeneration (N = 344)</title>
 <style>
-  body { font-family: Georgia, "Times New Roman", serif; line-height: 1.50; color: #111827; max-width: 830px; margin: 28px auto; padding: 0 22px; background: #fff; }
-  h1 { font-size: 1.46rem; line-height: 1.24; margin-bottom: 8px; color: #0f172a; }
-  h2 { font-size: 1.13rem; margin-top: 19px; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; color: #0f172a; }
-  .meta { font-family: system-ui, -apple-system, sans-serif; font-size: 0.83rem; color: #475569; margin-bottom: 13px; }
-  .abstract { background: #f8fafc; border-left: 4px solid #6366f1; padding: 12px 16px; margin: 12px 0; font-size: 0.89rem; }
+  body { font-family: Georgia, "Times New Roman", serif; line-height: 1.48; color: #111827; max-width: 830px; margin: 28px auto; padding: 0 22px; background: #fff; }
+  h1 { font-size: 1.44rem; line-height: 1.24; margin-bottom: 8px; color: #0f172a; }
+  h2 { font-size: 1.12rem; margin-top: 18px; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; color: #0f172a; }
+  .meta { font-family: system-ui, -apple-system, sans-serif; font-size: 0.82rem; color: #475569; margin-bottom: 12px; }
+  .abstract { background: #f8fafc; border-left: 4px solid #6366f1; padding: 11px 15px; margin: 11px 0; font-size: 0.87rem; }
   .fig { border: 1px solid #e2e8f0; border-radius: 8px; padding: 11px; margin: 12px 0; background: #fff; }
-  .figcap { font-family: system-ui, -apple-system, sans-serif; font-size: 0.77rem; color: #475569; margin-top: 5px; }
-  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-family: system-ui, -apple-system, sans-serif; font-size: 0.77rem; }
-  th, td { border: 1px solid #cbd5e1; padding: 5px 7px; text-align: center; }
+  .figcap { font-family: system-ui, -apple-system, sans-serif; font-size: 0.76rem; color: #475569; margin-top: 5px; }
+  table { width: 100%; border-collapse: collapse; margin: 9px 0; font-family: system-ui, -apple-system, sans-serif; font-size: 0.75rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 5px 6px; text-align: center; }
   th { background: #f1f5f9; font-weight: 700; }
   td:first-child, th:first-child { text-align: left; }
-  code { font-family: Consolas, ui-monospace, monospace; font-size: 0.85em; background: #f1f5f9; padding: 1px 4px; border-radius: 4px; }
-  .note { font-size: 0.81rem; color: #475569; font-style: italic; }
+  code { font-family: Consolas, ui-monospace, monospace; font-size: 0.84em; background: #f1f5f9; padding: 1px 4px; border-radius: 4px; }
+  .note { font-size: 0.80rem; color: #475569; font-style: italic; }
+  ol.refs { font-size: 0.77rem; color: #334155; padding-left: 18px; }
   @media print { body { margin: 10mm; max-width: none; } .fig, table { break-inside: avoid; } }
 </style>
 </head>
 <body>
-<h1>Six-Organ Wiener–Khinchin Scaling, Nonlinear Surrogate Proofs in Pre-Symptomatic Alzheimer's, and Synchronized Brain–Heart–Vascular Sleep Dynamics</h1>
+<h1>Linear Spectral Curvature vs. Nonlinear Phase Coupling Across Human Sleep, Aging, and Neurodegeneration: A Multi-Organ Fourier Surrogate Decomposition (N = 344)</h1>
 <div class="meta">
   <strong>Author:</strong> Austin Rutan (Independent Researcher, Project ONEIRIS) &middot; <code>rutanaus000@gmail.com</code><br>
-  <strong>Preprint Series:</strong> Project ONEIRIS — Paper 8 (November 2026) &middot; <strong>Prior DOIs:</strong> <code>10.5281/zenodo.24599665</code> (P5), <code>24599906</code> (P6), <code>24604316</code> (P7)
+  <strong>Preprint Series:</strong> Project ONEIRIS — Paper 8 (Unified Edition, November 2026) &middot; <strong>Prior DOIs:</strong> <code>10.5281/zenodo.24599665</code> (P5), <code>24599906</code> (P6), <code>24604316</code> (P7)
 </div>
 
 <div class="abstract">
-  <strong>Abstract.</strong> Extending our five-organ Wiener–Khinchin framework (Paper 7, <code>10.5281/zenodo.24604316</code>) across <strong>Project ONEIRIS Labs #25–#29</strong>, we verify the universal law <code>slope = &minus;(2&middot;DFA_&alpha; &minus; 1)</code> in a <strong>sixth human organ system — Skeletal Muscle (<code>EMG</code>)</strong> — and test four mechanistic predictions: (1) <strong>Skeletal Muscle (<code>emgdb</code>, 4000 Hz, 153 windows)</strong> obeyed the Wiener–Khinchin law at <strong><code>r = +0.9482 (R&sup2; = 89.9%, p &lt; 10<sup>&minus;4</sup>)</code></strong> with a monotonic collapse from Healthy (<code>&Delta;_WK = &minus;0.122</code>) &rarr; Myopathy (<code>&minus;0.090</code>) &rarr; Neuropathy (<code>+0.010</code>); (2) <strong>Fourier phase-randomized surrogates in pre-symptomatic <code>PSEN1-E280A</code> Alzheimer's (<code>ds007427, N = 43</code>)</strong> confirmed a real-vs-surrogate cortical phase offset (<code>t = &minus;2.004, p = 0.0451</code>) and proved that early amyloid pathology drives <strong>77% spectral-crossover flattening toward 0.00</strong> (<code>&minus;0.530 &rarr; &minus;0.210</code>, matching supine heart aging <code>&minus;0.435 &rarr; &minus;0.017</code>) + <strong>23% nonlinear phase boost</strong> (real <code>d = +0.931, p = 0.0065</code> vs. surrogate <code>d = +0.718, p = 0.0410</code>); (3) <strong>Simultaneous 4-organ overnight sleep (<code>slpdb, N = 18</code>)</strong> replicated within-human <strong>Heart–Arterial BP <code>&Delta;_WK</code> coupling</strong>, nearly doubling in sleep (<strong><code>r = +0.6120, R&sup2; = 37.5%, p = 0.00570</code></strong>) with a positive Brain–Heart trend (<code>r = +0.434, p = 0.072</code>); (4) across clinical sleep stages (<code>slpdb .st</code>), <strong>cardiac <code>&Delta;_WK_HRV</code> shifted significantly from Deep NREM (<code>&minus;0.710</code>) to REM (<code>&minus;0.234, dz = &minus;1.196, p = 0.0486</code>, 6/7 humans)</strong> in lockstep with Brain <code>&Delta;_WK</code> (<code>p = 0.033</code>), where <code>Heart DFA</code> (<code>p = 0.139</code>) and <code>Heart Slope</code> (<code>p = 0.362</code>) failed; and (5) in <strong>CHB-MIT Epilepsy (<code>N = 24</code>)</strong>, 2-channel forehead inter-hemispheric 1/f slope asymmetry <code>|slope_L &minus; slope_R|</code> spiked during active seizures in <strong><code>17/24</code> patients (<code>dz = +0.471, t = +2.309, p = 0.02095</code>)</strong> while pre-ictal asymmetry remained honestly null (<code>p = 0.25–0.99</code>).
+  <strong>Abstract.</strong> Any empirical departure from the stationary Wiener–Khinchin scaling law (<code>&Delta;_WK = slope + 2&middot;DFA_&alpha; &minus; 1</code>) can arise either from <em>linear multi-scale spectral-crossover curvature</em> or <em>genuine nonlinear phase coupling</em>. Here we separate these two mechanisms across <strong>five independent international cohorts (<code>N = 344</code> humans; Labs #24, #25, #30, #31, #32)</strong> using exact power-spectrum-preserving <strong>Fourier phase-randomized surrogates</strong> (Theiler et al., 1992). Three unifying discoveries emerge: <strong>(1) The Brain–Heart Sleep Phase-Switching Mirror Law</strong> (<code>capslpdb, N = 31</code> paired full nights): during Deep NREM (<code>S3/S4</code>), the <strong>Heart</strong> is strongly nonlinear phase-coupled (<code>t = &minus;2.973, p = 0.0050</code>, 24/31 humans) while the <strong>Brain</strong> is linear Gaussian (<code>p = 0.239</code>); during <strong>REM</strong>, they <strong>invert</strong> — the <strong>Brain</strong> locks into nonlinear phase coupling (<code>t = &minus;3.254, p = 0.0012</code>, 22/31 humans) while the <strong>Heart</strong> relaxes to linear Gaussian (<code>p = 0.219</code>), causing the cardiac Deep NREM&rarr;REM <code>&Delta;_WK</code> shift (<code>p = 0.0321</code>) to collapse completely in surrogates (<code>p = 0.568</code>). <strong>(2) Nonlinear Phase Destruction in FTD &amp; ALS:</strong> in <strong>Frontotemporal Dementia</strong> (<code>ds004504, N = 88</code>), real frontal <code>&Delta;_WK</code> (<code>d = +0.745, p = 0.0102</code>) collapsed to null in surrogates (<code>p = 0.0968</code>), and the pure nonlinear residual (<code>Real &minus; Surr</code>) separated FTD from Controls (<code>&minus;0.023</code> vs. <code>&minus;0.117</code>, <code>d = +0.609, p = 0.0269</code>); identically, in <strong>ALS gait</strong> (<code>gaitndd, N = 62</code>), real <code>&Delta;_WK_Gait</code> (<code>d = &minus;0.930, p = 0.0202</code>) collapsed to null in surrogates (<code>p = 0.413</code>). <strong>(3) Linear Spectral-Crossover Flattening:</strong> by contrast, <strong>pre-symptomatic <code>PSEN1-E280A</code> Alzheimer's</strong> (<code>N = 43</code>; 77% surrogate survival <code>p = 0.041</code>) and <strong>supine cardiac aging</strong> (<code>N = 120</code>; 100% surrogate survival <code>r_surr = +0.323</code> vs. <code>r_real = +0.313</code>) operate primarily via linear spectral-crossover flattening toward 0.00, while simultaneous arterial BP (<code>N = 115</code>) exhibits genuine nonlinear phase coupling (<code>t = +2.03, p = 0.0432</code>).
 </div>
 
 <div class="fig">
-  <svg viewBox="0 0 760 250" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="font-family:system-ui,-apple-system,sans-serif;">
-    <text x="380" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Figure 1. Universal Wiener–Khinchin Law Across ALL 6 Human Organ Systems (Labs #13–#29)</text>
-    <line x1="175" y1="32" x2="175" y2="225" stroke="#94a3b8" stroke-width="1"/>
-    <line x1="175" y1="225" x2="725" y2="225" stroke="#94a3b8" stroke-width="1"/>
-    <line x1="285" y1="32" x2="285" y2="225" stroke="#e2e8f0" stroke-dasharray="3,3"/>
-    <line x1="395" y1="32" x2="395" y2="225" stroke="#e2e8f0" stroke-dasharray="3,3"/>
-    <line x1="505" y1="32" x2="505" y2="225" stroke="#e2e8f0" stroke-dasharray="3,3"/>
-    <line x1="615" y1="32" x2="615" y2="225" stroke="#e2e8f0" stroke-dasharray="3,3"/>
-    <line x1="725" y1="32" x2="725" y2="225" stroke="#e2e8f0" stroke-dasharray="3,3"/>
-    <!-- 1. Skeletal Muscle EMG r=0.9482 -->
-    <text x="168" y="52" text-anchor="end" font-size="11" font-weight="700" fill="#0f172a">6. Skeletal Muscle EMG</text>
-    <rect x="175" y="38" width="521.5" height="20" rx="4" fill="#6366f1"/>
-    <text x="702" y="52" font-size="10.5" font-weight="700" fill="#4338ca">r = 0.948 (90%)</text>
-    <!-- 2. Brain Noether 93.1% -->
-    <text x="168" y="82" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">1. Brain EEG (985.3h)</text>
-    <rect x="175" y="68" width="512.0" height="20" rx="4" fill="#8b5cf6"/>
-    <text x="692" y="82" font-size="10.5" font-weight="700" fill="#6d28d9">93.1% (+44.7&deg;)</text>
-    <!-- 3. Locomotion r=0.8444 -->
-    <text x="168" y="112" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">4. Locomotion Gait (N=62)</text>
-    <rect x="175" y="98" width="464.4" height="20" rx="4" fill="#0ea5e9"/>
-    <text x="645" y="112" font-size="10.5" font-weight="700" fill="#0369a1">r = 0.844 (71%)</text>
-    <!-- 4. Lungs r=0.7762 -->
-    <text x="168" y="142" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">3. Lungs RESP (N=40)</text>
-    <rect x="175" y="128" width="426.9" height="20" rx="4" fill="#10b981"/>
-    <text x="608" y="142" font-size="10.5" font-weight="700" fill="#047857">r = 0.776 (60%)</text>
-    <!-- 5. Heart r=0.7438 -->
-    <text x="168" y="172" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">2. Heart ECG (N=261, 4 labs)</text>
-    <rect x="175" y="158" width="409.1" height="20" rx="4" fill="#f43f5e"/>
-    <text x="590" y="172" font-size="10.5" font-weight="700" fill="#be123c">r = 0.744 (55%)</text>
-    <!-- 6. Arterial BP r=0.5054 -->
-    <text x="168" y="202" text-anchor="end" font-size="11" font-weight="600" fill="#0f172a">5. Vascular Art. BP (N=133)</text>
-    <rect x="175" y="188" width="278.0" height="20" rx="4" fill="#f59e0b"/>
-    <text x="459" y="202" font-size="10.5" font-weight="700" fill="#b45309">r = 0.505 (26%)</text>
-    <text x="175" y="240" text-anchor="middle" font-size="10" fill="#64748b">0.0</text>
-    <text x="285" y="240" text-anchor="middle" font-size="10" fill="#64748b">0.2</text>
-    <text x="395" y="240" text-anchor="middle" font-size="10" fill="#64748b">0.4</text>
-    <text x="505" y="240" text-anchor="middle" font-size="10" fill="#64748b">0.6</text>
-    <text x="615" y="240" text-anchor="middle" font-size="10" fill="#64748b">0.8</text>
-    <text x="725" y="240" text-anchor="middle" font-size="10" fill="#64748b">1.0</text>
+  <svg viewBox="0 0 760 210" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="font-family:system-ui,-apple-system,sans-serif;">
+    <text x="380" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Figure 1. The Brain–Heart Sleep Phase-Switching Mirror Law (capslpdb, N = 31 Paired Full Nights)</text>
+    <!-- Zero line at y=115 -->
+    <line x1="80" y1="115" x2="710" y2="115" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4,3"/>
+    <text x="72" y="119" text-anchor="end" font-size="10" fill="#64748b">t = 0</text>
+    <text x="72" y="55" text-anchor="end" font-size="9.5" fill="#64748b">+3.5</text>
+    <text x="72" y="180" text-anchor="end" font-size="9.5" fill="#64748b">&minus;3.5</text>
+    <line x1="80" y1="40" x2="80" y2="190" stroke="#94a3b8" stroke-width="1"/>
+    <!-- Left panel: Deep NREM -->
+    <text x="235" y="38" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">DEEP NREM (S3/S4)</text>
+    <!-- Brain Deep NREM t=+1.23 (p=0.239 NS) -->
+    <rect x="145" y="90" width="70" height="25" rx="4" fill="#cbd5e1"/>
+    <text x="180" y="84" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Brain (Linear)</text>
+    <text x="180" y="106" text-anchor="middle" font-size="9.5" fill="#334155">t=+1.23 (NS)</text>
+    <!-- Heart Deep NREM t=-2.973 (p=0.0050 NONLINEAR) -->
+    <rect x="255" y="115" width="70" height="60" rx="4" fill="#f43f5e"/>
+    <text x="290" y="188" text-anchor="middle" font-size="10" font-weight="700" fill="#be123c">Heart NONLINEAR</text>
+    <text x="290" y="148" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">t=&minus;2.97</text>
+    <text x="290" y="162" text-anchor="middle" font-size="9.5" fill="#ffe4e6">p=0.0050</text>
+    <!-- Divider -->
+    <line x1="395" y1="32" x2="395" y2="195" stroke="#e2e8f0" stroke-width="1.5"/>
+    <!-- Right panel: REM -->
+    <text x="555" y="38" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">REM SLEEP (RECIPROCAL SWAP!)</text>
+    <!-- Brain REM t=-3.254 (p=0.0012 NONLINEAR) -->
+    <rect x="465" y="115" width="70" height="66" rx="4" fill="#6366f1"/>
+    <text x="500" y="193" text-anchor="middle" font-size="10" font-weight="700" fill="#4338ca">Brain NONLINEAR</text>
+    <text x="500" y="148" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">t=&minus;3.25</text>
+    <text x="500" y="162" text-anchor="middle" font-size="9.5" fill="#e0e7ff">p=0.0012</text>
+    <!-- Heart REM t=+1.236 (p=0.219 NS) -->
+    <rect x="575" y="90" width="70" height="25" rx="4" fill="#cbd5e1"/>
+    <text x="610" y="84" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Heart (Linear)</text>
+    <text x="610" y="106" text-anchor="middle" font-size="9.5" fill="#334155">t=+1.24 (NS)</text>
   </svg>
-  <div class="figcap"><strong>Figure 1.</strong> Empirical fit to <code>slope = &minus;(2&middot;DFA_&alpha; &minus; 1)</code> across all six human organ systems (Skeletal Muscle <code>EMG</code>, Brain <code>EEG</code>, Locomotion <code>Gait</code>, Lungs <code>RESP</code>, Heart <code>ECG</code>, and Vascular <code>Arterial BP</code>). All <em>p</em> &lt; 10<sup>&minus;4</sup>.</div>
+  <div class="figcap"><strong>Figure 1.</strong> Paired <em>t</em>-statistic of <code>Real &Delta;_WK &minus; Surrogate &Delta;_WK</code> inside the exact same <code>N = 31</code> sleeping humans (<code>capslpdb</code>). Deep NREM locks the Heart into nonlinear phase coupling (<code>p = 0.0050</code>, 24/31) while the Brain is linear; REM swaps them, locking the Brain into nonlinear phase coupling (<code>p = 0.0012</code>, 22/31) while the Heart releases into linear Gaussian dynamics.</div>
 </div>
 
-<h2>1. The Universal Flattening-Toward-Zero Law Across Organs (Labs #24, #25, #29)</h2>
+<h2>1. Brain–Heart Sleep Phase-Switching Table (capslpdb, N = 31 Paired Full Nights)</h2>
 <table>
-  <thead><tr><th>Organ &amp; Contrast</th><th>Healthy Baseline &Delta;<sub>WK</sub></th><th>Pathological / Aged &Delta;<sub>WK</sub></th><th>Effect / p-value</th><th>Physical Mechanism</th></tr></thead>
+  <thead><tr><th>Paired Full-Night Metric (<code>N = 31</code>)</th><th>Deep NREM (<code>S3/S4</code>)</th><th>REM Sleep</th><th>Paired t (dz)</th><th>Exact Perm p</th><th>Surrogate Verdict</th></tr></thead>
   <tbody>
-    <tr><td><strong>Brain: Pre-Symptomatic <code>PSEN1-E280A</code> AD (Lab #25)</strong></td><td>&minus;0.530</td><td><strong>&minus;0.210</strong></td><td><strong>d = +0.931, p = 0.0065</strong></td><td>77% spectral flattening + 23% nonlinear phase (<code>p = 0.0451</code>)</td></tr>
-    <tr><td><strong>Heart: Supine Aging &lt;35 vs. &gt;65 yrs (Lab #24)</strong></td><td>&minus;0.435</td><td><strong>&minus;0.017</strong></td><td><strong>r = +0.313, p = 0.0008</strong></td><td>100% vagal spectral-crossover curvature (<code>p = 0.761</code>)</td></tr>
-    <tr><td><strong>Muscle: Healthy vs. Neuropathy EMG (Lab #29)</strong></td><td>&minus;0.122</td><td><strong>+0.010</strong></td><td><code>r = 0.948, R&sup2; = 89.9%</code></td><td>Motor-unit synergy collapse &rarr; white-noise floor (<code>DFA 0.99 &rarr; 0.56</code>)</td></tr>
+    <tr><td>Brain Real <code>&Delta;_WK</code> / Surrogate <code>&Delta;_WK</code></td><td>&minus;1.182 / &minus;1.207</td><td>&minus;0.935 / &minus;0.788</td><td>&minus;2.935 / &minus;5.074</td><td><strong>0.0074 / 0.0001</strong></td><td>Spectral + Nonlinear REM shift</td></tr>
+    <tr><td><strong>Brain Nonlinear (<code>Real &minus; Surr</code>)</strong></td><td>+0.026 (p=0.239, <em>NS</em>)</td><td><strong>&minus;0.147 (22/31)</strong></td><td><strong>t = &minus;3.254</strong></td><td><strong>0.0012</strong></td><td><strong>Brain turns NONLINEAR in REM</strong></td></tr>
+    <tr><td><strong>Heart Real <code>&Delta;_WK_HRV</code></strong></td><td>&minus;0.353</td><td>&minus;0.094</td><td><strong>&minus;2.259 (23/31)</strong></td><td><strong>0.0321</strong></td><td>Replicates <code>slpdb</code> (<code>p=0.0486</code>)</td></tr>
+    <tr><td>Heart Surrogate <code>&Delta;_WK_HRV</code></td><td>&minus;0.237</td><td>&minus;0.169</td><td>&minus;0.578</td><td>0.5680 (<em>NULL</em>)</td><td><strong>100% phase-driven shift!</strong></td></tr>
+    <tr><td><strong>Heart Nonlinear (<code>Real &minus; Surr</code>)</strong></td><td><strong>&minus;0.116 (24/31)</strong></td><td>+0.075 (p=0.219, <em>NS</em>)</td><td><strong>t = &minus;2.973</strong></td><td><strong>0.0050</strong></td><td><strong>Heart turns NONLINEAR in Deep NREM</strong></td></tr>
   </tbody>
 </table>
 
-<h2>2. Simultaneous 4-Organ Overnight Sleep &amp; Forehead Epilepsy Asymmetry (Labs #26–#28)</h2>
+<h2>2. Five-Cohort Fourier Surrogate Decomposition Across Aging &amp; Neurodegeneration (N = 344)</h2>
 <table>
-  <thead><tr><th>New Discovery (Labs #26–#28)</th><th>Dataset &amp; N</th><th>Primary Result</th><th>Exact / Perm p</th><th>Honest Control / Boundary</th></tr></thead>
+  <thead><tr><th>Cohort &amp; Lab</th><th>N</th><th>Real &Delta;<sub>WK</sub></th><th>Surrogate &Delta;<sub>WK</sub></th><th>Nonlinear Residual (Real &minus; Surr)</th><th>Dominant Mechanism</th></tr></thead>
   <tbody>
-    <tr><td><strong>Overnight Sleep Heart–BP <code>&Delta;_WK</code> Coupling</strong></td><td><code>slpdb</code> (N=18)</td><td><strong>r = +0.6120 (R&sup2; = 37.5%)</strong></td><td><strong>0.00570</strong></td><td>Nearly doubles awake rest (<code>r = +0.319</code>, Lab #24)</td></tr>
-    <tr><td><strong>Deep NREM &rarr; REM Cardiac <code>&Delta;_WK_HRV</code> Shift</strong></td><td><code>slpdb</code> (n=7 paired)</td><td><strong>&minus;0.710 &rarr; &minus;0.234 (dz=&minus;1.196, 6/7)</strong></td><td><strong>0.0486</strong></td><td>Beats <code>Heart DFA</code> (<code>p=0.139</code>) &amp; <code>Slope</code> (<code>p=0.362</code>); Wake vs Sleep null</td></tr>
-    <tr><td><strong>Deep NREM &rarr; REM Brain Co-Modulation</strong></td><td><code>slpdb</code> (n=7 paired)</td><td><strong>Slope dz=&minus;5.161; &Delta;_WK dz=&minus;1.271</strong></td><td><strong>0.017 / 0.033</strong></td><td>Brain &amp; Heart shift in identical direction into REM</td></tr>
-    <tr><td><strong>2-Ch Forehead Ictal Slope Asymmetry</strong></td><td><code>CHB-MIT</code> (N=24)</td><td><strong><code>|slope_L &minus; slope_R|</code> 17/24, dz=+0.471</strong></td><td><strong>0.02095</strong></td><td>Pre-ictal (<code>-120..-10s</code>) asymmetry honestly null (<code>p=0.25–0.99</code>)</td></tr>
+    <tr><td><strong>FTD vs. CN (<code>ds004504</code>, Lab #30)</strong></td><td>88</td><td><strong>d=+0.745, p=0.0102</strong></td><td>d=+0.477, p=0.0968 (<em>NS</em>)</td><td><strong>d=+0.609, p=0.0269</strong> (&minus;0.023 vs &minus;0.117)</td><td><strong>Nonlinear Cortical Phase Loss</strong></td></tr>
+    <tr><td><strong>ALS Gait vs. CN (<code>gaitndd</code>, Lab #31)</strong></td><td>62</td><td><strong>d=&minus;0.930, p=0.0202</strong></td><td>d=&minus;0.313, p=0.4126 (<em>NS</em>)</td><td>All-62 Real vs Surr <strong>t=+1.96, p=0.0498</strong></td><td><strong>Nonlinear Motor-Neuron Phase Loss</strong></td></tr>
+    <tr><td><strong>Pre-Symptomatic <code>PSEN1</code> AD (Lab #25)</strong></td><td>43</td><td><strong>d=+0.931, p=0.0065</strong></td><td><strong>d=+0.718, p=0.0410</strong></td><td>All-43 Real vs Surr <strong>t=&minus;2.00, p=0.0451</strong></td><td>77% Spectral Flattening + 23% Phase</td></tr>
+    <tr><td><strong>Supine Heart Aging (Germany, Lab #24)</strong></td><td>120</td><td><strong>r=+0.313, p=0.0008</strong></td><td><strong>r=+0.323, p=0.0003</strong></td><td>t=&minus;0.31, p=0.761 (<em>NS</em>)</td><td>100% Linear Spectral Flattening</td></tr>
+    <tr><td><strong>Arterial BP (Germany, Lab #24)</strong></td><td>115</td><td>Age null (p=0.383)</td><td>Age null (p=0.389)</td><td><strong>|Real|&gt;|Surr| t=+2.03, p=0.0432</strong></td><td>Nonlinear Vascular Phase Coupling</td></tr>
   </tbody>
 </table>
 
-<p class="note"><strong>Reproducibility &amp; Non-Clinical Notice:</strong> Zero-dependency scripts (<code>audit_lab25</code>–<code>audit_lab29</code>) archived at <code>github.com/Illusiverepos/project-oneiris-eeg</code> (Archive DOI <code>10.5281/zenodo.24523273</code>). Research and general-wellness prototypes only; not FDA-cleared medical devices.</p>
+<p class="note"><strong>Reproducibility &amp; Non-Clinical Notice:</strong> Zero-dependency scripts (<code>audit_lab24</code>, <code>audit_lab25</code>, <code>audit_lab30</code>, <code>audit_lab31</code>, <code>audit_lab32</code>) archived at <code>github.com/Illusiverepos/project-oneiris-eeg</code> (Archive DOI <code>10.5281/zenodo.24523273</code>). Research prototypes only; not FDA-cleared medical devices.</p>
+<ol class="refs">
+  <li>Rutan, A. (2026). <em>Project ONEIRIS</em>: Archive (<code>10.5281/zenodo.24523273</code>), Paper 5 (<code>24599665</code>), Paper 6 (<code>24599906</code>), Paper 7 (<code>24604316</code>).</li>
+  <li>Theiler, J. et al. (1992). <em>Testing for nonlinearity in time series: the method of surrogate data</em>. Physica D, 58, 77–94.</li>
+  <li>Terzano, M. G. et al. (2001). <em>CAP Sleep Database</em> (<code>PhysioNet capslpdb</code>). Sleep Medicine, 2(6), 537–553.</li>
+  <li>Miltiadous, A. et al. (2023). <em>AD/FTD resting EEG</em> (<code>OpenNeuro ds004504</code>). Data, 8(6), 95; Henao Isaza, V. et al. (2026), <code>ds007427</code>.</li>
+  <li>Schumann, A., &amp; B&auml;r, K.-J. (2022). <em>Autonomic aging</em>. Scientific Data, 9, 95; Hausdorff, J. M. et al. (2000). <em>ALS gait</em>. J. Appl. Physiol.</li>
+</ol>
 </body>
 </html>

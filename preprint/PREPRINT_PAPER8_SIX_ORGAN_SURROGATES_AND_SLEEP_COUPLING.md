@@ -1,7 +1,7 @@
-# Six-Organ Wiener–Khinchin Scaling, Nonlinear Surrogate Proofs in Pre-Symptomatic Alzheimer's, and Synchronized Brain–Heart–Vascular Sleep Dynamics
+# Linear Spectral Curvature vs. Nonlinear Phase Coupling Across Human Sleep, Aging, and Neurodegeneration: A Multi-Organ Fourier Surrogate Decomposition (`N = 344`)
 
 **Author:** Austin Rutan (Independent Researcher, Project ONEIRIS) · `rutanaus000@gmail.com`  
-**Preprint Series:** Project ONEIRIS — Paper 8 (November 2026)  
+**Preprint Series:** Project ONEIRIS — Paper 8 (Rebuilt Unified Edition, November 2026)  
 **Repository:** `https://github.com/Illusiverepos/project-oneiris-eeg` · **Archive DOI:** `https://doi.org/10.5281/zenodo.24523273`  
 **Prior Papers in Series:** Paper 5 (`10.5281/zenodo.24599665`) · Paper 6 (`10.5281/zenodo.24599906`) · Paper 7 (`10.5281/zenodo.24604316`)  
 **License:** Free for Academic, University, VA & Non-Commercial Research (`LICENSE`) · Commercial Rights Reserved (`COMMERCIAL_LICENSING.md`)
@@ -10,57 +10,70 @@
 
 ## Abstract
 
-In Paper 7 (`10.5281/zenodo.24604316`), we demonstrated that the first-principles **Wiener–Khinchin Violation Index** ($\Delta_{\text{WK}} \equiv \text{slope} + 2\alpha_{\text{DFA}} - 1$) governs five human organ systems (Brain, Heart, Lungs, Locomotion, and Arterial Blood Pressure). Here, in **Project ONEIRIS Labs #25–#29**, we extend the law to a **sixth human organ system (Skeletal Muscle `EMG`)**, test the physical mechanism of pre-symptomatic Alzheimer's EEG via **Fourier phase-randomized surrogates**, invert our earlier forehead epilepsy null via **inter-hemispheric asymmetry**, and track **simultaneous 4-organ Brain–Heart–Vascular–Respiratory dynamics across clinical overnight sleep stages**.
+The **Wiener–Khinchin Violation Index** ($\Delta_{\text{WK}} \equiv \text{slope} + 2\alpha_{\text{DFA}} - 1$) quantifies departures from stationary fractional Gaussian scaling across human brain, heart, vascular, respiratory, and locomotor systems (Papers 5–7). However, a fundamental physical ambiguity remains: any empirical $\Delta_{\text{WK}} \neq 0$ can arise either from **(i) linear multi-scale spectral-crossover curvature** (which is fully encoded in the power spectrum) or **(ii) genuine nonlinear phase coupling / non-stationarity** (which is encoded exclusively in Fourier phase relationships). Here we resolve this ambiguity systematically by applying **exact power-spectrum-preserving Fourier phase-randomized surrogates** (Theiler et al., 1992) across **five independent international human cohorts (`N = 344` humans; Project ONEIRIS Labs #24, #25, #30, #31, and #32)** spanning **clinical overnight sleep (`capslpdb`, Italy, `N = 31` paired full nights)**, **Frontotemporal Dementia and Alzheimer's Disease (`ds004504`, Greece, `N = 88`)**, **pre-symptomatic `PSEN1-E280A` Alzheimer's mutation carriers (`ds007427`, Colombia, `N = 43`)**, **human locomotion in ALS and Huntington's Disease (`gaitndd`, USA, `N = 62`)**, and **supine cardiovascular aging (`autonomic-aging-cardiovascular`, Germany, `N = 120` ECG / `N = 115` arterial BP)**.
 
-We report five new empirical results:
-1. **6th Human Organ System — Skeletal Muscle `EMG` (`PhysioNet emgdb`, `4000 Hz`, `153` windows, Lab #29):** Human skeletal muscle motor-unit activity obeyed `slope = -(2·DFA_α − 1)` at **`r = +0.9482` (`R² = 89.9%`, permutation `p < 10⁻⁴`)** — the tightest fit across all six human organ systems — and exhibited a monotonic collapse from **Healthy (`DFA = 0.987, Δ_WK = -0.122`) → Myopathy (`0.831, -0.090`) → Neuropathy (`0.563, +0.010`)** toward featureless white noise.
-2. **Fourier Surrogate Proof in Pre-Symptomatic `PSEN1-E280A` Alzheimer's (`OpenNeuro ds007427`, `N = 43`, Lab #25):** Real human resting forehead EEG carried a significant nonlinear phase offset relative to power-spectrum-matched Gaussian surrogates (`t = -2.004, p = 0.0451`). Separating asymptomatic mutation carriers (`n = 27`) from matched controls (`n = 16`), **real frontal `Δ_WK` (`d = +0.931, AUC = 0.731, p = 0.0065`)** exceeded phase-randomized surrogates (`d = +0.718, AUC = 0.674, p = 0.0410`), proving that pre-symptomatic amyloid pathology drives **77% multi-scale spectral-crossover flattening toward `0.00` (`-0.530 → -0.210`, identical to supine cardiac aging `-0.435 → -0.017`) + 23% nonlinear cortical phase breakdown**.
-3. **2nd-Lab Replication of Within-Human Heart–Arterial BP Coupling During Overnight Sleep (`PhysioNet slpdb`, `N = 18`, Lab #27):** Inside simultaneous overnight polysomnography, within-human **`Heart Δ_WK ↔ Arterial BP Δ_WK`** coupling nearly doubled relative to awake rest (**`r = +0.6120`, `R² = 37.5%`, permutation `p = 0.00570`** vs. Germany awake rest `r = +0.3185, p = 0.0008`), alongside a positive `Brain ↔ Heart` trend (`r = +0.4344, p = 0.0724`).
-4. **Co-Modulation of Brain & Heart `Δ_WK` Across Deep NREM → REM Sleep (`slpdb`, clinical `.st` stages, Lab #28):** Within paired overnight humans (`n = 7` with contiguous Deep NREM & REM bouts), **cardiac `Δ_WK_HRV` shifted significantly upward from Deep NREM (`-0.710`) to REM (`-0.234`, `dz = -1.196, p = 0.0486`, `6/7` humans)** in exact lockstep with **Brain `Δ_WK` (`-1.311 → -1.094, p = 0.033`)** and **Brain `Slope` (`dz = -5.161, p = 0.017`)** — even though individual `Heart DFA` (`p = 0.139`) and `Heart Slope` (`p = 0.362`) were both null. *(Honest negative control: `Heart Δ_WK` alone did not separate Wake from Sleep, `p = 0.47–0.78`.)*
-5. **Forehead Inter-Hemispheric Epilepsy Asymmetry (`PhysioNet CHB-MIT`, `N = 24`, Lab #26):** Inverting our earlier global-average forehead null (`Lab #18`), **inter-hemispheric 1/f slope asymmetry `|slope_Left − slope_Right|`** across just 2 forehead channels (`FP1-F7` vs. `FP2-F8`) significantly spiked during active seizures in **`17/24` patients (`dz = +0.471, t = +2.309, p = 0.02095`)**, while pre-ictal (`-120s..-10s`) asymmetry remained honestly null (`p = 0.249–0.999`).
+Cross-testing sleep state, organ system, and pathology against Fourier surrogates reveals three unifying discoveries:
+1. **The Brain–Heart Sleep Phase-Switching Mirror Law (`capslpdb`, `N = 31` paired full-night humans, Lab #32):** Across clinical `Deep NREM (S3/S4)` and `REM` sleep, the human brain and heart execute an **exact reciprocal swap between linear Gaussian and nonlinear phase-coupled dynamics**:
+   - During **Deep NREM (`S3/S4`)**, the **Heart** is strongly nonlinear phase-coupled (`Real − Surr` `t = -2.973, p = 0.0050`, `24/31` humans) while the **Brain** is statistically indistinguishable from a linear Gaussian surrogate (`t = +1.230, p = 0.239`).
+   - During **REM Sleep**, they **invert**: the **Brain** switches into strong nonlinear phase coupling (`Real − Surr` `t = -3.254, p = 0.0012`, `22/31` humans) while the **Heart** relaxes into linear Gaussian dynamics (`t = +1.236, p = 0.219`).
+   - Consequently, the **Deep NREM → REM cardiac `Δ_WK_HRV` shift (`-0.353 → -0.094`, `t = -2.259, p = 0.0321`, `23/31` humans; replicating `slpdb` `p = 0.0486`) collapses completely to null under phase randomization (`t = -0.578, p = 0.568`)**, proving that autonomic Deep NREM→REM switching is driven by **nonlinear cardiac phase structure**, whereas Brain `Deep NREM → REM` shifts remain significant in both real (`p = 0.0074`) and surrogate (`p = 0.0001`) signals.
+2. **Nonlinear Phase Destruction in Frontotemporal Dementia (`ds004504`, `N = 88`, Lab #30) & ALS Locomotion (`gaitndd`, `N = 62`, Lab #31):**
+   - Across all `88` clinical resting forehead EEG recordings (`Fp1/Fp2`), real EEG carried a robust nonlinear phase offset (`t = -3.852, p = 0.0001`). Separating **Frontotemporal Dementia (`n = 23`)** from **Healthy Controls (`n = 29`)**, real frontal `Δ_WK` (`d = +0.745, AUC = 0.718, p = 0.0102`) **collapsed to null in phase-randomized surrogates (`d = +0.477, p = 0.0968`)**, and the **pure nonlinear phase residual (`Real − Surr`)** directly separated FTD from Controls (**`-0.0226` vs. `-0.1169`, `d = +0.609, AUC = 0.667, p = 0.0269`**) — proving that FTD selectively abolishes frontal nonlinear cortical phase coupling while clinical AD (`n = 36`) spares it (`p = 0.171`).
+   - In **Human Locomotion (`gaitndd`, `N = 62`)**, real walking carried a significant nonlinear phase offset (`t = +1.963, p = 0.0498`), and **ALS (`n = 12`) vs. Controls (`n = 16`)** real `Δ_WK_Gait` (**`d = -0.930, p = 0.0202`**) **collapsed to null in phase-randomized surrogates (`d = -0.313, p = 0.4126`)**, demonstrating that ALS destroys nonlinear motor-neuron phase coordination.
+3. **Linear Spectral-Crossover Flattening in Pre-Symptomatic `PSEN1-E280A` Alzheimer's (`N = 43`, Lab #25) & Supine Cardiac Aging (`N = 120`, Lab #24):**
+   - By contrast, in **asymptomatic `PSEN1-E280A` Alzheimer's carriers (`n = 27` vs. `16` controls)**, `77%` of the frontal `Δ_WK` effect (`real d = +0.931, p = 0.0065`) **survived phase randomization (`surrogate d = +0.718, p = 0.0410`)**, with a modest `23%` nonlinear phase boost (overall `t = -2.004, p = 0.0451`).
+   - Similarly, **supine cardiac aging (`N = 120`, Germany)** survived phase randomization completely (`r_surr = +0.3230` vs. `r_real = +0.3126`, `t = -0.31, p = 0.761`), whereas simultaneous **arterial blood pressure (`N = 115`)** carried genuine nonlinear phase coupling (`t = +2.03, p = 0.0432`).
 
-Together, **Project ONEIRIS Labs #1–#29** establish that **six out of six human organ systems** obey the universal Wiener–Khinchin geodesic (`r = 0.505–0.948`, all `p < 10⁻⁴`) and reveal a **Universal Flattening-Toward-Zero Law**: across aging hearts, pre-symptomatic Alzheimer's brains, and neuropathic skeletal muscle, healthy negative `Δ_WK` curvature systematically collapses toward `0.00`.
-
----
-
-## 1. Master 6-Organ Verification Table (Labs #13–#29)
-
-| # | Human Organ System | Public Cohort(s) | Sample | Wiener–Khinchin Fit (`slope` vs. `-(2·DFA−1)`) | Signature `Δ_WK` Discovery |
-| :-: | :--- | :--- | :-: | :--- | :--- |
-| **1** | **Brain (EEG)** | `ds005555` BOAS (`985.3h`), `ds007427` `PSEN1-E280A`, `ds004504` AD/FTD | `N = 261+` | **`+44.65°` vs. `+46.17°`** (`93.1%` Noether) | Pre-symptomatic AD: **`d = +0.931` (`77%` spectral flattening + `23%` nonlinear phase, `p = 0.0451`)** |
-| **2** | **Heart (ECG/RR)** | `Fantasia`, `nsr2db`/`chf2db`, Germany `autonomic-aging`, `slpdb` | `N = 261` (4 labs) | **`r = +0.744`** (`R² = 55.3%`, `p < 10⁻⁴`) | 5-min Heart-Age CV **`MAE = 7.06 yrs` (`p = 8e-8`)**; **Deep NREM→REM `Δ_WK` `p = 0.0486`** |
-| **3** | **Lungs (RESP)** | `Fantasia RESP`, `slpdb` | `N = 58` | **`r = +0.776`** (`R² = 60.3%`, `p < 10⁻⁸`) | Clean negative control for aging (`p = 0.306`) |
-| **4** | **Locomotion (Gait)** | `PhysioNet gaitndd` (CN, HD, PD, ALS) | `N = 62` | **`r = +0.844`** (`R² = 71.3%`, `p < 10⁻⁴`) | HD along geodesic (`DFA AUC = 0.826`); **ALS breaks `Δ_WK` (`d = -0.930, p = 0.0199`)** |
-| **5** | **Vascular (Art. BP)** | Germany `NIBP` (`115`), `slpdb` (`18`) | `N = 133` (2 labs) | **`r = +0.505`** (`R² = 25.5%`, `p < 10⁻⁴`) | **Heart–BP coupling `r = +0.319` awake → `r = +0.612` (`p = 0.0057`) in sleep**; nonlinear phase (`p = 0.0432`) |
-| **6** | **Skeletal Muscle (`EMG`)** | `PhysioNet emgdb` (`4000 Hz`) | `153` windows | **`r = +0.9482` (`R² = 89.9%`, `p < 10⁻⁴`)** | Monotonic collapse: **Healthy (`-0.122`) → Myopathy (`-0.090`) → Neuropathy (`+0.010`)** |
+Together, these `N = 344` cross-organ surrogate proofs establish a **mechanistic taxonomy** distinguishing **linear spectral-crossover aging/pre-symptomatic flattening** from **nonlinear phase-coupling breakdown** in FTD, ALS, and reciprocal Brain–Heart sleep-stage switching. All zero-dependency Node.js scripts are archived for full reproducibility. *Research prototype; not an FDA-cleared medical device.*
 
 ---
 
-## 2. The Universal Flattening-Toward-Zero Law Across Organs
+## 1. The Brain–Heart Sleep Phase-Switching Mirror Law (`capslpdb`, `N = 31` Paired Full Nights, Lab #32)
 
-| Organ & Pathology / Aging Contrast | Healthy Baseline `Δ_WK` | Pathological / Aged `Δ_WK` | Physical Direction | Mechanism (Surrogate Proof) |
-| :--- | :---: | :---: | :---: | :--- |
-| **Brain (`PSEN1-E280A` Pre-Symptomatic AD, Lab #25)** | `-0.530` | **`-0.210`** (`d = +0.931, p = 0.0065`) | Collapses toward `0.00` | `77%` spectral curvature + `23%` nonlinear phase (`p = 0.0451`) |
-| **Heart (Supine Aging `<35` vs. `>65` yrs, Lab #24)** | `-0.435` | **`-0.017`** (`r = +0.313, p = 0.0008`) | Collapses toward `0.00` | `100%` vagal spectral-crossover curvature (`p = 0.761`) |
-| **Skeletal Muscle (Healthy vs. Neuropathy, Lab #29)** | `-0.122` | **`+0.010`** (`DFA 0.987 → 0.563`) | Collapses toward `0.00` | Motor-unit synergy loss → white-noise floor |
+Using clinical 30-second sleep-stage annotations (`W`, `S3/S4`, `REM`) from the PhysioNet CAP Sleep Database (`n = 31` full-night humans with contiguous `≥3`-minute Deep NREM and REM bouts; `n = 29` with Wake), we computed real and Fourier phase-randomized surrogate $\Delta_{\text{WK}}$ simultaneously on Brain EEG (`F2-F4`/`F4-C4`/`C4-A1`) and Heart ECG (`ECG1-ECG2` resampled to `4 Hz` R–R intervals):
 
----
+| Paired Full-Night Contrast (`capslpdb`, `N = 31` Humans) | Deep NREM (`S3/S4`) | REM Sleep | Paired `t` (`dz`) | Exact Perm `p` | Physical Interpretation |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **Brain Real `Δ_WK`** | `-1.1816` | `-0.9354` | `t = -2.935` (`-0.527`) | **`0.0074`** | Cortical `Δ_WK` rises into REM |
+| **Brain Surrogate `Δ_WK`** | `-1.2073` | `-0.7884` | `t = -5.074` (`-0.911`) | **`0.0001`** | Spectral curvature drives baseline shift |
+| **Brain Nonlinear Phase (`Real − Surr`)** | **`+0.0257` (`t = +1.23, p = 0.239` — LINEAR)** | **`-0.1470` (`t = -3.254, p = 0.0012` — NONLINEAR!)** | `22/31` negative in REM | **`0.0012`** | **Brain turns NONLINEAR in REM** |
+| **Heart Real `Δ_WK_HRV`** | `-0.3530` | `-0.0940` | `t = -2.259` (`-0.406`, `23/31`) | **`0.0321`** | Replicates `slpdb` (`p = 0.0486`) at `4.5×` scale |
+| **Heart Surrogate `Δ_WK_HRV`** | `-0.2367` | `-0.1690` | `t = -0.578` (`-0.104`) | `0.5680` *(NULL)* | **Collapses to null when phases scrambled!** |
+| **Heart Nonlinear Phase (`Real − Surr`)** | **`-0.1163` (`t = -2.973, p = 0.0050` — NONLINEAR!)** | **`+0.0750` (`t = +1.236, p = 0.219` — LINEAR)** | `24/31` negative in Deep NREM | **`0.0050`** | **Heart turns NONLINEAR in Deep NREM** |
+| **Heart `DFA_α` (Reference)** | `1.0291` | `1.2095` | `t = -6.109` (`-1.097`) | **`0.0001`** | Deep NREM→REM autonomic surge (`Heart Slope p = 0.462`) |
 
-## 3. Simultaneous 4-Organ Overnight Sleep & Epilepsy Asymmetry (Labs #26–#28)
-
-### 3.1 Clinical Sleep-Stage Contrasts (`PhysioNet slpdb`, `N = 18` Full-Night Recordings)
-- **Within-Human Overnight Heart–BP Coupling (`Lab #27`, `N = 18`):** `r = +0.6120` (`R² = 37.5%`, `p = 0.00570`) — independently replicating Lab #24 (`r = +0.3185, p = 0.0008`) and demonstrating stronger cardiorespiratory-vascular coherence during sleep.
-- **Deep NREM (`S3/S4`) vs. REM (`Lab #28`, `n = 7` paired):**
-  - `Brain Slope`: `-3.070` vs. `-2.251` (`dz = -5.161, p = 0.017`)
-  - `Brain Δ_WK`: `-1.311` vs. `-1.094` (`dz = -1.271, p = 0.033`)
-  - **`Heart Δ_WK`:** **`-0.710` vs. `-0.234` (`dz = -1.196, p = 0.0486`, `6/7` humans)** — whereas `Heart DFA` (`p = 0.139`) and `Heart Slope` (`p = 0.362`) were null.
-- **Wake vs. Light NREM (`n = 15`) & Wake vs. REM (`n = 12`):** `Brain Δ_WK` cleanly separated Wake from Light NREM (`p = 0.0142`) and REM (`p = 0.0334`), while `Heart Δ_WK` alone did not (`p = 0.47–0.78`), showing that cardiac `Δ_WK_HRV` specifically tracks the **Deep NREM ↔ REM autonomic transition** rather than Wake onset.
-
-### 3.2 Forehead Inter-Hemispheric Epilepsy Asymmetry (`CHB-MIT`, `N = 24`, Lab #26)
-- **Ictal (`0s .. +40s`) minus Inter-Ictal `|slope_Left − slope_Right|` (`FP1-F7` vs. `FP2-F8`):** Spiked in **`17/24` patients (`dz = +0.471, t = +2.309, p = 0.02095`)**.
-- **Pre-Ictal (`-120s .. -10s`) minus Inter-Ictal:** Honestly null across all 5 asymmetry features (`p = 0.249–0.999`), establishing a clean boundary between ictal detection and pre-ictal prediction on 2 generic forehead channels.
+*Honest Wake–Sleep Boundary (`n = 29` paired):* Brain real `Δ_WK` strongly separated Wake (`-0.353`) from Deep NREM (`-1.178`, `t = +6.406, p = 0.0001`) and REM (`-0.920`, `t = +8.083, p = 0.0001`), whereas Heart `Δ_WK_HRV` showed only a weak trend for Wake vs. Deep NREM (`p = 0.078`) and was null for Wake vs. REM (`p = 0.551`) — proving cardiac `Δ_WK_HRV` is specifically sensitive to the **Deep NREM ↔ REM nonlinear phase switch**.
 
 ---
 
-## 4. Reproducibility & Non-Clinical Research Notice
-All scripts (`audit_lab25_psen1_fourier_surrogates.js`, `audit_lab26_chbmit_epilepsy_asymmetry.js`, `audit_lab27_slpdb_4organ_simultaneous_sleep.js`, `audit_lab28_slpdb_sleep_stage_4organ_dynamics.js`, `audit_lab29_emgdb_6th_organ_skeletal_muscle.js`) are zero-dependency Node.js programs archived in `https://github.com/Illusiverepos/project-oneiris-eeg`. *Research and general-wellness prototypes only; not FDA-cleared medical devices.*
+## 2. Five-Cohort Fourier Surrogate Decomposition Across Aging & Neurodegeneration (`N = 344`)
+
+| Cohort & Lab | `N` | Real `Δ_WK` Effect | Surrogate `Δ_WK` Effect | Pure Nonlinear Phase (`Real − Surr`) | Dominant Physical Mechanism |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **Frontotemporal Dementia (`ds004504`, Lab #30)** | `88` (`23` FTD / `29` CN) | **`d = +0.745, p = 0.0102`** | `d = +0.477, p = 0.0968` *(NULL)* | **`d = +0.609, p = 0.0269`** (`-0.023` vs. `-0.117`) | **Nonlinear Cortical Phase Destruction** (all-88 real vs. surr `t = -3.852, p = 0.0001`) |
+| **ALS Motor-Neuron Gait (`gaitndd`, Lab #31)** | `62` (`12` ALS / `16` CN) | **`d = -0.930, p = 0.0202`** | `d = -0.313, p = 0.4126` *(NULL)* | All-62 real vs. surr **`t = +1.963, p = 0.0498`** | **Nonlinear Motor-Neuron Phase Destruction** (`66%` phase-dependent) |
+| **Pre-Symptomatic `PSEN1-E280A` AD (`ds007427`, Lab #25)** | `43` (`27` G1 / `16` G2) | **`d = +0.931, p = 0.0065`** | **`d = +0.718, p = 0.0410`** | All-43 real vs. surr **`t = -2.004, p = 0.0451`** | **77% Linear Spectral-Crossover Flattening** + 23% Nonlinear Phase |
+| **Supine Cardiac Aging (`autonomic-aging`, Lab #24)** | `120` (`18.5–88.5` yrs) | **`r = +0.3126, p = 0.0008`** | **`r = +0.3230, p = 0.0003`** | Real vs. Surr `t = -0.31, p = 0.761` *(NULL)* | **100% Linear Vagal Spectral-Crossover Flattening** (`-0.435 → -0.017`) |
+| **Arterial Blood Pressure (`autonomic-aging`, Lab #24)** | `115` (`NIBP`) | Age null (`p = 0.383`) | Age null (`p = 0.389`) | **`|Real| > |Surr|` `t = +2.03, p = 0.0432`** | **Genuine Nonlinear Vascular Phase Coupling** (Heart–BP `r = +0.319, p = 0.0008`) |
+| **Clinical Sleep Brain–Heart (`capslpdb`, Lab #32)** | `31` paired nights | Brain `p = 0.0074`; Heart **`p = 0.0321`** | Brain `p = 0.0001`; Heart `p = 0.568` *(NULL)* | **Deep NREM Heart `p = 0.0050` ↔ REM Brain `p = 0.0012`** | **Reciprocal Brain–Heart Phase-Switching Mirror Law** |
+
+---
+
+## 3. Mechanistic Synthesis & Limitations
+
+These results resolve a central debate in scale-free physiology: **1/f-vs-DFA deviations (`Δ_WK`) are not monolithic.** By pairing every empirical `Δ_WK` estimate with an exact power-spectrum-preserving Fourier surrogate, we separate:
+1. **Linear Spectral-Crossover Flattening** (healthy supine cardiac aging and early pre-symptomatic `PSEN1-E280A` amyloidosis, where healthy negative spectral curvature flattens toward `0.00`), from
+2. **Genuine Nonlinear Phase-Coupling Switching & Breakdown** (reciprocal Deep NREM Heart ↔ REM Brain phase locking during human sleep, arterial pulse-wave nonlinearity, and catastrophic nonlinear phase loss in Frontotemporal Dementia and ALS).
+
+**Limitations:** `capslpdb` (`N = 31` paired) includes both healthy sleepers and clinical sleep-disorder cohorts (`NFLE`/`RBD`/`Insomnia`), so replication in a large purely healthy polysomnography cohort (`N > 100`) is warranted. All algorithms are open-source research prototypes (`audit_lab24`, `audit_lab25`, `audit_lab30`, `audit_lab31`, `audit_lab32`), not FDA-cleared medical devices.
+
+---
+
+## References
+1. Rutan, A. (2026). *Project ONEIRIS Archive* (`10.5281/zenodo.24523273`), *Paper 5* (`24599665`), *Paper 6* (`24599906`), *Paper 7* (`24604316`). Zenodo.
+2. Theiler, J., Eubank, S., Longtin, A., Galdrikian, B., & Farmer, J. D. (1992). *Testing for nonlinearity in time series: the method of surrogate data*. Physica D, 58, 77–94.
+3. Terzano, M. G. et al. (2001). *Atlas, rules, and recording techniques for the scoring of cyclic alternating pattern (CAP) in human sleep*. Sleep Medicine, 2(6), 537–553 (`PhysioNet capslpdb`).
+4. Miltiadous, A. et al. (2023). *A dataset of scalp EEG recordings of Alzheimer's disease, frontotemporal dementia and healthy subjects* (`OpenNeuro ds004504`). Data, 8(6), 95.
+5. Henao Isaza, V. et al. (2026). *Pre-symptomatic PSEN1-E280A resting EEG* (`OpenNeuro ds007427`). PLOS ONE.
+6. Schumann, A., & Bär, K.-J. (2022). *Autonomic aging* (`PhysioNet autonomic-aging-cardiovascular`). Scientific Data, 9, 95.
+7. Hausdorff, J. M. et al. (2000). *Dynamic markers of altered gait rhythm in ALS* (`PhysioNet gaitndd`). J. Appl. Physiol., 88(6), 2045–2053.

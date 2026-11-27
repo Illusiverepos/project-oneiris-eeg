@@ -1,0 +1,141 @@
+{
+  "lab": "Lab #32 — CAP Sleep Large-N Brain+Heart Sleep-Stage + Fourier Surrogate Cross-Test",
+  "nTotal": 33,
+  "DeepNREM_vs_REM": {
+    "n": 31,
+    "brainWK_Real": {
+      "n": 31,
+      "meanA": -1.1816,
+      "meanB": -0.9354,
+      "dz": -0.527,
+      "t": -2.935,
+      "p": 0.0074,
+      "nPos": 12
+    },
+    "brainWK_Surr": {
+      "n": 31,
+      "meanA": -1.2073,
+      "meanB": -0.7884,
+      "dz": -0.911,
+      "t": -5.074,
+      "p": 0.0001,
+      "nPos": 8
+    },
+    "brainNonlinear_RealVsSurr_Deep": {
+      "n": 31,
+      "meanA": -1.1816,
+      "meanB": -1.2073,
+      "dz": 0.221,
+      "t": 1.23,
+      "p": 0.23868,
+      "nPos": 23
+    },
+    "brainNonlinear_RealVsSurr_REM": {
+      "n": 31,
+      "meanA": -0.9354,
+      "meanB": -0.7884,
+      "dz": -0.584,
+      "t": -3.254,
+      "p": 0.0012,
+      "nPos": 9
+    },
+    "heartWK_Real": {
+      "n": 31,
+      "meanA": -0.353,
+      "meanB": -0.094,
+      "dz": -0.406,
+      "t": -2.259,
+      "p": 0.0321,
+      "nPos": 8
+    },
+    "heartWK_Surr": {
+      "n": 31,
+      "meanA": -0.2367,
+      "meanB": -0.169,
+      "dz": -0.104,
+      "t": -0.578,
+      "p": 0.56804,
+      "nPos": 15
+    },
+    "heartDFA": {
+      "n": 31,
+      "meanA": 1.0291,
+      "meanB": 1.2095,
+      "dz": -1.097,
+      "t": -6.109,
+      "p": 0.0001,
+      "nPos": 5
+    },
+    "heartSlope": {
+      "n": 31,
+      "meanA": -1.4112,
+      "meanB": -1.5129,
+      "dz": 0.134,
+      "t": 0.744,
+      "p": 0.46175,
+      "nPos": 18
+    },
+    "heartNonlinear_RealVsSurr_Deep": {
+      "n": 31,
+      "meanA": -0.353,
+      "meanB": -0.2367,
+      "dz": -0.534,
+      "t": -2.973,
+      "p": 0.005,
+      "nPos": 7
+    },
+    "heartNonlinear_RealVsSurr_REM": {
+      "n": 31,
+      "meanA": -0.094,
+      "meanB": -0.169,
+      "dz": 0.222,
+      "t": 1.236,
+      "p": 0.21948,
+      "nPos": 18
+    },
+    "brainHeartCoupling_DeepNREM_r": 0.0472,
+    "brainHeartCoupling_REM_r": -0.1252
+  },
+  "Wake_vs_DeepNREM": {
+    "n": 29,
+    "brainWK_Real": {
+      "n": 29,
+      "meanA": -0.3531,
+      "meanB": -1.1776,
+      "dz": 1.189,
+      "t": 6.406,
+      "p": 0.0001,
+      "nPos": 25
+    },
+    "heartWK_Real": {
+      "n": 29,
+      "meanA": -0.1454,
+      "meanB": -0.3611,
+      "dz": 0.341,
+      "t": 1.838,
+      "p": 0.07839,
+      "nPos": 17
+    }
+  },
+  "Wake_vs_REM": {
+    "n": 29,
+    "brainWK_Real": {
+      "n": 29,
+      "meanA": -0.3002,
+      "meanB": -0.9195,
+      "dz": 1.501,
+      "t": 8.083,
+      "p": 0.0001,
+      "nPos": 27
+    },
+    "heartWK_Real": {
+      "n": 29,
+      "meanA": -0.15,
+      "meanB": -0.0881,
+      "dz": -0.112,
+      "t": -0.605,
+      "p": 0.55144,
+      "nPos": 13
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "lab": "Lab #30 — Fourier Phase-Randomized Surrogates on Clinical AD & FTD (ds004504)",
+  "counts": {
+    "AD": 36,
+    "FTD": 23,
+    "CN": 29,
+    "total": 88
+  },
+  "allRealVsSurr_Signed": {
+    "meanA": -0.3969,
+    "meanB": -0.3305,
+    "t": -3.852,
+    "p": 0.0001
+  },
+  "allRealVsSurr_Abs": {
+    "meanA": 0.4294,
+    "meanB": 0.3861,
+    "t": 2.817,
+    "p": 0.0019
+  },
+  "FTD_vs_CN_RealWK": {
+    "mean1": -0.2343,
+    "mean2": -0.4887,
+    "d": 0.745,
+    "auc": 0.718,
+    "p": 0.0102
+  },
+  "FTD_vs_CN_SurrWK": {
+    "mean1": -0.2118,
+    "mean2": -0.3718,
+    "d": 0.477,
+    "auc": 0.652,
+    "p": 0.09679
+  },
+  "FTD_vs_CN_NonlinearResid": {
+    "mean1": -0.0226,
+    "mean2": -0.1169,
+    "d": 0.609,
+    "auc": 0.667,
+    "p": 0.0269
+  },
+  "AD_vs_CN_RealWK": {
+    "mean1": -0.4267,
+    "mean2": -0.4887,
+    "d": 0.18,
+    "auc": 0.55,
+    "p": 0.47435
+  },
+  "AD_vs_CN_SurrWK": {
+    "mean1": -0.373,
+    "mean2": -0.3718,
+    "d": -0.004,
+    "auc": 0.5,
+    "p": 0.9884
+  },
+  "AD_vs_CN_NonlinearResid": {
+    "mean1": -0.0537,
+    "mean2": -0.1169,
+    "d": 0.351,
+    "auc": 0.655,
+    "p": 0.17088
+  }
+}

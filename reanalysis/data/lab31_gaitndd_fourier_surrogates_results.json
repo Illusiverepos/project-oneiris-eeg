@@ -1,0 +1,46 @@
+{
+  "lab": "Lab #31 — Fourier Phase-Randomized Surrogates on Human Locomotion (gaitndd)",
+  "nTotal": 62,
+  "allRealVsSurr_Signed": {
+    "meanA": 0.0184,
+    "meanB": -0.0564,
+    "t": 1.963,
+    "p": 0.0498
+  },
+  "allRealVsSurr_Abs": {
+    "meanA": 0.1905,
+    "meanB": 0.2245,
+    "t": -1.161,
+    "p": 0.25067
+  },
+  "ALS_vs_Ctrl_RealWK": {
+    "meanA": -0.1472,
+    "meanB": 0.0665,
+    "d": -0.93,
+    "p": 0.0202
+  },
+  "ALS_vs_Ctrl_SurrWK": {
+    "meanA": -0.1504,
+    "meanB": -0.0518,
+    "d": -0.313,
+    "p": 0.41256
+  },
+  "ALS_vs_Ctrl_NonlinearResid": {
+    "meanA": 0.0032,
+    "meanB": 0.1184,
+    "d": -0.35,
+    "p": 0.37436
+  },
+  "HD_vs_Ctrl_RealWK": {
+    "meanA": 0.1306,
+    "meanB": 0.0665,
+    "d": 0.307,
+    "p": 0.37436
+  },
+  "HD_vs_Ctrl_SurrWK": {
+    "meanA": 0.0243,
+    "meanB": -0.0518,
+    "d": 0.236,
+    "p": 0.50165
+  }
+}
