@@ -1,0 +1,112 @@
+{
+  "lab": "Lab #33 — RBD vs Healthy Sleepers during REM Dreaming (capslpdb)",
+  "counts": {
+    "RBD": 14,
+    "Healthy": 9,
+    "RBD_withECG": 14,
+    "Healthy_withECG": 8
+  },
+  "brainRes": {
+    "brainWK": {
+      "n1": 14,
+      "n2": 9,
+      "meanRBD": -0.9221,
+      "meanHealthy": -0.3275,
+      "d": -0.811,
+      "auc": 0.563,
+      "p": 0.06459
+    },
+    "brainNonlin": {
+      "n1": 14,
+      "n2": 9,
+      "meanRBD": -0.4123,
+      "meanHealthy": -0.0322,
+      "d": -1.624,
+      "auc": 0.921,
+      "p": 0.001
+    },
+    "brainSlope": {
+      "n1": 14,
+      "n2": 9,
+      "meanRBD": -2.2944,
+      "meanHealthy": -1.6641,
+      "d": -0.754,
+      "auc": 0.556,
+      "p": 0.09149
+    },
+    "brainDFA": {
+      "n1": 14,
+      "n2": 9,
+      "meanRBD": 1.1862,
+      "meanHealthy": 1.1683,
+      "d": 0.132,
+      "auc": 0.587,
+      "p": 0.76132
+    },
+    "brainDelta": {
+      "n1": 14,
+      "n2": 9,
+      "meanRBD": 0.5533,
+      "meanHealthy": 0.3913,
+      "d": 0.768,
+      "auc": 0.587,
+      "p": 0.08299
+    },
+    "brainAlpha": {
+      "n1": 14,
+      "n2": 9,
+      "meanRBD": 0.1322,
+      "meanHealthy": 0.0652,
+      "d": 1.393,
+      "auc": 0.817,
+      "p": 0.0045
+    },
+    "brainBeta": {
+      "n1": 14,
+      "n2": 9,
+      "meanRBD": 0.1145,
+      "meanHealthy": 0.0595,
+      "d": 0.889,
+      "auc": 0.714,
+      "p": 0.045
+    }
+  },
+  "heartRes": {
+    "heartWK": {
+      "n1": 14,
+      "n2": 8,
+      "meanRBD": -0.178,
+      "meanHealthy": -0.2692,
+      "d": 0.226,
+      "auc": 0.589,
+      "p": 0.61334
+    },
+    "heartNonlin": {
+      "n1": 14,
+      "n2": 8,
+      "meanRBD": 0.0564,
+      "meanHealthy": 0.0944,
+      "d": -0.125,
+      "auc": 0.509,
+      "p": 0.78532
+    },
+    "heartDFA": {
+      "n1": 14,
+      "n2": 8,
+      "meanRBD": 1.3334,
+      "meanHealthy": 1.1619,
+      "d": 1.094,
+      "auc": 0.821,
+      "p": 0.0239
+    },
+    "heartSlope": {
+      "n1": 14,
+      "n2": 8,
+      "meanRBD": -1.8448,
+      "meanHealthy": -1.593,
+      "d": -0.404,
+      "auc": 0.607,
+      "p": 0.37126
+    }
+  }
+}
