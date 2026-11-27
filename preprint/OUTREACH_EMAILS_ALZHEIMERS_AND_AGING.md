@@ -1,6 +1,6 @@
 # Direct-to-Author Alzheimer's, Aging & Wearable EEG Outreach Emails
 
-**Paste your instant CERN/Zenodo DOIs (`10.5281/zenodo.XXXXXXX`) into `[PAPER_5_ZENODO_DOI]` and `[PAPER_6_ZENODO_DOI]` before sending.** Every email is short, data-first, zero-hype, and gives the author a 1-command zero-dependency Node.js script they can run on their own dataset in 15 seconds.
+**Paste your instant CERN/Zenodo DOIs (`10.5281/zenodo.XXXXXXX`) into https://doi.org/10.5281/zenodo.24599665 and https://doi.org/10.5281/zenodo.24599906 before sending.** Every email is short, data-first, zero-hype, and gives the author a 1-command zero-dependency Node.js script they can run on their own dataset in 15 seconds.
 
 ---
 
@@ -17,7 +17,7 @@ I am an independent EEG researcher. Testing a zero-parameter Wiener–Khinchin s
 - Strictly out-of-sample 5-fold cross-validation on a 4-channel consumer-headband montage (`FP1/FP2 + P7/P8`) reached **`AUC = 0.7639` (2,000-shuffle permutation `p = 0.0020`)**.
 - Strikingly, in 99 healthy adults aged 18–82 (`ds005555`), normal brain aging drives `Δ_WK` **downward** (`r_partial = −0.297, p = 0.0022`), meaning pre-symptomatic `PSEN1-E280A` hyperexcitability moves in the **exact opposite direction** of healthy aging.
 
-Full preprint (Zenodo DOI): `[PAPER_6_ZENODO_DOI]`  
+Full preprint (Zenodo DOI): https://doi.org/10.5281/zenodo.24599906  
 1-command zero-dependency reproduction (streams directly from OpenNeuro S3 in ~12 seconds):
 `node reanalysis/audit_lab16_ds007427_presymptomatic_ad_psen1.js`  
 Repo: `https://github.com/Illusiverepos/project-oneiris-eeg`
@@ -42,7 +42,7 @@ Testing a zero-dependency 4-channel consumer-headband montage (`Fp1/Fp2 + T5/T6`
 - On frontal electrodes alone (`Fp1/Fp2`), we found a clean group-level **double dissociation**: **FTD** selectively broke frontal Wiener–Khinchin symmetry (**`Δ_WK = slopeBB + 2·DFA_α − 1`: `d = +0.753, p = 0.0086`**) while sparing `betaFrac` (`p = 0.471`), whereas **AD** selectively lost `betaFrac` (`d = −0.838, p = 0.00093`) while sparing `Δ_WK` (`p = 0.526`).
 - As a specificity check, non-demented Parkinson's patients (`ds002778`, `N = 31`) were completely null on the same 4-channel montage (`AUC = 0.51–0.62`), while asymptomatic `PSEN1-E280A` carriers (`ds007427`) showed the same positive frontal `Δ_WK` shift (`d = +0.998, p = 0.0027`).
 
-Preprint (Zenodo DOI): `[PAPER_6_ZENODO_DOI]`  
+Preprint (Zenodo DOI): https://doi.org/10.5281/zenodo.24599906  
 1-command reproduction: `node reanalysis/audit_lab14_muse4ch_ftd_vs_ad.js`  
 Repo: `https://github.com/Illusiverepos/project-oneiris-eeg`
 
@@ -64,7 +64,7 @@ Thank you for publishing the BOAS (`ds005555`) wearable headband dataset — str
 - **Anti-Startle Closed-Loop Gate:** Cut overnight Wake-stage cues by **`92.77%`** (`t = 9.79`, `78/126` nights zero Wake cues) and Deep N3 intrusions by **`96.30%`**, backed by 5 formal Lean 4 safety proofs.
 - **100% PSG-Free Forehead Brain-Age Clock:** Across all 99 unique BOAS adults (ages 18–82), bilateral `AF7+AF8` overnight quantiles predicted chronological age strictly out-of-sample with zero PSG labels at **`r = 0.4032, p = 1.4 × 10⁻⁵`** (`REM Δ_WK` Sex/BMI-controlled `p = 0.0022`).
 
-Preprints (Zenodo DOIs): `[PAPER_5_ZENODO_DOI]` & `[PAPER_6_ZENODO_DOI]`  
+Preprints (Zenodo DOIs): https://doi.org/10.5281/zenodo.24599665 & https://doi.org/10.5281/zenodo.24599906  
 Zero-dependency SDK & scripts: `https://github.com/Illusiverepos/project-oneiris-eeg`
 
 If your team is exploring closed-loop sleep cueing or at-home brain-aging analytics on Bitbrain headbands, I'd love to share a quick walkthrough or discuss an R&D pilot.

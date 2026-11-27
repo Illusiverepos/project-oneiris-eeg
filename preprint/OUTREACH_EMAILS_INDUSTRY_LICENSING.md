@@ -1,6 +1,6 @@
 # Industry R&D & Commercial Licensing Outreach Emails — Project ONEIRIS
 
-**Send AFTER Paper 5's PsyArXiv DOI goes live** (paste the live DOI into `[PAPER_5_DOI]`). Keep every email short, data-first, and zero-hype.
+**Send AFTER Paper 5's PsyArXiv DOI goes live** (paste the live DOI into https://doi.org/10.5281/zenodo.24599665 (Sleep/Wearable) & https://doi.org/10.5281/zenodo.24599906 (Pre-Symptomatic AD/Aging)). Keep every email short, data-first, and zero-hype.
 
 ---
 
@@ -17,7 +17,7 @@ Using all 126 valid BOAS nights (985.3 hours of `AF7/AF8` headband data scored a
 - Cuts overnight closed-loop Wake-stage startle cues by `92.77%` (`t = 9.79`, `78/126` nights zero Wake cues) and N3 intrusions by `96.30%`, with 5 Lean 4 formal safety proofs, and
 - Enables a 100% PSG-free forehead Brain-Age tracking index across all 99 unique BOAS participants (`r = 0.347, p = 0.00027`; `REM Δ_WK` Sex/BMI-controlled `p = 0.0022`).
 
-Preprint: `[PAPER_5_DOI]` | Open academic repo: `https://github.com/Illusiverepos/project-oneiris-eeg`
+Preprint: https://doi.org/10.5281/zenodo.24599665 (Sleep/Wearable) & https://doi.org/10.5281/zenodo.24599906 (Pre-Symptomatic AD/Aging) | Open academic repo: `https://github.com/Illusiverepos/project-oneiris-eeg`
 
 If your team is exploring closed-loop sleep cueing or at-home brain-aging analytics on Bitbrain headbands, I'd love to share a 10-minute walkthrough or discuss an R&D pilot.
 
@@ -39,7 +39,7 @@ Validating our Wiener–Khinchin invariant (`Δ_WK = slopeBB + 2·DFA_α − 1`)
 - `r = 0.9811` (`5/5`) sleep-state geometry match with full clinical scalp EEG, and
 - A 100% PSG-free overnight forehead Brain-Age metric across 99 unique adults aged 18–82 (`p = 0.00027`; `REM Δ_WK` `p = 0.0022` controlling for Sex/BMI).
 
-Preprint: `[PAPER_5_DOI]` | Repo (free for academics, commercial licensing available): `https://github.com/Illusiverepos/project-oneiris-eeg`
+Preprint: https://doi.org/10.5281/zenodo.24599665 (Sleep/Wearable) & https://doi.org/10.5281/zenodo.24599906 (Pre-Symptomatic AD/Aging) | Repo (free for academics, commercial licensing available): `https://github.com/Illusiverepos/project-oneiris-eeg`
 
 Would your science or product team be open to a quick 15-minute look at how these lightweight `AF7/AF8` invariants could power next-gen Muse S sleep & longevity features?
 
@@ -58,7 +58,7 @@ I've been following Elemind's closed-loop acoustic sleep headband closely. I rec
 
 Across 126 real nights (ages 18–82), the gate cut Wake-stage cue intrusions by `92.77%` (`t = 9.79`, `78/126` nights zero Wake cues) and Deep N3 intrusions by `96.30%` with zero demographic bias, while also revealing a 100% PSG-free forehead Brain-Age signature (`p = 0.00027`, `N = 99` unique adults).
 
-Preprint: `[PAPER_5_DOI]` | Code & proofs: `https://github.com/Illusiverepos/project-oneiris-eeg`
+Preprint: https://doi.org/10.5281/zenodo.24599665 (Sleep/Wearable) & https://doi.org/10.5281/zenodo.24599906 (Pre-Symptomatic AD/Aging) | Code & proofs: `https://github.com/Illusiverepos/project-oneiris-eeg`
 
 Happy to share our benchmark scripts or discuss a lightweight licensing/pilot evaluation if useful for your closed-loop acoustic roadmap.
 
@@ -73,7 +73,7 @@ Austin Rutan (`rutanaus000@gmail.com`)
 
 Hi [Name],
 
-Given Beacon's focus on scalable at-home clinical-trial EEG biomarkers, I wanted to share a new 13-lab preprint (`[PAPER_5_DOI]`) validating a zero-parameter Wiener–Khinchin invariant (`Δ_WK = slopeBB + 2·DFA_α − 1`) across 985.3 hours of 2-channel dry forehead sleep (`OpenNeuro ds005555`, 126 nights, 99 unique adults aged 18–82).
+Given Beacon's focus on scalable at-home clinical-trial EEG biomarkers, I wanted to share a new 13-lab preprint (https://doi.org/10.5281/zenodo.24599665 (Sleep/Wearable) & https://doi.org/10.5281/zenodo.24599906 (Pre-Symptomatic AD/Aging)) validating a zero-parameter Wiener–Khinchin invariant (`Δ_WK = slopeBB + 2·DFA_α − 1`) across 985.3 hours of 2-channel dry forehead sleep (`OpenNeuro ds005555`, 126 nights, 99 unique adults aged 18–82).
 
 Key clinical-trial takeaways:
 - 2-channel `AF7/AF8` forehead EEG preserves an `r = 0.9811` (`p = 0.0083`, `5/5`) Gromov isometry with full clinical EEG,
