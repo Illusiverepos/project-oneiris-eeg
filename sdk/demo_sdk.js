@@ -67,4 +67,21 @@ console.log('  Healthy Alpha-Rich Profile -> slowingIndex:', restHealthy.cortica
 console.log('  Slowed Delta/Theta Profile -> slowingIndex:', restSlowed.corticalSlowingIndex);
 assert(restSlowed.corticalSlowingIndex > restHealthy.corticalSlowingIndex, 'Slowed profile must score higher corticalSlowingIndex');
 
-console.log('\nALL SDK SELF-TESTS PASSED (4/4)!');
+// 5. 5-Minute Smartwatch / Smart-Ring Heart-Age Clock (`scoreHeartWK`) test
+const rrYoung = [], rrOld = [];
+let stY = 0, stO = 0;
+for (let i = 0; i < 360; i++) {
+  const w = Math.sin(i * 12.9898) * 43758.5453 % 1 - 0.5;
+  stY = 0.65 * stY + w;
+  stO = 0.94 * stO + w;
+  rrYoung.push(0.88 + 0.04 * stY + 0.02 * Math.sin(i * 0.25));
+  rrOld.push(0.85 + 0.02 * stO);
+}
+const hYoung = sdk.scoreHeartWK(rrYoung);
+const hOld   = sdk.scoreHeartWK(rrOld);
+console.log('\n5. 5-Minute Smartwatch / Smart-Ring Heart-Age Clock (`scoreHeartWK`):');
+console.log('  Young-like RR -> wkHRV:', hYoung.wkHRV, '| Heart Age:', hYoung.estimatedHeartAgeYears, 'yrs');
+console.log('  Older-like RR -> wkHRV:', hOld.wkHRV, '| Heart Age:', hOld.estimatedHeartAgeYears, 'yrs');
+assert(Number.isFinite(hYoung.wkHRV) && Number.isFinite(hOld.wkHRV), 'scoreHeartWK must return finite wkHRV');
+
+console.log('\nALL SDK SELF-TESTS PASSED (5/5)!');
