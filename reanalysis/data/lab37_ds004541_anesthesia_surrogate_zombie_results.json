@@ -1,0 +1,98 @@
+{
+  "lab": "Lab #37 — Propofol General Anesthesia Surrogate Zombie Test (ds004541, BASELINE -> LOC -> ROC)",
+  "nPatients": 7,
+  "OneSampleNonlin": {
+    "BASELINE_Frontal": {
+      "n": 7,
+      "meanA": -0.0808,
+      "meanB": 0,
+      "dz": -0.294,
+      "t": -0.779,
+      "p": 0.46255,
+      "nNeg": 5
+    },
+    "BASELINE_Posterior": {
+      "n": 7,
+      "meanA": -0.172,
+      "meanB": 0,
+      "dz": -0.768,
+      "t": -2.032,
+      "p": 0.11139,
+      "nNeg": 6
+    },
+    "LOC_Unconscious_Frontal": {
+      "n": 7,
+      "meanA": -0.1278,
+      "meanB": 0,
+      "dz": -0.579,
+      "t": -1.533,
+      "p": 0.18438,
+      "nNeg": 5
+    },
+    "LOC_Unconscious_Posterior": {
+      "n": 7,
+      "meanA": -0.1426,
+      "meanB": 0,
+      "dz": -0.858,
+      "t": -2.271,
+      "p": 0.07879,
+      "nNeg": 6
+    },
+    "ROC_Recovery_Frontal": {
+      "n": 7,
+      "meanA": -0.1349,
+      "meanB": 0,
+      "dz": -0.452,
+      "t": -1.196,
+      "p": 0.43506,
+      "nNeg": 3
+    },
+    "ROC_Recovery_Posterior": {
+      "n": 7,
+      "meanA": -0.1404,
+      "meanB": 0,
+      "dz": -1.017,
+      "t": -2.691,
+      "p": 0.0473,
+      "nNeg": 6
+    }
+  },
+  "PairedTransitions": {
+    "Frontal_LOC_minus_BASE": {
+      "n": 7,
+      "meanA": -0.1278,
+      "meanB": -0.0808,
+      "dz": -0.107,
+      "t": -0.284,
+      "p": 0.9539,
+      "nNeg": 3
+    },
+    "Posterior_LOC_minus_BASE": {
+      "n": 7,
+      "meanA": -0.1426,
+      "meanB": -0.172,
+      "dz": 0.1,
+      "t": 0.266,
+      "p": 0.73843,
+      "nNeg": 3
+    },
+    "Frontal_ROC_minus_LOC": {
+      "n": 7,
+      "meanA": -0.1349,
+      "meanB": -0.1278,
+      "dz": -0.018,
+      "t": -0.047,
+      "p": 0.9548,
+      "nNeg": 4
+    },
+    "Posterior_ROC_minus_LOC": {
+      "n": 7,
+      "meanA": -0.1404,
+      "meanB": -0.1426,
+      "dz": 0.009,
+      "t": 0.024,
+      "p": 1,
+      "nNeg": 3
+    }
+  }
+}

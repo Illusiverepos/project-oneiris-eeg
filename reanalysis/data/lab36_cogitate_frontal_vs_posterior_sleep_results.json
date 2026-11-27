@@ -1,0 +1,112 @@
+{
+  "lab": "Lab #36 — Direct COGITATE 2025 Spatial Showdown: Frontal vs Posterior Hot Zone Nonlinear Phase (capslpdb)",
+  "nDeepRem": 33,
+  "nWithWake": 31,
+  "DeepNREM_OneSampleNonlin": {
+    "Frontal": {
+      "n": 33,
+      "meanA": 0.0203,
+      "meanB": 0,
+      "dz": 0.168,
+      "t": 0.963,
+      "p": 0.36116,
+      "nNeg": 8
+    },
+    "Posterior": {
+      "n": 33,
+      "meanA": 0.0266,
+      "meanB": 0,
+      "dz": 0.503,
+      "t": 2.889,
+      "p": 0.0054,
+      "nNeg": 6
+    },
+    "Post_minus_Front": {
+      "n": 33,
+      "meanA": 0.0266,
+      "meanB": 0.0203,
+      "dz": 0.055,
+      "t": 0.314,
+      "p": 0.78482,
+      "nNeg": 18
+    }
+  },
+  "REM_OneSampleNonlin": {
+    "Frontal": {
+      "n": 33,
+      "meanA": -0.1487,
+      "meanB": 0,
+      "dz": -0.601,
+      "t": -3.455,
+      "p": 0.0004,
+      "nNeg": 21
+    },
+    "Posterior": {
+      "n": 33,
+      "meanA": 0.0057,
+      "meanB": 0,
+      "dz": 0.091,
+      "t": 0.52,
+      "p": 0.60554,
+      "nNeg": 12
+    },
+    "Post_minus_Front": {
+      "n": 33,
+      "meanA": 0.0057,
+      "meanB": -0.1487,
+      "dz": 0.674,
+      "t": 3.869,
+      "p": 0.0001,
+      "nNeg": 4
+    }
+  },
+  "Wake_OneSampleNonlin": {
+    "Frontal": {
+      "n": 31,
+      "meanA": -0.2686,
+      "meanB": 0,
+      "dz": -0.927,
+      "t": -5.16,
+      "p": 0.0001,
+      "nNeg": 30
+    },
+    "Posterior": {
+      "n": 31,
+      "meanA": -0.2398,
+      "meanB": 0,
+      "dz": -0.774,
+      "t": -4.311,
+      "p": 0.0001,
+      "nNeg": 22
+    },
+    "Post_minus_Front": {
+      "n": 31,
+      "meanA": -0.2398,
+      "meanB": -0.2686,
+      "dz": 0.124,
+      "t": 0.69,
+      "p": 0.50115,
+      "nNeg": 11
+    }
+  },
+  "REM_minus_DeepNREM_Shift": {
+    "Frontal_Nonlin": {
+      "n": 33,
+      "meanA": -0.1487,
+      "meanB": 0.0203,
+      "dz": -0.657,
+      "t": -3.772,
+      "p": 0.0002,
+      "nNeg": 25
+    },
+    "Posterior_Nonlin": {
+      "n": 33,
+      "meanA": 0.0057,
+      "meanB": 0.0266,
+      "dz": -0.276,
+      "t": -1.584,
+      "p": 0.12129,
+      "nNeg": 23
+    }
+  }
+}

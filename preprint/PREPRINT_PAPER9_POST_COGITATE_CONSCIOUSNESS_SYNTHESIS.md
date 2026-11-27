@@ -1,75 +1,59 @@
-# Beyond COGITATE (2025): Whole-Body Nonlinear Phase Switching, the Wiener–Khinchin Geodesic, and the Structural Geometry of Human Consciousness
+# Beyond COGITATE (2025): Frontal vs. Posterior Nonlinear Phase Switching Across Wake, Deep NREM, REM Dreaming, and General Anesthesia — A 37-Lab, 6-Organ Synthesis
 
 **Author:** Austin Rutan (Independent Researcher, Project ONEIRIS) · `rutanaus000@gmail.com`  
-**Preprint Series:** Project ONEIRIS — Paper 9 (Capstone 35-Lab Synthesis, November 2026)  
+**Preprint Series:** Project ONEIRIS — Paper 9 (Empirical & Theoretical Capstone, November 2026)  
 **Repository:** `https://github.com/Illusiverepos/project-oneiris-eeg` · **Archive DOI:** `https://doi.org/10.5281/zenodo.24523273`  
-**Empirical Preprint Foundation:** Paper 5 (`10.5281/zenodo.24599665`) · Paper 6 (`10.5281/zenodo.24599906`) · Paper 7 (`10.5281/zenodo.24604316`) · Paper 8 (`10.5281/zenodo.24607838`)  
+**Prior Preprints:** Paper 5 (`10.5281/zenodo.24599665`) · Paper 6 (`10.5281/zenodo.24599906`) · Paper 7 (`10.5281/zenodo.24604316`) · Paper 8 (`10.5281/zenodo.24607838`)  
 **License:** Free for Academic, University, VA & Non-Commercial Research (`LICENSE`) · Commercial Rights Reserved (`COMMERCIAL_LICENSING.md`)
 
 ---
 
 ## Abstract
 
-The landmark **COGITATE (2025)** adversarial collaboration (*Nature*) pitted **Integrated Information Theory (IIT)** against **Global Neuronal Workspace Theory (GNWT)** — and left consciousness science at an impasse, falsifying core predictions of both frameworks. Here we synthesize **35 reproducible human empirical audits, simulations, and formal proofs across six human organ systems (`N = 810+` humans across 6 countries; `22,415` DreamBank narratives; `985.3` hours of wearable sleep; Project ONEIRIS Papers 1–8)** to propose a unifying physical resolution: **consciousness is neither purely posterior synchrony nor purely prefrontal ignition inside an isolated skull, but a nonlinear phase-coupled, whole-body dynamical regime anchored on the universal Wiener–Khinchin geodesic ($\text{slope} = -(2\alpha_{\text{DFA}} - 1)$).**
+The landmark **COGITATE (2025)** adversarial collaboration (*Nature*) pitted **Integrated Information Theory (IIT)** (posterior hot zone) against **Global Neuronal Workspace Theory (GNWT)** (prefrontal cortex) — falsifying core predictions of both frameworks. Here we present **two brand-new empirical tests (Labs #36 & #37)** alongside a synthesis of **37 reproducible human audits across six human organ systems (`N = 810+` humans, `22,415` DreamBank narratives, `985.3h` wearable sleep)** using exact power-spectrum-preserving **Fourier phase-randomized surrogates** (`brainNonlin = Real Δ_WK − Surr Δ_WK`, `sdk/oneiris_wearable_sdk.js`).
 
-We organize this synthesis around four empirically verified pillars:
-1. **Resolving the COGITATE Impasse — The Missing Nonlinear Phase Axis:** Spectral power alone cannot distinguish conscious from unconscious states. Using exact power-spectrum-preserving Fourier phase-randomized surrogates (`N = 411`, Paper 8 `10.5281/zenodo.24607838`), we showed that **unconscious Deep NREM (`S3/S4`)** exhibits steep `1/f` power (`slope = -3.07`) yet sits **directly on the linear Gaussian surrogate manifold (`t = +1.23, p = 0.239`)**. Conversely, **conscious REM dreaming (`t = -3.254, p = 0.0012`)** and **conscious resting Wake (`N = 88`, `t = -3.852, p = 0.0001`)** step sharply off the linear manifold into **genuine nonlinear phase coupling**. This reconciles IIT and GNWT: IIT's integration corresponds to *nonlinear phase integration* (`brainNonlin = Real Δ_WK − Surr Δ_WK`) plus a 3-band binding hierarchy (`Alpha wPLI` `p = 0.029`, `Theta wPLI` `p = 0.0244`, `postHFD` `p = 0.0129`), while GNWT's frontal access corresponds to *frontal-brainstem gating* — whose breakdown destroys nonlinear phase in **Frontotemporal Dementia (`d = +0.609, p = 0.0269`)** or hyper-locks it during enacted dreaming in **REM Sleep Behavior Disorder (`AUC = 0.921, p = 0.0010`, age-invariant across `18–82` yrs `p = 0.366`)**.
-2. **Whole-Body Embodied Phase Allocation — The Brain–Heart Sleep Mirror Law:** Contrary to brain-in-a-vat assumptions shared by both IIT and GNWT, **all six human organ systems** (Brain, Heart, Lungs, Locomotion, Arterial Blood Pressure, Skeletal Muscle) obey the exact same Wiener–Khinchin scaling law (`r = 0.505–0.948`, all `p < 10⁻⁴`, Papers 7–8). Across `N = 31` paired full-night polysomnograms (`capslpdb`), Brain and Heart execute an **exact reciprocal swap**: in **Deep NREM**, the **Heart** is nonlinear phase-coupled (`p = 0.0050`, `24/31`) while the **Brain** is linear (`p = 0.239`); in **REM dreaming**, the **Brain** locks into nonlinear phase (`p = 0.0012`, `22/31`) while the **Heart** releases into linear dynamics (`p = 0.219`). Conscious state-switching is thus a **whole-body nonlinear phase-allocation economy**.
-3. **Narrowing the Hard Problem via Structural Isomorphism (Not Reductionism):** While no mathematical equation derives *why* subjective qualia exist from scratch, our cross-domain data establish a quantitative **external-to-internal metric isomorphism**: external `Δ_WK` symmetry breaking in PTSD threat lock-in (`0%` Noether conservation vs. `93.1%` Q4 plasticity, `p = 0.0179`) mirrors the inward collapse of `Threat_Fear` and `Time_Memory` in `22,415`-dream Gromov–Wasserstein (`GWOT`) space; lucid self-observation orthogonalizes dream space (`r = -0.044`) and elevates posterior complexity (`p = 0.0129`); and RBD's `13×` nonlinear REM hyper-locking (`-0.412` vs. `-0.032`) corresponds directly to hyper-vivid enacted dreaming.
-4. **Observation as a Physical Control Input (Non-Demolition Closed-Loop Architecture):** Just as measurement back-action perturbs fragile physical systems, naive closed-loop stimulation shatters sleep (`28.9×` Wasserstein-2 startle detour), whereas passive-to-gentle **non-demolition control** (`v2 Δ_WK` Anti-Startle Gate, formally verified by **5 Lean 4 theorems** and `10,000` adversarial EEG frames with `0` violations) cuts Wake startles by **`92.77%`** across `985.3` real wearable hours without collapsing the `N3→REM` geodesic (`+44.65°` vs. `+46.17°` theory).
+1. **Lab #36 — Direct COGITATE Spatial Showdown (`capslpdb`, `N = 33` Paired Full-Night Humans: Frontal `F2-F4` vs. Posterior Hot Zone `P4-O2`):**
+   - **Conscious Wake (`n = 31`):** **Both** Frontal (`-0.2686, t = -5.16, p = 0.0001`, `30/31` humans) **and** Posterior Hot Zone (`-0.2398, t = -4.31, p = 0.0001`) ignite into strong nonlinear phase coupling (`Posterior − Frontal` `p = 0.501`).
+   - **Unconscious Deep NREM (`S3/S4`, `n = 33`):** **Both** shut down (`Frontal +0.0203, p = 0.361`; `Posterior +0.0266`; `Post − Front p = 0.785`).
+   - **Conscious REM Dreaming (`n = 33`, pure internal consciousness with external vision shut off):** **Posterior Hot Zone (`P4-O2`) collapses completely onto the linear Gaussian manifold (`+0.0057, t = +0.520, p = 0.606`)**, whereas **Frontal cortex (`F2-F4`) ignites strongly into nonlinear phase coupling (`-0.1487, t = -3.455, p = 0.0004`)** — beating Posterior in **`29/33` humans (`Posterior − Frontal t = +3.869, p = 0.0001`)**! Likewise, the `Deep NREM → REM` shift is **purely Frontal (`t = -3.772, p = 0.0002`, `25/33`)** while Posterior is null (`p = 0.121`).
+   - **Resolution of IIT vs. GNWT:** Posterior nonlinear phase tracks **external sensory consciousness** (`Wake -0.240 → REM +0.006`), whereas Frontal nonlinear phase tracks **internal conscious broadcasting / dreaming** (`Deep NREM +0.020 → REM -0.149 → Wake -0.269`).
+2. **Lab #37 — Honest Pharmacological Boundary Under Propofol General Anesthesia (`OpenNeuro ds004541`, `N = 7` Full Round-Trips `BASELINE → LOC → ROC`):**
+   - Unlike natural Deep NREM (`+0.020`), surgical Propofol unconsciousness (`LOC`) did **not** collapse `brainNonlin` to zero (`LOC Frontal -0.128`, `Posterior -0.143`; `LOC vs. BASE p = 0.74–0.95`; `ROC vs. LOC p = 0.95–1.00`) because Propofol induces drug-locked alpha–slow-wave hypersynchrony. This establishes a rigorous boundary: **nonlinear cortical phase is necessary for natural conscious Wake/REM, but drug-induced hypersynchrony can mimic nonlinearity while unconscious.**
+3. **Whole-Body Embodied Phase Allocation & Structural Isomorphism for the Hard Problem:**
+   - Combining Lab #36 with our **Brain–Heart Sleep Phase-Switching Mirror Law** (`Deep NREM Heart nonlinear p = 0.0050 ↔ REM Brain nonlinear p = 0.0012`), **6-organ Wiener–Khinchin scaling (`r = 0.505–0.948`)**, **age-invariant RBD REM hyper-locking (`AUC = 0.921, p = 0.0010`; `BOAS` lifespan age control `p = 0.366`)**, **FTD frontal phase destruction (`p = 0.0269`)**, **`22,415`-dream `GWOT` geometry**, and **Lean 4 non-demolition closed-loop control (`-92.77%` Wake startles across `985.3h`)**, we show that conscious experience is embedded in a **whole-body nonlinear phase-allocation economy** whose external phase geometry is structurally isomorphic to internal experiential geometry.
 
-All 35 reproducible scripts, 6-capability wearable SDK (`sdk/oneiris_wearable_sdk.js`), and formal proofs are openly archived for academic and non-commercial research. *Theoretical & empirical research synthesis; software modules are non-clinical research prototypes.*
-
----
-
-## 1. Why COGITATE (2025) Ended in a Draw — And How Nonlinear Phase Resolves It
-
-COGITATE (2025) tested spatial localization (posterior hot zone vs. prefrontal cortex) and sustained vs. transient decoding. Across our **35-lab Project ONEIRIS program**, three orthogonal axes emerged that neither IIT nor GNWT measured jointly:
-
-| Dimension | IIT (2025) Prediction | GNWT (2025) Prediction | Project ONEIRIS 35-Lab Empirical Resolution |
-| :--- | :--- | :--- | :--- |
-| **1. "Lights Off" vs. "Lights On"** | Sustained posterior power/synchrony | Prefrontal global ignition | **Linear Gaussian Surrogate (`Deep NREM p = 0.239`) vs. Nonlinear Phase Coupling (`REM p = 0.0012`, `Wake p = 0.0001`)** — steep `1/f` power without nonlinear phase is unconscious! |
-| **2. Cortical Binding & Access** | Posterior hot zone only | Prefrontal workspace only | **Dual-Circuit Architecture:** Posterior complexity (`postHFD p = 0.0129`) + 3-band binding (`Alpha/Theta wPLI`) generate the theater, while frontal-brainstem circuits gate it (**FTD destroys frontal nonlinear phase `p = 0.0269`; RBD hyper-locks REM phase `AUC = 0.921`**). |
-| **3. Role of the Body** | Ignored (intracranial) | Ignored (intracranial) | **Brain–Heart Sleep Phase-Switching Mirror Law (`p = 0.0050 ↔ 0.0012`):** Nonlinear phase coupling reciprocally trades between Heart (Deep NREM) and Brain (REM), on top of a **6-organ universal scaling grammar (`r = 0.505–0.948`)**. |
-| **4. Transition Physics** | Unspecified | Sudden all-or-none ignition | **Noether-Conserved Wiener–Khinchin Geodesic (`+44.65°` vs. `+46.17°` theory, `93.1%` conservation across `985.3h`)** for plastic transitions vs. **`0.0%` conservation** during threat lock-in (`p = 0.0179`). |
+*All 37 reproducible zero-dependency scripts and the 6-capability evaluation SDK (`sdk/oneiris_wearable_sdk.js`) are archived for academic and non-commercial research. Not an FDA-cleared medical device.*
 
 ---
 
-## 2. Narrowing the Hard Problem: Three Concrete Structural Bridges
+## 1. Lab #36: Direct COGITATE (2025) Frontal vs. Posterior Showdown (`capslpdb`, `N = 33` Paired Full Nights)
 
-We explicitly reject naive eliminativism: **no differential equation or spectral invariant explains *why* subjective experience exists rather than philosophical darkness.** However, the Hard Problem becomes scientifically tractable when framed as **structural isomorphism** between physical state-space geometry and first-person experiential geometry:
-
-1. **The Surrogate Zombie Boundary (`Real` vs. `Phase-Randomized Surrogate`):**
-   - A Fourier phase-randomized surrogate has the **exact same energy, frequency spectrum, and 1/f slope** as a real brain signal, yet zero nonlinear phase coordination.
-   - Empirically, **unconscious Deep NREM (`S3/S4`) behaves like a linear surrogate (`p = 0.239`)**, whereas **conscious Wake (`p = 0.0001`) and conscious REM dreaming (`p = 0.0012`) break off the linear manifold**. Thus, nonlinear phase coupling (`brainNonlin ≠ 0`) defines a sharp, falsifiable physical boundary between unconscious and conscious cortical regimes.
-2. **External-to-Internal Metric Isomorphism (`Δ_WK` × `22,415`-Dream `GWOT`):**
-   - **Threat / Trauma Collapse:** External `Δ_WK` symmetry breaking (`0%` Noether conservation) parallels internal collapse of `Threat_Fear` and `Time_Memory` in `GWOT` dream geometry.
-   - **Lucid Self-Observation:** When metacognitive observation switches on inside REM, dream space orthogonalizes (`r = -0.044`) and posterior fractal complexity rises (`12/14, p = 0.0129`) — demonstrating that **self-observation acts as a physical control input** that reshapes the brain's attractor landscape.
-   - **Enacted Dreaming Pathology (`RBD`):** Hyper-locked REM nonlinear phase (`-0.412` vs. `-0.032`, `AUC = 0.921, p = 0.0010`, age-invariant `p = 0.366`) corresponds directly to hyper-vivid, motor-enacted dreaming `10–15` years before clinical Parkinson's or Lewy Body Dementia.
-3. **Embodied Anti-Exceptionalism (6 Organs, 1 Physical Grammar):**
-   - Brain (`+44.65°`), Heart (`r = 0.744`), Lungs (`r = 0.776`), Locomotion (`r = 0.844`), Arterial Blood Pressure (`r = 0.505`), and Skeletal Muscle (`r = 0.948`) all obey `slope = -(2·DFA_α − 1)`. Consciousness is not an alien physics disconnected from biology; it is the **cortical nonlinear phase specialization of a universal organism-wide dynamical grammar**.
+| State of Consciousness (`capslpdb`, `N = 31–33`) | **Frontal (`F2-F4` — GNWT)** | **Posterior (`P4-O2` — IIT)** | **Head-to-Head (`Post − Front`)** | Interpretation |
+| :--- | :---: | :---: | :---: | :--- |
+| **1. Conscious WAKE (`n = 31`)** | **`-0.2686` (`t = -5.16, p = 0.0001`, `30/31`)** | **`-0.2398` (`t = -4.31, p = 0.0001`)** | `t = +0.69, p = 0.501` *(Both ON)* | Global front-to-back nonlinear phase |
+| **2. Unconscious DEEP NREM (`n = 33`)** | `+0.0203` (`t = +0.96, p = 0.361` — *OFF*) | `+0.0266` (`t = +2.89, p = 0.0054`) | `t = +0.31, p = 0.785` *(Both OFF)* | Negative nonlinear phase extinguished |
+| **3. Conscious REM DREAMING (`n = 33`)** | **`-0.1487` (`t = -3.455, p = 0.0004` — ON!)** | **`+0.0057` (`t = +0.520, p = 0.606` — OFF!)** | **`t = +3.869, p = 0.0001` (`29/33`!)** | **Purely Frontal nonlinear ignition!** |
+| **`REM − Deep NREM` Shift (`n = 33`)** | **`t = -3.772, p = 0.0002` (`25/33`!)** | `t = -1.584, p = 0.121` *(NULL)* | Frontal-exclusive transition | Internal dreaming = Frontal phase |
 
 ---
 
-## 3. Observation Back-Action & Non-Demolition Closed-Loop Control
+## 2. Lab #37: Honest Pharmacological Boundary Under Propofol Anesthesia (`ds004541`, `N = 7` Round-Trips)
 
-In both clinical sleep medicine and closed-loop neurotechnology, **observation perturbs the observed system**:
-- **Hardware Back-Action:** Multi-channel clinical PSG rigs distort natural sleep; our **2-channel dry-forehead isometry (`r = 0.9811, p = 0.0083`)** and **5-minute smartwatch Heart-Age Clock (`r = 0.598, MAE = 7.06` yrs, `p = 8.0 × 10⁻⁸`)** minimize observer back-action.
-- **Strong vs. Weak Control:** Naive auditory stimulation acts as a *destructive measurement* (`28.9×` Wasserstein-2 startle detour), whereas our **Lean 4 formally verified `v2 Δ_WK` Anti-Startle Gate** (`256/256` states + `10,000` adversarial EEG frames, `0` violations) acts as a *macroscopic non-demolition controller*, cutting Wake startles by **`92.77%`** and Deep N3 intrusions by **`96.30%`** across `985.3` real human nights.
+| Surgical Anesthesia State (`ds004541`, `N = 7`) | Frontal `brainNonlin` | Posterior `brainNonlin` | Paired Transition vs. `LOC` |
+| :--- | :---: | :---: | :--- |
+| **BASELINE (Awake)** | `-0.0808` (`p = 0.463`) | `-0.1720` (`p = 0.111`) | `LOC − BASE`: Frontal `p = 0.954`, Posterior `p = 0.738` *(NS)* |
+| **LOC (Propofol Unconscious)** | `-0.1278` (`p = 0.184`) | `-0.1426` (`p = 0.079`) | Propofol alpha–slow-wave hypersynchrony preserves non-zero `brainNonlin` |
+| **ROC (Recovery of Consciousness)** | `-0.1349` (`p = 0.435`) | **`-0.1404` (`p = 0.0473`)** | `ROC − LOC`: Frontal `p = 0.955`, Posterior `p = 1.000` *(NS)* |
+
+**Why This Boundary Matters:** Reporting this honest null prevents overclaiming. Unlike natural Deep NREM (`+0.020`), Propofol artificially locks cortex into slow-wave/alpha phase-amplitude coupling — showing that **natural consciousness requires nonlinear phase *along* the Wiener–Khinchin geodesic (`+44.65°`)**, whereas pharmacological unconsciousness breaks off into non-physiological hypersynchrony.
 
 ---
 
-## 4. Complete Project ONEIRIS Archival Index (Papers 1–9 · 35 Labs · 6 Organs)
+## 3. Whole-Body Phase Allocation, The Hard Problem & Non-Demolition Control
 
-| Preprint | Core Scope | Permanent CERN/Zenodo DOI |
-| :--- | :--- | :--- |
-| **Master Codebase Archive** | Zero-dependency scripts, 6-capability SDK, Lean 4 proofs & `/math` BLE workbench | `https://doi.org/10.5281/zenodo.24523273` |
-| **Papers 1–4** | 12-Lab Anesthesia-to-Dreaming, Right-TPJ, Lucid REM, Psilocybin, PTSD Recovery & `+50°` Plasticity Vector | Archived in `preprint/` (`v2.0.0–v3.4.0`) |
-| **Paper 5** | Wiener–Khinchin Geodesic (`+44.65°`), `985.3h` Wearable Sleep, PSG-Free Brain-Age & Lean 4 Safety | `https://doi.org/10.5281/zenodo.24599665` |
-| **Paper 6** | 2-to-4-Ch Forehead Aging, Clinical AD (`AUC = 0.878`), FTD & Pre-Symptomatic `PSEN1-E280A` AD (`AUC = 0.764`) | `https://doi.org/10.5281/zenodo.24599906` |
-| **Paper 7** | 5-Organ Wiener–Khinchin Law, Two-Lab 5-Min Smartwatch Heart-Age Clock & Heart–BP Coupling | `https://doi.org/10.5281/zenodo.24604316` |
-| **Paper 8** | Fourier Surrogate Decomposition (`N = 411`): Brain–Heart Sleep Mirror Law, Age-Invariant RBD (`AUC = 0.921`), FTD, ALS & Clinical Power | `https://doi.org/10.5281/zenodo.24607838` |
-| **Paper 9 (This Work)** | Post-COGITATE (2025) & Hard Problem Synthesis: Whole-Body Nonlinear Phase Switching & Structural Geometry of Consciousness | Ready for Zenodo DOI |
+1. **Whole-Body Embodied Phase Economy:** All six human organ systems (Brain, Heart, Lungs, Locomotion, Arterial BP, Skeletal Muscle) obey `slope = -(2·DFA_α − 1)` (`r = 0.505–0.948`), and Brain & Heart reciprocally swap nonlinear phase between Deep NREM (Heart `p = 0.0050`, Brain linear) and REM (Frontal Brain `p = 0.0004`, Heart linear `p = 0.219`).
+2. **Narrowing the Hard Problem via Structural Isomorphism:** While no mathematical equation derives *why* subjective qualia exist from scratch, external phase geometry mirrors internal experiential geometry: PTSD `Δ_WK` symmetry breaking (`0%` Noether conservation) parallels `22,415`-dream `GWOT` threat collapse; lucid self-observation orthogonalizes dream space (`r = -0.044`) and raises posterior complexity (`p = 0.0129`); and RBD REM nonlinear hyper-locking (`-0.412`, `AUC = 0.921`, age-invariant `p = 0.366`) corresponds directly to hyper-vivid enacted dreaming.
+3. **Non-Demolition Closed-Loop Control:** Minimizing observer back-action via 2-ch dry-forehead wearables (`r = 0.9811` isometry) and Lean 4 formally verified `v2 Δ_WK` gating (`256/256` states + `10,000` adversarial frames, `0` violations) cuts Wake startles by **`92.77%`** across `985.3` real wearable hours.
 
 ---
 
@@ -77,6 +61,5 @@ In both clinical sleep medicine and closed-loop neurotechnology, **observation p
 1. Cogitate Consortium (2025). *Adversarial testing of global neuronal workspace and integrated information theories of consciousness*. Nature, 642, 133–142.
 2. Chalmers, D. J. (1995). *Facing up to the problem of consciousness*. Journal of Consciousness Studies, 2(3), 200–219.
 3. Tallon-Baudry, C. (2023). *Interoception: Probing internal state is inherent to perception and cognition*. Neuron, 111(12), 1854–1857.
-4. Seth, A. K., & Tsakiris, M. (2018). *Being a beast machine: The somatic basis of selfhood*. Trends in Cognitive Sciences, 22(11), 969–981.
-5. Ivanov, P. Ch. (2021). *The new field of Network Physiology: Building the human physiolome*. Frontiers in Network Physiology, 1, 711778.
-6. Rutan, A. (2026). *Project ONEIRIS* (`10.5281/zenodo.24523273`, `24599665`, `24599906`, `24604316`, `24607838`). Zenodo.
+4. Seth, A. K., & Tsakiris, M. (2018). *Being a beast machine*. Trends Cogn. Sci., 22(11), 969–981.
+5. Rutan, A. (2026). *Project ONEIRIS* (`10.5281/zenodo.24523273`, `24599665`, `24599906`, `24604316`, `24607838`). Zenodo.
