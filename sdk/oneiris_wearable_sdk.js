@@ -248,4 +248,105 @@ function scoreHeartWK(rrIntervalsSec) {
   };
 }
 
-module.exports = { computeFrameMetrics, createAntiStartleGate, scoreOvernightBrainAge, score4ChRestingScreen, scoreHeartWK };
+/**
+ * 6. Fourier Phase-Randomized Surrogate Nonlinear Phase Scorer (Paper 8: DOI 10.5281/zenodo.24607838)
+ *    Separates linear multi-scale spectral-crossover curvature (`surrogateWK`) from genuine
+ *    nonlinear cortical phase coupling (`brainNonlin = realWK - surrogateWK`) on 1-ch or 2-ch EEG.
+ *    Validated on N=411 humans across 7 international cohorts (RBD REM AUC=0.921, FTD p=0.0269,
+ *    Brain-Heart Sleep Phase-Switching Mirror Law p=0.0012 / 0.0050, BOAS age-invariant p=0.366).
+ *
+ * @param {Float64Array|number[]} ch1 - Forehead/central EEG channel 1 (e.g., AF7 / Fp1, >= 8 s)
+ * @param {Float64Array|number[]|null} ch2 - Optional channel 2 (e.g., AF8 / Fp2; defaults to ch1)
+ * @param {number} [sfreq=256] - Sampling rate in Hz
+ * @param {{ nSurrogates?: number, seed?: number }} [opts]
+ */
+function scoreNonlinearPhase(ch1, ch2 = null, sfreq = 256, opts = {}) {
+  const a1 = Float64Array.from(ch1);
+  const a2 = ch2 ? Float64Array.from(ch2) : a1;
+  const nSurr = Math.max(1, opts.nSurrogates || 3);
+  const seedBase = (opts.seed >>> 0) || 202608;
+
+  let nPow2 = 1;
+  const minLen = Math.min(a1.length, a2.length);
+  while (nPow2 * 2 <= minLen) nPow2 <<= 1;
+  const winN = Math.round(2 * sfreq);
+  if (nPow2 < winN * 2) {
+    throw new Error(`scoreNonlinearPhase requires at least ${winN * 2} samples (~4 s) of EEG.`);
+  }
+
+  function fftInPlace(re, im, inverse) {
+    const n = re.length;
+    for (let i = 1, j = 0; i < n; i++) {
+      let bit = n >> 1; for (; j & bit; bit >>= 1) j ^= bit; j ^= bit;
+      if (i < j) { [re[i], re[j]] = [re[j], re[i]]; [im[i], im[j]] = [im[j], im[i]]; }
+    }
+    for (let len = 2; len <= n; len <<= 1) {
+      const ang = ((inverse ? 2 : -2) * Math.PI) / len, wr = Math.cos(ang), wi = Math.sin(ang);
+      for (let i = 0; i < n; i += len) {
+        let cr = 1, ci = 0;
+        for (let j = 0; j < len / 2; j++) {
+          const ur = re[i + j], ui = im[i + j];
+          const vr = re[i + j + len / 2] * cr - im[i + j + len / 2] * ci;
+          const vi = re[i + j + len / 2] * ci + im[i + j + len / 2] * cr;
+          re[i + j] = ur + vr; im[i + j] = ui + vi;
+          re[i + j + len / 2] = ur - vr; im[i + j + len / 2] = ui - vi;
+          const nr = cr * wr - ci * wi; ci = cr * wi + ci * wr; cr = nr;
+        }
+      }
+    }
+    if (inverse) for (let i = 0; i < n; i++) { re[i] /= n; im[i] /= n; }
+  }
+
+  function phaseRandomize(sig, seedVal) {
+    const re = new Float64Array(nPow2), im = new Float64Array(nPow2);
+    let m = 0; for (let i = 0; i < nPow2; i++) m += sig[i]; m /= nPow2;
+    for (let i = 0; i < nPow2; i++) re[i] = sig[i] - m;
+    fftInPlace(re, im, false);
+    let sd = (seedVal >>> 0) || 1234567;
+    const rand = () => { sd = (sd * 1664525 + 1013904223) >>> 0; return sd / 4294967296; };
+    for (let k = 1; k < nPow2 / 2; k++) {
+      const mag = Math.hypot(re[k], im[k]), phi = 2 * Math.PI * rand();
+      re[k] = mag * Math.cos(phi); im[k] = mag * Math.sin(phi);
+      re[nPow2 - k] = re[k]; im[nPow2 - k] = -im[k];
+    }
+    im[0] = 0; im[nPow2 / 2] = 0;
+    fftInPlace(re, im, true);
+    const out = new Float64Array(nPow2);
+    for (let i = 0; i < nPow2; i++) out[i] = re[i] + m;
+    return out;
+  }
+
+  let realWKSum = 0, slopeSum = 0, dfaSum = 0, nFrames = 0;
+  for (let s = 0; s + winN <= nPow2; s += winN) {
+    const fm = computeFrameMetrics(a1.subarray(s, s + winN), a2.subarray(s, s + winN), sfreq);
+    realWKSum += fm.wkViolation; slopeSum += fm.slopeBB; dfaSum += fm.dfa;
+    nFrames++;
+  }
+  const realWK = realWKSum / nFrames;
+
+  let surrWKSum = 0;
+  for (let k = 0; k < nSurr; k++) {
+    const s1 = phaseRandomize(a1, seedBase + k * 7919 + 11);
+    const s2 = ch2 ? phaseRandomize(a2, seedBase + k * 7919 + 29) : s1;
+    let wkAcc = 0;
+    for (let s = 0; s + winN <= nPow2; s += winN) {
+      wkAcc += computeFrameMetrics(s1.subarray(s, s + winN), s2.subarray(s, s + winN), sfreq).wkViolation;
+    }
+    surrWKSum += wkAcc / nFrames;
+  }
+  const surrogateWK = surrWKSum / nSurr;
+  const brainNonlin = realWK - surrogateWK;
+
+  return {
+    nFrames,
+    nSurrogates: nSurr,
+    realWK: +realWK.toFixed(4),
+    surrogateWK: +surrogateWK.toFixed(4),
+    brainNonlin: +brainNonlin.toFixed(4),
+    meanSlopeBB: +(slopeSum / nFrames).toFixed(4),
+    meanDFA: +(dfaSum / nFrames).toFixed(4),
+    disclaimer: 'Research & general-wellness metric only; not an FDA-cleared medical diagnostic.',
+  };
+}
+
+module.exports = { computeFrameMetrics, createAntiStartleGate, scoreOvernightBrainAge, score4ChRestingScreen, scoreHeartWK, scoreNonlinearPhase };

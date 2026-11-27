@@ -63,7 +63,7 @@ node verification/verify_irt_tmr_safety_invariants.js
 
 ## Repository Map
 * **`preprint/`** — Papers 1–7 (`.md`, `.html`, `.pdf`).
-* **`sdk/`** — Zero-dependency 1-file evaluation SDK (`oneiris_wearable_sdk.js`: `computeFrameMetrics`, `createAntiStartleGate`, `scoreOvernightBrainAge`, `score4ChRestingScreen`, `scoreHeartWK`) & automated self-test (`demo_sdk.js`).
+* **`sdk/`** — Zero-dependency 1-file evaluation SDK (`oneiris_wearable_sdk.js`: `computeFrameMetrics`, `createAntiStartleGate`, `scoreOvernightBrainAge`, `score4ChRestingScreen`, `scoreHeartWK`, `scoreNonlinearPhase`) & automated self-test (`demo_sdk.js`, `6/6` passing).
 * **`toolkit/cueing-system/`** — Production `GoldilocksCueController` (`--mode tlr`, `irt-tmr`, `irt-tmr-wearable`), `muse_ble_adapter.js` (Web Bluetooth Muse 2 / Muse S), and `phase_plane_explorer.html` (`/math`).
 * **`verification/`** — Formal Lean 4 safety proofs (`OneirisSafetyProof.lean`) and exhaustive adversarial verifier.
 * **`reanalysis/`** — All 23-lab reproducible scripts across Brain, Heart, Respiration, and Locomotion, plus derived JSON outputs (`reanalysis/data/`).
