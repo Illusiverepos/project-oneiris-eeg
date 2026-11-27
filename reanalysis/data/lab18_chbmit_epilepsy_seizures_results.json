@@ -1,117 +1,117 @@
 {
-  "generatedAt": "2026-11-27T18:48:53.560Z",
+  "generatedAt": "2026-11-27T18:50:57.800Z",
   "dataset": "PhysioNet CHB-MIT Scalp EEG (Lab #18 — Real Human Epileptic Seizures, 2 Forehead Channels FP1-F7 & FP2-F8)",
-  "nPatients": 10,
+  "nPatients": 24,
   "PreIctal_minus_InterIctal": {
     "slopeBB": {
-      "n": 10,
-      "meanDiff": -0.2126,
-      "dz": -0.511,
-      "t": -1.617,
-      "p": 0.10578,
-      "nPos": 2,
-      "nNeg": 8
+      "n": 24,
+      "meanDiff": -0.0839,
+      "dz": -0.178,
+      "t": -0.872,
+      "p": 0.38321,
+      "nPos": 10,
+      "nNeg": 14
     },
     "dfa": {
-      "n": 10,
-      "meanDiff": 0.1425,
-      "dz": 0.513,
-      "t": 1.622,
-      "p": 0.10487,
-      "nPos": 7,
-      "nNeg": 3
+      "n": 24,
+      "meanDiff": 0.0586,
+      "dz": 0.286,
+      "t": 1.4,
+      "p": 0.16151,
+      "nPos": 15,
+      "nNeg": 9
     },
     "wkViolation": {
-      "n": 10,
-      "meanDiff": 0.0723,
-      "dz": 0.231,
-      "t": 0.731,
-      "p": 0.46465,
-      "nPos": 5,
-      "nNeg": 5
+      "n": 24,
+      "meanDiff": 0.0333,
+      "dz": 0.108,
+      "t": 0.531,
+      "p": 0.59521,
+      "nPos": 12,
+      "nNeg": 12
     },
     "deltaFrac": {
-      "n": 10,
-      "meanDiff": 0.0839,
-      "dz": 0.485,
-      "t": 1.535,
-      "p": 0.12472,
-      "nPos": 7,
-      "nNeg": 3
+      "n": 24,
+      "meanDiff": 0.0303,
+      "dz": 0.226,
+      "t": 1.109,
+      "p": 0.26755,
+      "nPos": 13,
+      "nNeg": 11
     },
     "alphaFrac": {
-      "n": 10,
-      "meanDiff": 0.0154,
-      "dz": 0.217,
-      "t": 0.685,
-      "p": 0.49303,
-      "nPos": 5,
-      "nNeg": 5
+      "n": 24,
+      "meanDiff": 0.0215,
+      "dz": 0.247,
+      "t": 1.21,
+      "p": 0.22626,
+      "nPos": 13,
+      "nNeg": 11
     },
     "betaFrac": {
-      "n": 10,
-      "meanDiff": -0.0294,
-      "dz": -0.286,
-      "t": -0.904,
-      "p": 0.36601,
-      "nPos": 3,
-      "nNeg": 7
+      "n": 24,
+      "meanDiff": -0.0241,
+      "dz": -0.283,
+      "t": -1.388,
+      "p": 0.16518,
+      "nPos": 9,
+      "nNeg": 15
     }
   },
   "Ictal_minus_InterIctal": {
     "slopeBB": {
-      "n": 10,
-      "meanDiff": -0.1962,
-      "dz": -0.241,
-      "t": -0.761,
-      "p": 0.44651,
-      "nPos": 5,
-      "nNeg": 5
+      "n": 24,
+      "meanDiff": -0.056,
+      "dz": -0.075,
+      "t": -0.37,
+      "p": 0.71168,
+      "nPos": 11,
+      "nNeg": 13
     },
     "dfa": {
-      "n": 10,
-      "meanDiff": 0.1294,
-      "dz": 0.342,
-      "t": 1.083,
-      "p": 0.27885,
-      "nPos": 6,
-      "nNeg": 4
+      "n": 24,
+      "meanDiff": 0.049,
+      "dz": 0.164,
+      "t": 0.802,
+      "p": 0.42275,
+      "nPos": 12,
+      "nNeg": 12
     },
     "wkViolation": {
-      "n": 10,
-      "meanDiff": 0.0625,
-      "dz": 0.137,
-      "t": 0.434,
-      "p": 0.66395,
-      "nPos": 6,
-      "nNeg": 4
+      "n": 24,
+      "meanDiff": 0.0419,
+      "dz": 0.097,
+      "t": 0.477,
+      "p": 0.63333,
+      "nPos": 14,
+      "nNeg": 10
     },
     "deltaFrac": {
-      "n": 10,
-      "meanDiff": 0.0366,
-      "dz": 0.136,
-      "t": 0.429,
-      "p": 0.66803,
-      "nPos": 6,
-      "nNeg": 4
+      "n": 24,
+      "meanDiff": -0.0041,
+      "dz": -0.018,
+      "t": -0.086,
+      "p": 0.9311,
+      "nPos": 11,
+      "nNeg": 13
     },
     "alphaFrac": {
-      "n": 10,
-      "meanDiff": 0.0111,
-      "dz": 0.305,
-      "t": 0.966,
-      "p": 0.33429,
-      "nPos": 6,
-      "nNeg": 4
+      "n": 24,
+      "meanDiff": 0.0193,
+      "dz": 0.223,
+      "t": 1.091,
+      "p": 0.27521,
+      "nPos": 14,
+      "nNeg": 10
     },
     "betaFrac": {
-      "n": 10,
-      "meanDiff": -0.0411,
-      "dz": -0.374,
-      "t": -1.183,
-      "p": 0.23696,
-      "nPos": 4,
-      "nNeg": 6
+      "n": 24,
+      "meanDiff": -0.0293,
+      "dz": -0.289,
+      "t": -1.414,
+      "p": 0.15723,
+      "nPos": 9,
+      "nNeg": 15
     }
   },
   "patients": [
@@ -413,6 +413,426 @@
         "deltaFrac": 0.651,
         "alphaFrac": 0.063,
         "betaFrac": 0.0257
+      }
+    },
+    {
+      "pat": "chb11",
+      "file": "chb11_92.edf",
+      "seizureStartSec": 2695,
+      "seizureDurSec": 32,
+      "interIctal": {
+        "slopeBB": -2.4127,
+        "dfa": 1.3485,
+        "wkViolation": -0.7157,
+        "deltaFrac": 0.6772,
+        "alphaFrac": 0.0881,
+        "betaFrac": 0.0523
+      },
+      "preIctal": {
+        "slopeBB": -1.0213,
+        "dfa": 1.074,
+        "wkViolation": 0.1267,
+        "deltaFrac": 0.5028,
+        "alphaFrac": 0.065,
+        "betaFrac": 0.1095
+      },
+      "ictal": {
+        "slopeBB": -1.6543,
+        "dfa": 1.2346,
+        "wkViolation": -0.1851,
+        "deltaFrac": 0.5443,
+        "alphaFrac": 0.0646,
+        "betaFrac": 0.06
+      }
+    },
+    {
+      "pat": "chb12",
+      "file": "chb12_06.edf",
+      "seizureStartSec": 1665,
+      "seizureDurSec": 61,
+      "interIctal": {
+        "slopeBB": -1.3693,
+        "dfa": 1.1308,
+        "wkViolation": -0.1077,
+        "deltaFrac": 0.5268,
+        "alphaFrac": 0.0957,
+        "betaFrac": 0.1384
+      },
+      "preIctal": {
+        "slopeBB": -1.6459,
+        "dfa": 1.1981,
+        "wkViolation": -0.2497,
+        "deltaFrac": 0.5798,
+        "alphaFrac": 0.0865,
+        "betaFrac": 0.096
+      },
+      "ictal": {
+        "slopeBB": -2.1963,
+        "dfa": 1.2473,
+        "wkViolation": -0.7016,
+        "deltaFrac": 0.5801,
+        "alphaFrac": 0.0958,
+        "betaFrac": 0.0897
+      }
+    },
+    {
+      "pat": "chb13",
+      "file": "chb13_19.edf",
+      "seizureStartSec": 2077,
+      "seizureDurSec": 44,
+      "interIctal": {
+        "slopeBB": -0.8682,
+        "dfa": 0.993,
+        "wkViolation": 0.1178,
+        "deltaFrac": 0.4103,
+        "alphaFrac": 0.0785,
+        "betaFrac": 0.1421
+      },
+      "preIctal": {
+        "slopeBB": -0.8568,
+        "dfa": 1.0007,
+        "wkViolation": 0.1445,
+        "deltaFrac": 0.408,
+        "alphaFrac": 0.0384,
+        "betaFrac": 0.1434
+      },
+      "ictal": {
+        "slopeBB": -1.8479,
+        "dfa": 1.4899,
+        "wkViolation": 0.1319,
+        "deltaFrac": 0.8196,
+        "alphaFrac": 0.0232,
+        "betaFrac": 0.0249
+      }
+    },
+    {
+      "pat": "chb14",
+      "file": "chb14_03.edf",
+      "seizureStartSec": 1986,
+      "seizureDurSec": 14,
+      "interIctal": {
+        "slopeBB": -2.632,
+        "dfa": 1.5092,
+        "wkViolation": -0.6136,
+        "deltaFrac": 0.8129,
+        "alphaFrac": 0.044,
+        "betaFrac": 0.0144
+      },
+      "preIctal": {
+        "slopeBB": -2.5115,
+        "dfa": 1.5028,
+        "wkViolation": -0.5059,
+        "deltaFrac": 0.8077,
+        "alphaFrac": 0.0445,
+        "betaFrac": 0.0167
+      },
+      "ictal": {
+        "slopeBB": -2.7344,
+        "dfa": 1.3863,
+        "wkViolation": -0.9618,
+        "deltaFrac": 0.6121,
+        "alphaFrac": 0.0664,
+        "betaFrac": 0.0125
+      }
+    },
+    {
+      "pat": "chb15",
+      "file": "chb15_10.edf",
+      "seizureStartSec": 1082,
+      "seizureDurSec": 31,
+      "interIctal": {
+        "slopeBB": -1.8856,
+        "dfa": 0.9031,
+        "wkViolation": -1.0793,
+        "deltaFrac": 0.3963,
+        "alphaFrac": 0.0455,
+        "betaFrac": 0.4532
+      },
+      "preIctal": {
+        "slopeBB": -1.9693,
+        "dfa": 0.8714,
+        "wkViolation": -1.2265,
+        "deltaFrac": 0.2805,
+        "alphaFrac": 0.4096,
+        "betaFrac": 0.1941
+      },
+      "ictal": {
+        "slopeBB": -2.0325,
+        "dfa": 0.9056,
+        "wkViolation": -1.2213,
+        "deltaFrac": 0.2802,
+        "alphaFrac": 0.4305,
+        "betaFrac": 0.1775
+      }
+    },
+    {
+      "pat": "chb16",
+      "file": "chb16_14.edf",
+      "seizureStartSec": 1854,
+      "seizureDurSec": 14,
+      "interIctal": {
+        "slopeBB": -1.9972,
+        "dfa": 1.1952,
+        "wkViolation": -0.6068,
+        "deltaFrac": 0.5576,
+        "alphaFrac": 0.094,
+        "betaFrac": 0.1104
+      },
+      "preIctal": {
+        "slopeBB": -1.8816,
+        "dfa": 1.2039,
+        "wkViolation": -0.4738,
+        "deltaFrac": 0.5792,
+        "alphaFrac": 0.0869,
+        "betaFrac": 0.1063
+      },
+      "ictal": {
+        "slopeBB": -1.3116,
+        "dfa": 1.0465,
+        "wkViolation": -0.2186,
+        "deltaFrac": 0.4206,
+        "alphaFrac": 0.0736,
+        "betaFrac": 0.2089
+      }
+    },
+    {
+      "pat": "chb17",
+      "file": "chb17a_03.edf",
+      "seizureStartSec": 2282,
+      "seizureDurSec": 90,
+      "interIctal": {
+        "slopeBB": -1.2702,
+        "dfa": 1.2355,
+        "wkViolation": 0.2009,
+        "deltaFrac": 0.6273,
+        "alphaFrac": 0.0447,
+        "betaFrac": 0.0939
+      },
+      "preIctal": {
+        "slopeBB": -1.7496,
+        "dfa": 1.2862,
+        "wkViolation": -0.1771,
+        "deltaFrac": 0.5947,
+        "alphaFrac": 0.0854,
+        "betaFrac": 0.0717
+      },
+      "ictal": {
+        "slopeBB": -1.8891,
+        "dfa": 1.29,
+        "wkViolation": -0.309,
+        "deltaFrac": 0.622,
+        "alphaFrac": 0.0657,
+        "betaFrac": 0.0542
+      }
+    },
+    {
+      "pat": "chb18",
+      "file": "chb18_29.edf",
+      "seizureStartSec": 3477,
+      "seizureDurSec": 50,
+      "interIctal": {
+        "slopeBB": -1.9691,
+        "dfa": 1.1529,
+        "wkViolation": -0.6634,
+        "deltaFrac": 0.4914,
+        "alphaFrac": 0.127,
+        "betaFrac": 0.1064
+      },
+      "preIctal": {
+        "slopeBB": -1.8484,
+        "dfa": 1.2103,
+        "wkViolation": -0.4278,
+        "deltaFrac": 0.5857,
+        "alphaFrac": 0.1131,
+        "betaFrac": 0.1043
+      },
+      "ictal": {
+        "slopeBB": -1.7796,
+        "dfa": 1.271,
+        "wkViolation": -0.2376,
+        "deltaFrac": 0.6495,
+        "alphaFrac": 0.0571,
+        "betaFrac": 0.0562
+      }
+    },
+    {
+      "pat": "chb19",
+      "file": "chb19_29.edf",
+      "seizureStartSec": 2964,
+      "seizureDurSec": 77,
+      "interIctal": {
+        "slopeBB": -1.7371,
+        "dfa": 1.2631,
+        "wkViolation": -0.2108,
+        "deltaFrac": 0.6701,
+        "alphaFrac": 0.0716,
+        "betaFrac": 0.0451
+      },
+      "preIctal": {
+        "slopeBB": -1.642,
+        "dfa": 1.1937,
+        "wkViolation": -0.2546,
+        "deltaFrac": 0.6103,
+        "alphaFrac": 0.0927,
+        "betaFrac": 0.0708
+      },
+      "ictal": {
+        "slopeBB": -0.5693,
+        "dfa": 0.7888,
+        "wkViolation": 0.0082,
+        "deltaFrac": 0.1962,
+        "alphaFrac": 0.1646,
+        "betaFrac": 0.1628
+      }
+    },
+    {
+      "pat": "chb20",
+      "file": "chb20_13.edf",
+      "seizureStartSec": 1440,
+      "seizureDurSec": 30,
+      "interIctal": {
+        "slopeBB": -2.0616,
+        "dfa": 1.2274,
+        "wkViolation": -0.6068,
+        "deltaFrac": 0.587,
+        "alphaFrac": 0.0929,
+        "betaFrac": 0.0897
+      },
+      "preIctal": {
+        "slopeBB": -1.9838,
+        "dfa": 1.2099,
+        "wkViolation": -0.564,
+        "deltaFrac": 0.5701,
+        "alphaFrac": 0.0986,
+        "betaFrac": 0.1013
+      },
+      "ictal": {
+        "slopeBB": -0.831,
+        "dfa": 1.0087,
+        "wkViolation": 0.1864,
+        "deltaFrac": 0.4538,
+        "alphaFrac": 0.0697,
+        "betaFrac": 0.1481
+      }
+    },
+    {
+      "pat": "chb21",
+      "file": "chb21_19.edf",
+      "seizureStartSec": 1288,
+      "seizureDurSec": 56,
+      "interIctal": {
+        "slopeBB": -1.7633,
+        "dfa": 1.34,
+        "wkViolation": -0.0833,
+        "deltaFrac": 0.6945,
+        "alphaFrac": 0.042,
+        "betaFrac": 0.0472
+      },
+      "preIctal": {
+        "slopeBB": -1.3311,
+        "dfa": 1.1994,
+        "wkViolation": 0.0676,
+        "deltaFrac": 0.5857,
+        "alphaFrac": 0.0525,
+        "betaFrac": 0.0714
+      },
+      "ictal": {
+        "slopeBB": -1.572,
+        "dfa": 1.3359,
+        "wkViolation": 0.0999,
+        "deltaFrac": 0.6753,
+        "alphaFrac": 0.0463,
+        "betaFrac": 0.0426
+      }
+    },
+    {
+      "pat": "chb22",
+      "file": "chb22_20.edf",
+      "seizureStartSec": 3367,
+      "seizureDurSec": 58,
+      "interIctal": {
+        "slopeBB": -1.6622,
+        "dfa": 1.3612,
+        "wkViolation": 0.0602,
+        "deltaFrac": 0.7257,
+        "alphaFrac": 0.0416,
+        "betaFrac": 0.0513
+      },
+      "preIctal": {
+        "slopeBB": -1.9425,
+        "dfa": 1.4216,
+        "wkViolation": -0.0992,
+        "deltaFrac": 0.7642,
+        "alphaFrac": 0.043,
+        "betaFrac": 0.0376
+      },
+      "ictal": {
+        "slopeBB": -1.7847,
+        "dfa": 1.3097,
+        "wkViolation": -0.1653,
+        "deltaFrac": 0.666,
+        "alphaFrac": 0.0584,
+        "betaFrac": 0.0504
+      }
+    },
+    {
+      "pat": "chb23",
+      "file": "chb23_06.edf",
+      "seizureStartSec": 3962,
+      "seizureDurSec": 113,
+      "interIctal": {
+        "slopeBB": -1.1625,
+        "dfa": 1.1288,
+        "wkViolation": 0.095,
+        "deltaFrac": 0.56,
+        "alphaFrac": 0.0437,
+        "betaFrac": 0.1228
+      },
+      "preIctal": {
+        "slopeBB": -1.5637,
+        "dfa": 1.2682,
+        "wkViolation": -0.0273,
+        "deltaFrac": 0.635,
+        "alphaFrac": 0.056,
+        "betaFrac": 0.0889
+      },
+      "ictal": {
+        "slopeBB": -1.5166,
+        "dfa": 1.3785,
+        "wkViolation": 0.2404,
+        "deltaFrac": 0.7398,
+        "alphaFrac": 0.0298,
+        "betaFrac": 0.0403
+      }
+    },
+    {
+      "pat": "chb24",
+      "file": "chb24_01.edf",
+      "seizureStartSec": 480,
+      "seizureDurSec": 25,
+      "interIctal": {
+        "slopeBB": -1.3773,
+        "dfa": 1.349,
+        "wkViolation": 0.3207,
+        "deltaFrac": 0.6964,
+        "alphaFrac": 0.026,
+        "betaFrac": 0.0643
+      },
+      "preIctal": {
+        "slopeBB": -2.1068,
+        "dfa": 1.4791,
+        "wkViolation": -0.1485,
+        "deltaFrac": 0.8176,
+        "alphaFrac": 0.0249,
+        "betaFrac": 0.0356
+      },
+      "ictal": {
+        "slopeBB": -1.8318,
+        "dfa": 1.3266,
+        "wkViolation": -0.1786,
+        "deltaFrac": 0.7097,
+        "alphaFrac": 0.0415,
+        "betaFrac": 0.1107
       }
     }
   ]

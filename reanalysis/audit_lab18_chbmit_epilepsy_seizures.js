@@ -125,15 +125,21 @@ async function processPatient(pat) {
 }
 
 async function main() {
-  const pats = ['chb01', 'chb02', 'chb03', 'chb04', 'chb05', 'chb06', 'chb07', 'chb08', 'chb09', 'chb10'];
-  console.log(`Streaming Lab #18 Epilepsy (PhysioNet CHB-MIT, ${pats.length} real human seizure patients, forehead FP1-F7 & FP2-F8)...`);
+  const pats = Array.from({ length: 24 }, (_, i) => `chb${String(i + 1).padStart(2, '0')}`);
+  console.log(`Streaming Lab #18 Epilepsy FULL COHORT (PhysioNet CHB-MIT, ${pats.length} patients, forehead FP1-F7 & FP2-F8, 6 workers)...`);
   const results = [];
-  for (const p of pats) {
-    try {
-      const r = await processPatient(p);
-      if (r) { results.push(r); console.log(`  Done ${p} (${r.file}, onset=${r.seizureStartSec}s, dur=${r.seizureDurSec}s) | Δ_WK: Base=${r.interIctal.wkViolation} -> Pre=${r.preIctal.wkViolation} -> Ictal=${r.ictal.wkViolation}`); }
-    } catch (e) { console.error(`  Skip ${p}:`, e.message); }
+  let cursor = 0;
+  async function worker() {
+    while (cursor < pats.length) {
+      const p = pats[cursor++];
+      try {
+        const r = await processPatient(p);
+        if (r) { results.push(r); console.log(`  Done ${p} (${r.file}, onset=${r.seizureStartSec}s) | Pre-Base dSlope=${(r.preIctal.slopeBB - r.interIctal.slopeBB).toFixed(3)}, dDFA=${(r.preIctal.dfa - r.interIctal.dfa).toFixed(3)}`); }
+      } catch {}
+    }
   }
+  await Promise.all(Array.from({ length: 6 }, () => worker()));
+  results.sort((a, b) => a.pat.localeCompare(b.pat));
 
   const keys = ['slopeBB', 'dfa', 'wkViolation', 'deltaFrac', 'alphaFrac', 'betaFrac'];
   const preVsBase = {}, ictalVsBase = {};
