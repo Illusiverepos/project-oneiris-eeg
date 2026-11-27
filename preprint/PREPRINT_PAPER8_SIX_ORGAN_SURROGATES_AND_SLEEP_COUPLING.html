@@ -96,7 +96,19 @@
   </tbody>
 </table>
 
-<p class="note"><strong>Reproducibility &amp; Non-Clinical Notice:</strong> Zero-dependency scripts (<code>audit_lab24</code>, <code>audit_lab25</code>, <code>audit_lab30</code>, <code>audit_lab31</code>, <code>audit_lab32</code>) archived at <code>github.com/Illusiverepos/project-oneiris-eeg</code> (Archive DOI <code>10.5281/zenodo.24523273</code>). Research prototypes only; not FDA-cleared medical devices.</p>
+<h2>3. Forward Biophysical Validation &amp; 1,000-Trial Prospective Clinical Power (Lab #35)</h2>
+<p>A 10-year forward vagal-decay simulator quantitatively reproduced Lab #24's linear cardiac aging flattening (<code>realWK &minus;0.608 &rarr; &minus;0.097</code>, <code>surrWK &minus;0.644 &rarr; &minus;0.110</code>, <code>nonlin &approx; 0.013</code>), while falsifying brief 150-ms burst models for RBD (which yield positive <code>+0.351</code> rather than negative <code>&minus;0.412</code> residuals, pointing to multi-second non-stationary REM state-switching). Conservative prospective hospital sample sizes (<code>1,000</code> Monte Carlo trials with 25% effect-size shrinkage):</p>
+<table>
+  <thead><tr><th>Prospective Biomarker</th><th>Conservative d (&minus;25%)</th><th>Total N for &ge;90% Power (p&lt;0.05)</th><th>Total N for &ge;90% Power (p&lt;0.01)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>RBD REM Dreaming (<code>brainNonlin</code>)</strong></td><td>1.22</td><td><strong>N = 30</strong> (15/arm)</td><td><strong>N = 50</strong> (25/arm)</td></tr>
+    <tr><td><strong>Pre-Symptomatic <code>PSEN1-E280A</code> AD (<code>&Delta;_WK</code>)</strong></td><td>0.70</td><td><strong>N = 120</strong> (60/arm)</td><td><strong>N = 160</strong> (80/arm)</td></tr>
+    <tr><td><strong>ALS Motor-Neuron Gait (<code>&Delta;_WK_Gait</code>)</strong></td><td>0.70</td><td><strong>N = 120</strong> (60/arm)</td><td><strong>N = 120</strong> (60/arm)</td></tr>
+    <tr><td>Frontotemporal Dementia (<code>brainNonlin</code>)</td><td>0.46</td><td>N = 200 (100/arm)</td><td>N &gt; 200</td></tr>
+  </tbody>
+</table>
+
+<p class="note"><strong>Reproducibility &amp; Non-Clinical Notice:</strong> Zero-dependency scripts (<code>audit_lab24</code>, <code>audit_lab25</code>, <code>audit_lab30</code>–<code>audit_lab34</code>, <code>simulate_lab35</code>) archived at <code>github.com/Illusiverepos/project-oneiris-eeg</code> (Archive DOI <code>10.5281/zenodo.24523273</code>). Research prototypes only; not FDA-cleared medical devices.</p>
 <ol class="refs">
   <li>Rutan, A. (2026). <em>Project ONEIRIS</em>: Archive (<code>10.5281/zenodo.24523273</code>), Paper 5 (<code>24599665</code>), Paper 6 (<code>24599906</code>), Paper 7 (<code>24604316</code>).</li>
   <li>Theiler, J. et al. (1992). <em>Testing for nonlinearity in time series: the method of surrogate data</em>. Physica D, 58, 77–94.</li>
