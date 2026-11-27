@@ -1,7 +1,9 @@
 # Project ONEIRIS — The Wiener–Khinchin Geometry of Human Sleep, Consciousness & Wearable EEG
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24523273.svg)](https://doi.org/10.5281/zenodo.24523273)
+
 **Author:** Austin Rutan (`rutanaus000@gmail.com`)  
-**License:** Free for Academic, University, VA & Non-Commercial Research ([LICENSE](LICENSE)) · **Enterprise / Hardware SDK Licensing:** [COMMERCIAL_LICENSING.md](COMMERCIAL_LICENSING.md)
+**Archive DOI:** `https://doi.org/10.5281/zenodo.24523273` · **License:** Free for Academic, University, VA & Non-Commercial Research ([LICENSE](LICENSE)) · **Enterprise / Hardware SDK Licensing:** [COMMERCIAL_LICENSING.md](COMMERCIAL_LICENSING.md)
 
 Project ONEIRIS is a zero-dependency, 100% reproducible neuroscience and signal-physics suite spanning **14 independent human EEG laboratories**, **985.3 hours (126 full nights)** of real overnight 2-channel forehead wearable sleep paired with 3-expert clinical PSG, **88 clinical Alzheimer's / FTD / Control patients (`ds004504`)**, **22,415 DreamBank narratives**, **5 machine-checked Lean 4 safety proofs**, a **1-file evaluation SDK (`sdk/oneiris_wearable_sdk.js`)**, and a live browser-based **Muse S / Muse 2 Web Bluetooth** closed-loop workbench.
 
