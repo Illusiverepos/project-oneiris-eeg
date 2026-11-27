@@ -1,0 +1,275 @@
+{
+  "lab": "Lab #35 — 10-Year Forward Biophysical Progression & 1,000-Trial Prospective Clinical Power Simulator",
+  "part1_biophysicalForwardTrajectories": {
+    "trajectoryA_HealthyHeartAging": [
+      {
+        "year": 0,
+        "realWK": -0.6082,
+        "surrWK": -0.6441,
+        "nonlin": 0.0359
+      },
+      {
+        "year": 2,
+        "realWK": -0.548,
+        "surrWK": -0.5606,
+        "nonlin": 0.0126
+      },
+      {
+        "year": 5,
+        "realWK": -0.4061,
+        "surrWK": -0.4547,
+        "nonlin": 0.0486
+      },
+      {
+        "year": 8,
+        "realWK": -0.2493,
+        "surrWK": -0.2318,
+        "nonlin": -0.0175
+      },
+      {
+        "year": 10,
+        "realWK": -0.0966,
+        "surrWK": -0.1097,
+        "nonlin": 0.013
+      }
+    ],
+    "trajectoryB_ProdromalRBD_REM": [
+      {
+        "year": 0,
+        "realWK": -0.078,
+        "surrWK": -0.0461,
+        "nonlin": -0.0319
+      },
+      {
+        "year": 2,
+        "realWK": -0.3632,
+        "surrWK": -0.4559,
+        "nonlin": 0.0927
+      },
+      {
+        "year": 5,
+        "realWK": -0.8683,
+        "surrWK": -1.0479,
+        "nonlin": 0.1797
+      },
+      {
+        "year": 8,
+        "realWK": -1.0939,
+        "surrWK": -1.464,
+        "nonlin": 0.3701
+      },
+      {
+        "year": 10,
+        "realWK": -1.271,
+        "surrWK": -1.6218,
+        "nonlin": 0.3508
+      }
+    ],
+    "trajectoryC_FrontotemporalDementia": [
+      {
+        "year": 0,
+        "realWK": -0.9384,
+        "surrWK": -1.2519,
+        "nonlin": 0.3135
+      },
+      {
+        "year": 2,
+        "realWK": -0.8471,
+        "surrWK": -1.0808,
+        "nonlin": 0.2337
+      },
+      {
+        "year": 5,
+        "realWK": -0.611,
+        "surrWK": -0.7551,
+        "nonlin": 0.1441
+      },
+      {
+        "year": 8,
+        "realWK": -0.3095,
+        "surrWK": -0.3343,
+        "nonlin": 0.0249
+      },
+      {
+        "year": 10,
+        "realWK": -0.1054,
+        "surrWK": -0.0987,
+        "nonlin": -0.0068
+      }
+    ]
+  },
+  "part2_prospectiveClinicalPower_1000Trials": {
+    "RBD_REM_brainNonlin": {
+      "dConservative": 1.218,
+      "minTotalN_90pctPower_p05": 30,
+      "minTotalN_90pctPower_p01": 50,
+      "curve": [
+        {
+          "nPerArm": 15,
+          "totalN": 30,
+          "power_p05": 91.4,
+          "power_p01": 78.9
+        },
+        {
+          "nPerArm": 25,
+          "totalN": 50,
+          "power_p05": 99.2,
+          "power_p01": 95.5
+        },
+        {
+          "nPerArm": 40,
+          "totalN": 80,
+          "power_p05": 99.9,
+          "power_p01": 99.6
+        },
+        {
+          "nPerArm": 60,
+          "totalN": 120,
+          "power_p05": 100,
+          "power_p01": 100
+        },
+        {
+          "nPerArm": 80,
+          "totalN": 160,
+          "power_p05": 100,
+          "power_p01": 100
+        },
+        {
+          "nPerArm": 100,
+          "totalN": 200,
+          "power_p05": 100,
+          "power_p01": 100
+        }
+      ]
+    },
+    "PSEN1_PreSymptomatic_AD_dWK": {
+      "dConservative": 0.69825,
+      "minTotalN_90pctPower_p05": 120,
+      "minTotalN_90pctPower_p01": 160,
+      "curve": [
+        {
+          "nPerArm": 15,
+          "totalN": 30,
+          "power_p05": 49.5,
+          "power_p01": 28.9
+        },
+        {
+          "nPerArm": 25,
+          "totalN": 50,
+          "power_p05": 70.2,
+          "power_p01": 46
+        },
+        {
+          "nPerArm": 40,
+          "totalN": 80,
+          "power_p05": 88.6,
+          "power_p01": 71.3
+        },
+        {
+          "nPerArm": 60,
+          "totalN": 120,
+          "power_p05": 96,
+          "power_p01": 87.7
+        },
+        {
+          "nPerArm": 80,
+          "totalN": 160,
+          "power_p05": 99.4,
+          "power_p01": 97.3
+        },
+        {
+          "nPerArm": 100,
+          "totalN": 200,
+          "power_p05": 100,
+          "power_p01": 99.5
+        }
+      ]
+    },
+    "ALS_Locomotion_dWK": {
+      "dConservative": 0.6975,
+      "minTotalN_90pctPower_p05": 120,
+      "minTotalN_90pctPower_p01": 120,
+      "curve": [
+        {
+          "nPerArm": 15,
+          "totalN": 30,
+          "power_p05": 44.8,
+          "power_p01": 24.5
+        },
+        {
+          "nPerArm": 25,
+          "totalN": 50,
+          "power_p05": 69,
+          "power_p01": 48.1
+        },
+        {
+          "nPerArm": 40,
+          "totalN": 80,
+          "power_p05": 87.6,
+          "power_p01": 72.5
+        },
+        {
+          "nPerArm": 60,
+          "totalN": 120,
+          "power_p05": 96.9,
+          "power_p01": 90.4
+        },
+        {
+          "nPerArm": 80,
+          "totalN": 160,
+          "power_p05": 98.9,
+          "power_p01": 96.2
+        },
+        {
+          "nPerArm": 100,
+          "totalN": 200,
+          "power_p05": 99.8,
+          "power_p01": 98.9
+        }
+      ]
+    },
+    "FTD_Frontal_brainNonlin": {
+      "dConservative": 0.45675,
+      "minTotalN_90pctPower_p05": 200,
+      "minTotalN_90pctPower_p01": ">200",
+      "curve": [
+        {
+          "nPerArm": 15,
+          "totalN": 30,
+          "power_p05": 26.8,
+          "power_p01": 12.3
+        },
+        {
+          "nPerArm": 25,
+          "totalN": 50,
+          "power_p05": 38.2,
+          "power_p01": 18.2
+        },
+        {
+          "nPerArm": 40,
+          "totalN": 80,
+          "power_p05": 54.2,
+          "power_p01": 30.8
+        },
+        {
+          "nPerArm": 60,
+          "totalN": 120,
+          "power_p05": 70.1,
+          "power_p01": 47.1
+        },
+        {
+          "nPerArm": 80,
+          "totalN": 160,
+          "power_p05": 82,
+          "power_p01": 61
+        },
+        {
+          "nPerArm": 100,
+          "totalN": 200,
+          "power_p05": 90,
+          "power_p01": 74.3
+        }
+      ]
+    }
+  }
+}
