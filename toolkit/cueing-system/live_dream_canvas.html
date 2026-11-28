@@ -71,11 +71,12 @@
 
     <div class="controls">
       <button id="btnPlay" class="primary">▶ Play Night Simulation</button>
+      <button id="btnAudio">🔇 Ambient Sound: OFF</button>
       <button id="btnMuse" class="lucid">Connect Muse S / 2 (BLE)</button>
       <button onclick="setPreset('N3')">Deep NREM (0.00)</button>
       <button onclick="setPreset('N2')">NREM N2 Dream (−0.02)</button>
       <button onclick="setPreset('REM')">Vivid REM (−0.15)</button>
-      <button onclick="setPreset('LUCID')">Lucid Switch (−0.25 / 0.00)</button>
+      <button onclick="setPreset('LUCID')">Lucid Switch (−0.207 / +0.014)</button>
       <button onclick="setPreset('RBD')">Hyper-Lock / Nightmare (−0.41)</button>
       <button onclick="setPreset('WAKE')">Waking Reality (−0.27 / −0.24)</button>
     </div>
@@ -114,6 +115,7 @@ I stopped running, breathed out, and the stairs dissolved into calm morning ligh
         <button id="btnSync" class="primary">Sync Journal to Brain Timeline</button>
         <button id="btnVoice">🎤 Dictate Dream (Voice)</button>
         <button id="btnCopyPrompt">Copy Image Prompt</button>
+        <button id="btnExport">⬇ Export Storyboard HTML</button>
       </div>
       <div id="scenesList" class="scenes"></div>
       <div id="promptBox" class="prompt-box">Click any synced dream scene above to jump the live canvas to that exact brain state and generate a physics-grounded visual prompt.</div>
@@ -136,7 +138,7 @@ const PRESETS = {
   N3:    { nonlin:  0.002, post:  0.010, asym:  0.000, hr: 54 },
   N2:    { nonlin: -0.020, post:  0.006, asym: -0.010, hr: 58 },
   REM:   { nonlin: -0.149, post:  0.006, asym:  0.012, hr: 64 },
-  LUCID: { nonlin: -0.255, post:  0.002, asym: -0.095, hr: 68 },
+  LUCID: { nonlin: -0.207, post:  0.014, asym: -0.095, hr: 68 },
   RBD:   { nonlin: -0.412, post: -0.020, asym:  0.165, hr: 96 },
   WAKE:  { nonlin: -0.269, post: -0.240, asym: -0.020, hr: 72 },
 };
@@ -415,8 +417,47 @@ document.getElementById('btnVoice').addEventListener('click', () => {
   rec.start();
 });
 
+// === LIVE WEB-AUDIO AMBIENT DREAMSCAPE SYNTHESIZER (MUTED BY DEFAULT) ===
+let audioCtx = null, oscA = null, oscB = null, gainNode = null, audioOn = false;
+document.getElementById('btnAudio').addEventListener('click', () => {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    oscA = audioCtx.createOscillator(); oscB = audioCtx.createOscillator();
+    gainNode = audioCtx.createGain();
+    oscA.type = 'sine'; oscB.type = 'triangle';
+    gainNode.gain.value = 0.0;
+    oscA.connect(gainNode); oscB.connect(gainNode); gainNode.connect(audioCtx.destination);
+    oscA.start(); oscB.start();
+  }
+  audioOn = !audioOn;
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  gainNode.gain.setTargetAtTime(audioOn ? 0.055 : 0.0, audioCtx.currentTime, 0.15);
+  document.getElementById('btnAudio').textContent = audioOn ? '🔊 Ambient Sound: ON' : '🔇 Ambient Sound: OFF';
+});
+
+function updateAudio() {
+  if (!audioOn || !audioCtx) return;
+  const clarity = Math.min(1, Math.max(0, -state.nonlin / 0.30));
+  const baseHz = 110 + clarity * 130; // Deep NREM 110 Hz -> Lucid/Wake 240 Hz
+  const detune = state.asym > 0.08 ? 11.5 : (4.0 + clarity * 3.5); // Calm binaural theta vs tense dissonance
+  oscA.frequency.setTargetAtTime(baseHz, audioCtx.currentTime, 0.12);
+  oscB.frequency.setTargetAtTime(baseHz + detune, audioCtx.currentTime, 0.12);
+}
+
+// === 1-CLICK SHAREABLE STORYBOARD HTML EXPORT ===
+document.getElementById('btnExport').addEventListener('click', () => {
+  const items = [...document.querySelectorAll('.scene-item')].map((el) => el.outerHTML).join('\n');
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"/><title>ONEIRIS Dream Storyboard</title><style>body{font-family:system-ui,sans-serif;background:#070b14;color:#e2e8f0;max-width:760px;margin:32px auto;padding:0 18px;}h1{color:#38bdf8;font-size:20px;}.scene-item{background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:12px;margin:10px 0;}.scene-head{display:flex;justify-content:space-between;font-size:12px;color:#94a3b8;margin-bottom:6px;}.scene-text{font-size:14px;line-height:1.5;}</style></head><body><h1>Project ONEIRIS — Synced Dream Storyboard</h1><p style="color:#94a3b8;font-size:12px;">Generated ${new Date().toLocaleString()} · Calibrated to Papers 9–10 (DOIs 10.5281/zenodo.24619135 &amp; 24619185)</p>${items}</body></html>`;
+  const blob = new Blob([html], { type: 'text/html' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `oneiris_dream_storyboard_${Date.now()}.html`;
+  a.click();
+});
+
 updateUI();
 syncJournal();
+setInterval(updateAudio, 150);
 requestAnimationFrame(render);
 </script>
 </body>
