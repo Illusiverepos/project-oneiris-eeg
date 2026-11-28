@@ -1,0 +1,362 @@
+{
+  "lab": "Lab #47c \u2014 COGITATE Intracranial Cross-Reference vs Papers 1-10",
+  "pooled": {
+    "GNWT_nonlin_ON_vs_OFF": {
+      "n": 240,
+      "mA": -0.0488,
+      "mB": -0.0073,
+      "dz": -0.371,
+      "t": -5.751,
+      "p": 0.0001
+    },
+    "IIT_nonlin_ON_vs_OFF": {
+      "n": 240,
+      "mA": -0.0672,
+      "mB": -0.0428,
+      "dz": -0.199,
+      "t": -3.075,
+      "p": 0.0025
+    },
+    "GNWT_WK_ON_vs_OFF": {
+      "n": 240,
+      "mA": -0.3498,
+      "mB": -0.3031,
+      "dz": -0.299,
+      "t": -4.625,
+      "p": 0.0001
+    },
+    "IIT_WK_ON_vs_OFF": {
+      "n": 240,
+      "mA": -0.4912,
+      "mB": -0.4721,
+      "dz": -0.13,
+      "t": -2.01,
+      "p": 0.0439
+    },
+    "GNWT_HGA_ON_vs_OFF": {
+      "n": 240,
+      "mA": 5.1674,
+      "mB": 5.1674,
+      "dz": 0.0,
+      "t": 0.0,
+      "p": 0.9999
+    },
+    "IIT_HGA_ON_vs_OFF": {
+      "n": 240,
+      "mA": 5.2154,
+      "mB": 5.162,
+      "dz": 0.645,
+      "t": 9.999,
+      "p": 0.0001
+    },
+    "Pooled_GNWT_vs_IIT_nonlin_r": {
+      "n": 240,
+      "r": 0.3595,
+      "p": 0.0001
+    },
+    "Pooled_GNWT_nonlin_vs_HGA_shift_r": {
+      "n": 240,
+      "r": 0.056,
+      "p": 0.39746
+    },
+    "Pooled_IIT_nonlin_vs_HGA_shift_r": {
+      "n": 240,
+      "r": -0.0143,
+      "p": 0.82532
+    }
+  },
+  "per_patient": [
+    {
+      "sub": "sub-CE107",
+      "nTrials": 60,
+      "hemi": {
+        "GNWT_L": 62,
+        "GNWT_R": 0,
+        "IIT_L": 67,
+        "IIT_R": 0
+      },
+      "GNWT_nonlin_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.0348,
+        "mB": -0.0138,
+        "dz": -0.241,
+        "t": -1.864,
+        "p": 0.06449
+      },
+      "IIT_nonlin_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.0425,
+        "mB": -0.0224,
+        "dz": -0.216,
+        "t": -1.675,
+        "p": 0.09439
+      },
+      "GNWT_WK_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.3769,
+        "mB": -0.3418,
+        "dz": -0.242,
+        "t": -1.875,
+        "p": 0.06829
+      },
+      "IIT_WK_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.4521,
+        "mB": -0.4599,
+        "dz": 0.061,
+        "t": 0.471,
+        "p": 0.65153
+      },
+      "GNWT_HGA_ON_vs_OFF": {
+        "n": 60,
+        "mA": 4.7281,
+        "mB": 4.7253,
+        "dz": 0.033,
+        "t": 0.258,
+        "p": 0.80782
+      },
+      "IIT_HGA_ON_vs_OFF": {
+        "n": 60,
+        "mA": 4.9085,
+        "mB": 4.8677,
+        "dz": 0.48,
+        "t": 3.719,
+        "p": 0.0003
+      },
+      "WithinPatient_GNWT_vs_IIT_nonlin_r": {
+        "n": 60,
+        "r": 0.3744,
+        "p": 0.0038
+      },
+      "WithinPatient_GNWT_nonlin_vs_HGA_r": {
+        "n": 60,
+        "r": 0.1566,
+        "p": 0.23438
+      },
+      "WithinPatient_IIT_nonlin_vs_HGA_r": {
+        "n": 60,
+        "r": 0.0024,
+        "p": 0.9848
+      }
+    },
+    {
+      "sub": "sub-CE110",
+      "nTrials": 60,
+      "hemi": {
+        "GNWT_L": 0,
+        "GNWT_R": 33,
+        "IIT_L": 0,
+        "IIT_R": 91
+      },
+      "GNWT_nonlin_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.0486,
+        "mB": -0.0051,
+        "dz": -0.378,
+        "t": -2.927,
+        "p": 0.0048
+      },
+      "IIT_nonlin_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.0165,
+        "mB": -0.0024,
+        "dz": -0.111,
+        "t": -0.859,
+        "p": 0.39486
+      },
+      "GNWT_WK_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.2932,
+        "mB": -0.2384,
+        "dz": -0.343,
+        "t": -2.656,
+        "p": 0.0116
+      },
+      "IIT_WK_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.3568,
+        "mB": -0.3159,
+        "dz": -0.263,
+        "t": -2.035,
+        "p": 0.0496
+      },
+      "GNWT_HGA_ON_vs_OFF": {
+        "n": 60,
+        "mA": 4.9433,
+        "mB": 4.971,
+        "dz": -0.269,
+        "t": -2.086,
+        "p": 0.041
+      },
+      "IIT_HGA_ON_vs_OFF": {
+        "n": 60,
+        "mA": 5.1234,
+        "mB": 5.1234,
+        "dz": 0.001,
+        "t": 0.004,
+        "p": 0.9964
+      },
+      "WithinPatient_GNWT_vs_IIT_nonlin_r": {
+        "n": 60,
+        "r": 0.3662,
+        "p": 0.0048
+      },
+      "WithinPatient_GNWT_nonlin_vs_HGA_r": {
+        "n": 60,
+        "r": 0.0687,
+        "p": 0.59424
+      },
+      "WithinPatient_IIT_nonlin_vs_HGA_r": {
+        "n": 60,
+        "r": 0.0496,
+        "p": 0.71423
+      }
+    },
+    {
+      "sub": "sub-CF102",
+      "nTrials": 60,
+      "hemi": {
+        "GNWT_L": 33,
+        "GNWT_R": 0,
+        "IIT_L": 37,
+        "IIT_R": 0
+      },
+      "GNWT_nonlin_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.0306,
+        "mB": 0.0109,
+        "dz": -0.373,
+        "t": -2.886,
+        "p": 0.0055
+      },
+      "IIT_nonlin_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.0398,
+        "mB": 0.0053,
+        "dz": -0.36,
+        "t": -2.787,
+        "p": 0.0071
+      },
+      "GNWT_WK_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.1845,
+        "mB": -0.109,
+        "dz": -0.453,
+        "t": -3.508,
+        "p": 0.0013
+      },
+      "IIT_WK_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.3565,
+        "mB": -0.3198,
+        "dz": -0.236,
+        "t": -1.825,
+        "p": 0.07259
+      },
+      "GNWT_HGA_ON_vs_OFF": {
+        "n": 60,
+        "mA": 5.3909,
+        "mB": 5.377,
+        "dz": 0.219,
+        "t": 1.695,
+        "p": 0.09299
+      },
+      "IIT_HGA_ON_vs_OFF": {
+        "n": 60,
+        "mA": 5.4531,
+        "mB": 5.3672,
+        "dz": 1.63,
+        "t": 12.625,
+        "p": 0.0001
+      },
+      "WithinPatient_GNWT_vs_IIT_nonlin_r": {
+        "n": 60,
+        "r": 0.3851,
+        "p": 0.0021
+      },
+      "WithinPatient_GNWT_nonlin_vs_HGA_r": {
+        "n": 60,
+        "r": -0.1373,
+        "p": 0.29977
+      },
+      "WithinPatient_IIT_nonlin_vs_HGA_r": {
+        "n": 60,
+        "r": 0.1287,
+        "p": 0.33317
+      }
+    },
+    {
+      "sub": "sub-CF104",
+      "nTrials": 60,
+      "hemi": {
+        "GNWT_L": 20,
+        "GNWT_R": 0,
+        "IIT_L": 28,
+        "IIT_R": 0
+      },
+      "GNWT_nonlin_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.0812,
+        "mB": -0.0214,
+        "dz": -0.466,
+        "t": -3.61,
+        "p": 0.0007
+      },
+      "IIT_nonlin_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.1699,
+        "mB": -0.1516,
+        "dz": -0.129,
+        "t": -1.002,
+        "p": 0.31817
+      },
+      "GNWT_WK_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.5445,
+        "mB": -0.523,
+        "dz": -0.141,
+        "t": -1.094,
+        "p": 0.27757
+      },
+      "IIT_WK_ON_vs_OFF": {
+        "n": 60,
+        "mA": -0.7992,
+        "mB": -0.7929,
+        "dz": -0.044,
+        "t": -0.342,
+        "p": 0.73793
+      },
+      "GNWT_HGA_ON_vs_OFF": {
+        "n": 60,
+        "mA": 5.6074,
+        "mB": 5.5963,
+        "dz": 0.164,
+        "t": 1.272,
+        "p": 0.21028
+      },
+      "IIT_HGA_ON_vs_OFF": {
+        "n": 60,
+        "mA": 5.3766,
+        "mB": 5.2897,
+        "dz": 1.532,
+        "t": 11.869,
+        "p": 0.0001
+      },
+      "WithinPatient_GNWT_vs_IIT_nonlin_r": {
+        "n": 60,
+        "r": 0.155,
+        "p": 0.24258
+      },
+      "WithinPatient_GNWT_nonlin_vs_HGA_r": {
+        "n": 60,
+        "r": 0.2403,
+        "p": 0.06519
+      },
+      "WithinPatient_IIT_nonlin_vs_HGA_r": {
+        "n": 60,
+        "r": 0.2926,
+        "p": 0.0224
+      }
+    }
+  ]
+}
