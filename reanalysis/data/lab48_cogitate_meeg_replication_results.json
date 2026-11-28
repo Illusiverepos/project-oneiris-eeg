@@ -1,0 +1,187 @@
+{
+  "lab": "Lab #48 \u2014 COGITATE M-EEG (MEG + Scalp EEG + Empty-Room Control)",
+  "summary": {
+    "MEG_WK_Law": {
+      "nSensors": 408,
+      "r": 0.9144,
+      "R2_pct": 83.6
+    },
+    "EEG_WK_Law": {
+      "nSensors": 256,
+      "r": 0.6656,
+      "R2_pct": 44.3
+    },
+    "EmptyRoom_vs_LivingBrain_MEG": {
+      "EmptyRoom_mean": 0.0963,
+      "LivingBrain_mean": 0.0197,
+      "paired_sensor_test": {
+        "n": 408,
+        "mA": 0.0197,
+        "mB": 0.0963,
+        "dz": -0.475,
+        "t": -9.595,
+        "p": 0.0001
+      }
+    },
+    "MEG_RAW_Frontal_ON_vs_OFF": {
+      "n": 240,
+      "mA": 0.0933,
+      "mB": 0.1132,
+      "dz": -0.058,
+      "t": -0.895,
+      "p": 0.36286
+    },
+    "MEG_ERP_SUB_Frontal_ON_vs_OFF": {
+      "n": 240,
+      "mA": 0.1015,
+      "mB": 0.1144,
+      "dz": -0.037,
+      "t": -0.577,
+      "p": 0.56454
+    },
+    "MEG_ERP_SUB_Posterior_ON_vs_OFF": {
+      "n": 240,
+      "mA": 0.1158,
+      "mB": 0.1201,
+      "dz": -0.015,
+      "t": -0.226,
+      "p": 0.81472
+    },
+    "MEG_ERP_SUB_Frontal_vs_Posterior_r": {
+      "n": 240,
+      "r": 0.5382,
+      "p": 0.0001
+    },
+    "MEG_Frontal_HGA_ON_vs_OFF": {
+      "n": 240,
+      "mA": -3.1926,
+      "mB": -3.1946,
+      "dz": 0.093,
+      "t": 1.439,
+      "p": 0.15168
+    },
+    "MEG_Posterior_HGA_ON_vs_OFF": {
+      "n": 240,
+      "mA": -3.8409,
+      "mB": -3.8432,
+      "dz": 0.066,
+      "t": 1.018,
+      "p": 0.31377
+    },
+    "EEG_RAW_Frontal_ON_vs_OFF": {
+      "n": 240,
+      "mA": 0.1777,
+      "mB": 0.116,
+      "dz": 0.083,
+      "t": 1.29,
+      "p": 0.19668
+    },
+    "EEG_ERP_SUB_Frontal_ON_vs_OFF": {
+      "n": 240,
+      "mA": 0.167,
+      "mB": 0.1175,
+      "dz": 0.069,
+      "t": 1.064,
+      "p": 0.28287
+    },
+    "EEG_ERP_SUB_Posterior_ON_vs_OFF": {
+      "n": 240,
+      "mA": 0.0682,
+      "mB": 0.0563,
+      "dz": 0.022,
+      "t": 0.342,
+      "p": 0.73293
+    },
+    "EEG_ERP_SUB_Frontal_vs_Posterior_r": {
+      "n": 240,
+      "r": 0.5968,
+      "p": 0.0001
+    }
+  },
+  "per_subject": [
+    {
+      "sub": "CA124",
+      "rnoise_MEG_nonlin": 0.0019,
+      "rest_MEG_nonlin": -0.0265,
+      "rest_EEG_nonlin": 0.095,
+      "nTrials_DurR1": 60,
+      "nMEG_F": 40,
+      "nMEG_P": 40,
+      "nEEG_F": 18,
+      "nEEG_P": 26,
+      "MEG_ERP_SUB_F_P_r": {
+        "n": 60,
+        "r": 0.3923,
+        "p": 0.0015
+      },
+      "EEG_ERP_SUB_F_P_r": {
+        "n": 60,
+        "r": 0.52,
+        "p": 0.0001
+      }
+    },
+    {
+      "sub": "CA140",
+      "rnoise_MEG_nonlin": 0.0486,
+      "rest_MEG_nonlin": 0.0013,
+      "rest_EEG_nonlin": -0.0612,
+      "nTrials_DurR1": 60,
+      "nMEG_F": 40,
+      "nMEG_P": 40,
+      "nEEG_F": 23,
+      "nEEG_P": 21,
+      "MEG_ERP_SUB_F_P_r": {
+        "n": 60,
+        "r": 0.5631,
+        "p": 0.0001
+      },
+      "EEG_ERP_SUB_F_P_r": {
+        "n": 60,
+        "r": 0.7749,
+        "p": 0.0001
+      }
+    },
+    {
+      "sub": "CB013",
+      "rnoise_MEG_nonlin": 0.0049,
+      "rest_MEG_nonlin": -0.0576,
+      "rest_EEG_nonlin": -0.0312,
+      "nTrials_DurR1": 60,
+      "nMEG_F": 40,
+      "nMEG_P": 40,
+      "nEEG_F": 24,
+      "nEEG_P": 20,
+      "MEG_ERP_SUB_F_P_r": {
+        "n": 60,
+        "r": 0.5239,
+        "p": 0.0002
+      },
+      "EEG_ERP_SUB_F_P_r": {
+        "n": 60,
+        "r": 0.5402,
+        "p": 0.0001
+      }
+    },
+    {
+      "sub": "CB072",
+      "rnoise_MEG_nonlin": 0.3297,
+      "rest_MEG_nonlin": 0.1616,
+      "rest_EEG_nonlin": -0.1363,
+      "nTrials_DurR1": 60,
+      "nMEG_F": 40,
+      "nMEG_P": 40,
+      "nEEG_F": 23,
+      "nEEG_P": 20,
+      "MEG_ERP_SUB_F_P_r": {
+        "n": 60,
+        "r": 0.6101,
+        "p": 0.0001
+      },
+      "EEG_ERP_SUB_F_P_r": {
+        "n": 60,
+        "r": 0.4881,
+        "p": 0.0001
+      }
+    }
+  ]
+}
