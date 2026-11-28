@@ -409,7 +409,6 @@ function serve(port = 8787) {
           const payload = {
             model: 'gemini-omni-1.2-flash',
             input: inputParts,
-            response_format: { type: 'video', aspect_ratio: '16:9', resolution, duration },
           };
 
           const apiRes = await fetch('https://generativelanguage.googleapis.com/v1beta/interactions', {
@@ -421,16 +420,24 @@ function serve(port = 8787) {
           if (!apiRes.ok) {
             const em = data?.error?.message || JSON.stringify(data);
             const hint = apiRes.status === 404
-              ? ' (Note: gemini-omni-1.2-flash requires Paid-Tier billing enabled on your Google AI Studio project, or check available video models for your key.)'
+              ? ' (Note: gemini-omni-1.2-flash requires Paid-Tier billing enabled on your Google AI Studio project.)'
               : '';
             res.writeHead(apiRes.status, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: `${apiRes.status}: ${em}${hint}` }));
             return;
           }
 
-          // Extract base64 video or download URI from interaction response
+          // Extract base64 video or download URI from REST `steps[].content[]` (or SDK `output_video`)
           let vidBuf = null;
-          const outVid = data.output_video || (data.outputs || []).find((o) => o.type === 'video' || o.mime_type?.startsWith('video/'));
+          let outVid = data.output_video || (data.outputs || []).find((o) => o.type === 'video' || o.mime_type?.startsWith('video/'));
+          if (!outVid && Array.isArray(data.steps)) {
+            for (const st of data.steps) {
+              if (st.type === 'model_output' && Array.isArray(st.content)) {
+                const found = st.content.find((c) => c.type === 'video' || c.mime_type?.startsWith('video/'));
+                if (found) { outVid = found; break; }
+              }
+            }
+          }
           if (outVid?.data) {
             vidBuf = Buffer.from(outVid.data, 'base64');
           } else if (outVid?.uri) {
