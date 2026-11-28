@@ -1,0 +1,414 @@
+{
+  "lab": "Lab #52 — Within-Human Longitudinal ALS Trajectory (OpenNeuro ds007720)",
+  "totalSessionsAnalyzed": 40,
+  "pooledTrends": {
+    "withinPatient_brainNonlin_vs_Time": {
+      "n": 40,
+      "r": 0.1581,
+      "p": 0.33567
+    },
+    "withinPatient_surrogateWK_vs_Time": {
+      "n": 40,
+      "r": 0.2202,
+      "p": 0.17688
+    },
+    "withinPatient_realWK_vs_Time": {
+      "n": 40,
+      "r": 0.2785,
+      "p": 0.08249
+    },
+    "withinPatient_slopeBB_vs_Time": {
+      "n": 40,
+      "r": 0.0838,
+      "p": 0.61684
+    }
+  },
+  "stability": {
+    "brainNonlin_ICC": {
+      "nTotal": 40,
+      "nPatients": 5,
+      "ICC": -0.081,
+      "F_ratio": 0.4
+    },
+    "surrogateWK_ICC": {
+      "nTotal": 40,
+      "nPatients": 5,
+      "ICC": 0.152,
+      "F_ratio": 2.43
+    },
+    "realWK_ICC": {
+      "nTotal": 40,
+      "nPatients": 5,
+      "ICC": 0.083,
+      "F_ratio": 1.72
+    },
+    "slopeBB_ICC": {
+      "nTotal": 40,
+      "nPatients": 5,
+      "ICC": 0.452,
+      "F_ratio": 7.61
+    }
+  },
+  "trajectories": [
+    {
+      "sub": "sub-P1",
+      "nSessions": 9,
+      "ch": "CZ/PZ",
+      "first_nonlin": -0.0673,
+      "last_nonlin": -0.046,
+      "r_nonlin": -0.286,
+      "first_surrWK": -0.5292,
+      "last_surrWK": 0.2606,
+      "r_surrWK": 0.483,
+      "first_slope": -0.2893,
+      "last_slope": -1.1556,
+      "r_slope": -0.548,
+      "sessions": [
+        {
+          "ses": "ses-1",
+          "brainNonlin": -0.0673,
+          "realWK": -0.5965,
+          "surrWK": -0.5292,
+          "slope": -0.2893
+        },
+        {
+          "ses": "ses-2",
+          "brainNonlin": 0.2444,
+          "realWK": 0.2999,
+          "surrWK": 0.0555,
+          "slope": -0.9187
+        },
+        {
+          "ses": "ses-3",
+          "brainNonlin": 0.1867,
+          "realWK": 0.214,
+          "surrWK": 0.0273,
+          "slope": -1.0465
+        },
+        {
+          "ses": "ses-4",
+          "brainNonlin": 0.1035,
+          "realWK": 0.2314,
+          "surrWK": 0.1278,
+          "slope": -0.52
+        },
+        {
+          "ses": "ses-5",
+          "brainNonlin": 0.0373,
+          "realWK": -0.1748,
+          "surrWK": -0.2121,
+          "slope": -1.7202
+        },
+        {
+          "ses": "ses-6",
+          "brainNonlin": 0.1417,
+          "realWK": 0.2964,
+          "surrWK": 0.1547,
+          "slope": -0.8338
+        },
+        {
+          "ses": "ses-7",
+          "brainNonlin": 0.1682,
+          "realWK": 0.054,
+          "surrWK": -0.1142,
+          "slope": -1.6142
+        },
+        {
+          "ses": "ses-8",
+          "brainNonlin": -0.0175,
+          "realWK": -0.0969,
+          "surrWK": -0.0795,
+          "slope": -1.1252
+        },
+        {
+          "ses": "ses-9",
+          "brainNonlin": -0.046,
+          "realWK": 0.2146,
+          "surrWK": 0.2606,
+          "slope": -1.1556
+        }
+      ]
+    },
+    {
+      "sub": "sub-P2",
+      "nSessions": 10,
+      "ch": "CZ/PZ",
+      "first_nonlin": 0.0126,
+      "last_nonlin": -0.0348,
+      "r_nonlin": 0.54,
+      "first_surrWK": 0.0855,
+      "last_surrWK": 0.2785,
+      "r_surrWK": 0.147,
+      "first_slope": -1.4556,
+      "last_slope": -0.1713,
+      "r_slope": 0.704,
+      "sessions": [
+        {
+          "ses": "ses-1",
+          "brainNonlin": 0.0126,
+          "realWK": 0.098,
+          "surrWK": 0.0855,
+          "slope": -1.4556
+        },
+        {
+          "ses": "ses-2",
+          "brainNonlin": -0.2028,
+          "realWK": 0.2247,
+          "surrWK": 0.4275,
+          "slope": -0.9992
+        },
+        {
+          "ses": "ses-3",
+          "brainNonlin": -0.2169,
+          "realWK": -0.0666,
+          "surrWK": 0.1503,
+          "slope": -1.1088
+        },
+        {
+          "ses": "ses-4",
+          "brainNonlin": 0.056,
+          "realWK": 0.0007,
+          "surrWK": -0.0553,
+          "slope": -1.4106
+        },
+        {
+          "ses": "ses-5",
+          "brainNonlin": 0.0443,
+          "realWK": -0.0149,
+          "surrWK": -0.0593,
+          "slope": -1.0668
+        },
+        {
+          "ses": "ses-6",
+          "brainNonlin": -0.0043,
+          "realWK": 0.0436,
+          "surrWK": 0.048,
+          "slope": -1.3741
+        },
+        {
+          "ses": "ses-7",
+          "brainNonlin": 0.2699,
+          "realWK": -0.1065,
+          "surrWK": -0.3763,
+          "slope": -1.4643
+        },
+        {
+          "ses": "ses-8",
+          "brainNonlin": 0.0257,
+          "realWK": 0.4122,
+          "surrWK": 0.3864,
+          "slope": 0.2135
+        },
+        {
+          "ses": "ses-9",
+          "brainNonlin": 0.3136,
+          "realWK": 0.7427,
+          "surrWK": 0.4291,
+          "slope": 0.395
+        },
+        {
+          "ses": "ses-10",
+          "brainNonlin": -0.0348,
+          "realWK": 0.2436,
+          "surrWK": 0.2785,
+          "slope": -0.1713
+        }
+      ]
+    },
+    {
+      "sub": "sub-P3",
+      "nSessions": 9,
+      "ch": "FP1/FP2",
+      "first_nonlin": 0.0718,
+      "last_nonlin": 0.0656,
+      "r_nonlin": 0.41,
+      "first_surrWK": 0.0106,
+      "last_surrWK": -0.2629,
+      "r_surrWK": -0.647,
+      "first_slope": -1.628,
+      "last_slope": -1.8581,
+      "r_slope": -0.027,
+      "sessions": [
+        {
+          "ses": "ses-1",
+          "brainNonlin": 0.0718,
+          "realWK": 0.0824,
+          "surrWK": 0.0106,
+          "slope": -1.628
+        },
+        {
+          "ses": "ses-2",
+          "brainNonlin": -0.0178,
+          "realWK": -0.0524,
+          "surrWK": -0.0346,
+          "slope": -1.7916
+        },
+        {
+          "ses": "ses-3",
+          "brainNonlin": -0.0838,
+          "realWK": -0.1694,
+          "surrWK": -0.0856,
+          "slope": -2.0518
+        },
+        {
+          "ses": "ses-4",
+          "brainNonlin": -0.0169,
+          "realWK": -0.119,
+          "surrWK": -0.102,
+          "slope": -2.0695
+        },
+        {
+          "ses": "ses-5",
+          "brainNonlin": 0.0693,
+          "realWK": 0.0288,
+          "surrWK": -0.0405,
+          "slope": -1.7901
+        },
+        {
+          "ses": "ses-6",
+          "brainNonlin": 0.076,
+          "realWK": -0.0181,
+          "surrWK": -0.0941,
+          "slope": -1.8082
+        },
+        {
+          "ses": "ses-7",
+          "brainNonlin": -0.0214,
+          "realWK": 0.0165,
+          "surrWK": 0.0379,
+          "slope": -1.501
+        },
+        {
+          "ses": "ses-8",
+          "brainNonlin": 0.1112,
+          "realWK": -0.1353,
+          "surrWK": -0.2465,
+          "slope": -1.9755
+        },
+        {
+          "ses": "ses-9",
+          "brainNonlin": 0.0656,
+          "realWK": -0.1974,
+          "surrWK": -0.2629,
+          "slope": -1.8581
+        }
+      ]
+    },
+    {
+      "sub": "sub-P4",
+      "nSessions": 6,
+      "ch": "FP1/FP2",
+      "first_nonlin": 0.0112,
+      "last_nonlin": 0.1046,
+      "r_nonlin": 0.001,
+      "first_surrWK": -0.4544,
+      "last_surrWK": -0.0724,
+      "r_surrWK": 0.447,
+      "first_slope": -0.6113,
+      "last_slope": -1.075,
+      "r_slope": -0.862,
+      "sessions": [
+        {
+          "ses": "ses-1",
+          "brainNonlin": 0.0112,
+          "realWK": -0.4433,
+          "surrWK": -0.4544,
+          "slope": -0.6113
+        },
+        {
+          "ses": "ses-2",
+          "brainNonlin": 0.0563,
+          "realWK": 0.1107,
+          "surrWK": 0.0544,
+          "slope": -0.6472
+        },
+        {
+          "ses": "ses-3",
+          "brainNonlin": 0.1441,
+          "realWK": 0.1506,
+          "surrWK": 0.0065,
+          "slope": -0.6622
+        },
+        {
+          "ses": "ses-4",
+          "brainNonlin": 0.1286,
+          "realWK": 0.0826,
+          "surrWK": -0.046,
+          "slope": -0.7214
+        },
+        {
+          "ses": "ses-5",
+          "brainNonlin": -0.0938,
+          "realWK": -0.1499,
+          "surrWK": -0.0561,
+          "slope": -1.1858
+        },
+        {
+          "ses": "ses-6",
+          "brainNonlin": 0.1046,
+          "realWK": 0.0321,
+          "surrWK": -0.0724,
+          "slope": -1.075
+        }
+      ]
+    },
+    {
+      "sub": "sub-P5",
+      "nSessions": 6,
+      "ch": "FP1/FP2",
+      "first_nonlin": 0.1172,
+      "last_nonlin": 0.0463,
+      "r_nonlin": -0.509,
+      "first_surrWK": -0.0113,
+      "last_surrWK": 0.1958,
+      "r_surrWK": 0.945,
+      "first_slope": -0.958,
+      "last_slope": -1.0564,
+      "r_slope": 0.166,
+      "sessions": [
+        {
+          "ses": "ses-1",
+          "brainNonlin": 0.1172,
+          "realWK": 0.1059,
+          "surrWK": -0.0113,
+          "slope": -0.958
+        },
+        {
+          "ses": "ses-2",
+          "brainNonlin": 0.069,
+          "realWK": 0.119,
+          "surrWK": 0.05,
+          "slope": -1.0243
+        },
+        {
+          "ses": "ses-3",
+          "brainNonlin": 0.006,
+          "realWK": 0.1264,
+          "surrWK": 0.1203,
+          "slope": -1.0266
+        },
+        {
+          "ses": "ses-4",
+          "brainNonlin": -0.0155,
+          "realWK": 0.0722,
+          "surrWK": 0.0878,
+          "slope": -1.0326
+        },
+        {
+          "ses": "ses-5",
+          "brainNonlin": 0.0455,
+          "realWK": 0.1939,
+          "surrWK": 0.1484,
+          "slope": -0.7318
+        },
+        {
+          "ses": "ses-6",
+          "brainNonlin": 0.0463,
+          "realWK": 0.2421,
+          "surrWK": 0.1958,
+          "slope": -1.0564
+        }
+      ]
+    }
+  ]
+}
