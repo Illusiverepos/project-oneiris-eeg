@@ -154,15 +154,18 @@ I stopped running, breathed out, and the stairs dissolved into calm morning ligh
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:12px;color:#cbd5e1;margin-bottom:8px;">
         <label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
-          <input id="chkC02" type="checkbox" checked/> Animate Donders c_02 First Frame
+          <input id="chkJournal" type="checkbox" checked/> Pull Live from Box 3 Journal (All Scenes + Brain Physics)
         </label>
         <label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
-          Or custom image: <input id="fileFrame" type="file" accept="image/*" style="font-size:11px;max-width:170px;"/>
+          <input id="chkC02" type="checkbox"/> Use Donders c_02 First Frame
+        </label>
+        <label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
+          Custom start frame: <input id="fileFrame" type="file" accept="image/*" style="font-size:11px;max-width:160px;"/>
         </label>
       </div>
       <div class="controls">
-        <button id="btnRenderVid" class="lucid">🎬 Render AI Dream Video (MP4)</button>
-        <span id="vidStatus" style="font-size:11.5px;color:#94a3b8;align-self:center;">Ready — click a scene above or animate Donders c_02.</span>
+        <button id="btnRenderVid" class="lucid">🎬 Render Dream Video from Box 3 (MP4)</button>
+        <span id="vidStatus" style="font-size:11.5px;color:#94a3b8;align-self:center;">Ready — pulls live from whatever is written in Box 3 + your brainwave state.</span>
       </div>
       <div id="vidWrap" style="display:none;margin-top:10px;">
         <video id="dreamVideo" controls autoplay loop style="width:100%;border-radius:10px;border:1px solid #334155;background:#000;"></video>
@@ -530,10 +533,29 @@ document.getElementById('btnRenderVid').addEventListener('click', async () => {
   const apiKey = document.getElementById('geminiKey').value.trim();
   const statusEl = document.getElementById('vidStatus');
   if (!apiKey) { alert('Paste your Gemini API key into the local password field first (kept strictly in browser memory).'); return; }
+  const useJournal = document.getElementById('chkJournal').checked;
   const useC02 = document.getElementById('chkC02').checked;
-  const prompt = lastPrompt || (useC02
-    ? 'Slow dreamlike 35mm film camera drift in a hazy West Texas desert at twilight; the vintage ice cream truck headlight flickers and slowly fades off into indigo dusk while the elderly woman gazes quietly downward and desert wind gently moves the dust. Soft ethereal REM dream atmosphere, subtle ambient desert wind and distant hum.'
-    : 'Atmospheric lucid dreamscape unfolding smoothly with bioluminescent light and gentle floating camera motion.');
+  const journalText = document.getElementById('journalInput').value.trim();
+  const cls = classifyState(state.nonlin, state.post, state.asym);
+  const physDirection = state.nonlin <= -0.32
+    ? 'intense high-contrast shadows, tense handheld motion, pounding pulse'
+    : state.nonlin <= -0.19
+      ? 'hyper-clear luminous lucid lighting, wide crystalline camera glide, serene awe'
+      : state.nonlin <= -0.08
+        ? 'vivid 35mm atmospheric dreamscape, untethered soft horizon, gentle floating drift'
+        : 'misty minimalist silhouettes, slow drifting fog, hushed quiet atmosphere';
+
+  let prompt = '';
+  if (useJournal && journalText) {
+    prompt = `Create a seamless cinematic dream replay video unfolding directly from this dream journal: "${journalText}". Atmosphere and camera physics grounded in measured EEG state (${cls.label}: Frontal brainNonlin=${state.nonlin.toFixed(3)}, Posterior Anchor=${state.post.toFixed(3)}, Heart=${Math.round(state.hr)} BPM) — ${physDirection}. Natural dreamlike transitions with immersive ambient sound, no text or watermarks.`;
+  } else if (lastPrompt) {
+    prompt = lastPrompt;
+  } else if (useC02) {
+    prompt = 'Slow dreamlike 35mm film camera drift in a hazy West Texas desert at twilight; the vintage ice cream truck headlight flickers and slowly fades off into indigo dusk while the elderly woman gazes quietly downward and desert wind gently moves the dust. Soft ethereal REM dream atmosphere, subtle ambient desert wind and distant hum.';
+  } else {
+    prompt = 'Atmospheric lucid dreamscape unfolding smoothly with bioluminescent light and gentle floating camera motion.';
+  }
+  document.getElementById('promptBox').textContent = prompt;
   const resolution = document.getElementById('vidRes').value;
   const duration = parseInt(document.getElementById('vidDur').value, 10);
 
