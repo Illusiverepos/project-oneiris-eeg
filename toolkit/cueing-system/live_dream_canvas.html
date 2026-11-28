@@ -62,6 +62,21 @@
     <canvas id="dreamCanvas" width="840" height="420"></canvas>
     <canvas id="timelineCanvas" width="840" height="74"></canvas>
 
+    <div style="margin-top:10px;background:#090f1e;border:1px solid #1e293b;border-radius:8px;padding:8px 12px;">
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:#94a3b8;margin-bottom:5px;">
+        <span><strong>Brain–Heart Sleep Mirror Hand-Off</strong> (Paper 8 Law: Deep NREM → Heart holds phase · REM/Wake → Brain holds phase)</span>
+        <span id="mirrorLabel" style="color:#38bdf8;font-weight:700;">BRAIN DOMINANT</span>
+      </div>
+      <div style="display:flex;height:10px;border-radius:999px;overflow:hidden;background:#1e293b;">
+        <div id="barBrain" style="width:72%;background:linear-gradient(90deg,#38bdf8,#a78bfa);transition:width 0.15s;"></div>
+        <div id="barHeart" style="width:28%;background:linear-gradient(90deg,#f43f5e,#fb923c);transition:width 0.15s;"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:#64748b;margin-top:3px;">
+        <span id="lblBrainShare">Brain Phase Share: 72%</span>
+        <span id="lblHeartShare">Heart Autonomic Phase Share: 28%</span>
+      </div>
+    </div>
+
     <div class="hud">
       <div class="metric"><div class="k">Frontal brainNonlin</div><div class="v" id="vNonlin">−0.149</div></div>
       <div class="metric"><div class="k">Posterior Anchor</div><div class="v" id="vPost">+0.006</div></div>
@@ -172,6 +187,18 @@ function updateUI() {
   pill.textContent = cls.label;
   pill.style.color = cls.color;
   pill.style.borderColor = cls.color;
+
+  // Update Live Brain-Heart Sleep Mirror Hand-Off Strip (Paper 8 Mirror Law)
+  const brainShare = Math.round(Math.min(92, Math.max(12, 15 + (-state.nonlin / 0.27) * 75)));
+  const heartShare = 100 - brainShare;
+  document.getElementById('barBrain').style.width = brainShare + '%';
+  document.getElementById('barHeart').style.width = heartShare + '%';
+  document.getElementById('lblBrainShare').textContent = `Brain Phase Share: ${brainShare}%`;
+  document.getElementById('lblHeartShare').textContent = `Heart Autonomic Phase Share: ${heartShare}%`;
+  const mLbl = document.getElementById('mirrorLabel');
+  if (brainShare < 35) { mLbl.textContent = 'HEART AUTONOMIC LOCK (DEEP NREM)'; mLbl.style.color = '#fb923c'; }
+  else if (state.nonlin <= -0.32) { mLbl.textContent = 'DUAL-ORGAN HYPER-LOCK (RBD RISK)'; mLbl.style.color = '#f43f5e'; }
+  else { mLbl.textContent = 'BRAIN NONLINEAR DOMINANT (REM / WAKE)'; mLbl.style.color = '#38bdf8'; }
 }
 
 function setPreset(name) {
