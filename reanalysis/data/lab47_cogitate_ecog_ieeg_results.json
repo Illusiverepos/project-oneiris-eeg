@@ -1,0 +1,197 @@
+{
+  "lab": "Lab #47 \u2014 Direct Audit of COGITATE Consortium (2025, Nature) Intracranial ECoG Experiment 1 (BIDS Sample)",
+  "nPatients": 4,
+  "nElectrodesTotal": 371,
+  "stats": {
+    "intracranial_WK_law": {
+      "nElectrodes": 371,
+      "r": 0.8379,
+      "R2_pct": 70.2
+    },
+    "GNWT_Prefrontal_vs_Zero": {
+      "n": 148,
+      "mean": 0.0248,
+      "t": 4.53,
+      "p": 0.0001,
+      "nNeg": 50
+    },
+    "IIT_Posterior_vs_Zero": {
+      "n": 223,
+      "mean": 0.0361,
+      "t": 8.688,
+      "p": 0.0001,
+      "nNeg": 61
+    },
+    "GNWT_vs_IIT_Wake": {
+      "n1": 148,
+      "n2": 223,
+      "mean1": 0.0248,
+      "mean2": 0.0361,
+      "d": -0.176,
+      "auc": 0.575,
+      "p": 0.09589
+    },
+    "Trial_Duration_1500_vs_500_GNWT": {
+      "n1": 120,
+      "n2": 120,
+      "mean1": -0.0274,
+      "mean2": -0.0306,
+      "d": 0.036,
+      "auc": 0.508,
+      "p": 0.78802
+    },
+    "Trial_Duration_1500_vs_500_IIT": {
+      "n1": 120,
+      "n2": 120,
+      "mean1": -0.0329,
+      "mean2": -0.0184,
+      "d": -0.148,
+      "auc": 0.546,
+      "p": 0.25787
+    },
+    "Trial_Relevance_Rel_vs_Irrel_GNWT": {
+      "n1": 120,
+      "n2": 120,
+      "mean1": -0.0297,
+      "mean2": -0.0171,
+      "d": -0.146,
+      "auc": 0.534,
+      "p": 0.26177
+    },
+    "Trial_Relevance_Rel_vs_Irrel_IIT": {
+      "n1": 120,
+      "n2": 120,
+      "mean1": -0.042,
+      "mean2": -0.0198,
+      "d": -0.231,
+      "auc": 0.585,
+      "p": 0.07289
+    }
+  },
+  "patients": [
+    {
+      "sub": "sub-CE107",
+      "nGNWT": 62,
+      "nIIT": 67,
+      "GNWT_nonlin": -0.0033,
+      "IIT_nonlin": 0.0209,
+      "GNWT_slope": -1.5266,
+      "IIT_slope": -1.793,
+      "trials": {
+        "dur1500": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0552,
+          "IIT_nonlin": -0.0006
+        },
+        "dur500": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0428,
+          "IIT_nonlin": 0.0257
+        },
+        "rel": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0054,
+          "IIT_nonlin": 0.0156
+        },
+        "irrel": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0251,
+          "IIT_nonlin": 0.0162
+        }
+      }
+    },
+    {
+      "sub": "sub-CE110",
+      "nGNWT": 33,
+      "nIIT": 91,
+      "GNWT_nonlin": 0.0174,
+      "IIT_nonlin": 0.0487,
+      "GNWT_slope": -1.7445,
+      "IIT_slope": -1.9209,
+      "trials": {
+        "dur1500": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0226,
+          "IIT_nonlin": -0.0673
+        },
+        "dur500": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0312,
+          "IIT_nonlin": -0.0061
+        },
+        "rel": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0699,
+          "IIT_nonlin": -0.0538
+        },
+        "irrel": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0194,
+          "IIT_nonlin": -0.0291
+        }
+      }
+    },
+    {
+      "sub": "sub-CF102",
+      "nGNWT": 33,
+      "nIIT": 37,
+      "GNWT_nonlin": 0.0835,
+      "IIT_nonlin": 0.0608,
+      "GNWT_slope": -1.6846,
+      "IIT_slope": -1.855,
+      "trials": {
+        "dur1500": {
+          "nTrials": 30,
+          "GNWT_nonlin": 0.0116,
+          "IIT_nonlin": 0.0226
+        },
+        "dur500": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0211,
+          "IIT_nonlin": -0.0273
+        },
+        "rel": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0099,
+          "IIT_nonlin": -0.0513
+        },
+        "irrel": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0018,
+          "IIT_nonlin": -0.0051
+        }
+      }
+    },
+    {
+      "sub": "sub-CF104",
+      "nGNWT": 20,
+      "nIIT": 28,
+      "GNWT_nonlin": 0.0275,
+      "IIT_nonlin": -0.0013,
+      "GNWT_slope": -1.8948,
+      "IIT_slope": -2.532,
+      "trials": {
+        "dur1500": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0433,
+          "IIT_nonlin": -0.0864
+        },
+        "dur500": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0273,
+          "IIT_nonlin": -0.0658
+        },
+        "rel": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0335,
+          "IIT_nonlin": -0.0786
+        },
+        "irrel": {
+          "nTrials": 30,
+          "GNWT_nonlin": -0.0221,
+          "IIT_nonlin": -0.0611
+        }
+      }
+    }
+  ]
+}

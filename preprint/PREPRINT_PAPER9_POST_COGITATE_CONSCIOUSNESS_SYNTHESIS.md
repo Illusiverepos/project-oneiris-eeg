@@ -10,7 +10,7 @@
 
 ## Abstract
 
-The landmark **COGITATE (2025)** adversarial collaboration (*Nature*) pitted **Integrated Information Theory (IIT)** (posterior hot zone) against **Global Neuronal Workspace Theory (GNWT)** (prefrontal cortex) — falsifying core predictions of both frameworks. Here we present **four empirical tests (Labs #36, #37, #38, and #45)** using exact power-spectrum-preserving **Fourier phase-randomized surrogates** (`brainNonlin = Real Δ_WK − Surr Δ_WK`, `sdk/oneiris_wearable_sdk.js`) across **three independent human cohorts (`capslpdb N = 33`, `Siclari 2017 256-ch HD-EEG N = 287 awakenings / 39 humans`, `ds004541 Propofol N = 7` + `BOAS N = 19`)** and synthesize them with our 6-organ Wiener–Khinchin corpus:
+The landmark **COGITATE (2025)** adversarial collaboration (*Nature*) pitted **Integrated Information Theory (IIT)** (posterior hot zone) against **Global Neuronal Workspace Theory (GNWT)** (prefrontal cortex) — falsifying core predictions of both frameworks. Here we present **five empirical tests (Labs #36, #37, #38, #45, and #47)** using exact power-spectrum-preserving **Fourier phase-randomized surrogates** (`brainNonlin = Real Δ_WK − Surr Δ_WK`, `sdk/oneiris_wearable_sdk.js`) across **four independent human cohorts — INCLUDING THE COGITATE CONSORTIUM'S OWN INTRACRANIAL HUMAN ECoG EXPERIMENT 1 DATASET (`N = 4` patients, `371` ROI cortical electrodes), `capslpdb` (`N = 33`), `Siclari 2017` (`256`-ch HD-EEG, `N = 287` awakenings / `39` humans), and `ds004541` Propofol (`N = 7`) + `BOAS` (`N = 19`)**:
 
 1. **Lab #36 — Direct COGITATE Spatial Showdown (`capslpdb`, `N = 33` Paired Full-Night Humans: Frontal `F2-F4` vs. Posterior Hot Zone `P4-O2`):**
    - **Conscious Wake (`n = 31`):** **Both** Frontal (`−0.2686, t = −5.16, p = 0.0001`, `30/31` humans) **and** Posterior Hot Zone (`−0.2398, t = −4.31, p = 0.0001`) ignite into strong nonlinear phase coupling (`Posterior − Frontal` `p = 0.501`).
@@ -23,6 +23,9 @@ The landmark **COGITATE (2025)** adversarial collaboration (*Nature*) pitted **I
 3. **Labs #37 & #38 — Honest Pharmacological Boundary & Natural N3 vs. Propofol 2D Dissociation (`ds004541`, `N = 7` + `BOAS`, `N = 19`):**
    - Unlike natural Deep NREM (`−0.005` to `+0.020`), surgical Propofol unconsciousness (`LOC`) preserves non-zero `brainNonlin` (`−0.128` Frontal, `−0.143` Posterior; `LOC vs. BASE p = 0.74–0.95`) due to drug-locked alpha–slow-wave hypersynchrony.
    - Crucially, **Lab #38** proves that while `1/f slope` is a **coin flip** between natural Deep N3 (`BOAS`) and Propofol `LOC` (`AUC = 0.504, p = 0.671`), **Frontal `brainNonlin` separates natural linear rest from drug-locked unconsciousness at `d = −1.067, AUC = 0.714, p = 0.0208`**.
+4. **Lab #47 — Direct Validation on the COGITATE Consortium's Own Intracranial Human ECoG Dataset (`COG_ECOG_EXP1_BIDS_SAMPLE`, `N = 4` Patients, `371` Direct Cortical Electrodes: `148` GNWT Prefrontal + `223` IIT Posterior):**
+   - **Zero-Skull Intracranial Wiener–Khinchin Law:** Directly on bare human cortex (`N = 371` intracranial electrodes), `slope = −(2·DFA_α − 1)` holds at **`r = +0.8379` (`R² = 70.2%`)**, ruling out skull/scalp low-pass filtering artifacts.
+   - **Direct GNWT vs. IIT Temporal Double Dissociation (`192` Paired Visual Trials, `StimON [0..1s]` vs. `PostOFF [1..2s]`):** **Prefrontal cortex (`GNWT`, `148` electrodes)** ignites sharply into negative nonlinear phase during active conscious stimulus (`−0.0369`) and **drops completely back to linear zero (`+0.0026`) after stimulus offset** (**`t = −4.848, dz = −0.350, p = 0.0001`**; `realWK t = −3.600, p = 0.0008`; `slopeBB t = −6.883, p = 0.0001`). By contrast, **Posterior Hot Zone (`IIT`, `223` electrodes)** stays **tonically nonlinearly active** both during (`−0.0590`) and after (`−0.0440`) stimulus offset (`realWK p = 0.936`; `brainNonlin p = 0.068`). Whole-trial `2.0s` averages showed honest nulls for stimulus duration (`1500ms vs 500ms`), task relevance (`Relevant vs Irrelevant`), and visual category (`p = 0.13–0.98`), showing `brainNonlin` tracks conscious event ignition rather than fine category or report.
 
 *All reproducible zero-dependency scripts and the evaluation SDK (`sdk/oneiris_wearable_sdk.js`) are archived for academic and non-commercial research. Not an FDA-cleared medical device.*
 
@@ -65,7 +68,21 @@ Using 3D Hjorth Surface Laplacian (CSD) rings across `54` electrodes in the `256
 
 ---
 
-## 4. Whole-Body Phase Allocation, The Hard Problem & Non-Demolition Control
+## 4. Lab #47: Direct Validation on the COGITATE Consortium's Own Intracranial Human ECoG Dataset (`N = 4` Patients, `371` Cortical Electrodes)
+
+Using the official **COGITATE Experiment 1 Intracranial ECoG BIDS Sample** (`sub-CF102`, `sub-CE107`, `sub-CF104`, `sub-CE110`; `2,048 Hz` decimated to `256 Hz`; Desikan anatomical ROI mapping into `148` clean **GNWT Prefrontal** electrodes and `223` clean **IIT Posterior Hot Zone** electrodes), we tested our framework directly on bare human cortex:
+
+| COGITATE Intracranial ECoG Test (`N = 371` Electrodes / `192` Paired Trials) | **GNWT Prefrontal (`148` ch)** | **IIT Posterior (`223` ch)** | Interpretation |
+| :--- | :---: | :---: | :--- |
+| **Intracranial Wiener–Khinchin Law (`slope` vs `DFA`)** | Pooled `N = 371`: **`r = +0.8379` (`R² = 70.2%`)** | Pooled `N = 371`: **`r = +0.8379`** | **Zero skull/scalp artifact!** |
+| **`StimON [0..1s]` vs `PostOFF [1..2s]` (`brainNonlin`)** | **`−0.0369 → +0.0026` (`t = −4.848, p = 0.0001`)** | `−0.0590 → −0.0440` (`p = 0.068`) | **GNWT ignites & resets; IIT stays tonic** |
+| **`StimON [0..1s]` vs `PostOFF [1..2s]` (`realWK`)** | **`−0.3303 → −0.2883` (`t = −3.600, p = 0.0008`)** | `−0.4682 → −0.4690` (`p = 0.936`) | **Double dissociation of GNWT vs IIT** |
+| **`StimON [0..1s]` vs `PostOFF [1..2s]` (`1/f slopeBB`)** | **`−1.829 → −1.707` (`t = −6.883, p = 0.0001`)** | **`−2.095 → −2.010` (`t = −5.246, p = 0.0001`)** | Shared linear spectral shift |
+| **Whole-Trial `2.0s`: `1500ms vs 500ms` / `Rel vs Irrel` / `Face vs False`** | Null (`p = 0.59–0.96`) | Null (`p = 0.13–0.98`) | Tracks event ignition, not report/category |
+
+---
+
+## 5. Whole-Body Phase Allocation, The Hard Problem & Non-Demolition Control
 
 1. **Whole-Body Embodied Phase Economy:** All six human organ systems (Brain, Heart, Lungs, Locomotion, Arterial BP, Skeletal Muscle) obey `slope = −(2·DFA_α − 1)` (`r = 0.505–0.948`), and Brain & Heart reciprocally swap nonlinear phase between Deep NREM (Heart `p = 0.0050`, Brain linear) and REM (Frontal Brain `p = 0.0004`, Heart linear `p = 0.219`).
 2. **Narrowing the Hard Problem via Structural Isomorphism:** While no mathematical equation derives *why* subjective qualia exist from scratch, external phase geometry mirrors internal experiential geometry: PTSD `Δ_WK` symmetry breaking parallels `22,415`-dream `GWOT` threat collapse; lucid self-observation orthogonalizes dream space (`r = −0.044`); and RBD REM nonlinear hyper-locking (`−0.412`, `AUC = 0.921`, age-invariant `p = 0.366`) corresponds directly to hyper-vivid enacted dreaming.

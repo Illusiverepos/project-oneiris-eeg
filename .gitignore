@@ -23,3 +23,6 @@ Thumbs.db
 
 # Private outreach emails and grant drafts (local only)
 private_outreach/
+
+# Local raw COGITATE Consortium BIDS archives (never commit raw participant data)
+reanalysis/data/cogitate/
