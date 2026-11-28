@@ -379,9 +379,8 @@ function serve(port = 8787) {
     if (req.method === 'POST' && urlObj.pathname === '/dream/render-video') {
       let body = '';
       req.on('data', (c) => { body += c; if (body.length > 25e6) req.destroy(); });
-      req.on('end', () => {
+      req.on('end', async () => {
         try {
-          const { spawn } = require('child_process');
           const os = require('os');
           const msg = JSON.parse(body);
           const apiKey = (msg.apiKey || process.env.GEMINI_API_KEY || '').trim();
@@ -389,41 +388,66 @@ function serve(port = 8787) {
           const prompt = String(msg.prompt || '').trim();
           if (!prompt) { res.writeHead(400, { 'Content-Type': 'application/json' }); res.end(JSON.stringify({ error: 'Dream scene prompt required.' })); return; }
           const resolution = ['360p', '720p', '1080p'].includes(msg.resolution) ? msg.resolution : '720p';
-          const duration = Math.max(3, Math.min(15, parseInt(msg.duration, 10) || 6));
+          const duration = Math.max(3, Math.min(15, parseInt(msg.duration, 10) || 8));
           const mediaDir = path.join(__dirname, 'local_dream_media');
           fs.mkdirSync(mediaDir, { recursive: true });
-          const outName = `dream_${Date.now()}.mp4`;
-          const outPath = path.join(mediaDir, outName);
-          const genScript = path.join(os.homedir(), '.gemini', 'config', 'plugins', 'gemini-api', 'skills', 'gemini-omni-flash-api', 'scripts', 'video', 'generate_video.py');
-          const args = [genScript, prompt, '--resolution', resolution, '--duration', String(duration), '--output', outPath];
 
-          let tmpFrame = null;
+          const inputParts = [];
           if (msg.firstFrameBase64 && typeof msg.firstFrameBase64 === 'string') {
-            const b64 = msg.firstFrameBase64.replace(/^data:image\/\w+;base64,/, '');
-            tmpFrame = path.join(mediaDir, `frame_${Date.now()}.jpg`);
-            fs.writeFileSync(tmpFrame, Buffer.from(b64, 'base64'));
-            args.push('--first-frame', tmpFrame);
+            const m = msg.firstFrameBase64.match(/^data:(image\/\w+);base64,(.*)$/);
+            const mime = m ? m[1] : 'image/jpeg';
+            const b64 = m ? m[2] : msg.firstFrameBase64;
+            inputParts.push({ type: 'image', data: b64, mime_type: mime });
           } else if (msg.useSampleC02) {
             const c02 = path.join(os.homedir(), '.gemini', 'antigravity', 'brain', '3cf3d6a5-c40b-47bf-9b92-2dcdb715cf1f', 'donders_c02_real_dream_reconstruction_v2_1795848067982.jpg');
-            if (fs.existsSync(c02)) args.push('--first-frame', c02);
+            if (fs.existsSync(c02)) {
+              inputParts.push({ type: 'image', data: fs.readFileSync(c02).toString('base64'), mime_type: 'image/jpeg' });
+            }
+          }
+          inputParts.push({ type: 'text', text: prompt });
+
+          const payload = {
+            model: 'gemini-omni-1.2-flash',
+            input: inputParts,
+            response_format: { type: 'video', aspect_ratio: '16:9', resolution, duration },
+          };
+
+          const apiRes = await fetch('https://generativelanguage.googleapis.com/v1beta/interactions', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
+            body: JSON.stringify(payload),
+          });
+          const data = await apiRes.json();
+          if (!apiRes.ok) {
+            const em = data?.error?.message || JSON.stringify(data);
+            const hint = apiRes.status === 404
+              ? ' (Note: gemini-omni-1.2-flash requires Paid-Tier billing enabled on your Google AI Studio project, or check available video models for your key.)'
+              : '';
+            res.writeHead(apiRes.status, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: `${apiRes.status}: ${em}${hint}` }));
+            return;
           }
 
-          const child = spawn('python', args, { env: { ...process.env, GEMINI_API_KEY: apiKey } });
-          let stderr = '', stdout = '';
-          child.stdout.on('data', (d) => { stdout += d.toString(); });
-          child.stderr.on('data', (d) => { stderr += d.toString(); });
-          child.on('close', (code) => {
-            if (tmpFrame && fs.existsSync(tmpFrame)) { try { fs.unlinkSync(tmpFrame); } catch {} }
-            if (code === 0 && fs.existsSync(outPath)) {
-              res.writeHead(200, { 'Content-Type': 'application/json' });
-              res.end(JSON.stringify({ ok: true, videoUrl: `/dream/media/${outName}`, outName }));
-            } else {
-              res.writeHead(500, { 'Content-Type': 'application/json' });
-              res.end(JSON.stringify({ error: (stderr || stdout || `Exited with code ${code}`).slice(-600) }));
-            }
-          });
+          // Extract base64 video or download URI from interaction response
+          let vidBuf = null;
+          const outVid = data.output_video || (data.outputs || []).find((o) => o.type === 'video' || o.mime_type?.startsWith('video/'));
+          if (outVid?.data) {
+            vidBuf = Buffer.from(outVid.data, 'base64');
+          } else if (outVid?.uri) {
+            const dl = await fetch(outVid.uri, { headers: { 'x-goog-api-key': apiKey } });
+            if (dl.ok) vidBuf = Buffer.from(await dl.arrayBuffer());
+          }
+          if (!vidBuf) {
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'Interaction completed but returned no video bytes: ' + JSON.stringify(data).slice(0, 400) }));
+            return;
+          }
+          const outName = `dream_${Date.now()}.mp4`;
+          fs.writeFileSync(path.join(mediaDir, outName), vidBuf);
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ ok: true, videoUrl: `/dream/media/${outName}`, outName }));
         } catch (err) {
-          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.writeHead(500, { 'Content-Type': 'application/json' });
           res.end(JSON.stringify({ error: err.message }));
         }
       });
