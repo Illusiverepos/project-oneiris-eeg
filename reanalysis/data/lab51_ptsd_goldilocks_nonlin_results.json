@@ -1,0 +1,530 @@
+{
+  "lab": "Lab #51 — PTSD Longitudinal Goldilocks Corridor",
+  "n": 15,
+  "summary": {
+    "NF": {
+      "frontNonlin": {
+        "n": 7,
+        "meanDiff": 0.0378,
+        "dz": 0.329,
+        "t": 0.87,
+        "p": 0.44436,
+        "nPos": 4
+      },
+      "nonlinR": {
+        "n": 7,
+        "meanDiff": -0.0304,
+        "dz": -0.214,
+        "t": -0.567,
+        "p": 0.54975,
+        "nPos": 2
+      },
+      "nonlinL": {
+        "n": 7,
+        "meanDiff": 0.106,
+        "dz": 0.637,
+        "t": 1.686,
+        "p": 0.20568,
+        "nPos": 4
+      },
+      "absAsymNonlin": {
+        "n": 7,
+        "meanDiff": -0.048,
+        "dz": -0.62,
+        "t": -1.641,
+        "p": 0.14459,
+        "nPos": 1
+      },
+      "frontRealWK": {
+        "n": 7,
+        "meanDiff": -0.2561,
+        "dz": -0.573,
+        "t": -1.517,
+        "p": 0.20868,
+        "nPos": 3
+      },
+      "postNonlin": {
+        "n": 7,
+        "meanDiff": 0.0618,
+        "dz": 0.616,
+        "t": 1.63,
+        "p": 0.18758,
+        "nPos": 4
+      }
+    },
+    "MI": {
+      "frontNonlin": {
+        "n": 8,
+        "meanDiff": 0.1137,
+        "dz": 0.314,
+        "t": 0.889,
+        "p": 0.54095,
+        "nPos": 6
+      },
+      "nonlinR": {
+        "n": 8,
+        "meanDiff": 0.1028,
+        "dz": 0.291,
+        "t": 0.822,
+        "p": 0.62784,
+        "nPos": 4
+      },
+      "nonlinL": {
+        "n": 8,
+        "meanDiff": 0.1247,
+        "dz": 0.329,
+        "t": 0.931,
+        "p": 0.52975,
+        "nPos": 6
+      },
+      "absAsymNonlin": {
+        "n": 8,
+        "meanDiff": -0.0387,
+        "dz": -0.555,
+        "t": -1.57,
+        "p": 0.15998,
+        "nPos": 3
+      },
+      "frontRealWK": {
+        "n": 8,
+        "meanDiff": -0.1804,
+        "dz": -0.475,
+        "t": -1.345,
+        "p": 0.21838,
+        "nPos": 2
+      },
+      "postNonlin": {
+        "n": 8,
+        "meanDiff": 0.0038,
+        "dz": 0.029,
+        "t": 0.081,
+        "p": 0.94701,
+        "nPos": 5
+      }
+    },
+    "corrWithDeltaPCL5": {
+      "frontNonlin": {
+        "n": 15,
+        "rho": 0.139,
+        "p": 0.62408
+      },
+      "nonlinR": {
+        "n": 15,
+        "rho": -0.018,
+        "p": 0.94901
+      },
+      "nonlinL": {
+        "n": 15,
+        "rho": 0.129,
+        "p": 0.64087
+      },
+      "absAsymNonlin": {
+        "n": 15,
+        "rho": 0.243,
+        "p": 0.38432
+      },
+      "frontRealWK": {
+        "n": 15,
+        "rho": -0.011,
+        "p": 0.9754
+      },
+      "postNonlin": {
+        "n": 15,
+        "rho": -0.129,
+        "p": 0.64747
+      }
+    }
+  },
+  "rows": [
+    {
+      "key": "MI_10",
+      "group": "MI",
+      "pid": "P10",
+      "pre": {
+        "frontNonlin": 0.0325,
+        "nonlinL": 0.0567,
+        "nonlinR": 0.0083,
+        "absAsymNonlin": 0.0485,
+        "frontRealWK": -0.7901,
+        "frontSlope": -1.3625,
+        "postNonlin": 0.0787,
+        "regime": "INTENTIONAL_LINEAR_REST"
+      },
+      "post": {
+        "frontNonlin": -0.0037,
+        "nonlinL": -0.0508,
+        "nonlinR": 0.0435,
+        "absAsymNonlin": 0.0943,
+        "frontRealWK": -0.1703,
+        "frontSlope": -0.3653,
+        "postNonlin": -0.1006,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "deltaPCL5": 1
+    },
+    {
+      "key": "MI_11",
+      "group": "MI",
+      "pid": "P11",
+      "pre": {
+        "frontNonlin": 0.0423,
+        "nonlinL": 0.0468,
+        "nonlinR": 0.0379,
+        "absAsymNonlin": 0.0089,
+        "frontRealWK": -0.2454,
+        "frontSlope": -0.45,
+        "postNonlin": 0.0131,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "post": {
+        "frontNonlin": 0.1021,
+        "nonlinL": 0.0937,
+        "nonlinR": 0.1106,
+        "absAsymNonlin": 0.0169,
+        "frontRealWK": -0.7827,
+        "frontSlope": -1.1206,
+        "postNonlin": 0.0766,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "deltaPCL5": -2
+    },
+    {
+      "key": "MI_13",
+      "group": "MI",
+      "pid": "P13",
+      "pre": {
+        "frontNonlin": -1.0012,
+        "nonlinL": -1.0519,
+        "nonlinR": -0.9505,
+        "absAsymNonlin": 0.1014,
+        "frontRealWK": -0.5637,
+        "frontSlope": -0.8608,
+        "postNonlin": -0.2623,
+        "regime": "HYPER_LOCKING_CLIFF"
+      },
+      "post": {
+        "frontNonlin": -0.0242,
+        "nonlinL": -0.0308,
+        "nonlinR": -0.0176,
+        "absAsymNonlin": 0.0132,
+        "frontRealWK": -0.8329,
+        "frontSlope": -0.9576,
+        "postNonlin": -0.0546,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "deltaPCL5": -4
+    },
+    {
+      "key": "MI_14",
+      "group": "MI",
+      "pid": "P14",
+      "pre": {
+        "frontNonlin": 0.0266,
+        "nonlinL": -0.0652,
+        "nonlinR": 0.1183,
+        "absAsymNonlin": 0.1835,
+        "frontRealWK": -0.8703,
+        "frontSlope": -1.0561,
+        "postNonlin": 0.1402,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "post": {
+        "frontNonlin": 0.0557,
+        "nonlinL": 0.0654,
+        "nonlinR": 0.046,
+        "absAsymNonlin": 0.0194,
+        "frontRealWK": -1.1542,
+        "frontSlope": -1.6213,
+        "postNonlin": 0.0438,
+        "regime": "INTENTIONAL_LINEAR_REST"
+      },
+      "deltaPCL5": -3
+    },
+    {
+      "key": "MI_15",
+      "group": "MI",
+      "pid": "P15",
+      "pre": {
+        "frontNonlin": -0.007,
+        "nonlinL": -0.0155,
+        "nonlinR": 0.0016,
+        "absAsymNonlin": 0.0171,
+        "frontRealWK": -0.3961,
+        "frontSlope": -0.796,
+        "postNonlin": -0.1009,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "post": {
+        "frontNonlin": 0.0067,
+        "nonlinL": 0.0304,
+        "nonlinR": -0.0169,
+        "absAsymNonlin": 0.0473,
+        "frontRealWK": -0.497,
+        "frontSlope": -0.8411,
+        "postNonlin": 0.0139,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "deltaPCL5": -7
+    },
+    {
+      "key": "MI_26",
+      "group": "MI",
+      "pid": "P26",
+      "pre": {
+        "frontNonlin": 0.0833,
+        "nonlinL": 0.0402,
+        "nonlinR": 0.1263,
+        "absAsymNonlin": 0.086,
+        "frontRealWK": -0.089,
+        "frontSlope": -0.4275,
+        "postNonlin": 0.014,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "post": {
+        "frontNonlin": 0.1001,
+        "nonlinL": 0.1078,
+        "nonlinR": 0.0924,
+        "absAsymNonlin": 0.0154,
+        "frontRealWK": -0.5748,
+        "frontSlope": -0.6311,
+        "postNonlin": 0.0303,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "deltaPCL5": -9
+    },
+    {
+      "key": "MI_28",
+      "group": "MI",
+      "pid": "P28",
+      "pre": {
+        "frontNonlin": -0.0595,
+        "nonlinL": -0.0135,
+        "nonlinR": -0.1055,
+        "absAsymNonlin": 0.0919,
+        "frontRealWK": -0.571,
+        "frontSlope": -0.7733,
+        "postNonlin": -0.0712,
+        "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+      },
+      "post": {
+        "frontNonlin": 0.0178,
+        "nonlinL": -0.0013,
+        "nonlinR": 0.0368,
+        "absAsymNonlin": 0.0381,
+        "frontRealWK": -0.517,
+        "frontSlope": -0.674,
+        "postNonlin": -0.02,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "deltaPCL5": -10
+    },
+    {
+      "key": "MI_8",
+      "group": "MI",
+      "pid": "P08",
+      "pre": {
+        "frontNonlin": 0.1721,
+        "nonlinL": 0.0586,
+        "nonlinR": 0.2856,
+        "absAsymNonlin": 0.227,
+        "frontRealWK": -0.4508,
+        "frontSlope": -0.459,
+        "postNonlin": 0.13,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "post": {
+        "frontNonlin": -0.0558,
+        "nonlinL": -0.161,
+        "nonlinR": 0.0493,
+        "absAsymNonlin": 0.2103,
+        "frontRealWK": -0.8908,
+        "frontSlope": -0.9033,
+        "postNonlin": -0.017,
+        "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+      },
+      "deltaPCL5": -10
+    },
+    {
+      "key": "NF_17",
+      "group": "NF",
+      "pid": "P17",
+      "pre": {
+        "frontNonlin": -0.2255,
+        "nonlinL": -0.2963,
+        "nonlinR": -0.1548,
+        "absAsymNonlin": 0.1414,
+        "frontRealWK": -0.475,
+        "frontSlope": -1.7893,
+        "postNonlin": -0.0857,
+        "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+      },
+      "post": {
+        "frontNonlin": 0.0059,
+        "nonlinL": 0.0111,
+        "nonlinR": 0.0006,
+        "absAsymNonlin": 0.0104,
+        "frontRealWK": -0.8326,
+        "frontSlope": -1.7832,
+        "postNonlin": 0.1381,
+        "regime": "INTENTIONAL_LINEAR_REST"
+      },
+      "deltaPCL5": -20
+    },
+    {
+      "key": "NF_18",
+      "group": "NF",
+      "pid": "P18",
+      "pre": {
+        "frontNonlin": -0.111,
+        "nonlinL": -0.135,
+        "nonlinR": -0.0869,
+        "absAsymNonlin": 0.0481,
+        "frontRealWK": -0.5844,
+        "frontSlope": -2.5432,
+        "postNonlin": -0.0616,
+        "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+      },
+      "post": {
+        "frontNonlin": -0.0865,
+        "nonlinL": -0.0739,
+        "nonlinR": -0.0992,
+        "absAsymNonlin": 0.0253,
+        "frontRealWK": -0.3456,
+        "frontSlope": -0.3259,
+        "postNonlin": 0.0634,
+        "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+      },
+      "deltaPCL5": -39
+    },
+    {
+      "key": "NF_19",
+      "group": "NF",
+      "pid": "P19",
+      "pre": {
+        "frontNonlin": -0.107,
+        "nonlinL": -0.2269,
+        "nonlinR": 0.0129,
+        "absAsymNonlin": 0.2398,
+        "frontRealWK": 0.0105,
+        "frontSlope": -1.2287,
+        "postNonlin": -0.141,
+        "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+      },
+      "post": {
+        "frontNonlin": -0.0779,
+        "nonlinL": 0.0902,
+        "nonlinR": -0.246,
+        "absAsymNonlin": 0.3363,
+        "frontRealWK": -0.7088,
+        "frontSlope": -1.2061,
+        "postNonlin": -0.013,
+        "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+      },
+      "deltaPCL5": -5
+    },
+    {
+      "key": "NF_22",
+      "group": "NF",
+      "pid": "P22",
+      "pre": {
+        "frontNonlin": -0.1212,
+        "nonlinL": -0.1644,
+        "nonlinR": -0.0779,
+        "absAsymNonlin": 0.0865,
+        "frontRealWK": -0.2476,
+        "frontSlope": -0.8728,
+        "postNonlin": -0.0091,
+        "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+      },
+      "post": {
+        "frontNonlin": 0.0298,
+        "nonlinL": 0.031,
+        "nonlinR": 0.0287,
+        "absAsymNonlin": 0.0023,
+        "frontRealWK": -0.9766,
+        "frontSlope": -0.976,
+        "postNonlin": -0.0594,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "deltaPCL5": -29
+    },
+    {
+      "key": "NF_23",
+      "group": "NF",
+      "pid": "P23",
+      "pre": {
+        "frontNonlin": 0.1284,
+        "nonlinL": 0.0455,
+        "nonlinR": 0.2113,
+        "absAsymNonlin": 0.1658,
+        "frontRealWK": -0.986,
+        "frontSlope": -2.7998,
+        "postNonlin": 0.0834,
+        "regime": "INTENTIONAL_LINEAR_REST"
+      },
+      "post": {
+        "frontNonlin": 0.0365,
+        "nonlinL": 0.0117,
+        "nonlinR": 0.0612,
+        "absAsymNonlin": 0.0495,
+        "frontRealWK": -0.8667,
+        "frontSlope": -1.2739,
+        "postNonlin": 0.0591,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "deltaPCL5": -19
+    },
+    {
+      "key": "NF_24",
+      "group": "NF",
+      "pid": "P24",
+      "pre": {
+        "frontNonlin": 0.065,
+        "nonlinL": 0.1043,
+        "nonlinR": 0.0257,
+        "absAsymNonlin": 0.0786,
+        "frontRealWK": 0.1281,
+        "frontSlope": -0.943,
+        "postNonlin": 0.0484,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "post": {
+        "frontNonlin": 0.0212,
+        "nonlinL": 0.0281,
+        "nonlinR": 0.0143,
+        "absAsymNonlin": 0.0138,
+        "frontRealWK": -0.4617,
+        "frontSlope": -0.9628,
+        "postNonlin": 0.0897,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "deltaPCL5": -31
+    },
+    {
+      "key": "NF_25",
+      "group": "NF",
+      "pid": "P25",
+      "pre": {
+        "frontNonlin": 0.0395,
+        "nonlinL": 0.029,
+        "nonlinR": 0.05,
+        "absAsymNonlin": 0.021,
+        "frontRealWK": -0.0727,
+        "frontSlope": -1.0885,
+        "postNonlin": -0.0327,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "post": {
+        "frontNonlin": 0.0039,
+        "nonlinL": 0,
+        "nonlinR": 0.0078,
+        "absAsymNonlin": 0.0078,
+        "frontRealWK": 0.1723,
+        "frontSlope": -0.4735,
+        "postNonlin": -0.0438,
+        "regime": "DISSOLUTION_CLIFF"
+      },
+      "deltaPCL5": -31
+    }
+  ]
+}

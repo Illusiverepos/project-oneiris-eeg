@@ -1,0 +1,126 @@
+{
+  "lab": "Lab #50 — Donders Lucid REM 5th Rung Test",
+  "summary": {
+    "nBouts": 5,
+    "Base_FrontNonlin": -0.115,
+    "Lucid_FrontNonlin": -0.2069,
+    "Base_RightFrontNonlin": -0.0328,
+    "Lucid_RightFrontNonlin": -0.1551,
+    "Base_PostNonlin": -0.0304,
+    "Lucid_PostNonlin": 0.0144,
+    "nMoreNegFrontInLucid": 5,
+    "nMoreNegRightFrontInLucid": 4
+  },
+  "rows": [
+    {
+      "id": "c_00",
+      "study": "Motor_LRLR",
+      "base": {
+        "frontNonlin": -0.0294,
+        "nonlinL": -0.0936,
+        "nonlinR": 0.0348,
+        "absAsymNonlin": 0.1284,
+        "frontSlope": -1.6533,
+        "postNonlin": 0.0536,
+        "postSlope": -2.036
+      },
+      "lucid": {
+        "frontNonlin": -0.0604,
+        "nonlinL": -0.0737,
+        "nonlinR": -0.0472,
+        "absAsymNonlin": 0.0265,
+        "frontSlope": -1.2692,
+        "postNonlin": 0.1176,
+        "postSlope": -1.309
+      }
+    },
+    {
+      "id": "c_01",
+      "study": "Motor_LRLR",
+      "base": {
+        "frontNonlin": -0.2752,
+        "nonlinL": -0.6034,
+        "nonlinR": 0.053,
+        "absAsymNonlin": 0.6563,
+        "frontSlope": -1.0256,
+        "postNonlin": 0.0486,
+        "postSlope": -1.5071
+      },
+      "lucid": {
+        "frontNonlin": -0.315,
+        "nonlinL": -0.4308,
+        "nonlinR": -0.1992,
+        "absAsymNonlin": 0.2316,
+        "frontSlope": -0.9449,
+        "postNonlin": -0.1741,
+        "postSlope": -1.73
+      }
+    },
+    {
+      "id": "c_02",
+      "study": "Motor_LRLR",
+      "base": {
+        "frontNonlin": -0.0821,
+        "nonlinL": 0.0328,
+        "nonlinR": -0.197,
+        "absAsymNonlin": 0.2299,
+        "frontSlope": -1.4895,
+        "postNonlin": -0.2219,
+        "postSlope": -1.58
+      },
+      "lucid": {
+        "frontNonlin": -0.0999,
+        "nonlinL": -0.3401,
+        "nonlinR": 0.1404,
+        "absAsymNonlin": 0.4805,
+        "frontSlope": -2.2059,
+        "postNonlin": 0.4172,
+        "postSlope": -2.3699
+      }
+    },
+    {
+      "id": "c_04",
+      "study": "Lucid_Dialogue",
+      "base": {
+        "frontNonlin": -0.3044,
+        "nonlinL": -0.507,
+        "nonlinR": -0.1018,
+        "absAsymNonlin": 0.4052,
+        "frontSlope": -1.3859,
+        "postNonlin": -0.0051,
+        "postSlope": -2.0552
+      },
+      "lucid": {
+        "frontNonlin": -0.4158,
+        "nonlinL": -0.4158,
+        "nonlinR": -0.4159,
+        "absAsymNonlin": 0.0001,
+        "frontSlope": -0.9127,
+        "postNonlin": -0.0693,
+        "postSlope": -2.7821
+      }
+    },
+    {
+      "id": "c_05",
+      "study": "Lucid_Dialogue",
+      "base": {
+        "frontNonlin": 0.1159,
+        "nonlinL": 0.1848,
+        "nonlinR": 0.0471,
+        "absAsymNonlin": 0.1377,
+        "frontSlope": -1.783,
+        "postNonlin": -0.0274,
+        "postSlope": -2.3801
+      },
+      "lucid": {
+        "frontNonlin": -0.1432,
+        "nonlinL": -0.0329,
+        "nonlinR": -0.2535,
+        "absAsymNonlin": 0.2206,
+        "frontSlope": 0.2776,
+        "postNonlin": -0.2194,
+        "postSlope": -0.6214
+      }
+    }
+  ]
+}

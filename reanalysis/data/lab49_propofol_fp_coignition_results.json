@@ -1,0 +1,166 @@
+{
+  "lab": "Lab #49 — Propofol Frontal-Posterior Co-Ignition",
+  "nPatients": 7,
+  "stats": {
+    "r_FP_nonlin_LOC_vs_BASE": {
+      "n": 7,
+      "meanA": 0.4109,
+      "meanB": 0.7016,
+      "dz": -0.447,
+      "t": -1.181,
+      "p": 0.30927
+    },
+    "r_FP_nonlin_ROC_vs_LOC": {
+      "n": 7,
+      "meanA": 0.3185,
+      "meanB": 0.4109,
+      "dz": -0.16,
+      "t": -0.422,
+      "p": 0.66783
+    },
+    "r_FP_realWK_LOC_vs_BASE": {
+      "n": 7,
+      "meanA": 0.5579,
+      "meanB": 0.8544,
+      "dz": -1.043,
+      "t": -2.76,
+      "p": 0.0163
+    },
+    "r_FP_realWK_ROC_vs_LOC": {
+      "n": 7,
+      "meanA": 0.4498,
+      "meanB": 0.5579,
+      "dz": -0.262,
+      "t": -0.693,
+      "p": 0.66163
+    }
+  },
+  "rows": [
+    {
+      "sub": "sub-02",
+      "base": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.5749,
+        "r_FP_realWK": 0.7406
+      },
+      "loc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.793,
+        "r_FP_realWK": -0.0423
+      },
+      "roc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.7052,
+        "r_FP_realWK": 0.0155
+      }
+    },
+    {
+      "sub": "sub-03",
+      "base": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.8941,
+        "r_FP_realWK": 0.7663
+      },
+      "loc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": -0.551,
+        "r_FP_realWK": 0.694
+      },
+      "roc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.031,
+        "r_FP_realWK": -0.2797
+      }
+    },
+    {
+      "sub": "sub-04",
+      "base": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.6385,
+        "r_FP_realWK": 0.9897
+      },
+      "loc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.702,
+        "r_FP_realWK": 0.9895
+      },
+      "roc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.2902,
+        "r_FP_realWK": 0.8571
+      }
+    },
+    {
+      "sub": "sub-07",
+      "base": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.8958,
+        "r_FP_realWK": 0.9334
+      },
+      "loc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.3996,
+        "r_FP_realWK": 0.4389
+      },
+      "roc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": -0.2637,
+        "r_FP_realWK": 0.3331
+      }
+    },
+    {
+      "sub": "sub-08",
+      "base": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.9234,
+        "r_FP_realWK": 0.9463
+      },
+      "loc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.5151,
+        "r_FP_realWK": 0.6445
+      },
+      "roc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.9769,
+        "r_FP_realWK": 0.9834
+      }
+    },
+    {
+      "sub": "sub-09",
+      "base": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.88,
+        "r_FP_realWK": 0.8781
+      },
+      "loc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.3584,
+        "r_FP_realWK": 0.8345
+      },
+      "roc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.7115,
+        "r_FP_realWK": 0.814
+      }
+    },
+    {
+      "sub": "sub-10",
+      "base": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.1042,
+        "r_FP_realWK": 0.7267
+      },
+      "loc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": 0.6594,
+        "r_FP_realWK": 0.3461
+      },
+      "roc": {
+        "nEpochs": 5,
+        "r_FP_nonlin": -0.2214,
+        "r_FP_realWK": 0.4255
+      }
+    }
+  ]
+}

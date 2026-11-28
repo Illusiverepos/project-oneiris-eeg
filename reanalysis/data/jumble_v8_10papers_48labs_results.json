@@ -1,0 +1,322 @@
+{
+  "jumble": "Jumble v8 — 10 Papers, 48 Labs, 3 Modalities, 6 Organs",
+  "corpus": [
+    {
+      "id": "P1",
+      "title": "Paper 1 (Anesthesia & NREM N2 Siclari)",
+      "chars": 28495,
+      "counts": {
+        "NONLIN_PHASE": 0,
+        "WK_GEODESIC": 0,
+        "HEMI_ASYM": 4,
+        "COGITATE_SPLIT": 9,
+        "GOLDILOCKS": 20,
+        "CROSS_ORGAN": 0,
+        "SLEEP_DREAM": 108,
+        "LONGITUDINAL": 1
+      }
+    },
+    {
+      "id": "P2",
+      "title": "Paper 2 (Lucid REM & 3-Axis Space)",
+      "chars": 13058,
+      "counts": {
+        "NONLIN_PHASE": 0,
+        "WK_GEODESIC": 0,
+        "HEMI_ASYM": 23,
+        "COGITATE_SPLIT": 0,
+        "GOLDILOCKS": 11,
+        "CROSS_ORGAN": 0,
+        "SLEEP_DREAM": 53,
+        "LONGITUDINAL": 3
+      }
+    },
+    {
+      "id": "P3",
+      "title": "Paper 3 (PTSD Recovery & Fear Extinction)",
+      "chars": 16242,
+      "counts": {
+        "NONLIN_PHASE": 0,
+        "WK_GEODESIC": 0,
+        "HEMI_ASYM": 13,
+        "COGITATE_SPLIT": 1,
+        "GOLDILOCKS": 3,
+        "CROSS_ORGAN": 2,
+        "SLEEP_DREAM": 95,
+        "LONGITUDINAL": 19
+      }
+    },
+    {
+      "id": "P4",
+      "title": "Paper 4 (Universal +50deg & Theta wPLI)",
+      "chars": 13613,
+      "counts": {
+        "NONLIN_PHASE": 0,
+        "WK_GEODESIC": 0,
+        "HEMI_ASYM": 5,
+        "COGITATE_SPLIT": 2,
+        "GOLDILOCKS": 8,
+        "CROSS_ORGAN": 1,
+        "SLEEP_DREAM": 82,
+        "LONGITUDINAL": 10
+      }
+    },
+    {
+      "id": "P5",
+      "title": "Paper 5 (985h BOAS & Lean 4 Safety)",
+      "chars": 18614,
+      "counts": {
+        "NONLIN_PHASE": 0,
+        "WK_GEODESIC": 46,
+        "HEMI_ASYM": 1,
+        "COGITATE_SPLIT": 17,
+        "GOLDILOCKS": 7,
+        "CROSS_ORGAN": 1,
+        "SLEEP_DREAM": 77,
+        "LONGITUDINAL": 7
+      }
+    },
+    {
+      "id": "P6",
+      "title": "Paper 6 (Aging, AD, FTD & PSEN1)",
+      "chars": 9659,
+      "counts": {
+        "NONLIN_PHASE": 0,
+        "WK_GEODESIC": 15,
+        "HEMI_ASYM": 14,
+        "COGITATE_SPLIT": 0,
+        "GOLDILOCKS": 19,
+        "CROSS_ORGAN": 0,
+        "SLEEP_DREAM": 7,
+        "LONGITUDINAL": 2
+      }
+    },
+    {
+      "id": "P7",
+      "title": "Paper 7 (5-Organ WK Law & Heart-Age)",
+      "chars": 16386,
+      "counts": {
+        "NONLIN_PHASE": 23,
+        "WK_GEODESIC": 65,
+        "HEMI_ASYM": 0,
+        "COGITATE_SPLIT": 2,
+        "GOLDILOCKS": 6,
+        "CROSS_ORGAN": 85,
+        "SLEEP_DREAM": 4,
+        "LONGITUDINAL": 3
+      }
+    },
+    {
+      "id": "P8",
+      "title": "Paper 8 (6-Organ Surrogates, Mirror Law & RBD)",
+      "chars": 14433,
+      "counts": {
+        "NONLIN_PHASE": 44,
+        "WK_GEODESIC": 24,
+        "HEMI_ASYM": 0,
+        "COGITATE_SPLIT": 1,
+        "GOLDILOCKS": 34,
+        "CROSS_ORGAN": 51,
+        "SLEEP_DREAM": 49,
+        "LONGITUDINAL": 4
+      }
+    },
+    {
+      "id": "P9",
+      "title": "Paper 9 (COGITATE ECoG+MEG+EEG & 4-Step Ladder)",
+      "chars": 15900,
+      "counts": {
+        "NONLIN_PHASE": 26,
+        "WK_GEODESIC": 19,
+        "HEMI_ASYM": 0,
+        "COGITATE_SPLIT": 95,
+        "GOLDILOCKS": 20,
+        "CROSS_ORGAN": 7,
+        "SLEEP_DREAM": 62,
+        "LONGITUDINAL": 1
+      }
+    },
+    {
+      "id": "P10",
+      "title": "Paper 10 (Goldilocks Corridor, Asymmetry & Atlas)",
+      "chars": 9425,
+      "counts": {
+        "NONLIN_PHASE": 16,
+        "WK_GEODESIC": 1,
+        "HEMI_ASYM": 23,
+        "COGITATE_SPLIT": 0,
+        "GOLDILOCKS": 72,
+        "CROSS_ORGAN": 12,
+        "SLEEP_DREAM": 22,
+        "LONGITUDINAL": 1
+      }
+    }
+  ],
+  "blindSpots": [
+    {
+      "axis": "NONLIN_PHASE",
+      "strongIn": [
+        "P7",
+        "P8",
+        "P9",
+        "P10"
+      ],
+      "absentIn": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ]
+    },
+    {
+      "axis": "WK_GEODESIC",
+      "strongIn": [
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9"
+      ],
+      "absentIn": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    {
+      "axis": "HEMI_ASYM",
+      "strongIn": [
+        "P2",
+        "P3",
+        "P6",
+        "P10"
+      ],
+      "absentIn": [
+        "P7",
+        "P8",
+        "P9"
+      ]
+    },
+    {
+      "axis": "COGITATE_SPLIT",
+      "strongIn": [
+        "P1",
+        "P5",
+        "P9"
+      ],
+      "absentIn": [
+        "P2",
+        "P6",
+        "P10"
+      ]
+    },
+    {
+      "axis": "GOLDILOCKS",
+      "strongIn": [
+        "P1",
+        "P2",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10"
+      ],
+      "absentIn": []
+    },
+    {
+      "axis": "CROSS_ORGAN",
+      "strongIn": [
+        "P7",
+        "P8",
+        "P9",
+        "P10"
+      ],
+      "absentIn": [
+        "P1",
+        "P2",
+        "P6"
+      ]
+    },
+    {
+      "axis": "SLEEP_DREAM",
+      "strongIn": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P8",
+        "P9",
+        "P10"
+      ],
+      "absentIn": []
+    },
+    {
+      "axis": "LONGITUDINAL",
+      "strongIn": [
+        "P3",
+        "P4",
+        "P5"
+      ],
+      "absentIn": []
+    }
+  ],
+  "collisions": [
+    {
+      "id": "J8-C1",
+      "pass": "Pass A (COGITATE Control x Papers 1-3 & 10)",
+      "title": "The \"Silent Prefrontal\" Law Applies to Clinical Dementia & PTSD Too: High-Gamma/Beta Power vs. Nonlinear Phase Orthogonality",
+      "collision": "Lab #47c proved Prefrontal cortex is blind in High-Gamma power (t=0.000) yet ignites in brainNonlin (t=-5.751, r=0.056 orthogonal). Meanwhile Paper 6/10 showed Clinical AD vs CN has strong posterior Beta power loss (p=0.00093) while bilateral frontal nonlin was masked until split into Right-Fp2 (p=0.0322), and Paper 3 PTSD showed Right-Frontal 1/f steepening in 9/10 responders.",
+      "blindPrediction": "In PTSD (mendeley_ptsd, LOCAL ON DISK!) and Lucid REM (donders_lucid, LOCAL ON DISK!), running ERP-free Fourier brainNonlin + Left/Right Hemispheric Asymmetry + Frontal-Posterior co-ignition (r) will reveal a hidden nonlinear phase signature orthogonal to power — specifically predicting PTSD nightmare severity (hyper-locking cliff, brainNonlin < -0.25 like RBD!) vs. recovery back into the Goldilocks corridor!",
+      "testableRightNow": true,
+      "localDataset": "reanalysis/data/mendeley_ptsd + reanalysis/data/donders_lucid (100% LOCAL ON DISK!)",
+      "noveltyScore": 9.8
+    },
+    {
+      "id": "J8-C2",
+      "pass": "Pass A (COGITATE Control x Paper 10 Differential Atlas)",
+      "title": "Does Frontal–Posterior `brainNonlin` Co-Ignition (`r = 0.386–0.775` in Healthy COGITATE Brains) COLLAPSE in Alzheimer's, FTD, & RBD?",
+      "collision": "Labs #47d & #48b discovered a brand-new healthy human invariant we NEVER tested in disease: trial-by-trial Frontal <-> Posterior `brainNonlin` co-ignition (`ECoG r = +0.386` in 4/4 brains, `MEG r = +0.657`, `Scalp EEG r = +0.775`, all `p = 0.0001`). We have NEVER computed epoch-by-epoch Frontal <-> Posterior `brainNonlin` coupling (`r_FP_nonlin`) in AD, FTD, RBD, or Propofol anesthesia!",
+      "blindPrediction": "If conscious access requires Frontal <-> Posterior nonlinear co-ignition, then (a) Propofol LOC will DECOUPLE Frontal from Posterior `brainNonlin` even though both remain locally non-zero (`-0.128` / `-0.143`) — SOLVING THE LAB #37 PROPOFOL ZOMBIE PARADOX!! And (b) Clinical AD/FTD will break `r_FP_nonlin` relative to healthy controls!",
+      "testableRightNow": true,
+      "localDataset": "reanalysis/data/ds004541 (Propofol LOC, 100% LOCAL!) + ds004504 (AD/FTD/CN via S3!)",
+      "noveltyScore": 10
+    },
+    {
+      "id": "J8-C3",
+      "pass": "Pass B (Paper 10 Control x Paper 9 COGITATE)",
+      "title": "Noether Geodesic Conservation (`Δ_WK` invariant) as the Universal Boundary Between Sensory/Subcortical Drift vs. Executive Cortical Breakdown",
+      "collision": "Across 3 completely unrelated domains, the EXACT SAME mathematical split appeared: (1) Huntington's gait slides along the geodesic conserving Δ_WK (`p=0.375`), while ALS breaks Δ_WK (`p=0.020`); (2) COGITATE IIT Posterior slides along the geodesic conserving Δ_WK (`ECoG p=0.374`, `MEG p=0.527`), while GNWT Prefrontal breaks Δ_WK (`ECoG p=0.0001`, `MEG p=0.047`); (3) Healthy Deep NREM conserves Δ_WK (`0.00`), while RBD REM breaks it (`-0.412`).",
+      "blindPrediction": "Subcortical/sensory systems adapt by sliding ALONG the Wiener-Khinchin geodesic (linear slope + DFA co-vary, conserving Δ_WK), whereas executive/motor-command ignition and breakdown (Prefrontal GNWT, ALS corticospinal, RBD brainstem-frontal) jump OFF the geodesic (breaking Δ_WK symmetry).",
+      "testableRightNow": true,
+      "localDataset": "Already empirically confirmed across 3 independent domains (Gait, ECoG, MEG)!",
+      "noveltyScore": 9.5
+    },
+    {
+      "id": "J8-C4",
+      "pass": "Pass C (No-Control Grand Jumble — Longitudinal Gap)",
+      "title": "Within-Human Longitudinal Drift Along the Goldilocks Corridor (`ds007720` ALS `ses-1 -> ses-10`)",
+      "collision": "All 10 papers have only 1 longitudinal clinical trajectory (Paper 3 PTSD recovery). Yet `OpenNeuro ds007720` has multi-session longitudinal ALS recordings (`ses-1` through `ses-10`) for the same patients over months.",
+      "blindPrediction": "Tracking the same ALS human across sessions will show monotonic drift of `surrWK` / `brainNonlin` toward the Dissolution Cliff (`0.00+`), providing the first within-human neurodegenerative trajectory proof.",
+      "testableRightNow": true,
+      "localDataset": "OpenNeuro ds007720 S3 (public streaming)",
+      "noveltyScore": 9.2
+    },
+    {
+      "id": "J8-C5",
+      "pass": "Pass C (No-Control Grand Jumble — Paper 2 Lucid x Paper 9 4-Step Ladder)",
+      "title": "The Missing 5th Rung of the Consciousness Ladder: Does Lucid REM (`donders_lucid`) Push Frontal `brainNonlin` Past Normal REM (`-0.149`) Toward Wake (`-0.269`) While Keeping Posterior Linear?",
+      "collision": "Paper 9 established a 4-step ladder: Dreamless NREM (`0.000`) -> NREM N2 Dream (`-0.020`) -> REM Dream (`-0.149`) -> Wake (`-0.269`, Posterior `-0.240`). We NEVER ran `brainNonlin` on `donders_lucid` (LOCAL ON DISK!) to see where Lucid REM lands!",
+      "blindPrediction": "Lucid REM will sit BETWEEN normal REM (`-0.149`) and Wake (`-0.269`) on Frontal `brainNonlin` while keeping Posterior linear (`≈ 0.00`) — empirically verifying the exact \"Reality Switch\" we just built in `/dream`!",
+      "testableRightNow": true,
+      "localDataset": "reanalysis/data/donders_lucid (100% LOCAL ON DISK!)",
+      "noveltyScore": 9.9
+    }
+  ]
+}
