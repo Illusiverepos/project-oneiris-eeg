@@ -1,0 +1,113 @@
+{
+  "lab": "Lab #41 — BNCI 2014-008 Italian ALS Cohort (N=8) + Pooled 2-Country ALS (N=13) TDP-43 Replication",
+  "nItaly": 8,
+  "nPooledALS": 13,
+  "italyMeanFrontalNonlin": -0.0669,
+  "italyMeanPosteriorNonlin": -0.0063,
+  "pooled2CountryALS_MeanNonlin": -0.0167,
+  "alsfrsCorrelation_r": null,
+  "referenceBenchmarks": {
+    "Healthy_CN_ds004504": -0.1169,
+    "FTD_ds004504": -0.0226,
+    "Wake_capslpdb": -0.2686,
+    "RBD_REM_capslpdb": -0.4123
+  },
+  "patients": [
+    {
+      "sub": "A01",
+      "age": null,
+      "alsfrs": null,
+      "gender": "慭敬",
+      "onset": "灳湩污",
+      "frontal_realWK": -1.7091,
+      "frontal_surrWK": -1.6184,
+      "frontal_brainNonlin": -0.0906,
+      "frontal_slopeBB": -2.0769,
+      "posterior_brainNonlin": -0.0358
+    },
+    {
+      "sub": "A02",
+      "age": null,
+      "alsfrs": null,
+      "gender": "慭敬",
+      "onset": "灳湩污",
+      "frontal_realWK": -1.7021,
+      "frontal_surrWK": -1.5952,
+      "frontal_brainNonlin": -0.1068,
+      "frontal_slopeBB": -2.7619,
+      "posterior_brainNonlin": 0.0246
+    },
+    {
+      "sub": "A03",
+      "age": null,
+      "alsfrs": null,
+      "gender": "慭敬",
+      "onset": "灳湩污",
+      "frontal_realWK": -2.2401,
+      "frontal_surrWK": -1.899,
+      "frontal_brainNonlin": -0.3411,
+      "frontal_slopeBB": -3.5007,
+      "posterior_brainNonlin": -0.1374
+    },
+    {
+      "sub": "A04",
+      "age": null,
+      "alsfrs": null,
+      "gender": "敦慭敬",
+      "onset": "畢扬牡",
+      "frontal_realWK": -2.0582,
+      "frontal_surrWK": -1.947,
+      "frontal_brainNonlin": -0.1112,
+      "frontal_slopeBB": -3.2027,
+      "posterior_brainNonlin": 0.0091
+    },
+    {
+      "sub": "A05",
+      "age": null,
+      "alsfrs": null,
+      "gender": "敦慭敬",
+      "onset": "畢扬牡",
+      "frontal_realWK": -1.481,
+      "frontal_surrWK": -1.5467,
+      "frontal_brainNonlin": 0.0657,
+      "frontal_slopeBB": -2.3801,
+      "posterior_brainNonlin": 0.0573
+    },
+    {
+      "sub": "A06",
+      "age": null,
+      "alsfrs": null,
+      "gender": "慭敬",
+      "onset": "灓湩污",
+      "frontal_realWK": -1.7743,
+      "frontal_surrWK": -1.7183,
+      "frontal_brainNonlin": -0.056,
+      "frontal_slopeBB": -2.6357,
+      "posterior_brainNonlin": -0.0372
+    },
+    {
+      "sub": "A07",
+      "age": null,
+      "alsfrs": null,
+      "gender": "慭敬",
+      "onset": "畂扬牡",
+      "frontal_realWK": -1.1555,
+      "frontal_surrWK": -1.2305,
+      "frontal_brainNonlin": 0.0751,
+      "frontal_slopeBB": -1.3829,
+      "posterior_brainNonlin": 0.0048
+    },
+    {
+      "sub": "A08",
+      "age": null,
+      "alsfrs": null,
+      "gender": "敆慭敬",
+      "onset": "灓湩污",
+      "frontal_realWK": -2.0476,
+      "frontal_surrWK": -2.0771,
+      "frontal_brainNonlin": 0.0295,
+      "frontal_slopeBB": -2.7622,
+      "posterior_brainNonlin": 0.0644
+    }
+  ]
+}
