@@ -29,3 +29,6 @@ reanalysis/data/cogitate/
 
 # Local rendered dream videos (never commit large local media)
 toolkit/cueing-system/local_dream_media/
+
+# Local-only Dream Studio consumer app (keep private / off public science repo)
+toolkit/cueing-system/live_dream_canvas.html
