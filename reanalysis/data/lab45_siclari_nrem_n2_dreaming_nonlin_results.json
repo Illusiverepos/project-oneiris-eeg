@@ -1,0 +1,247 @@
+{
+  "lab": "Lab #45 — Siclari 2017 NREM N2 Dreaming brainNonlin (Two-Gear Consciousness Test)",
+  "totalAnalyzed": 287,
+  "counts": {
+    "NE": 107,
+    "CEWR": 56,
+    "CE": 124
+  },
+  "table": [
+    {
+      "metric": "postNonlin",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": 0.0058,
+      "meanNE": 0.0056,
+      "d": 0.002,
+      "auc": 0.514,
+      "pPooled": 0.9882,
+      "nPaired": 39,
+      "dz": -0.109,
+      "pPaired": 0.51065
+    },
+    {
+      "metric": "postNonlinR",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": 0.0059,
+      "meanNE": 0.014,
+      "d": -0.118,
+      "auc": 0.545,
+      "pPooled": 0.37692,
+      "nPaired": 39,
+      "dz": -0.258,
+      "pPaired": 0.11509
+    },
+    {
+      "metric": "postNonlinL",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": 0.0056,
+      "meanNE": -0.0027,
+      "d": 0.107,
+      "auc": 0.531,
+      "pPooled": 0.41032,
+      "nPaired": 39,
+      "dz": 0.142,
+      "pPaired": 0.37786
+    },
+    {
+      "metric": "postAsymNonlin",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": 0.0003,
+      "meanNE": 0.0167,
+      "d": -0.171,
+      "auc": 0.555,
+      "pPooled": 0.19456,
+      "nPaired": 39,
+      "dz": -0.269,
+      "pPaired": 0.10739
+    },
+    {
+      "metric": "postRealWK",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": -0.1858,
+      "meanNE": -0.1908,
+      "d": 0.039,
+      "auc": 0.509,
+      "pPooled": 0.78244,
+      "nPaired": 39,
+      "dz": 0.121,
+      "pPaired": 0.44986
+    },
+    {
+      "metric": "postSlope",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": -1.333,
+      "meanNE": -1.3774,
+      "d": 0.172,
+      "auc": 0.56,
+      "pPooled": 0.19296,
+      "nPaired": 39,
+      "dz": 0.431,
+      "pPaired": 0.0087
+    },
+    {
+      "metric": "frontNonlin",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": -0.0201,
+      "meanNE": -0.0004,
+      "d": -0.277,
+      "auc": 0.599,
+      "pPooled": 0.02779,
+      "nPaired": 39,
+      "dz": -0.274,
+      "pPaired": 0.08839
+    },
+    {
+      "metric": "frontNonlinR",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": -0.0234,
+      "meanNE": -0.0039,
+      "d": -0.222,
+      "auc": 0.563,
+      "pPooled": 0.09578,
+      "nPaired": 39,
+      "dz": -0.214,
+      "pPaired": 0.19188
+    },
+    {
+      "metric": "frontNonlinL",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": -0.0169,
+      "meanNE": 0.0032,
+      "d": -0.243,
+      "auc": 0.565,
+      "pPooled": 0.06759,
+      "nPaired": 39,
+      "dz": -0.275,
+      "pPaired": 0.09289
+    },
+    {
+      "metric": "frontAsymNonlin",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": -0.0065,
+      "meanNE": -0.0071,
+      "d": 0.007,
+      "auc": 0.509,
+      "pPooled": 0.95801,
+      "nPaired": 39,
+      "dz": 0.036,
+      "pPaired": 0.82632
+    },
+    {
+      "metric": "frontRealWK",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": -0.0284,
+      "meanNE": -0.045,
+      "d": 0.12,
+      "auc": 0.532,
+      "pPooled": 0.36773,
+      "nPaired": 39,
+      "dz": 0.288,
+      "pPaired": 0.07629
+    },
+    {
+      "metric": "frontSlope",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": -1.305,
+      "meanNE": -1.3552,
+      "d": 0.199,
+      "auc": 0.534,
+      "pPooled": 0.13457,
+      "nPaired": 39,
+      "dz": 0.446,
+      "pPaired": 0.0078
+    },
+    {
+      "metric": "postMinusFrontNonlin",
+      "nCE": 124,
+      "nNE": 107,
+      "meanCE": 0.0259,
+      "meanNE": 0.006,
+      "d": 0.224,
+      "auc": 0.568,
+      "pPooled": 0.09278,
+      "nPaired": 39,
+      "dz": 0.172,
+      "pPaired": 0.29347
+    }
+  ],
+  "vsZero": {
+    "CE_frontNonlin": {
+      "n": 124,
+      "mean": -0.0201,
+      "t": -2.732,
+      "p": 0.0027
+    },
+    "CE_postNonlin": {
+      "n": 124,
+      "mean": 0.0058,
+      "t": 1.101,
+      "p": 0.28667
+    },
+    "NE_frontNonlin": {
+      "n": 107,
+      "mean": -0.0004,
+      "t": -0.071,
+      "p": 0.94321
+    },
+    "NE_postNonlin": {
+      "n": 107,
+      "mean": 0.0056,
+      "t": 1.138,
+      "p": 0.26077
+    },
+    "CE_postMinusFront": {
+      "n": 124,
+      "mean": 0.0259,
+      "t": 2.889,
+      "p": 0.0045
+    },
+    "NE_postMinusFront": {
+      "n": 107,
+      "mean": 0.006,
+      "t": 0.843,
+      "p": 0.40596
+    }
+  },
+  "ladder": [
+    {
+      "level": "NE (0)",
+      "n": 107,
+      "postNonlin": 0.0056,
+      "postNonlinR": 0.014,
+      "frontNonlin": -0.0004,
+      "postSlope": -1.3774,
+      "frontSlope": -1.3552
+    },
+    {
+      "level": "CEWR (1)",
+      "n": 56,
+      "postNonlin": 0.0028,
+      "postNonlinR": 0.0078,
+      "frontNonlin": 0.004,
+      "postSlope": -1.3756,
+      "frontSlope": -1.2949
+    },
+    {
+      "level": "CE (2)",
+      "n": 124,
+      "postNonlin": 0.0058,
+      "postNonlinR": 0.0059,
+      "frontNonlin": -0.0201,
+      "postSlope": -1.333,
+      "frontSlope": -1.305
+    }
+  ]
+}

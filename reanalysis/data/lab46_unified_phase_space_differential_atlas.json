@@ -1,0 +1,484 @@
+{
+  "lab": "Lab #46 — Unified 2D/3D Phase-Space Law & Multi-Disease Differential Diagnosis Atlas",
+  "totalRecords": 196,
+  "centroids": [
+    {
+      "group": "CN_ELDERLY",
+      "cohort": "ds004504",
+      "n": 29,
+      "slope": -1.908,
+      "surrWK": -0.372,
+      "realWK": -0.489,
+      "brainNonlin": -0.1169,
+      "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+    },
+    {
+      "group": "AD",
+      "cohort": "ds004504",
+      "n": 36,
+      "slope": -1.939,
+      "surrWK": -0.373,
+      "realWK": -0.427,
+      "brainNonlin": -0.0537,
+      "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+    },
+    {
+      "group": "FTD",
+      "cohort": "ds004504",
+      "n": 23,
+      "slope": -1.656,
+      "surrWK": -0.212,
+      "realWK": -0.234,
+      "brainNonlin": -0.0225,
+      "regime": "INTENTIONAL_LINEAR_REST"
+    },
+    {
+      "group": "CN_YOUNG",
+      "cohort": "ds007427",
+      "n": 16,
+      "slope": -1.535,
+      "surrWK": -0.454,
+      "realWK": -0.529,
+      "brainNonlin": -0.0758,
+      "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+    },
+    {
+      "group": "PSEN1",
+      "cohort": "ds007427",
+      "n": 27,
+      "slope": -1.2,
+      "surrWK": -0.155,
+      "realWK": -0.21,
+      "brainNonlin": -0.0557,
+      "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+    },
+    {
+      "group": "RBD_REM",
+      "cohort": "capslpdb",
+      "n": 14,
+      "slope": -2.294,
+      "surrWK": -0.51,
+      "realWK": -0.922,
+      "brainNonlin": -0.4123,
+      "regime": "HYPER_LOCKING_CLIFF"
+    },
+    {
+      "group": "HEALTHY_REM",
+      "cohort": "capslpdb",
+      "n": 9,
+      "slope": -1.664,
+      "surrWK": -0.295,
+      "realWK": -0.328,
+      "brainNonlin": -0.0322,
+      "regime": "INTENTIONAL_LINEAR_REST"
+    },
+    {
+      "group": "DEEP_NREM",
+      "cohort": "capslpdb",
+      "n": 23,
+      "slope": -2.279,
+      "surrWK": -0.734,
+      "realWK": -0.733,
+      "brainNonlin": 0.0016,
+      "regime": "INTENTIONAL_LINEAR_REST"
+    },
+    {
+      "group": "ALS_EEGET",
+      "cohort": "EEGET-ALS",
+      "n": 6,
+      "slope": -1.105,
+      "surrWK": 0.257,
+      "realWK": 0.054,
+      "brainNonlin": -0.2026,
+      "regime": "HEALTHY_GOLDILOCKS_CORRIDOR"
+    },
+    {
+      "group": "ALS_USA_IT",
+      "cohort": "ds007720",
+      "n": 13,
+      "slope": -2.004,
+      "surrWK": -1.107,
+      "realWK": -1.124,
+      "brainNonlin": -0.0167,
+      "regime": "INTENTIONAL_LINEAR_REST"
+    }
+  ],
+  "dementiaSameHardware": {
+    "dementiaPairwise": {
+      "AD_vs_CN_Bilateral": {
+        "n1": 36,
+        "n2": 29,
+        "auc": 0.515,
+        "acc": 55.4
+      },
+      "AD_vs_CN_WithAsym": {
+        "n1": 36,
+        "n2": 29,
+        "auc": 0.579,
+        "acc": 52.3
+      },
+      "FTD_vs_CN_Bilateral": {
+        "n1": 23,
+        "n2": 29,
+        "auc": 0.708,
+        "acc": 61.5
+      },
+      "FTD_vs_CN_WithAsym": {
+        "n1": 23,
+        "n2": 29,
+        "auc": 0.736,
+        "acc": 63.5
+      },
+      "FTD_vs_AD_Bilateral": {
+        "n1": 23,
+        "n2": 36,
+        "auc": 0.64,
+        "acc": 59.3
+      },
+      "FTD_vs_AD_WithAsym": {
+        "n1": 23,
+        "n2": 36,
+        "auc": 0.684,
+        "acc": 61
+      }
+    },
+    "dementia3Way": {
+      "Bilateral_LinearOnly_2D": {
+        "n": 88,
+        "accuracy": 39.8,
+        "balancedAccuracy": 41.7,
+        "chanceLevel": 33.3,
+        "perClassRecall": {
+          "AD": 19.4,
+          "FTD": 43.5,
+          "CN_ELDERLY": 62.1
+        },
+        "confusionMatrix": {
+          "AD": {
+            "AD": 7,
+            "FTD": 9,
+            "CN_ELDERLY": 20
+          },
+          "FTD": {
+            "AD": 4,
+            "FTD": 10,
+            "CN_ELDERLY": 9
+          },
+          "CN_ELDERLY": {
+            "AD": 7,
+            "FTD": 4,
+            "CN_ELDERLY": 18
+          }
+        }
+      },
+      "Bilateral_WithNonlin_3D": {
+        "n": 88,
+        "accuracy": 44.3,
+        "balancedAccuracy": 45.1,
+        "chanceLevel": 33.3,
+        "perClassRecall": {
+          "AD": 44.4,
+          "FTD": 56.5,
+          "CN_ELDERLY": 34.5
+        },
+        "confusionMatrix": {
+          "AD": {
+            "AD": 16,
+            "FTD": 10,
+            "CN_ELDERLY": 10
+          },
+          "FTD": {
+            "AD": 6,
+            "FTD": 13,
+            "CN_ELDERLY": 4
+          },
+          "CN_ELDERLY": {
+            "AD": 12,
+            "FTD": 7,
+            "CN_ELDERLY": 10
+          }
+        }
+      },
+      "With_HemisphericAsym_5D": {
+        "n": 88,
+        "accuracy": 39.8,
+        "balancedAccuracy": 43.2,
+        "chanceLevel": 33.3,
+        "perClassRecall": {
+          "AD": 33.3,
+          "FTD": 82.6,
+          "CN_ELDERLY": 13.8
+        },
+        "confusionMatrix": {
+          "AD": {
+            "AD": 12,
+            "FTD": 21,
+            "CN_ELDERLY": 3
+          },
+          "FTD": {
+            "AD": 3,
+            "FTD": 19,
+            "CN_ELDERLY": 1
+          },
+          "CN_ELDERLY": {
+            "AD": 10,
+            "FTD": 15,
+            "CN_ELDERLY": 4
+          }
+        }
+      }
+    }
+  },
+  "pairMatrix3D": {
+    "AD": {
+      "AD": "---",
+      "FTD": 0.64,
+      "PSEN1": 0.892,
+      "RBD_REM": 0.857,
+      "ALS_EEGET": 0.991,
+      "ALS_USA_IT": 0.652,
+      "DEEP_NREM": 0.709,
+      "CN_ELDERLY": 0.515
+    },
+    "FTD": {
+      "AD": 0.64,
+      "FTD": "---",
+      "PSEN1": 0.705,
+      "RBD_REM": 0.944,
+      "ALS_EEGET": 0.877,
+      "ALS_USA_IT": 0.672,
+      "DEEP_NREM": 0.72,
+      "CN_ELDERLY": 0.708
+    },
+    "PSEN1": {
+      "AD": 0.892,
+      "FTD": 0.705,
+      "PSEN1": "---",
+      "RBD_REM": 0.968,
+      "ALS_EEGET": 0.821,
+      "ALS_USA_IT": 0.735,
+      "DEEP_NREM": 0.812,
+      "CN_ELDERLY": 0.917
+    },
+    "RBD_REM": {
+      "AD": 0.857,
+      "FTD": 0.944,
+      "PSEN1": 0.968,
+      "RBD_REM": "---",
+      "ALS_EEGET": 1,
+      "ALS_USA_IT": 0.912,
+      "DEEP_NREM": 0.891,
+      "CN_ELDERLY": 0.837
+    },
+    "ALS_EEGET": {
+      "AD": 0.991,
+      "FTD": 0.877,
+      "PSEN1": 0.821,
+      "RBD_REM": 1,
+      "ALS_EEGET": "---",
+      "ALS_USA_IT": 1,
+      "DEEP_NREM": 0.826,
+      "CN_ELDERLY": 1
+    },
+    "ALS_USA_IT": {
+      "AD": 0.652,
+      "FTD": 0.672,
+      "PSEN1": 0.735,
+      "RBD_REM": 0.912,
+      "ALS_EEGET": 1,
+      "ALS_USA_IT": "---",
+      "DEEP_NREM": 0.492,
+      "CN_ELDERLY": 0.671
+    },
+    "DEEP_NREM": {
+      "AD": 0.709,
+      "FTD": 0.72,
+      "PSEN1": 0.812,
+      "RBD_REM": 0.891,
+      "ALS_EEGET": 0.826,
+      "ALS_USA_IT": 0.492,
+      "DEEP_NREM": "---",
+      "CN_ELDERLY": 0.738
+    },
+    "CN_ELDERLY": {
+      "AD": 0.515,
+      "FTD": 0.708,
+      "PSEN1": 0.917,
+      "RBD_REM": 0.837,
+      "ALS_EEGET": 1,
+      "ALS_USA_IT": 0.671,
+      "DEEP_NREM": 0.738,
+      "CN_ELDERLY": "---"
+    }
+  },
+  "pairMatrixNonlin": {
+    "AD": {
+      "AD": "---",
+      "FTD": 0.483,
+      "PSEN1": 0.086,
+      "RBD_REM": 0.877,
+      "ALS_EEGET": 0.708,
+      "ALS_USA_IT": 0.519,
+      "DEEP_NREM": 0.618,
+      "CN_ELDERLY": 0.63
+    },
+    "FTD": {
+      "AD": 0.483,
+      "FTD": "---",
+      "PSEN1": 0.546,
+      "RBD_REM": 0.913,
+      "ALS_EEGET": 0.775,
+      "ALS_USA_IT": 0.161,
+      "DEEP_NREM": 0.635,
+      "CN_ELDERLY": 0.658
+    },
+    "PSEN1": {
+      "AD": 0.086,
+      "FTD": 0.546,
+      "PSEN1": "---",
+      "RBD_REM": 0.854,
+      "ALS_EEGET": 0.654,
+      "ALS_USA_IT": 0.544,
+      "DEEP_NREM": 0.628,
+      "CN_ELDERLY": 0.548
+    },
+    "RBD_REM": {
+      "AD": 0.877,
+      "FTD": 0.913,
+      "PSEN1": 0.854,
+      "RBD_REM": "---",
+      "ALS_EEGET": 0.655,
+      "ALS_USA_IT": 0.885,
+      "DEEP_NREM": 0.913,
+      "CN_ELDERLY": 0.823
+    },
+    "ALS_EEGET": {
+      "AD": 0.708,
+      "FTD": 0.775,
+      "PSEN1": 0.654,
+      "RBD_REM": 0.655,
+      "ALS_EEGET": "---",
+      "ALS_USA_IT": 0.756,
+      "DEEP_NREM": 0.826,
+      "CN_ELDERLY": 0.546
+    },
+    "ALS_USA_IT": {
+      "AD": 0.519,
+      "FTD": 0.161,
+      "PSEN1": 0.544,
+      "RBD_REM": 0.885,
+      "ALS_EEGET": 0.756,
+      "ALS_USA_IT": "---",
+      "DEEP_NREM": 0.338,
+      "CN_ELDERLY": 0.671
+    },
+    "DEEP_NREM": {
+      "AD": 0.618,
+      "FTD": 0.635,
+      "PSEN1": 0.628,
+      "RBD_REM": 0.913,
+      "ALS_EEGET": 0.826,
+      "ALS_USA_IT": 0.338,
+      "DEEP_NREM": "---",
+      "CN_ELDERLY": 0.748
+    },
+    "CN_ELDERLY": {
+      "AD": 0.63,
+      "FTD": 0.658,
+      "PSEN1": 0.548,
+      "RBD_REM": 0.823,
+      "ALS_EEGET": 0.546,
+      "ALS_USA_IT": 0.671,
+      "DEEP_NREM": 0.748,
+      "CN_ELDERLY": "---"
+    }
+  },
+  "twoSidedTests": {
+    "RBD_vs_FTD_NonlinOnly": {
+      "n1": 14,
+      "n2": 23,
+      "auc": 0.913,
+      "acc": 89.2
+    },
+    "RBD_vs_AD_NonlinOnly": {
+      "n1": 14,
+      "n2": 36,
+      "auc": 0.877,
+      "acc": 86
+    },
+    "RBD_vs_PSEN1_NonlinOnly": {
+      "n1": 14,
+      "n2": 27,
+      "auc": 0.854,
+      "acc": 80.5
+    },
+    "RBD_vs_ALS_USA_IT_NonlinOnly": {
+      "n1": 14,
+      "n2": 13,
+      "auc": 0.885,
+      "acc": 81.5
+    },
+    "RBD_vs_HealthyREM_NonlinOnly": {
+      "n1": 14,
+      "n2": 9,
+      "auc": 0.897,
+      "acc": 78.3
+    },
+    "RBD_vs_DeepNREM_NonlinOnly": {
+      "n1": 14,
+      "n2": 23,
+      "auc": 0.913,
+      "acc": 86.5
+    }
+  },
+  "fiveWayDiseaseLOOCV": {
+    "n": 106,
+    "accuracy": 47.2,
+    "balancedAccuracy": 52,
+    "chanceLevel": 20,
+    "perClassRecall": {
+      "AD": 58.3,
+      "FTD": 30.4,
+      "PSEN1": 25.9,
+      "RBD_REM": 78.6,
+      "ALS_EEGET": 66.7
+    },
+    "confusionMatrix": {
+      "AD": {
+        "AD": 21,
+        "FTD": 9,
+        "PSEN1": 1,
+        "RBD_REM": 3,
+        "ALS_EEGET": 2
+      },
+      "FTD": {
+        "AD": 10,
+        "FTD": 7,
+        "PSEN1": 0,
+        "RBD_REM": 1,
+        "ALS_EEGET": 5
+      },
+      "PSEN1": {
+        "AD": 5,
+        "FTD": 9,
+        "PSEN1": 7,
+        "RBD_REM": 0,
+        "ALS_EEGET": 6
+      },
+      "RBD_REM": {
+        "AD": 2,
+        "FTD": 0,
+        "PSEN1": 1,
+        "RBD_REM": 11,
+        "ALS_EEGET": 0
+      },
+      "ALS_EEGET": {
+        "AD": 0,
+        "FTD": 0,
+        "PSEN1": 2,
+        "RBD_REM": 0,
+        "ALS_EEGET": 4
+      }
+    }
+  }
+}

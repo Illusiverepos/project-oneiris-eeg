@@ -1,0 +1,773 @@
+{
+  "lab": "Lab #44 — RBD Brain-Heart Sleep Hand-Off & Joint Dual-Organ LOOCV (capslpdb)",
+  "counts": {
+    "totalREM": 23,
+    "withECG_REM": 22,
+    "pairedNREM_REM": 22,
+    "pairedRBD": 14,
+    "pairedHealthy": 8
+  },
+  "handoffStats": {
+    "NREM_brainNonlin": {
+      "n1": 14,
+      "n2": 8,
+      "meanRBD": -0.0011,
+      "meanHealthy": 0.0136,
+      "d": -0.115,
+      "auc": 0.545,
+      "p": 0.85781
+    },
+    "REM_brainNonlin": {
+      "n1": 14,
+      "n2": 8,
+      "meanRBD": -0.4123,
+      "meanHealthy": -0.0337,
+      "d": -1.578,
+      "auc": 0.92,
+      "p": 0.0017
+    },
+    "brainShift_REM_minus_NREM": {
+      "n1": 14,
+      "n2": 8,
+      "meanRBD": -0.4112,
+      "meanHealthy": -0.0474,
+      "d": -1.284,
+      "auc": 0.884,
+      "p": 0.0085
+    },
+    "heartShift_REM_minus_NREM": {
+      "n1": 14,
+      "n2": 8,
+      "meanRBD": 0.0506,
+      "meanHealthy": 0.1235,
+      "d": -0.167,
+      "auc": 0.518,
+      "p": 0.70823
+    },
+    "mirrorHandOff": {
+      "n1": 14,
+      "n2": 8,
+      "meanRBD": 0.4618,
+      "meanHealthy": 0.1709,
+      "d": 0.533,
+      "auc": 0.67,
+      "p": 0.25117
+    },
+    "REM_heartDFA": {
+      "n1": 14,
+      "n2": 8,
+      "meanRBD": 1.3334,
+      "meanHealthy": 1.1619,
+      "d": 1.094,
+      "auc": 0.821,
+      "p": 0.0204
+    },
+    "NREM_heartDFA": {
+      "n1": 14,
+      "n2": 8,
+      "meanRBD": 1.1673,
+      "meanHealthy": 0.9957,
+      "d": 0.888,
+      "auc": 0.777,
+      "p": 0.05479
+    },
+    "heartDFAShift": {
+      "n1": 14,
+      "n2": 8,
+      "meanRBD": 0.1661,
+      "meanHealthy": 0.1662,
+      "d": -0.001,
+      "auc": 0.589,
+      "p": 0.9975
+    }
+  },
+  "loocv": {
+    "Brain_Only_REM_Nonlin": {
+      "n": 22,
+      "nRBD": 14,
+      "nHealthy": 8,
+      "loocvAUC": 0.893,
+      "loocvAcc": 77.3,
+      "sensitivity": 71.4,
+      "specificity": 87.5
+    },
+    "Heart_Only_REM_DFA": {
+      "n": 22,
+      "nRBD": 14,
+      "nHealthy": 8,
+      "loocvAUC": 0.768,
+      "loocvAcc": 72.7,
+      "sensitivity": 71.4,
+      "specificity": 75
+    },
+    "Joint_BrainNonlin_Plus_HeartDFA": {
+      "n": 22,
+      "nRBD": 14,
+      "nHealthy": 8,
+      "loocvAUC": 0.92,
+      "loocvAcc": 77.3,
+      "sensitivity": 64.3,
+      "specificity": 100
+    },
+    "Paired_BrainShift_Only": {
+      "n": 22,
+      "nRBD": 14,
+      "nHealthy": 8,
+      "loocvAUC": 0.875,
+      "loocvAcc": 81.8,
+      "sensitivity": 71.4,
+      "specificity": 100
+    },
+    "Paired_Joint_BrainNonlin_HeartDFA_HandOff": {
+      "n": 22,
+      "nRBD": 14,
+      "nHealthy": 8,
+      "loocvAUC": 0.902,
+      "loocvAcc": 77.3,
+      "sensitivity": 71.4,
+      "specificity": 87.5
+    }
+  },
+  "rows": [
+    {
+      "rec": "n4",
+      "group": "Healthy",
+      "rem": {
+        "brainWK": 1.1529,
+        "brainSurrWK": 1.1824,
+        "brainNonlin": -0.0295,
+        "brainSlope": 0,
+        "brainDFA": 1.0764,
+        "heartWK": -0.3693,
+        "heartNonlin": 0.0666,
+        "heartDFA": 1.0234
+      },
+      "nrem": {
+        "brainWK": 1.4068,
+        "brainSurrWK": 1.4378,
+        "brainNonlin": -0.031,
+        "brainSlope": 0,
+        "brainDFA": 1.2034,
+        "heartWK": -0.4176,
+        "heartNonlin": -0.0801,
+        "heartDFA": 0.8842
+      },
+      "brainShift_REM_minus_NREM": 0.0015,
+      "heartShift_REM_minus_NREM": 0.1467,
+      "mirrorHandOff": 0.1452,
+      "heartDFAShift": 0.1392
+    },
+    {
+      "rec": "n7",
+      "group": "Healthy",
+      "rem": {
+        "brainWK": -1.3424,
+        "brainSurrWK": -1.0361,
+        "brainNonlin": -0.3063,
+        "brainSlope": -2.3065,
+        "brainDFA": 0.9821,
+        "heartWK": -0.6649,
+        "heartNonlin": -0.1778,
+        "heartDFA": 1.1281
+      },
+      "nrem": {
+        "brainWK": -1.0324,
+        "brainSurrWK": -0.9361,
+        "brainNonlin": -0.0963,
+        "brainSlope": -2.7181,
+        "brainDFA": 1.3429,
+        "heartWK": 0.0123,
+        "heartNonlin": 0.0266,
+        "heartDFA": 1.0091
+      },
+      "brainShift_REM_minus_NREM": -0.21,
+      "heartShift_REM_minus_NREM": -0.2044,
+      "mirrorHandOff": 0.0056,
+      "heartDFAShift": 0.119
+    },
+    {
+      "rec": "n5",
+      "group": "Healthy",
+      "rem": {
+        "brainWK": -0.6904,
+        "brainSurrWK": -0.6638,
+        "brainNonlin": -0.0266,
+        "brainSlope": -2.3038,
+        "brainDFA": 1.3067,
+        "heartWK": -0.4912,
+        "heartNonlin": -0.2316,
+        "heartDFA": 1.2351
+      },
+      "nrem": {
+        "brainWK": -1.6528,
+        "brainSurrWK": -1.731,
+        "brainNonlin": 0.0782,
+        "brainSlope": -3.114,
+        "brainDFA": 1.2306,
+        "heartWK": 0.0594,
+        "heartNonlin": 0.17,
+        "heartDFA": 1.0251
+      },
+      "brainShift_REM_minus_NREM": -0.1048,
+      "heartShift_REM_minus_NREM": -0.4016,
+      "mirrorHandOff": -0.2968,
+      "heartDFAShift": 0.21
+    },
+    {
+      "rec": "n9",
+      "group": "Healthy",
+      "rem": {
+        "brainWK": -1.2604,
+        "brainSurrWK": -1.3268,
+        "brainNonlin": 0.0665,
+        "brainSlope": -2.4103,
+        "brainDFA": 1.0749,
+        "heartWK": -0.5494,
+        "heartNonlin": 0.1432,
+        "heartDFA": 1.2939
+      },
+      "nrem": {
+        "brainWK": -1.6028,
+        "brainSurrWK": -1.6108,
+        "brainNonlin": 0.008,
+        "brainSlope": -2.925,
+        "brainDFA": 1.1611,
+        "heartWK": 0.0852,
+        "heartNonlin": -0.2216,
+        "heartDFA": 1.036
+      },
+      "brainShift_REM_minus_NREM": 0.0585,
+      "heartShift_REM_minus_NREM": 0.3648,
+      "mirrorHandOff": 0.3063,
+      "heartDFAShift": 0.2579
+    },
+    {
+      "rec": "n10",
+      "group": "Healthy",
+      "rem": {
+        "brainWK": -1.3786,
+        "brainSurrWK": -1.4569,
+        "brainNonlin": 0.0783,
+        "brainSlope": -2.7843,
+        "brainDFA": 1.2028,
+        "heartWK": 0.4771,
+        "heartNonlin": 0.0271,
+        "heartDFA": 1.0981
+      },
+      "nrem": {
+        "brainWK": -1.7885,
+        "brainSurrWK": -1.8739,
+        "brainNonlin": 0.0854,
+        "brainSlope": -3.3544,
+        "brainDFA": 1.283,
+        "heartWK": -0.1929,
+        "heartNonlin": 0.0506,
+        "heartDFA": 0.8845
+      },
+      "brainShift_REM_minus_NREM": -0.0071,
+      "heartShift_REM_minus_NREM": -0.0235,
+      "mirrorHandOff": -0.0164,
+      "heartDFAShift": 0.2136
+    },
+    {
+      "rec": "n1",
+      "group": "Healthy",
+      "rem": {
+        "brainWK": -0.7673,
+        "brainSurrWK": -0.7706,
+        "brainNonlin": 0.0032,
+        "brainSlope": -2.5271,
+        "brainDFA": 1.3799,
+        "heartWK": 0.064,
+        "heartNonlin": 0.8391,
+        "heartDFA": 1.2844
+      },
+      "nrem": {
+        "brainWK": -1.2787,
+        "brainSurrWK": -1.4005,
+        "brainNonlin": 0.1218,
+        "brainSlope": -3.0072,
+        "brainDFA": 1.3642,
+        "heartWK": -0.8208,
+        "heartNonlin": -0.0998,
+        "heartDFA": 1.0673
+      },
+      "brainShift_REM_minus_NREM": -0.1186,
+      "heartShift_REM_minus_NREM": 0.9389,
+      "mirrorHandOff": 1.0575,
+      "heartDFAShift": 0.2171
+    },
+    {
+      "rec": "n12",
+      "group": "Healthy",
+      "rem": {
+        "brainWK": 1.2154,
+        "brainSurrWK": 1.2569,
+        "brainNonlin": -0.0415,
+        "brainSlope": 0,
+        "brainDFA": 1.1077,
+        "heartWK": -0.5406,
+        "heartNonlin": 0.4115,
+        "heartDFA": 1.1117
+      },
+      "nrem": {
+        "brainWK": 1.5156,
+        "brainSurrWK": 1.6078,
+        "brainNonlin": -0.0922,
+        "brainSlope": 0,
+        "brainDFA": 1.2578,
+        "heartWK": -0.8824,
+        "heartNonlin": -0.094,
+        "heartDFA": 1.2381
+      },
+      "brainShift_REM_minus_NREM": 0.0507,
+      "heartShift_REM_minus_NREM": 0.5055,
+      "mirrorHandOff": 0.4548,
+      "heartDFAShift": -0.1264
+    },
+    {
+      "rec": "rbd1",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -1.1071,
+        "brainSurrWK": -0.7513,
+        "brainNonlin": -0.3559,
+        "brainSlope": -2.3496,
+        "brainDFA": 1.1212,
+        "heartWK": -0.1461,
+        "heartNonlin": -0.1024,
+        "heartDFA": 1.3597
+      },
+      "nrem": {
+        "brainWK": -0.904,
+        "brainSurrWK": -1.0125,
+        "brainNonlin": 0.1086,
+        "brainSlope": -2.5901,
+        "brainDFA": 1.3431,
+        "heartWK": 0.1304,
+        "heartNonlin": 0.1521,
+        "heartDFA": 1.0428
+      },
+      "brainShift_REM_minus_NREM": -0.4645,
+      "heartShift_REM_minus_NREM": -0.2545,
+      "mirrorHandOff": 0.21,
+      "heartDFAShift": 0.3169
+    },
+    {
+      "rec": "n16",
+      "group": "Healthy",
+      "rem": {
+        "brainWK": 1.1403,
+        "brainSurrWK": 1.1602,
+        "brainNonlin": -0.0199,
+        "brainSlope": 0,
+        "brainDFA": 1.0702,
+        "heartWK": null,
+        "heartNonlin": null,
+        "heartDFA": null
+      },
+      "nrem": {
+        "brainWK": 1.2515,
+        "brainSurrWK": 1.3093,
+        "brainNonlin": -0.0577,
+        "brainSlope": 0,
+        "brainDFA": 1.1258,
+        "heartWK": null,
+        "heartNonlin": null,
+        "heartDFA": null
+      }
+    },
+    {
+      "rec": "n11",
+      "group": "Healthy",
+      "rem": {
+        "brainWK": -1.0174,
+        "brainSurrWK": -1.0034,
+        "brainNonlin": -0.014,
+        "brainSlope": -2.645,
+        "brainDFA": 1.3138,
+        "heartWK": -0.0791,
+        "heartNonlin": -0.3229,
+        "heartDFA": 1.1206
+      },
+      "nrem": {
+        "brainWK": -1.2064,
+        "brainSurrWK": -1.2416,
+        "brainNonlin": 0.0352,
+        "brainSlope": -2.8705,
+        "brainDFA": 1.332,
+        "heartWK": 0.5135,
+        "heartNonlin": 0.0153,
+        "heartDFA": 0.8214
+      },
+      "brainShift_REM_minus_NREM": -0.0492,
+      "heartShift_REM_minus_NREM": -0.3382,
+      "mirrorHandOff": -0.289,
+      "heartDFAShift": 0.2992
+    },
+    {
+      "rec": "rbd7",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -0.8902,
+        "brainSurrWK": -0.5208,
+        "brainNonlin": -0.3695,
+        "brainSlope": -2.1669,
+        "brainDFA": 1.1383,
+        "heartWK": 0.5829,
+        "heartNonlin": -0.0597,
+        "heartDFA": 1.0205
+      },
+      "nrem": {
+        "brainWK": 0.082,
+        "brainSurrWK": 0.0386,
+        "brainNonlin": 0.0434,
+        "brainSlope": -1.0878,
+        "brainDFA": 1.0849,
+        "heartWK": 0.5238,
+        "heartNonlin": 0.0798,
+        "heartDFA": 0.7132
+      },
+      "brainShift_REM_minus_NREM": -0.4129,
+      "heartShift_REM_minus_NREM": -0.1395,
+      "mirrorHandOff": 0.2734,
+      "heartDFAShift": 0.3073
+    },
+    {
+      "rec": "rbd2",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -1.0099,
+        "brainSurrWK": -0.841,
+        "brainNonlin": -0.1689,
+        "brainSlope": -2.7059,
+        "brainDFA": 1.348,
+        "heartWK": 0.5252,
+        "heartNonlin": 0.2073,
+        "heartDFA": 1.4057
+      },
+      "nrem": {
+        "brainWK": -0.9702,
+        "brainSurrWK": -0.497,
+        "brainNonlin": -0.4732,
+        "brainSlope": -2.6976,
+        "brainDFA": 1.3637,
+        "heartWK": -1.2485,
+        "heartNonlin": -0.2832,
+        "heartDFA": 1.3609
+      },
+      "brainShift_REM_minus_NREM": 0.3043,
+      "heartShift_REM_minus_NREM": 0.4905,
+      "mirrorHandOff": 0.1862,
+      "heartDFAShift": 0.0448
+    },
+    {
+      "rec": "rbd9",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -0.5327,
+        "brainSurrWK": -0.3267,
+        "brainNonlin": -0.206,
+        "brainSlope": -1.7816,
+        "brainDFA": 1.1244,
+        "heartWK": -0.0823,
+        "heartNonlin": -0.5107,
+        "heartDFA": 1.2449
+      },
+      "nrem": {
+        "brainWK": -0.252,
+        "brainSurrWK": -0.2525,
+        "brainNonlin": 0.0005,
+        "brainSlope": -1.7004,
+        "brainDFA": 1.2242,
+        "heartWK": -0.3244,
+        "heartNonlin": 0.2778,
+        "heartDFA": 1.4199
+      },
+      "brainShift_REM_minus_NREM": -0.2065,
+      "heartShift_REM_minus_NREM": -0.7885,
+      "mirrorHandOff": -0.582,
+      "heartDFAShift": -0.175
+    },
+    {
+      "rec": "rbd8",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -0.8974,
+        "brainSurrWK": -0.5119,
+        "brainNonlin": -0.3855,
+        "brainSlope": -2.7976,
+        "brainDFA": 1.4501,
+        "heartWK": -0.3943,
+        "heartNonlin": -0.0488,
+        "heartDFA": 1.384
+      },
+      "nrem": {
+        "brainWK": -0.4543,
+        "brainSurrWK": -0.3696,
+        "brainNonlin": -0.0847,
+        "brainSlope": -2.5466,
+        "brainDFA": 1.5462,
+        "heartWK": 0.2526,
+        "heartNonlin": 0.5637,
+        "heartDFA": 1.0329
+      },
+      "brainShift_REM_minus_NREM": -0.3008,
+      "heartShift_REM_minus_NREM": -0.6125,
+      "mirrorHandOff": -0.3117,
+      "heartDFAShift": 0.3511
+    },
+    {
+      "rec": "rbd10",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -0.7115,
+        "brainSurrWK": -0.3944,
+        "brainNonlin": -0.3171,
+        "brainSlope": -2.3587,
+        "brainDFA": 1.3236,
+        "heartWK": -0.3949,
+        "heartNonlin": -0.012,
+        "heartDFA": 1.136
+      },
+      "nrem": {
+        "brainWK": -1.1483,
+        "brainSurrWK": -1.1931,
+        "brainNonlin": 0.0447,
+        "brainSlope": -2.6036,
+        "brainDFA": 1.2276,
+        "heartWK": 0.0907,
+        "heartNonlin": -0.5213,
+        "heartDFA": 0.8741
+      },
+      "brainShift_REM_minus_NREM": -0.3618,
+      "heartShift_REM_minus_NREM": 0.5093,
+      "mirrorHandOff": 0.8711,
+      "heartDFAShift": 0.2619
+    },
+    {
+      "rec": "rbd14",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -1.4763,
+        "brainSurrWK": -0.5891,
+        "brainNonlin": -0.8872,
+        "brainSlope": -2.7418,
+        "brainDFA": 1.1328,
+        "heartWK": -0.4503,
+        "heartNonlin": 0.1752,
+        "heartDFA": 1.5887
+      },
+      "nrem": {
+        "brainWK": -1.3453,
+        "brainSurrWK": -1.471,
+        "brainNonlin": 0.1257,
+        "brainSlope": -2.895,
+        "brainDFA": 1.2748,
+        "heartWK": 0.4291,
+        "heartNonlin": -0.1526,
+        "heartDFA": 1.2186
+      },
+      "brainShift_REM_minus_NREM": -1.0129,
+      "heartShift_REM_minus_NREM": 0.3278,
+      "mirrorHandOff": 1.3407,
+      "heartDFAShift": 0.3701
+    },
+    {
+      "rec": "rbd17",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -0.9902,
+        "brainSurrWK": -0.4198,
+        "brainNonlin": -0.5704,
+        "brainSlope": -2.1235,
+        "brainDFA": 1.0667,
+        "heartWK": -0.7301,
+        "heartNonlin": -0.0304,
+        "heartDFA": 1.483
+      },
+      "nrem": {
+        "brainWK": -1.0883,
+        "brainSurrWK": -1.1324,
+        "brainNonlin": 0.0441,
+        "brainSlope": -2.6422,
+        "brainDFA": 1.2769,
+        "heartWK": -0.6803,
+        "heartNonlin": 0.0294,
+        "heartDFA": 1.5478
+      },
+      "brainShift_REM_minus_NREM": -0.6145,
+      "heartShift_REM_minus_NREM": -0.0598,
+      "mirrorHandOff": 0.5547,
+      "heartDFAShift": -0.0648
+    },
+    {
+      "rec": "rbd15",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -1.1125,
+        "brainSurrWK": -0.2773,
+        "brainNonlin": -0.8352,
+        "brainSlope": -2.7749,
+        "brainDFA": 1.3312,
+        "heartWK": -0.225,
+        "heartNonlin": 0.2956,
+        "heartDFA": 1.3359
+      },
+      "nrem": {
+        "brainWK": -1.0371,
+        "brainSurrWK": -0.9773,
+        "brainNonlin": -0.0598,
+        "brainSlope": -3.0194,
+        "brainDFA": 1.4912,
+        "heartWK": -0.6857,
+        "heartNonlin": 0.1057,
+        "heartDFA": 1.0976
+      },
+      "brainShift_REM_minus_NREM": -0.7754,
+      "heartShift_REM_minus_NREM": 0.1899,
+      "mirrorHandOff": 0.9653,
+      "heartDFAShift": 0.2383
+    },
+    {
+      "rec": "rbd18",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -0.9827,
+        "brainSurrWK": -0.9768,
+        "brainNonlin": -0.0058,
+        "brainSlope": -2.2731,
+        "brainDFA": 1.1452,
+        "heartWK": -0.903,
+        "heartNonlin": 0.3385,
+        "heartDFA": 1.6067
+      },
+      "nrem": {
+        "brainWK": -0.9575,
+        "brainSurrWK": -1.0332,
+        "brainNonlin": 0.0757,
+        "brainSlope": -2.4802,
+        "brainDFA": 1.2614,
+        "heartWK": 0.1831,
+        "heartNonlin": 0.0174,
+        "heartDFA": 1.346
+      },
+      "brainShift_REM_minus_NREM": -0.0815,
+      "heartShift_REM_minus_NREM": 0.3211,
+      "mirrorHandOff": 0.4026,
+      "heartDFAShift": 0.2607
+    },
+    {
+      "rec": "rbd16",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -0.5283,
+        "brainSurrWK": -0.4199,
+        "brainNonlin": -0.1084,
+        "brainSlope": -1.405,
+        "brainDFA": 0.9383,
+        "heartWK": -0.0822,
+        "heartNonlin": 0.0804,
+        "heartDFA": 1.3042
+      },
+      "nrem": {
+        "brainWK": -0.3529,
+        "brainSurrWK": -0.3885,
+        "brainNonlin": 0.0356,
+        "brainSlope": -1.3682,
+        "brainDFA": 1.0076,
+        "heartWK": 0.4626,
+        "heartNonlin": 0.0753,
+        "heartDFA": 1.146
+      },
+      "brainShift_REM_minus_NREM": -0.144,
+      "heartShift_REM_minus_NREM": 0.0051,
+      "mirrorHandOff": 0.1491,
+      "heartDFAShift": 0.1582
+    },
+    {
+      "rec": "rbd22",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -0.8466,
+        "brainSurrWK": -0.5531,
+        "brainNonlin": -0.2936,
+        "brainSlope": -2.1492,
+        "brainDFA": 1.1513,
+        "heartWK": -0.0597,
+        "heartNonlin": 0.3288,
+        "heartDFA": 1.3089
+      },
+      "nrem": {
+        "brainWK": -1.3985,
+        "brainSurrWK": -1.4427,
+        "brainNonlin": 0.0442,
+        "brainSlope": -3.007,
+        "brainDFA": 1.3042,
+        "heartWK": -0.573,
+        "heartNonlin": 0.3708,
+        "heartDFA": 1.2689
+      },
+      "brainShift_REM_minus_NREM": -0.3378,
+      "heartShift_REM_minus_NREM": -0.042,
+      "mirrorHandOff": 0.2958,
+      "heartDFAShift": 0.04
+    },
+    {
+      "rec": "rbd20",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -0.9516,
+        "brainSurrWK": -0.0571,
+        "brainNonlin": -0.8945,
+        "brainSlope": -2.4203,
+        "brainDFA": 1.2344,
+        "heartWK": -0.2227,
+        "heartNonlin": -0.2528,
+        "heartDFA": 1.4589
+      },
+      "nrem": {
+        "brainWK": -1.2894,
+        "brainSurrWK": -1.3089,
+        "brainNonlin": 0.0194,
+        "brainSlope": -2.9227,
+        "brainDFA": 1.3166,
+        "heartWK": -1.0558,
+        "heartNonlin": -0.976,
+        "heartDFA": 1.105
+      },
+      "brainShift_REM_minus_NREM": -0.9139,
+      "heartShift_REM_minus_NREM": 0.7232,
+      "mirrorHandOff": 1.6371,
+      "heartDFAShift": 0.3539
+    },
+    {
+      "rec": "rbd19",
+      "group": "RBD",
+      "rem": {
+        "brainWK": -0.8715,
+        "brainSurrWK": -0.4974,
+        "brainNonlin": -0.3742,
+        "brainSlope": -2.0741,
+        "brainDFA": 1.1013,
+        "heartWK": 0.0899,
+        "heartNonlin": 0.38,
+        "heartDFA": 1.03
+      },
+      "nrem": {
+        "brainWK": -1.3535,
+        "brainSurrWK": -1.4137,
+        "brainNonlin": 0.0602,
+        "brainSlope": -2.8621,
+        "brainDFA": 1.2543,
+        "heartWK": -0.0425,
+        "heartNonlin": 0.3411,
+        "heartDFA": 1.1687
+      },
+      "brainShift_REM_minus_NREM": -0.4344,
+      "heartShift_REM_minus_NREM": 0.0389,
+      "mirrorHandOff": 0.4733,
+      "heartDFAShift": -0.1387
+    }
+  ]
+}
