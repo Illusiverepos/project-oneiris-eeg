@@ -314,6 +314,7 @@ function serve(port = 8787) {
   const bridgePath = path.join(__dirname, 'dual_dream_bridge.html');
   const musePath = path.join(__dirname, 'muse_ble_adapter.js');
   const mathPath = path.join(__dirname, 'phase_plane_explorer.html');
+  const dreamPath = path.join(__dirname, 'live_dream_canvas.html');
   let tickSec = 0;
 
   // Dual-Dream Bridge 20-minute Store-and-Forward "Dream Baton" Queue (Report 48)
@@ -357,6 +358,11 @@ function serve(port = 8787) {
     if (req.method === 'GET' && urlObj.pathname === '/math') {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end(fs.readFileSync(mathPath));
+      return;
+    }
+    if (req.method === 'GET' && urlObj.pathname === '/dream') {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(fs.readFileSync(dreamPath));
       return;
     }
     if (req.method === 'GET' && urlObj.pathname === '/bridge/poll') {

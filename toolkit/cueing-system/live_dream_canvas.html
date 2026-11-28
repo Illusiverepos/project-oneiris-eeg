@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ONEIRIS — Live Dream Weather &amp; Journal-to-Dream Sync</title>
+<style>
+  :root {
+    --bg: #070b14; --panel: #0f172a; --border: #1e293b; --text: #e2e8f0;
+    --muted: #94a3b8; --accent: #38bdf8; --lucid: #a78bfa; --warn: #f43f5e; --ok: #34d399;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--text); }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; border-bottom: 1px solid var(--border); background: #0a101f; }
+  header h1 { margin: 0; font-size: 16px; letter-spacing: 0.4px; }
+  header .sub { font-size: 12px; color: var(--muted); }
+  .pill { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1e293b; color: var(--accent); border: 1px solid #334155; }
+  .grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 16px; padding: 16px; max-width: 1440px; margin: 0 auto; }
+  @media (max-width: 980px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+  .card h2 { margin: 0 0 10px 0; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.7px; color: var(--accent); }
+  #dreamCanvas { width: 100%; height: 420px; border-radius: 10px; display: block; background: #030712; border: 1px solid #1e293b; }
+  .hud { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+  .metric { background: #090f1e; border: 1px solid #1e293b; border-radius: 8px; padding: 8px 10px; }
+  .metric .k { font-size: 10.5px; color: var(--muted); text-transform: uppercase; }
+  .metric .v { font-size: 16px; font-weight: 700; margin-top: 2px; font-family: ui-monospace, Consolas, monospace; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  button { background: #1e293b; color: var(--text); border: 1px solid #334155; border-radius: 8px; padding: 7px 12px; font-size: 12px; font-weight: 600; cursor: pointer; }
+  button:hover { border-color: var(--accent); color: #fff; }
+  button.primary { background: #0284c7; border-color: #38bdf8; color: #fff; }
+  button.lucid { background: #6d28d9; border-color: #a78bfa; color: #fff; }
+  .slider-row { margin: 9px 0; }
+  .slider-row label { display: flex; justify-content: space-between; font-size: 12px; color: #cbd5e1; margin-bottom: 3px; }
+  input[type=range] { width: 100%; accent-color: var(--accent); }
+  textarea { width: 100%; min-height: 110px; background: #070b14; color: var(--text); border: 1px solid #334155; border-radius: 8px; padding: 10px; font-family: inherit; font-size: 13px; resize: vertical; }
+  .scenes { margin-top: 10px; max-height: 240px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+  .scene-item { background: #090f1e; border: 1px solid #1e293b; border-radius: 8px; padding: 9px 10px; cursor: pointer; transition: border-color 0.15s; }
+  .scene-item:hover, .scene-item.active { border-color: var(--lucid); background: #11182c; }
+  .scene-head { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .scene-text { font-size: 12.5px; color: #f1f5f9; }
+  .prompt-box { margin-top: 10px; background: #060a13; border: 1px dashed #334155; border-radius: 8px; padding: 9px; font-size: 11.5px; color: #94a3b8; font-family: ui-monospace, Consolas, monospace; white-space: pre-wrap; }
+  .disclaimer { font-size: 11px; color: #64748b; padding: 10px 20px 18px; text-align: center; }
+  #timelineCanvas { width: 100%; height: 74px; margin-top: 10px; border-radius: 8px; background: #060a13; border: 1px solid #1e293b; display: block; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>ONEIRIS — Live Dream Weather &amp; Journal-to-Dream Sync</h1>
+    <div class="sub">Real-Time Physiological State Mirror (Frontal <code>brainNonlin</code> × Posterior Reality Anchor × Hemispheric Asymmetry × Heart)</div>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span id="regimePill" class="pill">REM DREAMING</span>
+    <a href="/math" style="color:#94a3b8;font-size:12px;text-decoration:none;">/math Lab →</a>
+  </div>
+</header>
+
+<div class="grid">
+  <!-- LEFT: LIVE DREAM WEATHER CANVAS & TIMELINE -->
+  <div class="card">
+    <h2>1. Live Dream Weather Canvas (60 FPS Physiological Mirror)</h2>
+    <canvas id="dreamCanvas" width="840" height="420"></canvas>
+    <canvas id="timelineCanvas" width="840" height="74"></canvas>
+
+    <div class="hud">
+      <div class="metric"><div class="k">Frontal brainNonlin</div><div class="v" id="vNonlin">−0.149</div></div>
+      <div class="metric"><div class="k">Posterior Anchor</div><div class="v" id="vPost">+0.006</div></div>
+      <div class="metric"><div class="k">Asymmetry (R−L)</div><div class="v" id="vAsym">+0.012</div></div>
+      <div class="metric"><div class="k">Heart / State</div><div class="v" id="vHr">64 BPM</div></div>
+    </div>
+
+    <div class="controls">
+      <button id="btnPlay" class="primary">▶ Play Night Simulation</button>
+      <button id="btnMuse" class="lucid">Connect Muse S / 2 (BLE)</button>
+      <button onclick="setPreset('N3')">Deep NREM (0.00)</button>
+      <button onclick="setPreset('N2')">NREM N2 Dream (−0.02)</button>
+      <button onclick="setPreset('REM')">Vivid REM (−0.15)</button>
+      <button onclick="setPreset('LUCID')">Lucid Switch (−0.25 / 0.00)</button>
+      <button onclick="setPreset('RBD')">Hyper-Lock / Nightmare (−0.41)</button>
+      <button onclick="setPreset('WAKE')">Waking Reality (−0.27 / −0.24)</button>
+    </div>
+  </div>
+
+  <!-- RIGHT: REALITY SWITCHES + JOURNAL-TO-DREAM SYNC -->
+  <div style="display:flex;flex-direction:column;gap:16px;">
+    <div class="card">
+      <h2>2. Flip the Reality Switches (Manual / Live Override)</h2>
+      <div class="slider-row">
+        <label><span>Frontal Nonlinear Clarity (<code>brainNonlin</code>)</span><span id="lblNonlin">−0.149</span></label>
+        <input id="slNonlin" type="range" min="-0.45" max="0.02" step="0.005" value="-0.149"/>
+      </div>
+      <div class="slider-row">
+        <label><span>Posterior Sensory Anchor (Dream 0.00 ↔ Wake −0.24)</span><span id="lblPost">0.006</span></label>
+        <input id="slPost" type="range" min="-0.28" max="0.02" step="0.005" value="0.006"/>
+      </div>
+      <div class="slider-row">
+        <label><span>Hemispheric Tone (Calm −0.20 ↔ Threat +0.20)</span><span id="lblAsym">0.012</span></label>
+        <input id="slAsym" type="range" min="-0.20" max="0.20" step="0.005" value="0.012"/>
+      </div>
+      <div class="slider-row">
+        <label><span>Heart Rate (Autonomic Pulse)</span><span id="lblHr">64 BPM</span></label>
+        <input id="slHr" type="range" min="48" max="115" step="1" value="64"/>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>3. Morning Journal-to-Dream Timeline Sync</h2>
+      <textarea id="journalInput" placeholder="Speak or paste your dream scenes (one sentence per scene)...">I was floating in deep dark quiet water with no walls.
+Slowly a glowing hallway formed out of mist and I heard distant voices.
+Suddenly I looked at my hands and realized I was dreaming — the whole sky opened into crystalline geometry!
+A dark shadow chased me down a narrow stairwell and my chest pounded.
+I stopped running, breathed out, and the stairs dissolved into calm morning light.</textarea>
+      <div class="controls">
+        <button id="btnSync" class="primary">Sync Journal to Brain Timeline</button>
+        <button id="btnVoice">🎤 Dictate Dream (Voice)</button>
+        <button id="btnCopyPrompt">Copy Image Prompt</button>
+      </div>
+      <div id="scenesList" class="scenes"></div>
+      <div id="promptBox" class="prompt-box">Click any synced dream scene above to jump the live canvas to that exact brain state and generate a physics-grounded visual prompt.</div>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  Project ONEIRIS Research &amp; Wellness Prototype (DOIs: 10.5281/zenodo.24619135 &amp; 24619185). Live Dream Weather mirrors real physiological state dynamics (nonlinear phase, posterior anchor, asymmetry, heart rate) and does NOT decode raw visual pixels from scalp EEG. Not an FDA-cleared medical device.
+</div>
+
+<script src="/muse_ble_adapter.js"></script>
+<script>
+const state = {
+  nonlin: -0.149, post: 0.006, asym: 0.012, hr: 64,
+  playing: false, simT: 0, history: [], museConnected: false,
+};
+
+const PRESETS = {
+  N3:    { nonlin:  0.002, post:  0.010, asym:  0.000, hr: 54 },
+  N2:    { nonlin: -0.020, post:  0.006, asym: -0.010, hr: 58 },
+  REM:   { nonlin: -0.149, post:  0.006, asym:  0.012, hr: 64 },
+  LUCID: { nonlin: -0.255, post:  0.002, asym: -0.095, hr: 68 },
+  RBD:   { nonlin: -0.412, post: -0.020, asym:  0.165, hr: 96 },
+  WAKE:  { nonlin: -0.269, post: -0.240, asym: -0.020, hr: 72 },
+};
+
+const slNonlin = document.getElementById('slNonlin');
+const slPost = document.getElementById('slPost');
+const slAsym = document.getElementById('slAsym');
+const slHr = document.getElementById('slHr');
+
+function classifyState(nl, post, asym) {
+  if (nl <= -0.32) return { label: 'HYPER-LOCK / NIGHTMARE CLIFF', color: '#f43f5e' };
+  if (post <= -0.14) return { label: 'WAKING REALITY (ANCHORED)', color: '#34d399' };
+  if (nl <= -0.21 && post > -0.08) return { label: 'LUCID SWITCH (FRONTAL HIGH / UNTETHERED)', color: '#a78bfa' };
+  if (nl <= -0.08) return { label: 'VIVID REM DREAMING', color: '#38bdf8' };
+  if (nl <= -0.012) return { label: 'NREM N2 DREAMING', color: '#60a5fa' };
+  return { label: 'DREAMLESS DEEP NREM (LINEAR REST)', color: '#94a3b8' };
+}
+
+function updateUI() {
+  slNonlin.value = state.nonlin; slPost.value = state.post; slAsym.value = state.asym; slHr.value = state.hr;
+  document.getElementById('vNonlin').textContent = state.nonlin.toFixed(3);
+  document.getElementById('vPost').textContent = (state.post >= 0 ? '+' : '') + state.post.toFixed(3);
+  document.getElementById('vAsym').textContent = (state.asym >= 0 ? '+' : '') + state.asym.toFixed(3);
+  document.getElementById('vHr').textContent = Math.round(state.hr) + ' BPM';
+  document.getElementById('lblNonlin').textContent = state.nonlin.toFixed(3);
+  document.getElementById('lblPost').textContent = state.post.toFixed(3);
+  document.getElementById('lblAsym').textContent = state.asym.toFixed(3);
+  document.getElementById('lblHr').textContent = Math.round(state.hr) + ' BPM';
+  const cls = classifyState(state.nonlin, state.post, state.asym);
+  const pill = document.getElementById('regimePill');
+  pill.textContent = cls.label;
+  pill.style.color = cls.color;
+  pill.style.borderColor = cls.color;
+}
+
+function setPreset(name) {
+  state.playing = false;
+  document.getElementById('btnPlay').textContent = '▶ Play Night Simulation';
+  Object.assign(state, PRESETS[name]);
+  updateUI();
+}
+
+[slNonlin, slPost, slAsym, slHr].forEach((el) => {
+  el.addEventListener('input', () => {
+    state.playing = false;
+    state.nonlin = parseFloat(slNonlin.value);
+    state.post = parseFloat(slPost.value);
+    state.asym = parseFloat(slAsym.value);
+    state.hr = parseFloat(slHr.value);
+    updateUI();
+  });
+});
+
+document.getElementById('btnPlay').addEventListener('click', () => {
+  state.playing = !state.playing;
+  document.getElementById('btnPlay').textContent = state.playing ? '⏸ Pause Night Simulation' : '▶ Play Night Simulation';
+});
+
+// Live Muse BLE hook
+document.getElementById('btnMuse').addEventListener('click', async () => {
+  if (!window.MuseBLEAdapter) { alert('Muse BLE adapter not loaded. Open in Chrome/Edge.'); return; }
+  try {
+    const adapter = new window.MuseBLEAdapter();
+    await adapter.connect();
+    state.museConnected = true;
+    document.getElementById('btnMuse').textContent = '● Muse Connected';
+    adapter.onFrame((f) => {
+      if (Number.isFinite(f.wkViolation)) state.nonlin = Math.max(-0.45, Math.min(0.02, f.wkViolation * 0.35));
+      if (Number.isFinite(f.asymSlopeBB)) state.asym = Math.max(-0.2, Math.min(0.2, f.asymSlopeBB * 0.2));
+      updateUI();
+    });
+  } catch (e) {
+    alert('Muse BLE connection cancelled or unavailable: ' + e.message);
+  }
+});
+
+// === 60 FPS GENERATIVE DREAM WEATHER CANVAS ===
+const canvas = document.getElementById('dreamCanvas');
+const ctx = canvas.getContext('2d');
+const tCanvas = document.getElementById('timelineCanvas');
+const tCtx = tCanvas.getContext('2d');
+
+const particles = Array.from({ length: 140 }, (_, i) => ({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  a: Math.random() * Math.PI * 2,
+  r: 1.5 + Math.random() * 3.5,
+  sp: 0.4 + Math.random() * 1.4,
+}));
+
+function stepSimulation(dt) {
+  if (!state.playing) return;
+  state.simT = (state.simT + dt * 0.08) % 1.0;
+  // Smooth night trajectory: N3 -> N2 -> REM -> Lucid -> Nightmare -> Calm
+  const stops = [
+    [0.00, PRESETS.N3], [0.18, PRESETS.N2], [0.38, PRESETS.REM],
+    [0.58, PRESETS.LUCID], [0.76, PRESETS.RBD], [0.92, PRESETS.REM], [1.00, PRESETS.N3],
+  ];
+  for (let i = 0; i < stops.length - 1; i++) {
+    if (state.simT >= stops[i][0] && state.simT <= stops[i + 1][0]) {
+      const u = (state.simT - stops[i][0]) / (stops[i + 1][0] - stops[i][0]);
+      const s = u * u * (3 - 2 * u);
+      const A = stops[i][1], B = stops[i + 1][1];
+      state.nonlin = A.nonlin + (B.nonlin - A.nonlin) * s;
+      state.post = A.post + (B.post - A.post) * s;
+      state.asym = A.asym + (B.asym - A.asym) * s;
+      state.hr = A.hr + (B.hr - A.hr) * s;
+      break;
+    }
+  }
+  updateUI();
+}
+
+let lastMs = performance.now();
+function render(now) {
+  const dt = Math.min(0.05, (now - lastMs) / 1000);
+  lastMs = now;
+  stepSimulation(dt);
+
+  const clarity = Math.min(1, Math.max(0, -state.nonlin / 0.30)); // 0=foggy N3, 1=sharp lucid/wake
+  const anchor = Math.min(1, Math.max(0, -state.post / 0.24));    // 0=untethered dream, 1=anchored wake
+  const threat = Math.min(1, Math.max(0, (state.asym + 0.05) / 0.22));
+  const hyper = Math.min(1, Math.max(0, (-state.nonlin - 0.28) / 0.15));
+  const pulse = 0.5 + 0.5 * Math.sin((now / 1000) * (state.hr / 60) * Math.PI * 2);
+
+  // Trail / persistence (more foggy in N3, crisper in Lucid/Wake)
+  ctx.fillStyle = `rgba(5, 9, 20, ${0.08 + clarity * 0.22})`;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Background aura (Calm indigo/violet vs. Threat crimson)
+  const hue = threat > 0.5 ? (350 - threat * 25) : (215 + clarity * 55);
+  const cx = canvas.width * 0.5, cy = canvas.height * 0.5;
+  const rad = 120 + clarity * 220 + pulse * 35;
+  const g = ctx.createRadialGradient(cx, cy, 10, cx, cy, rad);
+  g.addColorStop(0, `hsla(${hue}, 82%, ${35 + clarity * 22}%, ${0.18 + clarity * 0.25})`);
+  g.addColorStop(1, 'rgba(3, 7, 18, 0)');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Posterior Reality Anchor Grid (visible ONLY when Posterior anchor turns ON!)
+  if (anchor > 0.12) {
+    ctx.strokeStyle = `rgba(52, 211, 153, ${anchor * 0.35})`;
+    ctx.lineWidth = 1;
+    const step = 48;
+    for (let x = 0; x < canvas.width; x += step) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+    }
+    for (let y = 0; y < canvas.height; y += step) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+    }
+  }
+
+  // Flowing dream particles (coherent orbits in Lucid/REM, jittery lock-in in Hyper-Lock, drifting fog in N3)
+  const speedScale = 0.35 + clarity * 1.4 + hyper * 2.2;
+  for (const p of particles) {
+    const dx = cx - p.x, dy = cy - p.y;
+    const dist = Math.hypot(dx, dy) + 1e-6;
+    if (hyper > 0.25) {
+      // Rigid hyper-locked vibration
+      p.x += (Math.random() - 0.5) * 6 * hyper + (-dy / dist) * speedScale;
+      p.y += (Math.random() - 0.5) * 6 * hyper + (dx / dist) * speedScale;
+    } else if (clarity > 0.35) {
+      // Coherent nonlinear orbital flow
+      p.x += (-dy / dist) * p.sp * speedScale + (dx / dist) * (pulse - 0.5) * 0.8;
+      p.y += (dx / dist) * p.sp * speedScale + (dy / dist) * (pulse - 0.5) * 0.8;
+    } else {
+      // Slow linear diffusion (Dreamless NREM)
+      p.a += (Math.random() - 0.5) * 0.15;
+      p.x += Math.cos(p.a) * p.sp * 0.5;
+      p.y += Math.sin(p.a) * p.sp * 0.5;
+    }
+    if (p.x < 0) p.x += canvas.width; if (p.x > canvas.width) p.x -= canvas.width;
+    if (p.y < 0) p.y += canvas.height; if (p.y > canvas.height) p.y -= canvas.height;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r * (0.7 + clarity * 0.6), 0, Math.PI * 2);
+    ctx.fillStyle = `hsla(${hue + (p.r * 10)}, 90%, ${60 + clarity * 20}%, ${0.25 + clarity * 0.65})`;
+    ctx.fill();
+  }
+
+  // Lucid Center Ring when Frontal is high & Posterior is untethered
+  if (clarity > 0.65 && anchor < 0.35 && hyper < 0.2) {
+    ctx.beginPath();
+    ctx.arc(cx, cy, 70 + pulse * 18, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(167, 139, 250, 0.75)';
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+  }
+
+  // Record history for mini timeline
+  if (state.history.length === 0 || now - state.history[state.history.length - 1].t > 120) {
+    state.history.push({ t: now, nl: state.nonlin, post: state.post });
+    if (state.history.length > 210) state.history.shift();
+    drawTimeline();
+  }
+  requestAnimationFrame(render);
+}
+
+function drawTimeline() {
+  tCtx.clearRect(0, 0, tCanvas.width, tCanvas.height);
+  const zeroY = 14;
+  tCtx.strokeStyle = '#334155'; tCtx.setLineDash([4, 4]);
+  tCtx.beginPath(); tCtx.moveTo(0, zeroY); tCtx.lineTo(tCanvas.width, zeroY); tCtx.stroke();
+  tCtx.setLineDash([]);
+  const plot = (key, color) => {
+    tCtx.strokeStyle = color; tCtx.lineWidth = 2; tCtx.beginPath();
+    state.history.forEach((pt, i) => {
+      const x = (i / Math.max(1, state.history.length - 1)) * tCanvas.width;
+      const y = zeroY + (-pt[key] / 0.45) * (tCanvas.height - 20);
+      if (i === 0) tCtx.moveTo(x, y); else tCtx.lineTo(x, y);
+    });
+    tCtx.stroke();
+  };
+  plot('nl', '#38bdf8');
+  plot('post', '#34d399');
+}
+
+// === MORNING JOURNAL-TO-DREAM SYNC ===
+let lastPrompt = '';
+function syncJournal() {
+  const raw = document.getElementById('journalInput').value.trim();
+  const lines = raw.split(/(?<=[.!?])\s+|\n+/).map((s) => s.trim()).filter(Boolean);
+  const list = document.getElementById('scenesList');
+  list.innerHTML = '';
+  const baseMin = 4 * 60 + 5; // 04:05 AM example REM block
+
+  lines.forEach((text, i) => {
+    const low = text.toLowerCase();
+    // Map physiological archetype honestly from narrative + sleep progression
+    let p = { ...PRESETS.REM };
+    if (/lucid|realized i was dreaming|hands|control|awake inside/.test(low)) p = { ...PRESETS.LUCID };
+    else if (/chase|shadow|pounded|trapped|scream|nightmare|monster|fall/.test(low)) p = { ...PRESETS.RBD };
+    else if (/dark|quiet|blank|nothing|empty|floating/.test(low) && i === 0) p = { ...PRESETS.N3 };
+    else if (/mist|faint|distant|murmur|fog/.test(low)) p = { ...PRESETS.N2 };
+    else if (/morning|woke|calm|dissolved|peace/.test(low)) p = { ...PRESETS.REM, asym: -0.06, hr: 60 };
+
+    const mins = baseMin + i * 3;
+    const ts = `${String(Math.floor(mins / 60)).padStart(2, '0')}:${String(mins % 60).padStart(2, '0')} AM`;
+    const cls = classifyState(p.nonlin, p.post, p.asym);
+
+    const div = document.createElement('div');
+    div.className = 'scene-item';
+    div.innerHTML = `<div class="scene-head"><span>${ts} · Scene ${i + 1}</span><span style="color:${cls.color}">${cls.label}</span></div><div class="scene-text">${text}</div>`;
+    div.addEventListener('click', () => {
+      document.querySelectorAll('.scene-item').forEach((el) => el.classList.remove('active'));
+      div.classList.add('active');
+      state.playing = false;
+      Object.assign(state, p);
+      updateUI();
+      lastPrompt = `Scene: "${text}"\nGrounded Brain Physics (${ts}): Frontal brainNonlin=${p.nonlin.toFixed(3)} (${cls.label}), Posterior Anchor=${p.post.toFixed(3)}, Hemispheric Asymmetry=${p.asym.toFixed(3)}, Heart=${p.hr} BPM.\nVisual Direction: ${p.nonlin <= -0.32 ? 'intense high-contrast crimson shadows, tense claustrophobic motion blur' : p.nonlin <= -0.21 ? 'hyper-clear luminous crystalline lighting, wide serene lucid perspective' : p.nonlin <= -0.08 ? 'vivid atmospheric dreamscape, soft untethered horizon, bioluminescent depth' : 'minimalist misty silhouettes, gentle slow fog, low-contrast quiet atmosphere'}.`;
+      document.getElementById('promptBox').textContent = lastPrompt;
+    });
+    list.appendChild(div);
+  });
+}
+
+document.getElementById('btnSync').addEventListener('click', syncJournal);
+document.getElementById('btnCopyPrompt').addEventListener('click', () => {
+  if (!lastPrompt) { alert('Click a synced scene first.'); return; }
+  navigator.clipboard.writeText(lastPrompt);
+  document.getElementById('btnCopyPrompt').textContent = '✓ Copied!';
+  setTimeout(() => { document.getElementById('btnCopyPrompt').textContent = 'Copy Image Prompt'; }, 1400);
+});
+
+document.getElementById('btnVoice').addEventListener('click', () => {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) { alert('Browser voice dictation requires Chrome or Edge.'); return; }
+  const rec = new SR();
+  rec.lang = 'en-US';
+  rec.onresult = (e) => {
+    const t = e.results[0][0].transcript;
+    const box = document.getElementById('journalInput');
+    box.value = (box.value.trim() ? box.value.trim() + '\n' : '') + t;
+    syncJournal();
+  };
+  rec.start();
+});
+
+updateUI();
+syncJournal();
+requestAnimationFrame(render);
+</script>
+</body>
+</html>
