@@ -135,6 +135,40 @@ I stopped running, breathed out, and the stairs dissolved into calm morning ligh
       <div id="scenesList" class="scenes"></div>
       <div id="promptBox" class="prompt-box">Click any synced dream scene above to jump the live canvas to that exact brain state and generate a physics-grounded visual prompt.</div>
     </div>
+
+    <div class="card">
+      <h2>4. 🎬 AI Dream Video Playback (Gemini Omni 1.2 Flash)</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+        <input id="geminiKey" type="password" placeholder="Paste GEMINI_API_KEY (local memory only)" style="grid-column:1/-1;background:#070b14;color:#e2e8f0;border:1px solid #334155;border-radius:8px;padding:8px 10px;font-size:12px;"/>
+        <select id="vidRes" style="background:#070b14;color:#e2e8f0;border:1px solid #334155;border-radius:8px;padding:7px;font-size:12px;">
+          <option value="360p">360p Draft (~$0.023/s)</option>
+          <option value="720p" selected>720p HD (~$0.07/s)</option>
+          <option value="1080p">1080p Full HD (~$0.104/s)</option>
+        </select>
+        <select id="vidDur" style="background:#070b14;color:#e2e8f0;border:1px solid #334155;border-radius:8px;padding:7px;font-size:12px;">
+          <option value="5">5 seconds</option>
+          <option value="8" selected>8 seconds</option>
+          <option value="10">10 seconds</option>
+          <option value="15">15 seconds</option>
+        </select>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:12px;color:#cbd5e1;margin-bottom:8px;">
+        <label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
+          <input id="chkC02" type="checkbox" checked/> Animate Donders c_02 First Frame
+        </label>
+        <label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
+          Or custom image: <input id="fileFrame" type="file" accept="image/*" style="font-size:11px;max-width:170px;"/>
+        </label>
+      </div>
+      <div class="controls">
+        <button id="btnRenderVid" class="lucid">🎬 Render AI Dream Video (MP4)</button>
+        <span id="vidStatus" style="font-size:11.5px;color:#94a3b8;align-self:center;">Ready — click a scene above or animate Donders c_02.</span>
+      </div>
+      <div id="vidWrap" style="display:none;margin-top:10px;">
+        <video id="dreamVideo" controls autoplay loop style="width:100%;border-radius:10px;border:1px solid #334155;background:#000;"></video>
+        <div style="margin-top:6px;"><a id="vidDownload" download style="color:#38bdf8;font-size:12px;font-weight:600;">⬇ Download Dream Replay (.mp4)</a></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -480,6 +514,54 @@ document.getElementById('btnExport').addEventListener('click', () => {
   a.href = URL.createObjectURL(blob);
   a.download = `oneiris_dream_storyboard_${Date.now()}.html`;
   a.click();
+});
+
+// === 4. AI DREAM VIDEO PLAYBACK (GEMINI OMNI 1.2 FLASH) ===
+let customFrameB64 = null;
+document.getElementById('fileFrame').addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (!f) { customFrameB64 = null; return; }
+  const reader = new FileReader();
+  reader.onload = () => { customFrameB64 = reader.result; document.getElementById('chkC02').checked = false; };
+  reader.readAsDataURL(f);
+});
+
+document.getElementById('btnRenderVid').addEventListener('click', async () => {
+  const apiKey = document.getElementById('geminiKey').value.trim();
+  const statusEl = document.getElementById('vidStatus');
+  if (!apiKey) { alert('Paste your Gemini API key into the local password field first (kept strictly in browser memory).'); return; }
+  const useC02 = document.getElementById('chkC02').checked;
+  const prompt = lastPrompt || (useC02
+    ? 'Slow dreamlike 35mm film camera drift in a hazy West Texas desert at twilight; the vintage ice cream truck headlight flickers and slowly fades off into indigo dusk while the elderly woman gazes quietly downward and desert wind gently moves the dust. Soft ethereal REM dream atmosphere, subtle ambient desert wind and distant hum.'
+    : 'Atmospheric lucid dreamscape unfolding smoothly with bioluminescent light and gentle floating camera motion.');
+  const resolution = document.getElementById('vidRes').value;
+  const duration = parseInt(document.getElementById('vidDur').value, 10);
+
+  const btn = document.getElementById('btnRenderVid');
+  btn.disabled = true;
+  statusEl.style.color = '#38bdf8';
+  statusEl.textContent = `Rendering ${duration}s ${resolution} dream video via gemini-omni-1.2-flash (usually 45–90s)...`;
+  try {
+    const res = await fetch('/dream/render-video', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ apiKey, prompt, resolution, duration, firstFrameBase64: customFrameB64, useSampleC02: useC02 }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) throw new Error(data.error || 'Video render failed');
+    const vid = document.getElementById('dreamVideo');
+    vid.src = data.videoUrl;
+    document.getElementById('vidDownload').href = data.videoUrl;
+    document.getElementById('vidDownload').download = data.outName || 'oneiris_dream.mp4';
+    document.getElementById('vidWrap').style.display = 'block';
+    statusEl.style.color = '#34d399';
+    statusEl.textContent = `✓ Dream video ready (${data.outName})!`;
+  } catch (err) {
+    statusEl.style.color = '#f43f5e';
+    statusEl.textContent = 'Error: ' + err.message;
+  } finally {
+    btn.disabled = false;
+  }
 });
 
 updateUI();

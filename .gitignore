@@ -26,3 +26,6 @@ private_outreach/
 
 # Local raw COGITATE Consortium BIDS archives (never commit raw participant data)
 reanalysis/data/cogitate/
+
+# Local rendered dream videos (never commit large local media)
+toolkit/cueing-system/local_dream_media/

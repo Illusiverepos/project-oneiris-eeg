@@ -365,6 +365,70 @@ function serve(port = 8787) {
       res.end(fs.readFileSync(dreamPath));
       return;
     }
+    if (req.method === 'GET' && urlObj.pathname.startsWith('/dream/media/')) {
+      const fname = path.basename(urlObj.pathname);
+      const mPath = path.join(__dirname, 'local_dream_media', fname);
+      if (fs.existsSync(mPath)) {
+        res.writeHead(200, { 'Content-Type': 'video/mp4' });
+        fs.createReadStream(mPath).pipe(res);
+      } else {
+        res.writeHead(404); res.end('Not found');
+      }
+      return;
+    }
+    if (req.method === 'POST' && urlObj.pathname === '/dream/render-video') {
+      let body = '';
+      req.on('data', (c) => { body += c; if (body.length > 25e6) req.destroy(); });
+      req.on('end', () => {
+        try {
+          const { spawn } = require('child_process');
+          const os = require('os');
+          const msg = JSON.parse(body);
+          const apiKey = (msg.apiKey || process.env.GEMINI_API_KEY || '').trim();
+          if (!apiKey) { res.writeHead(400, { 'Content-Type': 'application/json' }); res.end(JSON.stringify({ error: 'Gemini API key required.' })); return; }
+          const prompt = String(msg.prompt || '').trim();
+          if (!prompt) { res.writeHead(400, { 'Content-Type': 'application/json' }); res.end(JSON.stringify({ error: 'Dream scene prompt required.' })); return; }
+          const resolution = ['360p', '720p', '1080p'].includes(msg.resolution) ? msg.resolution : '720p';
+          const duration = Math.max(3, Math.min(15, parseInt(msg.duration, 10) || 6));
+          const mediaDir = path.join(__dirname, 'local_dream_media');
+          fs.mkdirSync(mediaDir, { recursive: true });
+          const outName = `dream_${Date.now()}.mp4`;
+          const outPath = path.join(mediaDir, outName);
+          const genScript = path.join(os.homedir(), '.gemini', 'config', 'plugins', 'gemini-api', 'skills', 'gemini-omni-flash-api', 'scripts', 'video', 'generate_video.py');
+          const args = [genScript, prompt, '--resolution', resolution, '--duration', String(duration), '--output', outPath];
+
+          let tmpFrame = null;
+          if (msg.firstFrameBase64 && typeof msg.firstFrameBase64 === 'string') {
+            const b64 = msg.firstFrameBase64.replace(/^data:image\/\w+;base64,/, '');
+            tmpFrame = path.join(mediaDir, `frame_${Date.now()}.jpg`);
+            fs.writeFileSync(tmpFrame, Buffer.from(b64, 'base64'));
+            args.push('--first-frame', tmpFrame);
+          } else if (msg.useSampleC02) {
+            const c02 = path.join(os.homedir(), '.gemini', 'antigravity', 'brain', '3cf3d6a5-c40b-47bf-9b92-2dcdb715cf1f', 'donders_c02_real_dream_reconstruction_v2_1795848067982.jpg');
+            if (fs.existsSync(c02)) args.push('--first-frame', c02);
+          }
+
+          const child = spawn('python', args, { env: { ...process.env, GEMINI_API_KEY: apiKey } });
+          let stderr = '', stdout = '';
+          child.stdout.on('data', (d) => { stdout += d.toString(); });
+          child.stderr.on('data', (d) => { stderr += d.toString(); });
+          child.on('close', (code) => {
+            if (tmpFrame && fs.existsSync(tmpFrame)) { try { fs.unlinkSync(tmpFrame); } catch {} }
+            if (code === 0 && fs.existsSync(outPath)) {
+              res.writeHead(200, { 'Content-Type': 'application/json' });
+              res.end(JSON.stringify({ ok: true, videoUrl: `/dream/media/${outName}`, outName }));
+            } else {
+              res.writeHead(500, { 'Content-Type': 'application/json' });
+              res.end(JSON.stringify({ error: (stderr || stdout || `Exited with code ${code}`).slice(-600) }));
+            }
+          });
+        } catch (err) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: err.message }));
+        }
+      });
+      return;
+    }
     if (req.method === 'GET' && urlObj.pathname === '/bridge/poll') {
       const role = urlObj.searchParams.get('role') || 'A';
       const state = urlObj.searchParams.get('state') || 'REM_TARGET';
