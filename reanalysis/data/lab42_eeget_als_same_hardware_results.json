@@ -1,0 +1,191 @@
+{
+  "lab": "Lab #42 — EEGET-ALS Same-Hardware ALS (n=6) vs Healthy Controls (n=35) Audit",
+  "counts": {
+    "ALS": 6,
+    "HC": 35
+  },
+  "stats": {
+    "fRealWK": {
+      "nALS": 6,
+      "nHC": 35,
+      "meanALS": 0.054,
+      "meanHC": -0.239,
+      "d": 1.208,
+      "auc": 0.843,
+      "p": 0.009
+    },
+    "fSurrWK": {
+      "nALS": 6,
+      "nHC": 35,
+      "meanALS": 0.2567,
+      "meanHC": -0.1609,
+      "d": 1.365,
+      "auc": 0.871,
+      "p": 0.0034
+    },
+    "fNonlin": {
+      "nALS": 6,
+      "nHC": 35,
+      "meanALS": -0.2026,
+      "meanHC": -0.0781,
+      "d": -1.011,
+      "auc": 0.719,
+      "p": 0.0293
+    },
+    "fSlope": {
+      "nALS": 6,
+      "nHC": 35,
+      "meanALS": -1.1051,
+      "meanHC": -1.4861,
+      "d": 1.417,
+      "auc": 0.819,
+      "p": 0.004
+    },
+    "fDFA": {
+      "nALS": 6,
+      "nHC": 35,
+      "meanALS": 1.0795,
+      "meanHC": 1.1235,
+      "d": -0.42,
+      "auc": 0.548,
+      "p": 0.35156
+    },
+    "pRealWK": {
+      "nALS": 6,
+      "nHC": 35,
+      "meanALS": -0.0248,
+      "meanHC": -0.135,
+      "d": 0.416,
+      "auc": 0.59,
+      "p": 0.35756
+    },
+    "pSurrWK": {
+      "nALS": 6,
+      "nHC": 35,
+      "meanALS": 0.1842,
+      "meanHC": -0.0522,
+      "d": 0.659,
+      "auc": 0.7,
+      "p": 0.14749
+    },
+    "pNonlin": {
+      "nALS": 6,
+      "nHC": 35,
+      "meanALS": -0.209,
+      "meanHC": -0.0828,
+      "d": -0.896,
+      "auc": 0.69,
+      "p": 0.0473
+    },
+    "pSlope": {
+      "nALS": 6,
+      "nHC": 35,
+      "meanALS": -0.8017,
+      "meanHC": -1.0144,
+      "d": 0.69,
+      "auc": 0.705,
+      "p": 0.12889
+    },
+    "pDFA": {
+      "nALS": 6,
+      "nHC": 35,
+      "meanALS": 0.8884,
+      "meanHC": 0.9397,
+      "d": -0.318,
+      "auc": 0.629,
+      "p": 0.48005
+    }
+  },
+  "alsPatients": [
+    {
+      "sub": "ALS01",
+      "isALS": true,
+      "nRuns": 3,
+      "fRealWK": 0.187,
+      "fSurrWK": 0.2636,
+      "fNonlin": -0.0766,
+      "fSlope": -0.7253,
+      "fDFA": 0.9561,
+      "pRealWK": -0.0357,
+      "pSurrWK": 0.0114,
+      "pNonlin": -0.0471,
+      "pSlope": -0.4591,
+      "pDFA": 0.7117
+    },
+    {
+      "sub": "ALS02",
+      "isALS": true,
+      "nRuns": 3,
+      "fRealWK": 0.1408,
+      "fSurrWK": 0.1654,
+      "fNonlin": -0.0245,
+      "fSlope": -0.6472,
+      "fDFA": 0.894,
+      "pRealWK": -0.0487,
+      "pSurrWK": 0.01,
+      "pNonlin": -0.0587,
+      "pSlope": -0.4761,
+      "pDFA": 0.7137
+    },
+    {
+      "sub": "ALS03",
+      "isALS": true,
+      "nRuns": 2,
+      "fRealWK": 0.1488,
+      "fSurrWK": 0.2193,
+      "fNonlin": -0.0705,
+      "fSlope": -1.226,
+      "fDFA": 1.1874,
+      "pRealWK": 0.0825,
+      "pSurrWK": 0.1096,
+      "pNonlin": -0.0271,
+      "pSlope": -0.666,
+      "pDFA": 0.8743
+    },
+    {
+      "sub": "ALS04",
+      "isALS": true,
+      "nRuns": 3,
+      "fRealWK": 0.0494,
+      "fSurrWK": 0.477,
+      "fNonlin": -0.4275,
+      "fSlope": -1.343,
+      "fDFA": 1.1962,
+      "pRealWK": 0.0524,
+      "pSurrWK": 0.44,
+      "pNonlin": -0.3876,
+      "pSlope": -1.1365,
+      "pDFA": 1.0944
+    },
+    {
+      "sub": "ALS05",
+      "isALS": true,
+      "nRuns": 3,
+      "fRealWK": -0.1516,
+      "fSurrWK": 0.0494,
+      "fNonlin": -0.2009,
+      "fSlope": -1.1105,
+      "fDFA": 0.9795,
+      "pRealWK": -0.0859,
+      "pSurrWK": 0.1569,
+      "pNonlin": -0.2428,
+      "pSlope": -0.6019,
+      "pDFA": 0.7579
+    },
+    {
+      "sub": "ALS06",
+      "isALS": true,
+      "nRuns": 3,
+      "fRealWK": -0.0504,
+      "fSurrWK": 0.3655,
+      "fNonlin": -0.4159,
+      "fSlope": -1.5783,
+      "fDFA": 1.2639,
+      "pRealWK": -0.1134,
+      "pSurrWK": 0.3772,
+      "pNonlin": -0.4906,
+      "pSlope": -1.4706,
+      "pDFA": 1.1785
+    }
+  ]
+}
