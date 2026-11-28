@@ -84,12 +84,12 @@ console.log('  Young-like RR -> wkHRV:', hYoung.wkHRV, '| Heart Age:', hYoung.es
 console.log('  Older-like RR -> wkHRV:', hOld.wkHRV, '| Heart Age:', hOld.estimatedHeartAgeYears, 'yrs');
 assert(Number.isFinite(hYoung.wkHRV) && Number.isFinite(hOld.wkHRV), 'scoreHeartWK must return finite wkHRV');
 
-// 6. Fourier Phase-Randomized Surrogate Nonlinear Phase Scorer (`scoreNonlinearPhase`) test
+// 6. Fourier Phase-Randomized Surrogate Nonlinear Phase & Hemispheric Asymmetry Scorer (`scoreNonlinearPhase`) test
 const remLong1 = synthEEG(4096, sfreq, 'REM');
-const remLong2 = synthEEG(4096, sfreq, 'REM');
+const remLong2 = synthEEG(4096, sfreq, 'Wake');
 const nlRes = sdk.scoreNonlinearPhase(remLong1, remLong2, sfreq, { nSurrogates: 3 });
-console.log('\n6. Fourier Surrogate Nonlinear Phase Scorer (`scoreNonlinearPhase`, Paper 8):');
-console.log('  Synthetic REM Stream -> realWK:', nlRes.realWK, '| surrWK:', nlRes.surrogateWK, '| brainNonlin:', nlRes.brainNonlin);
-assert(Number.isFinite(nlRes.brainNonlin) && nlRes.nFrames >= 4, 'scoreNonlinearPhase must return finite brainNonlin');
+console.log('\n6. Fourier Surrogate Nonlinear Phase & Asymmetry Scorer (`scoreNonlinearPhase`, Papers 8-10):');
+console.log('  Synthetic L/R Stream -> brainNonlin:', nlRes.brainNonlin, '| nonlinL:', nlRes.nonlinL, '| nonlinR:', nlRes.nonlinR, '| absAsym:', nlRes.absAsymNonlin, '| regime:', nlRes.goldilocksRegime);
+assert(Number.isFinite(nlRes.brainNonlin) && Number.isFinite(nlRes.absAsymNonlin) && nlRes.nFrames >= 4, 'scoreNonlinearPhase must return finite brainNonlin and absAsymNonlin');
 
 console.log('\nALL SDK SELF-TESTS PASSED (6/6)!');

@@ -316,26 +316,48 @@ function scoreNonlinearPhase(ch1, ch2 = null, sfreq = 256, opts = {}) {
     return out;
   }
 
-  let realWKSum = 0, slopeSum = 0, dfaSum = 0, nFrames = 0;
+  let realWKLSum = 0, realWKRSum = 0, slopeSum = 0, dfaSum = 0, nFrames = 0;
   for (let s = 0; s + winN <= nPow2; s += winN) {
-    const fm = computeFrameMetrics(a1.subarray(s, s + winN), a2.subarray(s, s + winN), sfreq);
-    realWKSum += fm.wkViolation; slopeSum += fm.slopeBB; dfaSum += fm.dfa;
+    const m1 = windowMetrics(a1.subarray(s, s + winN), sfreq, 256);
+    const m2 = ch2 ? windowMetrics(a2.subarray(s, s + winN), sfreq, 256) : m1;
+    realWKLSum += m1.slopeBB + (2 * m1.dfa - 1);
+    realWKRSum += m2.slopeBB + (2 * m2.dfa - 1);
+    slopeSum += 0.5 * (m1.slopeBB + m2.slopeBB);
+    dfaSum += 0.5 * (m1.dfa + m2.dfa);
     nFrames++;
   }
-  const realWK = realWKSum / nFrames;
+  const realWKL = realWKLSum / nFrames;
+  const realWKR = realWKRSum / nFrames;
+  const realWK = 0.5 * (realWKL + realWKR);
 
-  let surrWKSum = 0;
+  let surrWKLSum = 0, surrWKRSum = 0;
   for (let k = 0; k < nSurr; k++) {
     const s1 = phaseRandomize(a1, seedBase + k * 7919 + 11);
     const s2 = ch2 ? phaseRandomize(a2, seedBase + k * 7919 + 29) : s1;
-    let wkAcc = 0;
+    let wkLAcc = 0, wkRAcc = 0;
     for (let s = 0; s + winN <= nPow2; s += winN) {
-      wkAcc += computeFrameMetrics(s1.subarray(s, s + winN), s2.subarray(s, s + winN), sfreq).wkViolation;
+      const sm1 = windowMetrics(s1.subarray(s, s + winN), sfreq, 256);
+      const sm2 = ch2 ? windowMetrics(s2.subarray(s, s + winN), sfreq, 256) : sm1;
+      wkLAcc += sm1.slopeBB + (2 * sm1.dfa - 1);
+      wkRAcc += sm2.slopeBB + (2 * sm2.dfa - 1);
     }
-    surrWKSum += wkAcc / nFrames;
+    surrWKLSum += wkLAcc / nFrames;
+    surrWKRSum += wkRAcc / nFrames;
   }
-  const surrogateWK = surrWKSum / nSurr;
-  const brainNonlin = realWK - surrogateWK;
+  const surrWKL = surrWKLSum / nSurr;
+  const surrWKR = surrWKRSum / nSurr;
+  const surrogateWK = 0.5 * (surrWKL + surrWKR);
+  const nonlinL = realWKL - surrWKL;
+  const nonlinR = realWKR - surrWKR;
+  const brainNonlin = 0.5 * (nonlinL + nonlinR);
+  const signedAsymNonlin = nonlinR - nonlinL;
+  const absAsymNonlin = Math.abs(signedAsymNonlin);
+  const meanSlopeBB = slopeSum / nFrames;
+  const goldilocksRegime = brainNonlin <= -0.30
+    ? 'HYPER_LOCKING_CLIFF'
+    : (brainNonlin >= -0.045
+      ? (meanSlopeBB > -1.35 ? 'DISSOLUTION_CLIFF' : 'INTENTIONAL_LINEAR_REST')
+      : 'HEALTHY_GOLDILOCKS_CORRIDOR');
 
   return {
     nFrames,
@@ -343,7 +365,12 @@ function scoreNonlinearPhase(ch1, ch2 = null, sfreq = 256, opts = {}) {
     realWK: +realWK.toFixed(4),
     surrogateWK: +surrogateWK.toFixed(4),
     brainNonlin: +brainNonlin.toFixed(4),
-    meanSlopeBB: +(slopeSum / nFrames).toFixed(4),
+    nonlinL: +nonlinL.toFixed(4),
+    nonlinR: +nonlinR.toFixed(4),
+    signedAsymNonlin: +signedAsymNonlin.toFixed(4),
+    absAsymNonlin: +absAsymNonlin.toFixed(4),
+    goldilocksRegime,
+    meanSlopeBB: +meanSlopeBB.toFixed(4),
     meanDFA: +(dfaSum / nFrames).toFixed(4),
     disclaimer: 'Research & general-wellness metric only; not an FDA-cleared medical diagnostic.',
   };
